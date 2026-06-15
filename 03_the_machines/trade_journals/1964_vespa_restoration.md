@@ -45,6 +45,21 @@ Initial observations and work prompts:
 - Paint reference: Ford 76, code 2R.
 - Frame serial number: BA276439.
 
+Additional scanned notes:
+
+- Engine serial reference:
+  - VBB2 6?8? / 238094. The middle characters are partially unclear in the scan.
+- Vespa year: 1964.
+- Vespa model: 150.
+- Replacement parts list:
+  - All cables.
+  - Rear brake pedal.
+  - Rear brake foot pedal rubber cover.
+  - Side storage door keyed lock.
+  - Small cotter pin used to hold bolt or pin in place so two arms and one 14 mm bolt and nut attach in order to hold or secure rear brake cable.
+  - Tail light assembly.
+  - Gasket or rubber grommet for petcock lever.
+
 ## Visual Evidence
 
 Use this section to map the Flickr album into evidence categories that support the craft story. Each entry should eventually include the Flickr photo title, photo ID or URL, and a short note explaining what the image proves.
