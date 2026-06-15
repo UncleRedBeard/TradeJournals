@@ -75,3 +75,21 @@ The unifying idea is preservation across disciplines:
 - The 1964 Vespa and other machines prove precision mechanical restoration and respect for original engineering.
 
 The portfolio should present an ecosystem of preservation: living in, working in, documenting, and restoring historic materials and machines with care.
+
+## Current Progress
+
+The repository now has tracked pillar folders and `trade_journals` folders for each major portfolio area. Markdownlint is configured and should be run with `npm run lint:md` before commits.
+
+The active first journal is `03_the_machines/trade_journals/1964_vespa_restoration.md`. It contains:
+
+- A first journal entry based on scanned handwritten notes found in the Vespa side storage compartment.
+- Initial repair observations around rear brake light switch location, rear brake pedal rubber, surface rust, paint chipping, Ford 76 / code 2R paint reference, and frame serial number `BA276439`.
+- Additional scanned notes for model/year and replacement parts: 1964 Vespa 150, all cables, rear brake pedal, rear brake foot pedal rubber cover, side storage door keyed lock, cotter pin / 14 mm bolt and nut note for securing the rear brake cable, tail light assembly, and petcock lever gasket or rubber grommet.
+- A public Flickr album reference for the Vespa: [1964 Vespa](https://www.flickr.com/photos/boocher/albums/72177720305371229/), owned by UncleRedBeard, with 427 public photos.
+- A working `Visual Evidence` map that treats photo links as pre-work or baseline-condition evidence unless the user says otherwise.
+- Mapped pre-work evidence for overall condition, frame/body provenance, engine condition, electrical condition, rear wheel/brake/control cable condition, cable routing, engine access, original markings, and stamped engine/case number.
+
+Recent GitHub sync points:
+
+- `fe856cd Add Vespa pre-work journal evidence`
+- `8a4b3e2 Append Vespa scanned parts notes`
