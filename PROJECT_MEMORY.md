@@ -20,7 +20,7 @@ The portfolio should help historic homeowners, preservation-minded clients, or c
 
 The user has a public Flickr album for the 1894 office renovation:
 
-https://www.flickr.com/photos/boocher/albums/72177720316928566/
+[1894 office renovation Flickr album](https://www.flickr.com/photos/boocher/albums/72177720316928566/)
 
 The album documents office renovation work in Smithville. It should be used as visual evidence for trade journals. Future photo work should add clear titles and short descriptions directly in Flickr, especially for key milestone images.
 
