@@ -1,0 +1,10 @@
+{
+  "name": "tradejournals",
+  "private": true,
+  "scripts": {
+    "lint:md": "markdownlint-cli2 \"**/*.md\""
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "^0.22.0"
+  }
+}

@@ -27,3 +27,15 @@ Each journal should explain more than what happened. It should capture:
 - the value delivered through preservation-minded craftsmanship
 
 The writing should make the hidden work legible: the structural stabilization, material matching, repair logic, tool choices, and craft judgment that separate preservation work from generic replacement work.
+
+## Markdown Standards
+
+All `.md` files should follow Markdown best practices and pass Markdownlint before changes are committed.
+
+Run:
+
+```sh
+npm run lint:md
+```
+
+The lint rule is intentionally prose-friendly: line length is not enforced, but structure, spacing, headings, lists, fenced code blocks, and link formatting are checked.
