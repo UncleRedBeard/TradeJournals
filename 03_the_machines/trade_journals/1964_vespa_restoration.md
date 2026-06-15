@@ -48,7 +48,7 @@ Initial observations and work prompts:
 Additional scanned notes:
 
 - Engine serial reference:
-  - VBB2 6?8? / 238094. The middle characters are partially unclear in the scan.
+  - VBB2 [6||8] / 238094
 - Vespa year: 1964.
 - Vespa model: 150.
 - Replacement parts list:
