@@ -1,0 +1,296 @@
+[
+  {
+    "album": "vespa",
+    "title": "Content from 1964 Vespa",
+    "count": 5,
+    "rows": [
+      {
+        "title": "20230610_143031",
+        "link": "https://www.flickr.com/photos/boocher/52969685443/in/set-72177720305371229/",
+        "date_taken": "2023-06-10T14:30:31-08:00",
+        "src": "https://live.staticflickr.com/65535/52969685443_742d3e11d9_z.jpg",
+        "image": "assets/flickr/vespa/01.jpg"
+      },
+      {
+        "title": "20230610_124732",
+        "link": "https://www.flickr.com/photos/boocher/52969685373/in/set-72177720305371229/",
+        "date_taken": "2023-06-10T12:47:32-08:00",
+        "src": "https://live.staticflickr.com/65535/52969685373_b39e182703_z.jpg",
+        "image": "assets/flickr/vespa/02.jpg"
+      },
+      {
+        "title": "20230610_143047",
+        "link": "https://www.flickr.com/photos/boocher/52969603115/in/set-72177720305371229/",
+        "date_taken": "2023-06-10T14:30:47-08:00",
+        "src": "https://live.staticflickr.com/65535/52969603115_d7e4a285ec_z.jpg",
+        "image": "assets/flickr/vespa/03.jpg"
+      },
+      {
+        "title": "20230610_124745",
+        "link": "https://www.flickr.com/photos/boocher/52969603025/in/set-72177720305371229/",
+        "date_taken": "2023-06-10T12:47:46-08:00",
+        "src": "https://live.staticflickr.com/65535/52969603025_574a913d58_z.jpg",
+        "image": "assets/flickr/vespa/04.jpg"
+      },
+      {
+        "title": "20230610_115415",
+        "link": "https://www.flickr.com/photos/boocher/52969602875/in/set-72177720305371229/",
+        "date_taken": "2023-06-10T11:54:15-08:00",
+        "src": "https://live.staticflickr.com/65535/52969602875_2ccb0b8ac6_z.jpg",
+        "image": "assets/flickr/vespa/05.jpg"
+      }
+    ]
+  },
+  {
+    "album": "master-bath",
+    "title": "Content from Home Reno - Master Bath",
+    "count": 5,
+    "rows": [
+      {
+        "title": "20230319_172559",
+        "link": "https://www.flickr.com/photos/boocher/52758277971/in/set-72177720306187803/",
+        "date_taken": "2023-03-19T17:26:00-08:00",
+        "src": "https://live.staticflickr.com/65535/52758277971_8887d50799_z.jpg",
+        "image": "assets/flickr/master-bath/01.jpg"
+      },
+      {
+        "title": "20230319_172557",
+        "link": "https://www.flickr.com/photos/boocher/52757736592/in/set-72177720306187803/",
+        "date_taken": "2023-03-19T17:25:58-08:00",
+        "src": "https://live.staticflickr.com/65535/52757736592_12a07388c3_z.jpg",
+        "image": "assets/flickr/master-bath/02.jpg"
+      },
+      {
+        "title": "20230319_172544",
+        "link": "https://www.flickr.com/photos/boocher/52757736587/in/set-72177720306187803/",
+        "date_taken": "2023-03-19T17:25:45-08:00",
+        "src": "https://live.staticflickr.com/65535/52757736587_f58d933293_z.jpg",
+        "image": "assets/flickr/master-bath/03.jpg"
+      },
+      {
+        "title": "20230319_172527",
+        "link": "https://www.flickr.com/photos/boocher/52758761333/in/set-72177720306187803/",
+        "date_taken": "2023-03-19T17:25:27-08:00",
+        "src": "https://live.staticflickr.com/65535/52758761333_56f9d119d7_z.jpg",
+        "image": "assets/flickr/master-bath/04.jpg"
+      },
+      {
+        "title": "20230319_172539",
+        "link": "https://www.flickr.com/photos/boocher/52758525374/in/set-72177720306187803/",
+        "date_taken": "2023-03-19T17:25:40-08:00",
+        "src": "https://live.staticflickr.com/65535/52758525374_3d920b46b4_z.jpg",
+        "image": "assets/flickr/master-bath/05.jpg"
+      }
+    ]
+  },
+  {
+    "album": "guest-bath",
+    "title": "Content from Home Reno - Guest Bath",
+    "count": 5,
+    "rows": [
+      {
+        "title": "20240413_170843",
+        "link": "https://www.flickr.com/photos/boocher/53680739170/in/set-72177720314827829/",
+        "date_taken": "2024-04-13T17:08:43-08:00",
+        "src": "https://live.staticflickr.com/65535/53680739170_a1b1b49ec5_z.jpg",
+        "image": "assets/flickr/guest-bath/01.jpg"
+      },
+      {
+        "title": "20240413_170818",
+        "link": "https://www.flickr.com/photos/boocher/53680503668/in/set-72177720314827829/",
+        "date_taken": "2024-04-13T17:08:18-08:00",
+        "src": "https://live.staticflickr.com/65535/53680503668_fca9f0cd89_z.jpg",
+        "image": "assets/flickr/guest-bath/02.jpg"
+      },
+      {
+        "title": "20240413_170822",
+        "link": "https://www.flickr.com/photos/boocher/53679416987/in/set-72177720314827829/",
+        "date_taken": "2024-04-13T17:08:22-08:00",
+        "src": "https://live.staticflickr.com/65535/53679416987_b3e3cbc6a2_z.jpg",
+        "image": "assets/flickr/guest-bath/03.jpg"
+      },
+      {
+        "title": "20240416_161701",
+        "link": "https://www.flickr.com/photos/boocher/53680739260/in/set-72177720314827829/",
+        "date_taken": "2024-04-16T16:17:01-08:00",
+        "src": "https://live.staticflickr.com/65535/53680739260_abb55f7928_z.jpg",
+        "image": "assets/flickr/guest-bath/04.jpg"
+      },
+      {
+        "title": "20240416_161653",
+        "link": "https://www.flickr.com/photos/boocher/53680739235/in/set-72177720314827829/",
+        "date_taken": "2024-04-16T16:16:53-08:00",
+        "src": "https://live.staticflickr.com/65535/53680739235_1b634f8556_z.jpg",
+        "image": "assets/flickr/guest-bath/05.jpg"
+      }
+    ]
+  },
+  {
+    "album": "office",
+    "title": "Content from Home Reno - Office",
+    "count": 5,
+    "rows": [
+      {
+        "title": "20240702_132741",
+        "link": "https://www.flickr.com/photos/boocher/53921322250/in/set-72177720316928566/",
+        "date_taken": "2024-07-02T13:27:41-08:00",
+        "src": "https://live.staticflickr.com/65535/53921322250_10f0ea7c54_z.jpg",
+        "image": "assets/flickr/office/01.jpg"
+      },
+      {
+        "title": "20240812_150425",
+        "link": "https://www.flickr.com/photos/boocher/53921322245/in/set-72177720316928566/",
+        "date_taken": "2024-08-12T15:04:25-08:00",
+        "src": "https://live.staticflickr.com/65535/53921322245_6d56e49f72_z.jpg",
+        "image": "assets/flickr/office/02.jpg"
+      },
+      {
+        "title": "20240812_150453",
+        "link": "https://www.flickr.com/photos/boocher/53921322215/in/set-72177720316928566/",
+        "date_taken": "2024-08-12T15:04:53-08:00",
+        "src": "https://live.staticflickr.com/65535/53921322215_2b200f6138_z.jpg",
+        "image": "assets/flickr/office/03.jpg"
+      },
+      {
+        "title": "20240812_150410",
+        "link": "https://www.flickr.com/photos/boocher/53921225999/in/set-72177720316928566/",
+        "date_taken": "2024-08-12T15:04:10-08:00",
+        "src": "https://live.staticflickr.com/65535/53921225999_e0551b7304_z.jpg",
+        "image": "assets/flickr/office/04.jpg"
+      },
+      {
+        "title": "20240702_132733",
+        "link": "https://www.flickr.com/photos/boocher/53919981267/in/set-72177720316928566/",
+        "date_taken": "2024-07-02T13:27:34-08:00",
+        "src": "https://live.staticflickr.com/65535/53919981267_a9b22ff486_z.jpg",
+        "image": "assets/flickr/office/05.jpg"
+      }
+    ]
+  },
+  {
+    "album": "studio-office",
+    "title": "Content from Home Reno - Studio | Office",
+    "count": 5,
+    "rows": [
+      {
+        "title": "20220116_160620",
+        "link": "https://www.flickr.com/photos/boocher/52705240435/in/set-72177720306207693/",
+        "date_taken": "2022-01-16T16:06:20-08:00",
+        "src": "https://live.staticflickr.com/65535/52705240435_788af6e715_z.jpg",
+        "image": "assets/flickr/studio-office/01.jpg"
+      },
+      {
+        "title": "20220116_160615",
+        "link": "https://www.flickr.com/photos/boocher/52705240380/in/set-72177720306207693/",
+        "date_taken": "2022-01-16T16:06:15-08:00",
+        "src": "https://live.staticflickr.com/65535/52705240380_c1ebab2b76_z.jpg",
+        "image": "assets/flickr/studio-office/02.jpg"
+      },
+      {
+        "title": "20220116_160602",
+        "link": "https://www.flickr.com/photos/boocher/52705240355/in/set-72177720306207693/",
+        "date_taken": "2022-01-16T16:06:02-08:00",
+        "src": "https://live.staticflickr.com/65535/52705240355_631a2f479c_z.jpg",
+        "image": "assets/flickr/studio-office/03.jpg"
+      },
+      {
+        "title": "20220116_160549",
+        "link": "https://www.flickr.com/photos/boocher/52704298727/in/set-72177720306207693/",
+        "date_taken": "2022-01-16T16:05:49-08:00",
+        "src": "https://live.staticflickr.com/65535/52704298727_3c07113bd7_z.jpg",
+        "image": "assets/flickr/studio-office/04.jpg"
+      },
+      {
+        "title": "20220109_174057",
+        "link": "https://www.flickr.com/photos/boocher/52705240320/in/set-72177720306207693/",
+        "date_taken": "2022-01-09T17:40:57-08:00",
+        "src": "https://live.staticflickr.com/65535/52705240320_5abbd4d9a4_z.jpg",
+        "image": "assets/flickr/studio-office/05.jpg"
+      }
+    ]
+  },
+  {
+    "album": "master-bedroom",
+    "title": "Content from Home Reno - Master Bedroom",
+    "count": 5,
+    "rows": [
+      {
+        "title": "20230729_113740",
+        "link": "https://www.flickr.com/photos/boocher/55339173284/in/set-72177720306914767/",
+        "date_taken": "2023-07-29T11:37:40-08:00",
+        "src": "https://live.staticflickr.com/65535/55339173284_a9e95690a1_z.jpg",
+        "image": "assets/flickr/master-bedroom/01.jpg"
+      },
+      {
+        "title": "20230729_113722",
+        "link": "https://www.flickr.com/photos/boocher/55339114293/in/set-72177720306914767/",
+        "date_taken": "2023-07-29T11:37:22-08:00",
+        "src": "https://live.staticflickr.com/65535/55339114293_ec4d5ef51a_z.jpg",
+        "image": "assets/flickr/master-bedroom/02.jpg"
+      },
+      {
+        "title": "20230729_115232",
+        "link": "https://www.flickr.com/photos/boocher/55338960476/in/set-72177720306914767/",
+        "date_taken": "2023-07-29T11:52:32-08:00",
+        "src": "https://live.staticflickr.com/65535/55338960476_e24ebf1bba_z.jpg",
+        "image": "assets/flickr/master-bedroom/03.jpg"
+      },
+      {
+        "title": "20230729_115241",
+        "link": "https://www.flickr.com/photos/boocher/55338034532/in/set-72177720306914767/",
+        "date_taken": "2023-07-29T11:52:42-08:00",
+        "src": "https://live.staticflickr.com/65535/55338034532_740d23dbf5_z.jpg",
+        "image": "assets/flickr/master-bedroom/04.jpg"
+      },
+      {
+        "title": "20230729_115248",
+        "link": "https://www.flickr.com/photos/boocher/55339173204/in/set-72177720306914767/",
+        "date_taken": "2023-07-29T11:52:48-08:00",
+        "src": "https://live.staticflickr.com/65535/55339173204_becedf7b79_z.jpg",
+        "image": "assets/flickr/master-bedroom/05.jpg"
+      }
+    ]
+  },
+  {
+    "album": "master-bedroom-take-2",
+    "title": "Content from Home Reno - Master Bedroom - Take 2",
+    "count": 5,
+    "rows": [
+      {
+        "title": "20240811_134137",
+        "link": "https://www.flickr.com/photos/boocher/53921261865/in/set-72177720319515928/",
+        "date_taken": "2024-08-11T13:41:37-08:00",
+        "src": "https://live.staticflickr.com/65535/53921261865_c0b57e3f52_z.jpg",
+        "image": "assets/flickr/master-bedroom-take-2/01.jpg"
+      },
+      {
+        "title": "20240811_153752",
+        "link": "https://www.flickr.com/photos/boocher/53921261485/in/set-72177720319515928/",
+        "date_taken": "2024-08-11T15:37:53-08:00",
+        "src": "https://live.staticflickr.com/65535/53921261485_6328ec1c5f_z.jpg",
+        "image": "assets/flickr/master-bedroom-take-2/02.jpg"
+      },
+      {
+        "title": "20240811_164940",
+        "link": "https://www.flickr.com/photos/boocher/53921260980/in/set-72177720319515928/",
+        "date_taken": "2024-08-11T16:49:41-08:00",
+        "src": "https://live.staticflickr.com/65535/53921260980_3cbe09b73a_z.jpg",
+        "image": "assets/flickr/master-bedroom-take-2/03.jpg"
+      },
+      {
+        "title": "20240811_164945",
+        "link": "https://www.flickr.com/photos/boocher/53921260955/in/set-72177720319515928/",
+        "date_taken": "2024-08-11T16:49:46-08:00",
+        "src": "https://live.staticflickr.com/65535/53921260955_6bea86c8d0_z.jpg",
+        "image": "assets/flickr/master-bedroom-take-2/04.jpg"
+      },
+      {
+        "title": "20240811_153739",
+        "link": "https://www.flickr.com/photos/boocher/53921063683/in/set-72177720319515928/",
+        "date_taken": "2024-08-11T15:37:39-08:00",
+        "src": "https://live.staticflickr.com/65535/53921063683_f116254235_z.jpg",
+        "image": "assets/flickr/master-bedroom-take-2/05.jpg"
+      }
+    ]
+  }
+]

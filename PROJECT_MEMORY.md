@@ -80,6 +80,10 @@ The portfolio should present an ecosystem of preservation: living in, working in
 
 The repository now has tracked pillar folders and `trade_journals` folders for each major portfolio area. Markdownlint is configured and should be run with `npm run lint:md` before commits.
 
+Project command alias:
+
+- `make it so` means commit the current project changes and sync them with GitHub.
+
 The active first journal is `03_the_machines/trade_journals/1964_vespa_restoration.md`. It contains:
 
 - A first journal entry based on scanned handwritten notes found in the Vespa side storage compartment.

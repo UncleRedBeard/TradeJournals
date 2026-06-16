@@ -4,6 +4,50 @@
 
 Catalog Lomography albums that represent film photography evidence across the lens archive. This entry separates 35mm Lomography plastic-camera albums, 120 film Agfa Isolette albums, and other film formats as they surface.
 
+## Best of Film Work
+
+This first-pass selection is meant to behave like a portfolio doorway into the film archive: five images that show range across 120 film, 616 film, street portraiture, live music, and redscale mood work. Local image copies are stored under `05_the_lens/assets/lomography/best-of-film-work/`; each selection keeps its Lomography source link for provenance.
+
+### Dance Silhouette
+
+![Dance silhouette](../assets/lomography/best-of-film-work/dance-silhouette.jpg)
+
+Source: [Dance / photo 21832746](https://www.lomography.com/homes/texasredd/albums/2137404-dance/21832746)
+
+This is the cleanest fine-art frame in the first curation pass: strong silhouette, beautiful negative space, and a body shape that reads immediately through the softness of the Isolette/120 look.
+
+### Kodak Bellows State Theatre
+
+![Kodak Six-Three Pocket Bellows State Theatre](../assets/lomography/best-of-film-work/kodak-bellows-state-theatre.jpg)
+
+Source: [Kodak Six-Three Pocket Bellows / photo 14651055](https://www.lomography.com/homes/texasredd/albums/1773045-kodak-six-three-pocket-bellows-circa-1913/14651055)
+
+This carries the artifact quality of the archive especially well. The camera age, color drift, vertical sign, and architectural edge make the image feel like an object from another time.
+
+### Street Style Red Jacket
+
+![Street Style red jacket portrait](../assets/lomography/best-of-film-work/street-style-red-jacket.jpg)
+
+Source: [Street Style / photo 12953787](https://www.lomography.com/homes/texasredd/albums/1691772-street-style/12953787)
+
+This is the strongest human portrait from the first pass. The direct gaze, simple color story, and imperfect Diana F+ edges keep the frame intimate without making it feel overworked.
+
+### Caveau Drummer
+
+![Caveau de la Huchette drummer](../assets/lomography/best-of-film-work/caveau-drummer.jpg)
+
+Source: [Caveau de la Huchette / photo 12952670](https://www.lomography.com/homes/texasredd/albums/1691678-caveau-de-la-huchette/12952670)
+
+This is the strongest "inside the room" documentary frame from the jazz/performance work: warm, close, active, and loose in a way that matches the subject.
+
+### Paris en Rouge Violinist
+
+![Paris en Rouge violinist](../assets/lomography/best-of-film-work/paris-en-rouge-violinist.jpg)
+
+Source: [Paris en Rouge / photo 12952511](https://www.lomography.com/homes/texasredd/albums/1691668-paris-en-rouge/12952511)
+
+The redscale palette works hard here in a good way. It gives the frame a nocturnal, remembered quality while the violinist gives the abstraction a clear human anchor.
+
 ## Format Notes
 
 - `Isolette - First Shots` and `X-Mas 2016 Smithville -> Sacramento Road Trip` represent 120 film work from the 1961 Agfa Isolette.

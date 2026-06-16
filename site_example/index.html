@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TradeJournals Portfolio Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+        <a class="brand" href="#top">TradeJournals</a>
+      <nav aria-label="Primary navigation">
+        <a href="#ask-journals">Ask</a>
+        <a href="#work">Work</a>
+        <a href="#journals">Journals</a>
+        <a href="#journal-evidence">Journal Evidence</a>
+        <a href="#evidence">Evidence</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          src="../05_the_lens/assets/lomography/best-of-film-work/dance-silhouette.jpg"
+          alt="Black and white film silhouette of a dancer in a window"
+        >
+        <div class="hero-copy">
+          <p class="eyebrow">Craft journal and evidence archive</p>
+          <h1 id="hero-title">Preservation work made visible.</h1>
+          <p>
+            A portfolio prototype generated from the TradeJournals source: restoration notes,
+            film evidence, project categories, and provenance links.
+          </p>
+        </div>
+      </section>
+
+      <section class="section intro" aria-labelledby="intro-title">
+        <div>
+          <p class="eyebrow">Source of truth</p>
+          <h2 id="intro-title">Markdown journals become public stories.</h2>
+        </div>
+        <p>
+          The repository already carries the structure a site needs: project pillars, trade journals,
+          visual evidence, local image assets, and links back to the original Flickr or Lomography records.
+          This prototype keeps that archival logic but presents it as a polished craft portfolio.
+        </p>
+      </section>
+
+      <section class="section ask-journals" id="ask-journals" aria-labelledby="ask-title">
+        <div class="section-heading">
+          <p class="eyebrow">Ask the journals</p>
+          <h2 id="ask-title">Search the archive like a conversation.</h2>
+        </div>
+        <div class="chat-shell">
+          <div class="chat-panel" aria-live="polite">
+            <div class="chat-message assistant">
+              <span>Journal index</span>
+              <p>
+                I can connect restoration notes, film work, Flickr albums, and source sections from this sample archive.
+              </p>
+            </div>
+            <div class="chat-log" id="chat-log"></div>
+          </div>
+          <aside class="chat-side">
+            <div class="prompt-grid" aria-label="Suggested journal questions">
+              <button type="button" data-question="What evidence covers Vespa electrical work?">Vespa electrical work</button>
+              <button type="button" data-question="Show the office floor refinishing path">Office floors</button>
+              <button type="button" data-question="Which albums document bath work?">Bath work</button>
+              <button type="button" data-question="What are the strongest film images?">Film work</button>
+            </div>
+            <form class="chat-form" id="chat-form">
+              <label for="journal-query">Journal query</label>
+              <div>
+                <input
+                  id="journal-query"
+                  name="query"
+                  type="search"
+                  autocomplete="off"
+                  placeholder="Vespa wiring, floor refinishing, Isolette film..."
+                >
+                <button type="submit">Ask</button>
+              </div>
+            </form>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section work" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio pillars</p>
+          <h2 id="work-title">One preservation practice, several materials.</h2>
+        </div>
+        <div class="pillar-grid">
+          <article>
+            <span>01</span>
+            <h3>The Residence</h3>
+            <p>Historic home restoration, framing, trim, shiplap, bath work, office renovation, and old-house repair judgment.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>The Machines</h3>
+            <p>Vintage scooter restoration, Vespa bodywork, mechanical systems, electrical cleanup, and preservation-minded replacement decisions.</p>
+          </article>
+          <article>
+            <span>05</span>
+            <h3>The Lens</h3>
+            <p>Film photography as both craft practice and visual evidence, including 35mm, 120, 616, Lomography, and Isolette work.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section feature" id="journals" aria-labelledby="journals-title">
+        <div class="section-heading">
+          <p class="eyebrow">Featured journal</p>
+          <h2 id="journals-title">1964 Vespa restoration</h2>
+        </div>
+        <div class="feature-layout">
+          <div>
+            <p>
+              The Vespa journal documents the scooter as a preservation-minded mechanical project:
+              original condition, rust assessment, body alignment, engine work, electrical routing,
+              controls, and the tradeoffs between saving parts and replacing them.
+            </p>
+            <dl>
+              <div>
+                <dt>Frame serial</dt>
+                <dd>BA276439</dd>
+              </div>
+              <div>
+                <dt>Model note</dt>
+                <dd>1964 Vespa 150</dd>
+              </div>
+              <div>
+                <dt>Evidence mode</dt>
+                <dd>Notebook scans, Flickr references, and repair observations</dd>
+              </div>
+            </dl>
+          </div>
+          <blockquote>
+            Treat wiring quality as a "Think NASA Nerd" standard.
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="section journal-evidence" id="journal-evidence" aria-labelledby="journal-evidence-title">
+        <div class="section-heading">
+          <p class="eyebrow">Journal evidence</p>
+          <h2 id="journal-evidence-title">Flickr albums paired with their trade journals.</h2>
+        </div>
+        <div class="journal-list">
+          <article class="journal-panel">
+            <header>
+              <div>
+                <p class="eyebrow">03 / The Machines</p>
+                <h3>1964 Vespa Restoration</h3>
+                <p>
+                  Mechanical restoration evidence covering bodywork, engine upgrades, electrical routing,
+                  and preservation decisions.
+                </p>
+              </div>
+              <a href="https://www.flickr.com/photos/boocher/albums/72177720305371229/">1964 Vespa album</a>
+            </header>
+            <div class="album-strip">
+              <h4>1964 Vespa</h4>
+              <div class="mini-gallery">
+                <a href="https://www.flickr.com/photos/boocher/52969685443/in/set-72177720305371229/"><img src="assets/flickr/vespa/01.jpg" alt="1964 Vespa restoration Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/52969685373/in/set-72177720305371229/"><img src="assets/flickr/vespa/02.jpg" alt="1964 Vespa restoration Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/52969603115/in/set-72177720305371229/"><img src="assets/flickr/vespa/03.jpg" alt="1964 Vespa restoration Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/52969603025/in/set-72177720305371229/"><img src="assets/flickr/vespa/04.jpg" alt="1964 Vespa restoration Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/52969602875/in/set-72177720305371229/"><img src="assets/flickr/vespa/05.jpg" alt="1964 Vespa restoration Flickr evidence 5"></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="journal-panel">
+            <header>
+              <div>
+                <p class="eyebrow">01 / The Residence</p>
+                <h3>Master Bath Restoration</h3>
+                <p>
+                  Long-running bathroom renovation notes, including electrical lessons, finish prep,
+                  and the practical discoveries that shaped later work.
+                </p>
+              </div>
+              <a href="https://www.flickr.com/photos/boocher/albums/72177720306187803/">Master Bath album</a>
+            </header>
+            <div class="album-strip">
+              <h4>Home Reno - Master Bath</h4>
+              <div class="mini-gallery">
+                <a href="https://www.flickr.com/photos/boocher/52758277971/in/set-72177720306187803/"><img src="assets/flickr/master-bath/01.jpg" alt="Master bath restoration Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/52757736592/in/set-72177720306187803/"><img src="assets/flickr/master-bath/02.jpg" alt="Master bath restoration Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/52757736587/in/set-72177720306187803/"><img src="assets/flickr/master-bath/03.jpg" alt="Master bath restoration Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/52758761333/in/set-72177720306187803/"><img src="assets/flickr/master-bath/04.jpg" alt="Master bath restoration Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/52758525374/in/set-72177720306187803/"><img src="assets/flickr/master-bath/05.jpg" alt="Master bath restoration Flickr evidence 5"></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="journal-panel">
+            <header>
+              <div>
+                <p class="eyebrow">01 / The Residence</p>
+                <h3>Guest Bath Restoration</h3>
+                <p>
+                  Guest bath progress evidence organized as a repair record: demolition, finish work,
+                  trim conditions, and fixture-area decisions.
+                </p>
+              </div>
+              <a href="https://www.flickr.com/photos/boocher/albums/72177720314827829/">Guest Bath album</a>
+            </header>
+            <div class="album-strip">
+              <h4>Home Reno - Guest Bath</h4>
+              <div class="mini-gallery">
+                <a href="https://www.flickr.com/photos/boocher/53680739170/in/set-72177720314827829/"><img src="assets/flickr/guest-bath/01.jpg" alt="Guest bath restoration Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/53680503668/in/set-72177720314827829/"><img src="assets/flickr/guest-bath/02.jpg" alt="Guest bath restoration Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/53679416987/in/set-72177720314827829/"><img src="assets/flickr/guest-bath/03.jpg" alt="Guest bath restoration Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/53680739260/in/set-72177720314827829/"><img src="assets/flickr/guest-bath/04.jpg" alt="Guest bath restoration Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/53680739235/in/set-72177720314827829/"><img src="assets/flickr/guest-bath/05.jpg" alt="Guest bath restoration Flickr evidence 5"></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="journal-panel">
+            <header>
+              <div>
+                <p class="eyebrow">01 / The Residence</p>
+                <h3>Office Restoration and Studio Conversion</h3>
+                <p>
+                  Two related albums track the room as both office and studio, with floor refinishing,
+                  sanding progression, and use-change evidence.
+                </p>
+              </div>
+              <a href="https://www.flickr.com/photos/boocher/albums/72177720316928566/">Office album</a>
+            </header>
+            <div class="album-strip">
+              <h4>Home Reno - Office</h4>
+              <div class="mini-gallery">
+                <a href="https://www.flickr.com/photos/boocher/53921322250/in/set-72177720316928566/"><img src="assets/flickr/office/01.jpg" alt="Office restoration Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921322245/in/set-72177720316928566/"><img src="assets/flickr/office/02.jpg" alt="Office restoration Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921322215/in/set-72177720316928566/"><img src="assets/flickr/office/03.jpg" alt="Office restoration Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921225999/in/set-72177720316928566/"><img src="assets/flickr/office/04.jpg" alt="Office restoration Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/53919981267/in/set-72177720316928566/"><img src="assets/flickr/office/05.jpg" alt="Office restoration Flickr evidence 5"></a>
+              </div>
+            </div>
+            <div class="album-strip">
+              <h4>Home Reno - Studio | Office</h4>
+              <div class="mini-gallery">
+                <a href="https://www.flickr.com/photos/boocher/52705240435/in/set-72177720306207693/"><img src="assets/flickr/studio-office/01.jpg" alt="Studio office conversion Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/52705240380/in/set-72177720306207693/"><img src="assets/flickr/studio-office/02.jpg" alt="Studio office conversion Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/52705240355/in/set-72177720306207693/"><img src="assets/flickr/studio-office/03.jpg" alt="Studio office conversion Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/52704298727/in/set-72177720306207693/"><img src="assets/flickr/studio-office/04.jpg" alt="Studio office conversion Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/52705240320/in/set-72177720306207693/"><img src="assets/flickr/studio-office/05.jpg" alt="Studio office conversion Flickr evidence 5"></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="journal-panel">
+            <header>
+              <div>
+                <p class="eyebrow">01 / The Residence</p>
+                <h3>Master Bedroom Restoration</h3>
+                <p>
+                  Bedroom repair and finish-work evidence split across the original album and a second
+                  pass that documents later progress.
+                </p>
+              </div>
+              <a href="https://www.flickr.com/photos/boocher/albums/72177720306914767/">Master Bedroom album</a>
+            </header>
+            <div class="album-strip">
+              <h4>Home Reno - Master Bedroom</h4>
+              <div class="mini-gallery">
+                <a href="https://www.flickr.com/photos/boocher/55339173284/in/set-72177720306914767/"><img src="assets/flickr/master-bedroom/01.jpg" alt="Master bedroom restoration Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339114293/in/set-72177720306914767/"><img src="assets/flickr/master-bedroom/02.jpg" alt="Master bedroom restoration Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/55338960476/in/set-72177720306914767/"><img src="assets/flickr/master-bedroom/03.jpg" alt="Master bedroom restoration Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/55338034532/in/set-72177720306914767/"><img src="assets/flickr/master-bedroom/04.jpg" alt="Master bedroom restoration Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339173264/in/set-72177720306914767/"><img src="assets/flickr/master-bedroom/05.jpg" alt="Master bedroom restoration Flickr evidence 5"></a>
+              </div>
+            </div>
+            <div class="album-strip">
+              <h4>Home Reno - Master Bedroom - Take 2</h4>
+              <div class="mini-gallery">
+                <a href="https://www.flickr.com/photos/boocher/53921261865/in/set-72177720319515928/"><img src="assets/flickr/master-bedroom-take-2/01.jpg" alt="Master bedroom take two Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921261485/in/set-72177720319515928/"><img src="assets/flickr/master-bedroom-take-2/02.jpg" alt="Master bedroom take two Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921260980/in/set-72177720319515928/"><img src="assets/flickr/master-bedroom-take-2/03.jpg" alt="Master bedroom take two Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921260955/in/set-72177720319515928/"><img src="assets/flickr/master-bedroom-take-2/04.jpg" alt="Master bedroom take two Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921063683/in/set-72177720319515928/"><img src="assets/flickr/master-bedroom-take-2/05.jpg" alt="Master bedroom take two Flickr evidence 5"></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section evidence" id="evidence" aria-labelledby="evidence-title">
+        <div class="section-heading">
+          <p class="eyebrow">Best of film work</p>
+          <h2 id="evidence-title">A visual doorway into the lens archive.</h2>
+        </div>
+        <div class="photo-grid">
+          <figure>
+            <img src="../05_the_lens/assets/lomography/best-of-film-work/dance-silhouette.jpg" alt="Dancer silhouette in black and white film">
+            <figcaption>
+              <strong>Dance Silhouette</strong>
+              <span>120 film, Isolette atmosphere, fine-art shape.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="../05_the_lens/assets/lomography/best-of-film-work/kodak-bellows-state-theatre.jpg" alt="State Theatre sign on aged 616 film">
+            <figcaption>
+              <strong>Kodak Bellows State Theatre</strong>
+              <span>616 film artifact quality and architectural memory.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="../05_the_lens/assets/lomography/best-of-film-work/street-style-red-jacket.jpg" alt="Street portrait of a person in a red jacket">
+            <figcaption>
+              <strong>Street Style Red Jacket</strong>
+              <span>Direct portrait, simple color story, Diana F+ edge.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="../05_the_lens/assets/lomography/best-of-film-work/caveau-drummer.jpg" alt="Jazz drummer in a dark club">
+            <figcaption>
+              <strong>Caveau Drummer</strong>
+              <span>Close documentary frame with warmth and motion.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="../05_the_lens/assets/lomography/best-of-film-work/paris-en-rouge-violinist.jpg" alt="Redscale film photo of a violinist">
+            <figcaption>
+              <strong>Paris en Rouge Violinist</strong>
+              <span>Redscale mood with a clear human anchor.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section source-model" aria-labelledby="source-title">
+        <div class="section-heading">
+          <p class="eyebrow">How this would scale</p>
+          <h2 id="source-title">GitHub remains the archive. The site becomes the public surface.</h2>
+        </div>
+        <div class="model-grid">
+          <div>
+            <h3>Markdown</h3>
+            <p>Trade journals stay readable, versioned, and easy to update.</p>
+          </div>
+          <div>
+            <h3>Assets</h3>
+            <p>Selected images render locally, with original source links preserved.</p>
+          </div>
+          <div>
+            <h3>Generated pages</h3>
+            <p>A static site can turn journal sections into project pages, indexes, and portfolio views.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
