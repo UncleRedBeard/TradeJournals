@@ -60,6 +60,153 @@ Additional scanned notes:
   - Tail light assembly.
   - Gasket or rubber grommet for petcock lever.
 
+### 2022-10-29 - Make Ready For Paint
+
+Source: notebook photos `PXL_20260615_234337611.jpg` and `PXL_20260615_234428826.jpg`.
+
+Paint preparation notes:
+
+- Cowl panel, left storage side:
+  - New lock needed for the access door.
+- Tail light:
+  - Tail light can be saved.
+  - Clean all contacts.
+  - Rewire.
+  - Treat wiring quality as a "Think NASA Nerd" standard.
+  - Replace grommet.
+- Storage panel:
+  - Replace internal cotter pin.
+
+### 2022-11-02 - Storage Panel, Engine Cowl, And Front Body Assessment
+
+Source: notebook photos `PXL_20260615_234432974.jpg`, `PXL_20260615_234442598.jpg`, and `PXL_20260615_234446270.jpg`.
+
+Storage panel and general service notes:
+
+- Storage panel has small rust holes at the rear end near the tear-drop point.
+- Install a new speedometer cable.
+- Clean and repack all bearings.
+- General body note: bend in rail near inside front hole 2.
+- Tires need a new inner tube.
+
+Engine cowl observations:
+
+- Front outside shoulder may have body filler.
+- Tear-drop point has a small break or separation in the metal.
+- Outside lower front has a roughly 1 inch rust spot that appears to be surface rust only.
+
+Front body and front end notes:
+
+- Front end appears to have taken a small hit.
+- Front fender is bent around the steering column.
+- Try to reshape the fender before replacing it.
+- Two bolts had to be cut from the underside mounts to the front fender.
+- Remove the front fender.
+- Check whether the bearing race needs to be removed.
+- Clean steering components.
+- Wire brush the underside of the fender.
+- Reference Haynes manual Fig. 5.1 for the front wheel and brake assembly.
+- Front wheel and brake assembly parts noted:
+  - Part 34: bolt.
+  - Part 19: plain washers.
+  - Part 35: lock washer.
+  - Part 36: mudguard securing nut.
+
+### 2022-11-03 - Storage Cowl And Body Prep
+
+Source: notebook photo `PXL_20260615_234459753.jpg`.
+
+Storage cowl notes:
+
+- Bottom of the cowl near the tear-drop point has rust stippling and holes that go completely through the plates.
+- Storage cowl body work includes rust prep and access door attention.
+- Storage door has no visible rust.
+- Storage cowl was wrapped and ready for paint.
+
+### 2022-11-04 - Handlebar Unit And Storage Cowl Paint Prep
+
+Source: notebook photos `PXL_20260615_234505923.jpg` and `PXL_20260615_234514115.jpg`.
+
+Handlebar and head unit notes:
+
+- Minor surface rust came off with steel wool.
+- Handlebar/head unit was wrapped and ready for paint.
+
+Storage cowl and body notes:
+
+- Interior tear-drop point bottom has 8 or more small rust holes.
+- Exterior tear-drop shoulder has a paint chip.
+- Exterior tear-drop bottom noted for attention.
+- Several areas have chipped paint:
+  - Glove box flange.
+  - Paint chips at upper corners.
+  - Some minor surface rust.
+- Storage cowl/body was wrapped and ready for paint.
+
+Parts and bin reminder:
+
+- Go through all bins before looking for paint.
+- Center stand is bagged.
+- Internal control wire/cable mount is bagged.
+
+### 2022-11-05 - Steering Column And Front End
+
+Source: notebook photo `PXL_20260615_234517828.jpg`.
+
+Steering column and front end notes:
+
+- Lower race and cup should be replaced.
+- Bearings have some surface rust.
+- Front fender/mudguard is bent at the steering column hole.
+- Check price of a new mudguard.
+
+Front wheel, suspension, and steering head notes:
+
+- Try to repair the bend.
+- Clean steering column.
+- Inspect lower bearing assembly.
+
+### 2022-11-24 - Front Suspension And Steering Head Rust Cleaning
+
+Source: notebook photo `PXL_20260615_234529014.jpg`.
+
+Rust assessment and cleaning notes:
+
+- Most rust is superficial.
+- Some deeper areas are present, but none appear deep enough to require replacing the steering column.
+- Reference Haynes manual Fig. 4.1, front suspension and steering head, page 66.
+- Part table notes:
+  - Part 8, lower oil container: moderate rust; clean and prime.
+  - Part 66, front damper assembly: moderate rust; clean and prime.
+- Continue cleaning rust.
+- Majority of rust is superficial, with some minor spots, but not too bad overall.
+- Brass is working best for the majority of rust removal.
+
+### 2022-11-25 - Continued Front End Cleaning And Paint Prep
+
+Source: notebook photo `PXL_20260615_234532789.jpg`.
+
+Front end and paint preparation notes:
+
+- Continue front end rust cleaning.
+- Reference Haynes Vespa manual Fig. 4.4, chassis components, page 69.
+- Part 31: tool container flap on tool container cowling #37.
+- Paint prep notes:
+  - Paint removal.
+  - Surface conditioning.
+  - Fast Etch.
+
+### 2022-12-03 - Tool Container Flap Paint Removal
+
+Source: notebook photo `PXL_20260615_234543845.MP.jpg`.
+
+Tool container flap paint preparation notes:
+
+- Removed paint from exterior of tool container flap.
+- Brass wire disks work best so far.
+- Applied Eastwood Fast Etch to bare metal.
+- Wrapped in plastic.
+
 ## Visual Evidence
 
 Use this section to map the Flickr album into evidence categories that support the craft story. Each entry should eventually include the Flickr photo title, photo ID or URL, and a short note explaining what the image proves.
