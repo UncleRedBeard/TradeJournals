@@ -82,7 +82,7 @@ The repository now has tracked pillar folders and `trade_journals` folders for e
 
 Project command alias:
 
-- `make it so` means commit the current project changes and sync them with GitHub.
+- `git er done` means commit the current project changes and sync them with GitHub.
 
 The active first journal is `03_the_machines/trade_journals/1964_vespa_restoration.md`. It contains:
 

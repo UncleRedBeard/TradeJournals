@@ -46,4 +46,4 @@ When adding or embedding a Flickr URL, use the Flickr image title as the source 
 
 ## Project Command Aliases
 
-- `make it so` means commit the current project changes and sync them with GitHub.
+- `git er done` means commit the current project changes and sync them with GitHub.
