@@ -39,3 +39,7 @@ npm run lint:md
 ```
 
 The lint rule is intentionally prose-friendly: line length is not enforced, but structure, spacing, headings, lists, fenced code blocks, and link formatting are checked.
+
+### Flickr Evidence Links
+
+When adding or embedding a Flickr URL, use the Flickr image title as the source label. If the title is a timestamp such as `YYYYMMdd_HHMMss`, translate it to `YYYY-MM-DD HH:MM`, drop the seconds, and ignore export or duplicate suffixes such as `(1)` or `-01`. If the image title has extra leading alphabetic characters before the timestamp, disregard those characters and use the photo EXIF capture date/time for the label instead.
