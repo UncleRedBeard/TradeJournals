@@ -68,6 +68,25 @@ class Album:
     photos: list[Photo]
 
 
+@dataclass(frozen=True)
+class PublicAlbum:
+    """Summary record for one album discovered from a Flickr /albums page."""
+
+    title: str
+    url: str
+    album_id: str
+    photo_count: int | None = None
+    view_count: int | None = None
+
+
+@dataclass(frozen=True)
+class AlbumDiscovery:
+    """Result of scanning a public Flickr `/albums` directory."""
+
+    albums: list[PublicAlbum]
+    advertised_total: int | None = None
+
+
 def fetch_text(url: str) -> str:
     """Fetch text from a public URL with a clear user agent.
 
@@ -128,6 +147,28 @@ def normalize_album_url(url: str, album_id: str) -> str:
     return normalized.geturl()
 
 
+def normalize_albums_url(url: str) -> str:
+    """Normalize a Flickr `/albums` directory URL."""
+
+    parsed = urlparse(url)
+    normalized = parsed._replace(
+        query="",
+        fragment="",
+        path=parsed.path.rstrip("/") + "/",
+    )
+    return normalized.geturl()
+
+
+def absolute_flickr_url(base_url: str, path_or_url: str) -> str:
+    """Convert a Flickr-relative path to an absolute URL."""
+
+    if path_or_url.startswith("http://") or path_or_url.startswith("https://"):
+        return path_or_url
+
+    parsed = urlparse(base_url)
+    return f"{parsed.scheme}://{parsed.netloc}{path_or_url}"
+
+
 def build_oembed_url(album_url: str) -> str:
     """Build Flickr's public oEmbed endpoint URL."""
 
@@ -176,6 +217,12 @@ def extract_photo_id(link: str) -> str:
 
     match = re.search(r"/photos/[^/]+/(\d+)/", link)
     return match.group(1) if match else "unknown"
+
+
+def decode_html_attribute(value: str) -> str:
+    """Decode HTML entities used in Flickr attributes."""
+
+    return html.unescape(value).strip()
 
 
 def extract_thumbnail_alt(embed_html: str) -> str:
@@ -280,6 +327,181 @@ def fetch_album(album_url: str, title_override: str | None) -> Album:
         photo_count=len(photos),
         photos=photos,
     )
+
+
+def extract_album_cards(albums_html: str, albums_url: str) -> list[PublicAlbum]:
+    """Extract visible public album cards from a Flickr `/albums` page.
+
+    This intentionally starts from server-rendered album links instead of the
+    large client model blob. The links are simpler and represent what the page
+    exposes publicly without requiring the logged-in browser.
+    """
+
+    albums_by_id: dict[str, PublicAlbum] = {}
+    pattern = re.compile(
+        r'href="(?P<path>/photos/[^"]+/(?:albums|sets)/(?P<id>\d+))"'
+        r'\s+title="(?P<title>[^"]*)"',
+    )
+
+    for match in pattern.finditer(albums_html):
+        album_id = match.group("id")
+
+        # Keep the first card for each album. Flickr repeats some links in
+        # scripts and interaction views, and duplicate imports would be noisy.
+        if album_id in albums_by_id:
+            continue
+
+        raw_url = absolute_flickr_url(albums_url, match.group("path"))
+        album_url = normalize_album_url(raw_url, album_id)
+        title = decode_html_attribute(match.group("title"))
+        albums_by_id[album_id] = PublicAlbum(
+            title=title,
+            url=album_url,
+            album_id=album_id,
+        )
+
+    return list(albums_by_id.values())
+
+
+def extract_album_counts(albums_html: str) -> dict[str, tuple[int | None, int | None]]:
+    """Extract photo and view counts from Flickr's embedded set models."""
+
+    counts_by_id: dict[str, tuple[int | None, int | None]] = {}
+    pattern = re.compile(
+        r'"_flickrModelRegistry":"set-models".*?'
+        r'"photoCount":(?P<photo_count>\d+).*?'
+        r'"viewCount":(?P<view_count>\d+).*?'
+        r'"id":"(?P<id>\d+)"',
+        re.DOTALL,
+    )
+
+    for match in pattern.finditer(albums_html):
+        album_id = match.group("id")
+        photo_count = int(match.group("photo_count"))
+        view_count = int(match.group("view_count"))
+        counts_by_id[album_id] = (photo_count, view_count)
+
+    return counts_by_id
+
+
+def extract_advertised_album_total(
+    albums_html: str,
+    visible_count: int,
+) -> int | None:
+    """Find Flickr's advertised total album count when available."""
+
+    totals = []
+
+    for match in re.finditer(r'"totalItems":(?P<total>\d+)', albums_html):
+        total = int(match.group("total"))
+
+        if total > visible_count:
+            totals.append(total)
+
+    if not totals:
+        return None
+
+    # Flickr also exposes broader totals, such as photostream photo count.
+    # The album collection total is the smallest value larger than the album
+    # cards exposed in the initial HTML.
+    return min(totals)
+
+
+def discover_public_albums(albums_url: str) -> AlbumDiscovery:
+    """Discover public albums visible from a Flickr `/albums` directory."""
+
+    normalized_url = normalize_albums_url(albums_url)
+    albums_html = fetch_text(normalized_url)
+    albums = extract_album_cards(albums_html, normalized_url)
+    counts_by_id = extract_album_counts(albums_html)
+    advertised_total = extract_advertised_album_total(
+        albums_html,
+        visible_count=len(albums),
+    )
+
+    enriched = []
+    for album in albums:
+        photo_count, view_count = counts_by_id.get(album.album_id, (None, None))
+        enriched.append(
+            PublicAlbum(
+                title=album.title,
+                url=album.url,
+                album_id=album.album_id,
+                photo_count=photo_count,
+                view_count=view_count,
+            )
+        )
+
+    return AlbumDiscovery(albums=enriched, advertised_total=advertised_total)
+
+
+def find_existing_journal(album: PublicAlbum) -> Path | None:
+    """Return an existing journal file that appears to reference an album."""
+
+    candidate_slug = f"flickr_{slugify(album.title)}"
+
+    for section_dir in SECTION_DIRS.values():
+        for journal_path in sorted(section_dir.glob("*.md")):
+            if journal_path.name.startswith(candidate_slug):
+                return journal_path
+
+            try:
+                content = journal_path.read_text(encoding="utf-8")
+            except UnicodeDecodeError:
+                continue
+
+            if album.album_id in content:
+                return journal_path
+
+    return None
+
+
+def format_optional_int(value: int | None) -> str:
+    """Format optional count fields for report output."""
+
+    return str(value) if value is not None else "?"
+
+
+def render_discovery_report(discovery: AlbumDiscovery, limit: int | None) -> str:
+    """Render a scan-only report for a Flickr albums directory."""
+
+    albums = discovery.albums
+    selected_albums = albums[:limit] if limit else albums
+    lines = [
+        f"Found {len(albums)} public album card(s) in the initial page HTML.",
+    ]
+
+    if discovery.advertised_total and discovery.advertised_total > len(albums):
+        lines.append(
+            f"Flickr advertises {discovery.advertised_total} total album(s); "
+            "the remaining albums appear to require Flickr's lazy-load/API path."
+        )
+
+    if limit and len(albums) > limit:
+        lines.append(f"Showing first {limit} album(s).")
+
+    lines.extend(
+        [
+            "",
+            "| # | Title | Album ID | Photos | Views | Existing Journal |",
+            "|---:|---|---|---:|---:|---|",
+        ]
+    )
+
+    for index, album in enumerate(selected_albums, start=1):
+        existing = find_existing_journal(album)
+        existing_label = display_path(existing) if existing else ""
+        lines.append(
+            "| "
+            f"{index} | "
+            f"[{album.title}]({album.url}) | "
+            f"`{album.album_id}` | "
+            f"{format_optional_int(album.photo_count)} | "
+            f"{format_optional_int(album.view_count)} | "
+            f"{existing_label} |"
+        )
+
+    return "\n".join(lines)
 
 
 def build_identity_lines(album: Album, format_label: str) -> list[str]:
@@ -440,11 +662,15 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Import a public Flickr album into a Markdown journal."
     )
-    parser.add_argument("--url", required=True, help="Public Flickr album URL.")
+    source_group = parser.add_mutually_exclusive_group(required=True)
+    source_group.add_argument("--url", help="Public Flickr album URL.")
+    source_group.add_argument(
+        "--albums-url",
+        help="Public Flickr /albums directory URL to scan.",
+    )
     parser.add_argument("--title", help="Album title override.")
     parser.add_argument(
         "--format",
-        required=True,
         dest="format_label",
         help="Project classification, such as '35mm film' or '120 film'.",
     )
@@ -474,6 +700,16 @@ def parse_args() -> argparse.Namespace:
         "--dry-run",
         action="store_true",
         help="Print generated Markdown instead of writing files.",
+    )
+    parser.add_argument(
+        "--import-discovered",
+        action="store_true",
+        help="Import albums discovered from --albums-url instead of reporting only.",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        help="Limit the number of discovered albums to report or import.",
     )
     parser.add_argument("--note", help="Archive note paragraph override.")
     return parser.parse_args()
@@ -512,6 +748,12 @@ def main() -> int:
     args = parse_args()
 
     try:
+        if args.albums_url:
+            return handle_albums_directory(args)
+
+        if not args.format_label:
+            raise RuntimeError("--format is required when importing one album")
+
         album = fetch_album(args.url, args.title)
         output_path = choose_output_path(args, album)
         markdown = render_markdown(album, args.format_label, args.note)
@@ -541,6 +783,77 @@ def main() -> int:
     except Exception as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
+
+
+def handle_albums_directory(args: argparse.Namespace) -> int:
+    """Scan or batch-import a public Flickr `/albums` directory."""
+
+    if args.title:
+        raise RuntimeError("--title can only be used with --url")
+
+    if args.output:
+        raise RuntimeError("--output can only be used with --url")
+
+    if args.slug:
+        raise RuntimeError("--slug can only be used with --url")
+
+    discovery = discover_public_albums(args.albums_url)
+    albums = discovery.albums
+
+    if not args.import_discovered:
+        print(render_discovery_report(discovery, args.limit))
+        return 0
+
+    if not args.format_label:
+        raise RuntimeError("--format is required with --import-discovered")
+
+    selected_albums = albums[: args.limit] if args.limit else albums
+    imported_count = 0
+    dry_run_count = 0
+    skipped_count = 0
+
+    for discovered_album in selected_albums:
+        album = fetch_album(discovered_album.url, discovered_album.title)
+        output_path = choose_output_path(args, album)
+
+        if output_path.exists() and not args.force:
+            skipped_count += 1
+            print(f"Skipped existing {display_path(output_path)}")
+            continue
+
+        markdown = render_markdown(album, args.format_label, args.note)
+
+        if args.dry_run:
+            dry_run_count += 1
+            print(f"Would write {display_path(output_path)}")
+            continue
+
+        write_album_markdown(output_path, markdown, args.force)
+        imported_count += 1
+        print(f"Wrote {display_path(output_path)}")
+
+        if args.update_readme:
+            readme_path = output_path.parent / "README.md"
+            changed = update_readme(
+                readme_path,
+                output_path.name,
+                album.title,
+                args.format_label,
+            )
+            if changed:
+                print(f"Updated {display_path(readme_path)}")
+
+    if args.dry_run:
+        print(
+            f"Finished discovered dry run: {dry_run_count} would be written, "
+            f"{skipped_count} skipped."
+        )
+    else:
+        print(
+            f"Finished discovered import: {imported_count} written, "
+            f"{skipped_count} skipped."
+        )
+    return 0
 
 
 if __name__ == "__main__":
