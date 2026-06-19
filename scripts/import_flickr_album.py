@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """Import a public Flickr album into a TradeJournals Markdown entry.
 
-This is intentionally a small, dependency-free prototype. It uses public
-Flickr endpoints only:
+This is intentionally a small, dependency-free prototype. By default it uses
+public Flickr endpoints only:
 
 1. oEmbed JSON for album-level display metadata.
 2. the public album page to discover the owner's NSID.
 3. the public photoset feed for photo titles, links, and date_taken values.
 
-The script does not use a Flickr API key and does not access private albums.
+Pass `--use-api` to use Flickr's REST API for public album discovery and full
+photo pagination. API mode reads `FLICKR_API_KEY` from the environment. The API
+secret is intentionally not used for public-read workflows.
 """
 
 from __future__ import annotations
@@ -16,6 +18,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import os
 import re
 import sys
 from dataclasses import dataclass
@@ -30,6 +33,8 @@ from urllib.request import Request, urlopen
 REPO_ROOT = Path(__file__).resolve().parents[1]
 USER_AGENT = "TradeJournals Flickr importer"
 FETCH_TIMEOUT_SECONDS = 30
+FLICKR_API_ENDPOINT = "https://www.flickr.com/services/rest/"
+API_PAGE_SIZE = 500
 
 # Keep section names short on the command line, but write into the existing
 # TradeJournals folder structure.
@@ -66,6 +71,7 @@ class Album:
     feed_modified: str
     photo_count: int
     starter_photo_count: int
+    photo_listing_source: str
     photos: list[Photo]
 
 
@@ -76,6 +82,7 @@ class PublicAlbum:
     title: str
     url: str
     album_id: str
+    visibility: str = "public"
     photo_count: int | None = None
     view_count: int | None = None
 
@@ -86,6 +93,7 @@ class AlbumDiscovery:
 
     albums: list[PublicAlbum]
     advertised_total: int | None = None
+    source: str = "initial page HTML"
 
 
 def fetch_text(url: str) -> str:
@@ -116,6 +124,62 @@ def fetch_json(url: str) -> dict[str, Any]:
         return json.loads(text)
     except json.JSONDecodeError as exc:
         raise RuntimeError(f"failed to parse JSON from {url}: {exc}") from exc
+
+
+def require_flickr_api_key() -> str:
+    """Return the Flickr API key from the environment.
+
+    Keeping the key outside the repo prevents accidental commits of credentials.
+    Public API calls only need the key; authenticated/private calls would need a
+    separate OAuth flow and are outside this importer for now.
+    """
+
+    api_key = os.environ.get("FLICKR_API_KEY", "").strip()
+
+    if not api_key:
+        raise RuntimeError(
+            "FLICKR_API_KEY is required when using --use-api"
+        )
+
+    return api_key
+
+
+def build_flickr_api_url(method: str, params: dict[str, Any]) -> str:
+    """Build a Flickr REST API URL for a public JSON response."""
+
+    query_params = {
+        "method": method,
+        "api_key": require_flickr_api_key(),
+        "format": "json",
+        "nojsoncallback": "1",
+    }
+    query_params.update(params)
+    return f"{FLICKR_API_ENDPOINT}?{urlencode(query_params)}"
+
+
+def fetch_flickr_api(method: str, params: dict[str, Any]) -> dict[str, Any]:
+    """Fetch one Flickr API response and raise clear errors on API failures."""
+
+    response = fetch_json(build_flickr_api_url(method, params))
+
+    if response.get("stat") == "fail":
+        code = response.get("code", "unknown")
+        message = response.get("message", "unknown Flickr API error")
+        raise RuntimeError(f"Flickr API {method} failed ({code}): {message}")
+
+    return response
+
+
+def flickr_content(value: Any) -> str:
+    """Return Flickr's `_content` field, falling back to plain strings."""
+
+    if isinstance(value, dict):
+        return str(value.get("_content", "")).strip()
+
+    if value is None:
+        return ""
+
+    return str(value).strip()
 
 
 def extract_album_id(url: str) -> str:
@@ -160,6 +224,24 @@ def normalize_albums_url(url: str) -> str:
     return normalized.geturl()
 
 
+def extract_photos_path_alias(url: str) -> str:
+    """Return the friendly Flickr user path from a `/photos/<alias>` URL."""
+
+    parsed = urlparse(url)
+    match = re.search(r"/photos/([^/]+)", parsed.path)
+
+    if not match:
+        raise ValueError("Flickr URL must include /photos/<user>")
+
+    return match.group(1)
+
+
+def build_flickr_user_url(alias: str) -> str:
+    """Build a canonical public Flickr profile URL for API lookup."""
+
+    return f"https://www.flickr.com/photos/{alias}/"
+
+
 def absolute_flickr_url(base_url: str, path_or_url: str) -> str:
     """Convert a Flickr-relative path to an absolute URL."""
 
@@ -190,6 +272,29 @@ def build_photoset_feed_url(owner_nsid: str, album_id: str) -> str:
         }
     )
     return f"https://www.flickr.com/services/feeds/photoset.gne?{query}"
+
+
+def lookup_user_nsid_from_albums_url(albums_url: str) -> str:
+    """Resolve a friendly Flickr `/albums` URL to a stable user NSID."""
+
+    alias = extract_photos_path_alias(albums_url)
+    response = fetch_flickr_api(
+        "flickr.urls.lookupUser",
+        {"url": build_flickr_user_url(alias)},
+    )
+    user = response.get("user", {})
+    nsid = user.get("id")
+
+    if not nsid:
+        raise RuntimeError("Flickr API lookupUser did not return a user id")
+
+    return str(nsid)
+
+
+def build_album_url(owner: str, album_id: str) -> str:
+    """Build the journal's preferred album URL shape."""
+
+    return f"https://www.flickr.com/photos/{owner}/albums/{album_id}/"
 
 
 def extract_owner_nsid(album_html: str, album_id: str) -> str:
@@ -330,6 +435,92 @@ def feed_item_to_photo(item: dict[str, Any]) -> Photo:
     )
 
 
+def api_photo_to_photo(photo: dict[str, Any], owner: str, album_id: str) -> Photo:
+    """Normalize one Flickr API photo record into a Photo object."""
+
+    photo_id = str(photo.get("id", "unknown"))
+    link = f"https://www.flickr.com/photos/{owner}/{photo_id}/in/set-{album_id}/"
+
+    return Photo(
+        title=flickr_content(photo.get("title")),
+        link=link,
+        date_taken=str(photo.get("datetaken", "")),
+        photo_id=photo_id,
+    )
+
+
+def fetch_api_photos(owner: str, album_id: str) -> tuple[list[Photo], int]:
+    """Fetch every public photo in an album through Flickr API pagination."""
+
+    photos: list[Photo] = []
+    page = 1
+    total = 0
+
+    while True:
+        response = fetch_flickr_api(
+            "flickr.photosets.getPhotos",
+            {
+                "photoset_id": album_id,
+                "extras": "date_taken",
+                "per_page": API_PAGE_SIZE,
+                "page": page,
+            },
+        )
+        photoset = response.get("photoset", {})
+        page_photos = photoset.get("photo", [])
+
+        for photo in page_photos:
+            photos.append(api_photo_to_photo(photo, owner, album_id))
+
+        # Flickr returns these as strings in some responses. Convert once so
+        # loop control is obvious for the next person reading the script.
+        current_page = int(photoset.get("page", page))
+        pages = int(photoset.get("pages", current_page))
+        total = int(photoset.get("total", len(photos)))
+
+        if current_page >= pages:
+            break
+
+        page = current_page + 1
+
+    return photos, total
+
+
+def fetch_album_api(album_url: str, title_override: str | None) -> Album:
+    """Fetch album metadata and all public photos through the Flickr API."""
+
+    album_id = extract_album_id(album_url)
+    response = fetch_flickr_api(
+        "flickr.photosets.getInfo",
+        {"photoset_id": album_id},
+    )
+    photoset = response.get("photoset", {})
+    owner = str(photoset.get("owner", ""))
+
+    if not owner:
+        owner = extract_photos_path_alias(album_url)
+
+    normalized_url = normalize_album_url(build_album_url(owner, album_id), album_id)
+    title = title_override or flickr_content(photoset.get("title")) or "Untitled"
+    photos, api_photo_count = fetch_api_photos(owner, album_id)
+    photo_count = int(photoset.get("photos", api_photo_count))
+
+    return Album(
+        title=title,
+        url=normalized_url,
+        short_url="",
+        owner=str(photoset.get("username", "")),
+        owner_nsid=owner,
+        thumbnail_alt="",
+        feed_title="",
+        feed_modified="",
+        photo_count=photo_count,
+        starter_photo_count=len(photos),
+        photo_listing_source="Flickr API photo list",
+        photos=photos,
+    )
+
+
 def fetch_album(album_url: str, title_override: str | None) -> Album:
     """Fetch and normalize all album data needed for Markdown output."""
 
@@ -361,6 +552,7 @@ def fetch_album(album_url: str, title_override: str | None) -> Album:
         feed_modified=feed.get("modified", ""),
         photo_count=photo_count,
         starter_photo_count=len(photos),
+        photo_listing_source="public photoset feed",
         photos=photos,
     )
 
@@ -394,6 +586,7 @@ def extract_album_cards(albums_html: str, albums_url: str) -> list[PublicAlbum]:
             title=title,
             url=album_url,
             album_id=album_id,
+            visibility="public",
         )
 
     return list(albums_by_id.values())
@@ -463,12 +656,75 @@ def discover_public_albums(albums_url: str) -> AlbumDiscovery:
                 title=album.title,
                 url=album.url,
                 album_id=album.album_id,
+                visibility=album.visibility,
                 photo_count=photo_count,
                 view_count=view_count,
             )
         )
 
-    return AlbumDiscovery(albums=enriched, advertised_total=advertised_total)
+    return AlbumDiscovery(
+        albums=enriched,
+        advertised_total=advertised_total,
+        source="initial page HTML",
+    )
+
+
+def api_photoset_to_public_album(
+    photoset: dict[str, Any],
+    owner_nsid: str,
+) -> PublicAlbum:
+    """Normalize one Flickr API photoset into a public album summary."""
+
+    album_id = str(photoset.get("id", ""))
+    title = flickr_content(photoset.get("title")) or "Untitled"
+    photo_count = photoset.get("photos")
+
+    return PublicAlbum(
+        title=title,
+        url=build_album_url(owner_nsid, album_id),
+        album_id=album_id,
+        visibility="public",
+        photo_count=int(photo_count) if photo_count is not None else None,
+        view_count=None,
+    )
+
+
+def discover_api_albums(albums_url: str) -> AlbumDiscovery:
+    """Discover all public albums through Flickr API pagination."""
+
+    owner_nsid = lookup_user_nsid_from_albums_url(albums_url)
+    albums: list[PublicAlbum] = []
+    page = 1
+    total = 0
+
+    while True:
+        response = fetch_flickr_api(
+            "flickr.photosets.getList",
+            {
+                "user_id": owner_nsid,
+                "per_page": API_PAGE_SIZE,
+                "page": page,
+            },
+        )
+        photosets = response.get("photosets", {})
+
+        for photoset in photosets.get("photoset", []):
+            albums.append(api_photoset_to_public_album(photoset, owner_nsid))
+
+        current_page = int(photosets.get("page", page))
+        pages = int(photosets.get("pages", current_page))
+        total = int(photosets.get("total", len(albums)))
+
+        if current_page >= pages:
+            break
+
+        page = current_page + 1
+
+    return AlbumDiscovery(
+        albums=albums,
+        advertised_total=total,
+        source="Flickr API",
+    )
 
 
 def find_existing_journal(album: PublicAlbum) -> Path | None:
@@ -508,13 +764,21 @@ def render_discovery_report(discovery: AlbumDiscovery, limit: int | None) -> str
     albums = discovery.albums
     selected_albums = albums[:limit] if limit else albums
     lines = [
-        f"Found {len(albums)} public album card(s) in the initial page HTML.",
+        f"Found {len(albums)} public album(s) via {discovery.source}.",
     ]
 
-    if discovery.advertised_total and discovery.advertised_total > len(albums):
+    if (
+        discovery.source == "initial page HTML"
+        and discovery.advertised_total
+        and discovery.advertised_total > len(albums)
+    ):
         lines.append(
             f"Flickr advertises {discovery.advertised_total} total album(s); "
             "the remaining albums appear to require Flickr's lazy-load/API path."
+        )
+    elif discovery.advertised_total and discovery.advertised_total != len(albums):
+        lines.append(
+            f"Flickr reports {discovery.advertised_total} total album(s)."
         )
 
     if limit and len(albums) > limit:
@@ -523,8 +787,8 @@ def render_discovery_report(discovery: AlbumDiscovery, limit: int | None) -> str
     lines.extend(
         [
             "",
-            "| # | Title | Album ID | Photos | Views | Existing Journal |",
-            "|---:|---|---|---:|---:|---|",
+            "| # | Title | Album ID | Visibility | Photos | Views | Existing Journal |",
+            "|---:|---|---|---|---:|---:|---|",
         ]
     )
 
@@ -536,6 +800,7 @@ def render_discovery_report(discovery: AlbumDiscovery, limit: int | None) -> str
             f"{index} | "
             f"[{album.title}]({album.url}) | "
             f"`{album.album_id}` | "
+            f"{album.visibility} | "
             f"{format_optional_int(album.photo_count)} | "
             f"{format_optional_int(album.view_count)} | "
             f"{existing_label} |"
@@ -574,7 +839,8 @@ def build_identity_lines(album: Album, format_label: str) -> list[str]:
 
     identity_lines.append(f"- Public photo count: {album.photo_count}")
     identity_lines.append(
-        f"- Starter photo IDs visible in public feed: {album.starter_photo_count}"
+        f"- Photo IDs listed from {album.photo_listing_source}: "
+        f"{album.starter_photo_count}"
     )
     return identity_lines
 
@@ -590,10 +856,10 @@ def default_archive_note() -> str:
 
 
 def render_photo_lines(photos: list[Photo]) -> list[str]:
-    """Render the Starter Photo IDs bullet list."""
+    """Render photo ID bullets for either public feed or API sources."""
 
     if not photos:
-        return ["- No public photo items were visible in the Flickr feed."]
+        return ["- No photo items were visible from the selected Flickr source."]
 
     lines = []
 
@@ -606,6 +872,15 @@ def render_photo_lines(photos: list[Photo]) -> list[str]:
         )
 
     return lines
+
+
+def photo_ids_heading(album: Album) -> str:
+    """Choose a photo-ID section heading that matches the data source."""
+
+    if album.photo_listing_source == "Flickr API photo list":
+        return "Photo IDs"
+
+    return "Starter Photo IDs"
 
 
 def render_markdown(album: Album, format_label: str, note: str | None) -> str:
@@ -637,11 +912,12 @@ def render_markdown(album: Album, format_label: str, note: str | None) -> str:
         (
             "The photo titles are preserved as Flickr labels. The "
             "human-readable photo labels below use Flickr's `date_taken` "
-            "metadata and drop seconds. Flickr's public feed may expose only "
-            "the starter photo set, even when the album contains more photos."
+            "metadata and drop seconds. API-backed imports can list the full "
+            "public album; feed-backed imports may expose only the starter "
+            "photo set."
         ),
         "",
-        "## Starter Photo IDs",
+        f"## {photo_ids_heading(album)}",
         "",
         *render_photo_lines(album.photos),
     ]
@@ -678,7 +954,7 @@ def render_existing_album_lines(album: Album, format_label: str) -> list[str]:
 
     lines.append(f"- Public photo count: {album.photo_count}.")
     lines.append(
-        f"- Starter photo IDs visible in public feed: "
+        f"- Photo IDs listed from {album.photo_listing_source}: "
         f"{album.starter_photo_count}."
     )
     return lines
@@ -719,7 +995,7 @@ def append_visual_evidence_block(
         "",
         *render_existing_album_lines(album, format_label),
         "",
-        "### Starter Photo IDs",
+        f"### {photo_ids_heading(album)}",
         "",
         *render_photo_lines(album.photos),
     ]
@@ -880,6 +1156,14 @@ def parse_args() -> argparse.Namespace:
         help="Import albums discovered from --albums-url instead of reporting only.",
     )
     parser.add_argument(
+        "--use-api",
+        action="store_true",
+        help=(
+            "Use the Flickr API for discovery and full public photo pagination. "
+            "Requires FLICKR_API_KEY."
+        ),
+    )
+    parser.add_argument(
         "--limit",
         type=int,
         help="Limit the number of discovered albums to report or import.",
@@ -915,6 +1199,19 @@ def write_album_markdown(
     output_path.write_text(markdown, encoding="utf-8")
 
 
+def fetch_album_for_args(
+    args: argparse.Namespace,
+    album_url: str,
+    title: str | None,
+) -> Album:
+    """Fetch an album with the selected public-feed or API strategy."""
+
+    if args.use_api:
+        return fetch_album_api(album_url, title)
+
+    return fetch_album(album_url, title)
+
+
 def main() -> int:
     """Run the command-line importer."""
 
@@ -927,11 +1224,12 @@ def main() -> int:
         if not args.format_label:
             raise RuntimeError("--format is required when importing one album")
 
-        album = fetch_album(args.url, args.title)
+        album = fetch_album_for_args(args, args.url, args.title)
         discovered_album = PublicAlbum(
             title=album.title,
             url=album.url,
             album_id=extract_album_id(album.url),
+            visibility="public",
         )
         existing_journal = find_existing_journal(discovered_album)
 
@@ -995,7 +1293,10 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
     if args.slug:
         raise RuntimeError("--slug can only be used with --url")
 
-    discovery = discover_public_albums(args.albums_url)
+    if args.use_api:
+        discovery = discover_api_albums(args.albums_url)
+    else:
+        discovery = discover_public_albums(args.albums_url)
     albums = discovery.albums
 
     if not args.import_discovered:
@@ -1016,7 +1317,11 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
         existing_journal = find_existing_journal(discovered_album)
 
         if existing_journal and args.merge_existing:
-            album = fetch_album(discovered_album.url, discovered_album.title)
+            album = fetch_album_for_args(
+                args,
+                discovered_album.url,
+                discovered_album.title,
+            )
 
             if args.dry_run:
                 dry_merge_count += 1
@@ -1043,7 +1348,11 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
             print(f"Skipped existing {display_path(existing_journal)}")
             continue
 
-        album = fetch_album(discovered_album.url, discovered_album.title)
+        album = fetch_album_for_args(
+            args,
+            discovered_album.url,
+            discovered_album.title,
+        )
         output_path = choose_output_path(args, album)
 
         if output_path.exists() and not args.force:
