@@ -89,6 +89,8 @@ EXIF capture date/time for the label instead.
 - Flickr oEmbed title: `Bikes - Honda Chopper`.
 - Public feed title: `Content from Bikes - Honda Chopper`.
 - Public feed modified: `2026-06-16T19:50:12Z`.
+- Public photo count: 78.
+- Starter photo IDs cataloged here: 1.
 
 ### Album Identity
 

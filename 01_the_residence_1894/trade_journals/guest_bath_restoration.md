@@ -38,7 +38,7 @@ Use this section to map the Flickr album into evidence categories before writing
 ### Flickr Album
 
 - Album URL: [Home Reno - Guest Bath](https://www.flickr.com/photos/boocher/albums/72177720314827829/)
-- Album status: pending access review; Flickr returned a signed-out permission page during the first check.
+- Album status: public; Flickr metadata confirmed the title, owner `UncleRedBeard`, and 286 photos.
 - Album role: primary visual archive for the guest bath restoration.
 
 ### Key Photo IDs

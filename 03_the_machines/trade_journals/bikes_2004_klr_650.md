@@ -83,6 +83,8 @@ EXIF capture date/time for the label instead.
 - Flickr oEmbed title: `Bikes - 2004 KLR 650`.
 - Public feed title: `Content from Bikes - 2004 KLR 650`.
 - Public feed modified: `2026-06-16T20:08:55Z`.
+- Public photo count: 50.
+- Starter photo IDs cataloged here: 6.
 
 ### Album Identity
 

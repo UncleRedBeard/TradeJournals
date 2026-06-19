@@ -14,6 +14,8 @@ Catalog the Flickr album `my hood` as part of the lens archive and 35mm film evi
 - Flickr oEmbed thumbnail alt text: `78704`
 - Public feed title: `Content from my hood`
 - Public feed modified: `2023-04-21T18:29:27Z`
+- Public photo count: 31
+- Starter photo IDs cataloged here: 8
 
 ## Archive Notes
 

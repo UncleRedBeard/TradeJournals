@@ -17,6 +17,7 @@ Catalog the Flickr album `East Side Locos` as part of the lens archive and 35mm 
 - Public feed title: `Content from East Side Locos`
 - Public feed modified: `2011-03-24T18:40:37Z`
 - Public photo count: 11
+- Starter photo IDs visible in public feed: 11
 
 ## Archive Notes
 

@@ -88,6 +88,7 @@ EXIF capture date/time for the label instead.
 - Public feed title: `Content from Bikes - 1982 Honda CB750 DOHC`.
 - Public feed modified: `2026-06-16T19:09:49Z`.
 - Public photo count: 7.
+- Starter photo IDs visible in public feed: 7.
 
 ### Album Identity
 

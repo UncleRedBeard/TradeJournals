@@ -65,6 +65,7 @@ class Album:
     feed_title: str
     feed_modified: str
     photo_count: int
+    starter_photo_count: int
     photos: list[Photo]
 
 
@@ -232,6 +233,39 @@ def extract_thumbnail_alt(embed_html: str) -> str:
     return html.unescape(match.group(1)) if match else ""
 
 
+def extract_album_photo_count(album_html: str, album_id: str) -> int | None:
+    """Find the full public photo count in a Flickr album page.
+
+    Flickr's public photoset feed often returns only the first page of items.
+    The album page model carries the actual public count, so prefer that for
+    journal identity metadata.
+    """
+
+    album_model_pattern = re.compile(
+        r'"_flickrModelRegistry":"set-models".*?'
+        r'"id":"' + re.escape(album_id) + r'"',
+        re.DOTALL,
+    )
+    album_model_match = album_model_pattern.search(album_html)
+
+    if not album_model_match:
+        return None
+
+    album_model = album_model_match.group(0)
+    count_patterns = (
+        r'"publicPhotosCount":(?P<count>\d+)',
+        r'"photoCount":(?P<count>\d+)',
+        r'"totalItems":(?P<count>\d+)',
+    )
+
+    for pattern in count_patterns:
+        count_match = re.search(pattern, album_model)
+        if count_match:
+            return int(count_match.group("count"))
+
+    return None
+
+
 def label_date(date_taken: str) -> str:
     """Convert Flickr date_taken values to `YYYY-MM-DD HH:MM` labels."""
 
@@ -309,9 +343,10 @@ def fetch_album(album_url: str, title_override: str | None) -> Album:
     album_html = fetch_text(normalized_url)
     owner_nsid = extract_owner_nsid(album_html, album_id)
 
-    # The feed provides photo title, link, date_taken, and public item count.
+    # The feed provides photo title, link, and date_taken for starter photos.
     feed = fetch_json(build_photoset_feed_url(owner_nsid, album_id))
     photos = [feed_item_to_photo(item) for item in feed.get("items", [])]
+    photo_count = extract_album_photo_count(album_html, album_id) or len(photos)
 
     title = title_override or oembed.get("title") or feed.get("title", "Untitled")
 
@@ -324,7 +359,8 @@ def fetch_album(album_url: str, title_override: str | None) -> Album:
         thumbnail_alt=extract_thumbnail_alt(oembed.get("html", "")),
         feed_title=feed.get("title", ""),
         feed_modified=feed.get("modified", ""),
-        photo_count=len(photos),
+        photo_count=photo_count,
+        starter_photo_count=len(photos),
         photos=photos,
     )
 
@@ -537,6 +573,9 @@ def build_identity_lines(album: Album, format_label: str) -> list[str]:
             identity_lines.append(f"- {label}: `{safe_value}`")
 
     identity_lines.append(f"- Public photo count: {album.photo_count}")
+    identity_lines.append(
+        f"- Starter photo IDs visible in public feed: {album.starter_photo_count}"
+    )
     return identity_lines
 
 
@@ -598,7 +637,8 @@ def render_markdown(album: Album, format_label: str, note: str | None) -> str:
         (
             "The photo titles are preserved as Flickr labels. The "
             "human-readable photo labels below use Flickr's `date_taken` "
-            "metadata and drop seconds."
+            "metadata and drop seconds. Flickr's public feed may expose only "
+            "the starter photo set, even when the album contains more photos."
         ),
         "",
         "## Starter Photo IDs",
@@ -637,6 +677,10 @@ def render_existing_album_lines(album: Album, format_label: str) -> list[str]:
             lines.append(f"- {label}: `{safe_value}`.")
 
     lines.append(f"- Public photo count: {album.photo_count}.")
+    lines.append(
+        f"- Starter photo IDs visible in public feed: "
+        f"{album.starter_photo_count}."
+    )
     return lines
 
 

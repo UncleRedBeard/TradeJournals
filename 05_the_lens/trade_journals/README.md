@@ -4,6 +4,9 @@ Use this folder for photography, documentation, and visual archive journals. Ent
 
 ## Journals
 
+- [Flickr: Toulon](flickr_toulon_35mm.md) - catalog record for a 35mm film Flickr album with photo-level metadata.
+- [Flickr: La Turbie](flickr_la_turbie_35mm.md) - catalog record for a 35mm film Flickr album with photo-level metadata.
+- [Flickr: Roqueburne-Cap-Martin](flickr_roqueburne_cap_martin_35mm.md) - catalog record for a 35mm film Flickr album with photo-level metadata.
 - [Lomography Film Album Catalog](lomography_film_album_catalog.md) - catalog record for 35mm Lomography albums and their image metadata, with notes separating them from 120 film Isolette work.
 - [Flickr: East Side Locos](flickr_east_side_locos_35mm.md) - catalog record for a 35mm film Flickr album with photo-level metadata.
 - [Flickr: my hood](flickr_my_hood_35mm.md) - catalog record for a 35mm film Flickr album related to the lens archive.
