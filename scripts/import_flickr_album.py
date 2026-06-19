@@ -49,7 +49,7 @@ SECTION_DIRS = {
 
 @dataclass(frozen=True)
 class Photo:
-    """Small normalized record for one Flickr feed item."""
+    """Small normalized record for one Flickr photo item."""
 
     title: str
     link: str
@@ -59,7 +59,12 @@ class Photo:
 
 @dataclass(frozen=True)
 class Album:
-    """Normalized album data used by the Markdown renderer."""
+    """Normalized album data used by the Markdown renderer.
+
+    The model carries both feed-backed and API-backed values. Some field names
+    still reflect the original feed-only prototype so existing render and merge
+    paths stay stable while API mode evolves.
+    """
 
     title: str
     url: str
@@ -70,6 +75,8 @@ class Album:
     feed_title: str
     feed_modified: str
     photo_count: int
+    # Legacy field name retained for compatibility with existing render paths.
+    # In API mode this is the full listed photo count, not only a starter set.
     starter_photo_count: int
     photo_listing_source: str
     photos: list[Photo]
@@ -77,7 +84,7 @@ class Album:
 
 @dataclass(frozen=True)
 class PublicAlbum:
-    """Summary record for one album discovered from a Flickr /albums page."""
+    """Summary record for one album discovered from HTML or API scans."""
 
     title: str
     url: str
@@ -89,7 +96,7 @@ class PublicAlbum:
 
 @dataclass(frozen=True)
 class AlbumDiscovery:
-    """Result of scanning a public Flickr `/albums` directory."""
+    """Result of scanning public Flickr albums through one discovery source."""
 
     albums: list[PublicAlbum]
     advertised_total: int | None = None
@@ -225,7 +232,7 @@ def normalize_albums_url(url: str) -> str:
 
 
 def extract_photos_path_alias(url: str) -> str:
-    """Return the friendly Flickr user path from a `/photos/<alias>` URL."""
+    """Return the Flickr user path segment from a `/photos/<user>` URL."""
 
     parsed = urlparse(url)
     match = re.search(r"/photos/([^/]+)", parsed.path)
@@ -275,7 +282,7 @@ def build_photoset_feed_url(owner_nsid: str, album_id: str) -> str:
 
 
 def lookup_user_nsid_from_albums_url(albums_url: str) -> str:
-    """Resolve a friendly Flickr `/albums` URL to a stable user NSID."""
+    """Resolve a public Flickr `/albums` URL to a stable user NSID."""
 
     alias = extract_photos_path_alias(albums_url)
     response = fetch_flickr_api(
@@ -292,7 +299,11 @@ def lookup_user_nsid_from_albums_url(albums_url: str) -> str:
 
 
 def build_album_url(owner: str, album_id: str) -> str:
-    """Build the journal's preferred album URL shape."""
+    """Build the journal's preferred album URL shape.
+
+    `owner` can be either a friendly Flickr alias or an NSID. API discovery
+    returns an NSID, while direct user-provided URLs often use aliases.
+    """
 
     return f"https://www.flickr.com/photos/{owner}/albums/{album_id}/"
 
@@ -522,7 +533,7 @@ def fetch_album_api(album_url: str, title_override: str | None) -> Album:
 
 
 def fetch_album(album_url: str, title_override: str | None) -> Album:
-    """Fetch and normalize all album data needed for Markdown output."""
+    """Fetch and normalize album data through the public feed fallback."""
 
     album_id = extract_album_id(album_url)
     normalized_url = normalize_album_url(album_url, album_id)
@@ -558,7 +569,7 @@ def fetch_album(album_url: str, title_override: str | None) -> Album:
 
 
 def extract_album_cards(albums_html: str, albums_url: str) -> list[PublicAlbum]:
-    """Extract visible public album cards from a Flickr `/albums` page.
+    """Extract public album cards from the initial Flickr `/albums` HTML.
 
     This intentionally starts from server-rendered album links instead of the
     large client model blob. The links are simpler and represent what the page
@@ -637,7 +648,7 @@ def extract_advertised_album_total(
 
 
 def discover_public_albums(albums_url: str) -> AlbumDiscovery:
-    """Discover public albums visible from a Flickr `/albums` directory."""
+    """Discover albums from Flickr's initial public `/albums` HTML."""
 
     normalized_url = normalize_albums_url(albums_url)
     albums_html = fetch_text(normalized_url)
@@ -673,7 +684,7 @@ def api_photoset_to_public_album(
     photoset: dict[str, Any],
     owner_nsid: str,
 ) -> PublicAlbum:
-    """Normalize one Flickr API photoset into a public album summary."""
+    """Normalize one public Flickr API photoset into an album summary."""
 
     album_id = str(photoset.get("id", ""))
     title = flickr_content(photoset.get("title")) or "Untitled"
@@ -690,7 +701,7 @@ def api_photoset_to_public_album(
 
 
 def discover_api_albums(albums_url: str) -> AlbumDiscovery:
-    """Discover all public albums through Flickr API pagination."""
+    """Discover all API-visible public albums through Flickr pagination."""
 
     owner_nsid = lookup_user_nsid_from_albums_url(albums_url)
     albums: list[PublicAlbum] = []
@@ -1016,9 +1027,11 @@ def merge_album_into_journal(
 ) -> bool:
     """Merge Flickr album metadata into an existing journal.
 
-    The importer looks for the placeholder sections used by the hand-authored
-    machine journals. If those sections are missing, it appends a compact
-    Flickr block under `Visual Evidence` so the album still lands in context.
+    The importer looks for the placeholder sections used by hand-authored
+    journals. Existing placeholders may still use the legacy `Starter Photo
+    IDs` heading; API imports can still fill that section with the full public
+    photo list. If placeholders are missing, the importer appends a compact
+    Flickr block under `Visual Evidence` with a source-appropriate heading.
     """
 
     album_id = extract_album_id(album.url)
@@ -1282,7 +1295,7 @@ def main() -> int:
 
 
 def handle_albums_directory(args: argparse.Namespace) -> int:
-    """Scan or batch-import a public Flickr `/albums` directory."""
+    """Scan or batch-import public Flickr albums with the selected strategy."""
 
     if args.title:
         raise RuntimeError("--title can only be used with --url")
