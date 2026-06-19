@@ -51,7 +51,7 @@ Core identity:
 
 - Album name: `Bikes - 1982 Honda CB750 DOHC`.
 - Machine: 1982 Honda CB750 DOHC.
-- Album URL: pending.
+- Album URL: [Bikes - 1982 Honda CB750 DOHC](https://www.flickr.com/photos/boocher/albums/72177720334252878/).
 
 Initial archive interpretation:
 
@@ -79,7 +79,15 @@ EXIF capture date/time for the label instead.
 ### Flickr Album
 
 - Album name: `Bikes - 1982 Honda CB750 DOHC`.
-- Album URL: pending.
+- Album URL: [Bikes - 1982 Honda CB750 DOHC](https://www.flickr.com/photos/boocher/albums/72177720334252878/).
+- Short URL: [flic.kr](http://flic.kr/s/aHBqjCWTmJ).
+- Format: machine archive, per project note.
+- Owner: `UncleRedBeard`.
+- Owner NSID: `17632706@N00`.
+- Flickr oEmbed thumbnail alt text: `20170128_131951`.
+- Public feed title: `Content from Bikes - 1982 Honda CB750 DOHC`.
+- Public feed modified: `2026-06-16T19:09:49Z`.
+- Public photo count: 7.
 
 ### Album Identity
 
@@ -89,7 +97,13 @@ EXIF capture date/time for the label instead.
 
 ### Starter Photo IDs
 
-- Pending album URL and public feed metadata.
+- [2017-01-20 14:37, photo 55339713795](https://www.flickr.com/photos/boocher/55339713795/in/set-72177720334252878/) - Flickr title `20170115_134521-01`.
+- [2017-01-28 13:27, photo 55339713700](https://www.flickr.com/photos/boocher/55339713700/in/set-72177720334252878/) - Flickr title `20170128_132706-01`.
+- [2017-01-28 13:27, photo 55339297181](https://www.flickr.com/photos/boocher/55339297181/in/set-72177720334252878/) - Flickr title `20170128_132718`.
+- [2017-01-15 13:43, photo 55338369557](https://www.flickr.com/photos/boocher/55338369557/in/set-72177720334252878/) - Flickr title `20170115_134305-01`.
+- [2017-01-28 13:27, photo 55339713620](https://www.flickr.com/photos/boocher/55339713620/in/set-72177720334252878/) - Flickr title `20170128_132706`.
+- [2017-01-28 13:19, photo 55338369457](https://www.flickr.com/photos/boocher/55338369457/in/set-72177720334252878/) - Flickr title `20170128_131951`.
+- [2017-01-28 13:20, photo 55338369452](https://www.flickr.com/photos/boocher/55338369452/in/set-72177720334252878/) - Flickr title `20170128_132004`.
 
 ### Evidence Buckets To Build
 

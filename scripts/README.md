@@ -23,6 +23,8 @@ Useful flags:
 
 - `--dry-run` prints the generated Markdown without writing files.
 - `--force` overwrites an existing output file.
+- `--merge-existing` updates a matching journal instead of creating a sidecar
+  Flickr entry.
 - `--output` writes to an explicit Markdown path.
 - `--note` supplies the archive note paragraph.
 
@@ -48,9 +50,10 @@ Batch import is opt-in and still requires a project classification:
 ```sh
 python3 scripts/import_flickr_album.py \
   --albums-url "https://www.flickr.com/photos/boocher/albums" \
-  --section lens \
-  --format "uncategorized Flickr album" \
+  --section machines \
+  --format "machine archive" \
   --import-discovered \
+  --merge-existing \
   --dry-run \
   --limit 3
 ```

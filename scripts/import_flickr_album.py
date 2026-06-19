@@ -438,11 +438,15 @@ def discover_public_albums(albums_url: str) -> AlbumDiscovery:
 def find_existing_journal(album: PublicAlbum) -> Path | None:
     """Return an existing journal file that appears to reference an album."""
 
-    candidate_slug = f"flickr_{slugify(album.title)}"
+    title_slug = slugify(album.title)
+    candidate_slugs = (
+        f"flickr_{title_slug}",
+        title_slug,
+    )
 
     for section_dir in SECTION_DIRS.values():
         for journal_path in sorted(section_dir.glob("*.md")):
-            if journal_path.name.startswith(candidate_slug):
+            if journal_path.stem.startswith(candidate_slugs):
                 return journal_path
 
             try:
@@ -605,6 +609,126 @@ def render_markdown(album: Album, format_label: str, note: str | None) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def render_existing_album_lines(album: Album, format_label: str) -> list[str]:
+    """Render Flickr album metadata for an existing journal section."""
+
+    safe_title = markdown_escape_inline(album.title)
+    lines = [
+        f"- Album name: `{safe_title}`.",
+        f"- Album URL: [{album.title}]({album.url}).",
+    ]
+
+    if album.short_url:
+        lines.append(f"- Short URL: [flic.kr]({album.short_url}).")
+
+    lines.append(f"- Format: {format_label}, per project note.")
+
+    optional_fields = (
+        ("Owner", album.owner),
+        ("Owner NSID", album.owner_nsid),
+        ("Flickr oEmbed thumbnail alt text", album.thumbnail_alt),
+        ("Public feed title", album.feed_title),
+        ("Public feed modified", album.feed_modified),
+    )
+
+    for label, value in optional_fields:
+        if value:
+            safe_value = markdown_escape_inline(value)
+            lines.append(f"- {label}: `{safe_value}`.")
+
+    lines.append(f"- Public photo count: {album.photo_count}.")
+    return lines
+
+
+def replace_section_body(
+    markdown: str,
+    heading: str,
+    body_lines: list[str],
+) -> tuple[str, bool]:
+    """Replace a Markdown section body while preserving neighboring headings."""
+
+    heading_pattern = re.escape(heading)
+    pattern = re.compile(
+        rf"(^### {heading_pattern}\n\n)(.*?)(?=\n### |\n## |\Z)",
+        re.DOTALL | re.MULTILINE,
+    )
+
+    def replacement(match: re.Match[str]) -> str:
+        """Preserve the original heading and replace only its body."""
+
+        return match.group(1) + "\n".join(body_lines) + "\n"
+
+    updated, count = pattern.subn(replacement, markdown, count=1)
+    return updated, count > 0
+
+
+def append_visual_evidence_block(
+    markdown: str,
+    album: Album,
+    format_label: str,
+) -> str:
+    """Append a Flickr block when a journal has no placeholder sections."""
+
+    block_lines = [
+        "",
+        "### Flickr Album",
+        "",
+        *render_existing_album_lines(album, format_label),
+        "",
+        "### Starter Photo IDs",
+        "",
+        *render_photo_lines(album.photos),
+    ]
+    block = "\n".join(block_lines).rstrip() + "\n"
+
+    if "## Visual Evidence\n" in markdown:
+        visual_marker = "## Visual Evidence\n"
+        start = markdown.index(visual_marker) + len(visual_marker)
+        return markdown[:start] + block + markdown[start:]
+
+    return markdown.rstrip() + "\n\n## Visual Evidence\n" + block
+
+
+def merge_album_into_journal(
+    journal_path: Path,
+    album: Album,
+    format_label: str,
+) -> bool:
+    """Merge Flickr album metadata into an existing journal.
+
+    The importer looks for the placeholder sections used by the hand-authored
+    machine journals. If those sections are missing, it appends a compact
+    Flickr block under `Visual Evidence` so the album still lands in context.
+    """
+
+    album_id = extract_album_id(album.url)
+    markdown = journal_path.read_text(encoding="utf-8")
+
+    if album.url in markdown or album_id in markdown:
+        return False
+
+    updated = markdown.replace(
+        "- Album URL: pending.",
+        f"- Album URL: [{album.title}]({album.url}).",
+    )
+    updated, album_section_changed = replace_section_body(
+        updated,
+        "Flickr Album",
+        render_existing_album_lines(album, format_label),
+    )
+    updated, photo_section_changed = replace_section_body(
+        updated,
+        "Starter Photo IDs",
+        render_photo_lines(album.photos),
+    )
+
+    if not album_section_changed and not photo_section_changed:
+        updated = append_visual_evidence_block(updated, album, format_label)
+
+    journal_path.write_text(updated.rstrip() + "\n", encoding="utf-8")
+    return True
+
+
 def build_readme_entry(
     filename: str,
     title: str,
@@ -697,6 +821,11 @@ def parse_args() -> argparse.Namespace:
         help="Overwrite the output file if it already exists.",
     )
     parser.add_argument(
+        "--merge-existing",
+        action="store_true",
+        help="Merge album metadata into a matching journal when one exists.",
+    )
+    parser.add_argument(
         "--dry-run",
         action="store_true",
         help="Print generated Markdown instead of writing files.",
@@ -755,6 +884,31 @@ def main() -> int:
             raise RuntimeError("--format is required when importing one album")
 
         album = fetch_album(args.url, args.title)
+        discovered_album = PublicAlbum(
+            title=album.title,
+            url=album.url,
+            album_id=extract_album_id(album.url),
+        )
+        existing_journal = find_existing_journal(discovered_album)
+
+        if args.merge_existing and existing_journal:
+            if args.dry_run:
+                print(f"Would merge into {display_path(existing_journal)}")
+                return 0
+
+            changed = merge_album_into_journal(
+                existing_journal,
+                album,
+                args.format_label,
+            )
+
+            if changed:
+                print(f"Merged into {display_path(existing_journal)}")
+            else:
+                print(f"Already merged {display_path(existing_journal)}")
+
+            return 0
+
         output_path = choose_output_path(args, album)
         markdown = render_markdown(album, args.format_label, args.note)
 
@@ -809,10 +963,42 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
 
     selected_albums = albums[: args.limit] if args.limit else albums
     imported_count = 0
-    dry_run_count = 0
+    dry_merge_count = 0
+    dry_write_count = 0
+    merged_count = 0
     skipped_count = 0
 
     for discovered_album in selected_albums:
+        existing_journal = find_existing_journal(discovered_album)
+
+        if existing_journal and args.merge_existing:
+            album = fetch_album(discovered_album.url, discovered_album.title)
+
+            if args.dry_run:
+                dry_merge_count += 1
+                print(f"Would merge into {display_path(existing_journal)}")
+                continue
+
+            changed = merge_album_into_journal(
+                existing_journal,
+                album,
+                args.format_label,
+            )
+
+            if changed:
+                merged_count += 1
+                print(f"Merged into {display_path(existing_journal)}")
+            else:
+                skipped_count += 1
+                print(f"Already merged {display_path(existing_journal)}")
+
+            continue
+
+        if existing_journal and not args.force:
+            skipped_count += 1
+            print(f"Skipped existing {display_path(existing_journal)}")
+            continue
+
         album = fetch_album(discovered_album.url, discovered_album.title)
         output_path = choose_output_path(args, album)
 
@@ -824,7 +1010,7 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
         markdown = render_markdown(album, args.format_label, args.note)
 
         if args.dry_run:
-            dry_run_count += 1
+            dry_write_count += 1
             print(f"Would write {display_path(output_path)}")
             continue
 
@@ -845,13 +1031,14 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
 
     if args.dry_run:
         print(
-            f"Finished discovered dry run: {dry_run_count} would be written, "
+            f"Finished discovered dry run: {dry_write_count} would be "
+            f"written, {dry_merge_count} would be merged, "
             f"{skipped_count} skipped."
         )
     else:
         print(
             f"Finished discovered import: {imported_count} written, "
-            f"{skipped_count} skipped."
+            f"{merged_count} merged, {skipped_count} skipped."
         )
     return 0
 
