@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Catalog the Flickr album `my hood` as part of the lens archive and 35mm film evidence set. This entry records the public Flickr source, the user-supplied format classification, and the first feed-visible photo IDs.
+Catalog the Flickr album `my hood` as part of the lens archive and 35mm film evidence set. This entry records the public Flickr source, the user-supplied format classification, and the starter public-feed photo IDs.
 
 ## Album Identity
 
@@ -14,8 +14,8 @@ Catalog the Flickr album `my hood` as part of the lens archive and 35mm film evi
 - Flickr oEmbed thumbnail alt text: `78704`
 - Public feed title: `Content from my hood`
 - Public feed modified: `2023-04-21T18:29:27Z`
-- Public photo count: 31
-- Starter photo IDs cataloged here: 8
+- Public photo count: 31, confirmed by latest Flickr API importer scan
+- Photo IDs listed from public photoset feed: 8
 
 ## Archive Notes
 

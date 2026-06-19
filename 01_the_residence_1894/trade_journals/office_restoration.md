@@ -57,10 +57,10 @@ Use this section to map the Flickr album into evidence categories before writing
 ### Flickr Albums
 
 - Album URL: [Home Reno - Office](https://www.flickr.com/photos/boocher/albums/72177720316928566/)
-- Album status: public; Flickr metadata confirmed the title, owner `UncleRedBeard`, and 276 photos.
+- Album status: public API-visible album; latest importer scan confirms 276 photos.
 - Album role: primary visual archive for the office restoration.
 - Album URL: [Home Reno - Studio | Office](https://www.flickr.com/photos/boocher/albums/72177720306207693/)
-- Album status: public; Flickr metadata confirmed the title, owner `UncleRedBeard`, and 107 photos.
+- Album status: public API-visible album; latest importer scan confirms 107 photos.
 - Album role: visual archive for the transition from home office to dance studio, including the first floor-refinishing work completed in the house.
 
 ### Key Photo IDs

@@ -38,10 +38,10 @@ Use this section to map the Flickr album into evidence categories before writing
 ### Flickr Albums
 
 - Album URL: [Home Reno - Master Bedroom](https://www.flickr.com/photos/boocher/albums/72177720306914767/)
-- Album status: public; Flickr metadata confirmed the title, owner `UncleRedBeard`, and 132 photos.
+- Album status: public API-visible album; latest importer scan confirms 132 photos.
 - Album role: first master bedroom visual archive; likely baseline or earlier project pass pending photo review.
 - Album URL: [Home Reno - Master Bedroom - Take 2](https://www.flickr.com/photos/boocher/albums/72177720319515928/)
-- Album status: public; Flickr metadata confirmed the title, owner `UncleRedBeard`, and 190 photos.
+- Album status: public API-visible album; latest importer scan confirms 190 photos.
 - Album role: second master bedroom visual archive for continued work and follow-up evidence.
 
 ### Key Photo IDs

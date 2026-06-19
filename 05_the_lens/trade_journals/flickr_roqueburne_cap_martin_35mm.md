@@ -16,14 +16,14 @@ Catalog the Flickr album `Roqueburne-Cap-Martin` as part of the TradeJournals vi
 - Flickr oEmbed thumbnail alt text: `Roqueburne-Cap-Martin`
 - Public feed title: `Content from Roqueburne-Cap-Martin`
 - Public feed modified: `2023-04-24T17:29:38Z`
-- Public photo count: 126
-- Starter photo IDs visible in public feed: 20
+- Public photo count: 126, confirmed by latest Flickr API importer scan
+- Photo IDs listed from public photoset feed: 20
 
 ## Archive Notes
 
 This Flickr album belongs in the visual archive. Keep this Flickr source separate from any related Lomography catalog entry so platform metadata, URLs, and image IDs remain clean.
 
-The photo titles are preserved as Flickr labels. The human-readable photo labels below use Flickr's `date_taken` metadata and drop seconds. Flickr's public feed may expose only the starter photo set, even when the album contains more photos.
+The photo titles are preserved as Flickr labels. The human-readable photo labels below use Flickr's `date_taken` metadata and drop seconds. This entry preserves the public-feed starter list; API-backed imports can list the full public album when needed.
 
 ## Starter Photo IDs
 

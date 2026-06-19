@@ -220,7 +220,7 @@ Flickr link labels should translate timestamp-style image titles from `YYYYMMdd_
 - Album URL: [1964 Vespa restoration album](https://www.flickr.com/photos/boocher/albums/72177720305371229/)
 - Album title: 1964 Vespa
 - Album owner: UncleRedBeard
-- Album size: 427 public photos
+- Album status: public API-visible album; latest importer scan confirms 425 photos.
 - Public feed: [1964 Vespa Atom feed](https://www.flickr.com/services/feeds/photoset.gne?nsid=17632706@N00&set=72177720305371229&lang=en-us&format=atom)
 - Album role: primary visual archive for the 1964 Vespa restoration
 

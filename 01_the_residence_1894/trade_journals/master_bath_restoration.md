@@ -52,7 +52,7 @@ Use this section to map the Flickr album into evidence categories before writing
 ### Flickr Album
 
 - Album URL: [Home Reno - Master Bath](https://www.flickr.com/photos/boocher/albums/72177720306187803/)
-- Album status: public; Flickr metadata confirmed the title, owner `UncleRedBeard`, and 199 photos.
+- Album status: public API-visible album; latest importer scan confirms 199 photos.
 - Album role: primary visual archive for the master bath restoration.
 
 ### Key Photo IDs
