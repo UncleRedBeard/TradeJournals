@@ -75,6 +75,22 @@ python3 scripts/import_flickr_album.py \
   --limit 3
 ```
 
+To reconcile journals that already reference Flickr albums against the latest
+public API-visible counts, use:
+
+```sh
+python3 scripts/import_flickr_album.py \
+  --albums-url "https://www.flickr.com/photos/boocher/albums" \
+  --use-api \
+  --reconcile-known \
+  --dry-run
+```
+
+Remove `--dry-run` after reviewing the proposed line updates. Reconciliation
+only updates existing album status and public photo count bullets. If a journal
+references an album that is not currently visible through the public API scan,
+the script reports it and leaves the journal unchanged.
+
 After importing, run:
 
 ```sh

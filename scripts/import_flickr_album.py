@@ -103,6 +103,24 @@ class AlbumDiscovery:
     source: str = "initial page HTML"
 
 
+@dataclass(frozen=True)
+class JournalReference:
+    """One Flickr album reference found in an existing journal file."""
+
+    album_id: str
+    journal_path: Path
+
+
+@dataclass(frozen=True)
+class ReconcileChange:
+    """One line-level update made or proposed during reconciliation."""
+
+    journal_path: Path
+    line_number: int
+    before: str
+    after: str
+
+
 def fetch_text(url: str) -> str:
     """Fetch text from a public URL with a clear user agent.
 
@@ -763,6 +781,164 @@ def find_existing_journal(album: PublicAlbum) -> Path | None:
     return None
 
 
+def iter_journal_paths() -> list[Path]:
+    """Return Markdown journal files that can contain Flickr album references."""
+
+    journal_paths: list[Path] = []
+
+    for section_dir in SECTION_DIRS.values():
+        for journal_path in sorted(section_dir.glob("*.md")):
+            if journal_path.name == "README.md":
+                continue
+
+            journal_paths.append(journal_path)
+
+    return journal_paths
+
+
+def extract_album_ids_from_markdown(markdown: str) -> list[str]:
+    """Find Flickr album IDs referenced by a journal file.
+
+    Journals may link albums directly with `/albums/<id>/` or link individual
+    photos with Flickr's `/in/set-<id>/` suffix. Both point back to the album
+    identity we need for public API reconciliation.
+    """
+
+    album_ids: list[str] = []
+    patterns = (
+        r"flickr\.com/photos/[^)\s]+/(?:albums|sets)/(?P<id>\d+)",
+        r"/in/set-(?P<id>\d+)",
+    )
+
+    for pattern in patterns:
+        for match in re.finditer(pattern, markdown):
+            album_id = match.group("id")
+
+            if album_id not in album_ids:
+                album_ids.append(album_id)
+
+    return album_ids
+
+
+def find_known_journal_references() -> list[JournalReference]:
+    """Find every Flickr album currently referenced by TradeJournals."""
+
+    references: list[JournalReference] = []
+
+    for journal_path in iter_journal_paths():
+        markdown = journal_path.read_text(encoding="utf-8")
+
+        for album_id in extract_album_ids_from_markdown(markdown):
+            references.append(
+                JournalReference(
+                    album_id=album_id,
+                    journal_path=journal_path,
+                )
+            )
+
+    return references
+
+
+def album_id_from_line(line: str) -> str | None:
+    """Return a Flickr album ID when a Markdown line references one."""
+
+    patterns = (
+        r"flickr\.com/photos/[^)\s]+/(?:albums|sets)/(?P<id>\d+)",
+        r"/in/set-(?P<id>\d+)",
+    )
+
+    for pattern in patterns:
+        match = re.search(pattern, line)
+
+        if match:
+            return match.group("id")
+
+    return None
+
+
+def count_phrase(photo_count: int | None) -> str:
+    """Render a human-readable photo count for reconciliation output."""
+
+    if photo_count is None:
+        return "an unknown number of"
+
+    return str(photo_count)
+
+
+def reconciled_album_status_line(album: PublicAlbum) -> str:
+    """Build the standardized album status bullet for existing journals."""
+
+    return (
+        "- Album status: public API-visible album; latest importer scan "
+        f"confirms {count_phrase(album.photo_count)} photos."
+    )
+
+
+def reconciled_public_count_line(album: PublicAlbum, original: str) -> str:
+    """Build the standardized public photo count bullet.
+
+    Sidecar Flickr journals omit terminal periods in their identity bullets,
+    while hand-authored machine journals use them. Preserve that small local
+    style choice so reconciliation does not churn unrelated formatting.
+    """
+
+    suffix = "." if original.rstrip().endswith(".") else ""
+    return (
+        f"- Public photo count: {count_phrase(album.photo_count)}, confirmed "
+        f"by latest Flickr API importer scan{suffix}"
+    )
+
+
+def reconcile_journal_markdown(
+    markdown: str,
+    public_albums_by_id: dict[str, PublicAlbum],
+    journal_path: Path,
+) -> tuple[str, list[ReconcileChange]]:
+    """Update Flickr count/status bullets in one journal Markdown document."""
+
+    lines = markdown.splitlines()
+    changes: list[ReconcileChange] = []
+    current_album_id: str | None = None
+
+    for index, line in enumerate(lines):
+        referenced_album_id = album_id_from_line(line)
+
+        if referenced_album_id:
+            current_album_id = referenced_album_id
+
+        if not current_album_id:
+            continue
+
+        album = public_albums_by_id.get(current_album_id)
+
+        if not album:
+            continue
+
+        stripped = line.strip()
+
+        if stripped.startswith("- Album status:"):
+            replacement = reconciled_album_status_line(album)
+        elif stripped.startswith("- Public photo count:"):
+            replacement = reconciled_public_count_line(album, line)
+        else:
+            continue
+
+        if line == replacement:
+            continue
+
+        changes.append(
+            ReconcileChange(
+                journal_path=journal_path,
+                line_number=index + 1,
+                before=line,
+                after=replacement,
+            )
+        )
+        lines[index] = replacement
+
+    return "\n".join(lines).rstrip() + "\n", changes
+
+
 def format_optional_int(value: int | None) -> str:
     """Format optional count fields for report output."""
 
@@ -1169,6 +1345,14 @@ def parse_args() -> argparse.Namespace:
         help="Import albums discovered from --albums-url instead of reporting only.",
     )
     parser.add_argument(
+        "--reconcile-known",
+        action="store_true",
+        help=(
+            "Update existing journal Flickr metadata from a public albums scan. "
+            "Use with --albums-url and --use-api."
+        ),
+    )
+    parser.add_argument(
         "--use-api",
         action="store_true",
         help=(
@@ -1306,11 +1490,24 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
     if args.slug:
         raise RuntimeError("--slug can only be used with --url")
 
+    if args.reconcile_known and args.import_discovered:
+        raise RuntimeError(
+            "--reconcile-known and --import-discovered are separate workflows"
+        )
+
+    if args.reconcile_known and not args.use_api:
+        raise RuntimeError(
+            "--reconcile-known requires --use-api so counts come from Flickr API"
+        )
+
     if args.use_api:
         discovery = discover_api_albums(args.albums_url)
     else:
         discovery = discover_public_albums(args.albums_url)
     albums = discovery.albums
+
+    if args.reconcile_known:
+        return handle_reconcile_known(args, discovery)
 
     if not args.import_discovered:
         print(render_discovery_report(discovery, args.limit))
@@ -1406,6 +1603,102 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
             f"Finished discovered import: {imported_count} written, "
             f"{merged_count} merged, {skipped_count} skipped."
         )
+    return 0
+
+
+def unique_references_by_album(
+    references: list[JournalReference],
+) -> dict[str, list[Path]]:
+    """Group known journal references by Flickr album ID."""
+
+    grouped: dict[str, list[Path]] = {}
+
+    for reference in references:
+        grouped.setdefault(reference.album_id, [])
+
+        if reference.journal_path not in grouped[reference.album_id]:
+            grouped[reference.album_id].append(reference.journal_path)
+
+    return grouped
+
+
+def render_reconcile_change(change: ReconcileChange) -> str:
+    """Render one proposed or applied line update for console output."""
+
+    return (
+        f"- {display_path(change.journal_path)}:{change.line_number}\n"
+        f"  - old: {change.before}\n"
+        f"  - new: {change.after}"
+    )
+
+
+def handle_reconcile_known(
+    args: argparse.Namespace,
+    discovery: AlbumDiscovery,
+) -> int:
+    """Reconcile known journal album metadata against public API discovery."""
+
+    public_albums_by_id = {
+        album.album_id: album
+        for album in discovery.albums
+    }
+    references_by_album = unique_references_by_album(
+        find_known_journal_references()
+    )
+    all_changes: list[ReconcileChange] = []
+    changed_files = 0
+
+    for journal_path in sorted(
+        {path for paths in references_by_album.values() for path in paths}
+    ):
+        markdown = journal_path.read_text(encoding="utf-8")
+        updated, changes = reconcile_journal_markdown(
+            markdown,
+            public_albums_by_id,
+            journal_path,
+        )
+
+        if not changes:
+            continue
+
+        all_changes.extend(changes)
+        changed_files += 1
+
+        if not args.dry_run:
+            journal_path.write_text(updated, encoding="utf-8")
+
+    missing_album_ids = sorted(
+        album_id
+        for album_id in references_by_album
+        if album_id not in public_albums_by_id
+    )
+
+    action = "Would reconcile" if args.dry_run else "Reconciled"
+    print(
+        f"{action} {len(all_changes)} line(s) in {changed_files} journal file(s) "
+        f"using {len(discovery.albums)} public API-visible album(s)."
+    )
+
+    if all_changes:
+        print("")
+
+        for change in all_changes:
+            print(render_reconcile_change(change))
+
+    if missing_album_ids:
+        print("")
+        print(
+            "Known journal album(s) not visible in the public API scan; "
+            "left unchanged:"
+        )
+
+        for album_id in missing_album_ids:
+            paths = ", ".join(
+                display_path(path)
+                for path in references_by_album[album_id]
+            )
+            print(f"- `{album_id}`: {paths}")
+
     return 0
 
 
