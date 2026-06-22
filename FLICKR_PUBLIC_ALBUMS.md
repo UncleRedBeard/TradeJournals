@@ -11,9 +11,9 @@ Private albums are intentionally excluded from this workflow.
 ## Summary
 
 - Public albums visible via API: 37
-- Existing TradeJournals coverage: 19
+- Existing TradeJournals coverage: 25
 - Albums excluded from TradeJournals import: 7
-- Albums still needing review/mapping: 11
+- Albums still needing review/mapping: 5
 - API mode: public-read only
 - OAuth/private album access: intentionally not used
 
@@ -48,15 +48,15 @@ Private albums are intentionally excluded from this workflow.
 |25|[SXSW 2011 - Part 1](https://www.flickr.com/photos/17632706@N00/albums/72157626341699772/)|17|gap|lens?||
 |26|[East Side Locos](https://www.flickr.com/photos/17632706@N00/albums/72157626216393933/)|11|imported|[lens](#album-72157626216393933)|05_the_lens/trade_journals/flickr_east_side_locos_35mm.md|
 |27|[my hood](https://www.flickr.com/photos/17632706@N00/albums/72157626260986970/)|31|imported|[lens](#album-72157626260986970)|05_the_lens/trade_journals/flickr_my_hood_35mm.md|
-|28|[mini diana goes to france](https://www.flickr.com/photos/17632706@N00/albums/72157626126978837/)|63|gap|lens?||
+|28|[mini diana goes to france](https://www.flickr.com/photos/17632706@N00/albums/72157626126978837/)|63|imported|[lens](#album-72157626126978837)|05_the_lens/trade_journals/flickr_france_travel_archive.md|
 |29|[Roqueburne-Cap-Martin](https://www.flickr.com/photos/17632706@N00/albums/72157626089594173/)|126|imported|[lens](#album-72157626089594173)|05_the_lens/trade_journals/flickr_roqueburne_cap_martin_35mm.md|
 |30|[La Turbie](https://www.flickr.com/photos/17632706@N00/albums/72157626214152878/)|98|imported|[lens](#album-72157626214152878)|05_the_lens/trade_journals/flickr_la_turbie_35mm.md|
 |31|[Toulon](https://www.flickr.com/photos/17632706@N00/albums/72157626214082972/)|13|imported|[lens](#album-72157626214082972)|05_the_lens/trade_journals/flickr_toulon_35mm.md|
-|32|[La Ciotat](https://www.flickr.com/photos/17632706@N00/albums/72157626174678654/)|118|gap|lens?||
-|33|[La Ciotat - Skate Park](https://www.flickr.com/photos/17632706@N00/albums/72157626167265156/)|15|gap|lens?||
-|34|[Marseille](https://www.flickr.com/photos/17632706@N00/albums/72157626040593925/)|93|gap|lens?||
-|35|[Cassis](https://www.flickr.com/photos/17632706@N00/albums/72157626153089302/)|27|gap|lens?||
-|36|[Paris](https://www.flickr.com/photos/17632706@N00/albums/72157626010685451/)|45|gap|lens?||
+|32|[La Ciotat](https://www.flickr.com/photos/17632706@N00/albums/72157626174678654/)|118|imported|[lens](#album-72157626174678654)|05_the_lens/trade_journals/flickr_france_travel_archive.md|
+|33|[La Ciotat - Skate Park](https://www.flickr.com/photos/17632706@N00/albums/72157626167265156/)|15|imported|[lens](#album-72157626167265156)|05_the_lens/trade_journals/flickr_france_travel_archive.md|
+|34|[Marseille](https://www.flickr.com/photos/17632706@N00/albums/72157626040593925/)|93|imported|[lens](#album-72157626040593925)|05_the_lens/trade_journals/flickr_france_travel_archive.md|
+|35|[Cassis](https://www.flickr.com/photos/17632706@N00/albums/72157626153089302/)|27|imported|[lens](#album-72157626153089302)|05_the_lens/trade_journals/flickr_france_travel_archive.md|
+|36|[Paris](https://www.flickr.com/photos/17632706@N00/albums/72157626010685451/)|45|imported|[lens](#album-72157626010685451)|05_the_lens/trade_journals/flickr_france_travel_archive.md|
 |37|[digital lomography](https://www.flickr.com/photos/17632706@N00/albums/72157624945269229/)|4|excluded|||
 
 ## Album Details
@@ -376,8 +376,9 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72157626126978837`
 - Visibility: public
 - Photos: 63
-- TradeJournals status: gap
-- Section: lens?
+- TradeJournals status: imported
+- Section: lens
+- Existing journal: `05_the_lens/trade_journals/flickr_france_travel_archive.md`
 
 <a id="album-72157626089594173"></a>
 
@@ -423,8 +424,9 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72157626174678654`
 - Visibility: public
 - Photos: 118
-- TradeJournals status: gap
-- Section: lens?
+- TradeJournals status: imported
+- Section: lens
+- Existing journal: `05_the_lens/trade_journals/flickr_france_travel_archive.md`
 
 <a id="album-72157626167265156"></a>
 
@@ -434,8 +436,9 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72157626167265156`
 - Visibility: public
 - Photos: 15
-- TradeJournals status: gap
-- Section: lens?
+- TradeJournals status: imported
+- Section: lens
+- Existing journal: `05_the_lens/trade_journals/flickr_france_travel_archive.md`
 
 <a id="album-72157626040593925"></a>
 
@@ -445,8 +448,9 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72157626040593925`
 - Visibility: public
 - Photos: 93
-- TradeJournals status: gap
-- Section: lens?
+- TradeJournals status: imported
+- Section: lens
+- Existing journal: `05_the_lens/trade_journals/flickr_france_travel_archive.md`
 
 <a id="album-72157626153089302"></a>
 
@@ -456,8 +460,9 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72157626153089302`
 - Visibility: public
 - Photos: 27
-- TradeJournals status: gap
-- Section: lens?
+- TradeJournals status: imported
+- Section: lens
+- Existing journal: `05_the_lens/trade_journals/flickr_france_travel_archive.md`
 
 <a id="album-72157626010685451"></a>
 
@@ -467,8 +472,9 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72157626010685451`
 - Visibility: public
 - Photos: 45
-- TradeJournals status: gap
-- Section: lens?
+- TradeJournals status: imported
+- Section: lens
+- Existing journal: `05_the_lens/trade_journals/flickr_france_travel_archive.md`
 
 <a id="album-72157624945269229"></a>
 
