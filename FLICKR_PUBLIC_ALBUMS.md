@@ -11,9 +11,9 @@ Private albums are intentionally excluded from this workflow.
 ## Summary
 
 - Public albums visible via API: 37
-- Existing TradeJournals coverage: 18
-- Albums excluded from TradeJournals import: 6
-- Albums still needing review/mapping: 13
+- Existing TradeJournals coverage: 19
+- Albums excluded from TradeJournals import: 7
+- Albums still needing review/mapping: 11
 - API mode: public-read only
 - OAuth/private album access: intentionally not used
 
@@ -36,13 +36,13 @@ Private albums are intentionally excluded from this workflow.
 |13|[1964 Vespa](https://www.flickr.com/photos/17632706@N00/albums/72177720305371229/)|425|imported|[machines](#album-72177720305371229)|03_the_machines/trade_journals/1964_vespa_restoration.md|
 |14|[Uncle RedBeard's Shed](https://www.flickr.com/photos/17632706@N00/albums/72177720304050679/)|512|gap|review||
 |15|[Durango - Santa Fe [April 7-8, 2017]](https://www.flickr.com/photos/17632706@N00/albums/72157682532227305/)|7|excluded|||
-|16|[Iron Butterfly Cycle Works](https://www.flickr.com/photos/17632706@N00/albums/72157675656551594/)|39|gap|machines?||
+|16|[Iron Butterfly Cycle Works](https://www.flickr.com/photos/17632706@N00/albums/72157675656551594/)|39|imported|[machines](#album-72157675656551594)|03_the_machines/trade_journals/iron_butterfly_cycle_works.md|
 |17|[Rides](https://www.flickr.com/photos/17632706@N00/albums/72157679575662395/)|9|excluded|||
 |18|[New Orleans Oct 7 - 10, 2016](https://www.flickr.com/photos/17632706@N00/albums/72157677807747011/)|19|excluded|||
 |19|[compost tea](https://www.flickr.com/photos/17632706@N00/albums/72157644736396663/)|10|excluded|||
 |20|[gardening](https://www.flickr.com/photos/17632706@N00/albums/72157644693416375/)|5|excluded|||
 |21|[El Toro - Pinhole with Lens](https://www.flickr.com/photos/17632706@N00/albums/72157629953268017/)|7|gap|lens?||
-|22|[Cornhole Board Project](https://www.flickr.com/photos/17632706@N00/albums/72157629724747813/)|41|gap|machines?||
+|22|[Cornhole Board Project](https://www.flickr.com/photos/17632706@N00/albums/72157629724747813/)|41|excluded|||
 |23|[Kodakk-613-1913](https://www.flickr.com/photos/17632706@N00/albums/72157627958704171/)|2|gap|review||
 |24|[SXSW 2011 - Part 2](https://www.flickr.com/photos/17632706@N00/albums/72157626342391590/)|7|gap|lens?||
 |25|[SXSW 2011 - Part 1](https://www.flickr.com/photos/17632706@N00/albums/72157626341699772/)|17|gap|lens?||
@@ -246,8 +246,9 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72157675656551594`
 - Visibility: public
 - Photos: 39
-- TradeJournals status: gap
-- Section: machines?
+- TradeJournals status: imported
+- Section: machines
+- Existing journal: `03_the_machines/trade_journals/iron_butterfly_cycle_works.md`
 
 <a id="album-72157679575662395"></a>
 
@@ -308,8 +309,7 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72157629724747813`
 - Visibility: public
 - Photos: 41
-- TradeJournals status: gap
-- Section: machines?
+- TradeJournals status: excluded
 
 <a id="album-72157627958704171"></a>
 
