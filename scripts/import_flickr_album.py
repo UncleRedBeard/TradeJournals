@@ -36,6 +36,7 @@ FETCH_TIMEOUT_SECONDS = 30
 FLICKR_API_ENDPOINT = "https://www.flickr.com/services/rest/"
 API_PAGE_SIZE = 500
 LOCAL_ENV_PATH = REPO_ROOT / ".env"
+DEFAULT_INVENTORY_PATH = REPO_ROOT / "FLICKR_PUBLIC_ALBUMS.md"
 
 # Keep section names short on the command line, but write into the existing
 # TradeJournals folder structure.
@@ -120,6 +121,17 @@ class ReconcileChange:
     line_number: int
     before: str
     after: str
+
+
+@dataclass(frozen=True)
+class InventoryRow:
+    """One public album row in the TradeJournals inventory report."""
+
+    index: int
+    album: PublicAlbum
+    status: str
+    section: str
+    existing_journal: Path | None
 
 
 def fetch_text(url: str) -> str:
@@ -969,6 +981,238 @@ def reconcile_journal_markdown(
     return "\n".join(lines).rstrip() + "\n", changes
 
 
+def markdown_table_cell(value: str) -> str:
+    """Escape text for use in a Markdown table cell."""
+
+    return value.replace("|", "\\|").replace("\n", " ").strip()
+
+
+def load_inventory_exclusions(inventory_path: Path) -> set[str]:
+    """Read album IDs already marked as excluded in an inventory file.
+
+    The inventory is a human-reviewed decision surface. Preserving existing
+    exclusions lets a fresh API-generated report update counts without asking
+    the user to re-decide which albums do not belong in TradeJournals.
+    """
+
+    if not inventory_path.exists():
+        return set()
+
+    excluded_album_ids: set[str] = set()
+    markdown = inventory_path.read_text(encoding="utf-8")
+
+    for block in re.split(r"\n(?=\d+\. )", markdown):
+        id_match = re.search(r"Album ID: `(?P<id>\d+)`", block)
+
+        if id_match and "TradeJournals status: excluded" in block:
+            excluded_album_ids.add(id_match.group("id"))
+
+    return excluded_album_ids
+
+
+def section_from_journal_path(journal_path: Path | None) -> str:
+    """Return the TradeJournals section name for a known journal path."""
+
+    if not journal_path:
+        return ""
+
+    for section, section_dir in SECTION_DIRS.items():
+        try:
+            journal_path.relative_to(section_dir)
+        except ValueError:
+            continue
+
+        return section
+
+    return ""
+
+
+def guess_section(album_title: str) -> str:
+    """Suggest a likely section for an album that has no journal yet."""
+
+    title = album_title.lower()
+
+    if title.startswith("home reno"):
+        return "residence?"
+
+    machine_terms = (
+        "bike",
+        "cycle",
+        "vespa",
+        "ride",
+        "klr",
+        "honda",
+        "cornhole board",
+    )
+
+    if any(term in title for term in machine_terms):
+        return "machines?"
+
+    lens_terms = (
+        "diana",
+        "sxsw",
+        "paris",
+        "marseille",
+        "cassis",
+        "ciotat",
+        "toulon",
+        "turbie",
+        "roqueburne",
+        "lomography",
+        "pinhole",
+    )
+
+    if any(term in title for term in lens_terms):
+        return "lens?"
+
+    return "review"
+
+
+def inventory_status(
+    album: PublicAlbum,
+    existing_journal: Path | None,
+    excluded_album_ids: set[str],
+) -> str:
+    """Classify one album for the inventory gap report."""
+
+    if album.album_id in excluded_album_ids:
+        return "excluded"
+
+    if existing_journal:
+        return "imported"
+
+    return "gap"
+
+
+def build_inventory_rows(
+    albums: list[PublicAlbum],
+    excluded_album_ids: set[str],
+) -> list[InventoryRow]:
+    """Combine public album data with local journal/import status."""
+
+    rows: list[InventoryRow] = []
+
+    for index, album in enumerate(albums, start=1):
+        existing_journal = find_existing_journal(album)
+        status = inventory_status(album, existing_journal, excluded_album_ids)
+        section = section_from_journal_path(existing_journal)
+
+        if not section and status != "excluded":
+            section = guess_section(album.title)
+
+        rows.append(
+            InventoryRow(
+                index=index,
+                album=album,
+                status=status,
+                section=section,
+                existing_journal=existing_journal,
+            )
+        )
+
+    return rows
+
+
+def summarize_inventory(rows: list[InventoryRow]) -> dict[str, int]:
+    """Count inventory rows by TradeJournals status."""
+
+    summary = {
+        "imported": 0,
+        "excluded": 0,
+        "gap": 0,
+    }
+
+    for row in rows:
+        summary[row.status] = summary.get(row.status, 0) + 1
+
+    return summary
+
+
+def render_inventory_report(
+    discovery: AlbumDiscovery,
+    inventory_path: Path,
+) -> str:
+    """Render a full public Flickr album inventory and gap report."""
+
+    excluded_album_ids = load_inventory_exclusions(inventory_path)
+    rows = build_inventory_rows(discovery.albums, excluded_album_ids)
+    summary = summarize_inventory(rows)
+    checked_date = datetime.now().strftime("%Y-%m-%d")
+
+    lines = [
+        "# Flickr Public Album Inventory",
+        "",
+        f"Last checked: {checked_date}",
+        "",
+        "Source: Flickr API public-read scan of",
+        "<https://www.flickr.com/photos/boocher/albums>.",
+        "",
+        "This list only includes albums visible through the public Flickr API.",
+        "Private albums are intentionally excluded from this workflow.",
+        "",
+        "## Summary",
+        "",
+        f"- Public albums visible via API: {len(discovery.albums)}",
+        f"- Existing TradeJournals coverage: {summary.get('imported', 0)}",
+        f"- Albums excluded from TradeJournals import: {summary.get('excluded', 0)}",
+        f"- Albums still needing review/mapping: {summary.get('gap', 0)}",
+        "- API mode: public-read only",
+        "- OAuth/private album access: intentionally not used",
+        "",
+        "## Gap Report",
+        "",
+        "|#|Album|Photos|Status|Section|Existing Journal|",
+        "|---:|---|---:|---|---|---|",
+    ]
+
+    for row in rows:
+        album = row.album
+        existing = display_path(row.existing_journal) if row.existing_journal else ""
+        title = markdown_table_cell(album.title)
+        section = markdown_table_cell(row.section)
+        status = markdown_table_cell(row.status)
+        journal = markdown_table_cell(existing)
+        lines.append(
+            f"|{row.index}|[{title}]({album.url})|"
+            f"{format_optional_int(album.photo_count)}|{status}|"
+            f"{section}|{journal}|"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Album Details",
+            "",
+        ]
+    )
+
+    for row in rows:
+        album = row.album
+        lines.extend(
+            [
+                f"### {row.index}. {album.title}",
+                "",
+                f"- Album URL: [{album.title}]({album.url})",
+                f"- Album ID: `{album.album_id}`",
+                f"- Visibility: {album.visibility}",
+                f"- Photos: {format_optional_int(album.photo_count)}",
+                f"- TradeJournals status: {row.status}",
+            ]
+        )
+
+        if row.section:
+            lines.append(f"- Section: {row.section}")
+
+        if row.existing_journal:
+            lines.append(
+                f"- Existing journal: `{display_path(row.existing_journal)}`"
+            )
+
+        lines.append("")
+
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def format_optional_int(value: int | None) -> str:
     """Format optional count fields for report output."""
 
@@ -1383,6 +1627,20 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--write-inventory",
+        action="store_true",
+        help=(
+            "Write a public album inventory/gap report from --albums-url. "
+            "Use with --use-api."
+        ),
+    )
+    parser.add_argument(
+        "--inventory-output",
+        type=Path,
+        default=DEFAULT_INVENTORY_PATH,
+        help="Inventory Markdown path for --write-inventory.",
+    )
+    parser.add_argument(
         "--use-api",
         action="store_true",
         help=(
@@ -1525,9 +1783,24 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
             "--reconcile-known and --import-discovered are separate workflows"
         )
 
+    if args.write_inventory and args.import_discovered:
+        raise RuntimeError(
+            "--write-inventory and --import-discovered are separate workflows"
+        )
+
+    if args.write_inventory and args.reconcile_known:
+        raise RuntimeError(
+            "--write-inventory and --reconcile-known are separate workflows"
+        )
+
     if args.reconcile_known and not args.use_api:
         raise RuntimeError(
             "--reconcile-known requires --use-api so counts come from Flickr API"
+        )
+
+    if args.write_inventory and not args.use_api:
+        raise RuntimeError(
+            "--write-inventory requires --use-api for complete public inventory"
         )
 
     if args.use_api:
@@ -1538,6 +1811,9 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
 
     if args.reconcile_known:
         return handle_reconcile_known(args, discovery)
+
+    if args.write_inventory:
+        return handle_write_inventory(args, discovery)
 
     if not args.import_discovered:
         print(render_discovery_report(discovery, args.limit))
@@ -1660,6 +1936,24 @@ def render_reconcile_change(change: ReconcileChange) -> str:
         f"  - old: {change.before}\n"
         f"  - new: {change.after}"
     )
+
+
+def handle_write_inventory(
+    args: argparse.Namespace,
+    discovery: AlbumDiscovery,
+) -> int:
+    """Write or preview the public Flickr album inventory report."""
+
+    output_path = args.inventory_output
+    report = render_inventory_report(discovery, output_path)
+
+    if args.dry_run:
+        print(report, end="")
+        return 0
+
+    output_path.write_text(report, encoding="utf-8")
+    print(f"Wrote {display_path(output_path)}")
+    return 0
 
 
 def handle_reconcile_known(

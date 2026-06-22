@@ -61,6 +61,19 @@ an existing journal already appears to reference the album. Without
 initial public HTML; the report calls that out when the remaining albums appear
 to require Flickr's lazy-load/API path.
 
+To refresh the tracked public album inventory and gap report, use:
+
+```sh
+python3 scripts/import_flickr_album.py \
+  --albums-url "https://www.flickr.com/photos/boocher/albums" \
+  --use-api \
+  --write-inventory
+```
+
+Preview it first with `--dry-run` if needed. The inventory report preserves
+album IDs already marked as `excluded`, then classifies the rest as `imported`
+when a journal reference exists or `gap` when the album still needs review.
+
 Batch import is opt-in and still requires a project classification:
 
 ```sh
