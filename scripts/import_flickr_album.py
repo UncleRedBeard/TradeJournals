@@ -35,6 +35,7 @@ USER_AGENT = "TradeJournals Flickr importer"
 FETCH_TIMEOUT_SECONDS = 30
 FLICKR_API_ENDPOINT = "https://www.flickr.com/services/rest/"
 API_PAGE_SIZE = 500
+LOCAL_ENV_PATH = REPO_ROOT / ".env"
 
 # Keep section names short on the command line, but write into the existing
 # TradeJournals folder structure.
@@ -151,6 +152,31 @@ def fetch_json(url: str) -> dict[str, Any]:
         raise RuntimeError(f"failed to parse JSON from {url}: {exc}") from exc
 
 
+def load_local_env_value(name: str) -> str:
+    """Read one value from the repo-local `.env` file.
+
+    This intentionally supports only simple `NAME=value` lines. The importer
+    does not need a full shell parser, and keeping this small avoids surprising
+    behavior for anyone reviewing how local secrets are handled.
+    """
+
+    if not LOCAL_ENV_PATH.exists():
+        return ""
+
+    for line in LOCAL_ENV_PATH.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+
+        if not stripped or stripped.startswith("#"):
+            continue
+
+        key, separator, value = stripped.partition("=")
+
+        if separator and key.strip() == name:
+            return value.strip().strip('"').strip("'")
+
+    return ""
+
+
 def require_flickr_api_key() -> str:
     """Return the Flickr API key from the environment.
 
@@ -159,11 +185,15 @@ def require_flickr_api_key() -> str:
     separate OAuth flow and are outside this importer for now.
     """
 
-    api_key = os.environ.get("FLICKR_API_KEY", "").strip()
+    api_key = (
+        os.environ.get("FLICKR_API_KEY", "").strip()
+        or load_local_env_value("FLICKR_API_KEY")
+    )
 
     if not api_key:
         raise RuntimeError(
-            "FLICKR_API_KEY is required when using --use-api"
+            "FLICKR_API_KEY is required when using --use-api; export it or "
+            "add it to the gitignored .env file"
         )
 
     return api_key

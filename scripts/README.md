@@ -15,8 +15,8 @@ For more reliable album discovery and full public photo pagination, use
 export FLICKR_API_KEY="your-api-key"
 ```
 
-You can also copy `.env.example` to `.env` for local notes, then source or
-export the value before running the script.
+You can also copy `.env.example` to `.env`; the importer reads
+`FLICKR_API_KEY` from that gitignored file when it is not already exported.
 
 The Flickr API secret is not needed for the public-read workflow and should not
 be committed to the repo.
