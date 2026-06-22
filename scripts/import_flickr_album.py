@@ -37,6 +37,15 @@ FLICKR_API_ENDPOINT = "https://www.flickr.com/services/rest/"
 API_PAGE_SIZE = 500
 LOCAL_ENV_PATH = REPO_ROOT / ".env"
 DEFAULT_INVENTORY_PATH = REPO_ROOT / "FLICKR_PUBLIC_ALBUMS.md"
+DEFAULT_EXCLUDED_ALBUM_IDS = {
+    # User-approved TradeJournals exclusions from the public Flickr inventory.
+    "72157682532227305",
+    "72157679575662395",
+    "72157677807747011",
+    "72157644736396663",
+    "72157644693416375",
+    "72157624945269229",
+}
 
 # Keep section names short on the command line, but write into the existing
 # TradeJournals folder structure.
@@ -987,27 +996,33 @@ def markdown_table_cell(value: str) -> str:
     return value.replace("|", "\\|").replace("\n", " ").strip()
 
 
-def load_inventory_exclusions(inventory_path: Path) -> set[str]:
-    """Read album IDs already marked as excluded in an inventory file.
+def album_detail_anchor(album: PublicAlbum) -> str:
+    """Return the stable in-page anchor for one album detail block."""
 
-    The inventory is a human-reviewed decision surface. Preserving existing
-    exclusions lets a fresh API-generated report update counts without asking
-    the user to re-decide which albums do not belong in TradeJournals.
+    return f"album-{album.album_id}"
+
+
+def linked_section_cell(row: InventoryRow) -> str:
+    """Render a Section table cell with links for confirmed sections only."""
+
+    confirmed_sections = set(SECTION_DIRS)
+
+    if row.section not in confirmed_sections:
+        return markdown_table_cell(row.section)
+
+    return f"[{row.section}](#{album_detail_anchor(row.album)})"
+
+
+def load_inventory_exclusions(inventory_path: Path) -> set[str]:
+    """Return album IDs intentionally excluded from TradeJournals.
+
+    The inventory is generated output, so exclusions live in code for now. That
+    keeps a bad generated report from preserving an accidental status forever.
+    When the user makes more exclusion decisions, add those album IDs to the
+    explicit set above or move this to a reviewed config file.
     """
 
-    if not inventory_path.exists():
-        return set()
-
-    excluded_album_ids: set[str] = set()
-    markdown = inventory_path.read_text(encoding="utf-8")
-
-    for block in re.split(r"\n(?=\d+\. )", markdown):
-        id_match = re.search(r"Album ID: `(?P<id>\d+)`", block)
-
-        if id_match and "TradeJournals status: excluded" in block:
-            excluded_album_ids.add(id_match.group("id"))
-
-    return excluded_album_ids
+    return set(DEFAULT_EXCLUDED_ALBUM_IDS)
 
 
 def section_from_journal_path(journal_path: Path | None) -> str:
@@ -1169,7 +1184,7 @@ def render_inventory_report(
         album = row.album
         existing = display_path(row.existing_journal) if row.existing_journal else ""
         title = markdown_table_cell(album.title)
-        section = markdown_table_cell(row.section)
+        section = linked_section_cell(row)
         status = markdown_table_cell(row.status)
         journal = markdown_table_cell(existing)
         lines.append(
@@ -1190,6 +1205,8 @@ def render_inventory_report(
         album = row.album
         lines.extend(
             [
+                f'<a id="{album_detail_anchor(album)}"></a>',
+                "",
                 f"### {row.index}. {album.title}",
                 "",
                 f"- Album URL: [{album.title}]({album.url})",
