@@ -11,9 +11,9 @@ Private albums are intentionally excluded from this workflow.
 ## Summary
 
 - Public albums visible via API: 37
-- Existing TradeJournals coverage: 25
+- Existing TradeJournals coverage: 30
 - Albums excluded from TradeJournals import: 7
-- Albums still needing review/mapping: 5
+- Albums still needing review/mapping: 0
 - API mode: public-read only
 - OAuth/private album access: intentionally not used
 
@@ -34,18 +34,18 @@ Private albums are intentionally excluded from this workflow.
 |11|[Home Reno - Studio \| Office](https://www.flickr.com/photos/17632706@N00/albums/72177720306207693/)|107|imported|[residence](#album-72177720306207693)|01_the_residence_1894/trade_journals/office_restoration.md|
 |12|[Home Reno - Master Bath](https://www.flickr.com/photos/17632706@N00/albums/72177720306187803/)|199|imported|[residence](#album-72177720306187803)|01_the_residence_1894/trade_journals/master_bath_restoration.md|
 |13|[1964 Vespa](https://www.flickr.com/photos/17632706@N00/albums/72177720305371229/)|425|imported|[machines](#album-72177720305371229)|03_the_machines/trade_journals/1964_vespa_restoration.md|
-|14|[Uncle RedBeard's Shed](https://www.flickr.com/photos/17632706@N00/albums/72177720304050679/)|512|gap|review||
+|14|[Uncle RedBeard's Shed](https://www.flickr.com/photos/17632706@N00/albums/72177720304050679/)|512|imported|[forge](#album-72177720304050679)|02_the_forge_and_shop/trade_journals/uncle_redbeards_shed.md|
 |15|[Durango - Santa Fe [April 7-8, 2017]](https://www.flickr.com/photos/17632706@N00/albums/72157682532227305/)|7|excluded|||
 |16|[Iron Butterfly Cycle Works](https://www.flickr.com/photos/17632706@N00/albums/72157675656551594/)|39|imported|[machines](#album-72157675656551594)|03_the_machines/trade_journals/iron_butterfly_cycle_works.md|
 |17|[Rides](https://www.flickr.com/photos/17632706@N00/albums/72157679575662395/)|9|excluded|||
 |18|[New Orleans Oct 7 - 10, 2016](https://www.flickr.com/photos/17632706@N00/albums/72157677807747011/)|19|excluded|||
 |19|[compost tea](https://www.flickr.com/photos/17632706@N00/albums/72157644736396663/)|10|excluded|||
 |20|[gardening](https://www.flickr.com/photos/17632706@N00/albums/72157644693416375/)|5|excluded|||
-|21|[El Toro - Pinhole with Lens](https://www.flickr.com/photos/17632706@N00/albums/72157629953268017/)|7|gap|lens?||
+|21|[El Toro - Pinhole with Lens](https://www.flickr.com/photos/17632706@N00/albums/72157629953268017/)|7|imported|[lens](#album-72157629953268017)|05_the_lens/trade_journals/flickr_lomography_overlap_archive.md|
 |22|[Cornhole Board Project](https://www.flickr.com/photos/17632706@N00/albums/72157629724747813/)|41|excluded|||
-|23|[Kodakk-613-1913](https://www.flickr.com/photos/17632706@N00/albums/72157627958704171/)|2|gap|review||
-|24|[SXSW 2011 - Part 2](https://www.flickr.com/photos/17632706@N00/albums/72157626342391590/)|7|gap|lens?||
-|25|[SXSW 2011 - Part 1](https://www.flickr.com/photos/17632706@N00/albums/72157626341699772/)|17|gap|lens?||
+|23|[Kodakk-613-1913](https://www.flickr.com/photos/17632706@N00/albums/72157627958704171/)|2|imported|[lens](#album-72157627958704171)|05_the_lens/trade_journals/flickr_kodakk_613_1913.md|
+|24|[SXSW 2011 - Part 2](https://www.flickr.com/photos/17632706@N00/albums/72157626342391590/)|7|imported|[lens](#album-72157626342391590)|05_the_lens/trade_journals/flickr_lomography_overlap_archive.md|
+|25|[SXSW 2011 - Part 1](https://www.flickr.com/photos/17632706@N00/albums/72157626341699772/)|17|imported|[lens](#album-72157626341699772)|05_the_lens/trade_journals/flickr_lomography_overlap_archive.md|
 |26|[East Side Locos](https://www.flickr.com/photos/17632706@N00/albums/72157626216393933/)|11|imported|[lens](#album-72157626216393933)|05_the_lens/trade_journals/flickr_east_side_locos_35mm.md|
 |27|[my hood](https://www.flickr.com/photos/17632706@N00/albums/72157626260986970/)|31|imported|[lens](#album-72157626260986970)|05_the_lens/trade_journals/flickr_my_hood_35mm.md|
 |28|[mini diana goes to france](https://www.flickr.com/photos/17632706@N00/albums/72157626126978837/)|63|imported|[lens](#album-72157626126978837)|05_the_lens/trade_journals/flickr_france_travel_archive.md|
@@ -225,8 +225,9 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72177720304050679`
 - Visibility: public
 - Photos: 512
-- TradeJournals status: gap
-- Section: review
+- TradeJournals status: imported
+- Section: forge
+- Existing journal: `02_the_forge_and_shop/trade_journals/uncle_redbeards_shed.md`
 
 <a id="album-72157682532227305"></a>
 
@@ -298,8 +299,9 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72157629953268017`
 - Visibility: public
 - Photos: 7
-- TradeJournals status: gap
-- Section: lens?
+- TradeJournals status: imported
+- Section: lens
+- Existing journal: `05_the_lens/trade_journals/flickr_lomography_overlap_archive.md`
 
 <a id="album-72157629724747813"></a>
 
@@ -319,8 +321,9 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72157627958704171`
 - Visibility: public
 - Photos: 2
-- TradeJournals status: gap
-- Section: review
+- TradeJournals status: imported
+- Section: lens
+- Existing journal: `05_the_lens/trade_journals/flickr_kodakk_613_1913.md`
 
 <a id="album-72157626342391590"></a>
 
@@ -330,8 +333,9 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72157626342391590`
 - Visibility: public
 - Photos: 7
-- TradeJournals status: gap
-- Section: lens?
+- TradeJournals status: imported
+- Section: lens
+- Existing journal: `05_the_lens/trade_journals/flickr_lomography_overlap_archive.md`
 
 <a id="album-72157626341699772"></a>
 
@@ -341,8 +345,9 @@ Private albums are intentionally excluded from this workflow.
 - Album ID: `72157626341699772`
 - Visibility: public
 - Photos: 17
-- TradeJournals status: gap
-- Section: lens?
+- TradeJournals status: imported
+- Section: lens
+- Existing journal: `05_the_lens/trade_journals/flickr_lomography_overlap_archive.md`
 
 <a id="album-72157626216393933"></a>
 

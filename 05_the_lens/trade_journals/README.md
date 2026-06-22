@@ -5,6 +5,8 @@ Use this folder for photography, documentation, and visual archive journals. Ent
 ## Journals
 
 - [Flickr: France Travel Archive](flickr_france_travel_archive.md) - grouped Flickr catalog record for France travel-photo albums and their inventory evidence.
+- [Flickr: Kodakk-613-1913](flickr_kodakk_613_1913.md) - Flickr-side lens archive record for Kodak bellows / 616 film evidence.
+- [Flickr: Lomography Overlap Archive](flickr_lomography_overlap_archive.md) - grouped Flickr catalog record for albums that overlap known Lomography film catalog entries.
 - [Flickr: Toulon](flickr_toulon_35mm.md) - catalog record for a 35mm film Flickr album with photo-level metadata.
 - [Flickr: La Turbie](flickr_la_turbie_35mm.md) - catalog record for a 35mm film Flickr album with photo-level metadata.
 - [Flickr: Roqueburne-Cap-Martin](flickr_roqueburne_cap_martin_35mm.md) - catalog record for a 35mm film Flickr album with photo-level metadata.
