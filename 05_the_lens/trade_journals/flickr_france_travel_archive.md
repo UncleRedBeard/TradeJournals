@@ -103,10 +103,12 @@ Use this section to map the Flickr albums into evidence categories before writin
 ### La Ciotat
 
 - Review focus: coastal town record, street texture, harbor or shoreline views, and local architectural details.
+- Format note: within this `La Ciotat` album, Flickr titles matching `la ciotat` are likely digital images and may include useful EXIF location data. Flickr titles beginning with `R1-` are 35mm film scans.
 - Candidate image types:
-  - Establishing image for La Ciotat.
-  - Strongest coastal or harbor frame.
-  - Strongest street or architectural detail frame.
+  - Establishing image for La Ciotat: [la ciotat, photo 5489412430](https://www.flickr.com/photos/boocher/5489412430/in/album-72157626174678654)
+  - Strongest coastal or harbor frame: [R1-08767-0000](https://www.flickr.com/photos/boocher/52834975513/in/album-72157626174678654)
+  - Strongest street or architectural detail frame: [la ciotat, photo 5488818887](https://www.flickr.com/photos/boocher/5488818887/in/album-72157626174678654)
+  - Strongest 35mm film scan: [R1-08767-0000](https://www.flickr.com/photos/boocher/52834975513/in/album-72157626174678654/)
 - Notes:
   - Pending photo-level review.
 
@@ -114,9 +116,9 @@ Use this section to map the Flickr albums into evidence categories before writin
 
 - Review focus: focused sub-sequence within La Ciotat, especially surfaces, movement, marks of use, and visual contrast with the broader travel set.
 - Candidate image types:
-  - Best image that establishes the skate park as a place.
-  - Strongest texture or detail frame.
-  - Best sequence image if the album reads as movement or exploration.
+  - Best image that establishes the skate park as a place: [la ciotat - skate park, photo 5486197968](https://www.flickr.com/photos/boocher/5486197968/in/album-72157626167265156/)
+  - Strongest texture or detail frame: [la ciotat - skate park, photo 5485603231](https://www.flickr.com/photos/boocher/5485603231/in/album-72157626167265156/)
+  - Best sequence image if the album reads as movement or exploration: [la ciotat - skate park, photo 5486197350](https://www.flickr.com/photos/boocher/5486197350/in/album-72157626167265156)
 - Notes:
   - Pending photo-level review.
 
