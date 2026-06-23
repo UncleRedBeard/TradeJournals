@@ -94,9 +94,9 @@ Use this section to map the Flickr albums into evidence categories before writin
 
 - Review focus: camera/format character, travel movement, and images that feel distinct from the location-specific albums.
 - Candidate image types:
-  - Strongest example of Mini Diana visual character: [photo 5523277913](https://www.flickr.com/photos/boocher/5523277913/in/album-72157626126978837)
-  - Best standalone travel frame: [photo 5521039852](https://www.flickr.com/photos/boocher/5521039852/in/album-72157626126978837)
-  - Best image that bridges this album with the broader France archive: [photo 52843441870](https://www.flickr.com/photos/boocher/52843441870/in/album-72157626126978837)
+  - Strongest example of Mini Diana visual character: [La Turbie](https://www.flickr.com/photos/boocher/5523277913/in/album-72157626126978837)
+  - Best standalone travel frame: [Roquebrune-Cap-Martin](https://www.flickr.com/photos/boocher/5521039852/in/album-72157626126978837)
+  - Best image that bridges this album with the broader France archive: [R1-08778-0010](https://www.flickr.com/photos/boocher/52843441870/in/album-72157626126978837)
 - Notes:
   - Pending photo-level review.
 
