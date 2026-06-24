@@ -148,11 +148,12 @@ Use this section to map the Flickr albums into evidence categories before writin
 ### Paris
 
 - Review focus: urban structure, street life, architecture, and any overlap or contrast with the Lomography Paris entries.
+- Camera make/model: `Canon PowerShot SD780 IS` appears in Flickr EXIF for `paris flea market`; selected `R1-` images are 35mm film and do not expose camera make/model.
 - Candidate image types:
-  - Establishing image for Paris.
-  - Strongest street or city frame.
-  - Strongest architectural frame.
-  - Best image that should remain clearly Flickr-specific rather than Lomography catalog material.
+  - Establishing image for Paris: [R1-08770-005A](https://www.flickr.com/photos/boocher/52834500371/in/album-72157626010685451)
+  - Strongest street or city frame: [R1-08757-0014](https://www.flickr.com/photos/boocher/52842302897/in/album-72157626010685451)
+  - Strongest architectural frame: [R1-08757-007A](https://www.flickr.com/photos/boocher/52842303302/in/album-72157626010685451)
+  - Best image that should remain clearly Flickr-specific rather than Lomography catalog material: [paris flea market](https://www.flickr.com/photos/boocher/5476606037/in/album-72157626010685451/)
 - Notes:
   - Pending photo-level review.
 
