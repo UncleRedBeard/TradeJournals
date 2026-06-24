@@ -62,33 +62,33 @@ Use this section to map the Flickr albums into evidence categories before writin
 ### Key Photo IDs
 
 - Best overall France travel image:
-  - Photo URL:
-  - Album:
-  - Why it matters:
+  - Photo URL: [R1-08770-005A](https://www.flickr.com/photos/boocher/52834500371/in/album-72157626010685451)
+  - Album: `Paris`
+  - Why it matters: strongest overall travel-archive frame, combining place, architecture, movement, and film character.
 - Best location-establishing image:
-  - Photo URL:
-  - Album:
-  - Why it matters:
+  - Photo URL: [la ciotat, photo 5489412430](https://www.flickr.com/photos/boocher/5489412430/in/album-72157626174678654)
+  - Album: `La Ciotat`
+  - Why it matters: broad harbor view that immediately establishes the location.
 - Best street or city image:
-  - Photo URL:
-  - Album:
-  - Why it matters:
+  - Photo URL: [marseille, photo 5485880248](https://www.flickr.com/photos/boocher/5485880248/in/album-72157626040593925)
+  - Album: `Marseille`
+  - Why it matters: strong urban composition built from line, shadow, and street quiet.
 - Best coastal or landscape image:
-  - Photo URL:
-  - Album:
-  - Why it matters:
+  - Photo URL: [Roquebrune-Cap-Martin](https://www.flickr.com/photos/boocher/5521039852/in/album-72157626126978837)
+  - Album: `mini diana goes to france`
+  - Why it matters: coastal view with stronger atmosphere and camera personality than a purely descriptive landscape.
 - Best architectural image:
-  - Photo URL:
-  - Album:
-  - Why it matters:
+  - Photo URL: [marseille, photo 5485688876](https://www.flickr.com/photos/boocher/5485688876/in/album-72157626040593925)
+  - Album: `Marseille`
+  - Why it matters: architectural rhythm, depth, and street context work together in the frame.
 - Best camera/film-character example:
-  - Photo URL:
-  - Album:
-  - Why it matters:
+  - Photo URL: [La Turbie](https://www.flickr.com/photos/boocher/5523277913/in/album-72157626126978837)
+  - Album: `mini diana goes to france`
+  - Why it matters: strongest example of Mini Diana character, including light behavior, texture, and imperfect charm.
 - Best sequence or story image:
-  - Photo URL:
-  - Album:
-  - Why it matters:
+  - Photo URL: [la ciotat - skate park, photo 5486197350](https://www.flickr.com/photos/boocher/5486197350/in/album-72157626167265156)
+  - Album: `La Ciotat - Skate Park`
+  - Why it matters: reads as part of a walk-through sequence rather than a standalone detail.
 
 ### Mini Diana Goes To France
 
