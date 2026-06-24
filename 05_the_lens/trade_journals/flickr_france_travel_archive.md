@@ -125,21 +125,23 @@ Use this section to map the Flickr albums into evidence categories before writin
 ### Marseille
 
 - Review focus: city movement, port or harbor structure, street details, and architectural rhythm.
+- Camera make/model: `Canon PowerShot SD780 IS`, from Flickr EXIF on selected images.
 - Candidate image types:
-  - Establishing image for Marseille.
-  - Strongest street or city frame.
-  - Strongest architecture or detail frame.
-  - Image with the clearest camera/film character.
+  - Establishing image for Marseille: [marseille, photo 5484904917](https://www.flickr.com/photos/boocher/5484904917/in/album-72157626040593925)
+  - Strongest street or city frame: [marseille, photo 5485880248](https://www.flickr.com/photos/boocher/5485880248/in/album-72157626040593925)
+  - Strongest architecture or detail frame: [marseille, photo 5485688876](https://www.flickr.com/photos/boocher/5485688876/in/album-72157626040593925)
+  - Image with the clearest camera/film character: [marseille, photo 5485688876](https://www.flickr.com/photos/boocher/5485688876/in/album-72157626040593925)
 - Notes:
   - Pending photo-level review.
 
 ### Cassis
 
 - Review focus: coastal landscape, town edges, water, rock, and atmosphere.
+- Camera make/model: `Canon PowerShot SD780 IS`, from Flickr EXIF on selected images.
 - Candidate image types:
-  - Establishing image for Cassis.
-  - Strongest coastal or landscape frame.
-  - Best image balancing place and photographic character.
+  - Establishing image for Cassis: [cassis, photo 5482620885](https://www.flickr.com/photos/boocher/5482620885/in/album-72157626153089302)
+  - Strongest coastal or landscape frame: [cassis, photo 5482779139](https://www.flickr.com/photos/boocher/5482779139/in/album-72157626153089302/)
+  - Best image balancing place and photographic character: [cassis, photo 5481166067](https://www.flickr.com/photos/boocher/5481166067/in/album-72157626153089302)
 - Notes:
   - Pending photo-level review.
 
