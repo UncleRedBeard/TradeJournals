@@ -17,6 +17,7 @@ Catalog the Flickr album `Roqueburne-Cap-Martin` as part of the TradeJournals vi
 - Public feed title: `Content from Roqueburne-Cap-Martin`
 - Public feed modified: `2023-04-24T17:29:38Z`
 - Public photo count: 126, confirmed by latest Flickr API importer scan
+- Camera make/model: not exposed in Flickr EXIF on sampled `R1-` scan-style images.
 - Photo IDs listed from public photoset feed: 20
 
 ## Archive Notes

@@ -15,6 +15,7 @@ Catalog the Flickr album `my hood` as part of the lens archive and 35mm film evi
 - Public feed title: `Content from my hood`
 - Public feed modified: `2023-04-21T18:29:27Z`
 - Public photo count: 31, confirmed by latest Flickr API importer scan
+- Camera make/model: not exposed in Flickr EXIF on sampled `R1-` scan-style images.
 - Photo IDs listed from public photoset feed: 8
 
 ## Archive Notes

@@ -17,6 +17,7 @@ Catalog the Flickr album `La Turbie` as part of the TradeJournals visual evidenc
 - Public feed title: `Content from La Turbie`
 - Public feed modified: `2011-03-07T08:06:23Z`
 - Public photo count: 98, confirmed by latest Flickr API importer scan
+- Camera make/model: `Canon PowerShot SD780 IS`, from Flickr EXIF on sampled public images.
 - Photo IDs listed from public photoset feed: 20
 
 ## Archive Notes

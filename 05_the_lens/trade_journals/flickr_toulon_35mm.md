@@ -17,6 +17,7 @@ Catalog the Flickr album `Toulon` as part of the TradeJournals visual evidence a
 - Public feed title: `Content from Toulon`
 - Public feed modified: `2011-03-07T07:44:32Z`
 - Public photo count: 13, confirmed by latest Flickr API importer scan
+- Camera make/model: `Canon PowerShot SD780 IS`, from Flickr EXIF on sampled public images.
 - Photo IDs listed from public photoset feed: 13
 
 ## Archive Notes

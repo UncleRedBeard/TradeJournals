@@ -17,6 +17,7 @@ This album belongs in `05_the_lens` because it documents camera/film work rather
 - Format: Kodak bellows / 616 film archive, per related Lomography catalog note
 - Owner NSID: `17632706@N00`
 - Public photo count: 2, confirmed by latest Flickr API importer scan
+- Camera make/model: not exposed in Flickr EXIF on sampled public images.
 
 ## Visual Evidence
 

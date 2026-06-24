@@ -22,6 +22,8 @@ These albums belong in `05_the_lens` because they represent film/photo bodies of
 - Owner NSID: `17632706@N00`
 - API mode: public-read only
 - OAuth/private album access: intentionally not used
+- Camera make/model review: `El Toro - Pinhole with Lens` exposes `NORITSU KOKI QSS-32_33`
+  scanner metadata in Flickr EXIF; sampled `SXSW 2011` images do not expose a camera make/model.
 
 ## Visual Evidence
 
