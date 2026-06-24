@@ -93,6 +93,7 @@ Use this section to map the Flickr albums into evidence categories before writin
 ### Mini Diana Goes To France
 
 - Review focus: camera/format character, travel movement, and images that feel distinct from the location-specific albums.
+- Camera make/model: selected images do not expose camera make/model in Flickr EXIF; `R1-08778-0010` is a 35mm film image.
 - Candidate image types:
   - Strongest example of Mini Diana visual character: [La Turbie](https://www.flickr.com/photos/boocher/5523277913/in/album-72157626126978837)
   - Best standalone travel frame: [Roquebrune-Cap-Martin](https://www.flickr.com/photos/boocher/5521039852/in/album-72157626126978837)
@@ -103,6 +104,7 @@ Use this section to map the Flickr albums into evidence categories before writin
 ### La Ciotat
 
 - Review focus: coastal town record, street texture, harbor or shoreline views, and local architectural details.
+- Camera make/model: `Canon PowerShot SD780 IS` appears in Flickr EXIF for selected `la ciotat` digital images; selected `R1-` images are 35mm film and do not expose camera make/model.
 - Format note: within this `La Ciotat` album, Flickr titles matching `la ciotat` are likely digital images and may include useful EXIF location data. Flickr titles beginning with `R1-` are 35mm film scans.
 - Candidate image types:
   - Establishing image for La Ciotat: [la ciotat, photo 5489412430](https://www.flickr.com/photos/boocher/5489412430/in/album-72157626174678654)
@@ -115,6 +117,7 @@ Use this section to map the Flickr albums into evidence categories before writin
 ### La Ciotat - Skate Park
 
 - Review focus: focused sub-sequence within La Ciotat, especially surfaces, movement, marks of use, and visual contrast with the broader travel set.
+- Camera make/model: `Canon PowerShot SD780 IS`, from Flickr EXIF on selected images.
 - Candidate image types:
   - Best image that establishes the skate park as a place: [la ciotat - skate park, photo 5486197968](https://www.flickr.com/photos/boocher/5486197968/in/album-72157626167265156/)
   - Strongest texture or detail frame: [la ciotat - skate park, photo 5485603231](https://www.flickr.com/photos/boocher/5485603231/in/album-72157626167265156/)
