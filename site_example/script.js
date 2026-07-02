@@ -130,6 +130,77 @@ const journalIndex = [
     ]
   },
   {
+    title: "Entry Restoration",
+    area: "01 / The Residence",
+    source: "01_the_residence_1894/trade_journals/entry_restoration.md",
+    url: "#journal-evidence",
+    summary:
+      "Entry restoration evidence covering the front door and transom, stair and rail protection, finish work, and the later renewal of the threshold floor.",
+    tags: [
+      "entry",
+      "front door",
+      "transom",
+      "stair",
+      "threshold",
+      "floor",
+      "trim",
+      "landing",
+      "home reno"
+    ],
+    images: [
+      "assets/flickr/entry/01.jpg",
+      "assets/flickr/entry/03.jpg",
+      "assets/flickr/entry/05.jpg"
+    ]
+  },
+  {
+    title: "Landing Restoration",
+    area: "01 / The Residence",
+    source: "01_the_residence_1894/trade_journals/landing_restoration.md",
+    url: "#journal-evidence",
+    summary:
+      "Landing documentation centered on stair-rail and transom preservation, board-wall surface work, and the later lighter floor-finish pass.",
+    tags: [
+      "landing",
+      "stairs",
+      "stair rail",
+      "transom",
+      "floor",
+      "finish",
+      "threshold",
+      "home reno"
+    ],
+    images: [
+      "assets/flickr/landing/01.jpg",
+      "assets/flickr/landing/03.jpg",
+      "assets/flickr/landing/05.jpg"
+    ]
+  },
+  {
+    title: "Uncle RedBeard's Shed",
+    area: "02 / The Forge & Shop",
+    source: "02_the_forge_and_shop/trade_journals/uncle_redbeards_shed.md",
+    url: "#journal-evidence",
+    summary:
+      "A compact working shop that supports restoration and fabrication through bench work, wall-hung tools, parts storage, utility systems, and Vespa staging.",
+    tags: [
+      "shed",
+      "forge",
+      "shop",
+      "workbench",
+      "tools",
+      "storage",
+      "vespa",
+      "staging",
+      "fabrication"
+    ],
+    images: [
+      "assets/flickr/shed/01.jpg",
+      "assets/flickr/shed/03.jpg",
+      "assets/flickr/shed/05.jpg"
+    ]
+  },
+  {
     title: "Best of Film Work",
     area: "05 / The Lens",
     source: "05_the_lens/trade_journals/lomography_film_album_catalog.md",

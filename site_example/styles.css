@@ -66,6 +66,10 @@ nav a {
   min-height: 100vh;
 }
 
+.hero > * {
+  min-width: 0;
+}
+
 .hero img {
   height: 100%;
   max-height: 100vh;
@@ -147,6 +151,13 @@ h3 {
 .model-grid {
   display: grid;
   gap: 16px;
+}
+
+.pillar-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.model-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -509,6 +520,12 @@ figcaption span {
   border-top: 1px solid var(--line);
 }
 
+@media (max-width: 1100px) {
+  .pillar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
   .hero,
   .intro,
@@ -526,7 +543,6 @@ figcaption span {
     max-height: none;
   }
 
-  .pillar-grid,
   .model-grid,
   dl {
     grid-template-columns: 1fr;
@@ -557,6 +573,8 @@ figcaption span {
   }
 
   nav {
+    flex-wrap: wrap;
+    row-gap: 8px;
     width: 100%;
   }
 
@@ -565,7 +583,9 @@ figcaption span {
   }
 
   .mini-gallery,
-  .photo-grid {
+  .photo-grid,
+  .pillar-grid,
+  .model-grid {
     grid-template-columns: 1fr;
   }
 }

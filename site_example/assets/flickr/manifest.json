@@ -252,6 +252,42 @@
     ]
   },
   {
+    "album": "entry",
+    "title": "Content from Home Reno - Entry",
+    "count": 5,
+    "rows": [
+      {"title":"20240914_144653","link":"https://www.flickr.com/photos/boocher/55339048056/in/album-72177720334259189/","date_taken":"2024-09-14T14:46:54","src":"https://live.staticflickr.com/65535/55339048056_b550004529.jpg","image":"assets/flickr/entry/01.jpg"},
+      {"title":"20240921_153102","link":"https://www.flickr.com/photos/boocher/55339463385/in/album-72177720334259189/","date_taken":"2024-09-21T15:31:02","src":"https://live.staticflickr.com/65535/55339463385_6e0be2268f.jpg","image":"assets/flickr/entry/02.jpg"},
+      {"title":"20240929_150655","link":"https://www.flickr.com/photos/boocher/55339462515/in/album-72177720334259189/","date_taken":"2024-09-29T15:06:55","src":"https://live.staticflickr.com/65535/55339462515_694e769f0f.jpg","image":"assets/flickr/entry/03.jpg"},
+      {"title":"20250104_140942","link":"https://www.flickr.com/photos/boocher/55339461975/in/album-72177720334259189/","date_taken":"2025-01-04T14:09:42","src":"https://live.staticflickr.com/65535/55339461975_ed02e58ea6.jpg","image":"assets/flickr/entry/04.jpg"},
+      {"title":"20251228_143613","link":"https://www.flickr.com/photos/boocher/55338112557/in/album-72177720334259189/","date_taken":"2025-12-28T14:36:13","src":"https://live.staticflickr.com/65535/55338112557_617bcfb7b0.jpg","image":"assets/flickr/entry/05.jpg"}
+    ]
+  },
+  {
+    "album": "landing",
+    "title": "Content from Home Reno - Landing and Landing Floors",
+    "count": 5,
+    "rows": [
+      {"title":"20240831_144923","link":"https://www.flickr.com/photos/boocher/55339041496/in/album-72177720334233397/","date_taken":"2024-08-31T14:49:24","src":"https://live.staticflickr.com/65535/55339041496_57f7018f1d.jpg","image":"assets/flickr/landing/01.jpg"},
+      {"title":"20241006_131433","link":"https://www.flickr.com/photos/boocher/55339041146/in/album-72177720334233397/","date_taken":"2024-10-06T13:14:33","src":"https://live.staticflickr.com/65535/55339041146_f727091787.jpg","image":"assets/flickr/landing/02.jpg"},
+      {"title":"20241006_131435","link":"https://www.flickr.com/photos/boocher/55338114937/in/album-72177720334233397/","date_taken":"2024-10-06T13:14:36","src":"https://live.staticflickr.com/65535/55338114937_e16484b30a.jpg","image":"assets/flickr/landing/03.jpg"},
+      {"title":"20251130_100935","link":"https://www.flickr.com/photos/boocher/55339044016/in/album-72177720334239256/","date_taken":"2025-11-30T10:09:35","src":"https://live.staticflickr.com/65535/55339044016_eb1d06af19.jpg","image":"assets/flickr/landing/04.jpg"},
+      {"title":"20251130_122542","link":"https://www.flickr.com/photos/boocher/55339196298/in/album-72177720334239256/","date_taken":"2025-11-30T12:25:42","src":"https://live.staticflickr.com/65535/55339196298_b557e6c32a.jpg","image":"assets/flickr/landing/05.jpg"}
+    ]
+  },
+  {
+    "album": "shed",
+    "title": "Content from Uncle RedBeard's Shed",
+    "count": 5,
+    "rows": [
+      {"title":"20220101_144753","link":"https://www.flickr.com/photos/boocher/52529949788/in/album-72177720304050679/","date_taken":"2022-01-01T14:47:53","src":"https://live.staticflickr.com/65535/52529949788_e04ee86914.jpg","image":"assets/flickr/shed/01.jpg"},
+      {"title":"20171126_134659","link":"https://www.flickr.com/photos/boocher/52529880635/in/album-72177720304050679/","date_taken":"2017-11-26T13:46:58","src":"https://live.staticflickr.com/65535/52529880635_1d22f7bacf.jpg","image":"assets/flickr/shed/02.jpg"},
+      {"title":"20230226_171942","link":"https://www.flickr.com/photos/boocher/52714801417/in/album-72177720304050679/","date_taken":"2023-02-26T17:19:42","src":"https://live.staticflickr.com/65535/52714801417_99b8e9f8da.jpg","image":"assets/flickr/shed/03.jpg"},
+      {"title":"20230226_171944","link":"https://www.flickr.com/photos/boocher/52714801432/in/album-72177720304050679/","date_taken":"2023-02-26T17:19:44","src":"https://live.staticflickr.com/65535/52714801432_10de708756.jpg","image":"assets/flickr/shed/04.jpg"},
+      {"title":"20230106_164113","link":"https://www.flickr.com/photos/boocher/52617671049/in/album-72177720304050679/","date_taken":"2023-01-06T16:41:13","src":"https://live.staticflickr.com/65535/52617671049_fe8a53b6db.jpg","image":"assets/flickr/shed/05.jpg"}
+    ]
+  },
+  {
     "album": "master-bedroom-take-2",
     "title": "Content from Home Reno - Master Bedroom - Take 2",
     "count": 5,
