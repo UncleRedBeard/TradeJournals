@@ -44,6 +44,37 @@ dual-sport machine.
 
 ## Journal Entries
 
+### 2016-04-16 - Baseline Touring Configuration
+
+Early photographs document the KLR in its red-and-black bodywork with a tall
+windscreen, mirrors, handguards, and the factory-style instrument cluster
+present. This establishes that the machine was already being used as a
+practical dual-sport rather than treated as a cosmetic project.
+
+### 2016-05-13 To 2016-06-25 - Access And Carrying-System Development
+
+The fuel tank is shown removed and staged on a work surface, preserving a
+moment of access to the motorcycle rather than implying an undocumented
+mechanical repair. By late June, the bike appears in a darker configuration
+with a rear rack and soft tail bag, marking a shift toward carrying capacity
+and travel utility.
+
+### 2016-06-29 To 2016-07-24 - Travel Setup And Exhaust Protection
+
+The luggage system develops into a working travel arrangement: the rear rack
+carries a tail bag and paired steel ammunition-can panniers. A separate bench
+photograph documents an exhaust pipe being fitted with heat wrap. Later full
+views show the wrapped pipe back on the motorcycle, alongside the panniers and
+travel gear.
+
+### 2016-09-19 To 2016-11-27 - Road And Trail Readiness
+
+The later evidence records tire and wheel condition, then a fully loaded
+machine with windscreen, handguards, rack, tail bag, hard panniers, and a more
+aggressive tire pattern. The KLR is documented in a ready-to-use state rather
+than a showroom state: configured to carry equipment and operate on mixed
+surfaces.
+
 ### 2026-06-17 - Album And Identity Baseline
 
 Source: user-supplied Flickr album and machine identity.
@@ -84,7 +115,7 @@ EXIF capture date/time for the label instead.
 - Public feed title: `Content from Bikes - 2004 KLR 650`.
 - Public feed modified: `2026-06-16T20:08:55Z`.
 - Public photo count: 50, confirmed by latest Flickr API importer scan.
-- Photo IDs listed from public photoset feed: 6.
+- Photo IDs listed from Flickr API photo list: 50.
 
 ### Album Identity
 
@@ -92,20 +123,28 @@ EXIF capture date/time for the label instead.
 - Primary archive question: how the motorcycle's condition, setup, and
   maintenance support reliable dual-sport use.
 
-### Starter Photo IDs
+### Baseline Condition And Rider Interface
 
-- [2016-07-24 14:58](https://www.flickr.com/photos/boocher/55339461843/in/set-72177720334242416/) - baseline KLR evidence from Flickr title `IMG_20160724_145806`.
-- [2016-07-24 14:58](https://www.flickr.com/photos/boocher/55338383737/in/set-72177720334242416/) - baseline KLR evidence from Flickr title `IMG_20160724_145822`.
-- [2016-07-24 17:03](https://www.flickr.com/photos/boocher/55339310651/in/set-72177720334242416/) - baseline KLR evidence from Flickr title `IMG_20160724_170341`.
-- [2016-07-24 17:03](https://www.flickr.com/photos/boocher/55338383562/in/set-72177720334242416/) - baseline KLR evidence from Flickr title `20160724_170306`.
-- [2016-06-25 12:12](https://www.flickr.com/photos/boocher/55339461393/in/set-72177720334242416/) - baseline KLR evidence from Flickr title `20160625_121257`.
-- [2016-06-29 18:24](https://www.flickr.com/photos/boocher/55339461273/in/set-72177720334242416/) - baseline KLR evidence from Flickr title `IMG_20160629_182405`.
+- [2016-04-16 15:47](https://www.flickr.com/photos/boocher/55339724315/in/album-72177720334242416/) - cockpit, windscreen, handguards, mirrors, tank, and instrument cluster in an early-use configuration.
+- [2016-04-16 12:57](https://www.flickr.com/photos/boocher/55338380242/in/album-72177720334242416/) - front three-quarter baseline, recording the original red bodywork and front-wheel stance.
+- [2016-05-13 12:07](https://www.flickr.com/photos/boocher/55339307986/in/album-72177720334242416/) - fuel tank removed and staged, documenting upper-machine access without assuming the specific work performed.
 
-### Evidence Buckets To Build
+### Luggage And Travel Utility
 
-- Engine service, cooling, intake, and exhaust.
-- Frame, subframe, racks, luggage, and protection.
-- Wheels, tires, tubes, brakes, chain, sprockets, and suspension.
-- Wiring, lighting, battery, charging, and controls.
-- Tank, plastics, seat, mirrors, and trail-readiness details.
-- Safety-critical fitment, fasteners, rubber, and wear points.
+- [2016-04-27 19:13](https://www.flickr.com/photos/boocher/55339459288/in/album-72177720334242416/) - rear-rack fitment and carrying-space evidence on the left side of the motorcycle.
+- [2016-06-25 12:12](https://www.flickr.com/photos/boocher/55339308856/in/album-72177720334242416/) - full left-side view with rear rack and soft tail bag in place.
+- [2016-06-29 18:20](https://www.flickr.com/photos/boocher/55339461093/in/album-72177720334242416/) - complete utility configuration: steel ammunition-can pannier, tail bag, windscreen, and handguards.
+- [2016-07-09 15:03](https://www.flickr.com/photos/boocher/55339460853/in/album-72177720334242416/) - rear view confirming paired hard panniers and the tail-bag load area.
+- [2016-11-27 13:00](https://www.flickr.com/photos/boocher/55338379952/in/album-72177720334242416/) - strongest overall ready-state evidence, with luggage, wind protection, and mixed-surface tire setup visible together.
+
+### Exhaust, Wheels, And Tires
+
+- [2016-07-24 14:56](https://www.flickr.com/photos/boocher/55339726445/in/album-72177720334242416/) - exhaust pipe on the bench with heat-wrap material and fasteners, documenting a protection or heat-management work stage.
+- [2016-09-19 15:10](https://www.flickr.com/photos/boocher/55339458843/in/album-72177720334242416/) - front-wheel and tire detail, useful for assessing tire pattern, rim, spokes, and condition at that point in use.
+
+### Evidence Still Needed
+
+- Engine service, oil, cooling, intake, and known KLR-specific reliability checks.
+- Brake, chain, sprocket, suspension, and tube service.
+- Electrical, charging, lighting, and battery details.
+- Rack fasteners, subframe loading, and other safety-critical fitment evidence.
