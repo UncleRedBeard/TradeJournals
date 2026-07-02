@@ -34,7 +34,7 @@ Private albums are intentionally excluded from this workflow.
 |11|[Home Reno - Studio \| Office](https://www.flickr.com/photos/17632706@N00/albums/72177720306207693/)|107|imported|[residence](#album-72177720306207693)|01_the_residence_1894/trade_journals/office_restoration.md|
 |12|[Home Reno - Master Bath](https://www.flickr.com/photos/17632706@N00/albums/72177720306187803/)|199|imported|[residence](#album-72177720306187803)|01_the_residence_1894/trade_journals/master_bath_restoration.md|
 |13|[1964 Vespa](https://www.flickr.com/photos/17632706@N00/albums/72177720305371229/)|425|imported|[machines](#album-72177720305371229)|03_the_machines/trade_journals/1964_vespa_restoration.md|
-|14|[Uncle RedBeard's Shed](https://www.flickr.com/photos/17632706@N00/albums/72177720304050679/)|512|imported|[forge](#album-72177720304050679)|02_the_forge_and_shop/trade_journals/uncle_redbeards_shed.md|
+|14|[Uncle RedBeard's Shed](https://www.flickr.com/photos/17632706@N00/albums/72177720304050679/)|514|imported|[forge](#album-72177720304050679)|02_the_forge_and_shop/trade_journals/uncle_redbeards_shed.md|
 |15|[Durango - Santa Fe [April 7-8, 2017]](https://www.flickr.com/photos/17632706@N00/albums/72157682532227305/)|7|excluded|||
 |16|[Iron Butterfly Cycle Works](https://www.flickr.com/photos/17632706@N00/albums/72157675656551594/)|39|imported|[machines](#album-72157675656551594)|03_the_machines/trade_journals/iron_butterfly_cycle_works.md|
 |17|[Rides](https://www.flickr.com/photos/17632706@N00/albums/72157679575662395/)|9|excluded|||
@@ -224,7 +224,7 @@ Private albums are intentionally excluded from this workflow.
 - Album URL: [Uncle RedBeard's Shed](https://www.flickr.com/photos/17632706@N00/albums/72177720304050679/)
 - Album ID: `72177720304050679`
 - Visibility: public
-- Photos: 512
+- Photos: 514
 - TradeJournals status: imported
 - Section: forge
 - Existing journal: `02_the_forge_and_shop/trade_journals/uncle_redbeards_shed.md`
