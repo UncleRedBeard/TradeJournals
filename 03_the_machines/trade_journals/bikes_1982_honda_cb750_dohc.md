@@ -61,6 +61,37 @@ Initial archive interpretation:
 - Use the Flickr album first as baseline visual evidence for component
   identification, condition, assembly details, and future work planning.
 
+### 2017-01-15 To 2017-01-20 - Carburetor Rack And Open Intake State
+
+Source: Flickr API photo list and visual review of the public album.
+
+The earliest evidence in this album centers on the CB750's intake and
+carburetion rather than whole-bike portraiture. One image shows the motorcycle
+with the seat and fuel tank removed, the upper frame rails exposed, and the carb
+inlets open without the later pod filters installed. Another shows the bank of
+four carburetors removed and staged on the workbench with hardware, hand tools,
+and a Honda CB750 maintenance manual visible nearby.
+
+This gives the journal a useful mechanical starting point: the bike was already
+in a carburetor-access/service phase, with intake fitment and service reference
+material part of the visible work area.
+
+### 2017-01-28 - Pod Filter Fitment And Right-Side Engine Evidence
+
+Source: Flickr API photo list and visual review of the public album.
+
+The January 28 sequence documents the intake moving from open carb throats to
+individual pod filters installed on the carburetor rack. Several images show the
+right side of the inline-four engine, the Honda side cover, the polished engine
+cover, the crash bar, spoked front wheel, and the open frame/tank area while
+hands-on work continues around the intake assembly.
+
+The set is small, but it establishes the CB750 as a running mechanical project
+with the focus on carburetion, intake layout, and condition documentation. The
+black-and-white copies in the album appear to be edited versions of the same
+mechanical states, so they are kept as alternate documentation rather than
+separate repair events.
+
 ## Visual Evidence
 
 Use this section to map the Flickr album into evidence categories that support
@@ -96,21 +127,22 @@ EXIF capture date/time for the label instead.
 - Primary archive question: how the motorcycle's condition, systems, and
   factory-era character should guide preservation, repair, and safe operation.
 
-### Starter Photo IDs
+### Carburetion And Intake
 
-- [2017-01-20 14:37, photo 55339713795](https://www.flickr.com/photos/boocher/55339713795/in/set-72177720334252878/) - Flickr title `20170115_134521-01`.
-- [2017-01-28 13:27, photo 55339713700](https://www.flickr.com/photos/boocher/55339713700/in/set-72177720334252878/) - Flickr title `20170128_132706-01`.
-- [2017-01-28 13:27, photo 55339297181](https://www.flickr.com/photos/boocher/55339297181/in/set-72177720334252878/) - Flickr title `20170128_132718`.
-- [2017-01-15 13:43, photo 55338369557](https://www.flickr.com/photos/boocher/55338369557/in/set-72177720334252878/) - Flickr title `20170115_134305-01`.
-- [2017-01-28 13:27, photo 55339713620](https://www.flickr.com/photos/boocher/55339713620/in/set-72177720334252878/) - Flickr title `20170128_132706`.
-- [2017-01-28 13:19, photo 55338369457](https://www.flickr.com/photos/boocher/55338369457/in/set-72177720334252878/) - Flickr title `20170128_131951`.
-- [2017-01-28 13:20, photo 55338369452](https://www.flickr.com/photos/boocher/55338369452/in/set-72177720334252878/) - Flickr title `20170128_132004`.
+- [2017-01-15 13:43, photo 55338369557](https://www.flickr.com/photos/boocher/55338369557/in/album-72177720334252878/) - carb throats exposed with the filters absent; seat and tank area open, making this the clearest early intake-access image.
+- [2017-01-20 14:37, photo 55339713795](https://www.flickr.com/photos/boocher/55339713795/in/album-72177720334252878/) - carburetor rack staged on the bench with loose hardware, hand tools, and a Honda CB750 maintenance manual in the work area.
+- [2017-01-28 13:19, photo 55338369457](https://www.flickr.com/photos/boocher/55338369457/in/album-72177720334252878/) - work underway around the installed carburetors and pod filters with the tank and seat removed.
+- [2017-01-28 13:20, photo 55338369452](https://www.flickr.com/photos/boocher/55338369452/in/album-72177720334252878/) - second overhead view of the pod-filter installation and open frame/tank area.
+- [2017-01-28 13:27, photo 55339297181](https://www.flickr.com/photos/boocher/55339297181/in/album-72177720334252878/) - closest intake detail: individual pod filter, carb body, clamps, fuel line routing, and right-side cylinder/engine cover relationship.
 
-### Evidence Buckets To Build
+### Engine, Frame, And Front-End Condition
 
-- Engine identification and condition.
-- Frame, suspension, wheels, tires, and brakes.
-- Wiring, lighting, ignition, charging, and controls.
+- [2017-01-28 13:27, photo 55339713620](https://www.flickr.com/photos/boocher/55339713620/in/album-72177720334252878/) - strongest color baseline for the right side of the inline-four engine, Honda side cover, polished round cover, crash bar, frame tubes, and spoked front wheel.
+- [2017-01-28 13:27, photo 55339713700](https://www.flickr.com/photos/boocher/55339713700/in/album-72177720334252878/) - black-and-white alternate of the same right-side engine and pod-filter state; useful for visual record, not treated as separate mechanical evidence.
+
+### Still To Document From Future Evidence
+
+- Whole-bike baseline and stance.
 - Fuel tank, side covers, seat, paint, trim, and chrome.
-- Carburetion, intake, exhaust, and fuel delivery.
-- Safety-critical fitment, fasteners, rubber, and wear points.
+- Wiring, lighting, ignition, charging, and controls.
+- Brakes, tires, chain, rear suspension, and road-readiness checks.
