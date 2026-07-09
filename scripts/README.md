@@ -109,3 +109,65 @@ After importing, run:
 ```sh
 npm run lint:md
 ```
+
+## Google Photos Album Import Workflow
+
+`import_google_photos_album.py` records Google Photos shared albums and imports
+image-level evidence from durable local inputs.
+
+Google Photos shared album pages are not treated as a stable public metadata
+API in this project. The preferred durable sources are:
+
+- a small project JSON manifest
+- a local Google Photos or Google Takeout export folder
+- a future authenticated Google Photos importer
+
+To record a shared album source before image-level metadata is available:
+
+```sh
+python3 scripts/import_google_photos_album.py \
+  --share-url "https://photos.google.com/share/..." \
+  --title "Album title" \
+  --section residence
+```
+
+To generate a journal from a manifest:
+
+```sh
+python3 scripts/import_google_photos_album.py \
+  --manifest google_photos_album_manifest.json \
+  --section residence \
+  --output 01_the_residence_1894/trade_journals/example.md
+```
+
+Manifest shape:
+
+```json
+{
+  "album": {
+    "title": "Album title",
+    "share_url": "https://photos.google.com/share/..."
+  },
+  "photos": [
+    {
+      "title": "IMG_0001",
+      "url": "https://photos.google.com/share/.../photo/...",
+      "date_taken": "2026-07-09 10:15",
+      "description": "Short evidence note."
+    }
+  ]
+}
+```
+
+To list a local export folder as evidence:
+
+```sh
+python3 scripts/import_google_photos_album.py \
+  --local-dir "/path/to/exported/album" \
+  --title "Album title" \
+  --section residence
+```
+
+The local export path also checks for simple sidecar JSON files beside images,
+including `image.jpg.json` and `image.json`, and uses title, description, and
+photo-taken time when present.
