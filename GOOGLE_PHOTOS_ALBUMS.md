@@ -22,7 +22,7 @@ come from one of these sources:
    - Status: source recorded; representative image review pending
    - Section: residence
    - Journal:
-     `01_the_residence_1894/trade_journals/office_restoration.md`
+     `01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md`
 
 ## Album Details
 
@@ -35,10 +35,10 @@ come from one of these sources:
 - Platform: Google Photos
 - Visibility: shared URL verified by command-line fetch
 - Photos: 204, confirmed by embedded Google Photos album metadata
-- TradeJournals status: source recorded in existing residence journal
+- TradeJournals status: source recorded in dedicated residence journal
 - Section: residence
-- Existing journal: `01_the_residence_1894/trade_journals/office_restoration.md`
+- Existing journal: `01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md`
 - Album date span: 2026-03-16 to 2026-05-31, from embedded Google Photos album metadata
 - Next action: review representative images for ceiling plank replacement,
-  wall mudding and sanding, ceiling fan wiring/mounting, exposed shiplap, and
-  crown molding/coping.
+  floor refinishing and protection, wall mudding and sanding, ceiling fan
+  wiring/mounting, exposed shiplap, and crown molding/coping.
