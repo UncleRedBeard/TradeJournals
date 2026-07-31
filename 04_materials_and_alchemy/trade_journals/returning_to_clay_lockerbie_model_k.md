@@ -170,18 +170,44 @@ available ware, and let the fired surface determine the next adjustment.
 
 ## Visual Evidence
 
-### Google Photos Album
+### Primary Flickr Album
+
+- Album URL: [Pottery](https://www.flickr.com/photos/boocher/albums/72177720334921846/)
+- Album ID: `72177720334921846`
+- Album owner: `UncleRedBeard`
+- Owner NSID: `17632706@N00`
+- Album status: public and visible through the Flickr API
+- Public photo count: 7
+- Album role: primary visual archive for the renewed pottery practice,
+  beginning with the Lockerbie Model K workspace and the Cinco Rojo greenware
+- Cross-platform verification: all seven Flickr images matched the seven images
+  in the corresponding Google Photos album one-to-one on 2026-07-30
+
+Flickr is the canonical visual-evidence source for this journal. Its stable
+album ID, public photo IDs, image titles, and capture timestamps should be used
+for future journal citations and representative-image selections.
+
+### Current Flickr Photo IDs
+
+- [2026-07-26 17:33, photo 55432151405](https://www.flickr.com/photos/boocher/55432151405/in/album-72177720334921846)
+- [2026-07-26 17:34, photo 55432151400](https://www.flickr.com/photos/boocher/55432151400/in/album-72177720334921846)
+- [2026-07-26 17:34, photo 55431759996](https://www.flickr.com/photos/boocher/55431759996/in/album-72177720334921846)
+- [2026-07-26 17:34, photo 55432151365](https://www.flickr.com/photos/boocher/55432151365/in/album-72177720334921846)
+- [2026-07-28 17:19, photo 55432151295](https://www.flickr.com/photos/boocher/55432151295/in/album-72177720334921846)
+- [2026-07-28 17:19, photo 55431873408](https://www.flickr.com/photos/boocher/55431873408/in/album-72177720334921846)
+- [2026-07-28 17:20, photo 55432151290](https://www.flickr.com/photos/boocher/55432151290/in/album-72177720334921846)
+
+### Secondary Google Photos Album
 
 - Album URL: [Pottery](https://photos.app.goo.gl/eoqyVku1HMKUgy1W6)
 - Album title: `Pottery`
 - Album status: shared Google Photos album
 - Initial review: 7 photos
-- Album role: primary visual archive for the renewed pottery practice,
-  beginning with the Lockerbie Model K workspace and the Cinco Rojo greenware
+- Album role: secondary capture and archive mirror of the seven images recorded
+  in the primary Flickr album
 
-Google Photos should remain the source album for visual provenance. Durable
-image-level evidence should eventually come from a local export, manifest, or
-authenticated importer rather than depending on the shared page alone.
+Google Photos remains useful as a shared album and secondary copy, but durable
+image-level references should use Flickr's public photo IDs and metadata.
 
 ### Evidence Already Represented
 

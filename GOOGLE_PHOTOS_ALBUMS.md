@@ -24,7 +24,7 @@ come from one of these sources:
    - Journal:
      `01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md`
 2. [Pottery](https://photos.app.goo.gl/eoqyVku1HMKUgy1W6)
-   - Status: source recorded; durable representative image references pending
+   - Status: secondary mirror; primary evidence now maintained in Flickr
    - Section: materials and alchemy
    - Journal:
      `04_materials_and_alchemy/trade_journals/returning_to_clay_lockerbie_model_k.md`
@@ -56,13 +56,17 @@ come from one of these sources:
 - Platform: Google Photos
 - Visibility: shared album reviewed in an authenticated browser session
 - Photos: 7 at initial review
-- TradeJournals status: source recorded in dedicated materials and alchemy
-  journal
+- TradeJournals status: secondary source recorded in dedicated materials and
+  alchemy journal
 - Section: materials and alchemy
 - Existing journal:
   `04_materials_and_alchemy/trade_journals/returning_to_clay_lockerbie_model_k.md`
-- Album role: primary visual archive for the renewed pottery practice,
-  beginning with the Lockerbie Model K workspace and the Cinco Rojo greenware
-- Next action: add photographs of the first Cinco Blanco vessels, then create
-  durable image-level references for forming, trimming, drying, bisque, glaze,
-  and fired-result evidence.
+- Album role: secondary capture and archive mirror for the renewed pottery
+  practice
+- Primary evidence source:
+  [Flickr Pottery album](https://www.flickr.com/photos/boocher/albums/72177720334921846/)
+- Cross-platform verification: all seven Google Photos images matched the seven
+  public Flickr images one-to-one on 2026-07-30
+- Next action: add photographs of the first Cinco Blanco vessels to the primary
+  Flickr album and use Flickr photo IDs for forming, trimming, drying, bisque,
+  glaze, and fired-result evidence.
