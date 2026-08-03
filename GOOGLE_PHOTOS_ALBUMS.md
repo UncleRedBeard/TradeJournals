@@ -66,8 +66,8 @@ come from one of these sources:
 - Primary evidence source:
   [Flickr Pottery album](https://www.flickr.com/photos/boocher/albums/72177720334921846/)
 - Cross-platform verification: all 30 Google Photos images are represented in
-  Flickr; the primary Flickr album contains four additional images, for 34
-  unique public photos after duplicate cleanup on 2026-08-03
+  Flickr; after the latest Balcones Dark upload, the primary Flickr album
+  contains 33 additional images, for 63 unique public photos on 2026-08-03
 - Clay-body evidence: porch vessels are Cinco Blanco; the original seven
   images are the only Cinco Rojo-only group; in two-plank worktable images,
   foreground vessels are Balcones Dark and rear-plank vessels are Cinco Rojo

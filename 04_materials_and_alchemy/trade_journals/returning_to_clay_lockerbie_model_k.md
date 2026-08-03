@@ -192,10 +192,90 @@ when surface color, drying stage, or trimming makes the darker bodies difficult
 to distinguish visually.
 
 The Flickr and Google Photos albums were also reconciled. Google Photos holds
-30 images. Flickr remains the primary archive and now holds 34 unique public
-images after three exact duplicate uploads were removed. The four additional
-Flickr images are platform-only evidence rather than missing Google Photos
-copies.
+30 images. After three exact duplicate uploads were removed, Flickr held the
+same evidence plus four Flickr-only images.
+
+#### Trimmed And Modified Balcones Dark Batch
+
+A later upload on 2026-08-03 added 29 photographs of five Balcones Dark
+vessels. Every piece remains unfired greenware, but each has been trimmed and
+modified after throwing. The batch records several related directions:
+
+- trimmed foot rings and cleaned bases that give the vessels a deliberate lift
+- an altered, undulating rim on the tall cylindrical form
+- loose, grass-like fields of overlapping incised lines
+- a leaf-like carved lattice on one cup
+- faceted or notched transitions immediately above selected foot rings
+- movement between cylindrical cups, a taller canister form, and a rounded jar
+
+The modifications are becoming part of the forming language rather than a
+surface treatment added without regard for the vessel. The rounded jar carries
+the incised field across its lower volume, while the taller form uses the
+altered rim and vertical wall as a stronger contrast. The smaller cups provide
+a useful scale for comparing carved density, plain rim bands, and the visual
+weight of the trimmed feet.
+
+This upload brought the public Flickr album to 63 unique images. Because the
+Google Photos mirror remains at 30 images, Flickr now contains 33 additional
+images from the current pottery work.
+
+### 2026-08-03 - Apprenticeship Study 01: The Discipline Of The Cup
+
+The immediate direction is to treat the renewed practice first as an
+apprenticeship. Repetition, observation, and control will take priority over
+trying to make every vessel carry the full artistic ambition of the work. The
+longer graduate inquiry into local materials, altered form, ash surfaces, and
+the relationship to Bizen and other Japanese pottery will remain active in the
+background without dictating each early exercise.
+
+The small yunomi-like vessels in the current body of work establish the initial
+baseline. The [vertically incised cup](https://www.flickr.com/photos/boocher/55440962946/in/album-72177720334921846)
+and the [quieter rounded cup](https://www.flickr.com/photos/boocher/55441132254/in/album-72177720334921846)
+show two useful directions: a compact drinking form with a defined foot and a
+relationship between a quiet upper register and a more active lower surface.
+They are reference points for proportion and evaluation rather than templates
+to reproduce exactly.
+
+Cinco Rojo will be the first study clay. Mimosa primarily works within
+midrange firing temperatures, so beginning with Cinco Rojo keeps the exercise
+aligned with the available firing practice while extending the experience
+already gained from the original Cinco Rojo vessels.
+
+#### First Making Cycle
+
+The first cycle will consist of approximately 24 handleless drinking vessels
+made with a consistent amount of clay and divided into three related families:
+
+- eight straight-sided cylinders with a slight inward return at the lip
+- eight softly rounded cups derived from the current yunomi-like baseline
+- eight gently tapered cups with greater visual weight near the base
+
+The first sixteen will receive no added decoration. Throwing and trimming marks
+may remain where they support the form, but carving, faceting, paddling, and
+altered rims will be withheld. Of the final eight vessels, four may receive the
+loose linear incision already emerging in the current work, while four will
+remain quiet for direct comparison.
+
+#### Evaluation Order
+
+Each vessel will be evaluated in the same order:
+
+1. silhouette and overall direction of the profile
+2. rim confidence, comfort, and relationship to the wall
+3. correspondence between the interior and exterior volumes
+4. wall thickness, weight, and balance in the hand
+5. foot proportion and relationship to the vessel above it
+6. contribution or distraction created by any remaining surface marks
+
+The exercise is complete when six vessels made in one session clearly belong
+to the same family and the strongest example can be identified and defended in
+specific formal terms. The objective is controlled family resemblance rather
+than mechanical duplication.
+
+The rounded jar will remain a secondary research form during this study. One or
+two jars may follow groups of cups so that lessons about rim, foot, weight, and
+profile can begin moving into enclosed volume without interrupting the primary
+apprenticeship work.
 
 ## Visual Evidence
 
@@ -206,12 +286,12 @@ copies.
 - Album owner: `UncleRedBeard`
 - Owner NSID: `17632706@N00`
 - Album status: public and visible through the Flickr API
-- Public photo count: 34, confirmed through the Flickr API on 2026-08-03
+- Public photo count: 63, confirmed through the Flickr API on 2026-08-03
 - Album role: primary visual archive for the renewed pottery practice,
   including Cinco Blanco, Cinco Rojo, and Balcones Dark work
 - Cross-platform verification: Google Photos contains 30 images; Flickr
-  contains the same evidence plus four Flickr-only images, for 34 unique public
-  photos after duplicate cleanup on 2026-08-03
+  contains those images plus 33 Flickr-only images, for 63 unique public photos
+  after the latest Balcones Dark upload on 2026-08-03
 
 Flickr is the canonical visual-evidence source for this journal. Its stable
 album ID, public photo IDs, image titles, and capture timestamps should be used
@@ -253,6 +333,35 @@ for future journal citations and representative-image selections.
 - [2026-08-02 11:07, photo 55439716262](https://www.flickr.com/photos/boocher/55439716262/in/album-72177720334921846)
 - [2026-08-02 11:07, photo 55439716217](https://www.flickr.com/photos/boocher/55439716217/in/album-72177720334921846)
 - [2026-08-02 11:07, photo 55439716232](https://www.flickr.com/photos/boocher/55439716232/in/album-72177720334921846)
+- [2026-08-03 16:28, photo 55441355950](https://www.flickr.com/photos/boocher/55441355950/in/album-72177720334921846)
+- [2026-08-03 16:28, photo 55441355970](https://www.flickr.com/photos/boocher/55441355970/in/album-72177720334921846)
+- [2026-08-03 16:28, photo 55441355940](https://www.flickr.com/photos/boocher/55441355940/in/album-72177720334921846)
+- [2026-08-03 16:28, photo 55441133289](https://www.flickr.com/photos/boocher/55441133289/in/album-72177720334921846)
+- [2026-08-03 16:29, photo 55440963646](https://www.flickr.com/photos/boocher/55440963646/in/album-72177720334921846)
+- [2026-08-03 16:29, photo 55441133139](https://www.flickr.com/photos/boocher/55441133139/in/album-72177720334921846)
+- [2026-08-03 16:29, photo 55441078153](https://www.flickr.com/photos/boocher/55441078153/in/album-72177720334921846)
+- [2026-08-03 16:29, photo 55441078248](https://www.flickr.com/photos/boocher/55441078248/in/album-72177720334921846)
+- [2026-08-03 16:29, photo 55441355675](https://www.flickr.com/photos/boocher/55441355675/in/album-72177720334921846)
+- [2026-08-03 16:29, photo 55441078303](https://www.flickr.com/photos/boocher/55441078303/in/album-72177720334921846)
+- [2026-08-03 16:29, photo 55440963321](https://www.flickr.com/photos/boocher/55440963321/in/album-72177720334921846)
+- [2026-08-03 16:30, photo 55441132749](https://www.flickr.com/photos/boocher/55441132749/in/album-72177720334921846)
+- [2026-08-03 16:30, photo 55439990212](https://www.flickr.com/photos/boocher/55439990212/in/album-72177720334921846)
+- [2026-08-03 16:30, photo 55441132734](https://www.flickr.com/photos/boocher/55441132734/in/album-72177720334921846)
+- [2026-08-03 16:30, photo 55439990087](https://www.flickr.com/photos/boocher/55439990087/in/album-72177720334921846)
+- [2026-08-03 16:30, photo 55441355315](https://www.flickr.com/photos/boocher/55441355315/in/album-72177720334921846)
+- [2026-08-03 16:31, photo 55441355260](https://www.flickr.com/photos/boocher/55441355260/in/album-72177720334921846)
+- [2026-08-03 16:31, photo 55441077778](https://www.flickr.com/photos/boocher/55441077778/in/album-72177720334921846)
+- [2026-08-03 16:31, photo 55440962946](https://www.flickr.com/photos/boocher/55440962946/in/album-72177720334921846)
+- [2026-08-03 16:31, photo 55440963001](https://www.flickr.com/photos/boocher/55440963001/in/album-72177720334921846)
+- [2026-08-03 16:31, photo 55441077533](https://www.flickr.com/photos/boocher/55441077533/in/album-72177720334921846)
+- [2026-08-03 16:31, photo 55441132504](https://www.flickr.com/photos/boocher/55441132504/in/album-72177720334921846)
+- [2026-08-03 16:31, photo 55439989872](https://www.flickr.com/photos/boocher/55439989872/in/album-72177720334921846)
+- [2026-08-03 16:32, photo 55441132254](https://www.flickr.com/photos/boocher/55441132254/in/album-72177720334921846)
+- [2026-08-03 16:32, photo 55441354830](https://www.flickr.com/photos/boocher/55441354830/in/album-72177720334921846)
+- [2026-08-03 16:32, photo 55441354700](https://www.flickr.com/photos/boocher/55441354700/in/album-72177720334921846)
+- [2026-08-03 16:32, photo 55441077348](https://www.flickr.com/photos/boocher/55441077348/in/album-72177720334921846)
+- [2026-08-03 16:32, photo 55441354810](https://www.flickr.com/photos/boocher/55441354810/in/album-72177720334921846)
+- [2026-08-03 16:32, photo 55441354880](https://www.flickr.com/photos/boocher/55441354880/in/album-72177720334921846)
 
 ### Secondary Google Photos Album
 
@@ -261,8 +370,8 @@ for future journal citations and representative-image selections.
 - Album status: shared Google Photos album
 - Initial review: 7 photos on 2026-07-30
 - Current review: 30 photos on 2026-08-03
-- Album role: secondary capture and archive mirror; Flickr contains the same 30
-  images plus four Flickr-only images
+- Album role: secondary capture and archive mirror; Flickr contains these 30
+  images plus 33 Flickr-only images
 
 Google Photos remains useful as a shared album and secondary copy, but durable
 image-level references should use Flickr's public photo IDs and metadata.
@@ -274,6 +383,8 @@ image-level references should use Flickr's public photo IDs and metadata.
 - Cinco Blanco bisque ware photographed on the porch
 - Balcones Dark vessels during throwing and trimming
 - two-plank worktable comparisons of Balcones Dark and Cinco Rojo
+- five modified Balcones Dark vessels after trimming, including altered rims,
+  incised fields, carved latticework, and faceted foot transitions
 - altered forms, trimmed feet, and developing surface treatments
 - slow drying under plastic before the pieces reach bone dry
 
@@ -283,4 +394,5 @@ image-level references should use Flickr's public photo IDs and metadata.
 - Cinco Rojo and Balcones Dark at bone-dry and bisque stages
 - commercial-glaze application and fired results
 - dried `House Ash Batch 1`, glaze mixing, test application, and fired surface
+- baseline comparison and first Cinco Rojo rows from `Apprenticeship Study 01`
 - final pieces that best represent the emerging pottery direction
