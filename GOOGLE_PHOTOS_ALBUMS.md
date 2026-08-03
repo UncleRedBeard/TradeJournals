@@ -55,7 +55,7 @@ come from one of these sources:
 - Shared album URL: [Pottery](https://photos.app.goo.gl/eoqyVku1HMKUgy1W6)
 - Platform: Google Photos
 - Visibility: shared album reviewed in an authenticated browser session
-- Photos: 7 at initial review
+- Photos: 30 at the latest review on 2026-08-03
 - TradeJournals status: secondary source recorded in dedicated materials and
   alchemy journal
 - Section: materials and alchemy
@@ -65,8 +65,11 @@ come from one of these sources:
   practice
 - Primary evidence source:
   [Flickr Pottery album](https://www.flickr.com/photos/boocher/albums/72177720334921846/)
-- Cross-platform verification: all seven Google Photos images matched the seven
-  public Flickr images one-to-one on 2026-07-30
-- Next action: add photographs of the first Cinco Blanco vessels to the primary
-  Flickr album and use Flickr photo IDs for forming, trimming, drying, bisque,
+- Cross-platform verification: all 30 Google Photos images are represented in
+  Flickr; the primary Flickr album contains four additional images, for 34
+  unique public photos after duplicate cleanup on 2026-08-03
+- Clay-body evidence: porch vessels are Cinco Blanco; the original seven
+  images are the only Cinco Rojo-only group; in two-plank worktable images,
+  foreground vessels are Balcones Dark and rear-plank vessels are Cinco Rojo
+- Next action: use Flickr photo IDs for clay-body comparisons, drying, bisque,
   glaze, and fired-result evidence.

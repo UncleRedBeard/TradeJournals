@@ -33,7 +33,7 @@ Track the work as an evolving practice:
 
 - kickwheel setup, rhythm, centering, and the return of muscle memory
 - thrown forms, alteration, trimming, foot rings, and surface treatment
-- clay-body differences between Cinco Blanco and Cinco Rojo
+- clay-body differences among Cinco Blanco, Cinco Rojo, and Balcones Dark
 - slow, protected drying from greenware to bone dry
 - bisque and glaze firing behavior in the available electric kiln
 - commercial glazes used as references or finished surfaces
@@ -45,6 +45,7 @@ Track the work as an evolving practice:
 - Lockerbie Model K kickwheel
 - [Armadillo Clay Cinco Blanco](https://www.armadilloclay.com/store/p11/Cinco_Blanco.html#/)
 - [Armadillo Clay Cinco Rojo](https://www.armadilloclay.com/store/p14/Cinco_Rojo.html#/)
+- [Armadillo Clay Balcones Dark](https://www.armadilloclay.com/store/p22/Balcones_Dark.html#/)
 - friend's Skutt KM-1022 electric kiln
 - [Amaco Oolong Matte, SH-42](https://www.armadilloclay.com/store/p665/Oolong_Matte_%28SH-42%29.html#/)
 - [Spectrum Coffee Bean Ash, 1423](https://www.armadilloclay.com/store/p4633/Coffee_Bean_Ash_%281423%29.html#/)
@@ -159,14 +160,42 @@ The first homemade ash-glaze direction is intentionally simple:
 - 1 part G200 Feldspar
 
 The ash bucket combines wood-stove ash with ash from a barbecue grill fueled
-only by hardwood lump charcoal. The plan is to wash the ash and pass it through
-either a 60- or 80-mesh sieve. The clay will come from mixed reclaimed clay
-resting in buckets of water and awaiting another round of straining or sieving.
+only by hardwood lump charcoal. On 2026-08-02, the ash was washed and passed
+through a 60-mesh sieve. Clear water is being poured off as the washed ash
+settles, and the remaining material is drying for collection. The clay will
+come from mixed reclaimed clay resting in buckets of water and awaiting another
+round of straining or sieving.
 
 This is not intended to imitate a standardized commercial recipe. It is a first
 look at what can be made from available, recovered, and locally accumulated
 materials. Record it as `House Ash Batch 1`, fire it in oxidation with the
 available ware, and let the fired surface determine the next adjustment.
+
+### 2026-08-03 - Balcones Dark And Archive Reconciliation
+
+The next round expanded the clay-body comparison to include Balcones Dark.
+Work first described as possible Cinco Blanco was corrected after reviewing
+the throwing and trimming sequence: the clay used for that work was Balcones
+Dark. The vessels trimmed on 2026-08-02 are also Balcones Dark.
+
+The current visual-evidence classification is:
+
+- the original seven Flickr images are the only images devoted exclusively to
+  Cinco Rojo
+- all vessels photographed on the porch are Cinco Blanco bisque ware
+- in worktable photographs showing two planks, every vessel on the foreground
+  plank is Balcones Dark
+- vessels on the rear plank nearest the wall are Cinco Rojo
+
+These location-based rules preserve the identification of the clay bodies even
+when surface color, drying stage, or trimming makes the darker bodies difficult
+to distinguish visually.
+
+The Flickr and Google Photos albums were also reconciled. Google Photos holds
+30 images. Flickr remains the primary archive and now holds 34 unique public
+images after three exact duplicate uploads were removed. The four additional
+Flickr images are platform-only evidence rather than missing Google Photos
+copies.
 
 ## Visual Evidence
 
@@ -177,11 +206,12 @@ available ware, and let the fired surface determine the next adjustment.
 - Album owner: `UncleRedBeard`
 - Owner NSID: `17632706@N00`
 - Album status: public and visible through the Flickr API
-- Public photo count: 7
+- Public photo count: 34, confirmed through the Flickr API on 2026-08-03
 - Album role: primary visual archive for the renewed pottery practice,
-  beginning with the Lockerbie Model K workspace and the Cinco Rojo greenware
-- Cross-platform verification: all seven Flickr images matched the seven images
-  in the corresponding Google Photos album one-to-one on 2026-07-30
+  including Cinco Blanco, Cinco Rojo, and Balcones Dark work
+- Cross-platform verification: Google Photos contains 30 images; Flickr
+  contains the same evidence plus four Flickr-only images, for 34 unique public
+  photos after duplicate cleanup on 2026-08-03
 
 Flickr is the canonical visual-evidence source for this journal. Its stable
 album ID, public photo IDs, image titles, and capture timestamps should be used
@@ -196,15 +226,43 @@ for future journal citations and representative-image selections.
 - [2026-07-28 17:19, photo 55432151295](https://www.flickr.com/photos/boocher/55432151295/in/album-72177720334921846)
 - [2026-07-28 17:19, photo 55431873408](https://www.flickr.com/photos/boocher/55431873408/in/album-72177720334921846)
 - [2026-07-28 17:20, photo 55432151290](https://www.flickr.com/photos/boocher/55432151290/in/album-72177720334921846)
+- [2026-08-02 10:59, photo 55440803658](https://www.flickr.com/photos/boocher/55440803658/in/album-72177720334921846)
+- [2026-08-02 10:59, photo 55440803533](https://www.flickr.com/photos/boocher/55440803533/in/album-72177720334921846)
+- [2026-08-02 10:59, photo 55441079925](https://www.flickr.com/photos/boocher/55441079925/in/album-72177720334921846)
+- [2026-08-02 10:59, photo 55440803443](https://www.flickr.com/photos/boocher/55440803443/in/album-72177720334921846)
+- [2026-08-02 10:59, photo 55441079885](https://www.flickr.com/photos/boocher/55441079885/in/album-72177720334921846)
+- [2026-08-02 10:59, photo 55440689396](https://www.flickr.com/photos/boocher/55440689396/in/album-72177720334921846)
+- [2026-08-02 11:00, photo 55440803323](https://www.flickr.com/photos/boocher/55440803323/in/album-72177720334921846)
+- [2026-08-02 11:00, photo 55441079770](https://www.flickr.com/photos/boocher/55441079770/in/album-72177720334921846)
+- [2026-08-02 11:00, photo 55439716992](https://www.flickr.com/photos/boocher/55439716992/in/album-72177720334921846)
+- [2026-08-02 11:00, photo 55440803263](https://www.flickr.com/photos/boocher/55440803263/in/album-72177720334921846)
+- [2026-08-02 11:00, photo 55440689096](https://www.flickr.com/photos/boocher/55440689096/in/album-72177720334921846)
+- [2026-08-02 11:00, photo 55440689211](https://www.flickr.com/photos/boocher/55440689211/in/album-72177720334921846)
+- [2026-08-02 11:00, photo 55439716787](https://www.flickr.com/photos/boocher/55439716787/in/album-72177720334921846)
+- [2026-08-02 11:00, photo 55439716767](https://www.flickr.com/photos/boocher/55439716767/in/album-72177720334921846)
+- [2026-08-02 11:00, photo 55440802913](https://www.flickr.com/photos/boocher/55440802913/in/album-72177720334921846)
+- [2026-08-02 11:00, photo 55440857189](https://www.flickr.com/photos/boocher/55440857189/in/album-72177720334921846)
+- [2026-08-02 11:00, photo 55439716597](https://www.flickr.com/photos/boocher/55439716597/in/album-72177720334921846)
+- [2026-08-02 11:00, photo 55440857164](https://www.flickr.com/photos/boocher/55440857164/in/album-72177720334921846)
+- [2026-08-02 11:01, photo 55439716737](https://www.flickr.com/photos/boocher/55439716737/in/album-72177720334921846)
+- [2026-08-02 11:06, photo 55440857079](https://www.flickr.com/photos/boocher/55440857079/in/album-72177720334921846)
+- [2026-08-02 11:06, photo 55441079210](https://www.flickr.com/photos/boocher/55441079210/in/album-72177720334921846)
+- [2026-08-02 11:06, photo 55440857044](https://www.flickr.com/photos/boocher/55440857044/in/album-72177720334921846)
+- [2026-08-02 11:07, photo 55439716337](https://www.flickr.com/photos/boocher/55439716337/in/album-72177720334921846)
+- [2026-08-02 11:07, photo 55439716182](https://www.flickr.com/photos/boocher/55439716182/in/album-72177720334921846)
+- [2026-08-02 11:07, photo 55439716262](https://www.flickr.com/photos/boocher/55439716262/in/album-72177720334921846)
+- [2026-08-02 11:07, photo 55439716217](https://www.flickr.com/photos/boocher/55439716217/in/album-72177720334921846)
+- [2026-08-02 11:07, photo 55439716232](https://www.flickr.com/photos/boocher/55439716232/in/album-72177720334921846)
 
 ### Secondary Google Photos Album
 
 - Album URL: [Pottery](https://photos.app.goo.gl/eoqyVku1HMKUgy1W6)
 - Album title: `Pottery`
 - Album status: shared Google Photos album
-- Initial review: 7 photos
-- Album role: secondary capture and archive mirror of the seven images recorded
-  in the primary Flickr album
+- Initial review: 7 photos on 2026-07-30
+- Current review: 30 photos on 2026-08-03
+- Album role: secondary capture and archive mirror; Flickr contains the same 30
+  images plus four Flickr-only images
 
 Google Photos remains useful as a shared album and secondary copy, but durable
 image-level references should use Flickr's public photo IDs and metadata.
@@ -212,15 +270,17 @@ image-level references should use Flickr's public photo IDs and metadata.
 ### Evidence Already Represented
 
 - Lockerbie Model K kickwheel and outdoor working setup
-- four Cinco Rojo vessels at the greenware stage
+- original Cinco Rojo vessels at the greenware stage
+- Cinco Blanco bisque ware photographed on the porch
+- Balcones Dark vessels during throwing and trimming
+- two-plank worktable comparisons of Balcones Dark and Cinco Rojo
 - altered forms, trimmed feet, and developing surface treatments
 - slow drying under plastic before the pieces reach bone dry
 
 ### Evidence Still Needed
 
-- first Cinco Blanco vessels before glazing
 - Cinco Blanco bisque surfaces and any firing variation among shelves
-- Cinco Rojo at bone dry and bisque stages
+- Cinco Rojo and Balcones Dark at bone-dry and bisque stages
 - commercial-glaze application and fired results
-- `House Ash Batch 1` preparation, test application, and fired surface
+- dried `House Ash Batch 1`, glaze mixing, test application, and fired surface
 - final pieces that best represent the emerging pottery direction
