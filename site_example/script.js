@@ -1,5 +1,34 @@
 const journalIndex = [
   {
+    title: "Returning to Clay on a Lockerbie Model K",
+    area: "04 / Materials & Alchemy",
+    source: "04_materials_and_alchemy/trade_journals/returning_to_clay_lockerbie_model_k.md",
+    url: "#journal-evidence",
+    summary:
+      "The renewed pottery practice uses a Lockerbie Model K kickwheel, Cinco Rojo, Cinco Blanco, and Balcones Dark. Apprenticeship Study 01 centers small yunomi-like cups, repetition, silhouette, rim, weight, interior, and foot while ash-glaze and altered-form research remain in the background.",
+    tags: [
+      "pottery",
+      "clay",
+      "lockerbie",
+      "kickwheel",
+      "yunomi",
+      "cup",
+      "apprenticeship",
+      "cinco rojo",
+      "cinco blanco",
+      "balcones dark",
+      "ash glaze",
+      "ceramics",
+      "mid-fire",
+      "mimosa"
+    ],
+    images: [
+      "assets/flickr/pottery/01.jpg",
+      "assets/flickr/pottery/04.jpg",
+      "assets/flickr/pottery/05.jpg"
+    ]
+  },
+  {
     title: "1964 Vespa Restoration",
     area: "03 / The Machines",
     source: "03_the_machines/trade_journals/1964_vespa_restoration.md",
@@ -329,7 +358,7 @@ function createAnswer(results, query) {
   if (results.length === 0) {
     const fallback = document.createElement("p");
     fallback.textContent =
-      "Try Vespa, electrical, bath, office floors, bedroom, film, Isolette, or Diana.";
+      "Try pottery, yunomi, Vespa, electrical, bath, office floors, film, or Isolette.";
     response.append(fallback);
     return response;
   }

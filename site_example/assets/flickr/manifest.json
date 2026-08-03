@@ -328,5 +328,47 @@
         "image": "assets/flickr/master-bedroom-take-2/05.jpg"
       }
     ]
+  },
+  {
+    "album": "pottery",
+    "title": "Selected evidence from Pottery",
+    "count": 5,
+    "rows": [
+      {
+        "title": "PXL_20260726_223411285",
+        "link": "https://www.flickr.com/photos/boocher/55432151400/in/album-72177720334921846/",
+        "date_taken": "2026-07-26T17:34:00-05:00",
+        "src": "https://live.staticflickr.com/65535/55432151400_ab92a5b1ac_b.jpg",
+        "image": "assets/flickr/pottery/01.jpg"
+      },
+      {
+        "title": "PXL_20260802_155940351",
+        "link": "https://www.flickr.com/photos/boocher/55440803533/in/album-72177720334921846/",
+        "date_taken": "2026-08-02T10:59:00-05:00",
+        "src": "https://live.staticflickr.com/65535/55440803533_db3277cf4b_b.jpg",
+        "image": "assets/flickr/pottery/02.jpg"
+      },
+      {
+        "title": "PXL_20260803_212830677.MP",
+        "link": "https://www.flickr.com/photos/boocher/55441355940/in/album-72177720334921846/",
+        "date_taken": "2026-08-03T16:28:00-05:00",
+        "src": "https://live.staticflickr.com/65535/55441355940_0576a4d077_b.jpg",
+        "image": "assets/flickr/pottery/03.jpg"
+      },
+      {
+        "title": "PXL_20260803_212956872.MP",
+        "link": "https://www.flickr.com/photos/boocher/55441078303/in/album-72177720334921846/",
+        "date_taken": "2026-08-03T16:29:00-05:00",
+        "src": "https://live.staticflickr.com/65535/55441078303_d52c3fc1b2_b.jpg",
+        "image": "assets/flickr/pottery/04.jpg"
+      },
+      {
+        "title": "PXL_20260803_213210649",
+        "link": "https://www.flickr.com/photos/boocher/55441132254/in/album-72177720334921846/",
+        "date_taken": "2026-08-03T16:32:00-05:00",
+        "src": "https://live.staticflickr.com/65535/55441132254_a533e2635b_b.jpg",
+        "image": "assets/flickr/pottery/05.jpg"
+      }
+    ]
   }
 ]

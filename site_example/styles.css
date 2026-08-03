@@ -154,7 +154,7 @@ h3 {
 }
 
 .pillar-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .model-grid {
@@ -441,6 +441,40 @@ blockquote {
   white-space: nowrap;
 }
 
+.study-brief {
+  align-items: start;
+  background: #f4efe6;
+  border-bottom: 1px solid #e3d7c7;
+  border-top: 1px solid #e3d7c7;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(180px, 0.55fr) minmax(280px, 1fr) minmax(260px, 0.75fr);
+  margin: 20px 0 0;
+  padding: 22px 0;
+}
+
+.study-brief h4,
+.study-brief p {
+  margin-bottom: 0;
+}
+
+.study-brief > p {
+  color: var(--quiet);
+}
+
+.study-checkpoint {
+  border-left: 4px solid var(--brick);
+  padding-left: 18px;
+}
+
+.study-checkpoint strong {
+  color: var(--ink);
+  display: block;
+  font-size: 12px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
 .album-strip {
   border-top: 1px solid var(--line);
   margin-top: 18px;
@@ -530,7 +564,8 @@ figcaption span {
   .hero,
   .intro,
   .chat-shell,
-  .feature-layout {
+  .feature-layout,
+  .study-brief {
     grid-template-columns: 1fr;
   }
 
