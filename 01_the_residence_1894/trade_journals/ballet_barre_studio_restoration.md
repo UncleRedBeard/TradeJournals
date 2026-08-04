@@ -36,8 +36,11 @@ Capture the work by phase and trade:
 Record reclaimed ceiling planks, drywall mud, sanding grits, sanding tools,
 polyurethane, brush application method, builder's paper, 12/2 Romex, the new
 ceiling-fan mount, shiplap sanding approach, crown molding profiles, coping
-tools, primers, paints, and any ballet-barre-specific finish or installation
-hardware used later.
+tools, [KILZ Mold & Mildew Primer](https://www.homedepot.com/p/KILZ-Mold-and-Mildew-1-Gal-White-Water-Based-Interior-and-Exterior-Primer-Sealer-and-Stain-Blocker-L204601/308880665),
+[JH Wall Paints Mineral Prime](https://www.jhwallpaints.com/products/mineral-prime-interior-exterior?variant=32304010821699),
+[JH Lime Wall Paint in 100 White](https://www.jhwallpaints.com/products/lime-wall-paint-3-5-gallon/100-white-lime-wash),
+[JH Lime Slurry](https://www.jhwallpaints.com/products/lime-slurry?variant=32306010652739),
+and any ballet-barre-specific finish or installation hardware used later.
 
 ## Tradeoffs Avoided Or Accepted
 
@@ -91,6 +94,45 @@ making that exposed wall, the repaired ceiling planks, the new electrical work,
 the refinished and protected floors, and the crown molding all land as one
 coherent ballet barre studio rather than separate repair episodes.
 
+### 2026-08-04 - Primer System And Lime Finish Preparation
+
+The room has now moved from repair and surface preparation into the finish
+system. All room surfaces received two coats of
+[KILZ Mold & Mildew Primer](https://www.homedepot.com/p/KILZ-Mold-and-Mildew-1-Gal-White-Water-Based-Interior-and-Exterior-Primer-Sealer-and-Stain-Blocker-L204601/308880665),
+followed by one coat of
+[JH Wall Paints Mineral Prime for Interior and Exterior](https://www.jhwallpaints.com/products/mineral-prime-interior-exterior?variant=32304010821699).
+The two-primer sequence established a sealed, uniform foundation before the
+mineral finish while retaining compatibility with the planned lime system.
+
+The crown molding, baseboards, and all windows have received one coat of
+[JH Lime Wall Paint in 100 White](https://www.jhwallpaints.com/products/lime-wall-paint-3-5-gallon/100-white-lime-wash).
+This begins tying the repaired trim, openings, and new crown work together with
+one mineral finish rather than treating each element as an isolated repair.
+
+The ceiling still needs its coat of 100 White Lime Wall Paint. After the ceiling
+is complete, the drywall-covered walls will receive Lime Wall Paint combined
+with [JH Lime Slurry](https://www.jhwallpaints.com/products/lime-slurry?variant=32306010652739)
+using JH Wall Paints' documented
+[Slurry Effect vertical application](https://www.jhwallpaints.com/pages/the-slurry-effect-vertical-application).
+The slurry is an additive mixed into the Lime Wall Paint to build the intended
+vertical texture; it is not being treated as a standalone coating. The exposed
+original shiplap wall remains outside this slurry treatment so its wood surface
+continues to read as the room's preserved historic material.
+
+Once the ceiling coat is complete, the Lime Wall Paint and Lime Slurry finish
+will be applied to the drywall-covered walls. That will leave the final room
+trim-out: selecting and installing window treatments, choosing and installing
+either a ceiling light or ceiling fan, installing the electrical receptacles
+and switches, and completing the remaining device, hardware, and usability
+details needed to place the studio into service.
+
+The studio hallway is complete. It received two coats of the same KILZ Mold &
+Mildew Primer used in the studio. Each primer coat was followed by a 220-grit
+sanding pass before the next coating stage, including the final sanding before
+paint. The hallway then received two coats of Behr Cottage White. This finishes
+the transition into the studio while keeping the hallway finish quieter than
+the limewash and slurry treatment planned for the room itself.
+
 ## Visual Evidence
 
 Use this section to map the Google Photos album into evidence categories before
@@ -118,6 +160,11 @@ selected.
 - Ceiling plank replacement:
 - Floor refinishing and protection:
 - Wall mudding and sanding:
+- Whole-room KILZ and Mineral Prime application:
+- Lime-painted crown molding, baseboards, and windows:
+- Lime-painted ceiling:
+- Vertical Lime Wall Paint and Lime Slurry wall finish:
+- Completed studio hallway in Behr Cottage White:
 - Ceiling fan wiring and mount:
 - Exposed shiplap:
 - Crown molding and coping:
@@ -145,11 +192,25 @@ selected.
 
 - Google Photos review pending for whole-room mudding.
 - Google Photos review pending for wall sanding through 120 grit and 220 grit.
+- Google Photos review pending for two whole-room coats of KILZ Mold & Mildew
+  Primer followed by one coat of JH Wall Paints Mineral Prime.
+
+### Lime Finish System
+
+- Google Photos review pending for the first coat of 100 White Lime Wall Paint
+  on the crown molding, baseboards, and windows.
+- Future evidence needed for the 100 White Lime Wall Paint ceiling coat.
+- Future evidence needed for the Lime Wall Paint and Lime Slurry finish applied
+  to the drywall-covered walls using the vertical slurry method.
 
 ### Systems Integration
 
 - Google Photos review pending for new 12/2 Romex routing and the new
   ceiling-fan mount.
+- Future evidence needed for the selected ceiling light or fan and final
+  installation.
+- Future evidence needed for electrical receptacles, switches, cover plates,
+  and completed electrical trim-out.
 
 ### Shiplap Exposure
 
@@ -163,4 +224,8 @@ selected.
 
 ### Finished Or Room-Ready Evidence
 
-- Google Photos review pending.
+- Google Photos review pending for the completed studio hallway after two coats
+  of KILZ Mold & Mildew Primer, 220-grit sanding after each primer coat, and two
+  coats of Behr Cottage White.
+- Future evidence needed for window treatments and the completed room.
+- Google Photos review pending for the final room-ready ballet studio.
