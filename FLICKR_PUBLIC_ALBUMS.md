@@ -21,7 +21,7 @@ Private albums are intentionally excluded from this workflow.
 
 |#|Album|Photos|Status|Section|Existing Journal|
 |---:|---|---:|---|---|---|
-|1|[Pottery](https://www.flickr.com/photos/17632706@N00/albums/72177720334921846/)|63|imported|[materials](#album-72177720334921846)|04_materials_and_alchemy/trade_journals/returning_to_clay_lockerbie_model_k.md|
+|1|[Pottery](https://www.flickr.com/photos/17632706@N00/albums/72177720334921846/)|98|imported|[materials](#album-72177720334921846)|04_materials_and_alchemy/trade_journals/returning_to_clay_lockerbie_model_k.md|
 |2|[Bikes - 2004 KLR 650](https://www.flickr.com/photos/17632706@N00/albums/72177720334242416/)|50|imported|[machines](#album-72177720334242416)|03_the_machines/trade_journals/bikes_2004_klr_650.md|
 |3|[Bikes - Honda Chopper](https://www.flickr.com/photos/17632706@N00/albums/72177720334235682/)|78|imported|[machines](#album-72177720334235682)|03_the_machines/trade_journals/bikes_honda_chopper.md|
 |4|[Bikes - 1982 Honda CB750 DOHC](https://www.flickr.com/photos/17632706@N00/albums/72177720334252878/)|7|imported|[machines](#album-72177720334252878)|03_the_machines/trade_journals/bikes_1982_honda_cb750_dohc.md|
@@ -69,8 +69,8 @@ Private albums are intentionally excluded from this workflow.
 - Album URL: [Pottery](https://www.flickr.com/photos/17632706@N00/albums/72177720334921846/)
 - Album ID: `72177720334921846`
 - Visibility: public
-- Photos: 63
-- Pottery album last verified: 2026-08-03
+- Photos: 98
+- Pottery album last verified: 2026-08-04
 - TradeJournals status: imported
 - Section: materials
 - Existing journal: `04_materials_and_alchemy/trade_journals/returning_to_clay_lockerbie_model_k.md`

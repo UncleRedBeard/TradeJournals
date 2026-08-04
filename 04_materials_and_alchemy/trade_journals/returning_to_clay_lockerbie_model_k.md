@@ -79,6 +79,94 @@ planned in advance.
 
 ## Journal Entries
 
+### Circa 1994-1995 - Brookhaven Wood-Fire Apprenticeship
+
+Thirty-five photographs added to the Flickr archive on 2026-08-04 document
+eight surviving vessels made circa 1994-1995. This is historical work rather
+than part of the current making cycle. Foot inscriptions establish the period;
+the 2026 timestamps record when the vessels were photographed for the archive.
+
+The pots were made while studying ceramics under
+[Lisa Ehrich](https://lisaehrich.com/#home) at Brookhaven Community College,
+now the [Brookhaven Campus of Dallas College](https://www.dallascollege.edu/locations/brookhaven/).
+Every vessel was thrown on a Lockerbie Model K, the same make and model now
+supporting the return to clay. They were fired in the wood-fired kiln that I
+helped build. Together, those facts make this group more than a collection of
+early pots: it is the physical link between the first sustained pottery
+practice and the present one.
+
+The recovered group includes bowls, jars, altered vessels, a pitcher, and a
+teapot. The work is ambitious and serious, especially in its willingness to
+move beyond basic cylinders into scale, alteration, carving, joined parts, and
+functional complexity. The wood-fire surfaces are genuine strengths. Ash,
+flame, and flashing produce passages that still hold attention, and several
+forms give the firing enough structure to work against.
+
+Important production details have not yet been recovered. The exact clay
+bodies, slips or glazes, firing temperature, duration, wood, and kiln position
+should remain unidentified unless later notes or records establish them.
+
+#### Formal Review
+
+The group is not uniformly resolved. Its recurring weakness is the transition
+from competent throwing to a fully considered vessel:
+
+- rims are often heavy, rolled, or swollen beyond what the wall and volume
+  require
+- feet and lower terminations sometimes feel added after the main form was
+  solved rather than developed as part of its profile
+- alterations occasionally read as incidents imposed on the pot instead of
+  controlled changes carried through its structure
+- the wood firing sometimes gives a weak silhouette more authority than the
+  underlying form has earned
+
+The [tall wood-fired jar](https://www.flickr.com/photos/boocher/55442826299/in/album-72177720334921846)
+is the strongest overall form. Its scale, quiet volume, and surface work
+together without one needing to disguise the other. The
+[pale wood-fired bowl](https://www.flickr.com/photos/boocher/55443047060/in/album-72177720334921846)
+is the strongest functional form because its openness, rim, and fired surface
+support the same direct gesture.
+
+The [altered tall vase](https://www.flickr.com/photos/boocher/55442777083/in/album-72177720334921846)
+offers the clearest early evidence of the voice returning in the current work:
+thrown volume interrupted by deliberate pressure, asymmetry, and tool marks.
+The [carved pitcher](https://www.flickr.com/photos/boocher/55442826634/in/album-72177720334921846)
+is a useful ambitious form, but its neck, spout, handle, and body still read as
+related parts rather than one inevitable object.
+
+The [faceted low vessel](https://www.flickr.com/photos/boocher/55443047245/in/album-72177720334921846)
+and [teapot](https://www.flickr.com/photos/boocher/55442776838/in/album-72177720334921846)
+are the most instructive unresolved forms. The low vessel shows how alteration
+can outrun the strength of the original volume. The teapot attempts the most
+complex integration in the group, but the lid, spout, lugs, handle solution,
+and body compete instead of settling into a clear hierarchy. The
+[ringed cylindrical vessel](https://www.flickr.com/photos/boocher/55441689237/in/album-72177720334921846)
+is competent but the least distinctive; its horizontal articulation does not
+yet carry the conviction found in the altered and carved work.
+
+#### Lessons Carried Into The Current Apprenticeship
+
+This historical body gives the current cup study a sharper purpose. The work
+already contained ambition, material sensitivity, and a desire to alter thrown
+forms. What it lacked most consistently was disciplined resolution at the rim,
+foot, and transition between parts.
+
+`The Discipline Of The Cup` should therefore remain focused on the places the
+older work left unresolved:
+
+- make the rim a precise ending to the wall rather than a default rolled edge
+- design the foot and lower profile as part of the vessel from the first pull
+- require every alteration to strengthen the original volume
+- judge silhouette, proportion, weight, and use before asking surface to carry
+  the pot
+- treat ash and flame as collaborators with a resolved form, not as rescue for
+  an uncertain one
+
+The long interruption did not erase the original questions. It made them
+visible again. The present apprenticeship can begin with greater honesty
+because the archive now shows both the strengths worth recovering and the
+habits that still need to be corrected.
+
 ### 2026-07-30 - The Return To Clay
 
 The return began with the purchase of a Lockerbie Model K kickwheel. It is the
@@ -286,12 +374,13 @@ apprenticeship work.
 - Album owner: `UncleRedBeard`
 - Owner NSID: `17632706@N00`
 - Album status: public and visible through the Flickr API
-- Public photo count: 63, confirmed through the Flickr API on 2026-08-03
+- Public photo count: 98, confirmed through the Flickr API on 2026-08-04
 - Album role: primary visual archive for the renewed pottery practice,
-  including Cinco Blanco, Cinco Rojo, and Balcones Dark work
+  including Cinco Blanco, Cinco Rojo, Balcones Dark, and the recovered
+  Brookhaven wood-fired work from circa 1994-1995
 - Cross-platform verification: Google Photos contains 30 images; Flickr
-  contains those images plus 33 Flickr-only images, for 63 unique public photos
-  after the latest Balcones Dark upload on 2026-08-03
+  contains those images plus 68 Flickr-only images, for 98 unique public photos
+  after the historical wood-fired upload on 2026-08-04
 
 Flickr is the canonical visual-evidence source for this journal. Its stable
 album ID, public photo IDs, image titles, and capture timestamps should be used
@@ -362,6 +451,58 @@ for future journal citations and representative-image selections.
 - [2026-08-03 16:32, photo 55441077348](https://www.flickr.com/photos/boocher/55441077348/in/album-72177720334921846)
 - [2026-08-03 16:32, photo 55441354810](https://www.flickr.com/photos/boocher/55441354810/in/album-72177720334921846)
 - [2026-08-03 16:32, photo 55441354880](https://www.flickr.com/photos/boocher/55441354880/in/album-72177720334921846)
+- [2026-08-04 11:20, photo 55442826634](https://www.flickr.com/photos/boocher/55442826634/in/album-72177720334921846)
+- [2026-08-04 11:21, photo 55443047770](https://www.flickr.com/photos/boocher/55443047770/in/album-72177720334921846)
+- [2026-08-04 11:21, photo 55441689367](https://www.flickr.com/photos/boocher/55441689367/in/album-72177720334921846)
+- [2026-08-04 11:21, photo 55442777983](https://www.flickr.com/photos/boocher/55442777983/in/album-72177720334921846)
+- [2026-08-04 11:22, photo 55442777953](https://www.flickr.com/photos/boocher/55442777953/in/album-72177720334921846)
+- [2026-08-04 11:22, photo 55442826514](https://www.flickr.com/photos/boocher/55442826514/in/album-72177720334921846)
+- [2026-08-04 11:23, photo 55441689237](https://www.flickr.com/photos/boocher/55441689237/in/album-72177720334921846)
+- [2026-08-04 11:23, photo 55442777823](https://www.flickr.com/photos/boocher/55442777823/in/album-72177720334921846)
+- [2026-08-04 11:23, photo 55443047510](https://www.flickr.com/photos/boocher/55443047510/in/album-72177720334921846)
+- [2026-08-04 11:23, photo 55442777708](https://www.flickr.com/photos/boocher/55442777708/in/album-72177720334921846)
+- [2026-08-04 11:23, photo 55442655181](https://www.flickr.com/photos/boocher/55442655181/in/album-72177720334921846)
+- [2026-08-04 11:24, photo 55442826299](https://www.flickr.com/photos/boocher/55442826299/in/album-72177720334921846)
+- [2026-08-04 11:24, photo 55443047330](https://www.flickr.com/photos/boocher/55443047330/in/album-72177720334921846)
+- [2026-08-04 11:24, photo 55443047245](https://www.flickr.com/photos/boocher/55443047245/in/album-72177720334921846)
+- [2026-08-04 11:24, photo 55442826104](https://www.flickr.com/photos/boocher/55442826104/in/album-72177720334921846)
+- [2026-08-04 11:24, photo 55442655021](https://www.flickr.com/photos/boocher/55442655021/in/album-72177720334921846)
+- [2026-08-04 11:24, photo 55443047180](https://www.flickr.com/photos/boocher/55443047180/in/album-72177720334921846)
+- [2026-08-04 11:25, photo 55443047100](https://www.flickr.com/photos/boocher/55443047100/in/album-72177720334921846)
+- [2026-08-04 11:26, photo 55443047060](https://www.flickr.com/photos/boocher/55443047060/in/album-72177720334921846)
+- [2026-08-04 11:26, photo 55442654856](https://www.flickr.com/photos/boocher/55442654856/in/album-72177720334921846)
+- [2026-08-04 11:27, photo 55442654726](https://www.flickr.com/photos/boocher/55442654726/in/album-72177720334921846)
+- [2026-08-04 11:27, photo 55442654776](https://www.flickr.com/photos/boocher/55442654776/in/album-72177720334921846)
+- [2026-08-04 11:27, photo 55442654741](https://www.flickr.com/photos/boocher/55442654741/in/album-72177720334921846)
+- [2026-08-04 11:28, photo 55442777323](https://www.flickr.com/photos/boocher/55442777323/in/album-72177720334921846)
+- [2026-08-04 11:28, photo 55442777083](https://www.flickr.com/photos/boocher/55442777083/in/album-72177720334921846)
+- [2026-08-04 11:28, photo 55442825719](https://www.flickr.com/photos/boocher/55442825719/in/album-72177720334921846)
+- [2026-08-04 11:28, photo 55442654566](https://www.flickr.com/photos/boocher/55442654566/in/album-72177720334921846)
+- [2026-08-04 11:28, photo 55442654546](https://www.flickr.com/photos/boocher/55442654546/in/album-72177720334921846)
+- [2026-08-04 11:29, photo 55442825559](https://www.flickr.com/photos/boocher/55442825559/in/album-72177720334921846)
+- [2026-08-04 11:29, photo 55442654356](https://www.flickr.com/photos/boocher/55442654356/in/album-72177720334921846)
+- [2026-08-04 11:29, photo 55442825544](https://www.flickr.com/photos/boocher/55442825544/in/album-72177720334921846)
+- [2026-08-04 11:29, photo 55442776843](https://www.flickr.com/photos/boocher/55442776843/in/album-72177720334921846)
+- [2026-08-04 11:29, photo 55443046510](https://www.flickr.com/photos/boocher/55443046510/in/album-72177720334921846)
+- [2026-08-04 11:30, photo 55442776838](https://www.flickr.com/photos/boocher/55442776838/in/album-72177720334921846)
+- [2026-08-04 11:30, photo 55443046530](https://www.flickr.com/photos/boocher/55443046530/in/album-72177720334921846)
+
+### Historical Wood-Fired Work
+
+The following images represent the eight-vessel body made circa 1994-1995 and
+photographed for the archive on 2026-08-04:
+
+- Establishing image and most ambitious useful form:
+  [carved pitcher](https://www.flickr.com/photos/boocher/55442826634/in/album-72177720334921846)
+- Strongest resolved overall form:
+  [tall wood-fired jar](https://www.flickr.com/photos/boocher/55442826299/in/album-72177720334921846)
+- Strongest functional form:
+  [pale wood-fired bowl](https://www.flickr.com/photos/boocher/55443047060/in/album-72177720334921846)
+- Clearest early evidence of the current altered-form direction:
+  [altered tall vase](https://www.flickr.com/photos/boocher/55442777083/in/album-72177720334921846)
+- Most instructive unresolved forms:
+  [faceted low vessel](https://www.flickr.com/photos/boocher/55443047245/in/album-72177720334921846)
+  and [teapot](https://www.flickr.com/photos/boocher/55442776838/in/album-72177720334921846)
 
 ### Secondary Google Photos Album
 
@@ -371,7 +512,7 @@ for future journal citations and representative-image selections.
 - Initial review: 7 photos on 2026-07-30
 - Current review: 30 photos on 2026-08-03
 - Album role: secondary capture and archive mirror; Flickr contains these 30
-  images plus 33 Flickr-only images
+  images plus 68 Flickr-only images
 
 Google Photos remains useful as a shared album and secondary copy, but durable
 image-level references should use Flickr's public photo IDs and metadata.
@@ -385,6 +526,9 @@ image-level references should use Flickr's public photo IDs and metadata.
 - two-plank worktable comparisons of Balcones Dark and Cinco Rojo
 - five modified Balcones Dark vessels after trimming, including altered rims,
   incised fields, carved latticework, and faceted foot transitions
+- eight historical wood-fired vessels made circa 1994-1995 while studying
+  under Lisa Ehrich at Brookhaven, thrown on a Lockerbie Model K and fired in
+  the wood-fired kiln I helped build
 - altered forms, trimmed feet, and developing surface treatments
 - slow drying under plastic before the pieces reach bone dry
 
