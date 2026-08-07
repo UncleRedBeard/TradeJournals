@@ -4,6 +4,7 @@ Use this folder for photography, documentation, and visual archive journals. Ent
 
 ## Journals
 
+- [Flickr: Agfa Isolette](flickr_agfa_isolette.md) - curated record for the 1961 Agfa Isolette Flickr album, including its intentional double exposures.
 - [Flickr: France Travel Archive](flickr_france_travel_archive.md) - grouped Flickr catalog record for France travel-photo albums and their inventory evidence.
 - [Flickr: Kodakk-613-1913](flickr_kodakk_613_1913.md) - Flickr-side lens archive record for Kodak bellows / 616 film evidence.
 - [Flickr: Lomography Overlap Archive](flickr_lomography_overlap_archive.md) - grouped Flickr catalog record for albums that overlap known Lomography film catalog entries.
