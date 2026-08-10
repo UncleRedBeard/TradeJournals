@@ -3,60 +3,112 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TradeJournals Portfolio Prototype</title>
+    <title>TradeJournals | A Living Craft Archive</title>
+    <meta
+      name="description"
+      content="A living archive of old-house restoration, workshop practice, machines, ceramics, and film photography."
+    >
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap"
+      rel="stylesheet"
+    >
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <a class="skip-link" href="#work">Skip to the work</a>
     <header class="site-header">
-        <a class="brand" href="#top">TradeJournals</a>
+      <a class="brand" href="#top" aria-label="TradeJournals home">
+        <span class="brand-mark" aria-hidden="true">TJ</span>
+        <span>TradeJournals <small>Living craft archive</small></span>
+      </a>
       <nav aria-label="Primary navigation">
         <a href="#ask-journals">Ask</a>
-        <a href="#work">Work</a>
-        <a href="#journals">Journals</a>
-        <a href="#journal-evidence">Journal Evidence</a>
-        <a href="#evidence">Evidence</a>
+        <a href="#work">Practices</a>
+        <a href="#journals">Featured</a>
+        <a href="#journal-evidence">Projects</a>
+        <a href="#evidence">Film</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <img
-          src="../05_the_lens/assets/lomography/best-of-film-work/dance-silhouette.jpg"
-          alt="Black and white film silhouette of a dancer in a window"
-        >
+        <div class="hero-media" aria-hidden="true">
+          <figure data-practice="residence">
+            <img src="assets/flickr/entry/05.jpg" alt="">
+            <span>Residence</span>
+          </figure>
+          <figure data-practice="forge">
+            <img src="assets/flickr/shed/01.jpg" alt="">
+            <span>Forge + Shop</span>
+          </figure>
+          <figure data-practice="machines">
+            <img src="assets/flickr/vespa/03.jpg" alt="">
+            <span>Machines</span>
+          </figure>
+          <figure data-practice="materials">
+            <img src="assets/flickr/pottery/04.jpg" alt="">
+            <span>Materials</span>
+          </figure>
+          <figure data-practice="lens">
+            <img
+              src="../05_the_lens/assets/lomography/best-of-film-work/dance-silhouette.jpg"
+              alt=""
+            >
+            <span>Lens</span>
+          </figure>
+        </div>
         <div class="hero-copy">
-          <p class="eyebrow">Craft journal and evidence archive</p>
-          <h1 id="hero-title">Preservation work made visible.</h1>
-          <p>
-            A portfolio prototype generated from the TradeJournals source: restoration notes,
-            film evidence, project categories, and provenance links.
+          <p class="eyebrow">Smithville, Texas | Work recorded in real time</p>
+          <h1 id="hero-title">TradeJournals</h1>
+          <p class="hero-thesis">Preservation work made visible.</p>
+          <p class="hero-summary">
+            Old-house repair, working machines, ceramics, and film photography,
+            documented through the decisions that make the finished work possible.
           </p>
+        </div>
+        <div class="evidence-rail" aria-label="TradeJournals practices">
+          <a href="#practice-residence"><span>01</span> Residence <small>Repair</small></a>
+          <a href="#practice-forge"><span>02</span> Forge + Shop <small>Infrastructure</small></a>
+          <a href="#practice-machines"><span>03</span> Machines <small>Restoration</small></a>
+          <a href="#practice-materials"><span>04</span> Materials <small>Transformation</small></a>
+          <a href="#practice-lens"><span>05</span> Lens <small>Evidence</small></a>
         </div>
       </section>
 
       <section class="section intro" aria-labelledby="intro-title">
         <div>
-          <p class="eyebrow">Source of truth</p>
-          <h2 id="intro-title">Markdown journals become public stories.</h2>
+          <p class="eyebrow">The working record</p>
+          <h2 id="intro-title">A practice built from evidence, not polish alone.</h2>
         </div>
-        <p>
-          The repository already carries the structure a site needs: project pillars, trade journals,
-          visual evidence, local image assets, and links back to the original Flickr or Lomography records.
-          This prototype keeps that archival logic but presents it as a polished craft portfolio.
-        </p>
+        <div class="intro-copy">
+          <p>
+            Every project keeps the difficult middle: initial conditions, false starts,
+            material choices, tool marks, repairs, and the judgment behind what was saved
+            or replaced.
+          </p>
+          <dl class="archive-stats" aria-label="Archive summary">
+            <div><dt>39</dt><dd>Public Flickr albums</dd></div>
+            <div><dt>05</dt><dd>Connected practices</dd></div>
+            <div><dt>Git</dt><dd>Versioned source archive</dd></div>
+          </dl>
+        </div>
       </section>
 
       <section class="section ask-journals" id="ask-journals" aria-labelledby="ask-title">
         <div class="section-heading">
           <p class="eyebrow">Ask the journals</p>
-          <h2 id="ask-title">Search the archive like a conversation.</h2>
+          <h2 id="ask-title">Ask what the work remembers.</h2>
         </div>
         <div class="chat-shell">
           <div class="chat-panel" aria-live="polite">
             <div class="chat-message assistant">
-              <span>Journal index</span>
+              <span>Archive index</span>
               <p>
-                I can connect restoration notes, film work, Flickr albums, and source sections from this sample archive.
+                Search the current static index across restoration notes, film work,
+                Flickr albums, and source journals.
               </p>
             </div>
             <div class="chat-log" id="chat-log"></div>
@@ -94,27 +146,27 @@
           <h2 id="work-title">One preservation practice, several materials.</h2>
         </div>
         <div class="pillar-grid">
-          <article>
+          <article id="practice-residence" data-practice="residence">
             <span>01</span>
             <h3>The Residence</h3>
             <p>Historic home restoration, framing, trim, shiplap, bath work, office renovation, and old-house repair judgment.</p>
           </article>
-          <article>
+          <article id="practice-forge" data-practice="forge">
             <span>02</span>
             <h3>The Forge &amp; Shop</h3>
             <p>Working infrastructure for repair and fabrication: benches, tool systems, material storage, project staging, and practical shop judgment.</p>
           </article>
-          <article>
+          <article id="practice-machines" data-practice="machines">
             <span>03</span>
             <h3>The Machines</h3>
             <p>Vintage scooter restoration, Vespa bodywork, mechanical systems, electrical cleanup, and preservation-minded replacement decisions.</p>
           </article>
-          <article>
+          <article id="practice-materials" data-practice="materials">
             <span>04</span>
             <h3>Materials &amp; Alchemy</h3>
             <p>Clay, glaze, ash, firing, and the disciplined return to pottery through repeated forms and close material observation.</p>
           </article>
-          <article>
+          <article id="practice-lens" data-practice="lens">
             <span>05</span>
             <h3>The Lens</h3>
             <p>Film photography as both craft practice and visual evidence, including 35mm, 120, 616, Lomography, and Isolette work.</p>
@@ -413,13 +465,38 @@
               </div>
             </div>
           </article>
+
+          <article class="journal-panel lens-panel" id="agfa-isolette">
+            <header>
+              <div>
+                <p class="eyebrow">05 / The Lens</p>
+                <h3>Agfa Isolette</h3>
+                <p>
+                  Twelve square-format photographs made with a 1961 Agfa Isolette,
+                  moving from the Galveston coast into the workshop and pottery archive.
+                  Two Port Bolivar frames are intentional double exposures.
+                </p>
+              </div>
+              <a href="https://www.flickr.com/photos/boocher/albums/72177720335033061/">Agfa Isolette album</a>
+            </header>
+            <div class="album-strip">
+              <h4>Curated six-image sequence / five shown</h4>
+              <div class="mini-gallery">
+                <a href="https://www.flickr.com/photos/boocher/55449385255/in/album-72177720335033061/"><img src="assets/flickr/agfa-isolette/01.jpg" alt="North Jetty Bait Camp photographed with an Agfa Isolette"></a>
+                <a href="https://www.flickr.com/photos/boocher/55448985656/in/album-72177720335033061/"><img src="assets/flickr/agfa-isolette/02.jpg" alt="Galveston East Bay photographed with an Agfa Isolette"></a>
+                <a href="https://www.flickr.com/photos/boocher/55449387130/in/album-72177720335033061/"><img src="assets/flickr/agfa-isolette/03.jpg" alt="Port Bolivar jetty photographed with an Agfa Isolette"></a>
+                <a href="https://www.flickr.com/photos/boocher/55448987091/in/album-72177720335033061/"><img src="assets/flickr/agfa-isolette/04.jpg" alt="Port Bolivar rocks and ships photographed with an Agfa Isolette"></a>
+                <a href="https://www.flickr.com/photos/boocher/55449109638/in/album-72177720335033061/"><img src="assets/flickr/agfa-isolette/05.jpg" alt="Intentional double exposure at Port Bolivar"></a>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
       <section class="section evidence" id="evidence" aria-labelledby="evidence-title">
         <div class="section-heading">
           <p class="eyebrow">Best of film work</p>
-          <h2 id="evidence-title">A visual doorway into the lens archive.</h2>
+          <h2 id="evidence-title">Film as memory, evidence, and experiment.</h2>
         </div>
         <div class="photo-grid">
           <figure>
@@ -481,6 +558,10 @@
         </div>
       </section>
     </main>
+    <footer class="site-footer">
+      <p><strong>TradeJournals</strong> / A living craft archive from Smithville, Texas.</p>
+      <a href="#top">Return to top</a>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

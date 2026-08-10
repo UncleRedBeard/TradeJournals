@@ -230,6 +230,33 @@ const journalIndex = [
     ]
   },
   {
+    title: "Agfa Isolette",
+    area: "05 / The Lens",
+    source: "05_the_lens/trade_journals/flickr_agfa_isolette.md",
+    url: "#agfa-isolette",
+    summary:
+      "A twelve-image 120 film sequence made with a 1961 Agfa Isolette. The journal follows Galveston East Bay, Gilchrist, and Port Bolivar into the workshop archive, with a six-image edit and two intentional double exposures.",
+    tags: [
+      "agfa",
+      "isolette",
+      "120 film",
+      "medium format",
+      "square format",
+      "double exposure",
+      "multiple exposure",
+      "galveston",
+      "gilchrist",
+      "port bolivar",
+      "north jetty",
+      "film"
+    ],
+    images: [
+      "assets/flickr/agfa-isolette/01.jpg",
+      "assets/flickr/agfa-isolette/04.jpg",
+      "assets/flickr/agfa-isolette/05.jpg"
+    ]
+  },
+  {
     title: "Best of Film Work",
     area: "05 / The Lens",
     source: "05_the_lens/trade_journals/lomography_film_album_catalog.md",
