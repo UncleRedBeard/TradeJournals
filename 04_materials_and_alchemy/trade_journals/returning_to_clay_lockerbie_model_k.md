@@ -344,6 +344,27 @@ altered rims will be withheld. Of the final eight vessels, four may receive the
 loose linear incision already emerging in the current work, while four will
 remain quiet for direct comparison.
 
+#### 2026-08-11 - Study 01 Practice Checkpoint
+
+The cup study continued using Balcones Dark because the available Cinco Rojo
+had been exhausted. This was a practical substitution rather than a change in
+the exercise: the priority remained rebuilding wheel skills while working with
+the clay on hand. The planned Cinco Rojo work will resume after restocking.
+
+All vessels were thrown off the hump on the Lockerbie Model K. Without a scale,
+the clay portions were estimated by eye.
+
+- First batch: nine vessels thrown; seven progressed through trimming and
+  remain under consideration.
+- Second batch: eight vessels attempted. Four were cut through at the base
+  during separation and returned to reclaim. Four were successfully removed
+  from the hump and remain untrimmed.
+- Running total: seventeen attempts and eleven surviving candidates, with no
+  final keep or cull decisions yet.
+
+The photographs from these batches remain a private working record and will
+not be added to the Flickr archive.
+
 #### Evaluation Order
 
 Each vessel will be evaluated in the same order:
