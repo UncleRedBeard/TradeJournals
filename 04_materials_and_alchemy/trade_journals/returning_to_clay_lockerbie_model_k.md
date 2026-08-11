@@ -357,10 +357,26 @@ the clay portions were estimated by eye.
 - First batch: nine vessels thrown; seven progressed through trimming and
   remain under consideration.
 - Second batch: eight vessels attempted. Four were cut through at the base
-  during separation and returned to reclaim. Four were successfully removed
-  from the hump and remain untrimmed.
-- Running total: seventeen attempts and eleven surviving candidates, with no
-  final keep or cull decisions yet.
+  during separation and returned to reclaim. The remaining four were removed
+  successfully from the hump and have now been trimmed. One was cut through
+  the center of the floor during trimming and became a documented technical
+  loss. Three remain under consideration.
+- Running total: seventeen attempts and ten surviving candidates. Final
+  selection among the viable vessels remains open.
+
+Five post-trim photographs document two vessels from the second batch. The
+short, squat vessel in `PXL_20260811_210403870.MP.jpg`,
+`PXL_20260811_210406324.jpg`, and `PXL_20260811_210411146.jpg` is a
+well-supported match to the untrimmed vessel in
+`PXL_20260811_165027105.jpg`. Its floor was breached during trimming, so it is
+retained as process evidence rather than as a functional cup.
+
+The upright vessel in `PXL_20260811_211827506.jpg` and
+`PXL_20260811_211829339.jpg` is provisionally matched to
+`PXL_20260811_165033890.jpg` and remains a candidate. The two other trimmed
+vessels correspond to the untrimmed photographs
+`PXL_20260811_165030175.jpg` and `PXL_20260811_165037880.jpg`; their exact
+post-trim identities remain unresolved until they are photographed.
 
 The photographs from these batches remain a private working record and will
 not be added to the Flickr archive.
