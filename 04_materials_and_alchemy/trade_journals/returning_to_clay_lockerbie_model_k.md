@@ -406,6 +406,46 @@ question in the study.
 The photographs from these batches remain a private working record and will
 not be added to the Flickr archive.
 
+#### 2026-08-12 - Hands-On Review Of The Second Batch
+
+A direct handling review tested the three surviving cups against the earlier
+photograph-based assessment. Rim comfort, weight, balance, interior continuity,
+and the relationship between each body and foot were considered before making
+the final comparison.
+
+The upright cup represented by `PXL_20260811_211827506.jpg` had an even,
+comfortable rim, a good interior, and convincing overall balance. It was not
+excessively bottom-heavy, although enough clay remains inside the foot to add
+noticeable weight. The foot and its transition into the body need stronger
+definition. This cup remains a viable secondary reference for balance, with
+slightly thinner and more even walls identified as the next aesthetic
+direction.
+
+The taller cylindrical cup represented by `PXL_20260811_223329808.jpg` handled
+better than its photographs suggested. Its rim, weight, balance, wall
+thickness, and smooth interior-to-floor transition were all successful. The
+foot was flat and even, but the center of the floor had been trimmed too thin
+and broke during handling. The cup will be returned to reclaim. Its failure is
+specific rather than general: the upper vessel decisions were useful, but too
+much material was removed from the lower structure.
+
+The broader tapered cup represented by `PXL_20260811_223403180.jpg` proved to
+be the strongest of the batch. It has a smooth, comfortable rim, a good
+interior transition, and the best-defined foot of the three. It remains a
+little bottom-heavy, and some additional clay could have been removed from the
+center of the foot, but the broken cylindrical cup demonstrates the risk of
+chasing that refinement too aggressively. This broader cup will remain intact
+as the physical baseline for the next series. The fine interior line visible
+in the earlier photograph was not reported as a handling problem during this
+review, but its exact character remains undocumented.
+
+The next Cinco Rojo series will pursue thinner, more even walls primarily
+during throwing rather than through corrective trimming. The broader cup will
+serve as the formal baseline, while the upright cup will remain a useful
+reference for balance. With the cylindrical cup returned to reclaim, the
+second batch now has two surviving candidates and Study 01 has nine surviving
+candidates from seventeen attempts.
+
 #### Evaluation Order
 
 Each vessel will be evaluated in the same order:
