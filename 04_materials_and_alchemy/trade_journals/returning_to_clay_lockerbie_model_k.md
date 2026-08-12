@@ -372,11 +372,36 @@ well-supported match to the untrimmed vessel in
 retained as process evidence rather than as a functional cup.
 
 The upright vessel in `PXL_20260811_211827506.jpg` and
-`PXL_20260811_211829339.jpg` is provisionally matched to
-`PXL_20260811_165033890.jpg` and remains a candidate. The two other trimmed
-vessels correspond to the untrimmed photographs
-`PXL_20260811_165030175.jpg` and `PXL_20260811_165037880.jpg`; their exact
-post-trim identities remain unresolved until they are photographed.
+`PXL_20260811_211829339.jpg` is a well-supported match to
+`PXL_20260811_165033890.jpg` and remains a candidate.
+
+Six additional post-trim photographs resolve the two remaining identities.
+The taller cylindrical vessel in `PXL_20260811_223329808.jpg`,
+`PXL_20260811_223335772.jpg`, and `PXL_20260811_223347613.jpg` is a
+well-supported match to `PXL_20260811_165030175.jpg`. Trimming gives the lower
+body some lift, but the sloping rim remains unresolved and the foot reads as
+tall and abrupt in relation to the cylinder. This vessel remains useful as a
+record of how asymmetry established during throwing persists through trimming.
+
+The broader vessel in `PXL_20260811_223403180.jpg`,
+`PXL_20260811_223410591.jpg`, and `PXL_20260811_223418698.jpg` is a
+well-supported match to `PXL_20260811_165037880.jpg`. Its broader opening,
+restrained taper, and stable stance make it the strongest candidate from the
+second batch. The foot gives the body clear lift, although it remains slightly
+tall and sharply separated from the lower wall. A fine line visible near the
+interior floor-to-wall transition in `PXL_20260811_223410591.jpg` remains
+unresolved; it may be a trimming mark or an early crack and requires inspection
+under raking light before drying continues.
+
+The provisional order among the three surviving candidates places the broader
+vessel first, the earlier upright vessel second, and the taller cylindrical
+vessel third. The squat vessel with the breached floor remains the documented
+technical loss. This order is based on visible silhouette, rim, interior
+volume, and foot integration. Photographs cannot establish weight, lip comfort,
+floor thickness, dry stability, or the status of the interior line. If the clay
+condition permits, only light cleanup of contact rings and accidental clay nibs
+is warranted; aggressive retrimming would add risk without answering the next
+question in the study.
 
 The photographs from these batches remain a private working record and will
 not be added to the Flickr archive.
