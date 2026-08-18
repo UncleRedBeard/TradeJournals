@@ -133,6 +133,24 @@ paint. The hallway then received two coats of Behr Cottage White. This finishes
 the transition into the studio while keeping the hallway finish quieter than
 the limewash and slurry treatment planned for the room itself.
 
+### 2026-06-06 To 2026-08-17 - Protected Historic Fabric And Final Finish Staging
+
+Source: Google Photos album [Home Reno - Studio](https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9), Google Photos embedded album metadata, and project notes.
+
+The latest work focused on protecting completed and preserved surfaces before
+applying the final lime finishes. The exposed shiplap feature wall was isolated
+and masked while the surrounding drywall and architectural surfaces received
+their primer system. The completed hallway and refinished floor also remained
+protected while detailed masking was completed around the ceiling, windows,
+trim, baseboards, and room openings.
+
+This checkpoint documents the room prepared for its final Lime Wall Paint and
+Lime Slurry treatment. The August 17 photographs are readiness evidence rather
+than finish-completion evidence: the final wall slurry had not yet been applied.
+The next documented phase should show the vertical slurry application, the
+resulting wall texture after drying, and the completed room after electrical and
+fixture trim-out.
+
 ## Visual Evidence
 
 Use this section to map the Google Photos album into evidence categories before
@@ -146,8 +164,8 @@ selected.
 - Album URL: [Home Reno - Studio](https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9)
 - Canonical album URL: [Home Reno - Studio](https://photos.google.com/share/AF1QipPool3gE7T-_DVHyOZm3jEVm5TSnoL4P5kDdXAhzk-ja22Gbw3rsYOi8cn8EwffLA?key=S1hjd2FTdE9uTjMzX2NHNHpvYUZiQjA3YmpONTFR)
 - Album status: shared Google Photos album; command-line fetch confirms title
-  `Home Reno - Studio` and 204 photos.
-- Album date span: 2026-03-16 to 2026-05-31, from embedded Google Photos album
+  `Home Reno - Studio` and 219 photos.
+- Album date span: 2026-03-16 to 2026-08-17, from embedded Google Photos album
   metadata.
 - Album role: primary visual archive for the living-room-to-ballet-barre-studio
   transformation, covering reclaimed ceiling plank replacement, floor
@@ -187,6 +205,8 @@ selected.
 - Google Photos review pending for 5 inch orbital-sander prep, brushed
   polyurethane application, and builder's paper protection during the remaining
   renovation work.
+- The 2026-08-17 sequence confirms that builder's paper remained in place to
+  protect the refinished floor during final wall-finish preparation.
 
 ### Wall Surface Preparation
 
@@ -194,11 +214,15 @@ selected.
 - Google Photos review pending for wall sanding through 120 grit and 220 grit.
 - Google Photos review pending for two whole-room coats of KILZ Mold & Mildew
   Primer followed by one coat of JH Wall Paints Mineral Prime.
+- The 2026-06-06 sequence documents the exposed shiplap masked and isolated
+  while the surrounding drywall and architectural surfaces were coated.
 
 ### Lime Finish System
 
 - Google Photos review pending for the first coat of 100 White Lime Wall Paint
   on the crown molding, baseboards, and windows.
+- The 2026-08-17 sequence documents detailed masking at the ceiling, windows,
+  trim, baseboards, and openings before the final lime finish.
 - Future evidence needed for the 100 White Lime Wall Paint ceiling coat.
 - Future evidence needed for the Lime Wall Paint and Lime Slurry finish applied
   to the drywall-covered walls using the vertical slurry method.
@@ -214,8 +238,10 @@ selected.
 
 ### Shiplap Exposure
 
-- Google Photos review pending for exposed original shiplap after drywall
-  removal and 120 grit sanding.
+- The 2026-06-06 sequence documents the exposed original shiplap protected with
+  paper, plastic, and tape while adjacent room surfaces were prepared and
+  coated. Earlier evidence is still needed for drywall removal and the 120-grit
+  sanding pass itself.
 
 ### Crown Molding And Coping
 
@@ -224,8 +250,8 @@ selected.
 
 ### Finished Or Room-Ready Evidence
 
-- Google Photos review pending for the completed studio hallway after two coats
-  of KILZ Mold & Mildew Primer, 220-grit sanding after each primer coat, and two
-  coats of Behr Cottage White.
+- The 2026-07-12, 2026-07-27, and 2026-08-01 images document the completed studio
+  hallway after two coats of KILZ Mold & Mildew Primer, 220-grit sanding after
+  each primer coat, and two coats of Behr Cottage White.
 - Future evidence needed for window treatments and the completed room.
 - Google Photos review pending for the final room-ready ballet studio.

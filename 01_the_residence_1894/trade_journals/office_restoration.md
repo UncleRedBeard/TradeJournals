@@ -50,6 +50,23 @@ Floor refinishing process:
 11. Sand with 400 grit.
 12. Vacuum and steam clean the finished floor.
 
+### 2022 - Original Solid-Wood Door Reclamation And Charred Finish
+
+Source: Flickr album [Home Reno - Studio | Office](https://www.flickr.com/photos/boocher/albums/72177720306207693/) and project notes.
+
+An original solid-wood door left with the house was visibly worn but remained
+structurally worth preserving. Shawn and Haley stripped it to bare wood rather
+than replacing it, then developed a charred-wood finish inspired by yakisugi.
+This treatment is documented as an adaptation for appearance and material
+reclamation, not as traditional yakisugi or as a fire-resistance treatment.
+
+The finishing schedule used one coat of water-based polyurethane, allowed to
+dry, followed by their custom Dutch-oil mixture. The work retained original
+building fabric and transformed a neglected component into a functional visual
+anchor for the completed office. Exact wood species, product details, mixture
+ratios, and drying or curing intervals remain to be added if those records are
+recovered.
+
 ## Visual Evidence
 
 Use this section to map the Flickr album into evidence categories before writing final narrative entries. Flickr link labels should translate timestamp-style image titles into human readable format as `YYYY-MM-DD HH:MM`, dropping seconds. If a Flickr image title has extra leading alphabetic characters before the timestamp, use the photo EXIF capture date/time instead.
@@ -71,7 +88,7 @@ Use this section to map the Flickr album into evidence categories before writing
 - Electrical, lighting, or systems integration:
 - Floor stripping, sanding, and refinishing: [2022-01-09 17:25, photo 52704582806](https://www.flickr.com/photos/boocher/52704582806/in/set-72177720306207693/) - shows the refinished floor as the room opens back up for use.
 - Surface repair and preparation: [2021-12-23 14:48, photo 52705072903](https://www.flickr.com/photos/boocher/52705072903/in/set-72177720306207693/) - shows the active prep state with tools, wall patching, taped windows, and work materials in the room.
-- Paint, finish, or final room assembly: [2022-01-16 16:06, photo 52705240355](https://www.flickr.com/photos/boocher/52705240355/in/set-72177720306207693/) - documents the restored door, surrounding trim, work setup, and finished-room direction.
+- Paint, finish, or final room assembly: [2022-01-16 16:06, photo 52705240355](https://www.flickr.com/photos/boocher/52705240355/in/set-72177720306207693/) - documents the stripped original door installed before its separate charred-finish sequence, along with surrounding trim and the working-room setup.
 - Best final room image: [2022-01-09 17:39, photo 52705071273](https://www.flickr.com/photos/boocher/52705071273/in/set-72177720306207693/) - wide room-ready view showing refinished floors, restored wall and trim surfaces, windows, and the room returning to usable form.
 
 ### Before Condition
@@ -93,8 +110,43 @@ Use this section to map the Flickr album into evidence categories before writing
 - [2021-12-25 14:01, photo 52705072358](https://www.flickr.com/photos/boocher/52705072358/in/set-72177720306207693/) - shows the room after major wall/trim finish work, with floor boards still visible as the floor-refinishing sequence continues.
 - [2021-12-29 13:33, photo 52704583266](https://www.flickr.com/photos/boocher/52704583266/in/set-72177720306207693/) - documents the room during finish-stage cleanup and assembly, with tools still present and the floor returning to finished condition.
 
+### Original Door Reclamation And Finish
+
+The 16-photo Flickr sequence below documents the door as a distinct
+preservation project. Most of the sequence lacks a reliable original capture
+date, so the links retain Flickr's current `date_taken` labels while the images
+are grouped by the work they show.
+
+Initial surface and charring:
+
+- [2023-02-22 10:25, photo 52704581761](https://www.flickr.com/photos/boocher/52704581761/in/set-72177720306207693/) - shows the torch setup and active work on the stripped door.
+- [2022-01-30 14:43, photo 52705002600](https://www.flickr.com/photos/boocher/52705002600/in/set-72177720306207693/) - records active flame across the door surface.
+- [2023-02-22 10:25, photo 52704581686](https://www.flickr.com/photos/boocher/52704581686/in/set-72177720306207693/) - documents the full door during the charring pass.
+
+Finish preparation and application:
+
+- [2023-02-22 10:24, photo 52705002480](https://www.flickr.com/photos/boocher/52705002480/in/set-72177720306207693/) - shows the finish materials staged beside the door.
+- [2023-02-22 10:24, photo 52704581606](https://www.flickr.com/photos/boocher/52704581606/in/set-72177720306207693/) - documents the finish materials and mixing setup.
+- [2023-02-22 10:24, photo 52704581571](https://www.flickr.com/photos/boocher/52704581571/in/set-72177720306207693/) - shows the finish being brushed across the charred wood.
+- [2023-02-22 10:24, photo 52704581541](https://www.flickr.com/photos/boocher/52704581541/in/set-72177720306207693/) - records the developing finish across the door panels.
+- [2023-02-22 10:24, photo 52704057707](https://www.flickr.com/photos/boocher/52704057707/in/set-72177720306207693/) - documents continued hand application across the full door.
+
+Char and finish details:
+
+- [2023-02-22 10:25, photo 52704058327](https://www.flickr.com/photos/boocher/52704058327/in/set-72177720306207693/) - close view of the checked char texture.
+- [2023-02-22 10:25, photo 52704581811](https://www.flickr.com/photos/boocher/52704581811/in/set-72177720306207693/) - second close view of the charred surface.
+- [2023-02-22 10:24, photo 52705070228](https://www.flickr.com/photos/boocher/52705070228/in/set-72177720306207693/) - close view of the finish settling into the char texture.
+- [2023-02-22 10:24, photo 52705070188](https://www.flickr.com/photos/boocher/52705070188/in/set-72177720306207693/) - documents the finish transition along a panel edge.
+- [2023-02-22 10:24, photo 52704057782](https://www.flickr.com/photos/boocher/52704057782/in/set-72177720306207693/) - records retained wear and surface character around a damaged area.
+- [2023-02-22 10:24, photo 52704835244](https://www.flickr.com/photos/boocher/52704835244/in/set-72177720306207693/) - shows finish coverage along a stile and panel transition.
+- [2023-02-22 10:24, photo 52705002105](https://www.flickr.com/photos/boocher/52705002105/in/set-72177720306207693/) - documents the finished texture around the original hardware openings.
+
+Overall finished surface:
+
+- [2023-02-22 10:24, photo 52704057627](https://www.flickr.com/photos/boocher/52704057627/in/set-72177720306207693/) - overall view of the completed charred and finished door before installation.
+
 ### Finished Or Room-Ready Evidence
 
 - [2022-01-09 17:25, photo 52704582806](https://www.flickr.com/photos/boocher/52704582806/in/set-72177720306207693/) - wide view of the refinished floor and room beginning to return to use.
 - [2022-01-09 17:39, photo 52705071273](https://www.flickr.com/photos/boocher/52705071273/in/set-72177720306207693/) - room-ready view showing the floor finish, windows, restored surfaces, and working-room setup.
-- [2022-01-16 16:06, photo 52705240355](https://www.flickr.com/photos/boocher/52705240355/in/set-72177720306207693/) - final-direction evidence with restored door, trim, tools, and usable studio/office layout.
+- [2022-01-16 16:06, photo 52705240355](https://www.flickr.com/photos/boocher/52705240355/in/set-72177720306207693/) - room-ready direction with the stripped original door installed before its separate charred-finish treatment.
