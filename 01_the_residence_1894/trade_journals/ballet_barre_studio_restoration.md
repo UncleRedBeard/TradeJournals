@@ -151,6 +151,29 @@ The next documented phase should show the vertical slurry application, the
 resulting wall texture after drying, and the completed room after electrical and
 fixture trim-out.
 
+### 2026-08-18 - First Full Lime Slurry Wall Pass
+
+Source: Google Photos album [Home Reno - Studio](https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9) and project notes.
+
+The drywall-covered walls received their first complete application of JH Lime
+Wall Paint in 100 White combined with JH Lime Slurry. The finish was applied
+using the planned vertical slurry method. Six new photographs document the
+first full-room pass and show the intended hand-applied movement and tonal
+variation across the broad walls, window bays, and room corners.
+
+This is a substantial finish milestone rather than final wall sign-off. A few
+noticeable areas on the ceiling and walls still need localized touch-up and
+attention after the finish is inspected in natural light. The goal is to correct
+true misses without flattening the variation that gives the mineral finish its
+character. The protective plastic and masking also remain on the exposed
+shiplap feature wall, with removal planned as the touch-up work is completed.
+
+The wall finish is expected to be complete by the end of the week. After that,
+the room moves into its button-up phase: remove the remaining protection and
+masking, install the electrical receptacles and switches, add faceplates, and
+complete the remaining fixtures and finish details needed to place the studio
+into service.
+
 ## Visual Evidence
 
 Use this section to map the Google Photos album into evidence categories before
@@ -163,10 +186,10 @@ selected.
 
 - Album URL: [Home Reno - Studio](https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9)
 - Canonical album URL: [Home Reno - Studio](https://photos.google.com/share/AF1QipPool3gE7T-_DVHyOZm3jEVm5TSnoL4P5kDdXAhzk-ja22Gbw3rsYOi8cn8EwffLA?key=S1hjd2FTdE9uTjMzX2NHNHpvYUZiQjA3YmpONTFR)
-- Album status: shared Google Photos album; command-line fetch confirms title
-  `Home Reno - Studio` and 219 photos.
-- Album date span: 2026-03-16 to 2026-08-17, from embedded Google Photos album
-  metadata.
+- Album status: shared Google Photos album; live review confirms title
+  `Home Reno - Studio` and 225 photos.
+- Album date span: 2026-03-16 to 2026-08-18, from embedded Google Photos album
+  metadata and live album review.
 - Album role: primary visual archive for the living-room-to-ballet-barre-studio
   transformation, covering reclaimed ceiling plank replacement, floor
   refinishing and protection, wall mudding and sanding, ceiling fan wiring,
@@ -180,8 +203,10 @@ selected.
 - Wall mudding and sanding:
 - Whole-room KILZ and Mineral Prime application:
 - Lime-painted crown molding, baseboards, and windows:
-- Lime-painted ceiling:
-- Vertical Lime Wall Paint and Lime Slurry wall finish:
+- Lime-painted ceiling: 2026-08-18 six-photo sequence documents the completed
+  ceiling coat during final touch-up work.
+- Vertical Lime Wall Paint and Lime Slurry wall finish: 2026-08-18 six-photo
+  sequence documents the first full application.
 - Completed studio hallway in Behr Cottage White:
 - Ceiling fan wiring and mount:
 - Exposed shiplap:
@@ -223,9 +248,12 @@ selected.
   on the crown molding, baseboards, and windows.
 - The 2026-08-17 sequence documents detailed masking at the ceiling, windows,
   trim, baseboards, and openings before the final lime finish.
-- Future evidence needed for the 100 White Lime Wall Paint ceiling coat.
-- Future evidence needed for the Lime Wall Paint and Lime Slurry finish applied
-  to the drywall-covered walls using the vertical slurry method.
+- The 2026-08-18 sequence documents the 100 White Lime Wall Paint ceiling coat
+  during final localized touch-up work.
+- The 2026-08-18 six-photo sequence documents the first full Lime Wall Paint
+  and Lime Slurry application on the drywall-covered walls using the vertical
+  slurry method. Localized ceiling and wall touch-ups remain before final
+  finish sign-off.
 
 ### Systems Integration
 
@@ -254,4 +282,6 @@ selected.
   hallway after two coats of KILZ Mold & Mildew Primer, 220-grit sanding after
   each primer coat, and two coats of Behr Cottage White.
 - Future evidence needed for window treatments and the completed room.
+- Future evidence needed after the exposed-shiplap protection is removed and
+  the electrical devices, faceplates, and remaining fixtures are installed.
 - Google Photos review pending for the final room-ready ballet studio.
