@@ -20,6 +20,12 @@ trim.
 
 ## Craftsmanship Execution
 
+Every room begins with a sketch-and-photograph survey. The sketchbook records
+room geometry, measured dimensions, existing systems, circuit paths, unresolved
+conditions, and the proposed sequence before physical work changes the evidence.
+This makes the planning auditable, protects original fabric from avoidable
+rework, and gives the later photo record a field reference.
+
 Capture the work by phase and trade:
 
 - existing living room condition and protection plan
@@ -93,6 +99,25 @@ feature instead of hiding it again behind drywall. The paired craft challenge wa
 making that exposed wall, the repaired ceiling planks, the new electrical work,
 the refinished and protected floors, and the crown molding all land as one
 coherent ballet barre studio rather than separate repair episodes.
+
+### 2026-04-05 To 2026-04-17 - Field Sketches And Systems Planning
+
+Source: project sketchbook and photographs `PXL_20260820_142446744.jpg`,
+`PXL_20260820_142423617.jpg`, and `PXL_20260820_142436878.jpg`.
+
+Before the room was altered, its existing conditions were translated into a
+working field record. A numbered wall-and-angle drawing captured the irregular
+room perimeter, ceiling framing and plank spacing, measured spans, and ceiling
+fan position. Separate color-coded diagrams mapped the front-room and hallway
+circuits, identified switches, receptacles, fixtures, and conductors, and worked
+through the hallway three-way-switch logic.
+
+These were not presentation drawings. They were working documents used to
+preserve what was found, isolate uncertainties, and plan the order of work
+before demolition or rerouting removed the original evidence. This
+sketch-and-photograph survey is the standard starting method for every room,
+giving each restoration a durable record of how the room was understood before
+work began.
 
 ### 2026-08-04 - Primer System And Lime Finish Preparation
 
@@ -212,6 +237,21 @@ selected.
 - Exposed shiplap:
 - Crown molding and coping:
 - Best room-ready studio image:
+- Planning sketches and field documentation: 2026-08-20 three-photo sequence
+  records room geometry, ceiling framing measurements, circuit mapping, and
+  three-way-switch planning.
+
+### Planning Sketches And Field Documentation
+
+- `PXL_20260820_142446744.jpg`: field measurements and a numbered room-geometry
+  diagram document the irregular perimeter, ceiling framing and plank spacing,
+  measured spans, and ceiling fan location.
+- `PXL_20260820_142423617.jpg`: color-coded front-room and hallway circuit
+  diagram records the existing load path, switches, receptacles, fixtures, and
+  identified conductors before rewiring.
+- `PXL_20260820_142436878.jpg`: three-way hallway-switch diagram isolates the
+  panel, load, common, neutral, fixture, and switch relationships used to plan
+  the corrected circuit.
 
 ### Existing Living Room Condition
 
