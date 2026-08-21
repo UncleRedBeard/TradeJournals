@@ -50,6 +50,17 @@ images show the room back in service with the repaired surfaces, original
 floor, windows, and built-in cabinet still carrying the room's historic
 identity.
 
+### 2026-08-20 - Planning Sketch Archive Added
+
+Source: [House Project Sketchbook - August 20,
+2026](../../source_materials/scanned_sketchbooks/house_project_sketchbook_20260820.pdf),
+pages 5-9.
+
+The bedroom pages preserve measured planning, repair observations, and layout
+notes used to organize the room work. They connect existing conditions to
+repair and finish decisions, showing how measurements and sequencing were
+worked out before the room was reassembled.
+
 ## Visual Evidence
 
 Use this section to map the Flickr album into evidence categories before writing final narrative entries. Flickr link labels should translate timestamp-style image titles into human readable format as `YYYY-MM-DD HH:MM`, dropping seconds. If a Flickr image title has extra leading alphabetic characters before the timestamp, use the photo EXIF capture date/time instead.

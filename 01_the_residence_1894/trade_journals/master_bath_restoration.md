@@ -45,6 +45,19 @@ Key lessons:
 - Shiplap prep has to happen before paint.
 - Bathroom work exposed the importance of sequencing rough work, substrate work, and finish work.
 
+### 2026-08-20 - Planning Sketch Archive Added
+
+Source: [House Project Sketchbook - August 20,
+2026](../../source_materials/scanned_sketchbooks/house_project_sketchbook_20260820.pdf),
+pages 1-4.
+
+The scanned pages preserve the measured survey and working notes used to
+understand the bath before and during the restoration. They record existing
+conditions, room dimensions, fixture and system relationships, and sequencing
+decisions that connected discovery to execution. Together with the photographs,
+they show the repeatable process used for each room: sketch first, preserve what
+was found, then plan the work.
+
 ## Visual Evidence
 
 Use this section to map the Flickr album into evidence categories before writing final narrative entries. Flickr link labels should translate timestamp-style image titles into human readable format as `YYYY-MM-DD HH:MM`, dropping seconds. If a Flickr image title has extra leading alphabetic characters before the timestamp, use the photo EXIF capture date/time instead.

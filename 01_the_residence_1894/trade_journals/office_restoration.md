@@ -67,6 +67,17 @@ anchor for the completed office. Exact wood species, product details, mixture
 ratios, and drying or curing intervals remain to be added if those records are
 recovered.
 
+### 2026-08-20 - Planning Sketch Archive Added
+
+Source: [House Project Sketchbook - August 20,
+2026](../../source_materials/scanned_sketchbooks/house_project_sketchbook_20260820.pdf),
+page 39.
+
+The office page is a compact field record of the room and its systems before
+execution. It supports the same repeatable workflow seen throughout the house:
+measure the existing condition, map what is present, identify uncertainties,
+and establish an order of work before finishes hide the evidence.
+
 ## Visual Evidence
 
 Use this section to map the Flickr album into evidence categories before writing final narrative entries. Flickr link labels should translate timestamp-style image titles into human readable format as `YYYY-MM-DD HH:MM`, dropping seconds. If a Flickr image title has extra leading alphabetic characters before the timestamp, use the photo EXIF capture date/time instead.

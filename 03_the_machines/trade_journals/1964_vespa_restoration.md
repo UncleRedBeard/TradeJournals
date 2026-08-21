@@ -207,6 +207,17 @@ Tool container flap paint preparation notes:
 - Applied Eastwood Fast Etch to bare metal.
 - Wrapped in plastic.
 
+### 2026-08-20 - Planning Sketch Archive Added
+
+Source: [House Project Sketchbook - August 20,
+2026](../../source_materials/scanned_sketchbooks/house_project_sketchbook_20260820.pdf),
+page 10.
+
+The Vespa page preserves mechanical assessment and repair planning in the same
+working notebook used for the house. It shows the process applied across
+disciplines: record the condition, identify components and uncertainties, and
+establish an order of work before disassembly changes the evidence.
+
 ## Visual Evidence
 
 Use this section to map the Flickr album into evidence categories that support the craft story. Each entry should eventually include the Flickr photo title, photo ID or URL, and a short note explaining what the image proves.

@@ -102,8 +102,13 @@ coherent ballet barre studio rather than separate repair episodes.
 
 ### 2026-04-05 To 2026-04-17 - Field Sketches And Systems Planning
 
-Source: project sketchbook and photographs `PXL_20260820_142446744.jpg`,
+Source: project sketchbook; [House Project Sketchbook - August 20,
+2026](../../source_materials/scanned_sketchbooks/house_project_sketchbook_20260820.pdf),
+pages 40-47; and photographs `PXL_20260820_142446744.jpg`,
 `PXL_20260820_142423617.jpg`, and `PXL_20260820_142436878.jpg`.
+
+Pages 41-45 repeat the photographed spreads listed below. Pages 40, 46, and 47
+extend the sequence with adjacent geometry, material, and system-planning notes.
 
 Before the room was altered, its existing conditions were translated into a
 working field record. A numbered wall-and-angle drawing captured the irregular
@@ -243,6 +248,10 @@ selected.
 
 ### Planning Sketches And Field Documentation
 
+- Complete notebook sequence: [House Project Sketchbook - August 20,
+  2026](../../source_materials/scanned_sketchbooks/house_project_sketchbook_20260820.pdf),
+  pages 40-47. Pages 41-45 overlap the photographed spreads below; pages 40,
+  46, and 47 preserve adjacent planning material.
 - `PXL_20260820_142446744.jpg`: field measurements and a numbered room-geometry
   diagram document the irregular perimeter, ceiling framing and plank spacing,
   measured spans, and ceiling fan location.

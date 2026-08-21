@@ -42,6 +42,18 @@ First-pass interpretation:
 - The antique dresser vanity and vessel sink are a key craft/fitment problem rather than a simple fixture swap.
 - The room stays visually connected to the house through retained trim, windows, beadboard, clawfoot tub, and small-format floor tile.
 
+### 2026-08-20 - Planning Sketch Archive Added
+
+Source: [House Project Sketchbook - August 20,
+2026](../../source_materials/scanned_sketchbooks/house_project_sketchbook_20260820.pdf),
+pages 11-38.
+
+This is the largest room-specific section in the scanned notebook. It preserves
+measured layouts; plumbing, electrical, and fixture relationships; trim and
+finish planning; hidden-condition notes; and corrections made as the work
+developed. The sequence makes the reasoning behind the compact, trade-heavy
+room visible without turning every working note into finished narrative.
+
 ## Visual Evidence
 
 Use this section to map the Flickr album into evidence categories before writing final narrative entries. Flickr link labels should translate timestamp-style image titles into human readable format as `YYYY-MM-DD HH:MM`, dropping seconds. If a Flickr image title has extra leading alphabetic characters before the timestamp, use the photo EXIF capture date/time instead.
