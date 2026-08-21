@@ -207,6 +207,21 @@ Tool container flap paint preparation notes:
 - Applied Eastwood Fast Etch to bare metal.
 - Wrapped in plastic.
 
+### 2023-09-09 - Electrical Harness Mapping
+
+Before removing and replacing the wiring harness, I drew a working map of the
+Vespa's turn-signal, horn, headlight, and key-switch circuits. The diagram
+records wire colors, connector positions, and frame-ground points so the
+as-found electrical layout could be preserved for troubleshooting and
+reassembly.
+
+This is a shop reference rather than a factory schematic. It continues the
+same method captured in the original "Think NASA Nerd" note: understand and
+document the system before changing it.
+
+- [Electrical harness map (September 9,
+  2023)](../../source_materials/scanned_sketchbooks/vespa_electrical_harness_map_20230909.pdf)
+
 ### 2026-08-20 - Planning Sketch Archive Added
 
 Source: [House Project Sketchbook - August 20,
