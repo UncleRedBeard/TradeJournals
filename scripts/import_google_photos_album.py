@@ -11,7 +11,8 @@ from __future__ import annotations
 import argparse
 import json
 import re
-from dataclasses import dataclass
+import sys
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Any
 
@@ -45,6 +46,8 @@ class PhotoEvidence:
     source: str
     date_taken: str = ""
     description: str = ""
+    record_id: str = ""
+    provenance: tuple[str, ...] = ()
 
 
 def parse_args() -> argparse.Namespace:
@@ -77,7 +80,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", type=Path, help="Explicit output path.")
     parser.add_argument("--note", help="Archive note paragraph.")
     parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--force", action="store_true")
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help=(
+            "Request regeneration of an existing output; changed Markdown is "
+            "previewed and rejected instead of overwritten."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -106,7 +116,11 @@ def first_present(mapping: dict[str, Any], keys: tuple[str, ...]) -> str:
     return ""
 
 
-def normalize_photo(item: dict[str, Any]) -> PhotoEvidence:
+def normalize_photo(
+    item: dict[str, Any],
+    *,
+    provenance: str = "manifest",
+) -> PhotoEvidence:
     title = first_present(item, ("title", "name", "filename", "file_name"))
     source = first_present(item, ("url", "source_url", "share_url", "path"))
     date_taken = first_present(
@@ -114,6 +128,10 @@ def normalize_photo(item: dict[str, Any]) -> PhotoEvidence:
         ("date_taken", "taken_at", "creation_time", "timestamp"),
     )
     description = first_present(item, ("description", "note", "caption"))
+    record_id = first_present(
+        item,
+        ("id", "photo_id", "media_item_id", "mediaItemId"),
+    )
 
     if not title:
         title = Path(source).name if source else "untitled Google Photos item"
@@ -123,13 +141,53 @@ def normalize_photo(item: dict[str, Any]) -> PhotoEvidence:
         source=source,
         date_taken=date_taken,
         description=description,
+        record_id=record_id,
+        provenance=(provenance,),
     )
+
+
+def photo_evidence_key(photo: PhotoEvidence) -> tuple[str, ...]:
+    """Return a deterministic cross-source identity for one photo record."""
+
+    if photo.record_id:
+        return ("id", photo.record_id)
+
+    if photo.source:
+        return ("source", photo.source)
+
+    return ("metadata", photo.title.casefold(), photo.date_taken)
+
+
+def deduplicate_photo_evidence(
+    photos: list[PhotoEvidence],
+) -> list[PhotoEvidence]:
+    """Keep first-seen metadata while retaining every source provenance label."""
+
+    positions: dict[tuple[str, ...], int] = {}
+    unique: list[PhotoEvidence] = []
+
+    for photo in photos:
+        key = photo_evidence_key(photo)
+        position = positions.get(key)
+
+        if position is None:
+            positions[key] = len(unique)
+            unique.append(photo)
+            continue
+
+        first = unique[position]
+        provenance = tuple(dict.fromkeys((*first.provenance, *photo.provenance)))
+        unique[position] = replace(first, provenance=provenance)
+
+    return unique
 
 
 def photos_from_manifest(path: Path) -> tuple[dict[str, Any], list[PhotoEvidence]]:
     payload = read_json(path)
     if isinstance(payload, list):
-        return {}, [normalize_photo(item) for item in payload]
+        return {}, [
+            normalize_photo(item, provenance="manifest") for item in payload
+        ]
 
     if not isinstance(payload, dict):
         raise ValueError("Manifest must be a JSON object or a list of photos.")
@@ -139,7 +197,9 @@ def photos_from_manifest(path: Path) -> tuple[dict[str, Any], list[PhotoEvidence
     if not isinstance(album, dict) or not isinstance(photos, list):
         raise ValueError("Manifest needs an object album and list photos/items.")
 
-    return album, [normalize_photo(item) for item in photos]
+    return album, [
+        normalize_photo(item, provenance="manifest") for item in photos
+    ]
 
 
 def sidecar_data(path: Path) -> dict[str, Any]:
@@ -168,6 +228,10 @@ def photos_from_local_dir(path: Path) -> list[PhotoEvidence]:
         sidecar = sidecar_data(item)
         title = first_present(sidecar, ("title", "name")) or item.name
         description = first_present(sidecar, ("description", "caption"))
+        record_id = first_present(
+            sidecar,
+            ("id", "photo_id", "media_item_id", "mediaItemId"),
+        )
         date_taken = ""
 
         photo_taken = sidecar.get("photoTakenTime")
@@ -180,6 +244,8 @@ def photos_from_local_dir(path: Path) -> list[PhotoEvidence]:
                 source=str(item),
                 date_taken=date_taken,
                 description=description,
+                record_id=record_id,
+                provenance=("local export",),
             )
         )
 
@@ -271,6 +337,8 @@ def markdown_for_album(
             item = f"- {link_or_code(label, photo.source)}"
             if photo.description:
                 item += f" - {photo.description}"
+            if photo.provenance:
+                item += f" - Provenance: {', '.join(photo.provenance)}."
             lines.append(item)
 
     return "\n".join(lines).rstrip() + "\n"
@@ -299,7 +367,7 @@ def resolve_output_path(
     return SECTION_DIRS[section] / filename
 
 
-def main() -> None:
+def main() -> int:
     args = parse_args()
     album: dict[str, Any] = {}
     photos: list[PhotoEvidence] = []
@@ -312,6 +380,8 @@ def main() -> None:
     if args.local_dir:
         photos.extend(photos_from_local_dir(args.local_dir))
         source_modes.append(f"local export: {args.local_dir}")
+
+    photos = deduplicate_photo_evidence(photos)
 
     title = (
         args.title
@@ -340,15 +410,33 @@ def main() -> None:
 
     if args.dry_run:
         print(markdown, end="")
-        return
+        return 0
 
-    if output.exists() and not args.force:
-        raise FileExistsError(f"Refusing to overwrite existing file: {output}")
+    if output.exists():
+        existing = output.read_text(encoding="utf-8")
+
+        if existing == markdown:
+            print(f"Unchanged {output}")
+            return 0
+
+        if not args.force:
+            raise FileExistsError(
+                f"Refusing to overwrite existing file: {output}"
+            )
+
+        print(
+            f"error: Refusing to overwrite curated Markdown: {output}",
+            file=sys.stderr,
+        )
+        print("\n--- Proposed Markdown preview ---\n")
+        print(markdown, end="")
+        return 1
 
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(markdown, encoding="utf-8")
     print(f"Wrote {output}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

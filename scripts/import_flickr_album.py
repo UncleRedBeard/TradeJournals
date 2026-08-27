@@ -26,7 +26,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode, urlparse
+from urllib.parse import parse_qs, urlencode, urlparse
 from urllib.request import Request, urlopen
 
 
@@ -47,6 +47,7 @@ DEFAULT_EXCLUDED_ALBUM_IDS = {
     "72157629724747813",
     "72157624945269229",
 }
+REDACTED_CREDENTIAL = "REDACTED"
 
 # Keep section names short on the command line, but write into the existing
 # TradeJournals folder structure.
@@ -144,6 +145,32 @@ class InventoryRow:
     existing_journal: Path | None
 
 
+class CuratedContentError(RuntimeError):
+    """Raised when regeneration could destroy reviewable Markdown metadata."""
+
+    def __init__(self, path: Path, preview: str) -> None:
+        super().__init__(f"Refusing to overwrite curated Markdown: {path}")
+        self.path = path
+        self.preview = preview
+
+
+def redact_flickr_credentials(value: object, *, url: str = "") -> str:
+    """Remove Flickr API keys from text before it crosses an output boundary."""
+
+    text = str(value)
+    secrets = parse_qs(urlparse(url).query).get("api_key", []) if url else []
+
+    for secret in secrets:
+        if secret:
+            text = text.replace(secret, REDACTED_CREDENTIAL)
+
+    return re.sub(
+        r"(?i)(api_key=)[^&\s>'\"]+",
+        rf"\g<1>{REDACTED_CREDENTIAL}",
+        text,
+    )
+
+
 def fetch_text(url: str) -> str:
     """Fetch text from a public URL with a clear user agent.
 
@@ -158,7 +185,9 @@ def fetch_text(url: str) -> str:
             charset = response.headers.get_content_charset() or "utf-8"
             body = response.read()
     except (HTTPError, URLError, TimeoutError) as exc:
-        raise RuntimeError(f"failed to fetch {url}: {exc}") from exc
+        safe_url = redact_flickr_credentials(url, url=url)
+        safe_error = redact_flickr_credentials(exc, url=url)
+        raise RuntimeError(f"failed to fetch {safe_url}: {safe_error}") from None
 
     return body.decode(charset, errors="replace")
 
@@ -171,7 +200,11 @@ def fetch_json(url: str) -> dict[str, Any]:
     try:
         return json.loads(text)
     except json.JSONDecodeError as exc:
-        raise RuntimeError(f"failed to parse JSON from {url}: {exc}") from exc
+        safe_url = redact_flickr_credentials(url, url=url)
+        safe_error = redact_flickr_credentials(exc, url=url)
+        raise RuntimeError(
+            f"failed to parse JSON from {safe_url}: {safe_error}"
+        ) from None
 
 
 def load_local_env_value(name: str) -> str:
@@ -237,11 +270,15 @@ def build_flickr_api_url(method: str, params: dict[str, Any]) -> str:
 def fetch_flickr_api(method: str, params: dict[str, Any]) -> dict[str, Any]:
     """Fetch one Flickr API response and raise clear errors on API failures."""
 
-    response = fetch_json(build_flickr_api_url(method, params))
+    api_url = build_flickr_api_url(method, params)
+    response = fetch_json(api_url)
 
     if response.get("stat") == "fail":
         code = response.get("code", "unknown")
-        message = response.get("message", "unknown Flickr API error")
+        message = redact_flickr_credentials(
+            response.get("message", "unknown Flickr API error"),
+            url=api_url,
+        )
         raise RuntimeError(f"Flickr API {method} failed ({code}): {message}")
 
     return response
@@ -530,6 +567,23 @@ def api_photo_to_photo(photo: dict[str, Any], owner: str, album_id: str) -> Phot
     )
 
 
+def deduplicate_photos(photos: list[Photo]) -> list[Photo]:
+    """Keep the first occurrence of each known Flickr photo ID."""
+
+    unique: list[Photo] = []
+    seen_ids: set[str] = set()
+
+    for photo in photos:
+        if photo.photo_id != "unknown":
+            if photo.photo_id in seen_ids:
+                continue
+            seen_ids.add(photo.photo_id)
+
+        unique.append(photo)
+
+    return unique
+
+
 def fetch_api_photos(owner: str, album_id: str) -> tuple[list[Photo], int]:
     """Fetch every public photo in an album through Flickr API pagination."""
 
@@ -564,7 +618,7 @@ def fetch_api_photos(owner: str, album_id: str) -> tuple[list[Photo], int]:
 
         page = current_page + 1
 
-    return photos, total
+    return deduplicate_photos(photos), total
 
 
 def fetch_album_api(album_url: str, title_override: str | None) -> Album:
@@ -617,7 +671,9 @@ def fetch_album(album_url: str, title_override: str | None) -> Album:
 
     # The feed provides photo title, link, and date_taken for starter photos.
     feed = fetch_json(build_photoset_feed_url(owner_nsid, album_id))
-    photos = [feed_item_to_photo(item) for item in feed.get("items", [])]
+    photos = deduplicate_photos(
+        [feed_item_to_photo(item) for item in feed.get("items", [])]
+    )
     photo_count = extract_album_photo_count(album_html, album_id) or len(photos)
 
     title = title_override or oembed.get("title") or feed.get("title", "Untitled")
@@ -717,7 +773,11 @@ def extract_advertised_album_total(
     return min(totals)
 
 
-def discover_public_albums(albums_url: str) -> AlbumDiscovery:
+def discover_public_albums(
+    albums_url: str,
+    *,
+    include_excluded: bool = False,
+) -> AlbumDiscovery:
     """Discover albums from Flickr's initial public `/albums` HTML."""
 
     normalized_url = normalize_albums_url(albums_url)
@@ -743,11 +803,12 @@ def discover_public_albums(albums_url: str) -> AlbumDiscovery:
             )
         )
 
-    return AlbumDiscovery(
+    discovery = AlbumDiscovery(
         albums=enriched,
         advertised_total=advertised_total,
         source="initial page HTML",
     )
+    return discovery if include_excluded else discovery_without_exclusions(discovery)[0]
 
 
 def api_photoset_to_public_album(
@@ -770,7 +831,11 @@ def api_photoset_to_public_album(
     )
 
 
-def discover_api_albums(albums_url: str) -> AlbumDiscovery:
+def discover_api_albums(
+    albums_url: str,
+    *,
+    include_excluded: bool = False,
+) -> AlbumDiscovery:
     """Discover all API-visible public albums through Flickr pagination."""
 
     owner_nsid = lookup_user_nsid_from_albums_url(albums_url)
@@ -801,11 +866,12 @@ def discover_api_albums(albums_url: str) -> AlbumDiscovery:
 
         page = current_page + 1
 
-    return AlbumDiscovery(
+    discovery = AlbumDiscovery(
         albums=albums,
         advertised_total=total,
         source="Flickr API",
     )
+    return discovery if include_excluded else discovery_without_exclusions(discovery)[0]
 
 
 def find_existing_journal(album: PublicAlbum) -> Path | None:
@@ -1026,6 +1092,27 @@ def load_inventory_exclusions(inventory_path: Path) -> set[str]:
     return set(DEFAULT_EXCLUDED_ALBUM_IDS)
 
 
+def discovery_without_exclusions(
+    discovery: AlbumDiscovery,
+) -> tuple[AlbumDiscovery, int]:
+    """Remove user-approved exclusions from scan, import, and reconcile flows."""
+
+    albums = [
+        album
+        for album in discovery.albums
+        if album.album_id not in DEFAULT_EXCLUDED_ALBUM_IDS
+    ]
+    excluded_count = len(discovery.albums) - len(albums)
+    return (
+        AlbumDiscovery(
+            albums=albums,
+            advertised_total=discovery.advertised_total,
+            source=discovery.source,
+        ),
+        excluded_count,
+    )
+
+
 def section_from_journal_path(journal_path: Path | None) -> str:
     """Return the TradeJournals section name for a known journal path."""
 
@@ -1240,11 +1327,18 @@ def format_optional_int(value: int | None) -> str:
 def render_discovery_report(discovery: AlbumDiscovery, limit: int | None) -> str:
     """Render a scan-only report for a Flickr albums directory."""
 
+    discovery, excluded_count = discovery_without_exclusions(discovery)
     albums = discovery.albums
     selected_albums = albums[:limit] if limit else albums
     lines = [
         f"Found {len(albums)} public album(s) via {discovery.source}.",
     ]
+
+    if excluded_count:
+        label = "exclusion" if excluded_count == 1 else "exclusions"
+        lines.append(
+            f"Omitted {excluded_count} approved {label} from discovery results."
+        )
 
     if (
         discovery.source == "initial page HTML"
@@ -1461,6 +1555,17 @@ def replace_section_body(
     return updated, count > 0
 
 
+def section_body(markdown: str, heading: str) -> str | None:
+    """Return one level-three section body without changing the document."""
+
+    pattern = re.compile(
+        rf"^### {re.escape(heading)}\n\n(?P<body>.*?)(?=\n### |\n## |\Z)",
+        re.DOTALL | re.MULTILINE,
+    )
+    match = pattern.search(markdown)
+    return match.group("body") if match else None
+
+
 def append_visual_evidence_block(
     markdown: str,
     album: Album,
@@ -1508,6 +1613,11 @@ def merge_album_into_journal(
     if album.url in markdown or album_id in markdown:
         return False
 
+    targeted_bodies = [
+        body
+        for heading in ("Flickr Album", "Starter Photo IDs")
+        if (body := section_body(markdown, heading)) is not None
+    ]
     updated = markdown.replace(
         "- Album URL: pending.",
         f"- Album URL: [{album.title}]({album.url}).",
@@ -1526,7 +1636,13 @@ def merge_album_into_journal(
     if not album_section_changed and not photo_section_changed:
         updated = append_visual_evidence_block(updated, album, format_label)
 
-    journal_path.write_text(updated.rstrip() + "\n", encoding="utf-8")
+    preview = updated.rstrip() + "\n"
+    if targeted_bodies and any(
+        "pending" not in body.casefold() for body in targeted_bodies
+    ):
+        raise CuratedContentError(journal_path, preview)
+
+    journal_path.write_text(preview, encoding="utf-8")
     return True
 
 
@@ -1619,7 +1735,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--force",
         action="store_true",
-        help="Overwrite the output file if it already exists.",
+        help=(
+            "Request regeneration of an existing output; changed Markdown is "
+            "previewed and rejected instead of overwritten."
+        ),
     )
     parser.add_argument(
         "--merge-existing",
@@ -1689,17 +1808,25 @@ def write_album_markdown(
     output_path: Path,
     markdown: str,
     force: bool,
-) -> None:
+) -> bool:
     """Write Markdown to disk, protecting existing files by default."""
 
+    if output_path.exists():
+        existing = output_path.read_text(encoding="utf-8")
+
+        if existing == markdown:
+            return False
+
+        if not force:
+            raise RuntimeError(
+                f"{output_path} already exists; pass --force to preview changes"
+            )
+
+        raise CuratedContentError(output_path, markdown)
+
     output_path.parent.mkdir(parents=True, exist_ok=True)
-
-    if output_path.exists() and not force:
-        raise RuntimeError(
-            f"{output_path} already exists; pass --force to overwrite"
-        )
-
     output_path.write_text(markdown, encoding="utf-8")
+    return True
 
 
 def fetch_album_for_args(
@@ -1761,8 +1888,9 @@ def main() -> int:
             print(markdown, end="")
             return 0
 
-        write_album_markdown(output_path, markdown, args.force)
-        print(f"Wrote {display_path(output_path)}")
+        wrote_output = write_album_markdown(output_path, markdown, args.force)
+        action = "Wrote" if wrote_output else "Unchanged"
+        print(f"{action} {display_path(output_path)}")
 
         if args.update_readme:
             readme_path = output_path.parent / "README.md"
@@ -1779,8 +1907,16 @@ def main() -> int:
                 print(f"README already references {output_path.name}")
 
         return 0
-    except Exception as exc:
+    except CuratedContentError as exc:
         print(f"error: {exc}", file=sys.stderr)
+        print("\n--- Proposed Markdown preview ---\n")
+        print(exc.preview, end="")
+        return 1
+    except Exception as exc:
+        print(
+            f"error: {redact_flickr_credentials(exc)}",
+            file=sys.stderr,
+        )
         return 1
 
 
@@ -1822,13 +1958,18 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
         )
 
     if args.use_api:
-        discovery = discover_api_albums(args.albums_url)
+        discovery = discover_api_albums(
+            args.albums_url,
+            include_excluded=True,
+        )
     else:
-        discovery = discover_public_albums(args.albums_url)
-    albums = discovery.albums
-
+        discovery = discover_public_albums(
+            args.albums_url,
+            include_excluded=True,
+        )
     if args.reconcile_known:
-        return handle_reconcile_known(args, discovery)
+        eligible_discovery, _ = discovery_without_exclusions(discovery)
+        return handle_reconcile_known(args, eligible_discovery)
 
     if args.write_inventory:
         return handle_write_inventory(args, discovery)
@@ -1840,6 +1981,8 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
     if not args.format_label:
         raise RuntimeError("--format is required with --import-discovered")
 
+    eligible_discovery, excluded_count = discovery_without_exclusions(discovery)
+    albums = eligible_discovery.albums
     selected_albums = albums[: args.limit] if args.limit else albums
     imported_count = 0
     dry_merge_count = 0
@@ -1901,9 +2044,13 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
             print(f"Would write {display_path(output_path)}")
             continue
 
-        write_album_markdown(output_path, markdown, args.force)
-        imported_count += 1
-        print(f"Wrote {display_path(output_path)}")
+        wrote_output = write_album_markdown(output_path, markdown, args.force)
+
+        if wrote_output:
+            imported_count += 1
+
+        action = "Wrote" if wrote_output else "Unchanged"
+        print(f"{action} {display_path(output_path)}")
 
         if args.update_readme:
             readme_path = output_path.parent / "README.md"
@@ -1920,12 +2067,14 @@ def handle_albums_directory(args: argparse.Namespace) -> int:
         print(
             f"Finished discovered dry run: {dry_write_count} would be "
             f"written, {dry_merge_count} would be merged, "
-            f"{skipped_count} skipped."
+            f"{skipped_count} skipped, {excluded_count} approved "
+            "exclusion(s) omitted."
         )
     else:
         print(
             f"Finished discovered import: {imported_count} written, "
-            f"{merged_count} merged, {skipped_count} skipped."
+            f"{merged_count} merged, {skipped_count} skipped, "
+            f"{excluded_count} approved exclusion(s) omitted."
         )
     return 0
 
@@ -1969,6 +2118,16 @@ def handle_write_inventory(
         print(report, end="")
         return 0
 
+    if output_path.exists():
+        existing = output_path.read_text(encoding="utf-8")
+
+        if existing == report:
+            print(f"Inventory unchanged {display_path(output_path)}")
+            return 0
+
+        raise CuratedContentError(output_path, report)
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(report, encoding="utf-8")
     print(f"Wrote {display_path(output_path)}")
     return 0

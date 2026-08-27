@@ -21,6 +21,9 @@ You can also copy `.env.example` to `.env`; the importer reads
 The Flickr API secret is not needed for the public-read workflow and should not
 be committed to the repo.
 
+Repeated Flickr photo IDs are collapsed deterministically after feed or API
+pagination. The first public record keeps its original position and metadata.
+
 Example:
 
 ```sh
@@ -36,7 +39,9 @@ python3 scripts/import_flickr_album.py \
 Useful flags:
 
 - `--dry-run` prints the generated Markdown without writing files.
-- `--force` overwrites an existing output file.
+- `--force` requests regeneration of an existing output file. If the proposed
+  Markdown differs, the importer fails closed and prints a reviewable preview
+  instead of overwriting potentially curated metadata.
 - `--merge-existing` updates a matching journal instead of creating a sidecar
   Flickr entry.
 - `--output` writes to an explicit Markdown path.
@@ -59,7 +64,10 @@ The scan report lists album titles, IDs, photo counts, view counts, and whether
 an existing journal already appears to reference the album. Without
 `--use-api`, Flickr may advertise more total albums than it exposes in the
 initial public HTML; the report calls that out when the remaining albums appear
-to require Flickr's lazy-load/API path.
+to require Flickr's lazy-load/API path. The seven user-approved exclusions are
+omitted from scan, batch-import, and reconciliation candidates. Inventory mode
+still lists them explicitly as `excluded` so the reviewed classification stays
+visible.
 
 To refresh the tracked public album inventory and gap report, use:
 
@@ -72,7 +80,8 @@ python3 scripts/import_flickr_album.py \
 
 Preview it first with `--dry-run` if needed. The inventory report preserves
 album IDs already marked as `excluded`, then classifies the rest as `imported`
-when a journal reference exists or `gap` when the album still needs review.
+when a journal reference exists or `gap` when the album still needs review. A
+changed existing inventory is previewed and rejected rather than overwritten.
 
 Batch import is opt-in and still requires a project classification:
 
@@ -170,4 +179,8 @@ python3 scripts/import_google_photos_album.py \
 
 The local export path also checks for simple sidecar JSON files beside images,
 including `image.jpg.json` and `image.json`, and uses title, description, and
-photo-taken time when present.
+photo-taken time when present. When manifest and local-export records share an
+explicit `id`, `photo_id`, or media-item ID, the first record keeps its stable
+position and metadata while the generated evidence line records both source
+provenance labels. Changed existing Google Photos journals are likewise
+previewed and rejected rather than overwritten, even with `--force`.
