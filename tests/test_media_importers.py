@@ -634,6 +634,46 @@ class DryRunAndCuratedMetadataTests(unittest.TestCase):
         self.assertEqual(result, 0)
         self.assertEqual(preserved, original.encode("utf-8"))
 
+    def test_reconcile_stops_flickr_context_at_next_markdown_heading(self):
+        album_id = "999"
+        journal = Path("journal.md")
+        original = (
+            "# Journal\n\n"
+            "### Primary Flickr Album\n\n"
+            f"- Album URL: https://www.flickr.com/photos/example/albums/{album_id}/\n"
+            "- Album status: public and visible through the Flickr API\n"
+            "- Public photo count: 1\n\n"
+            "### Secondary Google Photos Album\n\n"
+            "- Album URL: https://photos.example/album\n"
+            "- Album status: shared Google Photos album\n"
+        )
+        public_albums = {
+            album_id: flickr.PublicAlbum(
+                title="Synthetic archive",
+                url=f"https://www.flickr.com/photos/example/albums/{album_id}/",
+                album_id=album_id,
+                photo_count=2,
+            )
+        }
+
+        updated, changes = flickr.reconcile_journal_markdown(
+            original,
+            public_albums,
+            journal,
+        )
+
+        self.assertEqual(len(changes), 2)
+        self.assertIn(
+            "- Album status: public API-visible album; latest importer scan "
+            "confirms 2 photos.",
+            updated,
+        )
+        self.assertIn(
+            "- Public photo count: 2, confirmed by latest Flickr API importer scan",
+            updated,
+        )
+        self.assertIn("- Album status: shared Google Photos album", updated)
+
     def test_flickr_merge_refuses_to_replace_curated_album_section(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             journal = Path(temporary_directory) / "curated.md"

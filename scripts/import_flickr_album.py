@@ -1019,6 +1019,9 @@ def reconcile_journal_markdown(
     current_album_id: str | None = None
 
     for index, line in enumerate(lines):
+        if re.match(r"^#{1,6}\s", line):
+            current_album_id = None
+
         referenced_album_id = album_id_from_line(line)
 
         if referenced_album_id:
