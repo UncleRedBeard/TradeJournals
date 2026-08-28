@@ -974,37 +974,29 @@ def album_id_from_line(line: str) -> str | None:
     return None
 
 
-def count_phrase(photo_count: int | None) -> str:
-    """Render a human-readable photo count for reconciliation output."""
+def reconcile_photo_count_line(album: PublicAlbum, original: str) -> str:
+    """Replace only a mismatched numeric photo count in a metadata bullet."""
 
-    if photo_count is None:
-        return "an unknown number of"
+    if album.photo_count is None:
+        return original
 
-    return str(photo_count)
+    stripped = original.strip()
 
+    if stripped.startswith("- Album status:"):
+        count_match = re.search(r"\b(?P<count>\d+)(?=\s+photos?\b)", original)
+    elif stripped.startswith("- Public photo count:"):
+        count_match = re.search(
+            r"^\s*- Public photo count:\s*(?P<count>\d+)\b",
+            original,
+        )
+    else:
+        return original
 
-def reconciled_album_status_line(album: PublicAlbum) -> str:
-    """Build the standardized album status bullet for existing journals."""
+    if not count_match or int(count_match.group("count")) == album.photo_count:
+        return original
 
-    return (
-        "- Album status: public API-visible album; latest importer scan "
-        f"confirms {count_phrase(album.photo_count)} photos."
-    )
-
-
-def reconciled_public_count_line(album: PublicAlbum, original: str) -> str:
-    """Build the standardized public photo count bullet.
-
-    Sidecar Flickr journals omit terminal periods in their identity bullets,
-    while hand-authored machine journals use them. Preserve that small local
-    style choice so reconciliation does not churn unrelated formatting.
-    """
-
-    suffix = "." if original.rstrip().endswith(".") else ""
-    return (
-        f"- Public photo count: {count_phrase(album.photo_count)}, confirmed "
-        f"by latest Flickr API importer scan{suffix}"
-    )
+    start, end = count_match.span("count")
+    return original[:start] + str(album.photo_count) + original[end:]
 
 
 def reconcile_journal_markdown(
@@ -1035,14 +1027,7 @@ def reconcile_journal_markdown(
         if not album:
             continue
 
-        stripped = line.strip()
-
-        if stripped.startswith("- Album status:"):
-            replacement = reconciled_album_status_line(album)
-        elif stripped.startswith("- Public photo count:"):
-            replacement = reconciled_public_count_line(album, line)
-        else:
-            continue
+        replacement = reconcile_photo_count_line(album, line)
 
         if line == replacement:
             continue

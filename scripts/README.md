@@ -109,9 +109,10 @@ python3 scripts/import_flickr_album.py \
 ```
 
 Remove `--dry-run` after reviewing the proposed line updates. Reconciliation
-only updates existing album status and public photo count bullets. If a journal
-references an album that is not currently visible through the public API scan,
-the script reports it and leaves the journal unchanged.
+only replaces a mismatched numeric photo count in an existing album status or
+public photo count bullet; it preserves the rest of the line verbatim. If a
+journal references an album that is not currently visible through the public
+API scan, the script reports it and leaves the journal unchanged.
 
 After importing, run:
 

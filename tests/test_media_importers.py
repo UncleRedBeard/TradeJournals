@@ -662,17 +662,125 @@ class DryRunAndCuratedMetadataTests(unittest.TestCase):
             journal,
         )
 
-        self.assertEqual(len(changes), 2)
+        self.assertEqual(len(changes), 1)
         self.assertIn(
-            "- Album status: public API-visible album; latest importer scan "
-            "confirms 2 photos.",
+            "- Album status: public and visible through the Flickr API",
             updated,
         )
         self.assertIn(
-            "- Public photo count: 2, confirmed by latest Flickr API importer scan",
+            "- Public photo count: 2",
             updated,
         )
         self.assertIn("- Album status: shared Google Photos album", updated)
+
+    def test_reconcile_changes_only_mismatched_count_in_album_status_line(self):
+        album_id = "999"
+        journal = Path("journal.md")
+        original = (
+            "# Journal\n\n"
+            "### Flickr Album\n\n"
+            f"- Album URL: https://www.flickr.com/photos/example/albums/{album_id}/\n"
+            "- Album status: public API-visible album; latest API review "
+            "confirms 514 photos.\n"
+        )
+        public_albums = {
+            album_id: flickr.PublicAlbum(
+                title="Synthetic archive",
+                url=f"https://www.flickr.com/photos/example/albums/{album_id}/",
+                album_id=album_id,
+                photo_count=512,
+            )
+        }
+
+        updated, changes = flickr.reconcile_journal_markdown(
+            original,
+            public_albums,
+            journal,
+        )
+
+        expected = original.replace("514 photos", "512 photos")
+        self.assertEqual(updated, expected)
+        self.assertEqual(
+            changes,
+            [
+                flickr.ReconcileChange(
+                    journal_path=journal,
+                    line_number=6,
+                    before=(
+                        "- Album status: public API-visible album; latest API "
+                        "review confirms 514 photos."
+                    ),
+                    after=(
+                        "- Album status: public API-visible album; latest API "
+                        "review confirms 512 photos."
+                    ),
+                )
+            ],
+        )
+
+    def test_reconcile_preserves_public_count_verification_wording_and_date(self):
+        album_id = "999"
+        journal = Path("journal.md")
+        original = (
+            "# Journal\n\n"
+            "### Primary Flickr Album\n\n"
+            f"- Album URL: https://www.flickr.com/photos/example/albums/{album_id}/\n"
+            "- Album status: public and visible through the Flickr API\n"
+            "- Public photo count: 97, confirmed through the Flickr API on "
+            "2026-08-04\n"
+        )
+        public_albums = {
+            album_id: flickr.PublicAlbum(
+                title="Synthetic archive",
+                url=f"https://www.flickr.com/photos/example/albums/{album_id}/",
+                album_id=album_id,
+                photo_count=98,
+            )
+        }
+
+        updated, changes = flickr.reconcile_journal_markdown(
+            original,
+            public_albums,
+            journal,
+        )
+
+        expected = original.replace(
+            "Public photo count: 97",
+            "Public photo count: 98",
+        )
+        self.assertEqual(updated, expected)
+        self.assertEqual(len(changes), 1)
+        self.assertEqual(changes[0].before, original.splitlines()[6])
+        self.assertEqual(changes[0].after, expected.splitlines()[6])
+
+    def test_reconcile_leaves_correct_counts_and_curated_status_untouched(self):
+        album_id = "999"
+        journal = Path("journal.md")
+        original = (
+            "# Journal\n\n"
+            "### Primary Flickr Album\n\n"
+            f"- Album URL: https://www.flickr.com/photos/example/albums/{album_id}/\n"
+            "- Album status: public and visible through the Flickr API\n"
+            "- Public photo count: 98, confirmed through the Flickr API on "
+            "2026-08-04\n"
+        )
+        public_albums = {
+            album_id: flickr.PublicAlbum(
+                title="Synthetic archive",
+                url=f"https://www.flickr.com/photos/example/albums/{album_id}/",
+                album_id=album_id,
+                photo_count=98,
+            )
+        }
+
+        updated, changes = flickr.reconcile_journal_markdown(
+            original,
+            public_albums,
+            journal,
+        )
+
+        self.assertEqual(updated, original)
+        self.assertEqual(changes, [])
 
     def test_flickr_merge_refuses_to_replace_curated_album_section(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
