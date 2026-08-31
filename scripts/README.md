@@ -81,7 +81,12 @@ python3 scripts/import_flickr_album.py \
 Preview it first with `--dry-run` if needed. The inventory report preserves
 album IDs already marked as `excluded`, then classifies the rest as `imported`
 when a journal reference exists or `gap` when the album still needs review. A
-changed existing inventory is previewed and rejected rather than overwritten.
+changed existing inventory preserves reviewed annotation lines inside each
+album-detail block, keyed by the stable Flickr album anchor and their position
+after an importer-owned field. Generated fields can then refresh safely. The
+importer fails closed if anchors are missing or duplicated, an annotation's
+field position no longer exists, or non-generated content appears outside the
+album-detail blocks. Keep annotations out of the generated summary and table.
 
 Batch import is opt-in and still requires a project classification:
 

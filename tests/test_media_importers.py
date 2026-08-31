@@ -596,6 +596,160 @@ class DryRunAndCuratedMetadataTests(unittest.TestCase):
         self.assertEqual(preserved, curated)
         self.assertIn("# Flickr Public Album Inventory", raised.exception.preview)
 
+    def test_inventory_render_preserves_annotation_during_generated_refresh(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            output = Path(temporary_directory) / "inventory.md"
+            old_discovery = flickr.AlbumDiscovery(
+                albums=[
+                    flickr.PublicAlbum(
+                        title="Synthetic archive",
+                        url="https://www.flickr.com/photos/example/albums/999/",
+                        album_id="999",
+                        photo_count=1,
+                    )
+                ],
+                advertised_total=1,
+                source="synthetic public scan",
+            )
+            new_discovery = flickr.AlbumDiscovery(
+                albums=[
+                    flickr.PublicAlbum(
+                        title="Synthetic archive",
+                        url="https://www.flickr.com/photos/example/albums/999/",
+                        album_id="999",
+                        photo_count=2,
+                    )
+                ],
+                advertised_total=1,
+                source="synthetic public scan",
+            )
+
+            with (
+                mock.patch.object(flickr, "find_existing_journal", return_value=None),
+                mock.patch.object(flickr, "datetime") as mocked_datetime,
+            ):
+                mocked_datetime.now.return_value.strftime.return_value = "2026-08-04"
+                original = flickr.render_inventory_report(old_discovery, output)
+                curated = original.replace(
+                    "- Photos: 1\n",
+                    "- Photos: 1\n- Curator review: retain this judgment.\n",
+                    1,
+                )
+                output.write_text(curated, encoding="utf-8")
+                mocked_datetime.now.return_value.strftime.return_value = "2026-08-30"
+
+                refreshed = flickr.render_inventory_report(new_discovery, output)
+
+        self.assertIn("Last checked: 2026-08-30", refreshed)
+        self.assertIn(
+            "- Photos: 2\n- Curator review: retain this judgment.\n"
+            "- TradeJournals status: gap",
+            refreshed,
+        )
+
+    def test_inventory_write_refreshes_generated_fields_after_safe_merge(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            output = Path(temporary_directory) / "inventory.md"
+            old_album = flickr.PublicAlbum(
+                title="Synthetic archive",
+                url="https://www.flickr.com/photos/example/albums/999/",
+                album_id="999",
+                photo_count=1,
+            )
+            new_album = flickr.PublicAlbum(
+                title="Synthetic archive",
+                url=old_album.url,
+                album_id=old_album.album_id,
+                photo_count=2,
+            )
+            args = Namespace(dry_run=False, inventory_output=output)
+
+            with (
+                mock.patch.object(flickr, "find_existing_journal", return_value=None),
+                mock.patch.object(flickr, "datetime") as mocked_datetime,
+            ):
+                mocked_datetime.now.return_value.strftime.return_value = "2026-08-04"
+                original = flickr.render_inventory_report(
+                    flickr.AlbumDiscovery(albums=[old_album]),
+                    output,
+                )
+                curated = original.replace(
+                    "- Photos: 1\n",
+                    "- Photos: 1\n- Reviewed note: preserve me.\n",
+                    1,
+                )
+                output.write_text(curated, encoding="utf-8")
+                mocked_datetime.now.return_value.strftime.return_value = "2026-08-30"
+
+                with redirect_stdout(io.StringIO()):
+                    result = flickr.handle_write_inventory(
+                        args,
+                        flickr.AlbumDiscovery(albums=[new_album]),
+                    )
+
+            refreshed = output.read_text(encoding="utf-8")
+
+        self.assertEqual(result, 0)
+        self.assertIn("Last checked: 2026-08-30", refreshed)
+        self.assertIn("- Photos: 2", refreshed)
+        self.assertIn("- Reviewed note: preserve me.", refreshed)
+
+    def test_inventory_render_refuses_duplicate_album_anchor(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            output = Path(temporary_directory) / "inventory.md"
+            album = flickr.PublicAlbum(
+                title="Synthetic archive",
+                url="https://www.flickr.com/photos/example/albums/999/",
+                album_id="999",
+                photo_count=1,
+            )
+            discovery = flickr.AlbumDiscovery(albums=[album])
+
+            with mock.patch.object(
+                flickr,
+                "find_existing_journal",
+                return_value=None,
+            ):
+                original = flickr.render_inventory_report(discovery, output)
+                duplicate = original + original[original.index('<a id="album-999">') :]
+                output.write_text(duplicate, encoding="utf-8")
+
+                with self.assertRaisesRegex(
+                    flickr.CuratedContentError,
+                    "duplicate album anchor",
+                ):
+                    flickr.render_inventory_report(discovery, output)
+
+    def test_inventory_render_refuses_annotation_outside_album_details(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            output = Path(temporary_directory) / "inventory.md"
+            album = flickr.PublicAlbum(
+                title="Synthetic archive",
+                url="https://www.flickr.com/photos/example/albums/999/",
+                album_id="999",
+                photo_count=1,
+            )
+            discovery = flickr.AlbumDiscovery(albums=[album])
+
+            with mock.patch.object(
+                flickr,
+                "find_existing_journal",
+                return_value=None,
+            ):
+                original = flickr.render_inventory_report(discovery, output)
+                curated = original.replace(
+                    "## Summary\n",
+                    "## Summary\n\nReviewed preamble note that cannot be mapped safely.\n",
+                    1,
+                )
+                output.write_text(curated, encoding="utf-8")
+
+                with self.assertRaisesRegex(
+                    flickr.CuratedContentError,
+                    "outside album detail blocks",
+                ):
+                    flickr.render_inventory_report(discovery, output)
+
     def test_reconcile_dry_run_leaves_journal_bytes_unchanged(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             journal = Path(temporary_directory) / "journal.md"

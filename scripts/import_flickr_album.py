@@ -48,6 +48,28 @@ DEFAULT_EXCLUDED_ALBUM_IDS = {
     "72157624945269229",
 }
 REDACTED_CREDENTIAL = "REDACTED"
+INVENTORY_DETAIL_FIELDS = (
+    "Album URL",
+    "Album ID",
+    "Visibility",
+    "Photos",
+    "TradeJournals status",
+    "Section",
+    "Existing journal",
+)
+INVENTORY_REQUIRED_DETAIL_FIELDS = {
+    "Album URL",
+    "Album ID",
+    "Visibility",
+    "Photos",
+    "TradeJournals status",
+}
+INVENTORY_NUMERIC_SUMMARY_PREFIXES = (
+    "- Public albums visible via API:",
+    "- Existing TradeJournals coverage:",
+    "- Albums excluded from TradeJournals import:",
+    "- Albums still needing review/mapping:",
+)
 
 # Keep section names short on the command line, but write into the existing
 # TradeJournals folder structure.
@@ -148,8 +170,18 @@ class InventoryRow:
 class CuratedContentError(RuntimeError):
     """Raised when regeneration could destroy reviewable Markdown metadata."""
 
-    def __init__(self, path: Path, preview: str) -> None:
-        super().__init__(f"Refusing to overwrite curated Markdown: {path}")
+    def __init__(
+        self,
+        path: Path,
+        preview: str,
+        reason: str | None = None,
+    ) -> None:
+        message = f"Refusing to overwrite curated Markdown: {path}"
+
+        if reason:
+            message += f" ({reason})"
+
+        super().__init__(message)
         self.path = path
         self.preview = preview
 
@@ -1303,7 +1335,276 @@ def render_inventory_report(
 
         lines.append("")
 
-    return "\n".join(lines).rstrip() + "\n"
+    generated = "\n".join(lines).rstrip() + "\n"
+
+    if not inventory_path.exists():
+        return generated
+
+    existing = inventory_path.read_text(encoding="utf-8")
+    return preserve_inventory_annotations(existing, generated, inventory_path)
+
+
+def inventory_block_ranges(
+    markdown: str,
+    inventory_path: Path,
+    preview: str,
+) -> list[tuple[str, int, int]]:
+    """Return unique album-detail block ranges keyed by stable Flickr ID."""
+
+    matches = list(
+        re.finditer(r'^<a id="album-(?P<id>\d+)"></a>\n', markdown, re.MULTILINE)
+    )
+
+    if not matches:
+        raise CuratedContentError(
+            inventory_path,
+            preview,
+            "no inventory album anchors could be mapped safely",
+        )
+
+    seen_ids: set[str] = set()
+    ranges: list[tuple[str, int, int]] = []
+
+    for index, match in enumerate(matches):
+        album_id = match.group("id")
+
+        if album_id in seen_ids:
+            raise CuratedContentError(
+                inventory_path,
+                preview,
+                f"duplicate album anchor {album_id}",
+            )
+
+        seen_ids.add(album_id)
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(markdown)
+        ranges.append((album_id, match.start(), end))
+
+    return ranges
+
+
+def inventory_field_name(line: str) -> str | None:
+    """Return the importer-owned inventory field represented by one line."""
+
+    for field_name in INVENTORY_DETAIL_FIELDS:
+        if line.startswith(f"- {field_name}:"):
+            return field_name
+
+    return None
+
+
+def inventory_preamble_shape(preamble: str) -> list[str]:
+    """Normalize generated preamble values while retaining its structure."""
+
+    normalized: list[str] = []
+    table_rows_seen = False
+
+    for line in preamble.splitlines():
+        if line.startswith("Last checked:"):
+            normalized.append("Last checked: <generated>")
+            continue
+
+        summary_prefix = next(
+            (
+                prefix
+                for prefix in INVENTORY_NUMERIC_SUMMARY_PREFIXES
+                if line.startswith(prefix)
+            ),
+            None,
+        )
+
+        if summary_prefix:
+            normalized.append(f"{summary_prefix} <generated>")
+            continue
+
+        if line.startswith("|") and line not in {
+            "|#|Album|Photos|Status|Section|Existing Journal|",
+            "|---:|---|---:|---|---|---|",
+        }:
+            cells = re.split(r"(?<!\\)\|", line)
+
+            if len(cells) != 8 or not cells[1].isdigit():
+                normalized.append(line)
+                continue
+
+            if not table_rows_seen:
+                normalized.append("|<generated album rows>|")
+                table_rows_seen = True
+            continue
+
+        normalized.append(line)
+
+    return normalized
+
+
+def inventory_annotations_for_block(
+    block: str,
+    album_id: str,
+    inventory_path: Path,
+    preview: str,
+) -> list[tuple[str, str]]:
+    """Extract curated lines and their preceding generated-field slot."""
+
+    annotations: list[tuple[str, str]] = []
+    fields_seen: set[str] = set()
+    heading_seen = False
+    current_slot = "heading"
+
+    for line in block.splitlines()[1:]:
+        if not line:
+            continue
+
+        if line.startswith("### "):
+            if heading_seen:
+                raise CuratedContentError(
+                    inventory_path,
+                    preview,
+                    f"multiple headings in album block {album_id}",
+                )
+            heading_seen = True
+            current_slot = "heading"
+            continue
+
+        field_name = inventory_field_name(line)
+
+        if field_name:
+            if field_name in fields_seen:
+                raise CuratedContentError(
+                    inventory_path,
+                    preview,
+                    f"duplicate {field_name} field in album block {album_id}",
+                )
+            fields_seen.add(field_name)
+            current_slot = field_name
+
+            if field_name == "Album ID" and f"`{album_id}`" not in line:
+                raise CuratedContentError(
+                    inventory_path,
+                    preview,
+                    f"album ID field does not match anchor {album_id}",
+                )
+            continue
+
+        annotations.append((current_slot, line))
+
+    missing_fields = INVENTORY_REQUIRED_DETAIL_FIELDS - fields_seen
+
+    if not heading_seen or missing_fields:
+        missing = ", ".join(sorted(missing_fields)) or "detail heading"
+        raise CuratedContentError(
+            inventory_path,
+            preview,
+            f"incomplete album block {album_id}: missing {missing}",
+        )
+
+    return annotations
+
+
+def insert_inventory_annotations(
+    block: str,
+    annotations: list[tuple[str, str]],
+    album_id: str,
+    inventory_path: Path,
+    preview: str,
+) -> str:
+    """Insert curated annotation lines after their mapped generated fields."""
+
+    annotations_by_slot: dict[str, list[str]] = {}
+
+    for slot, line in annotations:
+        annotations_by_slot.setdefault(slot, []).append(line)
+
+    output_lines: list[str] = []
+    used_slots: set[str] = set()
+
+    for raw_line in block.splitlines(keepends=True):
+        output_lines.append(raw_line)
+        line = raw_line.rstrip("\r\n")
+        slot: str | None = None
+
+        if line.startswith("### "):
+            slot = "heading"
+        else:
+            slot = inventory_field_name(line)
+
+        if slot not in annotations_by_slot:
+            continue
+
+        output_lines.extend(f"{annotation}\n" for annotation in annotations_by_slot[slot])
+        used_slots.add(slot)
+
+    missing_slots = set(annotations_by_slot) - used_slots
+
+    if missing_slots:
+        slots = ", ".join(sorted(missing_slots))
+        raise CuratedContentError(
+            inventory_path,
+            preview,
+            f"annotation slot missing from album block {album_id}: {slots}",
+        )
+
+    return "".join(output_lines)
+
+
+def preserve_inventory_annotations(
+    existing: str,
+    generated: str,
+    inventory_path: Path,
+) -> str:
+    """Merge reviewed album annotations into a newly generated inventory."""
+
+    existing_ranges = inventory_block_ranges(existing, inventory_path, generated)
+    generated_ranges = inventory_block_ranges(generated, inventory_path, generated)
+    existing_preamble = existing[: existing_ranges[0][1]]
+    generated_preamble = generated[: generated_ranges[0][1]]
+
+    if inventory_preamble_shape(existing_preamble) != inventory_preamble_shape(
+        generated_preamble
+    ):
+        raise CuratedContentError(
+            inventory_path,
+            generated,
+            "content outside album detail blocks cannot be mapped safely",
+        )
+
+    annotations_by_album: dict[str, list[tuple[str, str]]] = {}
+
+    for album_id, start, end in existing_ranges:
+        annotations_by_album[album_id] = inventory_annotations_for_block(
+            existing[start:end],
+            album_id,
+            inventory_path,
+            generated,
+        )
+
+    generated_ids = {album_id for album_id, _, _ in generated_ranges}
+    missing_album_ids = set(annotations_by_album) - generated_ids
+
+    if missing_album_ids:
+        album_ids = ", ".join(sorted(missing_album_ids))
+        raise CuratedContentError(
+            inventory_path,
+            generated,
+            f"existing album blocks missing from generated inventory: {album_ids}",
+        )
+
+    merged = generated
+
+    for album_id, start, end in reversed(generated_ranges):
+        annotations = annotations_by_album.get(album_id, [])
+
+        if not annotations:
+            continue
+
+        block = insert_inventory_annotations(
+            merged[start:end],
+            annotations,
+            album_id,
+            inventory_path,
+            generated,
+        )
+        merged = merged[:start] + block + merged[end:]
+
+    return merged
 
 
 def format_optional_int(value: int | None) -> str:
@@ -2113,7 +2414,9 @@ def handle_write_inventory(
             print(f"Inventory unchanged {display_path(output_path)}")
             return 0
 
-        raise CuratedContentError(output_path, report)
+        output_path.write_text(report, encoding="utf-8")
+        print(f"Updated {display_path(output_path)}")
+        return 0
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(report, encoding="utf-8")
