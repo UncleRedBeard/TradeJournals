@@ -56,7 +56,7 @@ Use this section to map the Flickr album into evidence categories that support t
 
 - Album URL: [Uncle RedBeard's Shed](https://www.flickr.com/photos/boocher/albums/72177720304050679/)
 - Album ID: `72177720304050679`
-- Album status: public API-visible album; latest API review confirms 514 photos.
+- Album status: public API-visible album; latest API review confirms 512 photos.
 - Album role: long-running forge-and-shop workspace archive, including tool
   systems, material and parts storage, project staging, and the Vespa work
   carried out in the shed.
