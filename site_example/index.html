@@ -37,25 +37,26 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-media" aria-hidden="true">
           <figure data-practice="residence">
-            <img src="assets/flickr/entry/05.jpg" alt="">
+            <img src="assets/flickr/entry/05.jpg" alt="" fetchpriority="high">
             <span>Residence</span>
           </figure>
           <figure data-practice="forge">
-            <img src="assets/flickr/shed/01.jpg" alt="">
+            <img src="assets/flickr/shed/01.jpg" alt="" decoding="async">
             <span>Forge + Shop</span>
           </figure>
           <figure data-practice="machines">
-            <img src="assets/flickr/vespa/03.jpg" alt="">
+            <img src="assets/flickr/vespa/03.jpg" alt="" decoding="async">
             <span>Machines</span>
           </figure>
           <figure data-practice="materials">
-            <img src="assets/flickr/pottery/04.jpg" alt="">
+            <img src="assets/flickr/pottery/04.jpg" alt="" decoding="async">
             <span>Materials</span>
           </figure>
           <figure data-practice="lens">
             <img
               src="../05_the_lens/assets/lomography/best-of-film-work/dance-silhouette.jpg"
               alt=""
+              decoding="async"
             >
             <span>Lens</span>
           </figure>
@@ -90,8 +91,8 @@
             or replaced.
           </p>
           <dl class="archive-stats" aria-label="Archive summary">
-            <div><dt>39</dt><dd>Public Flickr albums</dd></div>
-            <div><dt>05</dt><dd>Connected practices</dd></div>
+            <div><dt data-archive-count="publicFlickrAlbums">39</dt><dd>Public Flickr albums</dd></div>
+            <div><dt data-archive-count="connectedPractices">05</dt><dd>Connected practices</dd></div>
             <div><dt>Git</dt><dd>Versioned source archive</dd></div>
           </dl>
         </div>
@@ -107,8 +108,8 @@
             <div class="chat-message assistant">
               <span>Archive index</span>
               <p>
-                Search the current static index across restoration notes, film work,
-                Flickr albums, and source journals.
+                Search the generated local index across restoration notes, film work,
+                source albums, and the journals that explain what the images prove.
               </p>
             </div>
             <div class="chat-log" id="chat-log"></div>
@@ -120,8 +121,10 @@
               <button type="button" data-question="Which albums document bath work?">Bath work</button>
               <button type="button" data-question="Show the entry and landing floor work">Entry and landing</button>
               <button type="button" data-question="What does the shed document?">The shed</button>
+              <button type="button" data-question="What is the ballet studio completion status?">Ballet studio</button>
               <button type="button" data-question="What is the pottery apprenticeship study?">Pottery apprenticeship</button>
               <button type="button" data-question="What are the strongest film images?">Film work</button>
+              <button type="button" data-question="What metadata is preserved for the Kodak bellows work?">Kodak metadata</button>
             </div>
             <form class="chat-form" id="chat-form">
               <label for="journal-query">Journal query</label>
@@ -210,10 +213,10 @@
       <section class="section journal-evidence" id="journal-evidence" aria-labelledby="journal-evidence-title">
         <div class="section-heading">
           <p class="eyebrow">Journal evidence</p>
-          <h2 id="journal-evidence-title">Flickr albums paired with their trade journals.</h2>
+          <h2 id="journal-evidence-title">Source albums paired with the decisions they prove.</h2>
         </div>
         <div class="journal-list">
-          <article class="journal-panel pottery-panel">
+          <article class="journal-panel pottery-panel" id="journal-pottery">
             <header>
               <div>
                 <p class="eyebrow">04 / Materials &amp; Alchemy</p>
@@ -226,6 +229,7 @@
               </div>
               <a href="https://www.flickr.com/photos/boocher/albums/72177720334921846/">Pottery album</a>
             </header>
+            <dl class="evidence-ledger" data-evidence-ledger aria-label="Pottery evidence status"></dl>
             <div class="study-brief">
               <div>
                 <p class="eyebrow">Apprenticeship Study 01</p>
@@ -243,18 +247,19 @@
               </p>
             </div>
             <div class="album-strip">
-              <h4>Pottery / 63 public photographs</h4>
+              <h4>Pottery / <span data-album-count="flickr:72177720334921846">98</span> public photographs</h4>
+              <p class="album-caption" data-album-caption="flickr:72177720334921846">Representative evidence · 5 of 98 photographs shown.</p>
               <div class="mini-gallery">
-                <a href="https://www.flickr.com/photos/boocher/55432151400/in/album-72177720334921846/"><img src="assets/flickr/pottery/01.jpg" alt="Original Cinco Rojo vessels establishing the return to clay"></a>
-                <a href="https://www.flickr.com/photos/boocher/55440803533/in/album-72177720334921846/"><img src="assets/flickr/pottery/02.jpg" alt="Cinco Blanco bisque cup used for technical calibration"></a>
-                <a href="https://www.flickr.com/photos/boocher/55441355940/in/album-72177720334921846/"><img src="assets/flickr/pottery/03.jpg" alt="Balcones Dark cylindrical vessel with an altered rim"></a>
-                <a href="https://www.flickr.com/photos/boocher/55441078303/in/album-72177720334921846/"><img src="assets/flickr/pottery/04.jpg" alt="Rounded Balcones Dark jar with an incised lower field"></a>
-                <a href="https://www.flickr.com/photos/boocher/55441132254/in/album-72177720334921846/"><img src="assets/flickr/pottery/05.jpg" alt="Quiet yunomi-like Balcones Dark cup with a defined foot"></a>
+                <a href="https://www.flickr.com/photos/boocher/55432151400/in/album-72177720334921846/"><img loading="lazy" decoding="async" src="assets/flickr/pottery/01.jpg" alt="Original Cinco Rojo vessels establishing the return to clay"></a>
+                <a href="https://www.flickr.com/photos/boocher/55440803533/in/album-72177720334921846/"><img loading="lazy" decoding="async" src="assets/flickr/pottery/02.jpg" alt="Cinco Blanco bisque cup used for technical calibration"></a>
+                <a href="https://www.flickr.com/photos/boocher/55441355940/in/album-72177720334921846/"><img loading="lazy" decoding="async" src="assets/flickr/pottery/03.jpg" alt="Balcones Dark cylindrical vessel with an altered rim"></a>
+                <a href="https://www.flickr.com/photos/boocher/55441078303/in/album-72177720334921846/"><img loading="lazy" decoding="async" src="assets/flickr/pottery/04.jpg" alt="Rounded Balcones Dark jar with an incised lower field"></a>
+                <a href="https://www.flickr.com/photos/boocher/55441132254/in/album-72177720334921846/"><img loading="lazy" decoding="async" src="assets/flickr/pottery/05.jpg" alt="Quiet yunomi-like Balcones Dark cup with a defined foot"></a>
               </div>
             </div>
           </article>
 
-          <article class="journal-panel">
+          <article class="journal-panel" id="journal-vespa">
             <header>
               <div>
                 <p class="eyebrow">03 / The Machines</p>
@@ -266,19 +271,21 @@
               </div>
               <a href="https://www.flickr.com/photos/boocher/albums/72177720305371229/">1964 Vespa album</a>
             </header>
+            <dl class="evidence-ledger" data-evidence-ledger aria-label="Vespa evidence status"></dl>
             <div class="album-strip">
-              <h4>1964 Vespa</h4>
+              <h4>1964 Vespa / <span data-album-count="flickr:72177720305371229">425</span> public photographs</h4>
+              <p class="album-caption" data-album-caption="flickr:72177720305371229">Representative evidence · 5 of 425 photographs shown.</p>
               <div class="mini-gallery">
-                <a href="https://www.flickr.com/photos/boocher/52969685443/in/set-72177720305371229/"><img src="assets/flickr/vespa/01.jpg" alt="1964 Vespa restoration Flickr evidence 1"></a>
-                <a href="https://www.flickr.com/photos/boocher/52969685373/in/set-72177720305371229/"><img src="assets/flickr/vespa/02.jpg" alt="1964 Vespa restoration Flickr evidence 2"></a>
-                <a href="https://www.flickr.com/photos/boocher/52969603115/in/set-72177720305371229/"><img src="assets/flickr/vespa/03.jpg" alt="1964 Vespa restoration Flickr evidence 3"></a>
-                <a href="https://www.flickr.com/photos/boocher/52969603025/in/set-72177720305371229/"><img src="assets/flickr/vespa/04.jpg" alt="1964 Vespa restoration Flickr evidence 4"></a>
-                <a href="https://www.flickr.com/photos/boocher/52969602875/in/set-72177720305371229/"><img src="assets/flickr/vespa/05.jpg" alt="1964 Vespa restoration Flickr evidence 5"></a>
+                <a href="https://www.flickr.com/photos/boocher/52969685443/in/set-72177720305371229/"><img loading="lazy" decoding="async" src="assets/flickr/vespa/01.jpg" alt="1964 Vespa restoration Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/52969685373/in/set-72177720305371229/"><img loading="lazy" decoding="async" src="assets/flickr/vespa/02.jpg" alt="1964 Vespa restoration Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/52969603115/in/set-72177720305371229/"><img loading="lazy" decoding="async" src="assets/flickr/vespa/03.jpg" alt="1964 Vespa restoration Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/52969603025/in/set-72177720305371229/"><img loading="lazy" decoding="async" src="assets/flickr/vespa/04.jpg" alt="1964 Vespa restoration Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/52969602875/in/set-72177720305371229/"><img loading="lazy" decoding="async" src="assets/flickr/vespa/05.jpg" alt="1964 Vespa restoration Flickr evidence 5"></a>
               </div>
             </div>
           </article>
 
-          <article class="journal-panel">
+          <article class="journal-panel" id="journal-master-bath">
             <header>
               <div>
                 <p class="eyebrow">01 / The Residence</p>
@@ -290,19 +297,21 @@
               </div>
               <a href="https://www.flickr.com/photos/boocher/albums/72177720306187803/">Master Bath album</a>
             </header>
+            <dl class="evidence-ledger" data-evidence-ledger aria-label="Master bath evidence status"></dl>
             <div class="album-strip">
-              <h4>Home Reno - Master Bath</h4>
+              <h4>Home Reno - Master Bath / <span data-album-count="flickr:72177720306187803">199</span> public photographs</h4>
+              <p class="album-caption" data-album-caption="flickr:72177720306187803">Representative evidence · 5 of 199 photographs shown.</p>
               <div class="mini-gallery">
-                <a href="https://www.flickr.com/photos/boocher/52758277971/in/set-72177720306187803/"><img src="assets/flickr/master-bath/01.jpg" alt="Master bath restoration Flickr evidence 1"></a>
-                <a href="https://www.flickr.com/photos/boocher/52757736592/in/set-72177720306187803/"><img src="assets/flickr/master-bath/02.jpg" alt="Master bath restoration Flickr evidence 2"></a>
-                <a href="https://www.flickr.com/photos/boocher/52757736587/in/set-72177720306187803/"><img src="assets/flickr/master-bath/03.jpg" alt="Master bath restoration Flickr evidence 3"></a>
-                <a href="https://www.flickr.com/photos/boocher/52758761333/in/set-72177720306187803/"><img src="assets/flickr/master-bath/04.jpg" alt="Master bath restoration Flickr evidence 4"></a>
-                <a href="https://www.flickr.com/photos/boocher/52758525374/in/set-72177720306187803/"><img src="assets/flickr/master-bath/05.jpg" alt="Master bath restoration Flickr evidence 5"></a>
+                <a href="https://www.flickr.com/photos/boocher/52758277971/in/set-72177720306187803/"><img loading="lazy" decoding="async" src="assets/flickr/master-bath/01.jpg" alt="Master bath restoration Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/52757736592/in/set-72177720306187803/"><img loading="lazy" decoding="async" src="assets/flickr/master-bath/02.jpg" alt="Master bath restoration Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/52757736587/in/set-72177720306187803/"><img loading="lazy" decoding="async" src="assets/flickr/master-bath/03.jpg" alt="Master bath restoration Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/52758761333/in/set-72177720306187803/"><img loading="lazy" decoding="async" src="assets/flickr/master-bath/04.jpg" alt="Master bath restoration Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/52758525374/in/set-72177720306187803/"><img loading="lazy" decoding="async" src="assets/flickr/master-bath/05.jpg" alt="Master bath restoration Flickr evidence 5"></a>
               </div>
             </div>
           </article>
 
-          <article class="journal-panel">
+          <article class="journal-panel" id="journal-guest-bath">
             <header>
               <div>
                 <p class="eyebrow">01 / The Residence</p>
@@ -314,53 +323,79 @@
               </div>
               <a href="https://www.flickr.com/photos/boocher/albums/72177720314827829/">Guest Bath album</a>
             </header>
+            <dl class="evidence-ledger" data-evidence-ledger aria-label="Guest bath evidence status"></dl>
             <div class="album-strip">
-              <h4>Home Reno - Guest Bath</h4>
+              <h4>Home Reno - Guest Bath / <span data-album-count="flickr:72177720314827829">286</span> public photographs</h4>
+              <p class="album-caption" data-album-caption="flickr:72177720314827829">Representative evidence · 5 of 286 photographs shown.</p>
               <div class="mini-gallery">
-                <a href="https://www.flickr.com/photos/boocher/53680739170/in/set-72177720314827829/"><img src="assets/flickr/guest-bath/01.jpg" alt="Guest bath restoration Flickr evidence 1"></a>
-                <a href="https://www.flickr.com/photos/boocher/53680503668/in/set-72177720314827829/"><img src="assets/flickr/guest-bath/02.jpg" alt="Guest bath restoration Flickr evidence 2"></a>
-                <a href="https://www.flickr.com/photos/boocher/53679416987/in/set-72177720314827829/"><img src="assets/flickr/guest-bath/03.jpg" alt="Guest bath restoration Flickr evidence 3"></a>
-                <a href="https://www.flickr.com/photos/boocher/53680739260/in/set-72177720314827829/"><img src="assets/flickr/guest-bath/04.jpg" alt="Guest bath restoration Flickr evidence 4"></a>
-                <a href="https://www.flickr.com/photos/boocher/53680739235/in/set-72177720314827829/"><img src="assets/flickr/guest-bath/05.jpg" alt="Guest bath restoration Flickr evidence 5"></a>
+                <a href="https://www.flickr.com/photos/boocher/53680739170/in/set-72177720314827829/"><img loading="lazy" decoding="async" src="assets/flickr/guest-bath/01.jpg" alt="Guest bath restoration Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/53680503668/in/set-72177720314827829/"><img loading="lazy" decoding="async" src="assets/flickr/guest-bath/02.jpg" alt="Guest bath restoration Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/53679416987/in/set-72177720314827829/"><img loading="lazy" decoding="async" src="assets/flickr/guest-bath/03.jpg" alt="Guest bath restoration Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/53680739260/in/set-72177720314827829/"><img loading="lazy" decoding="async" src="assets/flickr/guest-bath/04.jpg" alt="Guest bath restoration Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/53680739235/in/set-72177720314827829/"><img loading="lazy" decoding="async" src="assets/flickr/guest-bath/05.jpg" alt="Guest bath restoration Flickr evidence 5"></a>
               </div>
             </div>
           </article>
 
-          <article class="journal-panel">
+          <article class="journal-panel" id="journal-office">
             <header>
               <div>
                 <p class="eyebrow">01 / The Residence</p>
-                <h3>Office Restoration and Studio Conversion</h3>
+                <h3>Office Restoration</h3>
                 <p>
-                  Two related albums track the room as both office and studio, with floor refinishing,
-                  sanding progression, and use-change evidence.
+                  Two related albums track the former shared office and yoga studio through floor
+                  refinishing, sanding progression, door reclamation, and later dedicated-office use.
                 </p>
               </div>
               <a href="https://www.flickr.com/photos/boocher/albums/72177720316928566/">Office album</a>
             </header>
+            <dl class="evidence-ledger" data-evidence-ledger aria-label="Office evidence status"></dl>
             <div class="album-strip">
-              <h4>Home Reno - Office</h4>
+              <h4>Home Reno - Office / <span data-album-count="flickr:72177720316928566">276</span> public photographs</h4>
+              <p class="album-caption" data-album-caption="flickr:72177720316928566">Representative evidence · 5 of 276 photographs shown.</p>
               <div class="mini-gallery">
-                <a href="https://www.flickr.com/photos/boocher/53921322250/in/set-72177720316928566/"><img src="assets/flickr/office/01.jpg" alt="Office restoration Flickr evidence 1"></a>
-                <a href="https://www.flickr.com/photos/boocher/53921322245/in/set-72177720316928566/"><img src="assets/flickr/office/02.jpg" alt="Office restoration Flickr evidence 2"></a>
-                <a href="https://www.flickr.com/photos/boocher/53921322215/in/set-72177720316928566/"><img src="assets/flickr/office/03.jpg" alt="Office restoration Flickr evidence 3"></a>
-                <a href="https://www.flickr.com/photos/boocher/53921225999/in/set-72177720316928566/"><img src="assets/flickr/office/04.jpg" alt="Office restoration Flickr evidence 4"></a>
-                <a href="https://www.flickr.com/photos/boocher/53919981267/in/set-72177720316928566/"><img src="assets/flickr/office/05.jpg" alt="Office restoration Flickr evidence 5"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921322250/in/set-72177720316928566/"><img loading="lazy" decoding="async" src="assets/flickr/office/01.jpg" alt="Office restoration Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921322245/in/set-72177720316928566/"><img loading="lazy" decoding="async" src="assets/flickr/office/02.jpg" alt="Office restoration Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921322215/in/set-72177720316928566/"><img loading="lazy" decoding="async" src="assets/flickr/office/03.jpg" alt="Office restoration Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921225999/in/set-72177720316928566/"><img loading="lazy" decoding="async" src="assets/flickr/office/04.jpg" alt="Office restoration Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/53919981267/in/set-72177720316928566/"><img loading="lazy" decoding="async" src="assets/flickr/office/05.jpg" alt="Office restoration Flickr evidence 5"></a>
               </div>
             </div>
             <div class="album-strip">
-              <h4>Home Reno - Studio | Office</h4>
+              <h4>Home Reno - Studio | Office / <span data-album-count="flickr:72177720306207693">107</span> public photographs</h4>
+              <p class="album-caption" data-album-caption="flickr:72177720306207693">Representative evidence · 5 of 107 photographs shown.</p>
               <div class="mini-gallery">
-                <a href="https://www.flickr.com/photos/boocher/52705240435/in/set-72177720306207693/"><img src="assets/flickr/studio-office/01.jpg" alt="Studio office conversion Flickr evidence 1"></a>
-                <a href="https://www.flickr.com/photos/boocher/52705240380/in/set-72177720306207693/"><img src="assets/flickr/studio-office/02.jpg" alt="Studio office conversion Flickr evidence 2"></a>
-                <a href="https://www.flickr.com/photos/boocher/52705240355/in/set-72177720306207693/"><img src="assets/flickr/studio-office/03.jpg" alt="Studio office conversion Flickr evidence 3"></a>
-                <a href="https://www.flickr.com/photos/boocher/52704298727/in/set-72177720306207693/"><img src="assets/flickr/studio-office/04.jpg" alt="Studio office conversion Flickr evidence 4"></a>
-                <a href="https://www.flickr.com/photos/boocher/52705240320/in/set-72177720306207693/"><img src="assets/flickr/studio-office/05.jpg" alt="Studio office conversion Flickr evidence 5"></a>
+                <a href="https://www.flickr.com/photos/boocher/52705240435/in/set-72177720306207693/"><img loading="lazy" decoding="async" src="assets/flickr/studio-office/01.jpg" alt="Studio office conversion Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/52705240380/in/set-72177720306207693/"><img loading="lazy" decoding="async" src="assets/flickr/studio-office/02.jpg" alt="Studio office conversion Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/52705240355/in/set-72177720306207693/"><img loading="lazy" decoding="async" src="assets/flickr/studio-office/03.jpg" alt="Studio office conversion Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/52704298727/in/set-72177720306207693/"><img loading="lazy" decoding="async" src="assets/flickr/studio-office/04.jpg" alt="Studio office conversion Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/52705240320/in/set-72177720306207693/"><img loading="lazy" decoding="async" src="assets/flickr/studio-office/05.jpg" alt="Studio office conversion Flickr evidence 5"></a>
               </div>
             </div>
           </article>
 
-          <article class="journal-panel">
+          <article class="journal-panel source-only-panel" id="journal-ballet-studio">
+            <header>
+              <div>
+                <p class="eyebrow">01 / The Residence</p>
+                <h3>Ballet Barre Studio Restoration</h3>
+                <p>
+                  A living room rebuilt as a working movement space through reclaimed ceiling-plank
+                  repair, hand-refinished original flooring, lime-and-slurry walls, exposed shiplap,
+                  corrected fan wiring, crown molding, and final room trim-out.
+                </p>
+              </div>
+              <a href="https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9">Studio album</a>
+            </header>
+            <dl class="evidence-ledger" data-evidence-ledger aria-label="Ballet studio evidence status"></dl>
+            <div class="source-boundary">
+              <p class="eyebrow">Evidence boundary</p>
+              <strong><span data-album-count="google_photos:af1qippool3ge7t">296</span> photographs reviewed</strong>
+              <p data-evidence-boundary>Durable representative-image identifiers remain pending.</p>
+            </div>
+          </article>
+
+          <article class="journal-panel" id="journal-master-bedroom">
             <header>
               <div>
                 <p class="eyebrow">01 / The Residence</p>
@@ -372,29 +407,32 @@
               </div>
               <a href="https://www.flickr.com/photos/boocher/albums/72177720306914767/">Master Bedroom album</a>
             </header>
+            <dl class="evidence-ledger" data-evidence-ledger aria-label="Master bedroom evidence status"></dl>
             <div class="album-strip">
-              <h4>Home Reno - Master Bedroom</h4>
+              <h4>Home Reno - Master Bedroom / <span data-album-count="flickr:72177720306914767">132</span> public photographs</h4>
+              <p class="album-caption" data-album-caption="flickr:72177720306914767">Representative evidence · 5 of 132 photographs shown.</p>
               <div class="mini-gallery">
-                <a href="https://www.flickr.com/photos/boocher/55339173284/in/set-72177720306914767/"><img src="assets/flickr/master-bedroom/01.jpg" alt="Master bedroom restoration Flickr evidence 1"></a>
-                <a href="https://www.flickr.com/photos/boocher/55339114293/in/set-72177720306914767/"><img src="assets/flickr/master-bedroom/02.jpg" alt="Master bedroom restoration Flickr evidence 2"></a>
-                <a href="https://www.flickr.com/photos/boocher/55338960476/in/set-72177720306914767/"><img src="assets/flickr/master-bedroom/03.jpg" alt="Master bedroom restoration Flickr evidence 3"></a>
-                <a href="https://www.flickr.com/photos/boocher/55338034532/in/set-72177720306914767/"><img src="assets/flickr/master-bedroom/04.jpg" alt="Master bedroom restoration Flickr evidence 4"></a>
-                <a href="https://www.flickr.com/photos/boocher/55339173264/in/set-72177720306914767/"><img src="assets/flickr/master-bedroom/05.jpg" alt="Master bedroom restoration Flickr evidence 5"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339173284/in/set-72177720306914767/"><img loading="lazy" decoding="async" src="assets/flickr/master-bedroom/01.jpg" alt="Master bedroom restoration Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339114293/in/set-72177720306914767/"><img loading="lazy" decoding="async" src="assets/flickr/master-bedroom/02.jpg" alt="Master bedroom restoration Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/55338960476/in/set-72177720306914767/"><img loading="lazy" decoding="async" src="assets/flickr/master-bedroom/03.jpg" alt="Master bedroom restoration Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/55338034532/in/set-72177720306914767/"><img loading="lazy" decoding="async" src="assets/flickr/master-bedroom/04.jpg" alt="Master bedroom restoration Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339173264/in/set-72177720306914767/"><img loading="lazy" decoding="async" src="assets/flickr/master-bedroom/05.jpg" alt="Master bedroom restoration Flickr evidence 5"></a>
               </div>
             </div>
             <div class="album-strip">
-              <h4>Home Reno - Master Bedroom - Take 2</h4>
+              <h4>Home Reno - Master Bedroom - Take 2 / <span data-album-count="flickr:72177720319515928">190</span> public photographs</h4>
+              <p class="album-caption" data-album-caption="flickr:72177720319515928">Representative evidence · 5 of 190 photographs shown.</p>
               <div class="mini-gallery">
-                <a href="https://www.flickr.com/photos/boocher/53921261865/in/set-72177720319515928/"><img src="assets/flickr/master-bedroom-take-2/01.jpg" alt="Master bedroom take two Flickr evidence 1"></a>
-                <a href="https://www.flickr.com/photos/boocher/53921261485/in/set-72177720319515928/"><img src="assets/flickr/master-bedroom-take-2/02.jpg" alt="Master bedroom take two Flickr evidence 2"></a>
-                <a href="https://www.flickr.com/photos/boocher/53921260980/in/set-72177720319515928/"><img src="assets/flickr/master-bedroom-take-2/03.jpg" alt="Master bedroom take two Flickr evidence 3"></a>
-                <a href="https://www.flickr.com/photos/boocher/53921260955/in/set-72177720319515928/"><img src="assets/flickr/master-bedroom-take-2/04.jpg" alt="Master bedroom take two Flickr evidence 4"></a>
-                <a href="https://www.flickr.com/photos/boocher/53921063683/in/set-72177720319515928/"><img src="assets/flickr/master-bedroom-take-2/05.jpg" alt="Master bedroom take two Flickr evidence 5"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921261865/in/set-72177720319515928/"><img loading="lazy" decoding="async" src="assets/flickr/master-bedroom-take-2/01.jpg" alt="Master bedroom take two Flickr evidence 1"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921261485/in/set-72177720319515928/"><img loading="lazy" decoding="async" src="assets/flickr/master-bedroom-take-2/02.jpg" alt="Master bedroom take two Flickr evidence 2"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921260980/in/set-72177720319515928/"><img loading="lazy" decoding="async" src="assets/flickr/master-bedroom-take-2/03.jpg" alt="Master bedroom take two Flickr evidence 3"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921260955/in/set-72177720319515928/"><img loading="lazy" decoding="async" src="assets/flickr/master-bedroom-take-2/04.jpg" alt="Master bedroom take two Flickr evidence 4"></a>
+                <a href="https://www.flickr.com/photos/boocher/53921063683/in/set-72177720319515928/"><img loading="lazy" decoding="async" src="assets/flickr/master-bedroom-take-2/05.jpg" alt="Master bedroom take two Flickr evidence 5"></a>
               </div>
             </div>
           </article>
 
-          <article class="journal-panel">
+          <article class="journal-panel" id="journal-entry">
             <header>
               <div>
                 <p class="eyebrow">01 / The Residence</p>
@@ -406,19 +444,21 @@
               </div>
               <a href="https://www.flickr.com/photos/boocher/albums/72177720334259189/">Entry album</a>
             </header>
+            <dl class="evidence-ledger" data-evidence-ledger aria-label="Entry evidence status"></dl>
             <div class="album-strip">
-              <h4>Home Reno - Entry</h4>
+              <h4>Home Reno - Entry / <span data-album-count="flickr:72177720334259189">94</span> public photographs</h4>
+              <p class="album-caption" data-album-caption="flickr:72177720334259189">Representative evidence · 5 of 94 photographs shown.</p>
               <div class="mini-gallery">
-                <a href="https://www.flickr.com/photos/boocher/55339048056/in/album-72177720334259189/"><img src="assets/flickr/entry/01.jpg" alt="Entry protection and front door work"></a>
-                <a href="https://www.flickr.com/photos/boocher/55339463385/in/album-72177720334259189/"><img src="assets/flickr/entry/02.jpg" alt="Entry stair rail protected for finish work"></a>
-                <a href="https://www.flickr.com/photos/boocher/55339462515/in/album-72177720334259189/"><img src="assets/flickr/entry/03.jpg" alt="Entry wall and trim finish progress"></a>
-                <a href="https://www.flickr.com/photos/boocher/55339461975/in/album-72177720334259189/"><img src="assets/flickr/entry/04.jpg" alt="Entry finish phase around front door and stair"></a>
-                <a href="https://www.flickr.com/photos/boocher/55338112557/in/album-72177720334259189/"><img src="assets/flickr/entry/05.jpg" alt="Renewed entry floor and stair transition"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339048056/in/album-72177720334259189/"><img loading="lazy" decoding="async" src="assets/flickr/entry/01.jpg" alt="Entry protection and front door work"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339463385/in/album-72177720334259189/"><img loading="lazy" decoding="async" src="assets/flickr/entry/02.jpg" alt="Entry stair rail protected for finish work"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339462515/in/album-72177720334259189/"><img loading="lazy" decoding="async" src="assets/flickr/entry/03.jpg" alt="Entry wall and trim finish progress"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339461975/in/album-72177720334259189/"><img loading="lazy" decoding="async" src="assets/flickr/entry/04.jpg" alt="Entry finish phase around front door and stair"></a>
+                <a href="https://www.flickr.com/photos/boocher/55338112557/in/album-72177720334259189/"><img loading="lazy" decoding="async" src="assets/flickr/entry/05.jpg" alt="Renewed entry floor and stair transition"></a>
               </div>
             </div>
           </article>
 
-          <article class="journal-panel">
+          <article class="journal-panel" id="journal-landing">
             <header>
               <div>
                 <p class="eyebrow">01 / The Residence</p>
@@ -430,19 +470,21 @@
               </div>
               <a href="https://www.flickr.com/photos/boocher/albums/72177720334233397/">Landing album</a>
             </header>
+            <dl class="evidence-ledger" data-evidence-ledger aria-label="Landing evidence status"></dl>
             <div class="album-strip">
-              <h4>Home Reno - Landing / Landing Floors</h4>
+              <h4>Home Reno - Landing / <span data-album-count="flickr:72177720334233397">13</span> + Landing Floors / <span data-album-count="flickr:72177720334239256">13</span> public photographs</h4>
+              <p class="album-caption"><span data-album-caption="flickr:72177720334233397">Representative evidence · 3 of 13 photographs shown.</span> <span data-album-caption="flickr:72177720334239256">Representative evidence · 2 of 13 photographs shown.</span></p>
               <div class="mini-gallery">
-                <a href="https://www.flickr.com/photos/boocher/55339041496/in/album-72177720334233397/"><img src="assets/flickr/landing/01.jpg" alt="Landing before later surface work"></a>
-                <a href="https://www.flickr.com/photos/boocher/55339041146/in/album-72177720334233397/"><img src="assets/flickr/landing/02.jpg" alt="Landing wall and ceiling surface preparation"></a>
-                <a href="https://www.flickr.com/photos/boocher/55338114937/in/album-72177720334233397/"><img src="assets/flickr/landing/03.jpg" alt="Landing rail and transom protected for finish work"></a>
-                <a href="https://www.flickr.com/photos/boocher/55339044016/in/album-72177720334239256/"><img src="assets/flickr/landing/04.jpg" alt="Landing floor finish stage by the stair rail"></a>
-                <a href="https://www.flickr.com/photos/boocher/55339196298/in/album-72177720334239256/"><img src="assets/flickr/landing/05.jpg" alt="Renewed landing floor at the front door transition"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339041496/in/album-72177720334233397/"><img loading="lazy" decoding="async" src="assets/flickr/landing/01.jpg" alt="Landing before later surface work"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339041146/in/album-72177720334233397/"><img loading="lazy" decoding="async" src="assets/flickr/landing/02.jpg" alt="Landing wall and ceiling surface preparation"></a>
+                <a href="https://www.flickr.com/photos/boocher/55338114937/in/album-72177720334233397/"><img loading="lazy" decoding="async" src="assets/flickr/landing/03.jpg" alt="Landing rail and transom protected for finish work"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339044016/in/album-72177720334239256/"><img loading="lazy" decoding="async" src="assets/flickr/landing/04.jpg" alt="Landing floor finish stage by the stair rail"></a>
+                <a href="https://www.flickr.com/photos/boocher/55339196298/in/album-72177720334239256/"><img loading="lazy" decoding="async" src="assets/flickr/landing/05.jpg" alt="Renewed landing floor at the front door transition"></a>
               </div>
             </div>
           </article>
 
-          <article class="journal-panel">
+          <article class="journal-panel" id="journal-shed">
             <header>
               <div>
                 <p class="eyebrow">02 / The Forge &amp; Shop</p>
@@ -454,14 +496,16 @@
               </div>
               <a href="https://www.flickr.com/photos/boocher/albums/72177720304050679/">Shed album</a>
             </header>
+            <dl class="evidence-ledger" data-evidence-ledger aria-label="Shed evidence status"></dl>
             <div class="album-strip">
-              <h4>Uncle RedBeard's Shed</h4>
+              <h4>Uncle RedBeard's Shed / <span data-album-count="flickr:72177720304050679">512</span> public photographs</h4>
+              <p class="album-caption" data-album-caption="flickr:72177720304050679">Representative evidence · 5 of 512 photographs shown.</p>
               <div class="mini-gallery">
-                <a href="https://www.flickr.com/photos/boocher/52529949788/in/album-72177720304050679/"><img src="assets/flickr/shed/01.jpg" alt="Overview of Uncle RedBeard's Shed workshop"></a>
-                <a href="https://www.flickr.com/photos/boocher/52529880635/in/album-72177720304050679/"><img src="assets/flickr/shed/02.jpg" alt="Vespa engine teardown on shed workbench"></a>
-                <a href="https://www.flickr.com/photos/boocher/52714801417/in/album-72177720304050679/"><img src="assets/flickr/shed/03.jpg" alt="Wall-hung hand tools and workbench organization"></a>
-                <a href="https://www.flickr.com/photos/boocher/52714801432/in/album-72177720304050679/"><img src="assets/flickr/shed/04.jpg" alt="Shed parts storage and flexible work area"></a>
-                <a href="https://www.flickr.com/photos/boocher/52617671049/in/album-72177720304050679/"><img src="assets/flickr/shed/05.jpg" alt="Clamped fixture and staged Vespa work in the shed"></a>
+                <a href="https://www.flickr.com/photos/boocher/52529949788/in/album-72177720304050679/"><img loading="lazy" decoding="async" src="assets/flickr/shed/01.jpg" alt="Overview of Uncle RedBeard's Shed workshop"></a>
+                <a href="https://www.flickr.com/photos/boocher/52529880635/in/album-72177720304050679/"><img loading="lazy" decoding="async" src="assets/flickr/shed/02.jpg" alt="Vespa engine teardown on shed workbench"></a>
+                <a href="https://www.flickr.com/photos/boocher/52714801417/in/album-72177720304050679/"><img loading="lazy" decoding="async" src="assets/flickr/shed/03.jpg" alt="Wall-hung hand tools and workbench organization"></a>
+                <a href="https://www.flickr.com/photos/boocher/52714801432/in/album-72177720304050679/"><img loading="lazy" decoding="async" src="assets/flickr/shed/04.jpg" alt="Shed parts storage and flexible work area"></a>
+                <a href="https://www.flickr.com/photos/boocher/52617671049/in/album-72177720304050679/"><img loading="lazy" decoding="async" src="assets/flickr/shed/05.jpg" alt="Clamped fixture and staged Vespa work in the shed"></a>
               </div>
             </div>
           </article>
@@ -479,14 +523,16 @@
               </div>
               <a href="https://www.flickr.com/photos/boocher/albums/72177720335033061/">Agfa Isolette album</a>
             </header>
+            <dl class="evidence-ledger" data-evidence-ledger aria-label="Agfa Isolette evidence status"></dl>
             <div class="album-strip">
-              <h4>Curated six-image sequence / five shown</h4>
+              <h4>Agfa Isolette / <span data-album-count="flickr:72177720335033061">12</span> public photographs</h4>
+              <p class="album-caption" data-album-caption="flickr:72177720335033061">Representative evidence · 5 of 12 photographs shown.</p>
               <div class="mini-gallery">
-                <a href="https://www.flickr.com/photos/boocher/55449385255/in/album-72177720335033061/"><img src="assets/flickr/agfa-isolette/01.jpg" alt="North Jetty Bait Camp photographed with an Agfa Isolette"></a>
-                <a href="https://www.flickr.com/photos/boocher/55448985656/in/album-72177720335033061/"><img src="assets/flickr/agfa-isolette/02.jpg" alt="Galveston East Bay photographed with an Agfa Isolette"></a>
-                <a href="https://www.flickr.com/photos/boocher/55449387130/in/album-72177720335033061/"><img src="assets/flickr/agfa-isolette/03.jpg" alt="Port Bolivar jetty photographed with an Agfa Isolette"></a>
-                <a href="https://www.flickr.com/photos/boocher/55448987091/in/album-72177720335033061/"><img src="assets/flickr/agfa-isolette/04.jpg" alt="Port Bolivar rocks and ships photographed with an Agfa Isolette"></a>
-                <a href="https://www.flickr.com/photos/boocher/55449109638/in/album-72177720335033061/"><img src="assets/flickr/agfa-isolette/05.jpg" alt="Intentional double exposure at Port Bolivar"></a>
+                <a href="https://www.flickr.com/photos/boocher/55449385255/in/album-72177720335033061/"><img loading="lazy" decoding="async" src="assets/flickr/agfa-isolette/01.jpg" alt="North Jetty Bait Camp photographed with an Agfa Isolette"></a>
+                <a href="https://www.flickr.com/photos/boocher/55448985656/in/album-72177720335033061/"><img loading="lazy" decoding="async" src="assets/flickr/agfa-isolette/02.jpg" alt="Galveston East Bay photographed with an Agfa Isolette"></a>
+                <a href="https://www.flickr.com/photos/boocher/55449387130/in/album-72177720335033061/"><img loading="lazy" decoding="async" src="assets/flickr/agfa-isolette/03.jpg" alt="Port Bolivar jetty photographed with an Agfa Isolette"></a>
+                <a href="https://www.flickr.com/photos/boocher/55448987091/in/album-72177720335033061/"><img loading="lazy" decoding="async" src="assets/flickr/agfa-isolette/04.jpg" alt="Port Bolivar rocks and ships photographed with an Agfa Isolette"></a>
+                <a href="https://www.flickr.com/photos/boocher/55449109638/in/album-72177720335033061/"><img loading="lazy" decoding="async" src="assets/flickr/agfa-isolette/05.jpg" alt="Intentional double exposure at Port Bolivar"></a>
               </div>
             </div>
           </article>
@@ -500,35 +546,35 @@
         </div>
         <div class="photo-grid">
           <figure>
-            <img src="../05_the_lens/assets/lomography/best-of-film-work/dance-silhouette.jpg" alt="Dancer silhouette in black and white film">
+            <img loading="lazy" decoding="async" src="../05_the_lens/assets/lomography/best-of-film-work/dance-silhouette.jpg" alt="Dancer silhouette in black and white film">
             <figcaption>
               <strong>Dance Silhouette</strong>
               <span>120 film, Isolette atmosphere, fine-art shape.</span>
             </figcaption>
           </figure>
-          <figure>
-            <img src="../05_the_lens/assets/lomography/best-of-film-work/kodak-bellows-state-theatre.jpg" alt="State Theatre sign on aged 616 film">
+          <figure id="film-kodak">
+            <img loading="lazy" decoding="async" src="../05_the_lens/assets/lomography/best-of-film-work/kodak-bellows-state-theatre.jpg" alt="State Theatre sign on aged 616 film">
             <figcaption>
               <strong>Kodak Bellows State Theatre</strong>
-              <span>616 film artifact quality and architectural memory.</span>
+              <span>616 film artifact quality and architectural memory. Related Flickr source: <span data-album-count="flickr:72157627958704171">2</span> photographs with exact recorded timestamps; kept separate from this Lomography selection.</span>
             </figcaption>
           </figure>
           <figure>
-            <img src="../05_the_lens/assets/lomography/best-of-film-work/street-style-red-jacket.jpg" alt="Street portrait of a person in a red jacket">
+            <img loading="lazy" decoding="async" src="../05_the_lens/assets/lomography/best-of-film-work/street-style-red-jacket.jpg" alt="Street portrait of a person in a red jacket">
             <figcaption>
               <strong>Street Style Red Jacket</strong>
               <span>Direct portrait, simple color story, Diana F+ edge.</span>
             </figcaption>
           </figure>
           <figure>
-            <img src="../05_the_lens/assets/lomography/best-of-film-work/caveau-drummer.jpg" alt="Jazz drummer in a dark club">
+            <img loading="lazy" decoding="async" src="../05_the_lens/assets/lomography/best-of-film-work/caveau-drummer.jpg" alt="Jazz drummer in a dark club">
             <figcaption>
               <strong>Caveau Drummer</strong>
               <span>Close documentary frame with warmth and motion.</span>
             </figcaption>
           </figure>
           <figure>
-            <img src="../05_the_lens/assets/lomography/best-of-film-work/paris-en-rouge-violinist.jpg" alt="Redscale film photo of a violinist">
+            <img loading="lazy" decoding="async" src="../05_the_lens/assets/lomography/best-of-film-work/paris-en-rouge-violinist.jpg" alt="Redscale film photo of a violinist">
             <figcaption>
               <strong>Paris en Rouge Violinist</strong>
               <span>Redscale mood with a clear human anchor.</span>
@@ -539,8 +585,8 @@
 
       <section class="section source-model" aria-labelledby="source-title">
         <div class="section-heading">
-          <p class="eyebrow">How this would scale</p>
-          <h2 id="source-title">GitHub remains the archive. The site becomes the public surface.</h2>
+          <p class="eyebrow">How the archive scales</p>
+          <h2 id="source-title">GitHub remains the archive. The site is its public surface.</h2>
         </div>
         <div class="model-grid">
           <div>
@@ -552,8 +598,8 @@
             <p>Selected images render locally, with original source links preserved.</p>
           </div>
           <div>
-            <h3>Generated pages</h3>
-            <p>A static site can turn journal sections into project pages, indexes, and portfolio views.</p>
+            <h3>Evidence manifest</h3>
+            <p>One generated local index keeps counts, search results, and evidence status tied to tracked sources.</p>
           </div>
         </div>
       </section>
@@ -562,6 +608,8 @@
       <p><strong>TradeJournals</strong> / A living craft archive from Smithville, Texas.</p>
       <a href="#top">Return to top</a>
     </footer>
+    <script src="evidence-manifest.js"></script>
+    <script src="journal-search.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

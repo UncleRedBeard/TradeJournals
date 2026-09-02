@@ -237,3 +237,28 @@ explicit `id`, `photo_id`, or media-item ID, the first record keeps its stable
 position and metadata while the generated evidence line records both source
 provenance labels. Changed existing Google Photos journals are likewise
 previewed and rejected rather than overwritten, even with `--force`.
+
+## Static Website Evidence Manifest
+
+The website search index and evidence labels are built offline from the curated
+`site_example/evidence-source.json` catalog plus the tracked Flickr and Google
+Photos inventories. The builder validates journal paths, representative-image
+paths, exact page anchors, album identities, and the human-readable fallback
+counts in `site_example/index.html` before updating the browser manifest.
+
+```sh
+npm run build:site-evidence
+```
+
+The generated `site_example/evidence-manifest.js` is checked in so the static
+page needs no application server or external data API. CI or local review can
+verify that it is current without writing files:
+
+```sh
+npm run check:site-evidence
+npm run test:site
+```
+
+The site builder never reads credentials or calls Flickr or Google Photos. Run
+the existing, separately approved inventory workflows before rebuilding when
+external album counts change.

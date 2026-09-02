@@ -2,7 +2,10 @@
   "name": "tradejournals",
   "private": true,
   "scripts": {
-    "lint:md": "markdownlint-cli2 \"**/*.md\""
+    "build:site-evidence": "python3 scripts/build_site_evidence.py",
+    "check:site-evidence": "python3 scripts/build_site_evidence.py --check",
+    "lint:md": "markdownlint-cli2 \"**/*.md\"",
+    "test:site": "python3 -m unittest tests.test_site_evidence && node --test tests/site_search.test.js"
   },
   "devDependencies": {
     "markdownlint-cli2": "^0.22.0"
