@@ -204,6 +204,37 @@ masking, install the electrical receptacles and switches, add faceplates, and
 complete the remaining fixtures and finish details needed to place the studio
 into service.
 
+### 2026-08-19 To 2026-08-30 - Lime Finish Completion And Room Trim-Out
+
+Source: Google Photos album [Home Reno - Studio](https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9), Google Photos embedded album metadata, and project notes.
+
+After the first full Lime Wall Paint and Lime Slurry pass, the room moved from
+finish application into reveal and trim-out. The protection was removed from
+the original shiplap feature wall, bringing the preserved wood back into view
+against the completed white mineral surfaces. Later photographs show the
+lime-finished walls and painted plank ceiling after drying, while floor
+protection and window masking remained in place during the transition.
+
+Electrical work then moved into device and fixture installation. The archive
+records switches and receptacles being connected and tested, the ceiling-fan
+bracket and wiring during assembly, and the installed black ceiling fan
+operating with its integral light. These photographs document the work sequence
+but do not substitute for electrical verification or final sign-off.
+
+By August 26, the protective floor covering had been removed, revealing the
+refinished original floor beneath the completed ceiling, white mineral walls,
+exposed shiplap, crown molding, and installed fan. The restored black door was
+also present at the shiplap doorway. Together, these views show the room's
+preservation decisions finally reading as one composition rather than separate
+repair episodes.
+
+The room had not yet reached final studio sign-off. Window masking, isolated
+open electrical positions, and later worktables and tools remained visible,
+and the ballet barre had not yet appeared in the archive. Final evidence should
+document completed electrical faceplates, the restored door installed and
+operating, window work closed out, the ballet barre and any related hardware
+installed, and a clear room-ready studio view.
+
 ## Visual Evidence
 
 Use this section to map the Google Photos album into evidence categories before
@@ -217,8 +248,8 @@ selected.
 - Album URL: [Home Reno - Studio](https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9)
 - Canonical album URL: [Home Reno - Studio](https://photos.google.com/share/AF1QipPool3gE7T-_DVHyOZm3jEVm5TSnoL4P5kDdXAhzk-ja22Gbw3rsYOi8cn8EwffLA?key=S1hjd2FTdE9uTjMzX2NHNHpvYUZiQjA3YmpONTFR)
 - Album status: shared Google Photos album; live review confirms title
-  `Home Reno - Studio` and 225 photos.
-- Album date span: 2026-03-16 to 2026-08-18, from embedded Google Photos album
+  `Home Reno - Studio` and 296 photos.
+- Album date span: 2026-03-16 to 2026-08-30, from embedded Google Photos album
   metadata and live album review.
 - Album role: primary visual archive for the living-room-to-ballet-barre-studio
   transformation, covering reclaimed ceiling plank replacement, floor
@@ -236,12 +267,18 @@ selected.
 - Lime-painted ceiling: 2026-08-18 six-photo sequence documents the completed
   ceiling coat during final touch-up work.
 - Vertical Lime Wall Paint and Lime Slurry wall finish: 2026-08-18 six-photo
-  sequence documents the first full application.
+  sequence documents the first full application; 2026-08-19 to 2026-08-22
+  sequences document the finish after drying and during final touch-up.
 - Completed studio hallway in Behr Cottage White:
-- Ceiling fan wiring and mount:
-- Exposed shiplap:
+- Ceiling fan wiring and mount: 2026-08-24 sequence documents the fan bracket,
+  wiring, assembly, and the installed black fan operating with its light on.
+- Exposed shiplap: 2026-08-19 sequence documents protection removed from the
+  finished original shiplap feature wall.
 - Crown molding and coping:
-- Best room-ready studio image:
+- Best current near-completion view: 2026-08-26 18:42:52 and 18:43:06 show the
+  uncovered refinished floor, completed mineral surfaces, exposed shiplap, and
+  operating ceiling fan; window masking and isolated open electrical positions
+  prevent these from serving as final room-ready evidence.
 - Planning sketches and field documentation: 2026-08-20 three-photo sequence
   records room geometry, ceiling framing measurements, circuit mapping, and
   three-way-switch planning.
@@ -303,15 +340,21 @@ selected.
   and Lime Slurry application on the drywall-covered walls using the vertical
   slurry method. Localized ceiling and wall touch-ups remain before final
   finish sign-off.
+- The 2026-08-19 to 2026-08-22 sequences document the mineral finish after
+  drying and during localized touch-up. The walls, trim, crown molding, and
+  painted plank ceiling read as one finish system while floor and window
+  protection remain in place.
 
 ### Systems Integration
 
-- Google Photos review pending for new 12/2 Romex routing and the new
-  ceiling-fan mount.
-- Future evidence needed for the selected ceiling light or fan and final
-  installation.
-- Future evidence needed for electrical receptacles, switches, cover plates,
-  and completed electrical trim-out.
+- The 2026-08-23 to 2026-08-24 sequences document switches and receptacles in
+  progress, exposed conductors and device boxes, and electrical tracing and
+  testing during trim-out.
+- The 2026-08-24 sequence documents the ceiling-fan bracket and wiring during
+  assembly and the installed black ceiling fan operating with its integral
+  light.
+- Future evidence is still needed for completed faceplates, closed device
+  positions, and final electrical sign-off.
 
 ### Shiplap Exposure
 
@@ -319,6 +362,9 @@ selected.
   paper, plastic, and tape while adjacent room surfaces were prepared and
   coated. Earlier evidence is still needed for drywall removal and the 120-grit
   sanding pass itself.
+- The 2026-08-19 sequence documents the protective masking removed and the
+  original shiplap visible as the completed room's primary historic-material
+  feature.
 
 ### Crown Molding And Coping
 
@@ -331,6 +377,14 @@ selected.
   hallway after two coats of KILZ Mold & Mildew Primer, 220-grit sanding after
   each primer coat, and two coats of Behr Cottage White.
 - Future evidence needed for window treatments and the completed room.
-- Future evidence needed after the exposed-shiplap protection is removed and
-  the electrical devices, faceplates, and remaining fixtures are installed.
-- Google Photos review pending for the final room-ready ballet studio.
+- The 2026-08-26 sequence documents the refinished floor uncovered, the
+  shiplap revealed, the operating ceiling fan, and the restored black door
+  present at the shiplap doorway.
+- The 2026-08-26 18:42:52 and 18:43:06 images are the strongest current
+  near-completion views, but window masking and isolated open electrical
+  positions remain visible.
+- The 2026-08-29 to 2026-08-30 photographs show continued window-detail work,
+  worktables, drop cloths, and tools rather than final room release.
+- Future evidence is still needed for completed faceplates, the restored door
+  installed and operating, window work closed out, the ballet barre and related
+  hardware installed, and the final room-ready ballet studio.

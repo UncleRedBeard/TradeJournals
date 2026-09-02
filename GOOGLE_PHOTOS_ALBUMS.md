@@ -19,7 +19,8 @@ come from one of these sources:
 ## Album List
 
 1. [Home Reno - Studio](https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9)
-   - Status: source recorded; representative image review pending
+   - Status: authenticated live review completed through 2026-08-30; durable
+     representative-image manifest pending
    - Section: residence
    - Journal:
      `01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md`
@@ -38,15 +39,18 @@ come from one of these sources:
 - Shared album URL: [Home Reno - Studio](https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9)
 - Canonical album URL: [Home Reno - Studio](https://photos.google.com/share/AF1QipPool3gE7T-_DVHyOZm3jEVm5TSnoL4P5kDdXAhzk-ja22Gbw3rsYOi8cn8EwffLA?key=S1hjd2FTdE9uTjMzX2NHNHpvYUZiQjA3YmpONTFR)
 - Platform: Google Photos
-- Visibility: shared URL verified by command-line fetch
-- Photos: 204, confirmed by embedded Google Photos album metadata
-- TradeJournals status: source recorded in dedicated residence journal
+- Visibility: shared album reviewed in an authenticated browser session
+- Photos: 296 at the latest live review on 2026-09-02
+- TradeJournals status: finish-completion and trim-out review recorded in the
+  dedicated residence journal; durable representative-image manifest pending
 - Section: residence
 - Existing journal: `01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md`
-- Album date span: 2026-03-16 to 2026-05-31, from embedded Google Photos album metadata
-- Next action: review representative images for ceiling plank replacement,
-  floor refinishing and protection, wall mudding and sanding, ceiling fan
-  wiring/mounting, exposed shiplap, and crown molding/coping.
+- Album date span: 2026-03-16 to 2026-08-30, from embedded Google Photos album
+  metadata and authenticated live review
+- Next action: capture durable representative-image identifiers, then document
+  completed faceplates, the restored door installed and operating, closed-out
+  window work, the ballet barre and related hardware, and the final room-ready
+  studio.
 
 <a id="album-pottery-eoqyvku1"></a>
 
