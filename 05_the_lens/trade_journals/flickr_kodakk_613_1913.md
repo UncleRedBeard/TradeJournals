@@ -16,8 +16,8 @@ This album belongs in `05_the_lens` because it documents camera/film work rather
 - Album ID: `72157627958704171`
 - Format: Kodak bellows / 616 film archive, per related Lomography catalog note
 - Owner NSID: `17632706@N00`
-- Public photo count: 2, confirmed by latest Flickr API importer scan
-- Camera make/model: not exposed in Flickr EXIF on sampled public images.
+- Public photo count: 2, confirmed by the 2026-09-02 Flickr metadata preview
+- Camera make/model: no allowlisted digital-file EXIF returned for either public photo in the 2026-09-02 preview.
 
 ## Visual Evidence
 
@@ -34,7 +34,12 @@ Use this section to map the Flickr album into evidence categories before writing
 
 ### Flickr Source Notes
 
-- Pending photo review.
+- Metadata preview retrieved from Flickr on `2026-09-02T13:00:44.176738Z`.
+- Album description: Flickr returned an empty public field.
+- Public tags: none returned for either public photo at retrieval time.
+- Photo `6325764261`: [Flickr photo page](https://www.flickr.com/photos/boocher/6325764261/); Flickr-recorded date taken `2011-11-08 10:17:53`; Flickr-recorded date posted `1320773313`.
+- Photo `6325763547`: [Flickr photo page](https://www.flickr.com/photos/boocher/6325763547/); Flickr-recorded date taken `2011-11-08 10:17:43`; Flickr-recorded date posted `1320773296`.
+- Dates are preserved exactly as Flickr returned them, without timezone conversion or historical exposure-date inference.
 
 ## Archive Notes
 
