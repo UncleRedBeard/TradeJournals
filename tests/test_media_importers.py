@@ -389,6 +389,778 @@ class GooglePhotosDuplicateTests(unittest.TestCase):
         self.assertEqual(combined[0].provenance, ("manifest", "local export"))
 
 
+class FlickrMetadataPreviewTests(unittest.TestCase):
+    @staticmethod
+    def metadata_args(output: Path) -> Namespace:
+        return Namespace(
+            url="https://www.flickr.com/photos/example/albums/999/",
+            albums_url=None,
+            title=None,
+            format_label=None,
+            section="lens",
+            slug=None,
+            output=output,
+            update_readme=False,
+            force=False,
+            merge_existing=False,
+            dry_run=False,
+            import_discovered=False,
+            reconcile_known=False,
+            write_inventory=False,
+            inventory_output=output.parent / "inventory.md",
+            use_api=True,
+            limit=None,
+            metadata_preview=True,
+            metadata_photo_ids=None,
+            metadata_limit=1,
+            note=None,
+        )
+
+    @staticmethod
+    def flickr_response(method: str, params: dict, *, api_key: str):
+        if method == "flickr.photosets.getInfo":
+            return {
+                "photoset": {
+                    "id": "999",
+                    "owner": "12345@N00",
+                    "username": "Example",
+                    "title": {"_content": "Synthetic archive"},
+                    "description": {"_content": "Album context"},
+                    "photos": "2",
+                }
+            }
+
+        if method == "flickr.photosets.getPhotos":
+            return {
+                "photoset": {
+                    "page": "1",
+                    "pages": "1",
+                    "total": "2",
+                    "photo": [
+                        {
+                            "id": "100",
+                            "title": "First",
+                            "datetaken": "2026-01-01 10:00:00",
+                            "dateupload": "1767261600",
+                            "tags": "",
+                            "url_o": "https://live.staticflickr.com/1/100_o.jpg",
+                            "o_width": "1024",
+                            "o_height": "768",
+                        },
+                        {
+                            "id": "200",
+                            "title": "Second",
+                            "datetaken": "2026-01-02 11:00:00",
+                            "dateupload": "1767351600",
+                            "tags": "",
+                        },
+                    ],
+                }
+            }
+
+        if method == "flickr.photos.getInfo":
+            photo_id = params["photo_id"]
+            title = "First" if photo_id == "100" else "Second"
+            return {
+                "photo": {
+                    "id": photo_id,
+                    "title": {"_content": title},
+                    "description": {"_content": "Kodak Ektar 100 BW"},
+                    "dates": {
+                        "taken": "2026-01-01 10:00:00",
+                        "posted": "1767261600",
+                    },
+                    "tags": {"tag": []},
+                    "urls": {
+                        "url": [
+                            {
+                                "type": "photopage",
+                                "_content": (
+                                    "https://www.flickr.com/photos/example/"
+                                    f"{photo_id}/"
+                                ),
+                            }
+                        ]
+                    },
+                }
+            }
+
+        if method == "flickr.photos.getExif":
+            return {
+                "photo": {
+                    "id": params["photo_id"],
+                    "exif": [
+                        {
+                            "tagspace": "TIFF",
+                            "tag": "271",
+                            "label": "Manufacturer",
+                            "raw": {"_content": "Synthetic Camera"},
+                        },
+                        {
+                            "tagspace": "GPS",
+                            "tag": "2",
+                            "label": "Latitude",
+                            "raw": {"_content": "30.000"},
+                        },
+                        {
+                            "tagspace": "EXIF",
+                            "tag": "42033",
+                            "label": "Body Serial Number",
+                            "raw": {"_content": "SECRET-SERIAL"},
+                        },
+                    ],
+                }
+            }
+
+        raise AssertionError(f"Unexpected Flickr method: {method}")
+
+    def test_metadata_preview_is_bounded_filtered_and_stdout_only(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            output = root / "must-not-exist.md"
+            sentinel = root / "sentinel.txt"
+            sentinel.write_text("unchanged", encoding="utf-8")
+            before = {
+                path.relative_to(root): path.read_bytes()
+                for path in root.rglob("*")
+                if path.is_file()
+            }
+            stdout = io.StringIO()
+            calls: list[tuple[str, str | None]] = []
+
+            def fake_fetch(method: str, params: dict, *, api_key: str):
+                calls.append((method, params.get("photo_id")))
+                return self.flickr_response(method, params, api_key=api_key)
+
+            with (
+                mock.patch.object(
+                    flickr,
+                    "parse_args",
+                    return_value=self.metadata_args(output),
+                ),
+                mock.patch.object(
+                    flickr,
+                    "fetch_flickr_api",
+                    side_effect=fake_fetch,
+                ),
+                mock.patch.dict(
+                    flickr.os.environ,
+                    {"FLICKR_API_KEY": "synthetic-key"},
+                    clear=True,
+                ),
+                redirect_stdout(stdout),
+            ):
+                result = flickr.main()
+
+            after = {
+                path.relative_to(root): path.read_bytes()
+                for path in root.rglob("*")
+                if path.is_file()
+            }
+
+        rendered = stdout.getvalue()
+        self.assertEqual(result, 0)
+        self.assertEqual(after, before)
+        self.assertFalse(output.exists())
+        self.assertIn("# Flickr metadata preview", rendered)
+        self.assertIn("Album ID: `999`", rendered)
+        self.assertIn("Photo `100`", rendered)
+        self.assertIn("Photo `200`", rendered)
+        self.assertLess(rendered.index("Photo `100`"), rendered.index("Photo `200`"))
+        self.assertIn("`2026-01-01 10:00:00`", rendered)
+        self.assertIn("`1767261600`", rendered)
+        self.assertIn("Digital-file EXIF", rendered)
+        self.assertIn("Camera make: `Synthetic Camera`", rendered)
+        self.assertIn("Metadata expansion: not-requested", rendered)
+        self.assertNotIn("30.000", rendered)
+        self.assertNotIn("SECRET-SERIAL", rendered)
+        self.assertEqual(
+            calls,
+            [
+                ("flickr.photosets.getInfo", None),
+                ("flickr.photosets.getPhotos", None),
+                ("flickr.photos.getInfo", "100"),
+                ("flickr.photos.getExif", "100"),
+            ],
+        )
+
+    def test_metadata_preview_collapses_repeated_album_findings(self):
+        args = self.metadata_args(Path("unused.md"))
+        args.metadata_limit = 2
+        stdout = io.StringIO()
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "fetch_flickr_api",
+                side_effect=self.flickr_response,
+            ),
+            mock.patch.dict(
+                flickr.os.environ,
+                {"FLICKR_API_KEY": "synthetic-key"},
+                clear=True,
+            ),
+            redirect_stdout(stdout),
+        ):
+            result = flickr.main()
+
+        rendered = stdout.getvalue()
+        self.assertEqual(result, 0)
+        self.assertEqual(rendered.count("Kodak Ektar 100 BW"), 2)
+        self.assertIn(
+            "Repeated public description (2 reviewed photos): "
+            "`Kodak Ektar 100 BW`",
+            rendered,
+        )
+        self.assertIn(
+            "Public tags: fetched-empty for all 2 reviewed photos",
+            rendered,
+        )
+        self.assertIn("## Candidate journal additions (not written)", rendered)
+
+    def test_metadata_preview_marks_unexpected_detail_failure_incomplete(self):
+        args = self.metadata_args(Path("unused.md"))
+        args.metadata_limit = 2
+        stdout = io.StringIO()
+
+        def failing_fetch(method: str, params: dict, *, api_key: str):
+            if method == "flickr.photos.getExif" and params["photo_id"] == "200":
+                raise flickr.FlickrAPIError(
+                    method,
+                    105,
+                    "temporary upstream failure",
+                )
+            return self.flickr_response(method, params, api_key=api_key)
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "fetch_flickr_api",
+                side_effect=failing_fetch,
+            ),
+            mock.patch.dict(
+                flickr.os.environ,
+                {"FLICKR_API_KEY": "synthetic-key"},
+                clear=True,
+            ),
+            redirect_stdout(stdout),
+            redirect_stderr(io.StringIO()),
+        ):
+            result = flickr.main()
+
+        rendered = stdout.getvalue()
+        self.assertEqual(result, 1)
+        self.assertIn("- Status: incomplete", rendered)
+        self.assertIn("### Photo `100`", rendered)
+        self.assertIn("### Photo `200`", rendered)
+        self.assertNotIn("- Metadata expansion: unavailable", rendered)
+        self.assertIn(
+            "Repeated public description (2 reviewed photos): "
+            "`Kodak Ektar 100 BW`",
+            rendered,
+        )
+        self.assertIn("temporary upstream failure", rendered)
+        self.assertIn(
+            "No candidate journal additions: preview incomplete.",
+            rendered,
+        )
+        self.assertNotIn(
+            "Public Flickr description, repeated across",
+            rendered,
+        )
+
+    def test_metadata_preview_summarizes_permission_denied_exif_as_complete(self):
+        args = self.metadata_args(Path("unused.md"))
+        args.metadata_limit = 2
+        stdout = io.StringIO()
+
+        def permission_denied(method: str, params: dict, *, api_key: str):
+            if method == "flickr.photos.getExif":
+                raise flickr.FlickrAPIError(method, 2, "Permission denied")
+            return self.flickr_response(method, params, api_key=api_key)
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "fetch_flickr_api",
+                side_effect=permission_denied,
+            ),
+            mock.patch.dict(
+                flickr.os.environ,
+                {"FLICKR_API_KEY": "synthetic-key"},
+                clear=True,
+            ),
+            redirect_stdout(stdout),
+        ):
+            result = flickr.main()
+
+        rendered = stdout.getvalue()
+        self.assertEqual(result, 0)
+        self.assertIn("- Status: complete", rendered)
+        self.assertIn(
+            "Digital-file EXIF: permission-denied for all 2 reviewed photos",
+            rendered,
+        )
+        self.assertEqual(rendered.count("permission-denied"), 1)
+
+    def test_metadata_preview_collapses_common_empty_and_unexposed_fields(self):
+        args = self.metadata_args(Path("unused.md"))
+        args.metadata_limit = 2
+        stdout = io.StringIO()
+
+        def empty_common_fields(method: str, params: dict, *, api_key: str):
+            response = self.flickr_response(method, params, api_key=api_key)
+            if method == "flickr.photosets.getPhotos":
+                first = response["photoset"]["photo"][0]
+                first.pop("url_o")
+                first.pop("o_width")
+                first.pop("o_height")
+            if method == "flickr.photos.getExif":
+                response["photo"]["exif"] = []
+            return response
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "fetch_flickr_api",
+                side_effect=empty_common_fields,
+            ),
+            mock.patch.dict(
+                flickr.os.environ,
+                {"FLICKR_API_KEY": "synthetic-key"},
+                clear=True,
+            ),
+            redirect_stdout(stdout),
+        ):
+            result = flickr.main()
+
+        rendered = stdout.getvalue()
+        self.assertEqual(result, 0)
+        self.assertIn(
+            "Digital-file EXIF: fetched-empty for all 2 reviewed photos",
+            rendered,
+        )
+        self.assertIn(
+            "Static image URL: not-exposed-by-endpoint for all 2 photos",
+            rendered,
+        )
+        self.assertIn(
+            "Dimensions: not-exposed-by-endpoint for all 2 photos",
+            rendered,
+        )
+        self.assertEqual(rendered.count("Digital-file EXIF: fetched-empty"), 1)
+        self.assertEqual(rendered.count("Static image URL: not-exposed"), 1)
+        self.assertEqual(rendered.count("Dimensions: not-exposed"), 1)
+
+    def test_metadata_preview_preserves_partial_album_page_diagnostic(self):
+        args = self.metadata_args(Path("unused.md"))
+        args.metadata_limit = 1
+        stdout = io.StringIO()
+
+        def page_two_failure(method: str, params: dict, *, api_key: str):
+            if method == "flickr.photosets.getPhotos":
+                if params["page"] == 2:
+                    raise flickr.FlickrAPIError(
+                        method,
+                        105,
+                        "page two temporarily unavailable",
+                    )
+                response = self.flickr_response(method, params, api_key=api_key)
+                response["photoset"]["pages"] = "2"
+                response["photoset"]["total"] = "3"
+                return response
+            return self.flickr_response(method, params, api_key=api_key)
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "fetch_flickr_api",
+                side_effect=page_two_failure,
+            ),
+            mock.patch.dict(
+                flickr.os.environ,
+                {"FLICKR_API_KEY": "synthetic-key"},
+                clear=True,
+            ),
+            redirect_stdout(stdout),
+            redirect_stderr(io.StringIO()),
+        ):
+            result = flickr.main()
+
+        rendered = stdout.getvalue()
+        self.assertEqual(result, 1)
+        self.assertIn("- Status: incomplete", rendered)
+        self.assertIn("### Photo `100`", rendered)
+        self.assertIn("### Photo `200`", rendered)
+        self.assertIn("page two temporarily unavailable", rendered)
+
+    def test_metadata_preview_preserves_partial_diagnostic_for_explicit_id(self):
+        args = self.metadata_args(Path("unused.md"))
+        args.metadata_limit = None
+        args.metadata_photo_ids = ["300"]
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+
+        def page_two_failure(method: str, params: dict, *, api_key: str):
+            if method == "flickr.photosets.getPhotos":
+                if params["page"] == 2:
+                    raise flickr.FlickrAPIError(
+                        method,
+                        105,
+                        "page two temporarily unavailable",
+                    )
+                response = self.flickr_response(method, params, api_key=api_key)
+                response["photoset"]["pages"] = "2"
+                response["photoset"]["total"] = "3"
+                return response
+            return self.flickr_response(method, params, api_key=api_key)
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "fetch_flickr_api",
+                side_effect=page_two_failure,
+            ),
+            mock.patch.dict(
+                flickr.os.environ,
+                {"FLICKR_API_KEY": "synthetic-key"},
+                clear=True,
+            ),
+            redirect_stdout(stdout),
+            redirect_stderr(stderr),
+        ):
+            result = flickr.main()
+
+        rendered = stdout.getvalue()
+        self.assertEqual(result, 1)
+        self.assertEqual(stderr.getvalue(), "")
+        self.assertIn("- Status: incomplete", rendered)
+        self.assertIn("page two temporarily unavailable", rendered)
+        self.assertIn(
+            "could not verify requested photo ID(s): 300",
+            rendered,
+        )
+        self.assertIn(
+            "No candidate journal additions: preview incomplete.",
+            rendered,
+        )
+
+    def test_metadata_preview_fails_closed_on_photo_count_mismatch(self):
+        args = self.metadata_args(Path("unused.md"))
+        stdout = io.StringIO()
+
+        def mismatched_total(method: str, params: dict, *, api_key: str):
+            response = self.flickr_response(method, params, api_key=api_key)
+            if method == "flickr.photosets.getPhotos":
+                response["photoset"]["total"] = "3"
+            return response
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "fetch_flickr_api",
+                side_effect=mismatched_total,
+            ),
+            mock.patch.dict(
+                flickr.os.environ,
+                {"FLICKR_API_KEY": "synthetic-key"},
+                clear=True,
+            ),
+            redirect_stdout(stdout),
+            redirect_stderr(io.StringIO()),
+        ):
+            result = flickr.main()
+
+        rendered = stdout.getvalue()
+        self.assertEqual(result, 1)
+        self.assertIn("- Status: incomplete", rendered)
+        self.assertIn("listed 2 unique photo(s), but Flickr reported 3", rendered)
+
+    def test_metadata_preview_reconciles_album_and_listing_counts(self):
+        args = self.metadata_args(Path("unused.md"))
+        stdout = io.StringIO()
+
+        def disagreeing_counts(method: str, params: dict, *, api_key: str):
+            response = self.flickr_response(method, params, api_key=api_key)
+            if method == "flickr.photosets.getInfo":
+                response["photoset"]["photos"] = "3"
+            return response
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "fetch_flickr_api",
+                side_effect=disagreeing_counts,
+            ),
+            mock.patch.dict(
+                flickr.os.environ,
+                {"FLICKR_API_KEY": "synthetic-key"},
+                clear=True,
+            ),
+            redirect_stdout(stdout),
+        ):
+            result = flickr.main()
+
+        rendered = stdout.getvalue()
+        self.assertEqual(result, 1)
+        self.assertIn("- Status: incomplete", rendered)
+        self.assertIn(
+            "album info reported 3 photo(s), but the listing reported 2",
+            rendered,
+        )
+
+    def test_metadata_preview_reports_only_methods_actually_called(self):
+        args = self.metadata_args(Path("unused.md"))
+        args.metadata_limit = None
+        calls: list[str] = []
+        stdout = io.StringIO()
+
+        def recording_fetch(method: str, params: dict, *, api_key: str):
+            calls.append(method)
+            return self.flickr_response(method, params, api_key=api_key)
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "fetch_flickr_api",
+                side_effect=recording_fetch,
+            ),
+            mock.patch.dict(
+                flickr.os.environ,
+                {"FLICKR_API_KEY": "synthetic-key"},
+                clear=True,
+            ),
+            redirect_stdout(stdout),
+        ):
+            result = flickr.main()
+
+        rendered = stdout.getvalue()
+        self.assertEqual(result, 0)
+        self.assertEqual(
+            calls,
+            ["flickr.photosets.getInfo", "flickr.photosets.getPhotos"],
+        )
+        self.assertIn(
+            "Data sources: `flickr.photosets.getInfo`, "
+            "`flickr.photosets.getPhotos`",
+            rendered,
+        )
+        self.assertNotIn("bounded per-photo API calls", rendered)
+        self.assertNotIn("`flickr.photos.getInfo`", rendered)
+        self.assertNotIn("`flickr.photos.getExif`", rendered)
+
+    def test_metadata_preview_fails_closed_when_pagination_does_not_advance(self):
+        args = self.metadata_args(Path("unused.md"))
+        stdout = io.StringIO()
+        page_calls = 0
+
+        def repeated_page(method: str, params: dict, *, api_key: str):
+            nonlocal page_calls
+            response = self.flickr_response(method, params, api_key=api_key)
+            if method != "flickr.photosets.getPhotos":
+                return response
+
+            page_calls += 1
+            if page_calls > 2:
+                raise AssertionError("pagination continued after repeated page")
+            response["photoset"]["pages"] = "2"
+            response["photoset"]["total"] = "3"
+            response["photoset"]["page"] = "1"
+            return response
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "fetch_flickr_api",
+                side_effect=repeated_page,
+            ),
+            mock.patch.dict(
+                flickr.os.environ,
+                {"FLICKR_API_KEY": "synthetic-key"},
+                clear=True,
+            ),
+            redirect_stdout(stdout),
+            redirect_stderr(io.StringIO()),
+        ):
+            result = flickr.main()
+
+        rendered = stdout.getvalue()
+        self.assertEqual(result, 1)
+        self.assertEqual(page_calls, 2)
+        self.assertIn("- Status: incomplete", rendered)
+        self.assertIn(
+            "requested listing page 2, but Flickr returned page 1",
+            rendered,
+        )
+
+    def test_metadata_preview_renders_initial_album_failure_as_incomplete(self):
+        args = self.metadata_args(Path("unused.md"))
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+
+        def initial_failure(method: str, params: dict, *, api_key: str):
+            if method == "flickr.photosets.getInfo":
+                raise flickr.FlickrAPIError(
+                    method,
+                    105,
+                    "temporary album lookup failure",
+                )
+            raise AssertionError(f"Unexpected Flickr method: {method}")
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "fetch_flickr_api",
+                side_effect=initial_failure,
+            ),
+            mock.patch.dict(
+                flickr.os.environ,
+                {"FLICKR_API_KEY": "synthetic-key"},
+                clear=True,
+            ),
+            redirect_stdout(stdout),
+            redirect_stderr(stderr),
+        ):
+            result = flickr.main()
+
+        rendered = stdout.getvalue()
+        self.assertEqual(result, 1)
+        self.assertEqual(stderr.getvalue(), "")
+        self.assertIn("# Flickr metadata preview", rendered)
+        self.assertIn("- Status: incomplete", rendered)
+        self.assertIn("Album ID: `999`", rendered)
+        self.assertIn("Public photo count: unavailable", rendered)
+        self.assertIn("temporary album lookup failure", rendered)
+        self.assertIn("Data sources: `flickr.photosets.getInfo`", rendered)
+        self.assertNotIn("`flickr.photosets.getPhotos`", rendered)
+
+    def test_metadata_preview_validates_limit_before_key_or_network(self):
+        args = self.metadata_args(Path("unused.md"))
+        args.metadata_limit = 0
+        stderr = io.StringIO()
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "require_environment_flickr_api_key",
+            ) as require_key,
+            mock.patch.object(flickr, "fetch_flickr_api") as fetch_api,
+            redirect_stderr(stderr),
+        ):
+            result = flickr.main()
+
+        self.assertEqual(result, 1)
+        self.assertIn("--metadata-limit must be greater than zero", stderr.getvalue())
+        require_key.assert_not_called()
+        fetch_api.assert_not_called()
+
+    def test_metadata_preview_requires_exported_key_not_local_env_fallback(self):
+        args = self.metadata_args(Path("unused.md"))
+        stderr = io.StringIO()
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "load_local_env_value",
+                return_value="must-not-be-used",
+            ),
+            mock.patch.object(flickr, "fetch_flickr_api") as fetch_api,
+            mock.patch.dict(flickr.os.environ, {}, clear=True),
+            redirect_stderr(stderr),
+        ):
+            result = flickr.main()
+
+        self.assertEqual(result, 1)
+        self.assertIn("requires an exported FLICKR_API_KEY", stderr.getvalue())
+        fetch_api.assert_not_called()
+
+    def test_metadata_preview_rejects_photo_id_outside_public_album(self):
+        args = self.metadata_args(Path("unused.md"))
+        args.metadata_limit = None
+        args.metadata_photo_ids = ["404"]
+        stderr = io.StringIO()
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(
+                flickr,
+                "fetch_flickr_api",
+                side_effect=self.flickr_response,
+            ),
+            mock.patch.dict(
+                flickr.os.environ,
+                {"FLICKR_API_KEY": "synthetic-key"},
+                clear=True,
+            ),
+            redirect_stderr(stderr),
+        ):
+            result = flickr.main()
+
+        self.assertEqual(result, 1)
+        self.assertIn(
+            "requested photo ID(s) not present in public album: 404",
+            stderr.getvalue(),
+        )
+
+    def test_metadata_preview_cli_parses_dedicated_scope_flags(self):
+        argv = [
+            "import_flickr_album.py",
+            "--url",
+            "https://www.flickr.com/photos/example/albums/999/",
+            "--use-api",
+            "--metadata-preview",
+            "--metadata-photo-id",
+            "100",
+            "--metadata-photo-id",
+            "200",
+        ]
+
+        with mock.patch.object(flickr.sys, "argv", argv):
+            args = flickr.parse_args()
+
+        self.assertTrue(args.metadata_preview)
+        self.assertEqual(args.metadata_photo_ids, ["100", "200"])
+        self.assertIsNone(args.metadata_limit)
+
+    def test_metadata_scope_flags_cannot_change_existing_import_mode(self):
+        args = DryRunAndCuratedMetadataTests.flickr_args(
+            Path("unused.md"),
+            dry_run=True,
+            force=False,
+        )
+        args.metadata_preview = False
+        args.metadata_photo_ids = None
+        args.metadata_limit = 1
+        stderr = io.StringIO()
+
+        with (
+            mock.patch.object(flickr, "parse_args", return_value=args),
+            mock.patch.object(flickr, "fetch_album_for_args") as fetch_album,
+            redirect_stderr(stderr),
+        ):
+            result = flickr.main()
+
+        self.assertEqual(result, 1)
+        self.assertIn(
+            "--metadata-limit requires --metadata-preview",
+            stderr.getvalue(),
+        )
+        fetch_album.assert_not_called()
+
+
 class DryRunAndCuratedMetadataTests(unittest.TestCase):
     @staticmethod
     def flickr_args(output: Path, *, dry_run: bool, force: bool) -> Namespace:

@@ -48,6 +48,53 @@ Useful flags:
 - `--note` supplies the archive note paragraph.
 - `--use-api` uses Flickr API methods for full public photo pagination.
 
+### Public Metadata Preview
+
+Use the dedicated metadata preview to review public Flickr metadata without
+writing a journal, inventory, cache, sidecar, or other repository file:
+
+```sh
+python3 scripts/import_flickr_album.py \
+  --url "https://www.flickr.com/photos/boocher/albums/72177720335033061/" \
+  --use-api \
+  --metadata-preview \
+  --metadata-limit 12
+```
+
+This mode requires `FLICKR_API_KEY` to be exported in the process environment;
+it does not use the repo-local `.env` fallback. It prints a time-stamped,
+review-only report to standard output. Existing import and `--dry-run` behavior
+is unchanged.
+
+For persistent Bash availability, export the key from `~/.bashrc` and source
+that file from `~/.bash_profile`. Automation or app-launched checks can use
+`bash -lc 'python3 ...'` to run through the verified login-shell path. Confirm
+inheritance without printing the key itself:
+
+```sh
+bash -lc 'python3 -c '\''import os; print("SET" if os.getenv("FLICKR_API_KEY") else "UNSET")'\'''
+```
+
+Without a metadata scope flag, the preview makes only bulk album requests.
+Use a positive `--metadata-limit` to expand the first N photos in Flickr album
+order, or repeat `--metadata-photo-id ID` to expand specific public photo IDs.
+The two scope controls are mutually exclusive, and there is no unbounded
+per-photo expansion mode.
+
+Missing required responses, invalid or non-advancing pagination, count
+disagreement, and unexpected detail-request failures produce an incomplete
+preview and a nonzero exit status. Incomplete previews retain safe partial
+diagnostics but do not propose candidate journal additions.
+
+Expanded photos use public `flickr.photos.getInfo` and
+`flickr.photos.getExif` calls. EXIF is labeled `Digital-file EXIF` because film
+scans may describe the scan or copy workflow rather than the original camera.
+Only camera make/model, lens model, exposure time, aperture, ISO, focal length,
+and EXIF original date/time are allowed through. GPS, serial numbers, personal
+fields, unique IDs, maker notes, binary values, and unknown EXIF tags are
+excluded. Flickr date-taken and date-posted values are preserved without
+timezone conversion or historical-date inference.
+
 ## Flickr Albums Directory Scan
 
 Use `--albums-url` to scan a public Flickr `/albums` page before importing

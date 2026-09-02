@@ -22,7 +22,7 @@ import os
 import re
 import sys
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
@@ -70,6 +70,25 @@ INVENTORY_NUMERIC_SUMMARY_PREFIXES = (
     "- Albums excluded from TradeJournals import:",
     "- Albums still needing review/mapping:",
 )
+METADATA_PREVIEW_EXTRAS = ",".join(
+    (
+        "date_upload",
+        "date_taken",
+        "tags",
+        "o_dims",
+        "url_o",
+    )
+)
+EXIF_ALLOWLIST = {
+    ("TIFF", "271"): "Camera make",
+    ("TIFF", "272"): "Camera model",
+    ("EXIF", "33434"): "Exposure time",
+    ("EXIF", "33437"): "Aperture",
+    ("EXIF", "34855"): "ISO",
+    ("EXIF", "36867"): "EXIF original date/time",
+    ("EXIF", "37386"): "Focal length",
+    ("EXIF", "42036"): "Lens model",
+}
 
 # Keep section names short on the command line, but write into the existing
 # TradeJournals folder structure.
@@ -186,6 +205,71 @@ class CuratedContentError(RuntimeError):
         self.preview = preview
 
 
+class FlickrAPIError(RuntimeError):
+    """Structured public Flickr API failure with a safe rendered message."""
+
+    def __init__(self, method: str, code: object, message: str) -> None:
+        super().__init__(f"Flickr API {method} failed ({code}): {message}")
+        self.method = method
+        self.code = str(code)
+
+
+class InitialAlbumMetadataError(RuntimeError):
+    """Failure before an album preview can obtain its public header."""
+
+
+@dataclass(frozen=True)
+class MetadataValue:
+    """One public metadata value plus its observed availability state."""
+
+    status: str
+    value: str = ""
+
+
+@dataclass(frozen=True)
+class ExifValue:
+    """One allowlisted digital-file EXIF value."""
+
+    label: str
+    value: str
+
+
+@dataclass(frozen=True)
+class PhotoMetadataPreview:
+    """Review-only public metadata for one photo in album order."""
+
+    photo_id: str
+    title: str
+    photo_page_url: str
+    static_image_url: MetadataValue
+    dimensions: MetadataValue
+    date_taken: MetadataValue
+    date_posted: MetadataValue
+    description: MetadataValue
+    tags: MetadataValue
+    metadata_expansion: str
+    exif_status: str
+    exif: tuple[ExifValue, ...]
+    error: str = ""
+
+
+@dataclass(frozen=True)
+class AlbumMetadataPreview:
+    """A bounded, read-only snapshot of public Flickr album metadata."""
+
+    album_id: str
+    album_url: str
+    title: str
+    description: MetadataValue
+    retrieved_at_utc: str
+    requested_scope: str
+    reported_photo_count: int | None
+    data_sources: tuple[str, ...]
+    photos: tuple[PhotoMetadataPreview, ...]
+    complete: bool = True
+    errors: tuple[str, ...] = ()
+
+
 def redact_flickr_credentials(value: object, *, url: str = "") -> str:
     """Remove Flickr API keys from text before it crosses an output boundary."""
 
@@ -286,12 +370,17 @@ def require_flickr_api_key() -> str:
     return api_key
 
 
-def build_flickr_api_url(method: str, params: dict[str, Any]) -> str:
+def build_flickr_api_url(
+    method: str,
+    params: dict[str, Any],
+    *,
+    api_key: str | None = None,
+) -> str:
     """Build a Flickr REST API URL for a public JSON response."""
 
     query_params = {
         "method": method,
-        "api_key": require_flickr_api_key(),
+        "api_key": api_key or require_flickr_api_key(),
         "format": "json",
         "nojsoncallback": "1",
     }
@@ -299,10 +388,15 @@ def build_flickr_api_url(method: str, params: dict[str, Any]) -> str:
     return f"{FLICKR_API_ENDPOINT}?{urlencode(query_params)}"
 
 
-def fetch_flickr_api(method: str, params: dict[str, Any]) -> dict[str, Any]:
+def fetch_flickr_api(
+    method: str,
+    params: dict[str, Any],
+    *,
+    api_key: str | None = None,
+) -> dict[str, Any]:
     """Fetch one Flickr API response and raise clear errors on API failures."""
 
-    api_url = build_flickr_api_url(method, params)
+    api_url = build_flickr_api_url(method, params, api_key=api_key)
     response = fetch_json(api_url)
 
     if response.get("stat") == "fail":
@@ -311,7 +405,7 @@ def fetch_flickr_api(method: str, params: dict[str, Any]) -> dict[str, Any]:
             response.get("message", "unknown Flickr API error"),
             url=api_url,
         )
-        raise RuntimeError(f"Flickr API {method} failed ({code}): {message}")
+        raise FlickrAPIError(method, code, message)
 
     return response
 
@@ -326,6 +420,100 @@ def flickr_content(value: Any) -> str:
         return ""
 
     return str(value).strip()
+
+
+def require_environment_flickr_api_key() -> str:
+    """Return only an exported Flickr key for metadata-preview mode."""
+
+    api_key = os.environ.get("FLICKR_API_KEY", "").strip()
+
+    if not api_key:
+        raise RuntimeError(
+            "--metadata-preview requires an exported FLICKR_API_KEY environment "
+            "variable"
+        )
+
+    return api_key
+
+
+def sanitize_metadata_text(value: Any) -> str:
+    """Normalize public Flickr prose for safe, compact terminal review."""
+
+    text = html.unescape(flickr_content(value))
+    text = re.sub(r"<[^>]*>", " ", text)
+    text = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def metadata_value(mapping: dict[str, Any], key: str) -> MetadataValue:
+    """Read a string field while preserving missing-versus-empty state."""
+
+    if key not in mapping:
+        return MetadataValue("not-exposed-by-endpoint")
+
+    value = sanitize_metadata_text(mapping.get(key))
+    if not value:
+        return MetadataValue("fetched-empty")
+
+    return MetadataValue("fetched", value)
+
+
+def metadata_tags(photo: dict[str, Any]) -> MetadataValue:
+    """Normalize public Flickr tags from bulk or getInfo responses."""
+
+    if "tags" not in photo:
+        return MetadataValue("not-exposed-by-endpoint")
+
+    tags_value = photo.get("tags")
+    if isinstance(tags_value, dict):
+        tag_items = tags_value.get("tag", [])
+        tags = [
+            sanitize_metadata_text(tag.get("raw") or tag.get("_content"))
+            for tag in tag_items
+            if isinstance(tag, dict)
+        ]
+    else:
+        tags = [sanitize_metadata_text(tag) for tag in str(tags_value or "").split()]
+
+    tags = [tag for tag in tags if tag]
+    if not tags:
+        return MetadataValue("fetched-empty")
+
+    return MetadataValue("fetched", ", ".join(tags))
+
+
+def metadata_photo_page_url(
+    photo: dict[str, Any],
+    owner_alias: str,
+    photo_id: str,
+) -> str:
+    """Prefer Flickr's canonical photo page URL from getInfo."""
+
+    for item in photo.get("urls", {}).get("url", []):
+        if item.get("type") == "photopage":
+            value = flickr_content(item)
+            if value:
+                return value
+
+    return f"https://www.flickr.com/photos/{owner_alias}/{photo_id}/"
+
+
+def allowlisted_exif(response: dict[str, Any]) -> tuple[ExifValue, ...]:
+    """Return only the explicitly approved digital-file EXIF fields."""
+
+    values: list[ExifValue] = []
+
+    for item in response.get("photo", {}).get("exif", []):
+        key = (str(item.get("tagspace", "")).upper(), str(item.get("tag", "")))
+        label = EXIF_ALLOWLIST.get(key)
+        if not label:
+            continue
+
+        value = sanitize_metadata_text(item.get("clean") or item.get("raw"))
+        if value:
+            values.append(ExifValue(label=label, value=value))
+
+    return tuple(values)
 
 
 def extract_album_id(url: str) -> str:
@@ -651,6 +839,557 @@ def fetch_api_photos(owner: str, album_id: str) -> tuple[list[Photo], int]:
         page = current_page + 1
 
     return deduplicate_photos(photos), total
+
+
+def fetch_metadata_preview_photos(
+    owner: str,
+    album_id: str,
+    *,
+    api_key: str,
+) -> tuple[list[dict[str, Any]], int, list[str]]:
+    """Fetch the complete public album list with one bounded call per page."""
+
+    photos: list[dict[str, Any]] = []
+    seen_ids: set[str] = set()
+    errors: list[str] = []
+    page = 1
+    total = 0
+    expected_total: int | None = None
+
+    while True:
+        try:
+            response = fetch_flickr_api(
+                "flickr.photosets.getPhotos",
+                {
+                    "photoset_id": album_id,
+                    "user_id": owner,
+                    "extras": METADATA_PREVIEW_EXTRAS,
+                    "per_page": API_PAGE_SIZE,
+                    "page": page,
+                },
+                api_key=api_key,
+            )
+        except RuntimeError as exc:
+            safe_error = redact_flickr_credentials(exc)
+            errors.append(f"flickr.photosets.getPhotos page {page}: {safe_error}")
+            break
+        photoset = response.get("photoset", {})
+
+        try:
+            current_page = int(photoset.get("page", page))
+            pages = int(photoset.get("pages", current_page))
+            page_total = int(photoset.get("total", len(photos)))
+        except (TypeError, ValueError):
+            errors.append(
+                f"flickr.photosets.getPhotos page {page}: invalid pagination "
+                "counters"
+            )
+            break
+
+        if current_page != page:
+            errors.append(
+                f"requested listing page {page}, but Flickr returned page "
+                f"{current_page}"
+            )
+            break
+
+        if current_page < 1 or pages < current_page:
+            errors.append(
+                f"flickr.photosets.getPhotos page {page}: inconsistent "
+                "pagination counters"
+            )
+            break
+
+        if expected_total is None:
+            expected_total = page_total
+        elif page_total != expected_total:
+            errors.append(
+                f"Flickr listing total changed from {expected_total} to "
+                f"{page_total} on page {page}"
+            )
+            break
+
+        total = page_total
+
+        for photo in photoset.get("photo", []):
+            photo_id = str(photo.get("id", ""))
+            if not photo_id or photo_id in seen_ids:
+                continue
+            seen_ids.add(photo_id)
+            photos.append(photo)
+
+        if current_page >= pages:
+            break
+
+        page = current_page + 1
+
+    return photos, total, errors
+
+
+def select_metadata_photo_ids(
+    photos: list[dict[str, Any]],
+    photo_ids: list[str] | None,
+    limit: int | None,
+) -> tuple[set[str], str]:
+    """Resolve an explicit bounded per-photo metadata scope."""
+
+    available_ids = [str(photo.get("id", "")) for photo in photos]
+
+    if photo_ids and limit is not None:
+        raise RuntimeError(
+            "--metadata-photo-id and --metadata-limit are separate scope controls"
+        )
+
+    if limit is not None:
+        if limit <= 0:
+            raise RuntimeError("--metadata-limit must be greater than zero")
+        selected = available_ids[:limit]
+        return set(selected), f"first {len(selected)} photo(s) in album order"
+
+    if photo_ids:
+        requested = list(dict.fromkeys(str(photo_id) for photo_id in photo_ids))
+        missing = [photo_id for photo_id in requested if photo_id not in available_ids]
+        if missing:
+            raise RuntimeError(
+                "requested photo ID(s) not present in public album: "
+                + ", ".join(missing)
+            )
+        return set(requested), f"{len(requested)} explicit photo ID(s)"
+
+    return set(), "bulk album metadata only"
+
+
+def validate_metadata_scope_args(
+    photo_ids: list[str] | None,
+    limit: int | None,
+) -> None:
+    """Reject invalid preview scope before reading credentials or the network."""
+
+    if photo_ids and limit is not None:
+        raise RuntimeError(
+            "--metadata-photo-id and --metadata-limit are separate scope controls"
+        )
+
+    if limit is not None and limit <= 0:
+        raise RuntimeError("--metadata-limit must be greater than zero")
+
+
+def describe_metadata_scope(
+    photo_ids: list[str] | None,
+    limit: int | None,
+) -> str:
+    """Describe a requested scope without requiring a successful album fetch."""
+
+    if limit is not None:
+        return f"first up to {limit} photo(s) in album order"
+
+    if photo_ids:
+        requested = list(dict.fromkeys(str(photo_id) for photo_id in photo_ids))
+        return f"{len(requested)} explicit photo ID(s)"
+
+    return "bulk album metadata only"
+
+
+def bulk_photo_metadata(
+    photo: dict[str, Any],
+    owner_alias: str,
+) -> PhotoMetadataPreview:
+    """Normalize one bulk album record before optional detail expansion."""
+
+    photo_id = str(photo.get("id", "unknown"))
+    width = metadata_value(photo, "o_width")
+    height = metadata_value(photo, "o_height")
+
+    if width.status == "fetched" and height.status == "fetched":
+        dimensions = MetadataValue("fetched", f"{width.value} x {height.value}")
+    elif width.status == "fetched-empty" or height.status == "fetched-empty":
+        dimensions = MetadataValue("fetched-empty")
+    else:
+        dimensions = MetadataValue("not-exposed-by-endpoint")
+
+    return PhotoMetadataPreview(
+        photo_id=photo_id,
+        title=sanitize_metadata_text(photo.get("title")),
+        photo_page_url=metadata_photo_page_url(photo, owner_alias, photo_id),
+        static_image_url=metadata_value(photo, "url_o"),
+        dimensions=dimensions,
+        date_taken=metadata_value(photo, "datetaken"),
+        date_posted=metadata_value(photo, "dateupload"),
+        description=MetadataValue("not-requested"),
+        tags=metadata_tags(photo),
+        metadata_expansion="not-requested",
+        exif_status="not-requested",
+        exif=(),
+    )
+
+
+def expand_photo_metadata(
+    photo: PhotoMetadataPreview,
+    owner_alias: str,
+    *,
+    api_key: str,
+    methods_called: list[str],
+) -> PhotoMetadataPreview:
+    """Fetch getInfo and allowlisted getExif for one explicitly scoped photo."""
+
+    if "flickr.photos.getInfo" not in methods_called:
+        methods_called.append("flickr.photos.getInfo")
+    info_response = fetch_flickr_api(
+        "flickr.photos.getInfo",
+        {"photo_id": photo.photo_id},
+        api_key=api_key,
+    )
+    info = info_response.get("photo", {})
+    dates = info.get("dates", {})
+    description = metadata_value(info, "description")
+    tags = metadata_tags(info)
+    date_taken = metadata_value(dates, "taken")
+    date_posted = metadata_value(dates, "posted")
+
+    error = ""
+    try:
+        if "flickr.photos.getExif" not in methods_called:
+            methods_called.append("flickr.photos.getExif")
+        exif_response = fetch_flickr_api(
+            "flickr.photos.getExif",
+            {"photo_id": photo.photo_id},
+            api_key=api_key,
+        )
+    except FlickrAPIError as exc:
+        if exc.code == "2":
+            exif_status = "permission-denied"
+        else:
+            exif_status = "unavailable"
+            error = redact_flickr_credentials(exc)
+        exif = ()
+    except RuntimeError as exc:
+        exif_status = "unavailable"
+        exif = ()
+        error = redact_flickr_credentials(exc)
+    else:
+        exif = allowlisted_exif(exif_response)
+        exif_status = "fetched" if exif else "fetched-empty"
+
+    return PhotoMetadataPreview(
+        photo_id=photo.photo_id,
+        title=sanitize_metadata_text(info.get("title")) or photo.title,
+        photo_page_url=metadata_photo_page_url(info, owner_alias, photo.photo_id),
+        static_image_url=photo.static_image_url,
+        dimensions=photo.dimensions,
+        date_taken=date_taken,
+        date_posted=date_posted,
+        description=description,
+        tags=tags,
+        metadata_expansion="fetched",
+        exif_status=exif_status,
+        exif=exif,
+        error=error,
+    )
+
+
+def fetch_album_metadata_preview(
+    album_url: str,
+    *,
+    photo_ids: list[str] | None,
+    limit: int | None,
+    api_key: str,
+) -> AlbumMetadataPreview:
+    """Fetch a deterministic, bounded public metadata snapshot."""
+
+    album_id = extract_album_id(album_url)
+    normalized_url = normalize_album_url(album_url, album_id)
+    owner_alias = extract_photos_path_alias(normalized_url)
+    try:
+        album_response = fetch_flickr_api(
+            "flickr.photosets.getInfo",
+            {"photoset_id": album_id},
+            api_key=api_key,
+        )
+        photoset = album_response.get("photoset")
+        if not isinstance(photoset, dict) or not photoset:
+            raise RuntimeError(
+                "flickr.photosets.getInfo did not return an album record"
+            )
+        owner = str(photoset.get("owner", "")) or owner_alias
+        reported_photo_count = int(photoset.get("photos", 0))
+    except RuntimeError as exc:
+        raise InitialAlbumMetadataError(str(exc)) from exc
+    except (TypeError, ValueError) as exc:
+        raise InitialAlbumMetadataError(
+            "flickr.photosets.getInfo returned an invalid public photo count"
+        ) from exc
+    bulk_photos, reported_total, errors = fetch_metadata_preview_photos(
+        owner,
+        album_id,
+        api_key=api_key,
+    )
+    if not errors and len(bulk_photos) != reported_total:
+        errors.append(
+            f"listed {len(bulk_photos)} unique photo(s), but Flickr reported "
+            f"{reported_total}"
+        )
+    if not errors and reported_photo_count != reported_total:
+        errors.append(
+            f"album info reported {reported_photo_count} photo(s), but the "
+            f"listing reported {reported_total}"
+        )
+    if errors:
+        available_ids = [str(photo.get("id", "")) for photo in bulk_photos]
+        requested_scope = describe_metadata_scope(photo_ids, limit)
+        if limit is not None:
+            selected_ids = set(available_ids[:limit])
+        elif photo_ids:
+            requested_ids = list(dict.fromkeys(str(item) for item in photo_ids))
+            selected_ids = set(requested_ids).intersection(available_ids)
+            missing_ids = [item for item in requested_ids if item not in selected_ids]
+            if missing_ids:
+                errors.append(
+                    "listing incomplete; could not verify requested photo ID(s): "
+                    + ", ".join(missing_ids)
+                )
+        else:
+            selected_ids = set()
+    else:
+        selected_ids, requested_scope = select_metadata_photo_ids(
+            bulk_photos,
+            photo_ids,
+            limit,
+        )
+    photos: list[PhotoMetadataPreview] = []
+    methods_called = [
+        "flickr.photosets.getInfo",
+        "flickr.photosets.getPhotos",
+    ]
+    for raw_photo in bulk_photos:
+        photo = bulk_photo_metadata(raw_photo, owner_alias)
+        if photo.photo_id in selected_ids:
+            try:
+                photo = expand_photo_metadata(
+                    photo,
+                    owner_alias,
+                    api_key=api_key,
+                    methods_called=methods_called,
+                )
+            except RuntimeError as exc:
+                safe_error = redact_flickr_credentials(exc)
+                photo = PhotoMetadataPreview(
+                    photo_id=photo.photo_id,
+                    title=photo.title,
+                    photo_page_url=photo.photo_page_url,
+                    static_image_url=photo.static_image_url,
+                    dimensions=photo.dimensions,
+                    date_taken=photo.date_taken,
+                    date_posted=photo.date_posted,
+                    description=MetadataValue("unavailable"),
+                    tags=photo.tags,
+                    metadata_expansion="unavailable",
+                    exif_status="not-requested",
+                    exif=(),
+                    error=safe_error,
+                )
+            if photo.error:
+                errors.append(f"Photo {photo.photo_id}: {photo.error}")
+        photos.append(photo)
+
+    return AlbumMetadataPreview(
+        album_id=album_id,
+        album_url=normalized_url,
+        title=sanitize_metadata_text(photoset.get("title")) or "Untitled",
+        description=metadata_value(photoset, "description"),
+        retrieved_at_utc=datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        requested_scope=requested_scope,
+        reported_photo_count=reported_photo_count,
+        data_sources=tuple(methods_called),
+        photos=tuple(photos),
+        complete=not errors,
+        errors=tuple(errors),
+    )
+
+
+def render_metadata_value(field: MetadataValue) -> str:
+    """Render one metadata field without hiding its availability state."""
+
+    if field.status == "fetched":
+        return f"`{markdown_escape_inline(field.value)}`"
+
+    return field.status
+
+
+def render_album_metadata_preview(preview: AlbumMetadataPreview) -> str:
+    """Render a review-only metadata snapshot for stdout."""
+
+    status = "complete" if preview.complete else "incomplete"
+    reviewed_photos = [
+        photo for photo in preview.photos if photo.metadata_expansion == "fetched"
+    ]
+    reviewed_descriptions = [
+        photo.description.value
+        for photo in reviewed_photos
+        if photo.description.status == "fetched"
+    ]
+    repeated_description = ""
+    if (
+        len(reviewed_photos) > 1
+        and len(reviewed_descriptions) == len(reviewed_photos)
+        and len(set(reviewed_descriptions)) == 1
+    ):
+        repeated_description = reviewed_descriptions[0]
+
+    all_reviewed_tags_empty = bool(reviewed_photos) and all(
+        photo.tags.status == "fetched-empty" for photo in reviewed_photos
+    )
+    common_exif_status = ""
+    if reviewed_photos:
+        exif_statuses = {photo.exif_status for photo in reviewed_photos}
+        if len(exif_statuses) == 1:
+            candidate = next(iter(exif_statuses))
+            if candidate in {"fetched-empty", "permission-denied"}:
+                common_exif_status = candidate
+
+    common_static_image_status = ""
+    if preview.photos:
+        static_statuses = {photo.static_image_url.status for photo in preview.photos}
+        if len(static_statuses) == 1:
+            candidate = next(iter(static_statuses))
+            if candidate != "fetched":
+                common_static_image_status = candidate
+
+    common_dimensions_status = ""
+    if preview.photos:
+        dimension_statuses = {photo.dimensions.status for photo in preview.photos}
+        if len(dimension_statuses) == 1:
+            candidate = next(iter(dimension_statuses))
+            if candidate != "fetched":
+                common_dimensions_status = candidate
+    data_sources = ", ".join(f"`{method}`" for method in preview.data_sources)
+    lines = [
+        "# Flickr metadata preview",
+        "",
+        f"- Status: {status}",
+        f"- Album: [{preview.title}]({preview.album_url})",
+        f"- Album ID: `{preview.album_id}`",
+        f"- Retrieved at (UTC): `{preview.retrieved_at_utc}`",
+        f"- Requested scope: {preview.requested_scope}",
+        "- Public photo count: "
+        + (
+            str(preview.reported_photo_count)
+            if preview.reported_photo_count is not None
+            else "unavailable"
+        ),
+        f"- Data sources: {data_sources}",
+        f"- Album description: {render_metadata_value(preview.description)}",
+    ]
+
+    if preview.errors:
+        lines.extend(["", "## Retrieval errors", ""])
+        for error in preview.errors:
+            lines.append(f"- {markdown_escape_inline(error)}")
+
+    if (
+        repeated_description
+        or all_reviewed_tags_empty
+        or common_exif_status
+        or common_static_image_status
+        or common_dimensions_status
+    ):
+        lines.extend(["", "## Album-level findings", ""])
+
+        if repeated_description:
+            value = markdown_escape_inline(repeated_description)
+            lines.append(
+                f"- Repeated public description ({len(reviewed_photos)} reviewed "
+                f"photos): `{value}`"
+            )
+
+        if all_reviewed_tags_empty:
+            lines.append(
+                f"- Public tags: fetched-empty for all {len(reviewed_photos)} "
+                "reviewed photos"
+            )
+
+        if common_exif_status:
+            lines.append(
+                f"- Digital-file EXIF: {common_exif_status} for all "
+                f"{len(reviewed_photos)} reviewed photos"
+            )
+
+        if common_static_image_status:
+            lines.append(
+                f"- Static image URL: {common_static_image_status} for all "
+                f"{len(preview.photos)} photos"
+            )
+
+        if common_dimensions_status:
+            lines.append(
+                f"- Dimensions: {common_dimensions_status} for all "
+                f"{len(preview.photos)} photos"
+            )
+
+    lines.extend(["", "## Photos"])
+
+    for photo in preview.photos:
+        lines.extend(
+            [
+                "",
+                f"### Photo `{photo.photo_id}`",
+                "",
+                f"- Flickr photo page: [{photo.title or photo.photo_id}]"
+                f"({photo.photo_page_url})",
+                f"- Metadata expansion: {photo.metadata_expansion}",
+                f"- Flickr date taken: {render_metadata_value(photo.date_taken)}",
+                f"- Flickr date posted: {render_metadata_value(photo.date_posted)}",
+            ]
+        )
+
+        if not common_static_image_status:
+            lines.append(
+                f"- Static image URL: {render_metadata_value(photo.static_image_url)}"
+            )
+
+        if not common_dimensions_status:
+            lines.append(f"- Dimensions: {render_metadata_value(photo.dimensions)}")
+
+        if not common_exif_status:
+            lines.append(f"- Digital-file EXIF status: {photo.exif_status}")
+
+        if photo.error:
+            lines.append(f"- Error: {markdown_escape_inline(photo.error)}")
+
+        if photo.description.value != repeated_description:
+            lines.append(
+                f"- Public description: {render_metadata_value(photo.description)}"
+            )
+
+        if not all_reviewed_tags_empty or photo.metadata_expansion != "fetched":
+            lines.append(f"- Public tags: {render_metadata_value(photo.tags)}")
+
+        if photo.exif:
+            lines.append("- Digital-file EXIF:")
+            for item in photo.exif:
+                value = markdown_escape_inline(item.value)
+                lines.append(f"  - {item.label}: `{value}`")
+
+    lines.extend(["", "## Candidate journal additions (not written)", ""])
+
+    if not preview.complete:
+        lines.append("- No candidate journal additions: preview incomplete.")
+    elif repeated_description:
+        value = markdown_escape_inline(repeated_description)
+        lines.append(
+            f"- Public Flickr description, repeated across "
+            f"{len(reviewed_photos)} reviewed photos: `{value}`"
+        )
+
+    if preview.complete and all_reviewed_tags_empty:
+        lines.append(
+            f"- Public Flickr tags: none returned for all "
+            f"{len(reviewed_photos)} reviewed photos at retrieval time"
+        )
+
+    if preview.complete and not repeated_description and not all_reviewed_tags_empty:
+        lines.append("- No album-level additions supported by this preview.")
+
+    return "\n".join(lines).rstrip() + "\n"
 
 
 def fetch_album_api(album_url: str, title_override: str | None) -> Album:
@@ -2075,6 +2814,26 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--metadata-preview",
+        action="store_true",
+        help=(
+            "Print a read-only public metadata review. Use with --url and "
+            "--use-api; this mode never writes files."
+        ),
+    )
+    metadata_scope = parser.add_mutually_exclusive_group()
+    metadata_scope.add_argument(
+        "--metadata-photo-id",
+        action="append",
+        dest="metadata_photo_ids",
+        help="Expand one explicit Flickr photo ID; repeat for additional IDs.",
+    )
+    metadata_scope.add_argument(
+        "--metadata-limit",
+        type=int,
+        help="Expand the first N photos in Flickr album order.",
+    )
+    parser.add_argument(
         "--limit",
         type=int,
         help="Limit the number of discovered albums to report or import.",
@@ -2137,6 +2896,19 @@ def main() -> int:
     args = parse_args()
 
     try:
+        metadata_preview = getattr(args, "metadata_preview", False)
+        metadata_photo_ids = getattr(args, "metadata_photo_ids", None)
+        metadata_limit = getattr(args, "metadata_limit", None)
+
+        if not metadata_preview and metadata_photo_ids:
+            raise RuntimeError("--metadata-photo-id requires --metadata-preview")
+
+        if not metadata_preview and metadata_limit is not None:
+            raise RuntimeError("--metadata-limit requires --metadata-preview")
+
+        if metadata_preview:
+            return handle_metadata_preview(args)
+
         if args.albums_url:
             return handle_albums_directory(args)
 
@@ -2207,6 +2979,52 @@ def main() -> int:
             file=sys.stderr,
         )
         return 1
+
+
+def handle_metadata_preview(args: argparse.Namespace) -> int:
+    """Print one bounded public metadata snapshot without writing files."""
+
+    if not args.url:
+        raise RuntimeError("--metadata-preview requires --url")
+
+    if not args.use_api:
+        raise RuntimeError("--metadata-preview requires --use-api")
+
+    if args.dry_run:
+        raise RuntimeError(
+            "--metadata-preview is already read-only and cannot use --dry-run"
+        )
+
+    photo_ids = getattr(args, "metadata_photo_ids", None)
+    limit = getattr(args, "metadata_limit", None)
+    validate_metadata_scope_args(photo_ids, limit)
+    api_key = require_environment_flickr_api_key()
+    try:
+        preview = fetch_album_metadata_preview(
+            args.url,
+            photo_ids=photo_ids,
+            limit=limit,
+            api_key=api_key,
+        )
+    except InitialAlbumMetadataError as exc:
+        album_id = extract_album_id(args.url)
+        preview = AlbumMetadataPreview(
+            album_id=album_id,
+            album_url=normalize_album_url(args.url, album_id),
+            title="Unavailable",
+            description=MetadataValue("unavailable"),
+            retrieved_at_utc=datetime.now(timezone.utc)
+            .isoformat()
+            .replace("+00:00", "Z"),
+            requested_scope=describe_metadata_scope(photo_ids, limit),
+            reported_photo_count=None,
+            data_sources=("flickr.photosets.getInfo",),
+            photos=(),
+            complete=False,
+            errors=(redact_flickr_credentials(exc),),
+        )
+    print(render_album_metadata_preview(preview), end="")
+    return 0 if preview.complete else 1
 
 
 def handle_albums_directory(args: argparse.Namespace) -> int:
