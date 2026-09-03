@@ -1,99 +1,165 @@
 # Project Memory: TradeJournals Portfolio Direction
 
-This repository is a craftsman-first trade journal and portfolio archive. The goal is to showcase physical restoration skill, preservation judgment, material knowledge, and process transparency rather than software-development ability.
+Last refreshed: 2026-09-03
 
-## Core Vision
+TradeJournals is a craftsman-first trade journal, evidence archive, and portfolio
+source. Its purpose is to make physical restoration skill, preservation judgment,
+material knowledge, and process transparency visible. Markdown, Git, import
+scripts, and the website are supporting infrastructure; they should not become
+the client-facing story.
 
-The project should become an interactive, evidence-backed portfolio for restoration and craft work. Technical tools such as Markdown, GitHub, Flickr, and possibly MCP servers are background infrastructure. The client-facing value is the craft story: what was restored, why it mattered, how the work was done, what tradeoffs were avoided, and what visible evidence supports the claim.
+## Purpose And Boundaries
 
-The portfolio should help historic homeowners, preservation-minded clients, or collaborators understand the author as a serious craftsperson who respects original fabric, understands old materials, and can solve messy real-world restoration problems.
+The portfolio should help historic homeowners, preservation-minded clients, and
+collaborators understand the author as a serious craftsperson who can diagnose
+messy conditions, respect original fabric, choose compatible materials, explain
+tradeoffs, and show evidence for the result.
 
-## Portfolio Pillars
+TradeJournals owns craft history, process decisions, source references, and
+public-facing portfolio material. Private business strategy, finances, legal and
+administrative planning, lead development, and career-transition decisions belong
+in the separate private `restoration-business-operations` repository.
 
-- `01_the_residence_1894`: restoration work on the 1894 house, especially office renovation, structural stabilization, framing, trim, windows, envelope, and historically sensitive repair decisions.
-- `02_the_forge_and_shop`: workshop restoration/buildout using reclaimed timber where possible. This is the working environment and philosophical bridge between architectural craft and mechanical restoration.
-- `03_the_machines`: vintage scooter and motorcycle restoration, including a 1964 Vespa. This complements the home work by showing preservation across metal, mechanics, bodywork, electrical systems, and original material stewardship.
-- `04_materials_and_alchemy`: pottery, clay, glazes, kiln building, and firing.
-- `05_the_lens`: film photography and visual documentation.
+Real credentials, private media, local databases, machine-specific paths, and
+other sensitive working data do not belong in this repository.
 
-## Flickr And AI Portfolio Concept
+## Portfolio Pillars And Current Maturity
 
-The user has a public Flickr album for the 1894 office renovation:
+- `01_the_residence_1894`: seven journals covering historic-home restoration.
+  This is the broadest portfolio area. The ballet studio is near completion, but
+  its durable representative-image identifiers and final room-ready evidence are
+  still pending.
+- `02_the_forge_and_shop`: one journal documenting the working shop, material
+  reuse, tool systems, utilities, and project staging. The evidence base is
+  strong, but the narrative breadth remains comparatively narrow.
+- `03_the_machines`: five journals covering vintage scooters, motorcycles, and
+  mechanical restoration. The 1964 Vespa is the most developed case study and
+  includes notebook, condition, repair, electrical, and Flickr evidence.
+- `04_materials_and_alchemy`: one deep, active pottery journal centered on the
+  return to clay, material tests, firing, formal critique, and a deliberate
+  apprenticeship practice.
+- `05_the_lens`: thirteen journals spanning film photography, camera-specific
+  archives, and visual documentation. Coverage is broad, but several entries are
+  source catalogs rather than complete craft narratives.
 
-[1894 office renovation Flickr album](https://www.flickr.com/photos/boocher/albums/72177720316928566/)
+The strongest journals explain why a choice was made and what the evidence
+proves. Album coverage alone does not make a journal portfolio-ready.
 
-The album documents office renovation work in Smithville. It should be used as visual evidence for trade journals. Future photo work should add clear titles and short descriptions directly in Flickr, especially for key milestone images.
+## Evidence Sources And Rules
 
-Important guidance from prior discussion:
+Markdown journals are the durable source of truth. Organize them by project,
+trade, system, or skill rather than treating the archive as a bare chronology.
 
-- The album is strong because it shows exposed structural work, historic framing, rough-sawn true-dimensional lumber, and unfiltered renovation reality.
-- It could be improved with more close-up photos of the actual interventions: joinery, sistering, bolt or screw patterns, sill repairs, shoring, leveling equipment, tool use, and clean before/during/after transitions.
-- Flickr descriptions should explain the specific challenge, the method used, and why that method respected the historic structure.
+Keep Flickr, Google Photos, Lomography, and scanned source material distinct:
 
-## Markdown Trade Journals
+- Flickr is the primary public, high-resolution evidence archive. The tracked
+  inventory records 39 public albums, with 32 mapped into TradeJournals and seven
+  intentionally excluded. Its recorded check date is 2026-08-07, so those counts
+  are a repository checkpoint rather than proof of current external state.
+- Google Photos shared URLs preserve album provenance, but durable image-level
+  evidence should come from a project manifest or local export. Two albums are
+  tracked, and neither yet has a complete durable representative-image set. The
+  studio is the priority; pottery uses Flickr as its primary public evidence.
+- Lomography records remain separate from related Flickr albums even when the
+  photographs overlap.
+- Scanned sketchbooks and handwritten notes provide provenance and decision
+  context. They should support the journal narrative rather than be presented as
+  unexplained artifacts.
 
-Markdown files are the preferred content format because they are easy to write, easy to version, and easy for AI tools to read. Journals should be organized by trade, system, or skill rather than only by timeline.
+Do not infer a restoration stage, material, date, or outcome from an image alone.
+Preserve uncertainty when the surrounding record does not establish the fact.
 
-Recommended journal pattern:
+## Implemented Functionality
 
-- The Challenge
-- Historic Preservation Context
-- My Craftsmanship Execution
-- Materials And Tools
-- Tradeoffs Avoided Or Accepted
-- Visual Evidence / Flickr References
+### Media Maintenance
 
-Example trade journal topics:
+- `scripts/import_flickr_album.py` supports public album import, directory
+  discovery, inventory generation, known-album count reconciliation, bounded
+  metadata preview, and journal merging.
+- `scripts/import_google_photos_album.py` records shared-album sources and builds
+  image-level evidence from manifests or local exports.
+- Importers deduplicate stable media identities, redact Flickr credentials from
+  failures, keep public-read behavior separate from private access, and fail
+  closed when a proposed change could overwrite curated Markdown.
+- Dry-run and metadata-preview modes are the normal first step. Inventory or
+  journal writes require review of the proposed result.
 
-- structural framing and stabilization
-- historic framing and lumber
-- reclaimed timber joinery
-- finish carpentry and millwork
-- fenestration, sash, wavy glass, and glazing
-- masonry and lime mortar
-- exterior envelope and siding
-- mechanical integration in historic structures
-- Vespa chassis, metalwork, motor rebuild, and electrical systems
+### Website Prototype
 
-## Possible Technical Direction
+`site_example/` is a working local static portfolio prototype, not merely a
+future concept. It includes:
 
-A future interactive portfolio could use:
+- a five-pillar preservation narrative
+- representative local images linked to original sources
+- project evidence cards with stage, date, album, and source information
+- an offline generated evidence manifest
+- an "Ask the journals" keyword-ranking search across thirteen indexed entries
 
-- GitHub as the durable home for Markdown trade journals and project structure.
-- Flickr as the visual archive for high-resolution process photos.
-- A custom Python/FastMCP Flickr server to fetch public album metadata, image URLs, titles, descriptions, tags, and photo IDs.
-- A GitHub MCP server or similar integration to read and update trade journals.
+The search is deterministic local retrieval, not a semantic or conversational AI
+assistant. The site has no repository-managed hosting or deployment workflow yet.
 
-The technical implementation should remain invisible to clients. The result should feel like a conversational craftsman portfolio or construction log, not a developer demo.
+`scripts/build_site_evidence.py` builds the checked-in browser manifest from
+`site_example/evidence-source.json` and the tracked media inventories. It
+validates journal paths, representative-image paths, page anchors, album
+identities, counts, and human-readable fallback text without credentials or live
+network calls.
 
-## Brand Narrative
+## Journal Standard
 
-The unifying idea is preservation across disciplines:
+Each substantive journal should make the hidden work legible:
 
-- The 1894 residence proves architectural preservation and structural restoration skill.
-- The reclaimed-timber workshop proves commitment to material reuse, tooling, and the craft environment.
-- The 1964 Vespa and other machines prove precision mechanical restoration and respect for original engineering.
+- the original challenge or constraint
+- historic, mechanical, or material context
+- craftsmanship execution and tools
+- tradeoffs avoided or accepted
+- dated work entries
+- representative visual evidence
+- what each selected image proves
+- current stage, unresolved questions, and evidence still needed
 
-The portfolio should present an ecosystem of preservation: living in, working in, documenting, and restoring historic materials and machines with care.
+Prefer three to five strong representative images for a project presentation.
+Select before, difficult-middle, intervention-detail, and finished-state evidence
+where the record supports those stages.
 
-## Current Progress
+## Recommended Journal-To-Site Workflow
 
-The repository now has tracked pillar folders and `trade_journals` folders for each major portfolio area. Markdownlint is configured and should be run with `npm run lint:md` before commits.
+1. Capture photographs and brief field notes while the work is happening. Record
+   the constraint, action, material, reason, result, and remaining uncertainty.
+2. Classify the source platform and target pillar. Keep different media platforms
+   and unrelated projects separate.
+3. Run the relevant importer in `--dry-run` or bounded metadata-preview mode.
+   Review the proposed output before permitting a journal or inventory write.
+4. Curate one journal at a time. Add interpretation, material judgment, tradeoffs,
+   and precise evidence labels rather than bulk album links alone.
+5. Select representative images and update `site_example/evidence-source.json`
+   when the journal is ready for the portfolio surface.
+6. Run `npm run build:site-evidence`, inspect the relevant site section and search
+   result, and verify the complete scoped change.
+7. Before committing, run:
 
-Project command alias:
+   ```sh
+   PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
+   npm run lint:md
+   npm run check:site-evidence
+   npm run test:site
+   git diff --check
+   ```
 
-- `git er done` means commit the current project changes and sync them with GitHub.
+8. Review the exact diff for accidental private data, stale counts, unsupported
+   claims, and loss of curated prose. `git er done` means commit the approved
+   project changes and synchronize them with the configured GitHub remote.
 
-The active first journal is `03_the_machines/trade_journals/1964_vespa_restoration.md`. It contains:
+## Near-Term Priorities
 
-- A first journal entry based on scanned handwritten notes found in the Vespa side storage compartment.
-- Initial repair observations around rear brake light switch location, rear brake pedal rubber, surface rust, paint chipping, Ford 76 / code 2R paint reference, and frame serial number `BA276439`.
-- Additional scanned notes for model/year and replacement parts: 1964 Vespa 150, all cables, rear brake pedal, rear brake foot pedal rubber cover, side storage door keyed lock, cotter pin / 14 mm bolt and nut note for securing the rear brake cable, tail light assembly, and petcock lever gasket or rubber grommet.
-- A public Flickr album reference for the Vespa: [1964 Vespa](https://www.flickr.com/photos/boocher/albums/72177720305371229/), owned by UncleRedBeard, with 427 public photos.
-- A working `Visual Evidence` map that treats photo links as pre-work or baseline-condition evidence unless the user says otherwise.
-- Mapped pre-work evidence for overall condition, frame/body provenance, engine condition, electrical condition, rear wheel/brake/control cable condition, cable routing, engine access, original markings, and stamped engine/case number.
-
-Recent GitHub sync points:
-
-- `fe856cd Add Vespa pre-work journal evidence`
-- `8a4b3e2 Append Vespa scanned parts notes`
+1. Finish the ballet studio evidence set with durable image identifiers, final
+   trim-out details, and an explicit room-ready status.
+2. Deepen the shed into focused craft stories around shop infrastructure,
+   material reuse, and restoration workflow.
+3. Develop one secondary machine journal into a complete case study instead of
+   spreading shallow additions across every motorcycle entry.
+4. Keep the root README and this document aligned with implemented behavior.
+5. Add a single full-verification command and continuous integration before
+   treating the website as a deployable public product.
+6. If substantial Flickr functionality is added, split the large importer into
+   smaller discovery, metadata, inventory, rendering, and CLI units while
+   preserving its tested contracts.
