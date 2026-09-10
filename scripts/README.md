@@ -2,6 +2,41 @@
 
 Utility scripts for maintaining the TradeJournals archive.
 
+## Working Guide
+
+Use the [module map](../MODULE_MAP.md) to distinguish evidence maintenance from
+portfolio publishing. This guide owns media-tool usage; the
+[site guide](../site_example/README.md) owns the journal-to-portfolio procedure.
+Run the commands in this document from the repository root.
+
+For media maintenance:
+
+1. Identify the provider, exact album, target journal, and relevant block in
+   the [Flickr](../FLICKR_PUBLIC_ALBUMS.md) or
+   [Google Photos](../GOOGLE_PHOTOS_ALBUMS.md) inventory.
+2. Run a bounded preview or add `--dry-run` to an import or inventory command
+   below. Review the proposed output before authorizing a write. Keep source
+   identity and verification dates distinct from project interpretation.
+3. Preserve curated journal prose and inventory annotations. Resolve a refused
+   overwrite by reviewing the proposed difference rather than bypassing the
+   protection. Follow the selected pillar's working guide for journal changes.
+4. If reviewed metadata affects a published entry, follow the
+   [publishing procedure](../site_example/README.md#portfolio-publishing).
+
+Flickr and Google Photos have different source and metadata contracts. For a
+tool change, work on the relevant importer and its tests without assuming that
+the other provider needs the same change. Existing network-free regression
+tests cover credentials, identity handling, previews, and curated-content
+preservation:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
+```
+
+Use the [validation matrix](../MODULE_MAP.md#existing-validation) for other
+affected areas. Importer refactoring and new verification commands are separate
+changes from maintaining these guides.
+
 ## Flickr Album Import Prototype
 
 `import_flickr_album.py` imports a public Flickr album into a Markdown journal
@@ -239,6 +274,9 @@ provenance labels. Changed existing Google Photos journals are likewise
 previewed and rejected rather than overwritten, even with `--force`.
 
 ## Static Website Evidence Manifest
+
+See the [publishing working guide](../site_example/README.md#portfolio-publishing)
+for record ownership, the update sequence, and browser review.
 
 The website search index and evidence labels are built offline from the curated
 `site_example/evidence-source.json` catalog plus the tracked Flickr and Google

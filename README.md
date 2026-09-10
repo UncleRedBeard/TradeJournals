@@ -15,6 +15,15 @@ TradeJournals/
 └── 05_the_lens/                 # Film photography and visual documentation
 ```
 
+## Working In The Archive
+
+Start with the [module map and working guides](MODULE_MAP.md) to choose a craft
+area or supporting workflow. It identifies authoritative records, shared
+dependencies, focused update procedures, and existing validation commands.
+
+Use [project memory](PROJECT_MEMORY.md) for portfolio-wide direction and
+priorities, and the relevant journal for project facts, status, and evidence.
+
 ## Journal Philosophy
 
 Each journal should explain more than what happened. It should capture:

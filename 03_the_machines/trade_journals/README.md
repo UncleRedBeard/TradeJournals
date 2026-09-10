@@ -21,13 +21,9 @@ before-and-after gallery.
   archive journal for motorcycle, fabrication, parts-cleaning, and cycle-work
   evidence.
 
-## Current Review State
+## Working From A Journal
 
-The deeper machine-photo review has been completed for the Honda chopper, KLR
-650, CB750 DOHC, and Iron Butterfly shop archive. The Vespa journal remains the
-largest restoration record in this section and should continue to preserve its
-existing craftsman-first structure.
-
-Next useful passes should focus on cross-journal polish: tightening titles,
-adding representative images to the sample site, or building a machine summary
-page that links the strongest visual evidence from each journal.
+Use the [machine working guide](../README.md#working-guide) for scope,
+dependencies, and validation. Read the selected journal for its recorded review
+findings, current stage, and evidence still needed. Portfolio-wide priorities
+belong in [project memory](../../PROJECT_MEMORY.md#near-term-priorities).

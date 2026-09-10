@@ -6,6 +6,20 @@ mechanical work: measure existing conditions, map systems, record hidden
 conditions, calculate geometry, and plan the sequence before the evidence is
 changed by the work itself.
 
+## Working With Shared Scans
+
+Use this guide for source provenance and page assignments. Keep project
+interpretation, progress, and outstanding evidence in the relevant journal.
+Link to the original scan and identify its pages when documenting a room or
+machine; preserve the complete source when it spans several projects.
+
+For an approved source addition, record its identity and page mapping here,
+then update only the relevant journal references. Follow changed file and page
+links and use the [existing validation checks](../../MODULE_MAP.md#existing-validation).
+The [residence](../../01_the_residence_1894/README.md#working-guide) and
+[machine](../../03_the_machines/README.md#working-guide) guides describe the
+project-level workflows.
+
 ## House Project Sketchbook - August 20, 2026
 
 - Source: [47-page master scan](house_project_sketchbook_20260820.pdf)

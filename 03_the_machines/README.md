@@ -9,25 +9,35 @@ craft in several forms: a full scooter restoration, custom motorcycle and
 engine work, practical dual-sport utility, factory-era Honda service evidence,
 and shop-context reference material.
 
-## Active Journals
+## Working Guide
 
-- [1964 Vespa Restoration](trade_journals/1964_vespa_restoration.md) -
-  restoration archive centered on bodywork, rust assessment, wiring, steering,
-  paint preparation, and evidence-led decision making.
-- [Bikes - Honda Chopper](trade_journals/bikes_honda_chopper.md) - custom
-  motorcycle archive for a 1974 Honda CB750 SOHC engine and 1977 Santee chopper
-  frame, including chassis separation, tank work, and engine refresh evidence.
-- [Bikes - 1982 Honda CB750 DOHC](trade_journals/bikes_1982_honda_cb750_dohc.md) -
-  later Honda CB750 machine record focused on carburetor service, pod-filter
-  fitment, right-side engine evidence, and factory-era service context.
-- [Bikes - 2004 KLR 650](trade_journals/bikes_2004_klr_650.md) - practical
-  dual-sport utility record covering luggage, rack development, exhaust
-  protection, tire condition, and travel-ready configuration.
-- [Iron Butterfly Cycle Works](trade_journals/iron_butterfly_cycle_works.md) -
-  shop and multi-machine reference archive for fabrication, parts cleaning,
-  engine/drivetrain work, and motorcycle-adjacent process evidence.
+Start with the [machine journal index](trade_journals/README.md). Scope work to
+one machine and, where useful, one system within its journal. Iron Butterfly
+Cycle Works holds shared shop context; machine-specific findings belong in the
+corresponding machine journal.
+
+Resolve albums through the [Flickr inventory](../FLICKR_PUBLIC_ALBUMS.md).
+For Vespa notebook evidence, use the
+[sketchbook and electrical-map guide](../source_materials/scanned_sketchbooks/README.md).
+The master sketchbook also serves residence projects; keep that source intact.
+Consult the [forge and shop guide](../02_the_forge_and_shop/README.md#working-guide)
+when evidence concerns the working space or tool systems.
+
+For an update:
+
+1. Read the machine's diagnosis, dated work, and evidence before extending it.
+2. Keep condition, intervention, reassembly, and confirmed operating results
+   distinct. Record current stage and unresolved evidence in the journal.
+3. Update the index only when navigation changes. Follow the
+   [publishing guide](../site_example/README.md#portfolio-publishing) when
+   changing a published summary or representative set.
+
+Use the [existing validation checks](../MODULE_MAP.md#existing-validation).
 
 ## Portfolio Evidence Map
+
+This table provides orientation. Use the linked journal index above for the
+supported details and current evidence needs.
 
 | Journal | Strongest Evidence | What It Demonstrates |
 | --- | --- | --- |
