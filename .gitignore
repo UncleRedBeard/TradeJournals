@@ -3,3 +3,12 @@
 !.env.example
 .DS_Store
 __pycache__/
+
+# Local Astro website dependencies and generated files
+website/node_modules/
+website/.runtime/
+website/.astro/
+website/.generated/
+website/src/generated/
+website/dist/
+website/.preview-dist/

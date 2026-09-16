@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "flickr-53921225999",
+  "kind": "evidence",
+  "assetPath": "site_example/assets/flickr/office/04.jpg",
+  "sourceUrl": "https://www.flickr.com/photos/boocher/53921225999/in/set-72177720316928566/",
+  "albumKey": "flickr:72177720316928566",
+  "alt": "Office room with tall windows and plank floor",
+  "width": 640,
+  "height": 640
+}

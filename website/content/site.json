@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "site",
+  "name": "Worth Keeping",
+  "descriptor": "Time & Timber Restoration",
+  "serviceLine": "Historic floors, interior woodwork, and architectural restoration.",
+  "navigation": [
+    { "label": "Work", "href": "/work/office-restoration/" },
+    { "label": "TradeJournals", "href": "/tradejournals/" }
+  ]
+}
