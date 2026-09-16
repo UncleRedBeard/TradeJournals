@@ -2,7 +2,7 @@
 
 Report ID: `WK-WEB-T04-R01`
 Revision: 2
-Status: READY FOR FINAL HUB ACCEPTANCE
+Status: COMPLETE — accepted by hub
 
 This hub revision supersedes revision 1's incomplete browser and maintenance
 verification. The child resumed after the hub began recovery and supplied the
@@ -51,7 +51,11 @@ All commands used the scoped Node 24.21.0 runtime where applicable.
 | Real candidate release | Nonzero exit with `UNREVIEWED_CONTENT`; saved review remains candidate with empty snapshots. |
 | Synthetic reviewed release | Actual Astro release built 6 pages and passed the output gate; no preview notice or noindex in those pages. |
 
-Markdown lint and tracked/untracked whitespace are verified at hub acceptance.
+Final acceptance on September 16, 2026: Markdown lint checked 59 files with
+zero errors; tracked and untracked whitespace checks passed. Independent review
+findings were fixed and rechecked with no remaining Important or Critical
+issues. The normal preview was reloaded after the final build, with no captured
+console errors or warnings. Task title and register were reconciled to COMPLETE.
 
 ### Maintenance Scenarios
 
@@ -98,8 +102,8 @@ it after verifying port 8126 was free.
   original project list visible with the results list hidden.
 
 These are focused checks in the Codex in-app browser, not a full cross-browser
-or assistive-technology certification. Temporary viewport overrides and fault
-servers are restored/stopped at closeout; the normal preview remains available.
+or assistive-technology certification. Temporary viewport overrides were reset and fault servers stopped; the normal
+preview remains available.
 
 ## Changed Paths
 

@@ -139,14 +139,14 @@ their completion reports. Preserve other tasks' work and do not switch branches.
 ## Website 1 — Task 04 Pilot Verification
 
 - Exact child ID: `01a0ab24-db71-75a0-b2d8-d4280528a596`.
-- Exact displayed title: Website 1 - Task 04 Pilot Verification - PAUSED.
+- Exact displayed title: Website 1 - Task 04 Pilot Verification - COMPLETE.
 - Environment: same directory; `codex/website-updates`; base `7d023b9`.
 - Brief: [Task 04, revision 1](task-04-pilot-verification.md).
 - Dependencies: accepted pilot committed at
   `7d023b9f06781bdf082acaa2e0c6fc15fbf1479e`; checkout clean before preparation.
 - Deliverable: output checker, regression and maintenance tests, build integration,
   browser acceptance checks, and maintenance/preview documentation.
-- Workflow status: IN PROGRESS (hub final acceptance review).
+- Workflow status: COMPLETE (accepted by hub).
 - Runtime state: child resumed on a direct user follow-up after initial hub
   recovery. That turn has completed and child is idle. The hub owns final review.
 - Approval: RECEIVED; Shawn's exact instruction in this hub: "start task 04".
@@ -159,13 +159,16 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   When the child resumed, hub stopped overlapping edits and owned browser tests.
   After the child finished, hub reviewed its draft and closed anchor/source-link,
   preview-metadata, hero-selection, and maintenance-test gaps. Internal helper
-  supplied the Python HTML parser; independent code review is pending.
-- Verification: 76 website tests, 84 full Python tests, existing evidence/search
+  supplied the Python HTML parser; independent code review found no remaining Important or Critical issues after fixes.
+- Verification: 79 website tests, 84 full Python tests, existing evidence/search
   checks, and a 4-page/17-file/60-reference preview build pass. Actual synthetic
   reviewed release builds; real candidate release rejects. Browser checks include
   desktop/mobile, keyboard skip/focus, script-blocked reading, and search HTTP 503.
-- Acceptance: pending final independent code review, documentation lint, and
-  title/register reconciliation. No editorial approval is implied.
+- Acceptance: ACCEPTED on September 16, 2026, at 21:47 UTC. Independent review,
+  59-file Markdown lint, and tracked/untracked whitespace checks pass. Browser
+  preview was reloaded after the final build; no console errors or warnings
+  were captured. Final COMPLETE title readback is recorded below.
+  No editorial approval is implied.
 
 ## Remaining Decisions After The Pilot
 
@@ -193,3 +196,5 @@ contact destination, hosting/domain and deployment remain separately scoped.
 | 2026-09-16 16:56 | 04 | WK-WEB-T04-D01 | Same-directory child created and verified; approved brief dispatched once | Pilot verification running |
 | 2026-09-16 16:58 | 04 | WK-WEB-T04-H01 | Child turn ended without verification code; hub paused child and took over existing approved scope | Direct implementation in progress |
 | 2026-09-16 17:44 | 04 | WK-WEB-T04-H02 | Hub reconciled resumed child work and superseded its premature acceptance entry with report revision 2 | Final acceptance review pending; no publication or Git closeout authorized |
+
+| 2026-09-16 21:47 | 04 | WK-WEB-T04-H03 | Independent review findings fixed; 79 website tests, 84 Python tests, legacy checks, browser review, lint and whitespace pass | Accepted; COMPLETE title set and verified; no next task or publication |

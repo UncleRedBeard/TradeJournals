@@ -1,6 +1,6 @@
 # Website 1 - Task 04 Pilot Verification
 
-Workflow status: IN PROGRESS (dispatch sent; execution underway)
+Workflow status: COMPLETE (hub accepted report revision 2; editorial review remains separate)
 Execution approval: RECEIVED; Shawn said "start task 04" on September 16, 2026.
 Hub ID/title: `01a0a263-8d09-7ff2-8144-a71eb6ec16f6` / website updates
 Child ID: `01a0ab24-db71-75a0-b2d8-d4280528a596`
