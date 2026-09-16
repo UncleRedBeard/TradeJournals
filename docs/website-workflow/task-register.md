@@ -103,7 +103,7 @@ their completion reports. Preserve other tasks' work and do not switch branches.
 ## Website 1 — Task 03 Astro Pages
 
 - Exact child ID: `01a0aab2-36e1-78f3-8cff-20a2937e5ccc`.
-- Exact displayed title: Website 1 - Task 03 Astro Pages - PAUSED.
+- Exact displayed title: Website 1 - Task 03 Astro Pages - COMPLETE.
 - Environment: same directory; `codex/website-updates`; base `505d34e`.
 - Brief: [Task 03, revision 1](task-03-astro-pages.md).
 - Dependencies: accepted Tasks 01 and 02 are present; editorial content stays
@@ -133,15 +133,44 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   confirmed the home, project, archive search, and mobile project layout with
   no console errors.
 - Final task/register agreement: Task 03 is COMPLETE through direct hub work.
-  The child remains PAUSED because it did not produce these artifacts; the
-  record and report make that recovery explicit rather than assigning its work
-  to the inactive child.
+  The child is now titled COMPLETE and idle, freshly read back during Task 04
+  on September 16, 2026. Direct hub recovery remains the recorded authorship.
 
-## Planned Successors
+## Website 1 — Task 04 Pilot Verification
 
-| Task | Scope | Dependency | Dispatch State |
-| --- | --- | --- | --- |
-| 04 Pilot Verification | Output checks, browser review, workflow documentation | Accepted Task 03 | Not created; task-specific dispatch approval pending |
+- Exact child ID: `01a0ab24-db71-75a0-b2d8-d4280528a596`.
+- Exact displayed title: Website 1 - Task 04 Pilot Verification - PAUSED.
+- Environment: same directory; `codex/website-updates`; base `7d023b9`.
+- Brief: [Task 04, revision 1](task-04-pilot-verification.md).
+- Dependencies: accepted pilot committed at
+  `7d023b9f06781bdf082acaa2e0c6fc15fbf1479e`; checkout clean before preparation.
+- Deliverable: output checker, regression and maintenance tests, build integration,
+  browser acceptance checks, and maintenance/preview documentation.
+- Workflow status: IN PROGRESS (hub final acceptance review).
+- Runtime state: child resumed on a direct user follow-up after initial hub
+  recovery. That turn has completed and child is idle. The hub owns final review.
+- Approval: RECEIVED; Shawn's exact instruction in this hub: "start task 04".
+- Approval scope: plan Task 4; no publication, Git closeout, or next task.
+- Dispatch ID: `WK-WEB-T04-D01`; SENT once.
+- Latest report: `WK-WEB-T04-R01`, revision 2,
+  [completion report](reports/task-04-pilot-verification.md).
+- Report delivery: RECEIVED locally; revision 2 incorporates hub verification.
+- Recovery: child initially ended without code, so hub began approved work.
+  When the child resumed, hub stopped overlapping edits and owned browser tests.
+  After the child finished, hub reviewed its draft and closed anchor/source-link,
+  preview-metadata, hero-selection, and maintenance-test gaps. Internal helper
+  supplied the Python HTML parser; independent code review is pending.
+- Verification: 76 website tests, 84 full Python tests, existing evidence/search
+  checks, and a 4-page/17-file/60-reference preview build pass. Actual synthetic
+  reviewed release builds; real candidate release rejects. Browser checks include
+  desktop/mobile, keyboard skip/focus, script-blocked reading, and search HTTP 503.
+- Acceptance: pending final independent code review, documentation lint, and
+  title/register reconciliation. No editorial approval is implied.
+
+## Remaining Decisions After The Pilot
+
+There is no automatic Task 05 in this plan. Final content/visual acceptance,
+contact destination, hosting/domain and deployment remain separately scoped.
 
 ## Event Log
 
@@ -160,3 +189,7 @@ their completion reports. Preserve other tasks' work and do not switch branches.
 | 2026-09-16 14:51 | 03 | WK-WEB-T03-D01 | Same-directory child verified idle before single approved dispatch; active turn and exact IN PROGRESS title observed | Astro pages task running |
 | 2026-09-16 15:00 | 03 | WK-WEB-T03-R01 | Child dispatch ended without implementation; Shawn required actual work. Hub paused the child and began the same approved scope directly | Markdown safety test and Astro preview build now have real artifacts |
 | 2026-09-16 15:10 | 03 | WK-WEB-T03-R02 | Hub completed the approved Astro scope and browser review; focused tests and existing evidence/search checks passed | Task complete; Task 04 remains unstarted |
+| 2026-09-16 16:53 | 04 | WK-WEB-T04-A01 | Shawn explicitly said start task 04; clean development branch and committed pilot verified | Task-specific approval recorded |
+| 2026-09-16 16:56 | 04 | WK-WEB-T04-D01 | Same-directory child created and verified; approved brief dispatched once | Pilot verification running |
+| 2026-09-16 16:58 | 04 | WK-WEB-T04-H01 | Child turn ended without verification code; hub paused child and took over existing approved scope | Direct implementation in progress |
+| 2026-09-16 17:44 | 04 | WK-WEB-T04-H02 | Hub reconciled resumed child work and superseded its premature acceptance entry with report revision 2 | Final acceptance review pending; no publication or Git closeout authorized |

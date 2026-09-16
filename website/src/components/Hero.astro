@@ -1,5 +1,5 @@
 ---
-const { headline, intro, image } = Astro.props;
+const { headline, intro, image, workHref } = Astro.props;
 ---
 
 <section class="hero">
@@ -8,7 +8,7 @@ const { headline, intro, image } = Astro.props;
       <p class="eyebrow">Time & Timber Restoration</p>
       <h1>{headline}</h1>
       <p>{intro}</p>
-      <a class="button-link" href="/work/office-restoration/">See the work</a>
+      {workHref && <a class="button-link" href={workHref}>See the work</a>}
     </div>
     {image && <img class="hero__image" src={image.src} width={image.width} height={image.height} alt={image.alt} />}
   </div>

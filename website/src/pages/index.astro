@@ -10,7 +10,7 @@ const service = model.services.find(item => item.id === model.home.serviceIds[0]
 ---
 
 <SiteLayout site={model.site} reviewNotice={model.reviewNotice}>
-  <Hero headline={model.home.headline} intro={model.home.intro} image={model.home.hero} />
+  <Hero headline={model.home.headline} intro={model.home.intro} image={model.home.hero} workHref={featured[0]?.href} />
   {service && <ServiceSection service={service} projects={featured.filter(project => service.projectIds.includes(project.id))} />}
   <section class="section"><div class="shell"><p class="eyebrow">Selected work</p><h2 class="section-heading">Work with a memory of the house.</h2>{featured.map(project => <ProjectCard project={project} />)}</div></section>
 </SiteLayout>

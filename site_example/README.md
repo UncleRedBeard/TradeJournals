@@ -5,6 +5,10 @@ Start with the [module map](../MODULE_MAP.md) for archive ownership and shared
 dependencies. Journal facts and project status remain in their source journals;
 this directory owns their curated portfolio presentation.
 
+The separate [Time & Timber Restoration Astro pilot](../website/README.md)
+uses selected structured records for a new public-facing review path. It does
+not replace this prototype or alter this directory's ownership and commands.
+
 ## Portfolio Publishing
 
 Work on one journal's portfolio selection at a time. The inputs and output are:

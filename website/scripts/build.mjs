@@ -3,6 +3,7 @@ import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { prepareSite } from "../lib/prepare.mjs";
+import { checkOutput } from "./check-output.mjs";
 
 const scriptRoot = path.dirname(fileURLToPath(import.meta.url));
 const defaultWebsiteRoot = path.resolve(scriptRoot, "..");
@@ -51,12 +52,17 @@ export async function buildWebsite({ mode, repoRoot = defaultRepoRoot, websiteRo
     },
     stdio: "inherit"
   });
-  return prepared;
+  const output = await checkOutput({
+    outputRoot: path.join(websiteRoot, mode === "preview" ? ".preview-dist" : "dist"),
+    model: prepared.model
+  });
+  console.log(`Public output verified: ${output.pages} pages, ${output.files} files, ${output.references} references.`);
+  return { ...prepared, output };
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   buildWebsite({ mode: process.argv[2] }).catch(error => {
-    console.error(error.message);
+    console.error(`${error.code ?? "BUILD_ERROR"}: ${error.message}`);
     process.exitCode = 1;
   });
 }

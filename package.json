@@ -5,7 +5,10 @@
     "build:site-evidence": "python3 scripts/build_site_evidence.py",
     "check:site-evidence": "python3 scripts/build_site_evidence.py --check",
     "lint:md": "markdownlint-cli2 \"**/*.md\"",
-    "test:site": "python3 -m unittest tests.test_site_evidence && node --test tests/site_search.test.js"
+    "test:site": "python3 -m unittest tests.test_site_evidence && node --test tests/site_search.test.js",
+    "build:website:preview": "npm --prefix website run build:preview",
+    "test:website": "npm --prefix website test && PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_website_sources tests.test_website_html",
+    "check:website": "npm --prefix website run build:preview && npm --prefix website run check:output"
   },
   "devDependencies": {
     "markdownlint-cli2": "^0.22.0"

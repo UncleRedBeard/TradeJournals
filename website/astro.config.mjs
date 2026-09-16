@@ -11,6 +11,8 @@ if (!publicDir || !["preview", "release"].includes(mode)) {
 
 export default defineConfig({
   output: "static",
+  // Keep the small pilot's styles with its HTML and its output contract stable.
+  build: { inlineStylesheets: "always" },
   publicDir,
   outDir: mode === "preview" ? "./.preview-dist" : "./dist",
   markdown: {
