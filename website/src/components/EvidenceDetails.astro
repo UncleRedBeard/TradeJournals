@@ -1,0 +1,17 @@
+---
+const { project } = Astro.props;
+---
+
+<aside class="evidence-details" aria-label="Project record">
+  <p><strong>Recorded:</strong> {project.recorded}</p>
+  <p><strong>Source:</strong> {project.sourceLabel}</p>
+  {project.evidenceBoundary && <p>{project.evidenceBoundary}</p>}
+  <ul>{project.albums.map(album => <li><a href={album.sourceUrl}>View {album.label}</a> <span>({album.shown} selected from a recorded {album.count})</span></li>)}</ul>
+</aside>
+
+<style>
+  .evidence-details { border-left: 3px solid var(--sage); color: #45554b; font-size: 0.92rem; margin: 2rem 0; max-width: 44rem; padding: 0.25rem 1rem; }
+  .evidence-details p { margin: 0.6rem 0; }
+  .evidence-details ul { padding-left: 1.1rem; }
+  .evidence-details span { color: #647168; }
+</style>

@@ -41,8 +41,8 @@ test("Office preserves the selected gallery, original Flickr URLs, and distinct 
 test("Office is an explicit candidate, with the approved public identity and no contact action", async () => {
   const records = validateContent(await loadContent(contentRoot));
   assert.equal(records.review.state, "candidate");
-  assert.equal(records.site.name, "Worth Keeping");
-  assert.equal(records.site.descriptor, "Time & Timber Restoration");
+  assert.equal(records.site.name, "Time & Timber Restoration");
+  assert.equal(records.site.descriptor, "Historic floors, interior woodwork, and architectural restoration.");
   assert.equal(records.site.serviceLine, "Historic floors, interior woodwork, and architectural restoration.");
   assert.equal(records.site.contact, undefined);
   assert.deepEqual(records.home.featuredProjectIds, ["office-restoration"]);

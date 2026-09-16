@@ -1,0 +1,29 @@
+---
+const { projects } = Astro.props;
+---
+
+<section class="archive-search" aria-labelledby="archive-search-heading">
+  <h2 id="archive-search-heading" class="section-heading">Ask the journals</h2>
+  <p>Search the selected archive by room, material, or process.</p>
+  <form data-archive-search>
+    <label for="archive-query">Search the archive</label>
+    <div><input id="archive-query" name="q" type="search" /><button type="submit">Search</button></div>
+  </form>
+  <p data-search-status aria-live="polite"></p>
+  <div data-search-results hidden></div>
+  <div data-archive-list>
+    {projects.map(project => <article><h3><a href={project.href}>{project.title}</a></h3><p>{project.summary}</p></article>)}
+  </div>
+</section>
+
+<script defer src="/scripts/journal-search.js"></script>
+<script defer src="/scripts/archive-search.js"></script>
+
+<style>
+  .archive-search { max-width: 48rem; }
+  form > div { display: flex; gap: 0.5rem; margin-top: 0.35rem; }
+  input { border: 1px solid var(--ink); flex: 1; font: inherit; padding: 0.55rem; }
+  button { background: var(--ink); border: 1px solid var(--ink); color: white; cursor: pointer; font: inherit; padding: 0.55rem 0.85rem; }
+  [data-archive-list] article, [data-search-results] article { border-top: 1px solid var(--line); margin-top: 1rem; padding-top: 0.75rem; }
+  h3 { font-family: var(--display); font-size: 1.5rem; margin: 0; }
+</style>

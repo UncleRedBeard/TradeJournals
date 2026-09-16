@@ -1,0 +1,12 @@
+:root {
+  --ink: #20352d;
+  --green: #294a3b;
+  --sage: #b8c8ae;
+  --limestone: #e7e1d2;
+  --paper: #f7f4ed;
+  --wood: #826445;
+  --line: #c8c0af;
+  --display: Georgia, "Times New Roman", serif;
+  --body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --measure: 72rem;
+}

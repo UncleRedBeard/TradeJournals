@@ -1,4 +1,4 @@
-# Worth Keeping Website Architecture
+# Time & Timber Restoration Website Architecture
 
 - Date: 2026-09-15
 - Status: Written design approved by Shawn on 2026-09-15
@@ -7,7 +7,7 @@
 
 ## Purpose And Decisions
 
-Build a maintainable public website for Worth Keeping, with TradeJournals as
+Build a maintainable public website for Time & Timber Restoration, with TradeJournals as
 its deeper craft archive. Routine changes should have a clear home: updating a
 project record, selecting photographs, changing service copy, or adjusting a
 shared component should not require editing repeated page markup.
@@ -28,17 +28,15 @@ Provider-specific services must remain optional integrations.
 
 Use this working identity:
 
-> Worth Keeping
->
 > Time & Timber Restoration
 >
 > Historic floors, interior woodwork, and architectural restoration.
 
 The service line is exact, including its punctuation. In running text, use
-**Worth Keeping — Time & Timber Restoration**. This is a working public identity;
+**Time & Timber Restoration**. This is a working public identity;
 the discussion did not establish business-name clearance or a domain.
 
-Worth Keeping is the public front door:
+Time & Timber Restoration is the public front door:
 
 - Home: the preservation focus, selected work, approach, and an invitation.
 - Work: curated project presentations supported by actual evidence.
@@ -291,7 +289,7 @@ These are outside the first architectural proof and must be settled before
 their dependent work:
 
 - Review real images, placement captions, and exact typography before approving
-  the finished Worth Keeping visual presentation.
+  the finished Time & Timber Restoration visual presentation.
 - Choose the contact destination and any form processor before enabling a
   public contact action; local prototypes must not imply a working submission.
 - Review the public archive selection and route compatibility before migrating

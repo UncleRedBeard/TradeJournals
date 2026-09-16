@@ -1,0 +1,22 @@
+---
+const { project } = Astro.props;
+const image = project.gallery[0];
+---
+
+<article class="project-card">
+  {image && <img src={image.src} width={image.width} height={image.height} alt={image.alt} loading="lazy" />}
+  <div class="project-card__copy">
+    <p class="eyebrow">{project.area}</p>
+    <h3><a href={project.href}>{project.title}</a></h3>
+    <p>{project.summary}</p>
+    <a href={project.href}>Read project</a>
+  </div>
+</article>
+
+<style>
+  .project-card { border-top: 1px solid var(--line); display: grid; gap: 1.25rem; grid-template-columns: minmax(12rem, 0.8fr) 1fr; padding-top: 1rem; }
+  .project-card img { aspect-ratio: 1; object-fit: cover; }
+  .project-card h3 { font-family: var(--display); font-size: 2rem; line-height: 1; margin: 0; }
+  .project-card h3 a { text-decoration: none; }
+  @media (max-width: 38rem) { .project-card { grid-template-columns: 1fr; } .project-card img { max-width: 19rem; } }
+</style>

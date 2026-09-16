@@ -1,0 +1,25 @@
+---
+const { headline, intro, image } = Astro.props;
+---
+
+<section class="hero">
+  <div class="shell hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">Time & Timber Restoration</p>
+      <h1>{headline}</h1>
+      <p>{intro}</p>
+      <a class="button-link" href="/work/office-restoration/">See the work</a>
+    </div>
+    {image && <img class="hero__image" src={image.src} width={image.width} height={image.height} alt={image.alt} />}
+  </div>
+</section>
+
+<style>
+  .hero { background: var(--green); color: var(--paper); padding: clamp(4rem, 11vw, 9rem) 0; }
+  .hero__grid { align-items: end; display: grid; gap: 2rem; grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.75fr); }
+  .hero h1 { font-family: var(--display); font-size: clamp(3.5rem, 9vw, 7.5rem); font-weight: 400; letter-spacing: -0.05em; line-height: 0.9; margin: 0; max-width: 10ch; }
+  .hero p:not(.eyebrow) { font-size: 1.1rem; max-width: 38rem; }
+  .hero .eyebrow { color: var(--sage); }
+  .hero__image { aspect-ratio: 1; object-fit: cover; }
+  @media (max-width: 48rem) { .hero__grid { grid-template-columns: 1fr; } .hero__image { max-width: 28rem; } }
+</style>

@@ -8,6 +8,11 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
+Current execution checkpoint: September 16, 2026, 14:48 UTC. Tasks 01 and 02
+are present in commit `505d34e44457e4d0b207b19620ad5489afbec349`; checkout was
+clean on `codex/website-updates` before Task 03 preparation. Earlier uncommitted
+state descriptions below remain historical task-completion snapshots.
+
 ## Operating Boundary
 
 Shawn approved the written plan and asked this hub to get started using the
@@ -64,7 +69,7 @@ their completion reports. Preserve other tasks' work and do not switch branches.
 ## Website 1 — Task 02 Office Content
 
 - Exact child ID: `01a0aa51-2176-75d2-8064-7a89390069c2`.
-- Exact displayed title: Website 1 - Task 02 Office Content - IN PROGRESS.
+- Exact displayed title: Website 1 - Task 02 Office Content - COMPLETE.
 - Environment: same directory; branch `codex/website-updates`; base `e16be25`.
 - Brief: [Task 02, revision 1](task-02-office-content.md).
 - Dependencies: Task 01 accepted; its implementation is present and uncommitted.
@@ -74,9 +79,8 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   visually inspect selected assets; validate records/preparation; retain candidate
   status; original journal, inventories, assets, and prototype unchanged.
 - Workflow status: COMPLETE (hub-recovered and accepted).
-- Runtime state: child was paused after repeated active turns produced no
-  artifacts. Hub completed the approved bounded task directly; final title and
-  idle state are read back separately below.
+- Runtime state: idle; exact COMPLETE title and idle state freshly verified
+  on September 16, 2026, 14:48 UTC. Hub recovery history is retained below.
 - Approval: RECEIVED; exact current user instruction in this hub: "start task 02".
 - Approval scope: create and execute plan Task 2; no Task 3, commit, push, or launch.
 - Dispatch ID: `WK-WEB-T02-D01`; state SENT once. Subsequent wait/read confirmed
@@ -93,17 +97,50 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   lint, tracked/untracked whitespace checks, release-candidate rejection, and
   original-source preservation checks all passed. Candidate editorial review remains
   separate and is recorded in `website/docs/office-content-review.md`.
-- Final title/register agreement: COMPLETE title read back on 2026-09-16 at
-  13:22 UTC and matches this register. The child runtime still reports an
-  earlier active turn despite the pause message; that stale runtime indicator
-  is recorded separately and does not replace the hub's file-and-check based
-  acceptance of the delivered task.
+- Final title/register agreement: COMPLETE title and idle runtime read back
+  on 2026-09-16 at 14:48 UTC. The earlier stale active indicator has resolved.
+
+## Website 1 — Task 03 Astro Pages
+
+- Exact child ID: `01a0aab2-36e1-78f3-8cff-20a2937e5ccc`.
+- Exact displayed title: Website 1 - Task 03 Astro Pages - PAUSED.
+- Environment: same directory; `codex/website-updates`; base `505d34e`.
+- Brief: [Task 03, revision 1](task-03-astro-pages.md).
+- Dependencies: accepted Tasks 01 and 02 are present; editorial content stays
+  candidate while the local pages are built for review.
+- Deliverable: reusable Astro layout/components, pilot routes, safe Markdown,
+  optional archive search, preview/release build orchestration and focused tests.
+- Acceptance: local candidate preview builds and displays the prepared records;
+  exact identity and original media links survive; core reading is server-rendered;
+  search fails gracefully; release still rejects unreviewed content.
+- Workflow status: COMPLETE (hub direct recovery).
+- Runtime state: child paused after its dispatched turn ended with no implementation
+  artifacts. Hub took over the exact approved Task 03 scope on September 16,
+  2026 at 15:00 UTC; safe-Markdown tests and the first Astro preview build now
+  have observed passing results. Child title was changed to PAUSED to prevent
+  concurrent writers. The hub's active work, not the child title, is authoritative.
+- Approval: RECEIVED; Shawn said "ok, let's get started on task 03" in this hub.
+- Approval scope: create and execute plan Task 3; no Task 4 dispatch or publication.
+- Dispatch ID: `WK-WEB-T03-D01`; state SENT once. Subsequent wait/read confirmed
+  active execution on the exact child and expected workspace.
+- Latest report: [Task 03 Astro Pages](reports/task-03-astro-pages.md).
+- Report delivery: stored in the repository; no external message or task handoff.
+- Findings/blockers: the original child dispatch completed without Astro files.
+  This is a workflow execution failure, not a source, dependency, or branch
+  blocker. Hub recovery is implementing the same user-approved task directly.
+- Hub review: 50 focused website tests passed; the existing evidence and search
+  suites passed; release correctly refused candidate content. Browser review
+  confirmed the home, project, archive search, and mobile project layout with
+  no console errors.
+- Final task/register agreement: Task 03 is COMPLETE through direct hub work.
+  The child remains PAUSED because it did not produce these artifacts; the
+  record and report make that recovery explicit rather than assigning its work
+  to the inactive child.
 
 ## Planned Successors
 
 | Task | Scope | Dependency | Dispatch State |
 | --- | --- | --- | --- |
-| 03 Astro Pages | Shared components, pilot routes, optional archive search | Accepted Task 02 | Not created; task-specific dispatch approval pending |
 | 04 Pilot Verification | Output checks, browser review, workflow documentation | Accepted Task 03 | Not created; task-specific dispatch approval pending |
 
 ## Event Log
@@ -119,3 +156,7 @@ their completion reports. Preserve other tasks' work and do not switch branches.
 | 2026-09-16 13:05 | 02 | WK-WEB-T02-D01 | Same-directory child created and approved dispatch sent once | Task started |
 | 2026-09-16 13:20 | 02 | WK-WEB-T02-H01 | Child repeatedly remained active without artifacts; hub paused child and completed approved records/tests directly | Candidate content accepted as implementation; editorial review remains pending |
 | 2026-09-16 13:05 | 02 | WK-WEB-T02-D01 | Same-directory child created and verified idle; approved brief dispatched once; active turn and exact IN PROGRESS title observed | Office content task running |
+| 2026-09-16 14:48 | 03 | WK-WEB-T03-A01 | Shawn explicitly requested starting Task 03; clean development branch and accepted dependencies verified | Approved for scoped child creation and execution |
+| 2026-09-16 14:51 | 03 | WK-WEB-T03-D01 | Same-directory child verified idle before single approved dispatch; active turn and exact IN PROGRESS title observed | Astro pages task running |
+| 2026-09-16 15:00 | 03 | WK-WEB-T03-R01 | Child dispatch ended without implementation; Shawn required actual work. Hub paused the child and began the same approved scope directly | Markdown safety test and Astro preview build now have real artifacts |
+| 2026-09-16 15:10 | 03 | WK-WEB-T03-R02 | Hub completed the approved Astro scope and browser review; focused tests and existing evidence/search checks passed | Task complete; Task 04 remains unstarted |

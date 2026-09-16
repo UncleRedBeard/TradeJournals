@@ -1,8 +1,8 @@
-# Worth Keeping Astro Pilot Implementation Plan
+# Time & Timber Restoration Astro Pilot Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Produce a local, reviewable Worth Keeping pilot in which one Office
+**Goal:** Produce a local, reviewable Time & Timber Restoration pilot in which one Office
 Restoration record supplies a project page, featured card, gallery, and search
 result, while preserving the existing prototype and archive.
 
@@ -37,7 +37,7 @@ clear photographs, readable type, and straightforward navigation lead.
 ## Global Constraints
 
 - Development branch: `codex/website-updates` in the current checkout.
-- Working identity: **Worth Keeping — Time & Timber Restoration**.
+- Working identity: **Time & Timber Restoration**.
 - Exact service line: **Historic floors, interior woodwork, and architectural restoration.**
 - "The website will use Astro to generate static files."
 - "It will build independently of the private Companion Dashboard."

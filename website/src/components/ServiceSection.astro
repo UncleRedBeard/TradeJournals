@@ -1,0 +1,15 @@
+---
+const { service, projects } = Astro.props;
+---
+
+<section class="section section--limestone">
+  <div class="shell service-section">
+    <div><p class="eyebrow">Care for the original</p><h2 class="section-heading">{service.title}</h2></div>
+    <div><p>{service.description}</p>{projects.map(project => <a class="button-link" href={project.href}>{project.title}</a>)}</div>
+  </div>
+</section>
+
+<style>
+  .service-section { display: grid; gap: 2rem; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  @media (max-width: 38rem) { .service-section { grid-template-columns: 1fr; } }
+</style>

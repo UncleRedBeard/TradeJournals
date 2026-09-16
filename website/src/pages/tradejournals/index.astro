@@ -1,0 +1,9 @@
+---
+import ArchiveSearch from "../../components/ArchiveSearch.astro";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import model from "../../generated/site.json";
+---
+
+<SiteLayout site={model.site} title="TradeJournals" reviewNotice={model.reviewNotice}>
+  <section class="section"><div class="shell"><p class="eyebrow">TradeJournals</p><h1 class="section-heading">The record behind the work.</h1><p class="prose">Selected project records hold the visible evidence and the decisions that led to it.</p><ArchiveSearch projects={model.projects} /></div></section>
+</SiteLayout>

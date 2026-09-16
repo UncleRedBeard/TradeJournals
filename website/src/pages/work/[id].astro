@@ -1,0 +1,16 @@
+---
+import EvidenceDetails from "../../components/EvidenceDetails.astro";
+import ProjectGallery from "../../components/ProjectGallery.astro";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import model from "../../generated/site.json";
+
+export function getStaticPaths() {
+  return model.projects.map(project => ({ params: { id: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props;
+---
+
+<SiteLayout site={model.site} title={project.title} reviewNotice={model.reviewNotice}>
+  <article class="section"><div class="shell"><p class="eyebrow">{project.area}</p><h1 class="section-heading">{project.title}</h1><p class="prose">{project.introduction || project.summary}</p><EvidenceDetails project={project} /><ProjectGallery images={project.gallery} /><p><a class="button-link" href={project.archiveHref}>Read the TradeJournal record</a></p></div></article>
+</SiteLayout>
