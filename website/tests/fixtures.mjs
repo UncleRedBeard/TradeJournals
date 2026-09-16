@@ -22,7 +22,7 @@ export function makeFixture() {
   });
   return {
     site: {
-      schemaVersion: 1, id: "site", name: "Time & Timber Restoration",
+      schemaVersion: 1, id: "site", name: "Toil & Timber Restoration",
       descriptor: "Historic floors, interior woodwork, and architectural restoration.",
       serviceLine: "Historic floors, interior woodwork, and architectural restoration.",
       navigation: [{ label: "Work", href: "/work/project-one/" }]

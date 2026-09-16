@@ -5,16 +5,16 @@ id: office-restoration
 
 # Office Restoration
 
-The office began as a shared office and yoga studio in the 1894 residence. Its
-floor work became the first successful refinishing process documented for the
-house: progressive sanding, careful cleanup, and hand-applied water-based
-polyurethane brought the original boards back into daily use.
+This room in the author's 1894 home was shared as an office and yoga studio
+before becoming a dedicated office. Keeping its original floorboards meant
+working through the old finish, sanding progressively, and cleaning carefully
+between coats of hand-applied water-based polyurethane. It was the first floor
+refinished in the house and established the process for later rooms.
 
-The room also retained an original solid-wood door that was worn but structurally
-worth saving. It was stripped instead of replaced, then given a charred-wood
-finish inspired by yakisugi. The treatment is an adaptation for appearance and
-material reclamation; it is not traditional yakisugi or a fire-resistance
-treatment.
+A worn solid-wood door was also worth keeping. Shawn and Haley stripped it
+rather than replacing it, then developed a charred-wood finish inspired by
+yakisugi. This was an adaptation for appearance and material reclamation,
+not traditional yakisugi or a fire-resistance treatment.
 
-The documentation records a working room becoming a dedicated office while
-keeping its old floors, trim, and original material legible.
+The gallery includes the stripped door installed before that separate
+charred-finish sequence. The journal holds the fuller record; these views should not be read as a complete before-and-after sequence.

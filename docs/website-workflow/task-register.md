@@ -19,7 +19,9 @@ Shawn approved the written plan and asked this hub to get started using the
 workflow-hub skill on September 15, 2026. Apply that start instruction to
 Task 01. Later tasks retain their plan approval; record their task-specific
 dispatch approval before starting them. Completion of one child alone never
-starts another. No commit, push, deployment, or private Dashboard work is in scope.
+starts another. The original implementation scope excluded Git closeout;
+Task 05's later explicit commit/push authorization is recorded below. Deployment
+and private Dashboard work remain outside scope.
 
 Only one website child writes implementation files at a time. Children share
 this checkout to retain the approved uncommitted design and plan. The hub owns
@@ -170,10 +172,78 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   were captured. Final COMPLETE title readback is recorded below.
   No editorial approval is implied.
 
+## Website 1 — Task 05 Pilot Content Review
+
+- Exact child ID: `01a0ac3f-68fd-7771-a652-b16281312adf`.
+- Title: Website 1 - Task 05 Pilot Content Review - READY FOR REVIEW.
+- Environment: same directory; `codex/website-updates`; base `1faa53d`.
+- Brief: [Task 05, revision 4](task-05-pilot-content-review.md).
+- Initial approval: RECEIVED; Shawn said "start task 05" after the hub proposed
+  a focused pilot content and visual review.
+- Scope change: direct instruction in this exact child: "i like the direction
+  your going with this, but i think the best first candidate is the
+  `Home Reno - Studio`". Hub verified the current user-message preview.
+- Current scope: feature the distinct Studio / ballet barre project, preserving
+  the approved visual direction and Office candidate work. Validate the Studio
+  identity and evidence against its local journal, inventory and existing assets.
+  Do not conflate Home Reno - Studio with Home Reno - Studio | Office.
+- Boundaries: final content approval and saved reviewed snapshot remain pending.
+  No wider archive migration, hosting, contact implementation or publication.
+  Scoped Git closeout is now separately authorized as recorded below.
+- Workflow status: READY FOR REVIEW — Studio text/layout only; photo work
+  and final editorial acceptance remain unfinished.
+- Runtime state: Git closeout turn `01a0ac69-72a6-7f83-949a-6bac9dd8230d`
+  observed active; exact READY FOR REVIEW title retained for editorial status.
+- Original dispatch: `WK-WEB-T05-D01`; SENT once. No second dispatch: direct
+  child approval authorizes this bounded revision.
+- Latest received report: `WK-WEB-T05-R01`, revision 3, at
+  `reports/task-05-pilot-content-review.md`; Studio-first candidate with approved
+  Toil & Timber Restoration branding. Office packet retained separately.
+- Report delivery: revision 1 reconciled as `WK-WEB-T05-H01`; revision 2
+  RECEIVED once and reconciled as `WK-WEB-T05-H02`; revision 3 RECEIVED once
+  and reconciled as `WK-WEB-T05-H03`.
+- Prior hub review: Office draft passed 79 website tests, output validation
+  (4 pages/17 files), 62-file Markdown lint and whitespace checks; source and
+  rendered-content review completed. Those results are historical and do not
+  establish acceptance of the upcoming Studio revision.
+- Office questions: room-history confirmation and image 7 selection are deferred
+  with the retained Office candidate, not blockers for the Studio-first review.
+- Current hub review: read Studio records/story and actual component/test changes,
+  checked source-journal support, independently reran 80 website and 37 focused
+  Python tests, output validation (6 pages/19 files), 64-file Markdown lint and
+  tracked whitespace checks. Inspected the rendered Studio page. Original source
+  files, prototype, inventories and saved candidate snapshot have no diff.
+- Remaining work: select and bring in actual Studio photographs with durable
+  source identities, then choose the lead/gallery, write inspected captions and
+  alternatives, and review the populated pages. Studio currently has zero selected
+  images; no Office photos are substituted. This is not completed visual curation.
+- Acceptance: text/layout draft ready for review only. Complete photo work and
+  obtain approval of the exact full candidate before recording a reviewed snapshot.
+  No approval inferred from the positive response to the visual direction.
+- Git checkpoint before closeout: uncommitted Task 05 changes on
+  `codex/website-updates`, HEAD `1faa53d`.
+- Git authorization: RECEIVED; Shawn said `git er done` directly in the child,
+  which reported that instruction to the hub at 22:51 UTC. The child owns scoped
+  validation, staging, commit, push to established `origin/codex/website-updates`,
+  and synchronization verification. No force push or new destination is authorized.
+- Git closeout status: IN PROGRESS; no commit/push/synchronization result is
+  claimed yet. Hub brief/register edits completed for inclusion in that closeout.
+  No further hub edits until the child reports its outcome.
+- Editorial boundary: Git closeout does not approve Studio photographs, mark the
+  candidate reviewed, authorize publication, or dispatch a successor.
+- Single writer: child owns website changes; hub edits only brief/register.
+
+- Branding: Shawn directly requested Toil & Timber Restoration in the child.
+  Hub verified site/package/test changes, the name on all six generated pages,
+  absence of the former name in that output, and the live Studio title/header/footer.
+  The child reports 80 website tests rerun for the rename. Current brief updated;
+  historical reports retained. This is not editorial or publication approval.
+
 ## Remaining Decisions After The Pilot
 
-There is no automatic Task 05 in this plan. Final content/visual acceptance,
-contact destination, hosting/domain and deployment remain separately scoped.
+The original four-task implementation plan is complete. Shawn separately
+authorized Task 05 for content and visual review. Contact destination, additional
+projects, hosting/domain and deployment remain later decisions.
 
 ## Event Log
 
@@ -198,3 +268,17 @@ contact destination, hosting/domain and deployment remain separately scoped.
 | 2026-09-16 17:44 | 04 | WK-WEB-T04-H02 | Hub reconciled resumed child work and superseded its premature acceptance entry with report revision 2 | Final acceptance review pending; no publication or Git closeout authorized |
 
 | 2026-09-16 21:47 | 04 | WK-WEB-T04-H03 | Independent review findings fixed; 79 website tests, 84 Python tests, legacy checks, browser review, lint and whitespace pass | Accepted; COMPLETE title set and verified; no next task or publication |
+
+| 2026-09-16 22:04 | 05 | WK-WEB-T05-A01 | Shawn explicitly said start task 05; clean committed pilot and idle Task 04 verified | Scoped review child created; dispatch being prepared |
+
+| 2026-09-16 22:05 | 05 | WK-WEB-T05-D01 | Approved brief dispatched once to exact child; new execution turn observed active | Content and visual review running |
+
+| 2026-09-16 22:16 | 05 | WK-WEB-T05-H01 | Received R01 revision 1 once; source/diff review, 79 tests, output gate, lint, whitespace and rendered candidate verified | READY FOR REVIEW; editorial decisions and snapshot approval pending |
+
+| 2026-09-16 22:34 | 05 | WK-WEB-T05-A02 | Direct child instruction selects Home Reno - Studio as first candidate; active turn and user wording verified | Brief revision 2 recorded; Studio work IN PROGRESS; no duplicate dispatch |
+
+| 2026-09-16 22:45 | 05 | WK-WEB-T05-H02 | Received R01 revision 2 once; Studio source/diff review, 80 Node and 37 Python tests, output gate, lint and rendered page verified | Text/layout READY FOR REVIEW; Studio photo selection and editorial acceptance remain unfinished |
+
+| 2026-09-16 22:50 | 05 | WK-WEB-T05-H03 | Received R01 revision 3; approved Toil & Timber rename verified in actual output and live page; current brief/register reconciled | READY FOR REVIEW; Studio photos and reviewed snapshot still pending |
+
+| 2026-09-16 22:51 | 05 | WK-WEB-T05-G01 | Child reports Shawn's direct git er done instruction; established origin/codex/website-updates destination | Scoped Git closeout authorized and running in child; hub brief/register ready to stage; editorial acceptance unchanged |

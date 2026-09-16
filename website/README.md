@@ -1,4 +1,4 @@
-# Time & Timber Restoration Website Pilot
+# Toil & Timber Restoration Website Pilot
 
 This Astro project produces a static local review site for selected
 TradeJournals records. It is intentionally small: structured content selects
@@ -86,7 +86,8 @@ No real journal or review snapshot is changed by those scenarios.
 
 ## Review And Release
 
-The Office Restoration record currently has `state: "candidate"`. Preview output
+The pilot review currently has `state: "candidate"`. Studio is the first featured
+project; the Office project and its ten photographs remain separate prior work. Preview output
 therefore shows a review notice and includes `noindex, nofollow`. The release
 command deliberately refuses candidate or stale content:
 
@@ -96,13 +97,14 @@ npm --prefix website run build
 
 To prepare a real release, first review the exact public copy, image selections,
 captions, and evidence limitations in
-[the Office worksheet](docs/office-content-review.md). A later explicit approval
+[the active Studio review](docs/pilot-editorial-review.md). A later explicit approval
 is required to save a reviewed snapshot. The build never promotes a candidate
 record automatically.
 
 ## Pilot Acceptance Checklist
 
-- [x] Structured records select one Office project and ten local public assets.
+- [x] Structured records select Studio and Office; the ten local photographs belong
+  to Office. Studio photo selection remains pending.
 - [x] Build-time validation rejects unknown IDs, unsafe paths, and stale sources.
 - [x] Generated output is checked for planned pages, media, links, fragments,
   source links, private paths, and preview metadata.

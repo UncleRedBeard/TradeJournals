@@ -3,5 +3,8 @@
   "id": "historic-floors",
   "title": "Historic floors",
   "description": "Floor refinishing grounded in the condition, character, and continued use of the original boards.",
-  "projectIds": ["office-restoration"]
+  "projectIds": [
+    "studio-restoration",
+    "office-restoration"
+  ]
 }

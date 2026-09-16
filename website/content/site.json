@@ -1,11 +1,17 @@
 {
   "schemaVersion": 1,
   "id": "site",
-  "name": "Time & Timber Restoration",
+  "name": "Toil & Timber Restoration",
   "descriptor": "Historic floors, interior woodwork, and architectural restoration.",
   "serviceLine": "Historic floors, interior woodwork, and architectural restoration.",
   "navigation": [
-    { "label": "Work", "href": "/work/office-restoration/" },
-    { "label": "TradeJournals", "href": "/tradejournals/" }
+    {
+      "label": "Work",
+      "href": "/work/studio-restoration/"
+    },
+    {
+      "label": "TradeJournals",
+      "href": "/tradejournals/"
+    }
   ]
 }

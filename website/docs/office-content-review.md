@@ -1,7 +1,10 @@
 # Office Restoration — Candidate Content Review
 
-Status: candidate content for local review only. This document does not approve
-the copy, photographs, release snapshot, publication, or deployment.
+Status: historical Task 02 migration reconciliation. Task 05 candidate wording,
+photo order, corrected alternative text, and open decisions are now recorded in
+[the pilot editorial review](office-editorial-review.md). The tables below retain
+the original migration wording for comparison; they are not the current candidate.
+Neither document records approval, publication, or deployment.
 
 ## Source Record
 

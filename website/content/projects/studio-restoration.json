@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "studio-restoration",
+  "title": "Home Reno - Studio",
+  "area": "01 / The Residence",
+  "summary": "Original floors, exposed shiplap, and a repaired plank ceiling give a former living room a new purpose.",
+  "searchSummary": "Living-room-to-ballet-barre-studio restoration: reclaimed ceiling planks, hand-scraped and sanded original floors, brushed polyurethane, exposed shiplap, lime paint and slurry, and coped crown molding.",
+  "tags": [
+    "studio",
+    "ballet barre",
+    "living room",
+    "floor",
+    "floors",
+    "shiplap",
+    "reclaimed wood",
+    "ceiling",
+    "lime paint",
+    "lime slurry",
+    "crown molding"
+  ],
+  "stage": "Near-completion in the August 30 journal; final studio sign-off not documented",
+  "recorded": "March 16–August 30, 2026, in the source journal.",
+  "sourceLabel": "Studio restoration journal and Home Reno - Studio Google Photos album",
+  "sourceRefs": [
+    {
+      "kind": "journal",
+      "path": "01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md"
+    },
+    {
+      "kind": "inventory",
+      "path": "GOOGLE_PHOTOS_ALBUMS.md",
+      "anchor": "album-af1qippool3ge7t"
+    }
+  ],
+  "albumKeys": [
+    "google_photos:af1qippool3ge7t"
+  ],
+  "introduction": "A former living room in the author's 1894 home is becoming a dedicated ballet barre studio. Original floorboards and shiplap remain central to the room, joined by reclaimed ceiling repairs, white mineral finishes, and carefully fitted crown molding.",
+  "storyId": "studio-restoration",
+  "evidenceBoundary": "This account follows the journal through August 30, 2026. Final studio sign-off is not documented there. Studio photographs have not yet been selected for this preview; the linked album holds the visual record. Its photo count is a saved inventory value, not a live count.",
+  "gallery": [],
+  "searchMediaIds": []
+}

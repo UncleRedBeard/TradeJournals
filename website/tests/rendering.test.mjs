@@ -12,7 +12,7 @@ test("candidate preview renders the Office record without a contact form", async
   await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
   const page = await readFile(path.join(websiteRoot, ".preview-dist/work/office-restoration/index.html"), "utf8");
 
-  assert.match(page, /Time &amp; Timber Restoration/);
+  assert.match(page, /Toil &amp; Timber Restoration/);
   assert.match(page, /Historic floors, interior woodwork, and architectural restoration\./);
   assert.match(page, /Local review preview — content and photo selections await review\./);
   assert.match(page, /https:\/\/www\.flickr\.com\/photos\/boocher\/53921322250\/in\/set-72177720316928566\//);

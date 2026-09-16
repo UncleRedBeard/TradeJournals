@@ -27,7 +27,7 @@ test("Office preserves the selected gallery, original Flickr URLs, and distinct 
     "flickr-53921322250", "flickr-52705240435", "flickr-52705240380"
   ]);
   assert.notEqual(office.summary, office.searchSummary);
-  assert.equal(office.introduction, "Two related albums track the former shared office and yoga studio through floor refinishing, sanding progression, door reclamation, and later dedicated-office use.");
+  assert.match(office.introduction, /author's 1894 home/);
 
   const mediaById = new Map(records.media.map(media => [media.id, media]));
   for (const [relativeAsset, photoId, albumId] of officePhotos) {
@@ -41,11 +41,11 @@ test("Office preserves the selected gallery, original Flickr URLs, and distinct 
 test("Office is an explicit candidate, with the approved public identity and no contact action", async () => {
   const records = validateContent(await loadContent(contentRoot));
   assert.equal(records.review.state, "candidate");
-  assert.equal(records.site.name, "Time & Timber Restoration");
+  assert.equal(records.site.name, "Toil & Timber Restoration");
   assert.equal(records.site.descriptor, "Historic floors, interior woodwork, and architectural restoration.");
   assert.equal(records.site.serviceLine, "Historic floors, interior woodwork, and architectural restoration.");
   assert.equal(records.site.contact, undefined);
-  assert.deepEqual(records.home.featuredProjectIds, ["office-restoration"]);
+  assert.ok(records.projects.some(project => project.id === "office-restoration"));
   assert.deepEqual(records.home.serviceIds, ["historic-floors"]);
 });
 
@@ -53,7 +53,7 @@ test("Office candidate prepares a local preview but cannot prepare a release", a
   const repoRoot = fileURLToPath(new URL("../../", import.meta.url));
   const preview = await prepareSite({ repoRoot, contentRoot, mode: "preview" });
   assert.equal(preview.report.state, "candidate");
-  assert.equal(preview.model.projects[0].gallery.length, 10);
+  assert.equal(preview.model.projects.find(project => project.id === "office-restoration").gallery.length, 10);
   assert.match(preview.model.reviewNotice, /await review/u);
   await assert.rejects(
     prepareSite({ repoRoot, contentRoot, mode: "release" }),

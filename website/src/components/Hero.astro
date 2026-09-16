@@ -5,7 +5,7 @@ const { headline, intro, image, workHref } = Astro.props;
 <section class="hero">
   <div class="shell hero__grid">
     <div class="hero__copy">
-      <p class="eyebrow">Time & Timber Restoration</p>
+      <p class="eyebrow">Toil & Timber Restoration</p>
       <h1>{headline}</h1>
       <p>{intro}</p>
       {workHref && <a class="button-link" href={workHref}>See the work</a>}
@@ -20,6 +20,6 @@ const { headline, intro, image, workHref } = Astro.props;
   .hero h1 { font-family: var(--display); font-size: clamp(3.5rem, 9vw, 7.5rem); font-weight: 400; letter-spacing: -0.05em; line-height: 0.9; margin: 0; max-width: 10ch; }
   .hero p:not(.eyebrow) { font-size: 1.1rem; max-width: 38rem; }
   .hero .eyebrow { color: var(--sage); }
-  .hero__image { aspect-ratio: 1; object-fit: cover; }
+  .hero__image { aspect-ratio: 1; height: auto; object-fit: cover; width: 100%; }
   @media (max-width: 48rem) { .hero__grid { grid-template-columns: 1fr; } .hero__image { max-width: 28rem; } }
 </style>

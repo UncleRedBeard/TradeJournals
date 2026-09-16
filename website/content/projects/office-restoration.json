@@ -3,7 +3,7 @@
   "id": "office-restoration",
   "title": "Office Restoration",
   "area": "01 / The Residence",
-  "summary": "Floor refinishing and original-door reclamation in the author's 1894 residence.",
+  "summary": "Original floors and a reclaimed wood door in the author's 1894 home.",
   "searchSummary": "Office documentation tracks the first floor-refinishing method used in the house, sanding progression, hand-applied polyurethane, trim work, and reclamation of an original solid-wood door.",
   "tags": ["office", "floor", "floors", "refinishing", "sanding", "40 grit", "60 grit", "80 grit", "100 grit", "120 grit", "polyurethane", "door reclamation"],
   "stage": "Room restored and returned to use in the documented record",
@@ -15,20 +15,20 @@
     { "kind": "inventory", "path": "FLICKR_PUBLIC_ALBUMS.md", "anchor": "album-72177720306207693" }
   ],
   "albumKeys": ["flickr:72177720316928566", "flickr:72177720306207693"],
-  "introduction": "Two related albums track the former shared office and yoga studio through floor refinishing, sanding progression, door reclamation, and later dedicated-office use.",
+  "introduction": "Original floorboards and a worn solid-wood door were retained as this room in the author's 1894 home became a dedicated office. The work combined progressive sanding, hand-applied water-based polyurethane, and a separate reclaimed-door finish.",
   "storyId": "office-restoration",
   "evidenceBoundary": "Album counts are recorded local inventory values, not live platform verification. The selected photographs are migration candidates awaiting editorial review.",
   "gallery": [
-    { "mediaId": "flickr-53921322250", "caption": "Office room with plank floor and window trim.", "role": "context" },
-    { "mediaId": "flickr-53921322245", "caption": "Dedicated office use with the plank floor in view.", "role": "context" },
-    { "mediaId": "flickr-53921322215", "caption": "Desk arrangement within the restored office room.", "role": "context" },
-    { "mediaId": "flickr-53921225999", "caption": "Office room view showing the floor, windows, and working setup.", "role": "context" },
-    { "mediaId": "flickr-53919981267", "caption": "Plank floor, original door, and window trim in the office.", "role": "detail" },
-    { "mediaId": "flickr-52705240435", "caption": "Wood door in its surrounding trim.", "role": "detail" },
-    { "mediaId": "flickr-52705240380", "caption": "Full view of the original door set into the room's trim.", "role": "detail" },
-    { "mediaId": "flickr-52705240355", "caption": "Stripped original door installed before its separate charred-finish sequence.", "role": "condition" },
-    { "mediaId": "flickr-52704298727", "caption": "Door, windows, and work area during the room transition.", "role": "process" },
-    { "mediaId": "flickr-52705240320", "caption": "Room floor and wall surfaces during the working-room transition.", "role": "condition" }
+    { "mediaId": "flickr-53921322250", "caption": "The room and its original floorboards, with window trim and board joints visible.", "role": "context" },
+    { "mediaId": "flickr-53919981267", "caption": "Floorboards, painted trim, and a closed door on the opposite side of the room.", "role": "detail" },
+    { "mediaId": "flickr-52705240355", "caption": "The stripped original door installed before its separate charred-finish treatment.", "role": "condition" },
+    { "mediaId": "flickr-52705240380", "caption": "The retained wood door within its painted surround.", "role": "detail" },
+    { "mediaId": "flickr-52705240435", "caption": "Wood grain, inset panels, and old hardware openings in the retained door.", "role": "detail" },
+    { "mediaId": "flickr-52704298727", "caption": "Tools and work materials beside the door and windows.", "role": "process" },
+    { "mediaId": "flickr-52705240320", "caption": "A wider room view with exposed floorboards, a cabinet, and work equipment.", "role": "context" },
+    { "mediaId": "flickr-53921322215", "caption": "The room in office use, with the original floorboards still visible.", "role": "context" },
+    { "mediaId": "flickr-53921225999", "caption": "A desk beneath the windows leaves much of the floor in view.", "role": "context" },
+    { "mediaId": "flickr-53921322245", "caption": "The working desk and chair beside the plank floor.", "role": "context" }
   ],
   "searchMediaIds": ["flickr-53921322250", "flickr-52705240435", "flickr-52705240380"]
 }
