@@ -4,7 +4,7 @@ Report ID: `WK-WEB-T05-R01`
 
 Revision: 3 — adds the business rename after the Studio-first revision 2
 
-Status: READY FOR REVIEW — Studio text/layout candidate; photo selection pending
+Status: COMPLETE — current Studio text/layout approved; photo selection deferred
 
 Child: `01a0ac3f-68fd-7771-a652-b16281312adf`
 
@@ -145,3 +145,17 @@ journals, inventories, photographs, prototype, and review snapshot remain intact
 
 The child will report the resulting commit and observed remote synchronization
 after the push. Earlier Git descriptions above are pre-closeout checkpoints.
+
+## User Acceptance After Git Closeout
+
+Shawn explicitly replied `approved` in this child after the delivered Studio
+candidate and READY FOR REVIEW title. The current Studio text/layout and
+Toil & Timber branding are accepted for this task. Studio photo selection and
+review of the populated gallery remain deferred follow-up. The website release
+snapshot remains candidate; this acceptance does not publish the site or approve
+unseen photographs.
+
+The implementation was previously committed and pushed as
+`98fb1308c927bba6b5b4fd9aa05c63fbac7bc70b` on `origin/codex/website-updates`, with
+matching hashes, clean worktree and `0 0` verified after fetch. This acceptance
+note is subsequent documentation and is not included in that commit.

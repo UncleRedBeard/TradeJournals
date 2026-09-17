@@ -104,7 +104,7 @@ record automatically.
 ## Pilot Acceptance Checklist
 
 - [x] Structured records select Studio and Office; the ten local photographs belong
-  to Office. Studio photo selection remains pending.
+  to Office. Studio now has a separate three-photo review candidate.
 - [x] Build-time validation rejects unknown IDs, unsafe paths, and stale sources.
 - [x] Generated output is checked for planned pages, media, links, fragments,
   source links, private paths, and preview metadata.
@@ -127,3 +127,9 @@ Remaining review:
 
 No build command publishes the website, sends a message, or changes journal
 records. Inspect the generated preview and exact Git diff before any later closeout.
+
+## Browser Editing
+
+[TradeJournals Workbench](docs/workbench.md) supports the Studio photo selection,
+lead image, gallery order, captions, alternative text, candidate save, and local
+preview. Structured-file editing remains available through the same records.

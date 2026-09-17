@@ -35,9 +35,32 @@
   "albumKeys": [
     "google_photos:af1qippool3ge7t"
   ],
+  "gallery": [
+    {
+      "mediaId": "studio-c721a809f0e722d6d0178585601aa6ca564b6d7ef95094505284f7f5788c85f6",
+      "caption": "The Studio nearing completion on August 26, 2026: exposed wood flooring, painted walls and ceiling, and the retained timber wall.",
+      "role": "result",
+      "alt": "A light wood floor extends beneath white walls and a white plank ceiling, with tall windows and a dark door in the timber wall."
+    },
+    {
+      "mediaId": "studio-a400ee37342a3a2d58cf36631811b65f2d466e5f0608db2810bab20ef93e86b2",
+      "caption": "The former living room at the start of the recorded work, March 16, 2026.",
+      "role": "condition",
+      "alt": "Blue walls and white trim surround a worn brown wood floor, with a shop vacuum in the room."
+    },
+    {
+      "mediaId": "studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce",
+      "caption": "Hand tools and lifted finish at the edge of the original floor, March 16, 2026.",
+      "role": "process",
+      "alt": "Scrapers and curled finish shavings lie on wood flooring beside a floor register and white baseboard."
+    }
+  ],
+  "searchMediaIds": [
+    "studio-c721a809f0e722d6d0178585601aa6ca564b6d7ef95094505284f7f5788c85f6",
+    "studio-a400ee37342a3a2d58cf36631811b65f2d466e5f0608db2810bab20ef93e86b2",
+    "studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce"
+  ],
   "introduction": "A former living room in the author's 1894 home is becoming a dedicated ballet barre studio. Original floorboards and shiplap remain central to the room, joined by reclaimed ceiling repairs, white mineral finishes, and carefully fitted crown molding.",
   "storyId": "studio-restoration",
-  "evidenceBoundary": "This account follows the journal through August 30, 2026. Final studio sign-off is not documented there. Studio photographs have not yet been selected for this preview; the linked album holds the visual record. Its photo count is a saved inventory value, not a live count.",
-  "gallery": [],
-  "searchMediaIds": []
+  "evidenceBoundary": "This account follows the journal through August 30, 2026. Final studio sign-off is not documented there. Three selected Studio photographs show the early room, floor work, and the room nearing completion; they do not establish final sign-off or an installed barre. The linked album photo count is a saved inventory value, not a live count."
 }

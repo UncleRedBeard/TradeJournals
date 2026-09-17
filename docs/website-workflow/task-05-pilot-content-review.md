@@ -1,17 +1,31 @@
 # Website 1 - Task 05 Pilot Content and Visual Review
 
-Workflow status: READY FOR REVIEW — Studio text/layout; photo curation and final acceptance pending
+Workflow status: COMPLETE — accepted Studio text/layout and branding; photos deferred
 Execution approval: RECEIVED; Shawn said "start task 05" in the hub on
 September 16, 2026, following the hub's proposed content and visual review scope.
 
 Hub: `01a0a263-8d09-7ff2-8144-a71eb6ec16f6` / website updates
 Child: `01a0ac3f-68fd-7771-a652-b16281312adf`
-Brief revision: 4
+Brief revision: 5
 Dispatch: `WK-WEB-T05-D01`
 Workspace: `/Users/shkelley/Documents/PERSONAL/Shawn/Nerds/TradeJournals`
 Branch: `codex/website-updates`; same-directory fork, one website writer
 Starting HEAD: `1faa53d6a502665a823ea168f058960fa0fb0ed2`; initially clean
 Register: [task-register.md](task-register.md)
+
+## Accepted Delivery
+
+Shawn subsequently replied `approved` directly in this child after delivery of
+the Studio text/layout candidate and Toil & Timber branding. The child reported
+that acceptance and updated its report and editorial packet. The hub reconciled
+the bounded delivery as COMPLETE on September 16, 2026. Photo curation remains
+deferred; unseen images and the complete reviewed snapshot are not approved.
+
+Git closeout completed at `98fb1308c927bba6b5b4fd9aa05c63fbac7bc70b`, with
+matching remote identity, `0 0` and a clean worktree verified then. Acceptance
+bookkeeping is subsequent uncommitted documentation. The assignment and original
+approval chronology below remain historical; do not redispatch them. Current
+child title: `Website 1 - Task 05 Studio - COMPLETE`.
 
 ## Approved Scope Change
 

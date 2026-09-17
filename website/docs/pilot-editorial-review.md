@@ -1,11 +1,13 @@
 # Pilot Editorial Review — Home Reno - Studio
 
-Status: READY FOR REVIEW — text candidate; Studio photo selection remains open.
+Status: APPROVED — Studio text/layout and the Task 06 three-photo candidate.
 This revision makes Studio the first featured project at Shawn's direction.
 The current business name is **Toil & Timber Restoration**, renamed at Shawn's
 direction after the Studio revision.
 The [Office review](office-editorial-review.md) is retained as separate prior work.
-No editorial approval or reviewed snapshot is recorded.
+Shawn approved the current Studio text/layout after Git closeout.
+Shawn approved the Task 06 workflow and three-photo candidate on September 17,
+2026. The full reviewed release snapshot remains a separate step.
 
 ## Candidate Direction
 
@@ -31,7 +33,7 @@ Four short paragraphs provide enough substance without becoming a tutorial.
 | Element | Before | Current candidate |
 | --- | --- | --- |
 | Featured project and Work link | Office Restoration | Home Reno - Studio |
-| Homepage hero | Office photograph `flickr-53921322250` | Text only until an actual Studio photograph is selected |
+| Homepage hero | Office photograph `flickr-53921322250` | Text-only hero; Studio project card now uses the selected August 26 room view |
 | Studio summary | No Astro Studio record | Original floors, exposed shiplap, and a repaired plank ceiling give a former living room a new purpose. |
 | Studio introduction | No Astro Studio record | A former living room in the author's 1894 home is becoming a dedicated ballet barre studio. Original floorboards and shiplap remain central to the room, joined by reclaimed ceiling repairs, white mineral finishes, and carefully fitted crown molding. |
 | Story | Office only | A New Purpose For An Old Room, with four short paragraphs about Studio |
@@ -41,36 +43,30 @@ The Office project, story, ten selected images, captions and alternative text
 remain available at their existing routes. Shared gallery improvements remain.
 Cards without an image now use the available text width.
 
-## Photo Selection — Pending, Not Substituted
+## Photo Selection — Task 06 Candidate
 
-The source journal and inventory identify the correct shared Google Photos album,
-but contain no durable image-level selection or local Studio assets. The old
-prototype likewise has an empty Studio image selection. The `studio-office`
-Flickr files belong to the other project and are not used here.
+Three photos were inspected in the shared Studio Google Photos album and brought
+through Photos Inbox and the Workbench Website editor on September 17, 2026.
+The lead is the August 26, 18:42:52 near-completion view identified in the journal.
+No Office photographs were substituted. The homepage hero stays text-only; the
+Studio project card and gallery use the selected lead.
 
-Current Studio media IDs, gallery order, captions, and alternative text: **none**.
-No new photographs were fetched. The linked album supplies the existing source
-reference, not a local gallery. This is a reviewable text/layout candidate, not
-finished visual curation.
+| Order | Google Photos image ID | Role | Description |
+| --- | --- | --- | --- |
+| 1 | `AF1QipOYOPMUTUnNJtdnZlBl5Aq_xtg__YaYVun_8a_m` | result | August 26 room, floor, white ceiling and timber wall |
+| 2 | `AF1QipO5TK5FXRp97MN26dv5wFBXuLUtEJmB03luGYUW` | condition | March 16 starting room with blue walls and worn floor |
+| 3 | `AF1QipO5zjJV4Fdl_JosSyl-9VcRTD99Ailb1PqRU9qS` | process | March 16 scrapers and finish shavings by the floor register |
 
-For the lead, seek a whole-room view that shows floor, shiplap, mineral walls,
-and repaired ceiling together. The journal specifically identifies August 26 at
-18:42:52 and 18:43:06 as near-completion views. These are leads for later visual
-inspection, not selected or verified media IDs. A newer clear-room view may be
-better after direct inspection; current claims stop at the saved journal.
+Exact captions, alternative text, source links and gallery order are saved in
+`website/content/projects/studio-restoration.json` and its three `studio-*` media
+records. Review them in the generated preview. The candidate uses inspected
+Google display renditions, converted into ordinary local JPEG copies, then
+normalized through private intake. These are not full-resolution camera originals.
+No source photographs, journal or inventory were edited.
 
-Suggested selection sequence once local assets and source identities exist:
-
-1. Whole-room context — possible homepage lead.
-2. Existing room condition — establish what was retained.
-3. Floor scraping or sanding — show work rather than just a finish.
-4. Reclaimed ceiling repair — show the material match.
-5. Exposed shiplap and adjacent lime finish — make the preservation choice clear.
-6. Crown or trim detail — show fitting and finish integration.
-7. A later whole-room view — show the result supported by that photograph.
-
-Write final captions and alternative text only after inspecting each selected
-image. Do not invent descriptions from this proposed sequence.
+The live album includes later September photographs. This candidate deliberately
+uses the dated March/August evidence supporting the already accepted text.
+See [Workbench instructions](workbench.md) for intake and maintenance.
 
 ## Source Boundaries
 
@@ -89,8 +85,8 @@ image. Do not invent descriptions from this proposed sequence.
 
 ## Remaining Decisions
 
-1. Review the Studio wording and four-paragraph story.
-2. Complete the bounded Studio photo selection and local asset intake; then
-   review the exact lead image, gallery, captions and alternative text.
+1. Studio wording and four-paragraph story: approved by Shawn.
+2. Three-photo Studio candidate and Workbench flow: approved by Shawn with
+   “approved” in Task 06 after reviewing the delivered result.
 3. After those decisions, approve the complete candidate and explicitly authorize
    recording its reviewed snapshot. The current snapshot remains candidate.

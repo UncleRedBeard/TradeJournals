@@ -14,7 +14,7 @@ test("candidate preview stages selected assets and writes the public model", asy
 
   assert.deepEqual(result.model.projects.map(project => project.id).sort(), ["office-restoration", "studio-restoration"]);
   assert.equal(model.projects.find(project => project.id === "office-restoration").gallery.length, 10);
-  assert.equal(model.projects.find(project => project.id === "studio-restoration").gallery.length, 0);
+  assert.equal(model.projects.find(project => project.id === "studio-restoration").gallery.length, 3);
   await access(path.join(websiteRoot, ".generated/public/media/flickr-53921322250.jpg"));
   await access(path.join(websiteRoot, ".preview-dist/index.html"));
   await access(path.join(websiteRoot, ".preview-dist/work/studio-restoration/index.html"));

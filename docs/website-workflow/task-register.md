@@ -8,10 +8,10 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current execution checkpoint: September 16, 2026, 14:48 UTC. Tasks 01 and 02
-are present in commit `505d34e44457e4d0b207b19620ad5489afbec349`; checkout was
-clean on `codex/website-updates` before Task 03 preparation. Earlier uncommitted
-state descriptions below remain historical task-completion snapshots.
+Current checkpoint: September 16, 2026, 23:06 UTC. Task 05 implementation is
+committed at `98fb1308c927bba6b5b4fd9aa05c63fbac7bc70b`; HEAD and the local
+origin tracking ref match. Subsequent Task 05 acceptance and Task 06 preparation
+documentation is uncommitted. Earlier Git states below are historical snapshots.
 
 ## Operating Boundary
 
@@ -21,7 +21,11 @@ Task 01. Later tasks retain their plan approval; record their task-specific
 dispatch approval before starting them. Completion of one child alone never
 starts another. The original implementation scope excluded Git closeout;
 Task 05's later explicit commit/push authorization is recorded below. Deployment
-and private Dashboard work remain outside scope.
+and private Dashboard implementation remain outside current execution scope.
+Task 06 received direct child approval on September 17 and delivered its bounded
+Workbench candidate, accepted by Shawn directly in the child. Shawn subsequently
+authorized scoped Git closeout in both repositories, recorded under Task 06.
+Reviewed-release snapshot changes and publication remain outside that approval.
 
 Only one website child writes implementation files at a time. Children share
 this checkout to retain the approved uncommitted design and plan. The hub owns
@@ -175,9 +179,9 @@ their completion reports. Preserve other tasks' work and do not switch branches.
 ## Website 1 — Task 05 Pilot Content Review
 
 - Exact child ID: `01a0ac3f-68fd-7771-a652-b16281312adf`.
-- Title: Website 1 - Task 05 Pilot Content Review - READY FOR REVIEW.
+- Exact displayed title: Website 1 - Task 05 Studio - COMPLETE.
 - Environment: same directory; `codex/website-updates`; base `1faa53d`.
-- Brief: [Task 05, revision 4](task-05-pilot-content-review.md).
+- Brief: [Task 05, revision 5](task-05-pilot-content-review.md).
 - Initial approval: RECEIVED; Shawn said "start task 05" after the hub proposed
   a focused pilot content and visual review.
 - Scope change: direct instruction in this exact child: "i like the direction
@@ -187,13 +191,13 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   the approved visual direction and Office candidate work. Validate the Studio
   identity and evidence against its local journal, inventory and existing assets.
   Do not conflate Home Reno - Studio with Home Reno - Studio | Office.
-- Boundaries: final content approval and saved reviewed snapshot remain pending.
+- Boundaries: full photo candidate approval and saved reviewed snapshot remain pending.
   No wider archive migration, hosting, contact implementation or publication.
   Scoped Git closeout is now separately authorized as recorded below.
-- Workflow status: READY FOR REVIEW — Studio text/layout only; photo work
-  and final editorial acceptance remain unfinished.
-- Runtime state: Git closeout turn `01a0ac69-72a6-7f83-949a-6bac9dd8230d`
-  observed active; exact READY FOR REVIEW title retained for editorial status.
+- Workflow status: COMPLETE for accepted Studio text/layout and branding;
+  photo curation and approval of the populated candidate are deferred follow-up.
+- Runtime state: idle; exact COMPLETE title freshly observed after acceptance
+  reconciliation on September 16, 2026. Implementation and Git closeout finished.
 - Original dispatch: `WK-WEB-T05-D01`; SENT once. No second dispatch: direct
   child approval authorizes this bounded revision.
 - Latest received report: `WK-WEB-T05-R01`, revision 3, at
@@ -217,18 +221,20 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   source identities, then choose the lead/gallery, write inspected captions and
   alternatives, and review the populated pages. Studio currently has zero selected
   images; no Office photos are substituted. This is not completed visual curation.
-- Acceptance: text/layout draft ready for review only. Complete photo work and
-  obtain approval of the exact full candidate before recording a reviewed snapshot.
-  No approval inferred from the positive response to the visual direction.
+- Acceptance: RECEIVED; exact child reports Shawn's direct `approved` after
+  delivery of the Studio text/layout candidate and branding. Its report and
+  editorial packet record that bounded acceptance. Hub reconciled this as
+  `WK-WEB-T05-H04`. Photos and the complete reviewed snapshot remain pending.
 - Git checkpoint before closeout: uncommitted Task 05 changes on
   `codex/website-updates`, HEAD `1faa53d`.
 - Git authorization: RECEIVED; Shawn said `git er done` directly in the child,
   which reported that instruction to the hub at 22:51 UTC. The child owns scoped
   validation, staging, commit, push to established `origin/codex/website-updates`,
   and synchronization verification. No force push or new destination is authorized.
-- Git closeout status: IN PROGRESS; no commit/push/synchronization result is
-  claimed yet. Hub brief/register edits completed for inclusion in that closeout.
-  No further hub edits until the child reports its outcome.
+- Git closeout status: COMPLETE at `98fb1308c927bba6b5b4fd9aa05c63fbac7bc70b`;
+  child reported fetch, matching origin branch, `0 0` and clean worktree after
+  push; hub previously verified. HEAD and tracking ref match again at this
+  preparation checkpoint. Subsequent acceptance/preparation docs are uncommitted.
 - Editorial boundary: Git closeout does not approve Studio photographs, mark the
   candidate reviewed, authorize publication, or dispatch a successor.
 - Single writer: child owns website changes; hub edits only brief/register.
@@ -239,7 +245,87 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   The child reports 80 website tests rerun for the rename. Current brief updated;
   historical reports retained. This is not editorial or publication approval.
 
+## Website 1 — Task 06 Workbench Website Workflow
+
+- Exact child ID: `01a0ac79-2d59-7101-b493-b08da38e407e`.
+- Exact displayed title: Website 1 - Task 06 Workbench - COMPLETE.
+- Environment: same-directory fork of this hub; `codex/website-updates`;
+  preparation HEAD `98fb1308c927bba6b5b4fd9aa05c63fbac7bc70b`.
+- Brief: [Task 06, revision 5](task-06-workbench-website-workflow.md).
+- Preparation approval: Shawn said "go ahead and get ready for task 06, but
+  don't start it immediately" in this hub.
+- Execution approval: RECEIVED directly in the exact child; it reports Shawn
+  said "start task 06" on September 17. Workflow status: COMPLETE.
+- Runtime state: Git closeout turn `01a0b105-bb6e-76f2-a2c6-372d4cff371b`
+  observed active at 20:20 UTC on September 17. Exact COMPLETE title remains
+  appropriate for the accepted delivery; Git closeout status is separate.
+- Reserved dispatch: `WK-WEB-T06-D01`; NOT SENT, superseded by direct child
+  approval. No duplicate execution message or second writer started by the hub.
+- Dependencies: accepted Studio text/layout and branding retained; child assessed
+  existing Dashboard capability and delivered a three-photo Studio candidate.
+- Agreed private tool name: TradeJournals Workbench; launcher label:
+  Open TradeJournals Workbench. Child reports both implemented and launcher tested.
+- Delivered scope: reused private intake; Studio selection, lead/gallery order,
+  captions/alt, explicit promotion, candidate saving and loopback preview.
+  Shared-album intake was separately directed by Shawn in the child, per report.
+- Acceptance criteria: observed end-to-end local UI and preview behavior, source
+  identity and privacy boundaries preserved, proportionate checks. No commit,
+  push, hosting, deployment or broader CMS.
+- Report: `WK-WEB-T06-R01`, revision 2, at
+  [Task 06 report](reports/task-06-workbench-website-workflow.md); RECEIVED once
+  and reconciled as `WK-WEB-T06-H02` on September 17 at 20:17 UTC. Revision 1
+  receipt remains recorded under `WK-WEB-T06-H01`.
+- Hub receipt checks: read report, maintenance guide and photo packet; inspected
+  changed paths and both repositories' branch/HEAD state. Independently reran
+  output validation: 6 pages/22 files pass. Source journals/inventories, Office
+  project and saved candidate review state have no diff. This is receipt review,
+  not completed independent implementation or visual acceptance.
+- Child verification: 84 website Node tests, 37 Python tests and 221 Companion
+  non-browser tests reported passing. UI save/build and restart/reopen reported
+  verified. Existing Companion browser suites remain unrun because Playwright
+  is unavailable; initial all-suite load failure is explicitly retained.
+- Pre-closeout Git: archive remains `98fb1308` on `codex/website-updates`; Companion
+  remains `99bddb4` on `codex/website-workbench`. Both have uncommitted changes.
+- Acceptance: COMPLETE for the delivered local Workbench workflow and exact
+  three-photo Studio candidate. Child reports Shawn reviewed the result and
+  easier/more intuitive flow, then explicitly said `approved`; report revision 2
+  and the editorial packet record that direct acceptance. Hub reconciles the
+  accepted scope without claiming a new independent code audit or passing the
+  unavailable browser suites. Reviewed-release snapshot, Git closeout and
+  publication remain separate; no new task is authorized.
+- Git closeout authorization: RECEIVED; child reports Shawn's direct `git er done`
+  after acceptance. Task 06 child owns validation, scoped staging/commit/push,
+  and fresh remote/hash/`0 0`/worktree verification in both repositories.
+- Authorized destinations, freshly inspected: archive
+  `git@github.com:UncleRedBeard/TradeJournals.git`, `codex/website-updates`;
+  Companion `git@github.com:UncleRedBeard/tradejournals-companion.git`,
+  `codex/website-workbench` as a matching new development branch on existing origin.
+- Payload includes accepted Task 05/06 bookkeeping and scoped implementation;
+  unrelated work and private runtime data remain excluded. No force push, main
+  merge, publication, reviewed-release snapshot change or next task.
+- Git closeout status: IN PROGRESS. Resulting commits and synchronization are
+  not yet claimed. Hub bookkeeping is ready for child staging; the hub stops
+  file edits now and will make no post-closeout file edits absent another request.
+- Execution owner: existing child, which confirmed reading brief revision 1
+  before beginning assessment. Hub reconciles approval and records only.
+
 ## Remaining Decisions After The Pilot
+
+### Completed Task Archival
+
+On September 16, 2026 at 23:14 UTC, Shawn requested archiving completed tasks
+after checking actual completion. The hub inspected the five completion reports,
+acceptance records, current implementation artifacts and Git history, and reran
+`npm run test:website`: 80 website tests and 37 Python tests passed, including
+build/output checks. Tasks 01–04 delivered their accepted implementation scope;
+Task 05 delivered its explicitly accepted text/layout and branding. Its remaining
+photo work is carried into the prepared Task 06, not treated as finished.
+
+The exact Task 01–05 IDs above were archived on host `local`. A fresh active
+listing contained none of those IDs; the archived listing contained all five.
+This hub and Dashboard Launcher remain available. Task 06 was freshly observed
+idle with AWAITING APPROVAL; it was neither dispatched nor archived. Archival
+changes task organization only. Existing uncommitted documentation remains.
 
 The original four-task implementation plan is complete. Shawn separately
 authorized Task 05 for content and visual review. Contact destination, additional
@@ -282,3 +368,15 @@ projects, hosting/domain and deployment remain later decisions.
 | 2026-09-16 22:50 | 05 | WK-WEB-T05-H03 | Received R01 revision 3; approved Toil & Timber rename verified in actual output and live page; current brief/register reconciled | READY FOR REVIEW; Studio photos and reviewed snapshot still pending |
 
 | 2026-09-16 22:51 | 05 | WK-WEB-T05-G01 | Child reports Shawn's direct git er done instruction; established origin/codex/website-updates destination | Scoped Git closeout authorized and running in child; hub brief/register ready to stage; editorial acceptance unchanged |
+
+| 2026-09-16 23:08 | 05 | WK-WEB-T05-H04 | Child reports direct user approval; report and editorial packet record acceptance; exact COMPLETE title and idle runtime read back | Text/layout and branding accepted; photos deferred; subsequent documentation uncommitted |
+
+| 2026-09-16 23:08 | 06 | WK-WEB-T06-F01 | Explicit preparation-only instruction; brief saved; same-directory fork resolved and idle state read back | AWAITING APPROVAL; no execution dispatch; brief panel queued |
+
+| 2026-09-17 17:01 | 06 | WK-WEB-T06-A01 | Exact child reports Shawn's direct start task 06 instruction and brief read; active execution turn and IN PROGRESS title verified | Direct approval recorded; brief revision 2; existing child owns work; no duplicate dispatch |
+
+| 2026-09-17 20:11 | 06 | WK-WEB-T06-H01 | R01 revision 1 received; artifacts, both Git states and candidate boundary inspected; output check passes 6 pages/22 files; READY FOR REVIEW title and idle runtime verified | Receipt reconciled once; acceptance and photo review pending; missing browser-suite dependency recorded; no further dispatch |
+
+| 2026-09-17 20:17 | 06 | WK-WEB-T06-H02 | R01 revision 2 and editorial packet record Shawn's direct approved after reviewing workflow and three-photo candidate | Accepted scope COMPLETE; unchanged implementation/check evidence and browser-suite limitation retained; no Git, snapshot change or next task |
+
+| 2026-09-17 20:20 | 06 | WK-WEB-T06-G01 | Child reports direct git er done after acceptance; both established origin URLs and development branches inspected; closeout turn active | Scoped two-repository Git closeout authorized; Task 05/06 bookkeeping included; hub edits stop before staging |

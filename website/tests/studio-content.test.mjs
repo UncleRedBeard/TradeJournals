@@ -15,12 +15,13 @@ test("Studio leads the preview with its own provenance and no borrowed Office ph
   assert.equal(model.home.featuredProjectIds[0], studio.id);
   assert.equal(model.site.navigation.find(item => item.label === "Work").href, studio.href);
   assert.equal(model.home.hero, undefined);
-  assert.deepEqual(studio.gallery, []);
-  assert.deepEqual(studio.searchImages, []);
+  assert.equal(studio.gallery.length, 3);
+  assert.ok(studio.gallery.every(photo => photo.id.startsWith("studio-")));
+  assert.equal(studio.searchImages.length, 3);
   assert.deepEqual(studio.albums.map(album => album.key), ["google_photos:af1qippool3ge7t"]);
   assert.equal(studio.albums[0].sourceUrl, "https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9");
-  assert.equal(studio.albums[0].shown, 0);
+  assert.equal(studio.albums[0].shown, 3);
   assert.match(studio.evidenceBoundary, /August 30, 2026/);
-  assert.match(studio.evidenceBoundary, /not yet been selected/);
+  assert.match(studio.evidenceBoundary, /Three selected Studio photographs/);
   assert.equal(office.gallery.length, 10);
 });
