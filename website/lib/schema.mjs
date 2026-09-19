@@ -61,6 +61,9 @@ export const schemas = {
   project: z.strictObject({
     ...base, title: text, area: text, summary: text, searchSummary: z.string(),
     tags: z.array(text).min(1), stage: text, recorded: text, sourceLabel: text,
+    occupancy: z.strictObject({
+      state: z.enum(["current", "future", "former"]), label: text
+    }).optional(),
     sourceRefs: z.array(sourceRef).min(1), albumKeys: z.array(albumKey),
     gallery: z.array(z.strictObject({
       mediaId: StableId, caption: text,

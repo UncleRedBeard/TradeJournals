@@ -4,13 +4,17 @@ import { readFile, realpath } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { containedFile, loadContent, validateContent } from "./content.mjs";
-import { contentError, isHttpsUrl } from "./schema.mjs";
+import { contentError, isHttpsUrl, StableId } from "./schema.mjs";
 import { compareReview, digestRecord } from "./review.mjs";
 
 const inspectorPath = fileURLToPath(new URL("../../scripts/inspect_website_sources.py", import.meta.url));
 const sourceKey = ref => `${ref.kind}:${ref.path}${ref.anchor ? `#${ref.anchor}` : ""}`;
 const recordDigest = (kind, record) => ({ key: `${kind}:${record.id}`, sha256: digestRecord(record) });
 const byKey = (a, b) => a.key.localeCompare(b.key, "en");
+const isInside = (root, target) => {
+  const relative = path.relative(root, target);
+  return relative !== ".." && !relative.startsWith(`..${path.sep}`) && !path.isAbsolute(relative);
+};
 
 // Validate the subprocess boundary before using any of its facts in public data.
 export function parseInspectionResult(output, requests) {
@@ -79,24 +83,25 @@ function publicProject(project, mediaById, facts) {
     href: `/work/${project.id}/`, archiveHref: `/tradejournals/${project.id}/`,
     albums, gallery, searchImages: project.searchMediaIds.map(id => publicImage(mediaById.get(id)))
   };
+  if (project.occupancy) result.occupancy = { ...project.occupancy };
   for (const field of ["introduction", "storyId", "evidenceBoundary"]) {
     if (project[field]) result[field] = project[field];
   }
   return result;
 }
 
-export async function prepareSite({ repoRoot, contentRoot, mode }) {
+export async function prepareSite({ repoRoot, contentRoot, contentBoundaryRoot = repoRoot, mode, assetOverrides = new Map() }) {
   if (!["preview", "release"].includes(mode)) throw contentError("INVALID_MODE", "site", "mode", "Choose preview or release");
-  let root, content;
+  let root, content, boundary;
   try {
     root = await realpath(repoRoot);
     content = await realpath(contentRoot);
+    boundary = await realpath(contentBoundaryRoot);
   } catch {
-    throw contentError("INVALID_PATH", "site", "contentRoot", "Repository and content roots must exist");
+    throw contentError("INVALID_PATH", "site", "contentRoot", "Repository, content and boundary roots must exist");
   }
-  const relative = path.relative(root, content);
-  if (relative === ".." || relative.startsWith(`..${path.sep}`) || path.isAbsolute(relative)) {
-    throw contentError("INVALID_PATH", "site", "contentRoot", "Content must be inside the repository");
+  if (!isInside(boundary, content)) {
+    throw contentError("INVALID_PATH", "site", "contentRoot", "Content must be inside its allowed boundary");
   }
   const records = validateContent(await loadContent(content));
   // Project JSON files are the explicitly curated public catalog. Images and
@@ -107,14 +112,35 @@ export async function prepareSite({ repoRoot, contentRoot, mode }) {
   ]));
   if (records.home.heroMediaId) selectedIds.add(records.home.heroMediaId);
   const selectedMedia = records.media.filter(media => selectedIds.has(media.id));
+  if (!(assetOverrides instanceof Map)) {
+    throw contentError("INVALID_CONTENT", "site", "assetOverrides", "Asset overrides must be a Map");
+  }
+  const validatedOverrides = new Map();
+  for (const [id, absolute] of assetOverrides) {
+    if (!StableId.safeParse(id).success || !mediaById.has(id)) {
+      throw contentError("MISSING_REFERENCE", id, "assetOverrides", `Unknown media override: ${id}`);
+    }
+    if (typeof absolute !== "string" || !path.isAbsolute(absolute)) {
+      throw contentError("INVALID_PATH", id, "assetOverrides", "Asset override paths must be absolute");
+    }
+    validatedOverrides.set(id, await containedFile(boundary, path.relative(boundary, absolute), id));
+  }
   const serviceById = new Map(records.services.map(service => [service.id, service]));
   const selectedServices = records.home.serviceIds.map(id => serviceById.get(id));
   const requests = new Map();
   for (const project of records.projects) {
     for (const ref of project.sourceRefs) requests.set(sourceKey(ref), { key: sourceKey(ref), ...ref });
   }
-  for (const media of selectedMedia) requests.set(`media:${media.id}`, { key: `media:${media.id}`, kind: "media", path: media.assetPath });
+  for (const media of selectedMedia) {
+    if (!validatedOverrides.has(media.id)) requests.set(`media:${media.id}`, { key: `media:${media.id}`, kind: "media", path: media.assetPath });
+  }
   const facts = inspectSources(root, [...requests.values()]);
+  // Private promotions do not exist at their eventual canonical path yet.
+  // Keep their source snapshot key stable, hashing only the validated private file.
+  for (const media of selectedMedia) {
+    const override = validatedOverrides.get(media.id);
+    if (override) facts.push({ key: `media:${media.id}`, sha256: createHash("sha256").update(await readFile(override)).digest("hex") });
+  }
   const recordSnapshots = [
     recordDigest("site", records.site), recordDigest("home", records.home),
     ...selectedServices.map(record => recordDigest("service", record)),
@@ -155,11 +181,14 @@ export async function prepareSite({ repoRoot, contentRoot, mode }) {
     summary: records.projects[index].searchSummary.trim() ? records.projects[index].searchSummary : project.summary,
     tags: [...records.projects[index].tags], source: project.archiveHref, url: project.href,
     images: project.searchImages,
-    evidence: { stage: project.stage, recorded: project.recorded, sourceLabel: project.sourceLabel }
+    evidence: {
+      stage: project.stage, recorded: project.recorded, sourceLabel: project.sourceLabel,
+      ...(project.occupancy && { occupancy: { ...project.occupancy } })
+    }
   }));
   const assetCopies = [];
   for (const media of selectedMedia) assetCopies.push({
-    sourceAbsolute: await containedFile(root, media.assetPath, media.id),
+    sourceAbsolute: validatedOverrides.get(media.id) ?? await containedFile(root, media.assetPath, media.id),
     publicRelative: publicImage(media).src.slice(1)
   });
   return {

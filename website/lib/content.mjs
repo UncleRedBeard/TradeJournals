@@ -90,6 +90,7 @@ export function validateContent(raw) {
   selections(result.home.serviceIds, "services", "home", "home.serviceIds");
   if (result.home.heroMediaId) lookup("media", result.home.heroMediaId, "home", "home.heroMediaId");
   for (const service of result.services) selections(service.projectIds, "projects", service.id, `services.${service.id}.projectIds`);
+  const albumOwners = new Map();
   for (const project of result.projects) {
     const prefix = `projects.${project.id}`;
     const galleryIds = project.gallery.map(placement => placement.mediaId);
@@ -98,6 +99,11 @@ export function validateContent(raw) {
     unique(project.albumKeys, project.id, `${prefix}.albumKeys`);
     unique(project.sourceRefs.map(ref => `${ref.kind}:${ref.path}#${ref.anchor ?? ""}`), project.id, `${prefix}.sourceRefs`);
     for (const [index, key] of project.albumKeys.entries()) {
+      const owner = albumOwners.get(key);
+      if (owner && owner !== project.id) {
+        throw contentError("DUPLICATE_REFERENCE", project.id, `${prefix}.albumKeys[${index}]`, `Album ${key} is already owned by project ${owner}`);
+      }
+      albumOwners.set(key, project.id);
       if (!project.sourceRefs.some(ref => ref.kind === "inventory" && ref.anchor === `album-${key.split(":")[1]}`)) {
         throw contentError("MISSING_REFERENCE", project.id, `${prefix}.albumKeys[${index}]`, `Album ${key} needs a matching inventory source`);
       }

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "studio-office-restoration",
+  "title": "Barre Studio — Current Room",
+  "area": "01 / The Residence",
+  "summary": "The current barre studio and Repair Shop home, documented through the Home Reno - Studio | Office album.",
+  "searchSummary": "Current barre studio evidence from the Home Reno - Studio | Office Flickr album, kept separate from the future studio renovation.",
+  "tags": [
+    "barre studio",
+    "current room",
+    "repair shop",
+    "historic home",
+    "restoration"
+  ],
+  "stage": "Current barre studio; the move has not occurred",
+  "recorded": "Selected Flickr evidence from album 72177720306207693; album dates remain unresolved.",
+  "sourceLabel": "Home Reno - Studio | Office Flickr album",
+  "occupancy": {
+    "state": "current",
+    "label": "Barre Studio — Current Room"
+  },
+  "sourceRefs": [
+    {
+      "kind": "inventory",
+      "path": "FLICKR_PUBLIC_ALBUMS.md",
+      "anchor": "album-72177720306207693"
+    }
+  ],
+  "albumKeys": [
+    "flickr:72177720306207693"
+  ],
+  "gallery": [
+    {
+      "mediaId": "flickr-52705240355",
+      "caption": "The stripped original door installed before its separate charred-finish treatment.",
+      "role": "condition"
+    },
+    {
+      "mediaId": "flickr-52705240380",
+      "caption": "The retained wood door within its painted surround.",
+      "role": "detail"
+    },
+    {
+      "mediaId": "flickr-52705240435",
+      "caption": "Wood grain, inset panels, and old hardware openings in the retained door.",
+      "role": "detail"
+    },
+    {
+      "mediaId": "flickr-52704298727",
+      "caption": "Tools and work materials beside the door and windows.",
+      "role": "process"
+    },
+    {
+      "mediaId": "flickr-52705240320",
+      "caption": "A wider room view with exposed floorboards, a cabinet, and work equipment.",
+      "role": "context"
+    }
+  ],
+  "searchMediaIds": [
+    "flickr-52705240435",
+    "flickr-52705240380"
+  ],
+  "introduction": "This room is the current home of the barre studio and Repair Shop. It remains the current room until the move to the renovated former living room is complete.",
+  "storyId": "studio-office-restoration",
+  "evidenceBoundary": "Selected photographs document this room and its retained finishes. Conflicting Flickr dates and mixed Office journal claims are not used to establish chronology or final door installation."
+}

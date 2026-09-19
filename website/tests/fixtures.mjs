@@ -3,21 +3,21 @@ import path from "node:path";
 import os from "node:os";
 
 export function makeFixture() {
-  const project = id => ({
+  const project = (id, albumId, mediaId) => ({
     schemaVersion: 1, id, title: `Recorded ${id}`, area: "Residence",
     summary: "A documented room project.", searchSummary: "", tags: ["floor"],
     stage: "Recorded work", recorded: "2026", sourceLabel: "Local journal and album",
     sourceRefs: [
       { kind: "journal", path: `journals/${id}.md` },
-      { kind: "inventory", path: "albums.md", anchor: "album-111" }
+      { kind: "inventory", path: "albums.md", anchor: `album-${albumId}` }
     ],
-    albumKeys: ["flickr:111"],
-    gallery: [{ mediaId: "photo-one", caption: "Recorded surface", role: "detail" }],
-    searchMediaIds: ["photo-one"]
+    albumKeys: [`flickr:${albumId}`],
+    gallery: mediaId ? [{ mediaId, caption: "Recorded surface", role: "detail" }] : [],
+    searchMediaIds: mediaId ? [mediaId] : []
   });
-  const media = id => ({
+  const media = (id, albumId = "111") => ({
     schemaVersion: 1, id, kind: "evidence", assetPath: `images/${id}.jpg`,
-    sourceUrl: `https://example.org/photos/${id}/`, albumKey: "flickr:111",
+    sourceUrl: `https://example.org/photos/${id}/`, albumKey: `flickr:${albumId}`,
     alt: `Recorded ${id}`, width: 800, height: 600
   });
   return {
@@ -36,7 +36,7 @@ export function makeFixture() {
       schemaVersion: 1, id: "historic-floors", title: "Historic floors",
       description: "Care grounded in recorded work.", projectIds: ["project-one"]
     }],
-    projects: [project("project-one"), project("project-two")],
+    projects: [project("project-one", "111", "photo-one"), project("project-two", "333")],
     media: [media("photo-one"), media("photo-two"), media("unselected-photo")],
     review: { schemaVersion: 1, id: "pilot", state: "candidate", records: [], sources: [] }
   };
@@ -64,7 +64,9 @@ export async function writeFixture(t, raw = makeFixture()) {
     "# Inventories", '<a id="album-111"></a>', "### First album",
     "- Album URL: [First album](https://example.org/albums/111/)", "- Photos: 12", "",
     '<a id="album-222"></a>', "### Unrelated album",
-    "- Album URL: [Other album](https://example.org/albums/222/)", "- Photos: 99", ""
+    "- Album URL: [Other album](https://example.org/albums/222/)", "- Photos: 99", "",
+    '<a id="album-333"></a>', "### Second project album",
+    "- Album URL: [Second project album](https://example.org/albums/333/)", "- Photos: 6", ""
   ].join("\n"));
   return { repoRoot, contentRoot, raw, save, saveRecord };
 }

@@ -1,67 +1,131 @@
 # Website Editing With TradeJournals Workbench
 
-The private Workbench edits the same public JSON records used by Astro and by
-file editing. This first version supports the Studio gallery only. Project prose
-and other projects remain editable in their existing structured files.
+TradeJournals Workbench is a private editor for the structured records that feed
+the Astro website. It supports several projects in one change set, explicit room
+occupancy, album reassignment, story editing, photo ordering, and isolated
+preview. The archive repository remains the authority for validation and public
+content.
 
-## Everyday Use
+## Everyday Flow
 
-1. Run **Open TradeJournals Workbench.command** from
-   `~/Library/Application Support/TradeJournals Dashboard/`.
-2. In **Photos Inbox**, choose local photographs, inspect the previews, and use
-   **Review selected photos → Stage selected photos**. Nothing is public yet.
-3. Open **Website**. Studio opens directly. Select staged or previously saved
-   photographs. Keep an individual Studio Google Photos source link for each
-   newly selected photo.
-4. Write the caption and alternative text, choose its role, and move the lead
-   photo to the top. Removing a selection retains its saved asset.
-5. Confirm copying new selections into the website candidate, then **Save
-   candidate**. This copies prepared JPEGs into `website/assets/workbench/`, adds
-   media records, and updates Studio's gallery and search image order.
-6. **Build preview → Open website preview**. Check the project, homepage card,
-   and archive. Saving and previewing do not approve, publish, commit, or deploy.
+1. Start the local Workbench with its private configuration and open
+   **Website**.
+2. Choose a canonical project. Add related projects to the same draft when one
+   correction must update shared references.
+3. Edit the project fields, story, occupancy, albums, and selected photos.
+   Project ID replacement and album movement are explicit operations.
+4. **Save draft**. This creates an immutable private revision in the Workbench
+   store. It does not change the archive repository.
+5. **Build preview**. Open and inspect the private preview for that exact saved
+   revision and digest.
+6. Use **Publish update** only after the exact preview has separate content
+   approval. The operation applies that revision to local canonical source files
+   and rebuilds the local candidate preview.
 
-A newly saved candidate survives a browser or Workbench restart. Use **Reopen
-saved candidate** for changes made in files. If a save reports changed records,
-keep any text you need, reload the browser to discard its stale copy, and reopen.
-Do not edit the same candidate simultaneously in the browser and files.
+The browser remembers only the active draft identifier. The saved change set
+reopens from private storage after a browser or Workbench restart. Unsaved edits
+remain browser state; use **Discard changes** or **Reopen saved revision** only
+when replacing them is intentional.
 
-## Google Photos Intake
+## Occupancy Is An Editorial Fact
 
-There is no Google Photos account integration. Download only the chosen photos
-from the shared Studio album and retain their individual photo URLs. The three
-Task 06 images are inspected Google display renditions, 1012–1080 pixels wide,
-not original camera files. Public copies are normalized JPEG previews; original
-source images are untouched. Higher-resolution replacements can be selected later.
+Every room whose use can change carries an explicit occupancy state and label.
+Choose `current`, `future`, or `former` only from Shawn's confirmation. Renovation
+progress, album names, photo dates, and a finished-looking room do not establish
+occupancy. Keep a current room current and a future room future until Shawn
+explicitly confirms the move.
 
-Some Google JPEG downloads include an MPF auxiliary image layer. The existing
-private importer deliberately refuses these multi-image files. Export an ordinary
-JPEG copy with Preview, or use `sips -s format jpeg input.jpg --out copy.jpg`,
-then import the copy. Keep the original download. Failed intake outcomes remain
-visible; they do not become public website assets.
+Album ownership is exclusive across projects. Reassigning an album moves its
+selected evidence; it does not automatically move historical claims, dates, or
+room narratives. Review those claims separately.
 
-## Implementation And Configuration
+## What Each Stage Means
 
-- Companion checkout: `../tradejournals-companion`, branch
-  `codex/website-workbench`; Website HTTP adapter and small standalone editor.
-- Archive branch: `codex/website-updates`; `website/lib/workbench.mjs` validates
-  and writes public records. Astro does not import this authoring module.
-- Private launcher config: `allowWebsiteWrites: true`; `allowJournalWrites`
-  remains false. Website editing defaults off in other configurations.
-- Workbench listens only on `127.0.0.1:8125`; preview uses
-  `127.0.0.1:8126` after building. Optional `websitePreviewPort` changes the latter.
-- An occupied preview port produces an error; the Workbench does not stop another
-  process. Its preview listener stops when the Workbench shuts down.
-- The old **Start TradeJournals Dashboard.command** forwards to the new launcher.
-  The private storage folder retains its old name for compatibility.
+| Stage | Location | Effect |
+| --- | --- | --- |
+| Browser edits | Browser memory | No durable or public change |
+| Private draft | Owner-only Workbench store | Immutable saved revision and proposal |
+| Private preview | Owner-only isolated build | Inspectable output for one revision and digest |
+| Canonical source | `website/content/` and approved assets | Local public-content candidate after **Publish update** |
+| Reviewed snapshot | `website/content/reviews/pilot.json` | Separate editorial release decision |
+| Local candidate preview | Canonical Astro build output | Release candidate built from canonical source |
+| Hosted output | Future hosting provider | Separate deployment decision |
 
-Only ready photos can be promoted. A same-origin request token, candidate-only
-state, revision check, and schema validation protect each save. Content-addressed
-assets are additive; the project record is replaced atomically. An interrupted
-save can leave an unselected public asset; inspect the diff before closeout.
-Automatic cleanup is intentionally absent.
+Saving or previewing never changes canonical source, review state, Git, or a
+hosted site. **Publish update** does not deploy, approve a release, edit journals
+or inventories, commit, or push. It applies only the exact previewed revision to
+the local website source and then attempts the ordinary candidate build.
 
-The public build works without a running Workbench and never reads its private
-SQLite store or managed media. Run the existing commands in `website/README.md`
-for file-based preview, tests, and output validation. Review state remains
-`candidate` until Shawn explicitly approves a complete reviewed snapshot.
+## Conflicts And Recovery
+
+Each draft records fingerprints for the canonical files it touches. An external
+edit to an unrelated record does not invalidate the draft. An external edit to a
+touched project, story, home record, service record, navigation record, or media
+record makes the draft stale. Workbench keeps the saved revision and refuses to
+preview or publish it until the change is reconciled and saved against current
+source.
+
+The website lifecycle uses these visible states:
+
+- `draft`: a saved private revision that can be edited;
+- `previewed`: the current revision and digest have a successful private preview;
+- `publishing`: a durable publication manifest exists and application is in
+  progress;
+- `recovery`: the source result is uncertain and requires inspection; and
+- `published`: the exact source application was verified. The local candidate
+  preview may still need a separate rebuild if that build failed.
+
+Mutation requests have durable receipts. If the browser loses a response, check
+the receipt before retrying. A retry with the same request identifier and payload
+returns the recorded result. A publication in `recovery` is never blindly
+replayed. Restart inspection marks it published only when every expected after
+digest is already present; otherwise use the explicit recovery path.
+
+## Offline Website-Store Upgrade
+
+Normal startup never upgrades an older private store. Stop every Companion
+server that could own the store, retain the generated verified backup, and run:
+
+```sh
+node dashboard/start.mjs --upgrade-website --server-stopped \
+  --config /absolute/private/companion-config.json
+```
+
+Restart normally after the command reports schema version 3. Unknown, damaged,
+live-owned, or ambiguously owned stores are refused without replacement.
+
+## Structured-File Editing Remains Available
+
+The browser editor and direct file editing use the same archive-owned schemas.
+Maintainers may continue to edit:
+
+- `website/content/projects/*.json` and matching
+  `website/content/stories/*.md`;
+- `website/content/home.json`, `website/content/services/*.json`, and
+  `website/content/site.json` for references and navigation; and
+- `website/content/media/*.json` for public media metadata.
+
+Run the website tests and candidate build after structured-file changes. Do not
+edit the same records in files while a Workbench draft based on them is active;
+the safe stale check will require the private draft to be reconciled.
+
+## Photos And Source Evidence
+
+Photos Inbox remains the private intake boundary. Only ready photos with a
+complete public media record can enter a website change set. Public promotion is
+additive and content-addressed; originals remain untouched. Captions,
+alternative text, role, focal point, source URL, album key, and photo order stay
+explicit.
+
+Google Photos is not an account integration. Download only selected evidence and
+retain individual source URLs. If a downloaded JPEG contains an MPF auxiliary
+layer, export an ordinary JPEG copy before intake and keep the original. Failed
+intake outcomes remain private and never become website assets.
+
+## Verification
+
+The public Astro build does not read the private store or managed media. Use the
+commands in `website/README.md` for tests, candidate builds, and output checks.
+Before Git closeout, inspect the actual source diff, verify that private
+configuration and storage did not enter either repository, and confirm the
+review record still reflects the intended editorial state.

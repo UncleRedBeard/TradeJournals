@@ -22,16 +22,26 @@ async function writeJson(file, value) {
   await writeFile(file, `${JSON.stringify(value, null, 2)}\n`);
 }
 
-export async function buildWebsite({ mode, repoRoot = defaultRepoRoot, websiteRoot = defaultWebsiteRoot } = {}) {
+export async function buildWebsite({
+  mode,
+  repoRoot = defaultRepoRoot,
+  websiteRoot = defaultWebsiteRoot,
+  contentRoot = path.join(websiteRoot, "content"),
+  contentBoundaryRoot = repoRoot,
+  generatedRoot = path.join(websiteRoot, ".generated"),
+  modelPath = path.join(websiteRoot, "src", "generated", "site.json"),
+  publicRoot = path.join(generatedRoot, "public"),
+  outputRoot = path.join(websiteRoot, mode === "preview" ? ".preview-dist" : "dist"),
+  assetOverrides = new Map()
+} = {}) {
   if (!["preview", "release"].includes(mode)) throw new Error("Build mode must be preview or release.");
 
-  const generatedRoot = path.join(websiteRoot, ".generated");
-  const publicRoot = path.join(generatedRoot, "public");
   await rm(generatedRoot, { recursive: true, force: true });
+  await rm(publicRoot, { recursive: true, force: true });
   await mkdir(publicRoot, { recursive: true });
 
-  const prepared = await prepareSite({ repoRoot, contentRoot: path.join(websiteRoot, "content"), mode });
-  await writeJson(path.join(websiteRoot, "src", "generated", "site.json"), prepared.model);
+  const prepared = await prepareSite({ repoRoot, contentRoot, contentBoundaryRoot, mode, assetOverrides });
+  await writeJson(modelPath, prepared.model);
   await writeJson(path.join(generatedRoot, "review.json"), prepared.report);
 
   for (const asset of prepared.assetCopies) {
@@ -48,16 +58,19 @@ export async function buildWebsite({ mode, repoRoot = defaultRepoRoot, websiteRo
       ...process.env,
       ASTRO_TELEMETRY_DISABLED: "1",
       WK_SITE_MODE: mode,
-      WK_PUBLIC_DIR: publicRoot
+      WK_SITE_MODEL: modelPath,
+      WK_STORY_ROOT: path.join(contentRoot, "stories"),
+      WK_PUBLIC_DIR: publicRoot,
+      WK_OUT_DIR: outputRoot
     },
     stdio: "inherit"
   });
   const output = await checkOutput({
-    outputRoot: path.join(websiteRoot, mode === "preview" ? ".preview-dist" : "dist"),
+    outputRoot,
     model: prepared.model
   });
   console.log(`Public output verified: ${output.pages} pages, ${output.files} files, ${output.references} references.`);
-  return { ...prepared, output };
+  return { ...prepared, output, outputRoot };
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

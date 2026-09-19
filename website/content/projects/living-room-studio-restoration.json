@@ -1,26 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "studio-restoration",
-  "title": "Home Reno - Studio",
+  "id": "living-room-studio-restoration",
+  "title": "Living Room Restoration — Future Barre Studio",
   "area": "01 / The Residence",
-  "summary": "Original floors, exposed shiplap, and a repaired plank ceiling give a former living room a new purpose.",
-  "searchSummary": "Living-room-to-ballet-barre-studio restoration: reclaimed ceiling planks, hand-scraped and sanded original floors, brushed polyurethane, exposed shiplap, lime paint and slurry, and coped crown molding.",
+  "summary": "Original floors, exposed shiplap, and a repaired plank ceiling in the former living room being prepared as the future barre studio.",
+  "searchSummary": "Former living-room restoration with original floors, exposed shiplap, reclaimed ceiling repairs, and an explicit future barre studio use.",
   "tags": [
-    "studio",
-    "ballet barre",
     "living room",
+    "future barre studio",
     "floor",
-    "floors",
     "shiplap",
     "reclaimed wood",
     "ceiling",
     "lime paint",
-    "lime slurry",
     "crown molding"
   ],
-  "stage": "Near-completion in the August 30 journal; final studio sign-off not documented",
+  "stage": "Renovation documented; future barre studio move not confirmed",
   "recorded": "March 16–August 30, 2026, in the source journal.",
-  "sourceLabel": "Studio restoration journal and Home Reno - Studio Google Photos album",
+  "sourceLabel": "Former living room restoration journal and Home Reno - Studio Google Photos album",
+  "occupancy": {
+    "state": "future",
+    "label": "Living Room Restoration — Future Barre Studio"
+  },
   "sourceRefs": [
     {
       "kind": "journal",
@@ -60,7 +61,7 @@
     "studio-a400ee37342a3a2d58cf36631811b65f2d466e5f0608db2810bab20ef93e86b2",
     "studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce"
   ],
-  "introduction": "A former living room in the author's 1894 home is becoming a dedicated ballet barre studio. Original floorboards and shiplap remain central to the room, joined by reclaimed ceiling repairs, white mineral finishes, and carefully fitted crown molding.",
-  "storyId": "studio-restoration",
-  "evidenceBoundary": "This account follows the journal through August 30, 2026. Final studio sign-off is not documented there. Three selected Studio photographs show the early room, floor work, and the room nearing completion; they do not establish final sign-off or an installed barre. The linked album photo count is a saved inventory value, not a live count."
+  "introduction": "The former living room in the 1894 residence is being restored as the future home of the barre studio and Repair Shop. The room is not yet the current studio.",
+  "storyId": "living-room-studio-restoration",
+  "evidenceBoundary": "The journal and three selected photographs document renovation through August 30, 2026. They do not establish that the studio move has occurred or that the room is currently occupied as a barre studio."
 }

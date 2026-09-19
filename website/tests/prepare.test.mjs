@@ -48,6 +48,17 @@ test("offline preview resolves selected public records, counts and source links"
   assert.ok(!result.report.snapshot.records.some(record => record.key.startsWith("review:")));
 });
 
+test("offline preview preserves project occupancy in public and search evidence", async t => {
+  const fixture = await writeFixture(t);
+  fixture.raw.projects[0].occupancy = { state: "current", label: "Current barre studio" };
+  await fixture.saveRecord("projects/project-one.json", fixture.raw.projects[0]);
+
+  const result = await prepare(fixture);
+
+  assert.deepEqual(result.model.projects[0].occupancy, { state: "current", label: "Current barre studio" });
+  assert.deepEqual(result.model.searchEntries[0].evidence.occupancy, { state: "current", label: "Current barre studio" });
+});
+
 test("only synthetic reviewed snapshots pass release; candidate content is never promoted", async t => {
   const fixture = await writeFixture(t);
   await assert.rejects(prepare(fixture, "release"), { code: "UNREVIEWED_CONTENT" });

@@ -1,4 +1,4 @@
-import model from "../generated/site.json";
+import model from "@site-model";
 
 export function GET() {
   return new Response(JSON.stringify(model.searchEntries), {

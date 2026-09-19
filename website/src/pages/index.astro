@@ -3,7 +3,7 @@ import Hero from "../components/Hero.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ServiceSection from "../components/ServiceSection.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
-import model from "../generated/site.json";
+import model from "@site-model";
 
 const featured = model.home.featuredProjectIds.map(id => model.projects.find(project => project.id === id));
 const service = model.services.find(item => item.id === model.home.serviceIds[0]);

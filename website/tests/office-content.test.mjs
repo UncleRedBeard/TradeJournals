@@ -10,24 +10,18 @@ const officePhotos = [
   ["office/02.jpg", "53921322245", "72177720316928566"],
   ["office/03.jpg", "53921322215", "72177720316928566"],
   ["office/04.jpg", "53921225999", "72177720316928566"],
-  ["office/05.jpg", "53919981267", "72177720316928566"],
-  ["studio-office/01.jpg", "52705240435", "72177720306207693"],
-  ["studio-office/02.jpg", "52705240380", "72177720306207693"],
-  ["studio-office/03.jpg", "52705240355", "72177720306207693"],
-  ["studio-office/04.jpg", "52704298727", "72177720306207693"],
-  ["studio-office/05.jpg", "52705240320", "72177720306207693"]
+  ["office/05.jpg", "53919981267", "72177720316928566"]
 ];
 
 test("Office preserves the selected gallery, original Flickr URLs, and distinct search copy", async () => {
   const records = validateContent(await loadContent(contentRoot));
   const office = records.projects.find(project => project.id === "office-restoration");
   assert.ok(office);
-  assert.equal(office.gallery.length, 10);
-  assert.deepEqual(office.searchMediaIds, [
-    "flickr-53921322250", "flickr-52705240435", "flickr-52705240380"
-  ]);
+  assert.equal(office.gallery.length, 5);
+  assert.deepEqual(office.searchMediaIds, ["flickr-53921322250"]);
   assert.notEqual(office.summary, office.searchSummary);
-  assert.match(office.introduction, /author's 1894 home/);
+  assert.match(office.introduction, /dedicated office/u);
+  assert.deepEqual(office.albumKeys, ["flickr:72177720316928566"]);
 
   const mediaById = new Map(records.media.map(media => [media.id, media]));
   for (const [relativeAsset, photoId, albumId] of officePhotos) {
@@ -53,7 +47,7 @@ test("Office candidate prepares a local preview but cannot prepare a release", a
   const repoRoot = fileURLToPath(new URL("../../", import.meta.url));
   const preview = await prepareSite({ repoRoot, contentRoot, mode: "preview" });
   assert.equal(preview.report.state, "candidate");
-  assert.equal(preview.model.projects.find(project => project.id === "office-restoration").gallery.length, 10);
+  assert.equal(preview.model.projects.find(project => project.id === "office-restoration").gallery.length, 5);
   assert.match(preview.model.reviewNotice, /await review/u);
   await assert.rejects(
     prepareSite({ repoRoot, contentRoot, mode: "release" }),

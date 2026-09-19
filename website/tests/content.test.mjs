@@ -14,11 +14,22 @@ test("a missing featured project identifies the exact selection", () => {
   );
 });
 
+test("project occupancy is explicit and album ownership is exclusive", () => {
+  const raw = makeFixture();
+  raw.projects[0].occupancy = { state: "current", label: "Current barre studio" };
+  assert.equal(validateContent(raw).projects[0].occupancy.state, "current");
+  raw.projects[1].albumKeys = [...raw.projects[0].albumKeys];
+  raw.projects[1].sourceRefs = structuredClone(raw.projects[0].sourceRefs);
+  assert.throws(() => validateContent(raw), { code: "DUPLICATE_REFERENCE" });
+});
+
 for (const [name, change, code] of [
   ["duplicate project IDs", raw => raw.projects.push(raw.projects[0]), "DUPLICATE_ID"],
   ["unsupported schema", raw => raw.projects[0].schemaVersion = 2, "INVALID_CONTENT"],
   ["unknown project field", raw => raw.projects[0].privateNotes = "private", "INVALID_CONTENT"],
   ["empty title", raw => raw.projects[0].title = " ", "INVALID_CONTENT"],
+  ["invalid occupancy state", raw => raw.projects[0].occupancy = { state: "moved", label: "Moved" }, "INVALID_CONTENT"],
+  ["blank occupancy label", raw => raw.projects[0].occupancy = { state: "current", label: " " }, "INVALID_CONTENT"],
   ["invalid dimensions", raw => raw.media[0].width = 0, "INVALID_CONTENT"],
   ["illustration in gallery", raw => raw.media[0].kind = "illustration", "INVALID_EVIDENCE"],
   ["out-of-range focal point", raw => raw.projects[0].gallery[0].focalPoint = [101, 0], "INVALID_CONTENT"],

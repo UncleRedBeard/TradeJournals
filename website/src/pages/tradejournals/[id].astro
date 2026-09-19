@@ -2,7 +2,7 @@
 import { getEntry, render } from "astro:content";
 import EvidenceDetails from "../../components/EvidenceDetails.astro";
 import SiteLayout from "../../layouts/SiteLayout.astro";
-import model from "../../generated/site.json";
+import model from "@site-model";
 
 export function getStaticPaths() {
   return model.projects.map(project => ({ params: { id: project.id }, props: { project } }));

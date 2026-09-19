@@ -1,34 +1,70 @@
 {
   "schemaVersion": 1,
   "id": "office-restoration",
-  "title": "Office Restoration",
+  "title": "Dedicated Office",
   "area": "01 / The Residence",
-  "summary": "Original floors and a reclaimed wood door in the author's 1894 home.",
-  "searchSummary": "Office documentation tracks the first floor-refinishing method used in the house, sanding progression, hand-applied polyurethane, trim work, and reclamation of an original solid-wood door.",
-  "tags": ["office", "floor", "floors", "refinishing", "sanding", "40 grit", "60 grit", "80 grit", "100 grit", "120 grit", "polyurethane", "door reclamation"],
-  "stage": "Room restored and returned to use in the documented record",
-  "recorded": "Floor work documented December 2021–January 2022; door reclamation recorded under 2022; planning archive added August 2026.",
-  "sourceLabel": "Office journal and two Flickr albums",
+  "summary": "A dedicated office in the 1894 residence, documented through its current room layout, trim, finishes, and continued use.",
+  "searchSummary": "Dedicated office restoration evidence from the Home Reno - Office album, centered on retained room character and current use.",
+  "tags": [
+    "office",
+    "dedicated office",
+    "historic home",
+    "restoration",
+    "trim",
+    "wood floors"
+  ],
+  "stage": "Current dedicated office; selected visual evidence under review",
+  "recorded": "Selected Home Reno - Office photographs; dates and sequence remain under editorial review.",
+  "sourceLabel": "Home Reno - Office Flickr album",
+  "occupancy": {
+    "state": "current",
+    "label": "Dedicated Office"
+  },
   "sourceRefs": [
-    { "kind": "journal", "path": "01_the_residence_1894/trade_journals/office_restoration.md" },
-    { "kind": "inventory", "path": "FLICKR_PUBLIC_ALBUMS.md", "anchor": "album-72177720316928566" },
-    { "kind": "inventory", "path": "FLICKR_PUBLIC_ALBUMS.md", "anchor": "album-72177720306207693" }
+    {
+      "kind": "journal",
+      "path": "01_the_residence_1894/trade_journals/office_restoration.md"
+    },
+    {
+      "kind": "inventory",
+      "path": "FLICKR_PUBLIC_ALBUMS.md",
+      "anchor": "album-72177720316928566"
+    }
   ],
-  "albumKeys": ["flickr:72177720316928566", "flickr:72177720306207693"],
-  "introduction": "Original floorboards and a worn solid-wood door were retained as this room in the author's 1894 home became a dedicated office. The work combined progressive sanding, hand-applied water-based polyurethane, and a separate reclaimed-door finish.",
-  "storyId": "office-restoration",
-  "evidenceBoundary": "Album counts are recorded local inventory values, not live platform verification. The selected photographs are migration candidates awaiting editorial review.",
+  "albumKeys": [
+    "flickr:72177720316928566"
+  ],
   "gallery": [
-    { "mediaId": "flickr-53921322250", "caption": "The room and its original floorboards, with window trim and board joints visible.", "role": "context" },
-    { "mediaId": "flickr-53919981267", "caption": "Floorboards, painted trim, and a closed door on the opposite side of the room.", "role": "detail" },
-    { "mediaId": "flickr-52705240355", "caption": "The stripped original door installed before its separate charred-finish treatment.", "role": "condition" },
-    { "mediaId": "flickr-52705240380", "caption": "The retained wood door within its painted surround.", "role": "detail" },
-    { "mediaId": "flickr-52705240435", "caption": "Wood grain, inset panels, and old hardware openings in the retained door.", "role": "detail" },
-    { "mediaId": "flickr-52704298727", "caption": "Tools and work materials beside the door and windows.", "role": "process" },
-    { "mediaId": "flickr-52705240320", "caption": "A wider room view with exposed floorboards, a cabinet, and work equipment.", "role": "context" },
-    { "mediaId": "flickr-53921322215", "caption": "The room in office use, with the original floorboards still visible.", "role": "context" },
-    { "mediaId": "flickr-53921225999", "caption": "A desk beneath the windows leaves much of the floor in view.", "role": "context" },
-    { "mediaId": "flickr-53921322245", "caption": "The working desk and chair beside the plank floor.", "role": "context" }
+    {
+      "mediaId": "flickr-53921322250",
+      "caption": "The room and its original floorboards, with window trim and board joints visible.",
+      "role": "context"
+    },
+    {
+      "mediaId": "flickr-53919981267",
+      "caption": "Floorboards, painted trim, and a closed door on the opposite side of the room.",
+      "role": "detail"
+    },
+    {
+      "mediaId": "flickr-53921322215",
+      "caption": "The room in office use, with the original floorboards still visible.",
+      "role": "context"
+    },
+    {
+      "mediaId": "flickr-53921225999",
+      "caption": "A desk beneath the windows leaves much of the floor in view.",
+      "role": "context"
+    },
+    {
+      "mediaId": "flickr-53921322245",
+      "caption": "The working desk and chair beside the plank floor.",
+      "role": "context"
+    }
   ],
-  "searchMediaIds": ["flickr-53921322250", "flickr-52705240435", "flickr-52705240380"]
+  "searchMediaIds": [
+    "flickr-53921322250"
+  ],
+  "introduction": "This dedicated office is presented through selected photographs from the Home Reno - Office album. Public copy is limited to visible room condition, retained materials, and current use while mixed journal claims are reviewed.",
+  "storyId": "office-restoration",
+  "evidenceBoundary": "The mixed Office journal also describes another room. Floor chronology and the reclaimed or charred door narrative are withheld pending independent source review."
 }

@@ -2,19 +2,8 @@
 schemaVersion: 1
 id: office-restoration
 ---
+# Dedicated Office
 
-# Office Restoration
+This room is the dedicated office in the 1894 residence. The selected photographs come from the Home Reno - Office album and show the room, retained flooring, trim, windows, and office use.
 
-This room in the author's 1894 home was shared as an office and yoga studio
-before becoming a dedicated office. Keeping its original floorboards meant
-working through the old finish, sanding progressively, and cleaning carefully
-between coats of hand-applied water-based polyurethane. It was the first floor
-refinished in the house and established the process for later rooms.
-
-A worn solid-wood door was also worth keeping. Shawn and Haley stripped it
-rather than replacing it, then developed a charred-wood finish inspired by
-yakisugi. This was an adaptation for appearance and material reclamation,
-not traditional yakisugi or a fire-resistance treatment.
-
-The gallery includes the stripped door installed before that separate
-charred-finish sequence. The journal holds the fuller record; these views should not be read as a complete before-and-after sequence.
+The mixed Office journal also describes work associated with another room. Until those claims are separated and independently supported, this page does not assign the floor chronology or reclaimed and charred door narrative to the dedicated office.

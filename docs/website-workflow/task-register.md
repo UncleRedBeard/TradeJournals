@@ -309,7 +309,82 @@ their completion reports. Preserve other tasks' work and do not switch branches.
 - Execution owner: existing child, which confirmed reading brief revision 1
   before beginning assessment. Hub reconciles approval and records only.
 
-## Remaining Decisions After The Pilot
+## Website 1 — Task 07 Edit Project And Room Separation
+
+- Exact child ID: `01a0b143-f91d-7142-a68f-85898b4942f7`.
+- Exact displayed title: Website 1 - Task 07 Edit Project - COMPLETE.
+- Brief: [Task 07, revision 5](task-07-edit-project.md).
+- Approval: RECEIVED; Shawn said `start task 07` in this hub on September 17,
+  following the Dashboard Launcher handoff and proposed design-first scope.
+- Workflow status: COMPLETE — editor approved and three-room correction applied
+  locally under later explicit save/build/publish authorization. Runtime:
+  publication/reporting turn `01a0ba61-2a1e-74d0-ba77-b1f1b296ae67` active at
+  receipt; exact COMPLETE title read back September 19 at 16:03 UTC.
+- Dispatch: `WK-WEB-T07-D01`; SENT once after idle fork verification.
+- Environment: same-directory archive fork, `codex/website-updates` at
+  `2846ffebd8c662732d859a630d73e1a3ac994ef9`; Companion remains
+  `codex/website-workbench` at `31a6ec145582b85b2bf9064c5239f81254877f0c`.
+  Both clean before this task's preparation. No parallel implementation writer.
+- Dependency checkpoint: Task 06 closeout `WK-WEB-T06-G02` reported both commits
+  pushed, fresh matching remote hashes, `0 0`, clean worktrees; final outcome was
+  acknowledged in conversation without post-closeout edits. Its IN PROGRESS Git
+  entry above is the committed pre-push history, superseded by that result.
+- Objective: Edit Project for website story/album/photo corrections, isolated
+  drafts and previews, then an explicit Publish update operation with locally
+  defined semantics. Office/current-barre-studio mix-up is the first case.
+- Confirmed source identities: Flickr `72177720316928566` = dedicated Office;
+  Flickr `72177720306207693` = CURRENT barre studio / The Repair Shop's current
+  home; Google `af1qippool3ge7t` = former living room / FUTURE home of the studio.
+- Correction authority: Shawn clarified current/future status directly in exact
+  Task 07 child on September 18; child reported it for hub reconciliation.
+  Brief revision 2 supersedes contradictory handoff/revision 1 language. No move
+  is assumed until explicitly confirmed; no project rename or content edit is
+  authorized merely by this planning reconciliation. No new dispatch sent.
+- Design/implementation authority: report links the approved September 18
+  editor spec and plan, now present. Implementation followed that design review.
+- Boundaries: local canonical application separately authorized; journal and
+  inventory corrections still separate, original media preserved; no hosted
+  deployment, reviewed snapshot change, Git closeout, main merge or successor.
+- Report: `WK-WEB-T07-R01`, revision 2,
+  [Task 07 report](reports/task-07-edit-project.md); RECEIVED once and reconciled
+  as `WK-WEB-T07-H03` September 19 at 16:03 UTC. Revision 1 receipt/acceptance
+  remain recorded as H01/H02.
+- Final acceptance: exact child reports Shawn approved the reviewed implementation
+  and private three-room preview on September 19. Hub reconciled R01 as approved
+  and COMPLETE under `WK-WEB-T07-H02`; no new independent code audit is claimed.
+- Delivered: multi-project editing, private immutable draft revisions, isolated
+  preview, explicit local Publish update and recovery controls. Room correction
+  draft `e9c88bf0-9413-4178-8c7e-b89a09d4a591`, revision 2, is published with
+  digest `0c86af959f76454e490013e3896806c4d994fdcea3e341366ccbc6115a0c6ef8`.
+- Canonical room correction: APPLIED LOCALLY. Dedicated Office (5 photos), current
+  barre studio (5), future living-room studio (3) have separate records and album
+  ownership. Child reports Shawn explicitly authorized save, build and publish;
+  completed receipts and no recovery were verified by the child. Old
+  `studio-restoration` project/story are unstaged tracked removals recoverable
+  through Git. No deletion or publication operation performed by the hub.
+- Child verification: 115 website Node, 37 Python and 258 Companion tests passed;
+  24 explicit Playwright skips and omitted `media-ui.test.mjs` retained. Node
+  25.8.1 used because pinned 24.21.0 was unavailable. Child reports final full
+  re-review with no Critical/Important findings. Earlier server-shutdown report
+  is superseded: child now reports both local review servers running. The hub
+  has not independently rechecked or changed their state.
+- Hub receipt verification: read report/spec/plan/source audit; inspected both
+  branches and changed paths; canonical content/journal/inventory diff empty;
+  independently reran output validation (6 pages/22 files) and both whitespace
+  checks successfully. User acceptance is now recorded; the hub has not performed
+  a new independent full code or UI review during acceptance reconciliation.
+- Git: archive HEAD `2846ffeb`, Companion HEAD `31a6ec14`; both contain uncommitted
+  implementation changes. Local publication adds canonical content changes;
+  no commit/push, reviewed snapshot, journal correction, deployment or successor.
+- Post-publication hub checks: correct three-room records/album/occupancy mapping
+  and 5/5/3 selections observed; output validation passes 8 pages/24 files; no
+  journal/inventory/review-state diff, no staged changes, archive HEAD unchanged.
+  Child reports 115 Node/37 Python tests and focused 5/5 passed, plus canonical
+  build with 93 references. These supersede the earlier unchanged-content and
+  6-page preview observations; prior browser/runtime limits still apply.
+- Hub owns brief/register; child owns its bounded deliverable and report.
+
+## Remaining Decisions After The Pilot — Updated Direction
 
 ### Completed Task Archival
 
@@ -380,3 +455,13 @@ projects, hosting/domain and deployment remain later decisions.
 | 2026-09-17 20:17 | 06 | WK-WEB-T06-H02 | R01 revision 2 and editorial packet record Shawn's direct approved after reviewing workflow and three-photo candidate | Accepted scope COMPLETE; unchanged implementation/check evidence and browser-suite limitation retained; no Git, snapshot change or next task |
 
 | 2026-09-17 20:20 | 06 | WK-WEB-T06-G01 | Child reports direct git er done after acceptance; both established origin URLs and development branches inspected; closeout turn active | Scoped two-repository Git closeout authorized; Task 05/06 bookkeeping included; hub edits stop before staging |
+
+| 2026-09-17 21:28 | 07 | WK-WEB-T07-D01 | Shawn explicitly said start task 07; same-directory child verified idle; brief dispatched once; new active turn, exact title and workspace observed | Edit Project and Room Separation running, design first; no journal correction, publication or Git closeout |
+
+| 2026-09-18 14:29 | 07 | WK-WEB-T07-C01 | Exact child reports Shawn's correction: Flickr Studio Office is current barre studio; Google Studio is former living room and future home; idle state observed | Brief revision 2 and register reconciled; contradictory handoff wording superseded; design review continues without new dispatch or content edits |
+
+| 2026-09-19 02:08 | 07 | WK-WEB-T07-H01 | R01 revision 1 received; spec/plan/audit and Git state inspected; canonical content untouched; output validates 6 pages/22 files; READY FOR REVIEW title read back | Private revision 1 delivered unpublished; exact review and publication remain pending; runtime and browser-test limitations retained; no new dispatch |
+
+| 2026-09-19 15:33 | 07 | WK-WEB-T07-H02 | Exact child reports Shawn's final approval of implementation and private three-room preview; COMPLETE title and idle runtime verified | Accepted delivery COMPLETE; canonical room correction remains unapplied; no publication, deletion, Git, journal/inventory correction or successor authorized |
+
+| 2026-09-19 16:03 | 07 | WK-WEB-T07-H03 | R01 revision 2 reports explicit save/build/publish approval and published draft revision 2; hub verifies three-room canonical records and 8-page/24-file output | Local application reconciled; review state and journals/inventories unchanged; tracked removals unstaged; no hosted deployment or Git closeout |
