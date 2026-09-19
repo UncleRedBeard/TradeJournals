@@ -5,9 +5,37 @@ Approval: Shawn explicitly said `start task 07` in the hub on September 17, 2026
 after the proposed Edit Project and Room Separation scope and Dashboard handoff.
 Hub: `01a0a263-8d09-7ff2-8144-a71eb6ec16f6` / website updates
 Child: `01a0b143-f91d-7142-a68f-85898b4942f7`
-Brief revision: 5 — authorized local publication reconciled
+Brief revision: 6 — implementation Git closeout reconciled; bookkeeping pending
 Dispatch: `WK-WEB-T07-D01`
 Register: [task-register.md](task-register.md)
+
+## Git Closeout Checkpoint — September 19, 2026
+
+Shawn explicitly invoked `git er done` in the child, then answered its
+task-scoped deletion checkpoint `we die like men!`. The child reports fresh
+checks and scoped commits/pushes to the existing feature branches:
+
+- TradeJournals: `ec61ca9e3ae605f8b969c38674bdd6456d40de46` on
+  `origin/codex/website-updates`.
+- Companion: `c4a2338584e0137c0a9685a7c964255dee6413af` on
+  `origin/codex/website-workbench`.
+
+The child fetched after each push and verified matching hashes, `0 0` and clean
+worktrees. Hub readback at 16:13 UTC confirmed both HEAD/tracking-ref identities
+and `0 0`; Companion was clean and the archive contained only the child's
+subsequent report revision 3 before these hub edits.
+
+Fresh child checks: 115 website Node tests, 37 Python tests, output 8 pages/24
+files/93 references, Markdown and whitespace checks passed. Companion: 258
+passed with 24 explicit Playwright skips, lint and whitespace passed. Existing
+browser/runtime limitations remain documented in the report.
+
+Report revision 3 and these hub brief/register edits are subsequent bookkeeping
+for inclusion by the child in the authorized archive closeout. Implementation
+commits are synchronized; final bookkeeping synchronization remains pending.
+The child owns staging, commit, push and verification; the hub stops file edits
+after this reconciliation. No merge, PR, hosted deployment, reviewed snapshot,
+journal/inventory changes or successor task is authorized.
 
 ## Local Publication Checkpoint — September 19, 2026
 

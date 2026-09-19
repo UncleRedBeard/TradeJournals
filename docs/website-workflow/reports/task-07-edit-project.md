@@ -1,7 +1,7 @@
 # WK-WEB-T07 — Website Project Editor And Room Separation Report
 
-Report ID: `WK-WEB-T07-R01` · Revision 2 · September 19, 2026
-Status: COMPLETE — approved revision applied to the local canonical website
+Report ID: `WK-WEB-T07-R01` · Revision 3 · September 19, 2026
+Status: COMPLETE — published locally and synchronized to both feature branches
 Child: `01a0b143-f91d-7142-a68f-85898b4942f7`
 Hub: `01a0a263-8d09-7ff2-8144-a71eb6ec16f6`
 
@@ -292,13 +292,29 @@ and are excluded from this child's implementation ownership.
 - Markdown lint for the five Task 8 operating documents and report: zero errors.
 - `git diff --check`: passed in both repositories.
 
-No file is staged, committed, or pushed by this report.
+## Git Closeout — September 19, 2026
+
+Shawn authorized the established two-repository closeout with `git er done` and
+answered the task-scoped permanent-deletion checkpoint with
+`we die like men!`. The approved removal of the old tracked
+`studio-restoration` story is therefore included with the replacement room
+records.
+
+- TradeJournals implementation: `ec61ca9e3ae605f8b969c38674bdd6456d40de46`
+  on `codex/website-updates`.
+- Companion implementation: `c4a2338584e0137c0a9685a7c964255dee6413af`
+  on `codex/website-workbench`.
+- Both commits were pushed to their established `origin` branches, fetched
+  again, and matched their remote commit identities at `0 0` with clean
+  worktrees before this report reconciliation.
+
+This report and the hub's corresponding register reconciliation follow as
+archive bookkeeping. No merge, pull request, hosted deployment, reviewed
+snapshot change, journal edit, inventory edit, or successor task is included.
 
 ## Decisions Still Required
 
 1. Review and approve journal or inventory corrections separately.
-2. Authorize Git closeout separately. Until then, the removed tracked files
-   remain recoverable through Git as unstaged working-tree changes.
-3. Choose hosting and deployment later.
+2. Choose hosting and deployment later.
 
 No successor task is started by this report.

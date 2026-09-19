@@ -313,7 +313,7 @@ their completion reports. Preserve other tasks' work and do not switch branches.
 
 - Exact child ID: `01a0b143-f91d-7142-a68f-85898b4942f7`.
 - Exact displayed title: Website 1 - Task 07 Edit Project - COMPLETE.
-- Brief: [Task 07, revision 5](task-07-edit-project.md).
+- Brief: [Task 07, revision 6](task-07-edit-project.md).
 - Approval: RECEIVED; Shawn said `start task 07` in this hub on September 17,
   following the Dashboard Launcher handoff and proposed design-first scope.
 - Workflow status: COMPLETE — editor approved and three-room correction applied
@@ -344,11 +344,12 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   editor spec and plan, now present. Implementation followed that design review.
 - Boundaries: local canonical application separately authorized; journal and
   inventory corrections still separate, original media preserved; no hosted
-  deployment, reviewed snapshot change, Git closeout, main merge or successor.
-- Report: `WK-WEB-T07-R01`, revision 2,
+  deployment, reviewed snapshot change, main merge or successor. Subsequent
+  explicit Git closeout authorization is recorded below.
+- Report: `WK-WEB-T07-R01`, revision 3,
   [Task 07 report](reports/task-07-edit-project.md); RECEIVED once and reconciled
-  as `WK-WEB-T07-H03` September 19 at 16:03 UTC. Revision 1 receipt/acceptance
-  remain recorded as H01/H02.
+  as `WK-WEB-T07-G01` September 19 at 16:13 UTC. Revision 2 publication receipt
+  remains H03; revision 1 receipt/acceptance remain H01/H02.
 - Final acceptance: exact child reports Shawn approved the reviewed implementation
   and private three-room preview on September 19. Hub reconciled R01 as approved
   and COMPLETE under `WK-WEB-T07-H02`; no new independent code audit is claimed.
@@ -360,8 +361,8 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   barre studio (5), future living-room studio (3) have separate records and album
   ownership. Child reports Shawn explicitly authorized save, build and publish;
   completed receipts and no recovery were verified by the child. Old
-  `studio-restoration` project/story are unstaged tracked removals recoverable
-  through Git. No deletion or publication operation performed by the hub.
+  `studio-restoration` replacement/removals were included in the subsequent
+  authorized Git closeout. No deletion or publication performed by the hub.
 - Child verification: 115 website Node, 37 Python and 258 Companion tests passed;
   24 explicit Playwright skips and omitted `media-ui.test.mjs` retained. Node
   25.8.1 used because pinned 24.21.0 was unavailable. Child reports final full
@@ -373,9 +374,20 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   independently reran output validation (6 pages/22 files) and both whitespace
   checks successfully. User acceptance is now recorded; the hub has not performed
   a new independent full code or UI review during acceptance reconciliation.
-- Git: archive HEAD `2846ffeb`, Companion HEAD `31a6ec14`; both contain uncommitted
-  implementation changes. Local publication adds canonical content changes;
-  no commit/push, reviewed snapshot, journal correction, deployment or successor.
+- Git authorization: child reports Shawn's explicit `git er done` followed by
+  task-scoped `we die like men!` deletion response. Applies to approved Task 07
+  implementation, room correction and associated bookkeeping in both repos.
+- Implementation closeout: TradeJournals
+  `ec61ca9e3ae605f8b969c38674bdd6456d40de46`, `origin/codex/website-updates`;
+  Companion `c4a2338584e0137c0a9685a7c964255dee6413af`,
+  `origin/codex/website-workbench`. Child verified post-push fetch, exact remote
+  hashes, `0 0` and clean status. Hub independently read matching HEAD/tracking
+  hashes and `0 0` at 16:13 UTC; Companion clean, archive report revision 3
+  modified before hub reconciliation.
+- Final bookkeeping closeout: PENDING with child. Report revision 3 plus hub
+  brief/register updates follow the implementation commit; do not describe the
+  archive as clean until child includes and verifies these changes. Hub stops
+  editing after this handback; no competing Git operations.
 - Post-publication hub checks: correct three-room records/album/occupancy mapping
   and 5/5/3 selections observed; output validation passes 8 pages/24 files; no
   journal/inventory/review-state diff, no staged changes, archive HEAD unchanged.
@@ -465,3 +477,5 @@ projects, hosting/domain and deployment remain later decisions.
 | 2026-09-19 15:33 | 07 | WK-WEB-T07-H02 | Exact child reports Shawn's final approval of implementation and private three-room preview; COMPLETE title and idle runtime verified | Accepted delivery COMPLETE; canonical room correction remains unapplied; no publication, deletion, Git, journal/inventory correction or successor authorized |
 
 | 2026-09-19 16:03 | 07 | WK-WEB-T07-H03 | R01 revision 2 reports explicit save/build/publish approval and published draft revision 2; hub verifies three-room canonical records and 8-page/24-file output | Local application reconciled; review state and journals/inventories unchanged; tracked removals unstaged; no hosted deployment or Git closeout |
+
+| 2026-09-19 16:13 | 07 | WK-WEB-T07-G01 | Child reports git er done and task-scoped deletion approval; implementation commits pushed; hub confirms both HEAD/tracking hashes and 0 0 | Implementation synchronized; report revision 3 and two hub files handed back for authorized bookkeeping closeout; hub edits stop |
