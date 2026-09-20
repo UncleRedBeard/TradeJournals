@@ -8,11 +8,11 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: September 20, 2026. Task 08 implementation and bookkeeping
-are committed through `06044320fcdb9f67cbb0c0452ab4e03fbfffd978`; the checkout
-was clean before Task 09 preparation. Task 09 revision 2 is now accepted and
-COMPLETE. Its documentation Git closeout is now authorized and IN PROGRESS in
-the Task 09 child; hosting remains deferred.
+Current checkpoint: September 20, 2026. Task 09 is accepted and committed at
+`9cc32375a6853717c3f0e92459947f0ca2b810d1`; post-push verification confirmed
+matching HEAD/tracking/FETCH_HEAD, `0 0` and clean status. This supersedes its
+historical IN PROGRESS Git entry below. Task 10 Portfolio Expansion is explicitly
+approved. The checkout was clean before preparation; hosting remains deferred.
 Earlier Git and workflow states below are historical snapshots.
 
 ## Operating Boundary
@@ -511,6 +511,42 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   uncommitted. No commit/push result yet claimed. No website/journal/inventory/
   media changes, deployment, merge, publication, source-session archival or
   successor dispatch is authorized by closeout.
+
+## Website 1 — Task 10 Portfolio Expansion
+
+- Exact child ID: `01a0bf60-e5e5-7e20-8c3d-65c6a6e3a445`.
+- Exact displayed title: Website 1 - Task 10 Portfolio Expansion - IN PROGRESS.
+- Brief: [Task 10, revision 2](task-10-portfolio-expansion.md).
+- Approval: RECEIVED; Shawn said `start task 10` in this hub on September 20,
+  after the five-story candidate implementation scope was presented.
+- Scope: implement Entry, Guest Bath dresser vanity, Master Bedroom, Returning
+  to Clay and Agfa Isolette stories; confirm photos, write supported copy, add
+  the craftsman/tradesman introduction and inquiry invitation, and build a
+  reviewable local preview with restoration clearly primary.
+- Dependencies: Task 09 shortlist revision 2 accepted and committed at `9cc3237`;
+  preserve provisional-image gaps, room identities and same-wheel-model correction.
+- Source correction: `WK-WEB-T10-C01`, September 20 at 21:02 UTC. Exact child
+  reports Shawn clarified that the Google Studio shelf planks are unfinished,
+  temporarily dry-fitted on low-profile brackets after floating brackets were
+  rejected. Planks will later be removed for Danish-oil finishing while brackets
+  stay mounted. Brief revision 2 preserves this account without inventing the
+  unspecified installation constraint. No completion/move claim or journal/
+  inventory edit is authorized; no new dispatch was sent.
+- Environment: same-directory archive fork, `codex/website-updates`, baseline
+  `9cc32375a6853717c3f0e92459947f0ca2b810d1`. Only this child writes Task 10
+  implementation; hub owns brief/register. Exact title and idle state verified
+  before dispatch.
+- Boundaries: candidate implementation only; no reviewed-snapshot promotion,
+  hosted deployment, Git closeout, merge, journal/inventory edits, original-media
+  alteration, Companion changes, source-session archival or successor task.
+- Workflow status: IN PROGRESS; fresh wait observed execution turn
+  `01a0bf62-5155-7892-a616-ab385b3fd84b` in progress after approved dispatch.
+- Dispatch: `WK-WEB-T10-D01`; SENT once September 20 at 15:14 UTC.
+- Acceptance: five supported stories and inspected selections, clear visual
+  hierarchy, working discovery/search, preserved existing rooms, actual desktop/
+  mobile preview review, relevant automated checks and honest remaining decisions.
+- Report: `WK-WEB-T10-R01`, proposed at
+  `reports/task-10-portfolio-expansion.md`; not yet received.
 
 ## Remaining Decisions After The Pilot — Updated Direction
 
