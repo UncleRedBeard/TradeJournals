@@ -42,7 +42,7 @@ test("synthetic builds isolate copy, featured order and shared style, then produ
   await f.saveRecord("home.json", f.raw.home);
   const ordered = await f.build("preview");
   const home = await f.output("index.html");
-  const selectedWork = home.slice(home.indexOf("Selected work"));
+  const selectedWork = home.slice(home.indexOf("Restoration portfolio"));
   assert.ok(selectedWork.indexOf("Recorded project-two") < selectedWork.indexOf("Recorded project-one"));
   assert.match(home, /href="\/work\/project-two\/"[^>]*>See the work/u);
   assert.equal(await f.output("work/project-one/index.html"), projectBeforeOrder);
@@ -71,4 +71,17 @@ test("synthetic builds isolate copy, featured order and shared style, then produ
     const html = await f.output(file, "release");
     assert.doesNotMatch(html, /name="robots"[^>]*noindex|<aside class="review-notice"|Local review preview/iu);
   }
+});
+
+test("homepage separates the restoration portfolio from workshop stories", async t => {
+  const f = await buildFixture(t);
+  f.raw.home.featuredProjectIds = ["project-one"];
+  f.raw.home.workshopProjectIds = ["project-two"];
+  await f.saveRecord("home.json", f.raw.home);
+  await f.build("preview");
+  const home = await f.output("index.html");
+  assert.match(home, /Restoration portfolio/);
+  assert.match(home, /From the workshop/);
+  assert.ok(home.indexOf("Recorded project-one") < home.indexOf("From the workshop"));
+  assert.ok(home.indexOf("From the workshop") < home.indexOf("Recorded project-two"));
 });

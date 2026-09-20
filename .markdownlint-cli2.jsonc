@@ -1,5 +1,6 @@
 {
   "ignores": [
+    ".superpowers/sdd/**",
     "website/node_modules/**",
     "website/.runtime/**",
     "website/.astro/**",

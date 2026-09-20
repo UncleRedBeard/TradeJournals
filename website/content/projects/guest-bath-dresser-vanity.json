@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "guest-bath-dresser-vanity",
+  "title": "Guest Bath and Dresser Vanity",
+  "area": "01 / The Residence",
+  "summary": "A compact old-house bath was brought back into service around an antique dresser adapted as a vessel-sink vanity.",
+  "searchSummary": "Guest bath restoration with retained beadboard, tile, windows, and clawfoot tub, centered on fitting plumbing and a vessel sink into an antique dresser vanity.",
+  "tags": [
+    "guest bath",
+    "antique dresser",
+    "vanity",
+    "vessel sink",
+    "beadboard",
+    "plumbing",
+    "historic home"
+  ],
+  "stage": "Room returned to functional use",
+  "recorded": "January 15–April 23, 2024, in the source journal.",
+  "sourceLabel": "Guest bath restoration journal and Home Reno - Guest Bath Flickr album",
+  "sourceRefs": [
+    {
+      "kind": "journal",
+      "path": "01_the_residence_1894/trade_journals/guest_bath_restoration.md"
+    },
+    {
+      "kind": "inventory",
+      "path": "FLICKR_PUBLIC_ALBUMS.md",
+      "anchor": "album-72177720314827829"
+    }
+  ],
+  "albumKeys": [
+    "flickr:72177720314827829"
+  ],
+  "gallery": [
+    {
+      "mediaId": "flickr-53680739580",
+      "caption": "The room back in use with the dresser vanity, vessel sink, mirror, lighting, beadboard, windows, tile, and tub working together.",
+      "role": "result"
+    },
+    {
+      "mediaId": "flickr-53680503668",
+      "caption": "The antique dresser was finished and prepared before receiving the sink and plumbing.",
+      "role": "process"
+    },
+    {
+      "mediaId": "flickr-53680739260",
+      "caption": "Low-profile clamping and careful fitting made the vessel sink part of the dresser rather than a loose addition.",
+      "role": "detail"
+    }
+  ],
+  "searchMediaIds": [
+    "flickr-53680739580",
+    "flickr-53680503668",
+    "flickr-53680739260"
+  ],
+  "introduction": "A small bathroom concentrates a surprising number of trades into one room. The central craft problem here was adapting an antique dresser for modern plumbing and a vessel sink while keeping the retained fabric of the room visually intact.",
+  "storyId": "guest-bath-dresser-vanity",
+  "evidenceBoundary": "The selected evidence documents surface repair, vanity preparation, sink fitting, and the room returned to use. It does not support claims about unseen plumbing, wiring, waterproofing, or code compliance."
+}

@@ -173,7 +173,9 @@ export async function prepareSite({ repoRoot, contentRoot, contentBoundaryRoot =
   if (records.site.contact) site.contact = { label: records.site.contact.label, href: records.site.contact.href };
   const home = {
     headline: records.home.headline, intro: records.home.intro,
-    featuredProjectIds: [...records.home.featuredProjectIds], serviceIds: [...records.home.serviceIds]
+    featuredProjectIds: [...records.home.featuredProjectIds],
+    workshopProjectIds: [...(records.home.workshopProjectIds ?? [])],
+    serviceIds: [...records.home.serviceIds]
   };
   if (records.home.heroMediaId) home.hero = publicImage(mediaById.get(records.home.heroMediaId));
   const searchEntries = projects.map((project, index) => ({

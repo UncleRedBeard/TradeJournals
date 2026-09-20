@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "entry-restoration",
+  "title": "Entry and Stair Restoration",
+  "area": "01 / The Residence",
+  "summary": "Two careful passes renewed the public threshold of the house while keeping its front door, transom, stair, balustrade, and original floor legible.",
+  "searchSummary": "Entry restoration across 2024 and 2025, including protected finish work around the door and stair followed by renewal of the worn original floor.",
+  "tags": [
+    "entry",
+    "historic home",
+    "wood floor",
+    "stair",
+    "trim",
+    "door",
+    "finish work"
+  ],
+  "stage": "Two documented restoration passes completed",
+  "recorded": "September 14, 2024–December 28, 2025, in the source journal.",
+  "sourceLabel": "Entry restoration journal and Home Reno - Entry Flickr album",
+  "sourceRefs": [
+    {
+      "kind": "journal",
+      "path": "01_the_residence_1894/trade_journals/entry_restoration.md"
+    },
+    {
+      "kind": "inventory",
+      "path": "FLICKR_PUBLIC_ALBUMS.md",
+      "anchor": "album-72177720334259189"
+    }
+  ],
+  "albumKeys": [
+    "flickr:72177720334259189"
+  ],
+  "gallery": [
+    {
+      "mediaId": "flickr-55338112557",
+      "caption": "The renewed floor carries the entry from the front door to the retained stair and balustrade.",
+      "role": "result"
+    },
+    {
+      "mediaId": "flickr-55339048056",
+      "caption": "Floor protection allowed the first finish pass to proceed around the existing door, transom, and circulation route.",
+      "role": "condition"
+    },
+    {
+      "mediaId": "flickr-55339463385",
+      "caption": "The landing rail and stair were masked carefully while the surrounding surfaces were renewed.",
+      "role": "process"
+    }
+  ],
+  "searchMediaIds": [
+    "flickr-55338112557",
+    "flickr-55339048056",
+    "flickr-55339463385"
+  ],
+  "introduction": "The entry is where the house presents itself and where daily wear is hardest to hide. This work treated it as one connected threshold: front door, transom, stair, trim, wall surfaces, and original floor.",
+  "storyId": "entry-restoration",
+  "evidenceBoundary": "The journal and selected photographs document finish work and floor renewal. They do not establish a permanent electrical or lighting modification."
+}

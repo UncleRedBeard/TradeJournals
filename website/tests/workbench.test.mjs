@@ -77,6 +77,11 @@ test('stories round-trip editable bodies and derive immutable frontmatter for ne
  const change=changeFor(opened);change.projects[0].story={id:'new-story',markdown:''};change.projects[0].record={...opened.project,storyId:'new-story'};
  const p=await validateChangeSet(f.repoRoot,change,[]);
  assert.equal(Buffer.from(p.writes.find(w=>w.kind==='story').bytes,'base64').toString(),'---\nschemaVersion: 1\nid: new-story\n---\n');
+ for(const [markdown,expectedBody] of [['# No final newline','# No final newline\n'],['A hard break  \n\n','A hard break  \n']]) {
+  change.projects[0].story.markdown=markdown;
+  const normalized=await validateChangeSet(f.repoRoot,change,[]);
+  assert.equal(Buffer.from(normalized.writes.find(w=>w.kind==='story').bytes,'base64').toString(),`---\nschemaVersion: 1\nid: new-story\n---\n${expectedBody}`);
+ }
  change.projects[0].story.markdown='---\nid: other\n---\n';
  await assert.rejects(validateChangeSet(f.repoRoot,change,[]),/frontmatter/);
  for(const header of ['---\nschemaVersion: 1\nid: wrong\n---\n','---\nschemaVersion: 1\nid: project-story\nextra: true\n---\n','# Missing metadata\n']) {

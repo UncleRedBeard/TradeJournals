@@ -1,5 +1,6 @@
 ---
 import Hero from "../components/Hero.astro";
+import CraftsmanIntro from "../components/CraftsmanIntro.astro";
 import ContactInvitation from "../components/ContactInvitation.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ServiceSection from "../components/ServiceSection.astro";
@@ -7,12 +8,21 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 import model from "@site-model";
 
 const featured = model.home.featuredProjectIds.map(id => model.projects.find(project => project.id === id));
+const workshop = model.home.workshopProjectIds.map(id => model.projects.find(project => project.id === id));
 const service = model.services.find(item => item.id === model.home.serviceIds[0]);
 ---
 
 <SiteLayout site={model.site} reviewNotice={model.reviewNotice}>
   <Hero headline={model.home.headline} intro={model.home.intro} image={model.home.hero} workHref={featured[0]?.href} />
+  <CraftsmanIntro />
   {service && <ServiceSection service={service} projects={featured.filter(project => service.projectIds.includes(project.id))} />}
-  <section class="section"><div class="shell"><p class="eyebrow">Selected work</p><h2 class="section-heading">Work with a memory of the house.</h2>{featured.map(project => <ProjectCard project={project} />)}</div></section>
+  <section class="section"><div class="shell project-list"><p class="eyebrow">Restoration portfolio</p><h2 class="section-heading">Work with a memory of the house.</h2>{featured.map(project => <ProjectCard project={project} />)}</div></section>
+  {workshop.length > 0 && <section class="section section--workshop"><div class="shell project-list"><p class="eyebrow">From the workshop</p><h2 class="section-heading">Other materials. The same attention.</h2><p class="prose">Clay and film sit beside the restoration work as quieter records of practice, observation, and material judgment.</p>{workshop.map(project => <ProjectCard project={project} />)}</div></section>}
   <ContactInvitation contact={model.site.contact} />
 </SiteLayout>
+
+<style>
+  .project-list { display: grid; gap: 2.5rem; }
+  .project-list > :global(.eyebrow), .project-list > :global(.section-heading), .project-list > .prose { margin-bottom: -1.25rem; }
+  .section--workshop { background: #efe9dc; border-block: 1px solid var(--line); }
+</style>

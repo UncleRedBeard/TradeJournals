@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "master-bedroom-restoration",
+  "title": "Master Bedroom Restoration",
+  "area": "01 / The Residence",
+  "summary": "Two distinct restoration passes kept the original floor, board walls and ceiling, tall windows, trim, and built-in cabinet at the center of the room.",
+  "searchSummary": "Master bedroom preservation across separate 2023 and 2024 passes, with surface renewal, protected finish work, limited electrical investigation, and return to use.",
+  "tags": [
+    "master bedroom",
+    "board walls",
+    "wood floor",
+    "built-in cabinet",
+    "surface repair",
+    "historic home",
+    "electrical investigation"
+  ],
+  "stage": "Two documented restoration passes completed",
+  "recorded": "March 22–August 5, 2023, and July 6–August 11, 2024, in the source journal.",
+  "sourceLabel": "Master bedroom restoration journal and two Home Reno - Master Bedroom Flickr albums",
+  "sourceRefs": [
+    {
+      "kind": "journal",
+      "path": "01_the_residence_1894/trade_journals/master_bedroom_restoration.md"
+    },
+    {
+      "kind": "inventory",
+      "path": "FLICKR_PUBLIC_ALBUMS.md",
+      "anchor": "album-72177720306914767"
+    },
+    {
+      "kind": "inventory",
+      "path": "FLICKR_PUBLIC_ALBUMS.md",
+      "anchor": "album-72177720319515928"
+    }
+  ],
+  "albumKeys": [
+    "flickr:72177720306914767",
+    "flickr:72177720319515928"
+  ],
+  "gallery": [
+    {
+      "mediaId": "flickr-53921260955",
+      "caption": "After the second pass, the room returned to use with the renewed board surfaces and retained floor, windows, trim, and built-in cabinet.",
+      "role": "result"
+    },
+    {
+      "mediaId": "flickr-53921261485",
+      "caption": "The finished wood floor was protected while the 2024 refinement work continued above it.",
+      "role": "process"
+    },
+    {
+      "mediaId": "flickr-55339173284",
+      "caption": "An opened older electrical box records a limited investigation during the first restoration pass.",
+      "role": "detail"
+    }
+  ],
+  "searchMediaIds": [
+    "flickr-53921260955",
+    "flickr-53921261485",
+    "flickr-55339173284"
+  ],
+  "introduction": "The bedroom work happened in two separate passes. The first renewed a worn room without discarding its original fabric; the second refined the surfaces and finish while protecting what the first pass had already recovered.",
+  "storyId": "master-bedroom-restoration",
+  "evidenceBoundary": "The archive records an opened electrical box and later outlet testing. It does not establish full circuit replacement, inspection, or code compliance."
+}

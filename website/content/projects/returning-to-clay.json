@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "returning-to-clay",
+  "title": "Returning to Clay",
+  "area": "04 / Materials and Alchemy",
+  "summary": "A return to wheel-thrown pottery connects current greenware studies to surviving wood-fired work from a Brookhaven apprenticeship three decades earlier.",
+  "searchSummary": "Wheel-thrown pottery spanning circa 1994–1995 Brookhaven wood firing and a 2026 return to the same make and model of kickwheel, with current forms still unfired.",
+  "tags": [
+    "pottery",
+    "ceramics",
+    "Lockerbie Model K",
+    "wood firing",
+    "greenware",
+    "clay",
+    "craft practice"
+  ],
+  "stage": "Historical work archived; current apprenticeship in progress",
+  "recorded": "Circa 1994–1995 work photographed in 2026; current practice documented from July 30, 2026.",
+  "sourceLabel": "Returning to Clay journal and Pottery Flickr album",
+  "sourceRefs": [
+    {
+      "kind": "journal",
+      "path": "04_materials_and_alchemy/trade_journals/returning_to_clay_lockerbie_model_k.md"
+    },
+    {
+      "kind": "inventory",
+      "path": "FLICKR_PUBLIC_ALBUMS.md",
+      "anchor": "album-72177720334921846"
+    }
+  ],
+  "albumKeys": [
+    "flickr:72177720334921846"
+  ],
+  "gallery": [
+    {
+      "mediaId": "flickr-55442826299",
+      "caption": "The strongest surviving historical form: a tall jar thrown and wood-fired during the Brookhaven apprenticeship circa 1994–1995.",
+      "role": "result"
+    },
+    {
+      "mediaId": "flickr-55443047060",
+      "caption": "A pale wood-fired bowl from the same period shows the most resolved functional relationship among openness, rim, and fired surface.",
+      "role": "context"
+    },
+    {
+      "mediaId": "flickr-55441078303",
+      "caption": "An unfired Balcones Dark jar from the renewed practice, with an incised field carried across its lower volume.",
+      "role": "process"
+    }
+  ],
+  "searchMediaIds": [
+    "flickr-55442826299",
+    "flickr-55443047060",
+    "flickr-55441078303"
+  ],
+  "introduction": "Returning to clay after roughly thirty years is less a restart than a conversation with earlier work. The surviving wood-fired pots show both the material instincts worth recovering and the formal habits that the current apprenticeship is meant to sharpen.",
+  "storyId": "returning-to-clay",
+  "evidenceBoundary": "The current photographed vessels remain unfired greenware. The present Lockerbie Model K is the same make and model used in the 1990s, not the same physical wheel."
+}

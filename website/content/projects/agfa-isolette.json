@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "agfa-isolette",
+  "title": "Agfa Isolette: A Working Eye",
+  "area": "05 / The Lens",
+  "summary": "A compact body of square medium-format photographs uses a 1961 folding camera to study coastal structure, material, atmosphere, and the workshop.",
+  "searchSummary": "Six photographs from a 12-image Agfa Isolette album, moving from Bolivar Peninsula and Galveston Bay to an intentional double exposure and a Lockerbie kickwheel.",
+  "tags": [
+    "Agfa Isolette",
+    "120 film",
+    "medium format",
+    "film photography",
+    "Port Bolivar",
+    "Galveston East Bay",
+    "double exposure"
+  ],
+  "stage": "Twelve-photo album curated into a six-image sequence",
+  "recorded": "Photographed August 6, 2026; album verified August 7, 2026.",
+  "sourceLabel": "Agfa Isolette journal and Flickr album",
+  "sourceRefs": [
+    {
+      "kind": "journal",
+      "path": "05_the_lens/trade_journals/flickr_agfa_isolette.md"
+    },
+    {
+      "kind": "inventory",
+      "path": "FLICKR_PUBLIC_ALBUMS.md",
+      "anchor": "album-72177720335033061"
+    }
+  ],
+  "albumKeys": [
+    "flickr:72177720335033061"
+  ],
+  "gallery": [
+    {
+      "mediaId": "flickr-55449385255",
+      "caption": "North Jetty Bait Camp opens the sequence with a vernacular structure held against the coastal atmosphere.",
+      "role": "context"
+    },
+    {
+      "mediaId": "flickr-55448985656",
+      "caption": "Galveston East Bay lets horizon and water settle into the square frame.",
+      "role": "context"
+    },
+    {
+      "mediaId": "flickr-55449387130",
+      "caption": "The jetty leads the eye through the frame and gives the Port Bolivar scene its depth.",
+      "role": "result"
+    },
+    {
+      "mediaId": "flickr-55448987091",
+      "caption": "Foreground rocks and distant ships test the detail held by the camera and scan path.",
+      "role": "detail"
+    },
+    {
+      "mediaId": "flickr-55449109638",
+      "caption": "An intentional double exposure layers two views of Port Bolivar into one frame.",
+      "role": "process"
+    },
+    {
+      "mediaId": "flickr-55449110843",
+      "caption": "The Lockerbie Model K closes the sequence by bringing the camera from the coast back into the workshop.",
+      "role": "context"
+    }
+  ],
+  "searchMediaIds": [
+    "flickr-55449385255",
+    "flickr-55448985656",
+    "flickr-55449387130",
+    "flickr-55448987091",
+    "flickr-55449109638",
+    "flickr-55449110843"
+  ],
+  "introduction": "The Agfa Isolette is old enough to require a slower kind of attention. Its square 120-film frame rewards clear structure, patient looking, and subjects with enough material presence to hold the image together.",
+  "storyId": "agfa-isolette",
+  "evidenceBoundary": "This is a six-image editorial selection from a 12-photo album. The double exposure is intentional, and the film camera is a 1961 Agfa Isolette."
+}

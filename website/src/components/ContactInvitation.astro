@@ -6,6 +6,8 @@ const { contact } = Astro.props;
   <section class="section">
     <div class="shell">
       <p class="eyebrow">Start a conversation</p>
+      <h2 class="section-heading">Have something worth repairing, restoring, or making?</h2>
+      <p class="prose">Historic homes and woodwork are my primary focus, and I welcome a conversation about other thoughtful projects.</p>
       {contact.href
         ? <a class="button-link" href={contact.href}>{contact.label}</a>
         : <button class="button-link" type="button" disabled>{contact.label}</button>}

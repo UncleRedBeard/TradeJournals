@@ -1,0 +1,21 @@
+<section class="section craftsman-intro">
+  <div class="shell craftsman-intro__grid">
+    <div>
+      <p class="eyebrow">Craftsman first</p>
+      <h2 class="section-heading">A craftsman's eye. A tradesman's approach.</h2>
+    </div>
+    <div class="craftsman-intro__copy">
+      <p>My work centers on historic homes, interior woodwork, and preserving things worth keeping. It also reaches into old machines, pottery, and film photography.</p>
+      <blockquote>“A jack of all trades is a master of none, but oftentimes better than a master of one.”</blockquote>
+    </div>
+  </div>
+</section>
+
+<style>
+  .craftsman-intro { padding-block: clamp(3rem, 6vw, 5rem); }
+  .craftsman-intro__grid { display: grid; gap: 2.5rem; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+  .craftsman-intro__copy { max-width: 38rem; }
+  .craftsman-intro__copy > p { font-size: 1.08rem; margin-top: 0; }
+  blockquote { border-left: 3px solid var(--wood); color: var(--green); font-family: var(--display); font-size: clamp(1.35rem, 2.6vw, 2rem); line-height: 1.3; margin: 2rem 0 0; padding-left: 1.25rem; }
+  @media (max-width: 42rem) { .craftsman-intro__grid { grid-template-columns: 1fr; } }
+</style>

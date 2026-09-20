@@ -23,6 +23,14 @@ test("project occupancy is explicit and album ownership is exclusive", () => {
   assert.throws(() => validateContent(raw), { code: "DUPLICATE_REFERENCE" });
 });
 
+test("home keeps workshop projects distinct from the primary restoration selection", () => {
+  const raw = makeFixture();
+  raw.home.workshopProjectIds = ["project-two"];
+  assert.deepEqual(validateContent(raw).home.workshopProjectIds, ["project-two"]);
+  raw.home.workshopProjectIds = ["project-one"];
+  assert.throws(() => validateContent(raw), { code: "DUPLICATE_REFERENCE" });
+});
+
 for (const [name, change, code] of [
   ["duplicate project IDs", raw => raw.projects.push(raw.projects[0]), "DUPLICATE_ID"],
   ["unsupported schema", raw => raw.projects[0].schemaVersion = 2, "INVALID_CONTENT"],

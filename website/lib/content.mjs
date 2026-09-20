@@ -87,6 +87,12 @@ export function validateContent(raw) {
     ids.forEach((id, i) => lookup(group, id, owner, `${field}[${i}]`));
   };
   selections(result.home.featuredProjectIds, "projects", "home", "home.featuredProjectIds");
+  selections(result.home.workshopProjectIds ?? [], "projects", "home", "home.workshopProjectIds");
+  for (const [index, id] of (result.home.workshopProjectIds ?? []).entries()) {
+    if (result.home.featuredProjectIds.includes(id)) {
+      throw contentError("DUPLICATE_REFERENCE", "home", `home.workshopProjectIds[${index}]`, `Project ${id} is already selected for the restoration portfolio`);
+    }
+  }
   selections(result.home.serviceIds, "services", "home", "home.serviceIds");
   if (result.home.heroMediaId) lookup("media", result.home.heroMediaId, "home", "home.heroMediaId");
   for (const service of result.services) selections(service.projectIds, "projects", service.id, `services.${service.id}.projectIds`);

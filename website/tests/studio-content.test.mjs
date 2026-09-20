@@ -6,7 +6,7 @@ import { prepareSite } from "../lib/prepare.mjs";
 const repoRoot = fileURLToPath(new URL("../../", import.meta.url));
 const contentRoot = fileURLToPath(new URL("../content/", import.meta.url));
 
-test("future Studio leads the preview while current Studio and Office keep separate provenance", async () => {
+test("future Studio remains distinct while the expanded restoration portfolio leads", async () => {
   const { model } = await prepareSite({ repoRoot, contentRoot, mode: "preview" });
   const futureStudio = model.projects.find(project => project.id === "living-room-studio-restoration");
   const currentStudio = model.projects.find(project => project.id === "studio-office-restoration");
@@ -14,9 +14,9 @@ test("future Studio leads the preview while current Studio and Office keep separ
   assert.ok(futureStudio);
   assert.ok(currentStudio);
   assert.ok(office);
-  assert.equal(model.home.featuredProjectIds[0], futureStudio.id);
-  assert.equal(model.site.navigation.find(item => item.label === "Work").href, futureStudio.href);
-  assert.equal(model.home.hero, undefined);
+  assert.equal(model.home.featuredProjectIds[0], "entry-restoration");
+  assert.equal(model.site.navigation.find(item => item.label === "Work").href, "/work/entry-restoration/");
+  assert.equal(model.home.hero.id, "flickr-55338112557");
   assert.equal(futureStudio.gallery.length, 3);
   assert.ok(futureStudio.gallery.every(photo => photo.id.startsWith("studio-")));
   assert.equal(futureStudio.searchImages.length, 3);

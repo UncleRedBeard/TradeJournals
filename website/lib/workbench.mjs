@@ -84,7 +84,8 @@ function parseStory(id, markdown) {
 }
 function storyBytes(story) {
   if(/^\s*---(?:\r?\n|$)/.test(story.markdown))throw fail('Editable story body must not include frontmatter.');
-  return Buffer.from(`---\nschemaVersion: 1\nid: ${story.id}\n---\n${story.markdown}`);
+  const body=story.markdown.replace(/(?:\r?\n)+$/u,'');
+  return Buffer.from(`---\nschemaVersion: 1\nid: ${story.id}\n---\n${body}${body?'\n':''}`);
 }
 async function readStories(root,content) {
   const stories={};

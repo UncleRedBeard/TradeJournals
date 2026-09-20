@@ -55,7 +55,8 @@ export const schemas = {
   }),
   home: z.strictObject({
     ...base, id: z.literal("home"), headline: text, intro: text,
-    featuredProjectIds: strings, serviceIds: strings, heroMediaId: StableId.optional()
+    featuredProjectIds: strings, workshopProjectIds: strings.optional(),
+    serviceIds: strings, heroMediaId: StableId.optional()
   }),
   service: z.strictObject({ ...base, title: text, description: text, projectIds: strings }),
   project: z.strictObject({

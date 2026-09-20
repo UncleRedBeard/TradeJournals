@@ -2,11 +2,19 @@
   "schemaVersion": 1,
   "id": "home",
   "headline": "Keep what makes it home.",
-  "intro": "Careful restoration begins by understanding what is already there, then making the next useful repair with respect for the house.",
+  "intro": "Historic homes and interior woodwork are the heart of the practice: careful repair, useful craft, and respect for the evidence already in the room.",
   "featuredProjectIds": [
+    "entry-restoration",
+    "guest-bath-dresser-vanity",
+    "master-bedroom-restoration",
     "living-room-studio-restoration"
+  ],
+  "workshopProjectIds": [
+    "returning-to-clay",
+    "agfa-isolette"
   ],
   "serviceIds": [
     "historic-floors"
-  ]
+  ],
+  "heroMediaId": "flickr-55338112557"
 }

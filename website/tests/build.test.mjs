@@ -32,15 +32,27 @@ test("candidate preview stages selected assets and writes the public model", asy
 
   assert.equal(result.outputRoot, path.join(websiteRoot, ".preview-dist"));
   assert.deepEqual(result.model.projects.map(project => project.id).sort(), [
-    "living-room-studio-restoration", "office-restoration", "studio-office-restoration"
+    "agfa-isolette", "entry-restoration", "guest-bath-dresser-vanity",
+    "living-room-studio-restoration", "master-bedroom-restoration", "office-restoration",
+    "returning-to-clay", "studio-office-restoration"
   ]);
+  assert.equal(result.report.state, "stale");
+  assert.deepEqual(result.model.home.featuredProjectIds, [
+    "entry-restoration", "guest-bath-dresser-vanity", "master-bedroom-restoration",
+    "living-room-studio-restoration"
+  ]);
+  assert.deepEqual(result.model.home.workshopProjectIds, ["returning-to-clay", "agfa-isolette"]);
   assert.equal(model.projects.find(project => project.id === "office-restoration").gallery.length, 5);
   assert.equal(model.projects.find(project => project.id === "studio-office-restoration").gallery.length, 5);
   assert.equal(model.projects.find(project => project.id === "living-room-studio-restoration").gallery.length, 3);
+  assert.equal(model.projects.find(project => project.id === "agfa-isolette").gallery.length, 6);
   await access(path.join(websiteRoot, ".generated/public/media/flickr-53921322250.jpg"));
+  await access(path.join(websiteRoot, ".generated/public/media/flickr-55449110843.jpg"));
   await access(path.join(websiteRoot, ".preview-dist/index.html"));
   await access(path.join(websiteRoot, ".preview-dist/work/studio-office-restoration/index.html"));
   await access(path.join(websiteRoot, ".preview-dist/work/living-room-studio-restoration/index.html"));
   await access(path.join(websiteRoot, ".preview-dist/tradejournals/studio-office-restoration/index.html"));
   await access(path.join(websiteRoot, ".preview-dist/tradejournals/living-room-studio-restoration/index.html"));
+  await access(path.join(websiteRoot, ".preview-dist/work/entry-restoration/index.html"));
+  await access(path.join(websiteRoot, ".preview-dist/work/returning-to-clay/index.html"));
 });
