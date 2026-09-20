@@ -3,12 +3,20 @@
 Hub title: website updates
 Hub thread ID: `01a0a263-8d09-7ff2-8144-a71eb6ec16f6`
 Workspace: `/Users/shkelley/Documents/PERSONAL/Shawn/Nerds/TradeJournals`
-Branch: `codex/website-updates`
+Branch: `main` (approved website integration); `codex/website-updates` retained
 Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: September 20, 2026. Task 10 Portfolio Expansion is accepted
+Integration checkpoint: September 20, 2026. Shawn approved the hub's recommended
+flow to update clone instructions, fast-forward the completed website work into
+`main`, validate, and push `main`. Local `main` was fast-forwarded from `e16be25`
+to `e4fa233` without conflicts, preserving all 16 website commits. The development
+branch is retained. Use `main` as the current baseline; the shared-checkout branch
+instructions and execution states below describe their historical task contexts.
+This integration does not deploy the site or start another implementation task.
+
+Task 11 closeout checkpoint: September 20, 2026. Task 10 Portfolio Expansion is accepted
 and committed through `d28f030`; the checkout was clean before Task 11 preparation,
 with HEAD matching the local tracking ref and ahead/behind `0 0`. Task 11 Expanded
 Release Readiness is accepted COMPLETE: the expanded reviewed snapshot is

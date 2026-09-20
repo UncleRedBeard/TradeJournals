@@ -35,11 +35,11 @@ the Astro release package.
 
 Clone the complete TradeJournals repository. The build reads selected journals,
 inventories, media, and scripts outside `website/`; copying that directory
-alone is insufficient. The website currently lives on
-`codex/website-updates`, not the repository's default `main` branch:
+alone is insufficient. The approved website lives on the repository's default
+`main` branch:
 
 ```sh
-git clone --branch codex/website-updates <repository-url> TradeJournals
+git clone --branch main <repository-url> TradeJournals
 cd TradeJournals
 ```
 
