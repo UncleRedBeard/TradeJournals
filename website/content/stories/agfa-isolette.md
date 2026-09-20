@@ -6,8 +6,9 @@ id: agfa-isolette
 
 The 1961 Agfa Isolette slows photography down to a sequence of deliberate
 choices: unfold the camera, judge distance, meter the light, frame a square,
-and advance 120 film one exposure at a time. That pace makes the camera a good
-fit for subjects built from structure and material rather than quick spectacle.
+and advance 120-format film one exposure at a time. That pace makes the camera
+a good fit for subjects built from structure and material rather than quick
+spectacle.
 
 This six-image selection comes from a 12-photograph album made around Galveston
 East Bay and Port Bolivar, then carried back into the workshop. North Jetty

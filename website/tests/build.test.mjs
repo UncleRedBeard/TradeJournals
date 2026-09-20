@@ -36,7 +36,8 @@ test("candidate preview stages selected assets and writes the public model", asy
     "living-room-studio-restoration", "master-bedroom-restoration", "office-restoration",
     "returning-to-clay", "studio-office-restoration"
   ]);
-  assert.equal(result.report.state, "stale");
+  assert.equal(result.report.state, "current");
+  assert.deepEqual(result.report.changedKeys, []);
   assert.deepEqual(result.model.home.featuredProjectIds, [
     "entry-restoration", "guest-bath-dresser-vanity", "master-bedroom-restoration",
     "living-room-studio-restoration"

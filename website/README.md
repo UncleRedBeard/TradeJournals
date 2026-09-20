@@ -110,10 +110,11 @@ The candidate/release boundary is deliberate:
   stories, sources, and image bytes.
 - `website/dist/` is created only when that reviewed snapshot is current.
 
-Review the [current three-room candidate](docs/pilot-editorial-review.md),
-including the intentionally disabled email placeholder, before changing
-`pilot.json` from `candidate` to `reviewed`. The build never promotes content
-automatically.
+Review the [current expanded release](docs/pilot-editorial-review.md), including
+the intentionally disabled email placeholder, before replacing the fingerprints
+in `pilot.json`. The build never promotes changed content automatically: any
+record, story, selected source, or image-byte change makes the reviewed snapshot
+stale until that exact revision is approved and recorded.
 
 After that exact snapshot is approved and recorded:
 
@@ -144,12 +145,13 @@ message, or edits journal records.
 - [x] The first release uses a disabled `Email us — coming soon` placeholder.
 - [ ] Replace the placeholder with an approved `mailto:` action after a public
       address exists.
-- [x] The complete three-room candidate is reviewed and approved.
+- [x] The expanded eight-project site is reviewed and approved.
 - [x] `pilot.json` contains the matching reviewed snapshot.
 - [x] `npm run test:website` passes under scoped Node 24.21.0.
 - [x] `npm --prefix website run build` creates `website/dist/`.
 - [x] The release output passes its checks and desktop/390-pixel review.
-- [ ] Only the contents of `website/dist/` are prepared for the eventual host.
+- [x] Only the contents of `website/dist/` form the provider-neutral release
+      package; hosting selection and upload remain separate.
 
 ## Browser Editing
 

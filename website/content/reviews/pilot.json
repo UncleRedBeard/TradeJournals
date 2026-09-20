@@ -5,7 +5,7 @@
   "records": [
     {
       "key": "home:home",
-      "sha256": "69ec77da31c8e566f1032921eb16874370e366c6a438e0c837897b12c3750f89"
+      "sha256": "725147a5c51c046c221ac06e94797235864af5ad753b39b4e7fc6d1b1f383dac"
     },
     {
       "key": "media:flickr-52704298727",
@@ -28,12 +28,32 @@
       "sha256": "e516d565fa830b13f8252360be2aeb4d65f7cad47d9142a85a139ea3bb436bb0"
     },
     {
+      "key": "media:flickr-53680503668",
+      "sha256": "1305070bdb0eb8dc4de120c531a89b6a54b19f2c3728a40361053cbb3850c061"
+    },
+    {
+      "key": "media:flickr-53680739260",
+      "sha256": "8eb2d3e9ca03a64de3efa0c9cf6242b7f446d9fda48817f1b4228b10aec9aca9"
+    },
+    {
+      "key": "media:flickr-53680739580",
+      "sha256": "84f877b5230049c9a1dd9e570480599f587896e21a26c0d9fee5f0d20664f0bf"
+    },
+    {
       "key": "media:flickr-53919981267",
       "sha256": "54454411779519102f2f4730812e3867e3f967d06aa6614ab19d7b1b9ff8ce3e"
     },
     {
       "key": "media:flickr-53921225999",
       "sha256": "89eb4fc7105a4c6f7f0f133cfacb3ee7ea50638b7f8a7f4436cb0e131a22e7c0"
+    },
+    {
+      "key": "media:flickr-53921260955",
+      "sha256": "bc3d81376c6ed94fc7a3d529cc3da79815ea1657aaf445ae2be11c27e9d995b1"
+    },
+    {
+      "key": "media:flickr-53921261485",
+      "sha256": "c7aabf5ad4d97310a5b7f3bb237b49519bd2d23e9e13a630c09dd4a96d9f8ce7"
     },
     {
       "key": "media:flickr-53921322215",
@@ -48,6 +68,58 @@
       "sha256": "1022ee01798c11e61f51d83bbf18279b7c768e2176585a98725550f2291f2ea2"
     },
     {
+      "key": "media:flickr-55338112557",
+      "sha256": "1aa975ac07816befd5011e072fba25efea339cd1f3582bfe77b279f7d941fbe7"
+    },
+    {
+      "key": "media:flickr-55339048056",
+      "sha256": "9a9a1a86739af3428f4ecfac57f328f40c6fe633f1377dc9da46410085e3c8e9"
+    },
+    {
+      "key": "media:flickr-55339173284",
+      "sha256": "56b297d54e4df8de02f5d864370b1ecb5bea9f4c2081fda8bdb16c4301404311"
+    },
+    {
+      "key": "media:flickr-55339463385",
+      "sha256": "4ffc1dcbbe55da56552450b9fd1b82c16d1eba8a9e3d191141d361a18590c935"
+    },
+    {
+      "key": "media:flickr-55441078303",
+      "sha256": "8bf17754047a2401d43e605a0b0bc1631121d85e7c318c1114a43c995631ea26"
+    },
+    {
+      "key": "media:flickr-55442826299",
+      "sha256": "2650d95c6e29354ecb32c428281755bd44a2501ccfc29534bfdfce74773bdc23"
+    },
+    {
+      "key": "media:flickr-55443047060",
+      "sha256": "3f368dca86382ed9acaf1235d219d7bf24b51fb69489a775d76c1c16dc0f8c43"
+    },
+    {
+      "key": "media:flickr-55448985656",
+      "sha256": "e4334d46bfe95de00c8f14918858eb68e9df1258fc3b14f2b5f024b94a81e337"
+    },
+    {
+      "key": "media:flickr-55448987091",
+      "sha256": "46cce2389ef8cea1592c56cc1127fe0affff5a658d39b82775fadc20762102b1"
+    },
+    {
+      "key": "media:flickr-55449109638",
+      "sha256": "dac7f3bf790cacac37b56e2e3ae29dc85a892ce6a67351f2b123ecd3fe220a73"
+    },
+    {
+      "key": "media:flickr-55449110843",
+      "sha256": "8e94ad3d2f66d80a962090a1826e239717c535edc6ff2d87f310ceb4beda92c1"
+    },
+    {
+      "key": "media:flickr-55449385255",
+      "sha256": "2124fc3f6c0a34993a1f911c79c00976cbd061eb5279b6ae9e8c63f8f9b392c6"
+    },
+    {
+      "key": "media:flickr-55449387130",
+      "sha256": "e4c70fba67144180725e53c6d4e7b5b59c23a3321c983a6162786991b14b2d0c"
+    },
+    {
       "key": "media:studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce",
       "sha256": "f4d37ed1856862321971340e0b718fdf43854d80b4a82ef027d9e55cb3cd58da"
     },
@@ -60,12 +132,32 @@
       "sha256": "fb34b11e2d64005f91616bff6b63fe26876871c71f8b73e5d2ff85e799e5b536"
     },
     {
+      "key": "project:agfa-isolette",
+      "sha256": "2fea480ce620a4c17febfe243a75d08d1c5e7a11347b05fd8668799bdd71cdc6"
+    },
+    {
+      "key": "project:entry-restoration",
+      "sha256": "1f9e932f82a18a5a5b8cdfb1ba63ee9993d5694c481d9c7403256bf4aa845aeb"
+    },
+    {
+      "key": "project:guest-bath-dresser-vanity",
+      "sha256": "9be61870561bd668b031e5a355cd0e69b5b60ddb5b4bbc67ffd57c7e1fcecc7f"
+    },
+    {
       "key": "project:living-room-studio-restoration",
       "sha256": "0baec555c26a2029611d484a5205138df058ee438a53e78f8085d8f7f422e9b1"
     },
     {
+      "key": "project:master-bedroom-restoration",
+      "sha256": "4d7e4fbfb3bc159446e3260c6c87e265bd5f2d0060f5a47e1176a4dcfc0d668e"
+    },
+    {
       "key": "project:office-restoration",
       "sha256": "9c29dd5804cc45dc48f91b7380f4930b404a125ffda7fad95e41b010a0c52f22"
+    },
+    {
+      "key": "project:returning-to-clay",
+      "sha256": "9107c8006cba1470f98938310fc39d91a757e5f5c593c1c69e8a2a0448c5df2f"
     },
     {
       "key": "project:studio-office-restoration",
@@ -73,23 +165,43 @@
     },
     {
       "key": "service:historic-floors",
-      "sha256": "9591c33bccb856de4d1a01069ca6ccfc2581749700572c4b2ceb14da094dc40f"
+      "sha256": "0801f7650ae4eb946d99447240d81844e7415f840309965611a26f8b38373817"
     },
     {
       "key": "site:site",
-      "sha256": "064b5c814067f4bee2d072e26cc2e0891b1e66f01a8d18d29a628cd32a6fb964"
+      "sha256": "1643c51a5ef6f431e62c5eb4ec66959d014eda27a9e9852f89ced949eb50bfaa"
+    },
+    {
+      "key": "story:agfa-isolette",
+      "sha256": "bb27e36aefa9d5e52367e8d791962cf2952e835cadcd28580ff1ae6c6d3d4b8e"
+    },
+    {
+      "key": "story:entry-restoration",
+      "sha256": "a2acd1054934d933ddeb0e80fd205dbc6b33ed2201331a23e73671ec2fcd0e6e"
+    },
+    {
+      "key": "story:guest-bath-dresser-vanity",
+      "sha256": "327d97a82b22554b29a47d7a1ed18655ffa87622a1b90b4c91435694e7076adc"
     },
     {
       "key": "story:living-room-studio-restoration",
-      "sha256": "6376171d435adad430aee6ae22b395631877842160e0bdc480cedf85b3b52095"
+      "sha256": "3a8690858d1426d93e127e999a24f2529e20ec02752d74f933306f7ae00eb1f3"
+    },
+    {
+      "key": "story:master-bedroom-restoration",
+      "sha256": "a5aac29508e719fab8ab4d3cc03cdc4350b03f5366168275b202b95c32eb6456"
     },
     {
       "key": "story:office-restoration",
-      "sha256": "087d76a6253caa0652b9374b289694e1792ae0f5c8f28fe1dc15d9735d1867fc"
+      "sha256": "924f23f27017338e99f8988022f19cd1edd8527ffc54da9e45a7ed4285c6bf3b"
+    },
+    {
+      "key": "story:returning-to-clay",
+      "sha256": "c62e7fbe9287deadb50ea95e732016d07e0da25f1cf2f5091e707fe1236e8f6f"
     },
     {
       "key": "story:studio-office-restoration",
-      "sha256": "2be71d9e30fc33ba854ef68a9bea4cc6e07856e7f13ae59466ab799cbbe5ba13"
+      "sha256": "20defbc1eb9b7d7109e6c2d5d7f583bb39a1745148c760d4132cc5ce649b4ee1"
     }
   ],
   "sources": [
@@ -98,8 +210,32 @@
       "sha256": "e8b32c69a85657e2638733e8a94a8329f04f070480afd0d196d67fa63356786b"
     },
     {
+      "key": "inventory:FLICKR_PUBLIC_ALBUMS.md#album-72177720306914767",
+      "sha256": "0fb860d51290c21b9ac4625cbdf73c7bbbb48b98c112c498999f468c0ca64b26"
+    },
+    {
+      "key": "inventory:FLICKR_PUBLIC_ALBUMS.md#album-72177720314827829",
+      "sha256": "b30c7edbee0f3be602cfd1a0746a65b2fd919b31ab02c93584e7176d3dedb12e"
+    },
+    {
       "key": "inventory:FLICKR_PUBLIC_ALBUMS.md#album-72177720316928566",
       "sha256": "3fa12def91513e0f90b2aebf15233e63165e1732aefa99371cf1841c36e18ac7"
+    },
+    {
+      "key": "inventory:FLICKR_PUBLIC_ALBUMS.md#album-72177720319515928",
+      "sha256": "172d842151378a43c4c2294ae3db1bdeb4d977e2334e0d1920f314f92351d682"
+    },
+    {
+      "key": "inventory:FLICKR_PUBLIC_ALBUMS.md#album-72177720334259189",
+      "sha256": "b4dc053904efae1458fb2441558478fd621de68f934e8748430a679f71550246"
+    },
+    {
+      "key": "inventory:FLICKR_PUBLIC_ALBUMS.md#album-72177720334921846",
+      "sha256": "5b47ac3acaac27d429f558b5db3b1d89b9f80b87ad6e0e096e011ac0d16a21c9"
+    },
+    {
+      "key": "inventory:FLICKR_PUBLIC_ALBUMS.md#album-72177720335033061",
+      "sha256": "e67e12ef81d547cf3880cc29de178f5e44e9a308b42afbdc8df33a172b007172"
     },
     {
       "key": "inventory:GOOGLE_PHOTOS_ALBUMS.md#album-af1qippool3ge7t",
@@ -110,8 +246,28 @@
       "sha256": "b1bc000c0b78c310e6de8fd35df94d54b4809469f48628924518a92c84fd7a79"
     },
     {
+      "key": "journal:01_the_residence_1894/trade_journals/entry_restoration.md",
+      "sha256": "b18470670f1a9775662f3b7aa587bc6dc539b773b70afc8e4689d901bfd1bca7"
+    },
+    {
+      "key": "journal:01_the_residence_1894/trade_journals/guest_bath_restoration.md",
+      "sha256": "4710ae5c29bf1439b557e9f56ce10f3a60b5a231813e40d0856f725b9ced2cf8"
+    },
+    {
+      "key": "journal:01_the_residence_1894/trade_journals/master_bedroom_restoration.md",
+      "sha256": "770f26115b7f2950220678c1d498b944ad07f48321d41687a992757b72b91ed1"
+    },
+    {
       "key": "journal:01_the_residence_1894/trade_journals/office_restoration.md",
       "sha256": "893dde91790ab9533d2f89d1023adf294847443f3a2ad8393c57d432daacf22c"
+    },
+    {
+      "key": "journal:04_materials_and_alchemy/trade_journals/returning_to_clay_lockerbie_model_k.md",
+      "sha256": "3008005257c4bc87307a79462ef7032f669eb0f658b7c8aa4b0bce6c5b04bef8"
+    },
+    {
+      "key": "journal:05_the_lens/trade_journals/flickr_agfa_isolette.md",
+      "sha256": "b7da17363a62d3bf733071746a310795c94c152e46b978b5887c3761b9019181"
     },
     {
       "key": "media:flickr-52704298727",
@@ -134,12 +290,32 @@
       "sha256": "a775869bdea590a9e5df13bb7b1a620f68345a12a7761abb0ccddb78f5ceaca0"
     },
     {
+      "key": "media:flickr-53680503668",
+      "sha256": "1c945ff6adc25588e3d46385c090dac382a3affd71c6964909ea3fe7875d9de3"
+    },
+    {
+      "key": "media:flickr-53680739260",
+      "sha256": "f8c18822ea8d0e586bb49960a3d7bc845fb76e6d06acab1add26a40a22ef2bd2"
+    },
+    {
+      "key": "media:flickr-53680739580",
+      "sha256": "6c0954b9921d26537448f500560857813ee93ffb5173f4a551265f90674dd6d0"
+    },
+    {
       "key": "media:flickr-53919981267",
       "sha256": "b9c2d6d5aed4813e8c2dbeeb307d05d610340f3d2af0c162768ffd1d5a70ee8a"
     },
     {
       "key": "media:flickr-53921225999",
       "sha256": "b1d622989e172ac2715307f849e7860a7dd5b44d2f60823521c970cdd510e383"
+    },
+    {
+      "key": "media:flickr-53921260955",
+      "sha256": "cdf95a00787fbae1f5a506a9bd7c40c28bef593ea0a06b9d26bd3b1ba4b45311"
+    },
+    {
+      "key": "media:flickr-53921261485",
+      "sha256": "592ac9314f1cfe987291d346b614972dd21b8776e60be2d6169b8f6b647bca3b"
     },
     {
       "key": "media:flickr-53921322215",
@@ -152,6 +328,58 @@
     {
       "key": "media:flickr-53921322250",
       "sha256": "f56c3629454a14f052c39bd4b15396bf011a6b05f896facd9a54b556e538189b"
+    },
+    {
+      "key": "media:flickr-55338112557",
+      "sha256": "bc8d57da6b8b63c78a5ac673d779da7d84926410e315126965555353a9e62f65"
+    },
+    {
+      "key": "media:flickr-55339048056",
+      "sha256": "29037435e02810af06dad0204ac2be4462b9478811947b4c350bdd7c8e9714ee"
+    },
+    {
+      "key": "media:flickr-55339173284",
+      "sha256": "feff759658b407ed3701c7616e6875f5b116618a9a3a2ad8343b59ee10fdc248"
+    },
+    {
+      "key": "media:flickr-55339463385",
+      "sha256": "c8f12e7e5f414c2c6e59832d78e66d39a0fbe6a7b930de4d73ad3b9825c8a4f6"
+    },
+    {
+      "key": "media:flickr-55441078303",
+      "sha256": "1b3b2742b53b0496456c1d31256f7abb6ada031d2bdd01c1330d80a51fb535dc"
+    },
+    {
+      "key": "media:flickr-55442826299",
+      "sha256": "590f31f8f39d2d23b4f3df1a8beb23afd7a43a877e00edfafbbf18a776360e20"
+    },
+    {
+      "key": "media:flickr-55443047060",
+      "sha256": "109ac90e993ce75b517d64e5b8d592d028a02320a3f9d237c411fb8393017f9b"
+    },
+    {
+      "key": "media:flickr-55448985656",
+      "sha256": "d65d37ba35b877e73f5557433c88283be1ffbe0229330d35d3c207fd3af881e6"
+    },
+    {
+      "key": "media:flickr-55448987091",
+      "sha256": "ae57a99189998921002c3a0fa1ca506d7e0b3a1f78f28a05efb5ba004d6618c4"
+    },
+    {
+      "key": "media:flickr-55449109638",
+      "sha256": "10eaab55d5ed5c8f8e42e0d7161ae52f70a092c2edb7b2d76f15f708ef7f2988"
+    },
+    {
+      "key": "media:flickr-55449110843",
+      "sha256": "3007ff6852a78d28dabb14a7a6cc41edbfa9e81ff6be0b0350404a689684201b"
+    },
+    {
+      "key": "media:flickr-55449385255",
+      "sha256": "6b555a4952621006a3fedc21f5a8dd59179523d545d9d5a07b2b35f6c805ff71"
+    },
+    {
+      "key": "media:flickr-55449387130",
+      "sha256": "c22f21ee1fd94c9177d9e22992d6d3c1db320a757d590fb28e7d8e1ab0cf14ee"
     },
     {
       "key": "media:studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce",

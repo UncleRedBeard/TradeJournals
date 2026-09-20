@@ -46,12 +46,16 @@ test("approved site snapshot retains the disabled email placeholder", async () =
   assert.deepEqual(records.home.serviceIds, ["historic-floors"]);
 });
 
-test("expanded candidate leaves the prior approved snapshot stale", async () => {
+test("expanded approved snapshot is current for preview and release", async () => {
   const repoRoot = fileURLToPath(new URL("../../", import.meta.url));
   const preview = await prepareSite({ repoRoot, contentRoot, mode: "preview" });
-  assert.equal(preview.report.state, "stale");
+  assert.equal(preview.report.state, "current");
+  assert.deepEqual(preview.report.changedKeys, []);
   assert.equal(preview.model.projects.find(project => project.id === "office-restoration").gallery.length, 5);
-  assert.match(preview.model.reviewNotice, /selected content or sources changed/u);
+  assert.match(preview.model.reviewNotice, /reviewed content/u);
 
-  await assert.rejects(prepareSite({ repoRoot, contentRoot, mode: "release" }), { code: "SOURCE_STALE" });
+  const release = await prepareSite({ repoRoot, contentRoot, mode: "release" });
+  assert.equal(release.report.state, "current");
+  assert.deepEqual(release.report.changedKeys, []);
+  assert.equal(release.model.reviewNotice, "");
 });

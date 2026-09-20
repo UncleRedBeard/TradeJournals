@@ -9,10 +9,13 @@ Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
 Current checkpoint: September 20, 2026. Task 10 Portfolio Expansion is accepted
-and its approved implementation is committed at `6e21460`; Git closeout is
-authorized and in progress. The reviewed release snapshot, public contact
-destination and hosting remain separate future decisions. Earlier Git and
-workflow states below are historical snapshots.
+and committed through `d28f030`; the checkout was clean before Task 11 preparation,
+with HEAD matching the local tracking ref and ahead/behind `0 0`. Task 11 Expanded
+Release Readiness is accepted COMPLETE: the expanded reviewed snapshot is
+current and the portable release is verified. Shawn chose to keep inquiries
+disabled. Task 11 Git closeout is now explicitly authorized and IN PROGRESS in
+the exact child; no closeout outcome is claimed yet. Hosting and deployment
+remain separate. Earlier states below are historical.
 
 ## Operating Boundary
 
@@ -566,6 +569,64 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   Implementation commit `6e21460` contains the five-story expansion, selected
   media, homepage changes, maintainability fixes and regression coverage. Final
   bookkeeping, push and synchronization verification complete this closeout.
+
+## Website 1 — Task 11 Expanded Release Readiness
+
+- Exact child ID: `01a0c0f4-617d-70a1-b0b1-da23a7b1f953`.
+- Brief: [Task 11, revision 3](task-11-expanded-release-readiness.md).
+- Approval: RECEIVED; Shawn said `start task 11` in this hub on September 20,
+  after the release snapshot, verification, portability and contact scope was
+  proposed. He then explicitly chose `Keep inquiries disabled for now`.
+- Scope: refresh the reviewed snapshot for approved Task 10 content, verify the
+  expanded static release and browser behavior, prove clean-checkout build
+  reproducibility, and update provider-neutral deployment instructions.
+- Environment: same-directory fork; `codex/website-updates`; baseline `d28f030`.
+  Task 10 is idle and COMPLETE. Only Task 11 writes implementation/release files;
+  hub owns brief/register. Clean checkout observed before preparation.
+- Exact displayed title: Website 1 - Task 11 Expanded Release Readiness - COMPLETE.
+- Workflow status: COMPLETE — accepted by hub September 20 after review and
+  independent verification. Initial execution turn was
+  `01a0c0f5-57a7-7083-9d22-4a486f770b60`; dispatch history is retained.
+- Dispatch: `WK-WEB-T11-D01`; SENT once September 20, 2026.
+- Acceptance: current approved snapshot, validated release and protected preview,
+  relevant automated and browser checks, reproducible build documentation, and
+  honest remaining launch decisions. Existing editorial approval is preserved.
+- Boundaries: no new content/design, active inquiry destination, hosted deployment,
+  DNS/domain changes, merge, Companion changes, original journal or
+  inventory writes, archival, or successor dispatch.
+  Scoped Git closeout is separately authorized below.
+- Report: `WK-WEB-T11-R01`, revision 2, at
+  [Task 11 report](reports/task-11-expanded-release-readiness.md); RECEIVED once
+  per revision. Initial acceptance is `WK-WEB-T11-H01`; revision 2 acceptance
+  is `WK-WEB-T11-H02`.
+- Final editorial approval: `WK-WEB-T11-A02`. Exact child reports Shawn said
+  `i like it` after reviewing the corrected release entry, approving revision 2
+  and its current snapshot. COMPLETE title and idle runtime freshly verified.
+  That editorial approval alone did not authorize Git closeout, deployment or
+  archival; subsequent explicit Git authorization is recorded below.
+- Hub verification: 118 Node and 37 Python tests, actual release/preview builds,
+  independent output checks (each 18 pages, 52 files, 232 references), 87-file
+  Markdown lint and whitespace checks passed. Snapshot current, zero changed
+  keys, 50 records, 47 sources; canonical SHA-256
+  `ec16411478fec3d39b8099e1c366cfe4cedd27af797bcd7217dcd4a1ecff9fcc`
+  after the revision 2 correction. Hub independently revalidated both outputs
+  and the current snapshot, including the corrected rendered journal wording.
+- Hub reviewed rendered release/disabled contact and the child's browser QA and
+  clean-clone evidence; all six implementation files match the tested clone.
+  Release `http://127.0.0.1:4175/`; protected preview `http://127.0.0.1:4174/`.
+  Revision 2 adds only Shawn's directly approved `120-format film` wording in
+  the Agfa Isolette story and the corresponding reviewed fingerprint. Design,
+  source journals and inventories remain unchanged. Task 11 remains
+  uncommitted and unpushed; no successor or deployment is started.
+- Git authorization: `WK-WEB-T11-G01`; RECEIVED. Shawn said `git er done` in
+  the exact child after approving revision 2. Scoped validation, commit, push
+  and sync verification are authorized to established
+  `git@github.com:UncleRedBeard/TradeJournals.git`, branch
+  `origin/codex/website-updates`. The child owns closeout; hub bookkeeping is
+  ready for inclusion and hub edits stop until handback. Runtime observed active
+  in turn `01a0c113-b4ca-7ad0-9839-ca1352964582`. Outcome PENDING; no new commit
+  or push claimed. Hosting, deployment, merge, archival and successor remain
+  outside scope.
 
 ## Remaining Decisions After The Pilot — Updated Direction
 

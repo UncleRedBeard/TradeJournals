@@ -1,6 +1,6 @@
-# Release Candidate Review — Three Rooms
+# Expanded Website Release Review
 
-Status: APPROVED — exact reviewed snapshot recorded September 19, 2026.
+Status: APPROVED — expanded reviewed snapshot recorded September 20, 2026.
 
 Earlier approvals remain in force for Toil & Timber Restoration, the restrained
 green-and-limestone presentation, the exact service line, the future-studio
@@ -8,7 +8,25 @@ story and three photographs, and the Task 07 three-room correction. This packet
 brings those approved decisions together as one release candidate. Shawn
 approved the exact snapshot with SHA-256
 `ab0a82cd6e9492800f5e2a8b885aee4038d9e96a01cc1f55221b0cd59ed24fce`.
+That snapshot remains the historical Task 08 baseline. Task 10 added five
+approved stories and the craftsman-first homepage; Shawn then started Task 11
+to record and verify that expanded release. The current reviewed snapshot covers
+50 public records and 47 selected sources with canonical SHA-256
+`ec16411478fec3d39b8099e1c366cfe4cedd27af797bcd7217dcd4a1ecff9fcc`.
 This approval records the local release state; it does not deploy the site.
+
+## Expanded Release
+
+Historic-home restoration remains primary. The homepage leads with Entry and
+Stair Restoration, followed by Guest Bath and Dresser Vanity, Master Bedroom
+Restoration, and the future living-room studio. Returning to Clay and Agfa
+Isolette remain secondary under **From the workshop**. The dedicated Office and
+current Barre Studio remain available as distinct projects. The inquiry action
+stays disabled until Shawn supplies a public destination.
+
+During release review, Shawn approved the clearer technical wording
+`120-format film` in the Agfa Isolette story. The snapshot above includes that
+exact correction.
 
 ## Candidate Direction
 
@@ -112,3 +130,13 @@ evidence boundary.
   console errors. Release output has no review notice or `noindex` metadata.
 - Hosting selection, domain/DNS work, upload, and deployment remain separate
   work.
+
+## Task 11 Expanded Release Result
+
+- The reviewed snapshot compares as current with zero changed keys.
+- Candidate and release builds each validate as 18 pages, 52 files, and 232
+  internal references.
+- The release package is the contents of `website/dist/`; the repository,
+  journals, Workbench data, runtime, and preview output are not upload content.
+- Hosting selection, domain/DNS work, public contact destination, upload, and
+  deployment remain separate decisions.

@@ -9,13 +9,13 @@ import { writeFixture } from "./fixtures.mjs";
 const websiteRoot = fileURLToPath(new URL("..", import.meta.url));
 const repoRoot = fileURLToPath(new URL("../..", import.meta.url));
 
-test("stale candidate preview renders the Office record without a contact form", async () => {
+test("reviewed candidate preview renders the Office record without a contact form", async () => {
   await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
   const page = await readFile(path.join(websiteRoot, ".preview-dist/work/office-restoration/index.html"), "utf8");
 
   assert.match(page, /Toil &amp; Timber Restoration/);
   assert.match(page, /Historic floors, interior woodwork, and architectural restoration\./);
-  assert.match(page, /Local review preview — selected content or sources changed since review\./);
+  assert.match(page, /Local preview — reviewed content; this preview is not a deployment\./);
   assert.match(page, /https:\/\/www\.flickr\.com\/photos\/boocher\/53921322250\/in\/set-72177720316928566\//);
   assert.match(page, /\/media\/flickr-53921322250\.jpg/);
   assert.doesNotMatch(page, /<form[^>]*action=/);
