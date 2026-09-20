@@ -32,25 +32,28 @@ test("Office preserves the selected gallery, original Flickr URLs, and distinct 
   }
 });
 
-test("Office is an explicit candidate, with the approved public identity and no contact action", async () => {
+test("approved site snapshot retains the disabled email placeholder", async () => {
   const records = validateContent(await loadContent(contentRoot));
-  assert.equal(records.review.state, "candidate");
+  assert.equal(records.review.state, "reviewed");
   assert.equal(records.site.name, "Toil & Timber Restoration");
   assert.equal(records.site.descriptor, "Historic floors, interior woodwork, and architectural restoration.");
   assert.equal(records.site.serviceLine, "Historic floors, interior woodwork, and architectural restoration.");
-  assert.equal(records.site.contact, undefined);
+  assert.deepEqual(records.site.contact, {
+    label: "Email us — coming soon",
+    href: null
+  });
   assert.ok(records.projects.some(project => project.id === "office-restoration"));
   assert.deepEqual(records.home.serviceIds, ["historic-floors"]);
 });
 
-test("Office candidate prepares a local preview but cannot prepare a release", async () => {
+test("approved site snapshot prepares both preview and release models", async () => {
   const repoRoot = fileURLToPath(new URL("../../", import.meta.url));
   const preview = await prepareSite({ repoRoot, contentRoot, mode: "preview" });
-  assert.equal(preview.report.state, "candidate");
+  assert.equal(preview.report.state, "current");
   assert.equal(preview.model.projects.find(project => project.id === "office-restoration").gallery.length, 5);
-  assert.match(preview.model.reviewNotice, /await review/u);
-  await assert.rejects(
-    prepareSite({ repoRoot, contentRoot, mode: "release" }),
-    { code: "UNREVIEWED_CONTENT" }
-  );
+  assert.match(preview.model.reviewNotice, /reviewed content/u);
+
+  const release = await prepareSite({ repoRoot, contentRoot, mode: "release" });
+  assert.equal(release.report.state, "current");
+  assert.equal(release.model.reviewNotice, "");
 });

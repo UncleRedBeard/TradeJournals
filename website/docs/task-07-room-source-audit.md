@@ -159,9 +159,8 @@ studio until the move is confirmed.
 
 ## Canonical Website Records At Audit Time
 
-The current
-[`office-restoration` project](../content/projects/office-restoration.json) and
-[`office-restoration` story](../content/stories/office-restoration.md) combine
+At the audit checkpoint, the `office-restoration` project and
+`office-restoration` story combined
 both Flickr albums. They also carry the floor chronology and reclaimed or
 charred-door narrative into the dedicated Office presentation. Those records
 are the problem being corrected; they are not evidence that the claims belong
@@ -171,13 +170,18 @@ No canonical `studio-office-restoration` project exists at this audit point.
 The private Task 07 draft must create that current-room identity and move the
 five `flickr-527…` placements with their source album.
 
-The current [`studio-restoration` project](../content/projects/studio-restoration.json)
-and [`studio-restoration` story](../content/stories/studio-restoration.md) own the
-Google Photos album and the three accepted `studio-*` selections. Their copy
+At the audit checkpoint, the `studio-restoration` project and
+`studio-restoration` story owned the Google Photos album and the three accepted
+`studio-*` selections. Their copy
 already identifies a former living room and withholds final sign-off, but the
 Task 07 draft must give the room its stable
 `living-room-studio-restoration` identity and explicit future occupancy without
 implying that the move has happened.
+
+Task 07 subsequently applied that correction. The current canonical records are
+`office-restoration`, `studio-office-restoration`, and
+`living-room-studio-restoration`; the audit-time `studio-restoration` files were
+retired in the approved Git closeout.
 
 ## Journal Claims Requiring Correction Or Reassignment
 

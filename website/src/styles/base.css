@@ -22,6 +22,8 @@ img { display: block; max-width: 100%; }
 .prose { max-width: 44rem; }
 .button-link { border: 1px solid currentColor; display: inline-block; padding: 0.55rem 0.85rem; text-decoration: none; }
 .button-link:hover { background: var(--ink); color: white; }
+.button-link:disabled { background: transparent; color: var(--wood); cursor: not-allowed; font: inherit; opacity: 0.72; }
+.button-link:disabled:hover { background: transparent; color: var(--wood); }
 .site-footer { border-top: 1px solid var(--line); color: #4b564f; font-size: 0.88rem; padding: 2rem 0; }
 :focus-visible { outline: 3px solid var(--wood); outline-offset: 3px; }
 @media (max-width: 40rem) {

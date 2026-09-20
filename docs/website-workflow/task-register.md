@@ -8,10 +8,12 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: September 16, 2026, 23:06 UTC. Task 05 implementation is
-committed at `98fb1308c927bba6b5b4fd9aa05c63fbac7bc70b`; HEAD and the local
-origin tracking ref match. Subsequent Task 05 acceptance and Task 06 preparation
-documentation is uncommitted. Earlier Git states below are historical snapshots.
+Current checkpoint: September 19, 2026. Task 07 implementation and bookkeeping
+are committed at archive HEAD `dd6da4c01476e3ccdcdfbf9b1193b00c5b842d6b`;
+Companion HEAD is `c4a2338584e0137c0a9685a7c964255dee6413af`. Both were clean
+before Task 08 preparation. Earlier Git states below are historical snapshots.
+Task 08 release readiness is accepted locally; its changes are uncommitted.
+Hosting remains deferred. See its September 20 UTC acceptance checkpoint below.
 
 ## Operating Boundary
 
@@ -395,6 +397,54 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   build with 93 references. These supersede the earlier unchanged-content and
   6-page preview observations; prior browser/runtime limits still apply.
 - Hub owns brief/register; child owns its bounded deliverable and report.
+
+## Website 1 — Task 08 Release Readiness
+
+- Exact child ID: `01a0bbcf-a52f-7672-b08e-d69da400c4d7`.
+- Exact displayed title: Website 1 - Task 08 Release Readiness - COMPLETE.
+- Brief: [Task 08, revision 2](task-08-release-readiness.md).
+- Approval: RECEIVED; Shawn said `let's start task 08` in this hub on September
+  19, following the release-readiness and portability review.
+- Scope: current maintainer instructions, consistent scoped runtime, fresh-checkout
+  build proof, outstanding browser verification, contact decision and reviewable
+  public release package. This supersedes any tentative Hosting And Launch label.
+- Boundaries: no deployment, hosting/domain setup, Git closeout, main merge,
+  journal/inventory correction or successor. Exact reviewed-snapshot promotion
+  was separately approved by Shawn in the child, as recorded in its report.
+- Environment: same-directory archive fork on `codex/website-updates`, baseline
+  `dd6da4c`; Companion on `codex/website-workbench`, baseline `c4a2338`.
+  This child is the sole Task 08 implementation writer.
+- Dependency checkpoint: Task 07 accepted and its three-room correction applied
+  locally. Final bookkeeping is now committed, superseding the historical
+  pending checkpoint above. Candidate review state remains unchanged.
+- Workflow status: COMPLETE — accepted release-readiness delivery. Runtime at
+  receipt remained active in reporting turn `01a0bc3f-6790-7be1-992f-a39c86b4b8d7`;
+  runtime state is separate from accepted delivery status. Final readback confirmed
+  the exact COMPLETE title and idle runtime after hub reconciliation.
+- Dispatch: `WK-WEB-T08-D01`; SENT once September 19 at 22:37 UTC.
+- Acceptance: follow one current guide from fresh checkout to verified public
+  release output; distinguish unresolved approval/checks from proven readiness.
+  Actual upload remains deferred.
+- Report: `WK-WEB-T08-R01`, revision 2, at
+  [Task 08 report](reports/task-08-release-readiness.md); RECEIVED once and
+  reconciled as `WK-WEB-T08-H01` September 20 at 00:47 UTC.
+- Approval evidence: exact child reports Shawn approved the disabled email
+  placeholder and snapshot digest
+  `ab0a82cd6e9492800f5e2a8b885aee4038d9e96a01cc1f55221b0cd59ed24fce`.
+  Hub verified the saved digest and current review with zero changed keys.
+- Hub verification: implementation/guide/packet diff review, scoped Node 24.21.0
+  suite 116 passed, Python suite 37 passed, independent release output check
+  eight pages/24 files/93 references passed. An initial hub CLI check used an
+  incorrect duplicated website path; corrected direct output validation passed.
+- Child evidence: clean clone at baseline `dd6da4c` installed scoped runtime and
+  locked dependencies, passing baseline candidate checks; final approved release
+  passed in the working checkout. Desktop and 390-pixel public browser checks
+  reported passing. Hub did not repeat clone/browser checks. Private Companion
+  browser skips remain explicitly separate from the public static-site gate.
+- Git state: HEAD remains `dd6da4c`; Task 08 implementation/report and hub
+  bookkeeping are uncommitted. Updated handoff/review snapshot is not yet on
+  GitHub. Companion clean; no Git closeout or deployment performed.
+- Hub owns brief/register; child owns implementation and its report.
 
 ## Remaining Decisions After The Pilot — Updated Direction
 

@@ -1,7 +1,169 @@
 {
   "schemaVersion": 1,
   "id": "pilot",
-  "state": "candidate",
-  "records": [],
-  "sources": []
+  "state": "reviewed",
+  "records": [
+    {
+      "key": "home:home",
+      "sha256": "69ec77da31c8e566f1032921eb16874370e366c6a438e0c837897b12c3750f89"
+    },
+    {
+      "key": "media:flickr-52704298727",
+      "sha256": "60e7d9c77ebd5bd90cd3de5112e5c937fd9b5de3474610b1428c8d529272b2a4"
+    },
+    {
+      "key": "media:flickr-52705240320",
+      "sha256": "a9c362357c6871645af540f10fce09c3618259bf39a24cf5daa41395d26c89f7"
+    },
+    {
+      "key": "media:flickr-52705240355",
+      "sha256": "a0d69c573f314059637e412890c9d956c5ece361872733ce2144cca14947d2e0"
+    },
+    {
+      "key": "media:flickr-52705240380",
+      "sha256": "d0abb4d64ffc42b4de8a9614595e373d33b75d3f5e63bb7ab4175ae71570f394"
+    },
+    {
+      "key": "media:flickr-52705240435",
+      "sha256": "e516d565fa830b13f8252360be2aeb4d65f7cad47d9142a85a139ea3bb436bb0"
+    },
+    {
+      "key": "media:flickr-53919981267",
+      "sha256": "54454411779519102f2f4730812e3867e3f967d06aa6614ab19d7b1b9ff8ce3e"
+    },
+    {
+      "key": "media:flickr-53921225999",
+      "sha256": "89eb4fc7105a4c6f7f0f133cfacb3ee7ea50638b7f8a7f4436cb0e131a22e7c0"
+    },
+    {
+      "key": "media:flickr-53921322215",
+      "sha256": "5807a63057655c9ad5195e318170c07210fd3f076639b0d1cd743d643a3c6af5"
+    },
+    {
+      "key": "media:flickr-53921322245",
+      "sha256": "f62761d233c2f3fe88711d40a6c996dbdaa98439576984464261f849f9c6922c"
+    },
+    {
+      "key": "media:flickr-53921322250",
+      "sha256": "1022ee01798c11e61f51d83bbf18279b7c768e2176585a98725550f2291f2ea2"
+    },
+    {
+      "key": "media:studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce",
+      "sha256": "f4d37ed1856862321971340e0b718fdf43854d80b4a82ef027d9e55cb3cd58da"
+    },
+    {
+      "key": "media:studio-a400ee37342a3a2d58cf36631811b65f2d466e5f0608db2810bab20ef93e86b2",
+      "sha256": "637819ad3e1866e6f15d97f7b3659678f983eb8f523d9a1e819140a82ffb886d"
+    },
+    {
+      "key": "media:studio-c721a809f0e722d6d0178585601aa6ca564b6d7ef95094505284f7f5788c85f6",
+      "sha256": "fb34b11e2d64005f91616bff6b63fe26876871c71f8b73e5d2ff85e799e5b536"
+    },
+    {
+      "key": "project:living-room-studio-restoration",
+      "sha256": "0baec555c26a2029611d484a5205138df058ee438a53e78f8085d8f7f422e9b1"
+    },
+    {
+      "key": "project:office-restoration",
+      "sha256": "9c29dd5804cc45dc48f91b7380f4930b404a125ffda7fad95e41b010a0c52f22"
+    },
+    {
+      "key": "project:studio-office-restoration",
+      "sha256": "bd49d539108a76cc5fb1a5f63ac31c9da39349e0b2080ef8b6c99d328bd200b0"
+    },
+    {
+      "key": "service:historic-floors",
+      "sha256": "9591c33bccb856de4d1a01069ca6ccfc2581749700572c4b2ceb14da094dc40f"
+    },
+    {
+      "key": "site:site",
+      "sha256": "064b5c814067f4bee2d072e26cc2e0891b1e66f01a8d18d29a628cd32a6fb964"
+    },
+    {
+      "key": "story:living-room-studio-restoration",
+      "sha256": "6376171d435adad430aee6ae22b395631877842160e0bdc480cedf85b3b52095"
+    },
+    {
+      "key": "story:office-restoration",
+      "sha256": "087d76a6253caa0652b9374b289694e1792ae0f5c8f28fe1dc15d9735d1867fc"
+    },
+    {
+      "key": "story:studio-office-restoration",
+      "sha256": "2be71d9e30fc33ba854ef68a9bea4cc6e07856e7f13ae59466ab799cbbe5ba13"
+    }
+  ],
+  "sources": [
+    {
+      "key": "inventory:FLICKR_PUBLIC_ALBUMS.md#album-72177720306207693",
+      "sha256": "e8b32c69a85657e2638733e8a94a8329f04f070480afd0d196d67fa63356786b"
+    },
+    {
+      "key": "inventory:FLICKR_PUBLIC_ALBUMS.md#album-72177720316928566",
+      "sha256": "3fa12def91513e0f90b2aebf15233e63165e1732aefa99371cf1841c36e18ac7"
+    },
+    {
+      "key": "inventory:GOOGLE_PHOTOS_ALBUMS.md#album-af1qippool3ge7t",
+      "sha256": "dd69bb4c313c03a1b013d161d0133960e254c006ff1fafbeb9c730b2aa78a7b7"
+    },
+    {
+      "key": "journal:01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md",
+      "sha256": "b1bc000c0b78c310e6de8fd35df94d54b4809469f48628924518a92c84fd7a79"
+    },
+    {
+      "key": "journal:01_the_residence_1894/trade_journals/office_restoration.md",
+      "sha256": "893dde91790ab9533d2f89d1023adf294847443f3a2ad8393c57d432daacf22c"
+    },
+    {
+      "key": "media:flickr-52704298727",
+      "sha256": "7d73bc068e5400bd477167ac350df3734bb7f84886980f04357ee3a0016bd399"
+    },
+    {
+      "key": "media:flickr-52705240320",
+      "sha256": "304164c1688e8ba2f8bb639957c1c74fbf03fa00b62cd689d6bc527625fabd63"
+    },
+    {
+      "key": "media:flickr-52705240355",
+      "sha256": "89f3029220e1f3c101cdb184a51e1e36b06b57825a78cb2b05d7e4d75f080164"
+    },
+    {
+      "key": "media:flickr-52705240380",
+      "sha256": "15691a1a2537f717ac5606bf620ffef17fa69a872e395872a5eb7bfed7ed3b7c"
+    },
+    {
+      "key": "media:flickr-52705240435",
+      "sha256": "a775869bdea590a9e5df13bb7b1a620f68345a12a7761abb0ccddb78f5ceaca0"
+    },
+    {
+      "key": "media:flickr-53919981267",
+      "sha256": "b9c2d6d5aed4813e8c2dbeeb307d05d610340f3d2af0c162768ffd1d5a70ee8a"
+    },
+    {
+      "key": "media:flickr-53921225999",
+      "sha256": "b1d622989e172ac2715307f849e7860a7dd5b44d2f60823521c970cdd510e383"
+    },
+    {
+      "key": "media:flickr-53921322215",
+      "sha256": "a44c579c105d0d3eba4b79ad9c62af5a82792eddf04a6821c130d5178e7949f4"
+    },
+    {
+      "key": "media:flickr-53921322245",
+      "sha256": "f45d703508f9e375c32f71d47ec27dcb489ebfaa382f5d4c79d639a32f6f33dc"
+    },
+    {
+      "key": "media:flickr-53921322250",
+      "sha256": "f56c3629454a14f052c39bd4b15396bf011a6b05f896facd9a54b556e538189b"
+    },
+    {
+      "key": "media:studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce",
+      "sha256": "705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce"
+    },
+    {
+      "key": "media:studio-a400ee37342a3a2d58cf36631811b65f2d466e5f0608db2810bab20ef93e86b2",
+      "sha256": "a400ee37342a3a2d58cf36631811b65f2d466e5f0608db2810bab20ef93e86b2"
+    },
+    {
+      "key": "media:studio-c721a809f0e722d6d0178585601aa6ca564b6d7ef95094505284f7f5788c85f6",
+      "sha256": "c721a809f0e722d6d0178585601aa6ca564b6d7ef95094505284f7f5788c85f6"
+    }
+  ]
 }

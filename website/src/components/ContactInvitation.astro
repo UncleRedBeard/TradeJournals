@@ -2,4 +2,13 @@
 const { contact } = Astro.props;
 ---
 
-{contact && <section class="section"><div class="shell"><p class="eyebrow">Start a conversation</p><a class="button-link" href={contact.href}>{contact.label}</a></div></section>}
+{contact && (
+  <section class="section">
+    <div class="shell">
+      <p class="eyebrow">Start a conversation</p>
+      {contact.href
+        ? <a class="button-link" href={contact.href}>{contact.label}</a>
+        : <button class="button-link" type="button" disabled>{contact.label}</button>}
+    </div>
+  </section>
+)}

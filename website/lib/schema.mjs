@@ -51,7 +51,7 @@ export const schemas = {
   site: z.strictObject({
     ...base, id: z.literal("site"), name: text, descriptor: text, serviceLine: text,
     navigation: z.array(z.strictObject({ label: text, href: localUrl })),
-    contact: z.strictObject({ label: text, href: https }).optional()
+    contact: z.strictObject({ label: text, href: z.union([https, z.null()]) }).optional()
   }),
   home: z.strictObject({
     ...base, id: z.literal("home"), headline: text, intro: text,

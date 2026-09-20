@@ -13,5 +13,9 @@
       "label": "TradeJournals",
       "href": "/tradejournals/"
     }
-  ]
+  ],
+  "contact": {
+    "label": "Email us — coming soon",
+    "href": null
+  }
 }

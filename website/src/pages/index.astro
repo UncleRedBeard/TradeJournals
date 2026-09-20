@@ -1,5 +1,6 @@
 ---
 import Hero from "../components/Hero.astro";
+import ContactInvitation from "../components/ContactInvitation.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ServiceSection from "../components/ServiceSection.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
@@ -13,4 +14,5 @@ const service = model.services.find(item => item.id === model.home.serviceIds[0]
   <Hero headline={model.home.headline} intro={model.home.intro} image={model.home.hero} workHref={featured[0]?.href} />
   {service && <ServiceSection service={service} projects={featured.filter(project => service.projectIds.includes(project.id))} />}
   <section class="section"><div class="shell"><p class="eyebrow">Selected work</p><h2 class="section-heading">Work with a memory of the house.</h2>{featured.map(project => <ProjectCard project={project} />)}</div></section>
+  <ContactInvitation contact={model.site.contact} />
 </SiteLayout>
