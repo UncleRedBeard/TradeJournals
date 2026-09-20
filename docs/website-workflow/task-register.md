@@ -8,12 +8,12 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: September 20, 2026, 00:55 UTC. Task 08 implementation/report
-commit `ac151076c3d982a20c5da8d49fc708a3a9caf0ba` is pushed to the established
-`origin/codex/website-updates`; hub observed matching HEAD/tracking ref, `0 0`
-and clean status before these bookkeeping edits. Final brief/register closeout
-returns to the Task 08 child. Earlier Git states below are historical snapshots.
-Task 08 remains COMPLETE; hosting and deployment remain deferred.
+Current checkpoint: September 20, 2026. Task 08 implementation and bookkeeping
+are committed through `06044320fcdb9f67cbb0c0452ab4e03fbfffd978`; the checkout
+was clean before Task 09 preparation. Task 09 revision 2 is now accepted and
+COMPLETE. Its documentation Git closeout is now authorized and IN PROGRESS in
+the Task 09 child; hosting remains deferred.
+Earlier Git and workflow states below are historical snapshots.
 
 ## Operating Boundary
 
@@ -452,6 +452,65 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   final commit/push and synchronization verification. Pending; hub stops edits
   after handback. No hosting/deployment or successor action occurred.
 - Hub owns brief/register; child owns implementation and its report.
+
+## Website 1 — Task 09 Content Review And Selection
+
+- Exact child ID: `01a0bf16-d46b-71d3-8d60-03332a6b9267`.
+- Exact displayed title: Website 1 - Task 09 Content Selection - COMPLETE.
+- Brief: [Task 09, revision 4](task-09-content-review-selection.md).
+- Approval: RECEIVED; Shawn said `get started on task 09` in this hub on September
+  20 after approving the editorial positioning and proposed review scope.
+- Positioning: historic homes/woodwork lead; broader work introduces Shawn as
+  craftsman and tradesman and welcomes thoughtful inquiries.
+- Scope: consolidate studio-evidence and content-review backlogs, review the
+  archive, and produce a prioritized shortlist with proposed placement, candidate
+  photographs, evidence gaps and a recommended first publication batch.
+- Source sessions: `CURRENT — Ballet Studio Completion Evidence`,
+  `01a06e5b-fbaa-7202-8a23-f4f3f570ba34`; `TradeJournals Content Review Parent`,
+  `01a062b2-cd26-7552-a5f9-3996acac6392`. Read/capture their work without starting
+  either session. Their open items remain unfinished; neither is archived here.
+- Environment: same-directory archive fork, `codex/website-updates`, baseline
+  `06044320fcdb9f67cbb0c0452ab4e03fbfffd978`. Only this child owns Task 09
+  editorial deliverable/report; hub owns brief/register.
+- Boundaries: documents-only review; no website implementation/publication,
+  reviewed-snapshot changes, journal/inventory correction, media modification,
+  hosting, source-session archival or successor dispatch. Subsequent Git closeout
+  authorization is recorded below and supersedes the initial no-closeout scope.
+- Workflow status: COMPLETE — exact child reports Shawn directly reviewed and
+  accepted revision 2. Acceptance reconciled as `WK-WEB-T09-H02` September 20
+  at 14:57 UTC. Specific quote placement and final image choices are not inferred
+  from general acceptance; those belong to later authorized drafting.
+- Dispatch: `WK-WEB-T09-D01`; SENT once September 20 at 13:53 UTC.
+- Acceptance: all transferred items retain provenance/status; actual archive
+  informs the shortlist; restoration remains primary; recommendations distinguish
+  inspected evidence from provisional selections; Markdown/whitespace checks pass.
+- Report: `WK-WEB-T09-R01`, revision 2, at
+  [Task 09 report](reports/task-09-content-review-selection.md); RECEIVED once,
+  reconciled as `WK-WEB-T09-H01` September 20 at 14:27 UTC.
+- Deliverable: [Content Review And Selection](../../website/docs/content-review-selection.md).
+  Both backlogs retain provenance and next actions; all 11 editorial items remain
+  open. Source sessions are unchanged.
+- First batch proposed: Entry, Guest Bath dresser vanity, Master Bedroom,
+  Returning To Clay: Thirty Years Later, and Agfa Isolette. Restoration leads;
+  pottery/photography remain a quieter supporting layer.
+- Hub verification: document/report review, source-claim and photo-ID spot checks,
+  verified 27-journal inventory, resolved local links, scoped Markdown lint and
+  whitespace checks. Requested and verified revision 2 correcting same physical
+  wheel to same make/model. Child's visual image review was not repeated by hub;
+  provisional image selections remain explicitly marked.
+- Git authorization: RECEIVED; exact child reports Shawn directly said
+  `git er done` after acceptance. Reconciled as `WK-WEB-T09-G01` September 20
+  at 15:00 UTC. Git closeout: IN PROGRESS.
+- Destination: established `origin/codex/website-updates` at
+  `git@github.com:UncleRedBeard/TradeJournals.git`, freshly read back by hub.
+- Owner: Task 09 child validates, stages only applicable files, commits, pushes,
+  fetches and verifies fresh hash identity, ahead/behind `0 0` and worktree state.
+  Payload is the selection, report and Task 09 hub brief/register bookkeeping.
+  Hub stops file edits after this handback; no competing Git operations.
+- Pre-staging Git state: HEAD `0604432`; two child documents and two hub files
+  uncommitted. No commit/push result yet claimed. No website/journal/inventory/
+  media changes, deployment, merge, publication, source-session archival or
+  successor dispatch is authorized by closeout.
 
 ## Remaining Decisions After The Pilot — Updated Direction
 
