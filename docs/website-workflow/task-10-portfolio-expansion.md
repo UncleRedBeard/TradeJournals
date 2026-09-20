@@ -1,17 +1,69 @@
 # Website 1 - Task 10 Portfolio Expansion
 
-Workflow status: IN PROGRESS — approved dispatch sent once
+Workflow status: COMPLETE — reviewed and approved by Shawn
 Approval: Shawn said `start task 10` in website updates on September 20, 2026,
 after the five-story expansion and reviewable-preview scope was presented.
 Hub: `01a0a263-8d09-7ff2-8144-a71eb6ec16f6` / website updates
 Child: `01a0bf60-e5e5-7e20-8c3d-65c6a6e3a445`
-Brief revision: 2 — shelf installation source correction
+Brief revision: 3 — scoped Markdown lint repair handoff
 Dispatch: `WK-WEB-T10-D01`
 Register: [task-register.md](task-register.md)
 
 Dispatch sent once September 20 at 15:14 UTC after exact-title/idle verification.
 Fresh observation confirmed execution turn
 `01a0bf62-5155-7892-a616-ab385b3fd84b` in progress.
+
+Shawn approved the completed original presentation after review, rejected and
+permanently removed the separate tartan mock-up, then authorized Git closeout
+with `git er done`. The approved implementation is commit `6e21460`.
+
+## Markdown Lint Repair Handoff — September 20, 2026
+
+Shawn explicitly said `handoff this to task 10` after the hub diagnosed the
+repository-wide Markdown failures and recommended the following bounded repair.
+Handoff ID: `WK-WEB-T10-L01`. This adds the repair to the existing Task 10 scope;
+it does not create a new task or replace the portfolio expansion assignment.
+
+Hub reproduced `npm run lint:md`: 102 files, 4,345 errors. Of these, 4,342 arise
+from generated `.superpowers/sdd/` briefs/review packets, including raw code diffs.
+The remaining three are MD047 missing final newlines in these authored stories:
+
+- `website/content/stories/living-room-studio-restoration.md`
+- `website/content/stories/office-restoration.md`
+- `website/content/stories/studio-office-restoration.md`
+
+The read-only diagnostic command
+`markdownlint-cli2 "**/*.md" "!.superpowers/sdd/**"` checked 79 files and reported
+exactly those three errors. Logs are available at
+`/private/tmp/tradejournals-markdown-lint-audit.log` and
+`/private/tmp/tradejournals-markdown-lint-filtered.log`; they are diagnostic
+artifacts, not files to commit. No repository repair was performed by the hub.
+
+Implement and verify:
+
+1. Add only `.superpowers/sdd/**` to `.markdownlint-cli2.jsonc` ignores. Preserve
+   lint coverage for authored journals, website stories, docs and hub records.
+   Do not weaken Markdown rules globally or delete the generated packets.
+2. Add the missing final newline to the three stories without altering prose.
+3. Fix `storyBytes()` in `website/lib/workbench.mjs`, which currently writes
+   the editable body verbatim after frontmatter, so saved stories consistently
+   end with a single newline. Preserve meaningful body content, Markdown hard
+   breaks and existing validation/round-trip behavior; add a focused regression
+   check proving recurrence is prevented.
+4. Run the full `npm run lint:md`, focused writer tests and the applicable
+   website/Python checks for the integrated Task 10 change, plus whitespace checks.
+   Confirm effective full-repository lint success, not just scoped success.
+
+`website/lib/prepare.mjs` hashes story bytes directly. Newline fixes therefore
+invalidate the existing reviewed snapshot. Preserve that snapshot byte-for-byte;
+stale review is expected for the changed candidate. Do not refresh hashes to
+claim approval or weaken the release gate. Final expanded release approval stays
+separate. Keep the full Task 10 implementation progressing after this small fix.
+
+Preparation baseline is now `ab1bce63e94f7848511e206bc03a2f8447f24756`, containing
+only the committed Task 10 brief/register; hub verified matching local/tracking/
+FETCH_HEAD, `0 0` and clean status before this handoff. This supersedes the older
+preparation baseline below. No new commit/push authorization is supplied here.
 
 ## Source Correction — September 20, 2026, 21:02 UTC
 

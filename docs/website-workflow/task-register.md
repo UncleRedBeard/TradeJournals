@@ -8,12 +8,11 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: September 20, 2026. Task 09 is accepted and committed at
-`9cc32375a6853717c3f0e92459947f0ca2b810d1`; post-push verification confirmed
-matching HEAD/tracking/FETCH_HEAD, `0 0` and clean status. This supersedes its
-historical IN PROGRESS Git entry below. Task 10 Portfolio Expansion is explicitly
-approved. The checkout was clean before preparation; hosting remains deferred.
-Earlier Git and workflow states below are historical snapshots.
+Current checkpoint: September 20, 2026. Task 10 Portfolio Expansion is accepted
+and its approved implementation is committed at `6e21460`; Git closeout is
+authorized and in progress. The reviewed release snapshot, public contact
+destination and hosting remain separate future decisions. Earlier Git and
+workflow states below are historical snapshots.
 
 ## Operating Boundary
 
@@ -515,8 +514,8 @@ their completion reports. Preserve other tasks' work and do not switch branches.
 ## Website 1 — Task 10 Portfolio Expansion
 
 - Exact child ID: `01a0bf60-e5e5-7e20-8c3d-65c6a6e3a445`.
-- Exact displayed title: Website 1 - Task 10 Portfolio Expansion - IN PROGRESS.
-- Brief: [Task 10, revision 2](task-10-portfolio-expansion.md).
+- Exact displayed title: Website 1 - Task 10 Portfolio Expansion - COMPLETE.
+- Brief: [Task 10, revision 3](task-10-portfolio-expansion.md).
 - Approval: RECEIVED; Shawn said `start task 10` in this hub on September 20,
   after the five-story candidate implementation scope was presented.
 - Scope: implement Entry, Guest Bath dresser vanity, Master Bedroom, Returning
@@ -525,6 +524,17 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   reviewable local preview with restoration clearly primary.
 - Dependencies: Task 09 shortlist revision 2 accepted and committed at `9cc3237`;
   preserve provisional-image gaps, room identities and same-wheel-model correction.
+- Lint repair handoff: `WK-WEB-T10-L01`; SENT once September 20. Fresh wait
+  observed turn `01a0c0a8-1ea1-7b43-92e2-d845615a5e54` in progress. Shawn said
+  `handoff this to task 10` after the verified diagnosis. Add a narrow generated
+  review-packet lint exclusion, normalize three story final newlines, prevent
+  recurrence in the archive-owned writer, and verify full lint plus relevant
+  regression checks. Preserve the reviewed snapshot; byte changes make it stale.
+  No new task or Git closeout authorization. Details are in brief revision 3.
+- Preparation closeout: `ab1bce63e94f7848511e206bc03a2f8447f24756`, pushed to
+  `origin/codex/website-updates`; hub verified equal HEAD/tracking/FETCH_HEAD,
+  `0 0` and clean status before this handoff. This committed only brief/register,
+  not the five-story website implementation. Older baseline below is historical.
 - Source correction: `WK-WEB-T10-C01`, September 20 at 21:02 UTC. Exact child
   reports Shawn clarified that the Google Studio shelf planks are unfinished,
   temporarily dry-fitted on low-profile brackets after floating brackets were
@@ -537,16 +547,25 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   implementation; hub owns brief/register. Exact title and idle state verified
   before dispatch.
 - Boundaries: candidate implementation only; no reviewed-snapshot promotion,
-  hosted deployment, Git closeout, merge, journal/inventory edits, original-media
-  alteration, Companion changes, source-session archival or successor task.
-- Workflow status: IN PROGRESS; fresh wait observed execution turn
-  `01a0bf62-5155-7892-a616-ab385b3fd84b` in progress after approved dispatch.
+  hosted deployment, merge, journal/inventory edits, original-media alteration,
+  Companion changes, source-session archival or successor task.
+- Workflow status: COMPLETE. Shawn approved the original Task 10 presentation
+  after review. The separate tartan mock-up was rejected and permanently removed
+  outside the repository under task-scoped deletion authorization.
 - Dispatch: `WK-WEB-T10-D01`; SENT once September 20 at 15:14 UTC.
 - Acceptance: five supported stories and inspected selections, clear visual
   hierarchy, working discovery/search, preserved existing rooms, actual desktop/
   mobile preview review, relevant automated checks and honest remaining decisions.
-- Report: `WK-WEB-T10-R01`, proposed at
-  `reports/task-10-portfolio-expansion.md`; not yet received.
+- Report: `WK-WEB-T10-R01`, revision 2, at
+  [Task 10 report](reports/task-10-portfolio-expansion.md); RECEIVED and accepted.
+- Verification: 118 Node and 37 Python tests passed; the candidate built and
+  validated at 18 pages, 52 files and 232 references; repository-wide Markdown
+  lint and whitespace checks passed. Release correctly refused the stale review
+  snapshot with `SOURCE_STALE`.
+- Git authorization: RECEIVED; Shawn said `git er done` after approval.
+  Implementation commit `6e21460` contains the five-story expansion, selected
+  media, homepage changes, maintainability fixes and regression coverage. Final
+  bookkeeping, push and synchronization verification complete this closeout.
 
 ## Remaining Decisions After The Pilot — Updated Direction
 
