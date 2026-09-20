@@ -5,7 +5,7 @@ Approval: Shawn said `start task 11` in website updates on September 20, 2026,
 after the hub proposed the four-part release-readiness scope below.
 Hub: `01a0a263-8d09-7ff2-8144-a71eb6ec16f6` / website updates
 Child: `01a0c0f4-617d-70a1-b0b1-da23a7b1f953`
-Brief revision: 3 — scoped Git closeout authorization
+Brief revision: 4 — verified implementation Git closeout
 Dispatch: `WK-WEB-T11-D01` — SENT once; execution observed active
 Register: [task-register.md](task-register.md)
 Workspace: `/Users/shkelley/Documents/PERSONAL/Shawn/Nerds/TradeJournals`
@@ -24,9 +24,18 @@ for Task 11, including its hub bookkeeping, to the established
 `git@github.com:UncleRedBeard/TradeJournals.git` remote on
 `origin/codex/website-updates`. Hub freshly verified that branch and remote.
 
-The child owns staging, commit, push and final verification. Hub has saved this
-authorization and will stop editing until handback. Closeout is IN PROGRESS;
-no commit, push, clean status or synchronization outcome is claimed yet.
+Implementation closeout is verified at
+`46293aab01160f6612f6de49c693f895788f4f17` (`Prepare expanded website release`),
+pushed to `origin/codex/website-updates`. Child reports fresh post-push fetch;
+hub independently observed identical HEAD, tracking ref and FETCH_HEAD, `0 0`
+ahead/behind and a clean checkout before this bookkeeping update.
+
+Closeout checks reported by the child passed: 118 Node tests, 37 Python tests,
+87-file Markdown lint, whitespace checks, and guarded release/preview builds
+with 18 pages, 52 files and 232 references. Hub's independent acceptance checks
+are recorded below. The child retains ownership of staging, committing and
+pushing this final two-file bookkeeping update, then verifying synchronization.
+Hub stops edits after handback; the bookkeeping commit outcome is not yet known.
 This supersedes earlier Git restrictions below for Task 11 only. Deployment,
 hosting, merge, archival and successor work remain outside scope.
 

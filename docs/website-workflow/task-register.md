@@ -13,9 +13,10 @@ and committed through `d28f030`; the checkout was clean before Task 11 preparati
 with HEAD matching the local tracking ref and ahead/behind `0 0`. Task 11 Expanded
 Release Readiness is accepted COMPLETE: the expanded reviewed snapshot is
 current and the portable release is verified. Shawn chose to keep inquiries
-disabled. Task 11 Git closeout is now explicitly authorized and IN PROGRESS in
-the exact child; no closeout outcome is claimed yet. Hosting and deployment
-remain separate. Earlier states below are historical.
+disabled. Task 11 implementation is committed and pushed at `46293aa`; hub
+observed matching HEAD/tracking/FETCH_HEAD, `0 0`, and a clean checkout before
+this final bookkeeping update. The child owns its bookkeeping commit/push.
+Hosting and deployment remain separate. Earlier states below are historical.
 
 ## Operating Boundary
 
@@ -573,7 +574,7 @@ their completion reports. Preserve other tasks' work and do not switch branches.
 ## Website 1 — Task 11 Expanded Release Readiness
 
 - Exact child ID: `01a0c0f4-617d-70a1-b0b1-da23a7b1f953`.
-- Brief: [Task 11, revision 3](task-11-expanded-release-readiness.md).
+- Brief: [Task 11, revision 4](task-11-expanded-release-readiness.md).
 - Approval: RECEIVED; Shawn said `start task 11` in this hub on September 20,
   after the release snapshot, verification, portability and contact scope was
   proposed. He then explicitly chose `Keep inquiries disabled for now`.
@@ -616,17 +617,21 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   Release `http://127.0.0.1:4175/`; protected preview `http://127.0.0.1:4174/`.
   Revision 2 adds only Shawn's directly approved `120-format film` wording in
   the Agfa Isolette story and the corresponding reviewed fingerprint. Design,
-  source journals and inventories remain unchanged. Task 11 remains
-  uncommitted and unpushed; no successor or deployment is started.
+  source journals and inventories remain unchanged. Task 11 implementation is
+  now committed and pushed as recorded below; no successor or deployment started.
 - Git authorization: `WK-WEB-T11-G01`; RECEIVED. Shawn said `git er done` in
   the exact child after approving revision 2. Scoped validation, commit, push
   and sync verification are authorized to established
   `git@github.com:UncleRedBeard/TradeJournals.git`, branch
-  `origin/codex/website-updates`. The child owns closeout; hub bookkeeping is
-  ready for inclusion and hub edits stop until handback. Runtime observed active
-  in turn `01a0c113-b4ca-7ad0-9839-ca1352964582`. Outcome PENDING; no new commit
-  or push claimed. Hosting, deployment, merge, archival and successor remain
-  outside scope.
+  `origin/codex/website-updates`. Implementation closeout VERIFIED at
+  `46293aab01160f6612f6de49c693f895788f4f17` (`Prepare expanded website release`).
+  Child reports fresh fetch after push; hub independently observed matching
+  HEAD/tracking/FETCH_HEAD, `0 0`, and clean status before this final bookkeeping.
+  Child closeout checks: 118 Node, 37 Python, 87-file Markdown lint, whitespace,
+  preview/release builds and validation at 18 pages/52 files/232 references pass.
+  Child owns the final brief/register commit and push; that bookkeeping outcome
+  remains pending. Hub stops editing after handback. Hosting, deployment, merge,
+  archival and successor remain outside scope.
 
 ## Remaining Decisions After The Pilot — Updated Direction
 
