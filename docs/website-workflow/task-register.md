@@ -8,12 +8,12 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: September 19, 2026. Task 07 implementation and bookkeeping
-are committed at archive HEAD `dd6da4c01476e3ccdcdfbf9b1193b00c5b842d6b`;
-Companion HEAD is `c4a2338584e0137c0a9685a7c964255dee6413af`. Both were clean
-before Task 08 preparation. Earlier Git states below are historical snapshots.
-Task 08 release readiness is accepted locally; its changes are uncommitted.
-Hosting remains deferred. See its September 20 UTC acceptance checkpoint below.
+Current checkpoint: September 20, 2026, 00:55 UTC. Task 08 implementation/report
+commit `ac151076c3d982a20c5da8d49fc708a3a9caf0ba` is pushed to the established
+`origin/codex/website-updates`; hub observed matching HEAD/tracking ref, `0 0`
+and clean status before these bookkeeping edits. Final brief/register closeout
+returns to the Task 08 child. Earlier Git states below are historical snapshots.
+Task 08 remains COMPLETE; hosting and deployment remain deferred.
 
 ## Operating Boundary
 
@@ -402,15 +402,16 @@ their completion reports. Preserve other tasks' work and do not switch branches.
 
 - Exact child ID: `01a0bbcf-a52f-7672-b08e-d69da400c4d7`.
 - Exact displayed title: Website 1 - Task 08 Release Readiness - COMPLETE.
-- Brief: [Task 08, revision 2](task-08-release-readiness.md).
+- Brief: [Task 08, revision 3](task-08-release-readiness.md).
 - Approval: RECEIVED; Shawn said `let's start task 08` in this hub on September
   19, following the release-readiness and portability review.
 - Scope: current maintainer instructions, consistent scoped runtime, fresh-checkout
   build proof, outstanding browser verification, contact decision and reviewable
   public release package. This supersedes any tentative Hosting And Launch label.
-- Boundaries: no deployment, hosting/domain setup, Git closeout, main merge,
-  journal/inventory correction or successor. Exact reviewed-snapshot promotion
-  was separately approved by Shawn in the child, as recorded in its report.
+- Boundaries: no deployment, hosting/domain setup, main merge, journal/inventory
+  correction or successor. Original execution excluded Git closeout; subsequent
+  child closeout is recorded below. Exact reviewed-snapshot promotion was
+  separately approved by Shawn in the child, as recorded in its report.
 - Environment: same-directory archive fork on `codex/website-updates`, baseline
   `dd6da4c`; Companion on `codex/website-workbench`, baseline `c4a2338`.
   This child is the sole Task 08 implementation writer.
@@ -441,9 +442,15 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   passed in the working checkout. Desktop and 390-pixel public browser checks
   reported passing. Hub did not repeat clone/browser checks. Private Companion
   browser skips remain explicitly separate from the public static-site gate.
-- Git state: HEAD remains `dd6da4c`; Task 08 implementation/report and hub
-  bookkeeping are uncommitted. Updated handoff/review snapshot is not yet on
-  GitHub. Companion clean; no Git closeout or deployment performed.
+- Git closeout: implementation/report commit
+  `ac151076c3d982a20c5da8d49fc708a3a9caf0ba` (`Prepare verified website release`)
+  pushed to `origin/codex/website-updates`. Child reports post-push fetch with
+  matching hashes, `0 0` and clean status. Hub independently observed matching
+  HEAD/tracking ref, `0 0`, clean status and scoped commit files at 00:55 UTC.
+  Reconciled once as `WK-WEB-T08-G01`; supersedes the prior uncommitted state.
+- Final bookkeeping: these brief/register edits return to the child for its
+  final commit/push and synchronization verification. Pending; hub stops edits
+  after handback. No hosting/deployment or successor action occurred.
 - Hub owns brief/register; child owns implementation and its report.
 
 ## Remaining Decisions After The Pilot — Updated Direction

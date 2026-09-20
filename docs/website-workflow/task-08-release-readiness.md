@@ -5,13 +5,29 @@ Approval: Shawn explicitly said `let's start task 08` in the website updates
 hub on September 19, 2026, following the release-readiness and portability review.
 Hub: `01a0a263-8d09-7ff2-8144-a71eb6ec16f6` / website updates
 Child: `01a0bbcf-a52f-7672-b08e-d69da400c4d7`
-Brief revision: 2 — accepted release-readiness delivery
+Brief revision: 3 — implementation Git closeout reconciled
 Dispatch: `WK-WEB-T08-D01`
 Register: [task-register.md](task-register.md)
 
 Dispatch was sent once September 19 at 22:37 UTC after exact-title/idle readback.
 Fresh runtime observation showed execution turn
 `01a0bbd1-89f2-7c91-b195-dc0b623ac87b` in progress. No readiness result is yet claimed.
+
+## Git Closeout Checkpoint — September 20, 2026, 00:55 UTC
+
+The exact child reports implementation/report commit
+`ac151076c3d982a20c5da8d49fc708a3a9caf0ba` (`Prepare verified website release`)
+pushed to the established `origin/codex/website-updates`. Its post-push fetch
+confirmed matching hashes, ahead/behind `0 0`, and a clean worktree. Hub readback
+independently confirmed HEAD/tracking-ref identity, `0 0`, clean status and the
+commit's scoped files before these bookkeeping edits.
+
+This supersedes the uncommitted implementation state at acceptance below. The
+guide, disabled contact placeholder and reviewed snapshot are in that commit.
+These two hub-owned bookkeeping files now return to the child for its final
+commit/push and synchronization check; that follow-up is not yet claimed done.
+The hub stops editing after handback. Hosting/deployment status is unchanged,
+and no successor task is started. Reconciliation ID: `WK-WEB-T08-G01`.
 
 ## Acceptance Checkpoint — September 20, 2026, 00:47 UTC
 
@@ -31,8 +47,9 @@ committed baseline `dd6da4c`; the final approved release was built in the workin
 checkout. Private Companion browser skips remain outside this static-site gate.
 
 Accepted scope is the verified local release and documented reproducible setup.
-Task 08 changes remain uncommitted; GitHub does not yet contain this updated
-guide, contact placeholder or reviewed snapshot. Companion remains clean.
+At this acceptance checkpoint, Task 08 changes were uncommitted and GitHub did
+not yet contain the updated guide, contact placeholder or reviewed snapshot.
+Companion was clean. The Git checkpoint above supersedes that implementation state.
 No commit, push, merge, deployment or successor task is authorized by acceptance.
 
 ## Assignment And Authority
