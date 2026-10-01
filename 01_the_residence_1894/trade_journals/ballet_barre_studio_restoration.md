@@ -232,8 +232,13 @@ The room had not yet reached final studio sign-off. Window masking, isolated
 open electrical positions, and later worktables and tools remained visible,
 and the ballet barre had not yet appeared in the archive. Final evidence should
 document completed electrical faceplates, the restored door installed and
-operating, window work closed out, the ballet barre and any related hardware
-installed, and a clear room-ready studio view.
+operating, window finish and treatment work visually closed out, the ballet
+barre and any related hardware installed, and a clear room-ready studio view.
+
+The room's windows remain sealed shut and non-operable. This retained condition
+is known to the owner and is not represented as code-compliant. In this journal,
+window closeout refers only to the completed surface, trim, and treatment work;
+it does not imply that the windows operate or satisfy current code requirements.
 
 ## Visual Evidence
 
@@ -376,7 +381,9 @@ selected.
 - The 2026-07-12, 2026-07-27, and 2026-08-01 images document the completed studio
   hallway after two coats of KILZ Mold & Mildew Primer, 220-grit sanding after
   each primer coat, and two coats of Behr Cottage White.
-- Future evidence needed for window treatments and the completed room.
+- Future evidence is still needed for the completed room. Window operation is
+  not a completion criterion because the windows remain knowingly sealed shut
+  and non-operable; that retained condition is not represented as code-compliant.
 - The 2026-08-26 sequence documents the refinished floor uncovered, the
   shiplap revealed, the operating ceiling fan, and the restored black door
   present at the shiplap doorway.
@@ -386,5 +393,6 @@ selected.
 - The 2026-08-29 to 2026-08-30 photographs show continued window-detail work,
   worktables, drop cloths, and tools rather than final room release.
 - Future evidence is still needed for completed faceplates, the restored door
-  installed and operating, window work closed out, the ballet barre and related
-  hardware installed, and the final room-ready ballet studio.
+  installed and operating, window finish and treatment work visually closed
+  out, the ballet barre and related hardware installed, and the final room-ready
+  ballet studio. Window operability is expressly outside this evidence target.
