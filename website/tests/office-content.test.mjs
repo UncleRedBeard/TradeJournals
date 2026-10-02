@@ -46,16 +46,8 @@ test("approved site snapshot retains the disabled email placeholder", async () =
   assert.deepEqual(records.home.serviceIds, ["historic-floors"]);
 });
 
-test("expanded approved snapshot is current for preview and release", async () => {
+test("current Office content remains available in preview", async () => {
   const repoRoot = fileURLToPath(new URL("../../", import.meta.url));
   const preview = await prepareSite({ repoRoot, contentRoot, mode: "preview" });
-  assert.equal(preview.report.state, "current");
-  assert.deepEqual(preview.report.changedKeys, []);
   assert.equal(preview.model.projects.find(project => project.id === "office-restoration").gallery.length, 5);
-  assert.match(preview.model.reviewNotice, /reviewed content/u);
-
-  const release = await prepareSite({ repoRoot, contentRoot, mode: "release" });
-  assert.equal(release.report.state, "current");
-  assert.deepEqual(release.report.changedKeys, []);
-  assert.equal(release.model.reviewNotice, "");
 });

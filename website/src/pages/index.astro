@@ -1,28 +1,82 @@
 ---
-import Hero from "../components/Hero.astro";
-import CraftsmanIntro from "../components/CraftsmanIntro.astro";
-import ContactInvitation from "../components/ContactInvitation.astro";
-import ProjectCard from "../components/ProjectCard.astro";
-import ServiceSection from "../components/ServiceSection.astro";
+import AtelierContact from "../components/AtelierContact.astro";
+import AtelierProjectCard from "../components/AtelierProjectCard.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
+import "../styles/atelier.css";
+import fontLicense from "../styles/fonts/OFL.txt?raw";
 import model from "@site-model";
 
 const featured = model.home.featuredProjectIds.map(id => model.projects.find(project => project.id === id));
 const workshop = model.home.workshopProjectIds.map(id => model.projects.find(project => project.id === id));
-const service = model.services.find(item => item.id === model.home.serviceIds[0]);
+const { site, home } = model;
 ---
 
-<SiteLayout site={model.site} reviewNotice={model.reviewNotice}>
-  <Hero headline={model.home.headline} intro={model.home.intro} image={model.home.hero} workHref={featured[0]?.href} />
-  <CraftsmanIntro />
-  {service && <ServiceSection service={service} projects={featured.filter(project => service.projectIds.includes(project.id))} />}
-  <section class="section"><div class="shell project-list"><p class="eyebrow">Restoration portfolio</p><h2 class="section-heading">Work with a memory of the house.</h2>{featured.map(project => <ProjectCard project={project} />)}</div></section>
-  {workshop.length > 0 && <section class="section section--workshop"><div class="shell project-list"><p class="eyebrow">From the workshop</p><h2 class="section-heading">Other materials. The same attention.</h2><p class="prose">Clay and film sit beside the restoration work as quieter records of practice, observation, and material judgment.</p>{workshop.map(project => <ProjectCard project={project} />)}</div></section>}
-  <ContactInvitation contact={model.site.contact} />
-</SiteLayout>
+<SiteLayout site={site} reviewNotice={model.reviewNotice} bodyClass="atelier-home">
+  <template id="font-license">{fontLicense}</template>
+  <header slot="header" class="atelier-header">
+    <div class="atelier-shell atelier-header__row">
+      <a class="atelier-brand" href="/">
+        <span class="atelier-brand__mark" aria-hidden="true">T·T</span>
+        <span><span class="atelier-brand__name">{site.name}</span><span class="atelier-brand__detail">Historic floors · Interior woodwork</span></span>
+      </a>
+      <nav class="atelier-nav" aria-label="Primary navigation">
+        <a href="#documented-projects">Selected work ({featured.length})</a>
+        <a href="#practice">Practice</a>
+        {workshop.length > 0 && <a href="#workshop-studies">Workshop</a>}
+        <a href="/tradejournals/">TradeJournals</a>
+      </nav>
+      <div class="atelier-header__contact"><AtelierContact contact={site.contact} /></div>
+    </div>
+  </header>
 
-<style>
-  .project-list { display: grid; gap: 2.5rem; }
-  .project-list > :global(.eyebrow), .project-list > :global(.section-heading), .project-list > .prose { margin-bottom: -1.25rem; }
-  .section--workshop { background: #efe9dc; border-block: 1px solid var(--line); }
-</style>
+  <section class="atelier-hero" aria-labelledby="home-heading">
+    <div class="atelier-shell atelier-hero__grid">
+      <div>
+        <p class="atelier-hero__label">Preservation practice for older residences</p>
+        <h1 id="home-heading">{home.headline}</h1>
+        <p class="atelier-hero__service">{site.serviceLine}</p>
+      </div>
+      <aside class="atelier-practice" id="practice" aria-labelledby="practice-heading">
+        <h2 class="atelier-eyebrow" id="practice-heading">A craftsman's practice</h2>
+        <p>{home.intro}</p>
+        <div class="atelier-practice__foot">
+          <span>Restoration at home</span>
+          {featured[0] && <a href={featured[0].href}>See the work</a>}
+        </div>
+      </aside>
+      <div class="atelier-mobile-contact"><AtelierContact contact={site.contact} /></div>
+    </div>
+  </section>
+
+  <div class="atelier-shell atelier-main">
+    <section id="documented-projects" aria-labelledby="projects-heading">
+      <div class="atelier-section-heading">
+        <div><p class="atelier-eyebrow">Restoration work</p><h2 id="projects-heading">Documented Projects</h2></div>
+        <p class="atelier-section-heading__note">Restoration work in my own home</p>
+      </div>
+      <div class="atelier-projects">
+        {featured.map((project, index) => <AtelierProjectCard project={project} eager={index === 0} />)}
+      </div>
+    </section>
+
+    {workshop.length > 0 && (
+      <section class="atelier-workshop" id="workshop-studies" aria-labelledby="workshop-heading">
+        <div class="atelier-workshop__surface">
+          <div class="atelier-workshop__intro">
+            <p class="atelier-eyebrow">Studio studies</p>
+            <h2 id="workshop-heading">From the workshop</h2>
+            <p>Clay and film sit beside the restoration work as quieter records of practice, observation, and material judgment.</p>
+          </div>
+          <div class="atelier-workshop__grid">
+            {workshop.map(project => <AtelierProjectCard project={project} workshop />)}
+          </div>
+        </div>
+      </section>
+    )}
+  </div>
+
+  <footer slot="footer" class="atelier-footer atelier-shell">
+    <div><strong>{site.name}</strong><p>{site.serviceLine}</p></div>
+    <AtelierContact contact={site.contact} />
+  </footer>
+</SiteLayout>

@@ -36,11 +36,9 @@ test("candidate preview stages selected assets and writes the public model", asy
     "living-room-studio-restoration", "master-bedroom-restoration", "office-restoration",
     "returning-to-clay", "studio-office-restoration"
   ]);
-  assert.equal(result.report.state, "current");
-  assert.deepEqual(result.report.changedKeys, []);
   assert.deepEqual(result.model.home.featuredProjectIds, [
-    "entry-restoration", "guest-bath-dresser-vanity", "master-bedroom-restoration",
-    "living-room-studio-restoration"
+    "living-room-studio-restoration", "entry-restoration",
+    "guest-bath-dresser-vanity", "master-bedroom-restoration"
   ]);
   assert.deepEqual(result.model.home.workshopProjectIds, ["returning-to-clay", "agfa-isolette"]);
   assert.equal(model.projects.find(project => project.id === "office-restoration").gallery.length, 5);

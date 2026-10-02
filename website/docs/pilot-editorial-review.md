@@ -10,10 +10,12 @@ approved the exact snapshot with SHA-256
 `ab0a82cd6e9492800f5e2a8b885aee4038d9e96a01cc1f55221b0cd59ed24fce`.
 That snapshot remains the historical Task 08 baseline. Task 10 added five
 approved stories and the craftsman-first homepage; Shawn then started Task 11
-to record and verify that expanded release. The current reviewed snapshot covers
+to record and verify that expanded release. The September 20 reviewed snapshot covers
 50 public records and 47 selected sources with canonical SHA-256
 `ec16411478fec3d39b8099e1c366cfe4cedd27af797bcd7217dcd4a1ecff9fcc`.
 This approval records the local release state; it does not deploy the site.
+The October 2, 2026 review of subsequent changes is recorded at the end of
+this document.
 
 ## Expanded Release
 
@@ -140,3 +142,23 @@ evidence boundary.
   journals, Workbench data, runtime, and preview output are not upload content.
 - Hosting selection, domain/DNS work, public contact destination, upload, and
   deployment remain separate decisions.
+
+## October 2 Concept B And Source Review
+
+Shawn approved the Concept B homepage implementation and then approved the
+three changed review items for the exact local revision: the homepage project
+order, the living-room journal's clarification that its windows remain sealed
+and non-operable, and the Office journal's bounded account of localized
+electrical access. The Office journal still contains older mixed-room claims;
+the public Office story continues to withhold them.
+
+Only those three fingerprints changed in `content/reviews/pilot.json`. The
+reviewed snapshot now matches 50 public records and 47 selected sources with
+zero changed keys. The exact `pilot.json` file has SHA-256
+`cdc69b8b5c95af1e05677e9a1639287fd5b8886ab0872ce9adc3bc71dcd5699f`.
+
+The full website suite passed 118 Node and 37 Python tests. Candidate and
+guarded release builds each validated 18 pages, 52 files, and 236 references.
+The candidate retains a review notice and `noindex, nofollow`; the release
+output has neither. The inquiry control remains disabled. The rest of the
+site's Concept B visual update remains pending, as do hosting and deployment.

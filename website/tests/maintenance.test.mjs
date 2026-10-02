@@ -42,21 +42,22 @@ test("synthetic builds isolate copy, featured order and shared style, then produ
   await f.saveRecord("home.json", f.raw.home);
   const ordered = await f.build("preview");
   const home = await f.output("index.html");
-  const selectedWork = home.slice(home.indexOf("Restoration portfolio"));
+  const selectedWork = home.slice(home.indexOf('id="documented-projects"'));
+  assert.match(home, /href="#documented-projects"/u);
   assert.ok(selectedWork.indexOf("Recorded project-two") < selectedWork.indexOf("Recorded project-one"));
   assert.match(home, /href="\/work\/project-two\/"[^>]*>See the work/u);
   assert.equal(await f.output("work/project-one/index.html"), projectBeforeOrder);
 
-  const componentPath = "website/src/components/ProjectCard.astro";
+  const componentPath = "website/src/components/AtelierProjectCard.astro";
   const component = await readFile(path.join(f.repoRoot, componentPath), "utf8");
-  assert.ok(component.includes("border-top: 1px solid"));
+  assert.ok(component.includes("border: 2px solid"));
   const largerStyles = Array.from({ length: 150 }, (_, i) =>
-    `.project-card .fixture-${i} { padding: ${i}px; margin: ${i}px; }`).join("\n");
-  await f.save(componentPath, component.replace("border-top: 1px solid", "border-top: 3px solid")
+    `.atelier-card .fixture-${i} { padding: ${i}px; margin: ${i}px; }`).join("\n");
+  await f.save(componentPath, component.replace("border: 2px solid", "border: 3px solid")
     .replace("</style>", `${largerStyles}</style>`));
   const styled = await f.build("preview");
   assert.deepEqual(styled.model, ordered.model);
-  assert.match(await f.output("index.html"), /border-top:\s*3px solid/u);
+  assert.match(await f.output("index.html"), /border:\s*3px solid/u);
   assert.notEqual(await f.output("index.html"), home);
 
   await assert.rejects(f.build("release"), { code: "UNREVIEWED_CONTENT" });
@@ -80,7 +81,7 @@ test("homepage separates the restoration portfolio from workshop stories", async
   await f.saveRecord("home.json", f.raw.home);
   await f.build("preview");
   const home = await f.output("index.html");
-  assert.match(home, /Restoration portfolio/);
+  assert.match(home, /Documented Projects/);
   assert.match(home, /From the workshop/);
   assert.ok(home.indexOf("Recorded project-one") < home.indexOf("From the workshop"));
   assert.ok(home.indexOf("From the workshop") < home.indexOf("Recorded project-two"));

@@ -1,0 +1,7 @@
+---
+const { contact } = Astro.props;
+---
+
+{contact && (contact.href
+  ? <a class="atelier-contact" href={contact.href}>{contact.label}</a>
+  : <button class="atelier-contact" type="button" disabled>{contact.label}</button>)}

@@ -9,26 +9,40 @@ import { writeFixture } from "./fixtures.mjs";
 const websiteRoot = fileURLToPath(new URL("..", import.meta.url));
 const repoRoot = fileURLToPath(new URL("../..", import.meta.url));
 
-test("reviewed candidate preview renders the Office record without a contact form", async () => {
-  await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
+test("preview renders the Office record and review notice without a contact form", async () => {
+  const result = await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
   const page = await readFile(path.join(websiteRoot, ".preview-dist/work/office-restoration/index.html"), "utf8");
 
   assert.match(page, /Toil &amp; Timber Restoration/);
   assert.match(page, /Historic floors, interior woodwork, and architectural restoration\./);
-  assert.match(page, /Local preview — reviewed content; this preview is not a deployment\./);
+  assert.ok(result.model.reviewNotice);
+  assert.ok(page.includes(result.model.reviewNotice));
   assert.match(page, /https:\/\/www\.flickr\.com\/photos\/boocher\/53921322250\/in\/set-72177720316928566\//);
   assert.match(page, /\/media\/flickr-53921322250\.jpg/);
   assert.doesNotMatch(page, /<form[^>]*action=/);
   assert.doesNotMatch(page, /01_the_residence_1894/);
 });
 
-test("homepage renders a disabled email placeholder without a destination", async () => {
+test("homepage links every selected project in folio order and keeps inquiries disabled", async () => {
   await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
   const page = await readFile(path.join(websiteRoot, ".preview-dist/index.html"), "utf8");
 
-  assert.match(page, /<button[^>]*class="button-link"[^>]*disabled[^>]*>Email us — coming soon<\/button>/);
-  assert.match(page, /A craftsman's eye\. A tradesman's approach\./);
-  assert.match(page, /Have something worth repairing, restoring, or making\?/);
+  assert.match(page, /href="#documented-projects"/);
+  assert.match(page, /id="documented-projects"/);
+  assert.match(page, /href="#practice"/);
+  assert.match(page, /id="practice"/);
+  assert.match(page, /href="#workshop-studies"/);
+  assert.match(page, /id="workshop-studies"/);
+  const cards = [...page.matchAll(/<article\b[^>]*>.*?<\/article>/gs)].map(match => match[0]);
+  const projectIds = ["living-room-studio-restoration", "entry-restoration", "guest-bath-dresser-vanity", "master-bedroom-restoration", "returning-to-clay", "agfa-isolette"];
+  assert.equal(cards.length, projectIds.length);
+  for (const [index, id] of projectIds.entries()) {
+    assert.ok(cards[index].includes(`href="/work/${id}/"`), `${id} has a working story link in the selected order`);
+    assert.match(cards[index], /<img[^>]+alt="[^"]+"/);
+  }
+  const contactButtons = [...page.matchAll(/<button\b[^>]*>Email us — coming soon<\/button>/g)];
+  assert.ok(contactButtons.length > 0);
+  for (const [button] of contactButtons) assert.match(button, /\bdisabled\b/);
   assert.doesNotMatch(page, /mailto:/);
   assert.doesNotMatch(page, /<form\b/);
 });

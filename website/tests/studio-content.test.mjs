@@ -6,7 +6,7 @@ import { prepareSite } from "../lib/prepare.mjs";
 const repoRoot = fileURLToPath(new URL("../../", import.meta.url));
 const contentRoot = fileURLToPath(new URL("../content/", import.meta.url));
 
-test("future Studio remains distinct while the expanded restoration portfolio leads", async () => {
+test("future Studio leads the homepage while remaining distinct from the current Studio", async () => {
   const { model } = await prepareSite({ repoRoot, contentRoot, mode: "preview" });
   const futureStudio = model.projects.find(project => project.id === "living-room-studio-restoration");
   const currentStudio = model.projects.find(project => project.id === "studio-office-restoration");
@@ -14,7 +14,7 @@ test("future Studio remains distinct while the expanded restoration portfolio le
   assert.ok(futureStudio);
   assert.ok(currentStudio);
   assert.ok(office);
-  assert.equal(model.home.featuredProjectIds[0], "entry-restoration");
+  assert.equal(model.home.featuredProjectIds[0], "living-room-studio-restoration");
   assert.equal(model.site.navigation.find(item => item.label === "Work").href, "/work/entry-restoration/");
   assert.equal(model.home.hero.id, "flickr-55338112557");
   assert.equal(futureStudio.gallery.length, 3);

@@ -31,6 +31,12 @@ move.
 The older `site_example/` prototype remains a comparison artifact. It is not
 the Astro release package.
 
+The [approved Concept B homepage](docs/concept-b-homepage-review.md) adapts the
+reviewed Stitch direction into the existing Astro site. Its presentation lives
+in `src/styles/atelier.css` and `src/components/AtelierProjectCard.astro`.
+Project and TradeJournal pages retain their existing presentation while the
+approved site-wide update remains pending.
+
 ## Repository, Runtime, And Installation
 
 Clone the complete TradeJournals repository. The build reads selected journals,
@@ -86,7 +92,8 @@ another task's server.
 | Site identity, navigation, or contact action | `content/site.json` | Preview the header, navigation, homepage, and final contact action |
 | Project summary or gallery selection | `content/projects/<id>.json`; selected media records | Preview the project, homepage card, and archive search |
 | Homepage project order | `content/home.json` → `featuredProjectIds` | First featured project receives the hero link; cards follow the saved order |
-| Shared card appearance | `src/components/ProjectCard.astro` | Rebuild and inspect the affected cards; content stays separate |
+| Homepage card appearance | `src/components/AtelierProjectCard.astro` | Rebuild and inspect desktop and stacked mobile cards |
+| Other shared card appearance | `src/components/ProjectCard.astro` | Rebuild and inspect the affected cards; content stays separate |
 | Longer story | `content/stories/<id>.md` | Preview its TradeJournal route and review the source evidence |
 
 Run `npm run check:website` after updates. The output gate deliberately accepts
@@ -95,6 +102,9 @@ checker update. Styles are explicitly inlined in HTML, including as they grow.
 The checker accepts safe HTTPS story citations and verifies required evidence
 source-link identities without live Flickr requests;
 recorded album counts remain local evidence, not fresh platform counts.
+The homepage embeds its Cormorant Garamond fonts in the CSS and includes their
+license in an inert HTML template. Font files and the original license live in
+`src/styles/fonts/`; visitors make no external font requests.
 
 `npm run test:website` includes temporary synthetic builds that change copy,
 featured order, and shared styling, then produce an invented reviewed release.
@@ -141,6 +151,11 @@ No build command buys hosting, changes DNS, uploads the website, sends a
 message, or edits journal records.
 
 ## Release Checklist
+
+These checked items record the earlier expanded release. The October 2 approval
+of the Concept B homepage and three changed review fingerprints is recorded in
+the [release review](docs/pilot-editorial-review.md). Use the current build and
+review report to determine readiness after further changes.
 
 - [x] The first release uses a disabled `Email us — coming soon` placeholder.
 - [ ] Replace the placeholder with an approved `mailto:` action after a public

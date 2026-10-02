@@ -5,7 +5,7 @@
   "records": [
     {
       "key": "home:home",
-      "sha256": "725147a5c51c046c221ac06e94797235864af5ad753b39b4e7fc6d1b1f383dac"
+      "sha256": "d2f39b7eb4258f0dcc06311d7fc47131825e92230d074954cdb675c23d14a7d7"
     },
     {
       "key": "media:flickr-52704298727",
@@ -243,7 +243,7 @@
     },
     {
       "key": "journal:01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md",
-      "sha256": "b1bc000c0b78c310e6de8fd35df94d54b4809469f48628924518a92c84fd7a79"
+      "sha256": "e0962e26f27855ec0531402045647fee3cd3cc1aebb87840e6c8d18dc312480c"
     },
     {
       "key": "journal:01_the_residence_1894/trade_journals/entry_restoration.md",
@@ -259,7 +259,7 @@
     },
     {
       "key": "journal:01_the_residence_1894/trade_journals/office_restoration.md",
-      "sha256": "893dde91790ab9533d2f89d1023adf294847443f3a2ad8393c57d432daacf22c"
+      "sha256": "477ec92d6d8cd422c896b3ae638dc5f4622f3b44f55771fc55caefbc20aa5966"
     },
     {
       "key": "journal:04_materials_and_alchemy/trade_journals/returning_to_clay_lockerbie_model_k.md",

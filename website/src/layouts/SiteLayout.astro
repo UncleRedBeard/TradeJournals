@@ -1,7 +1,7 @@
 ---
 import "../styles/base.css";
 
-const { site, title = "", reviewNotice = "" } = Astro.props;
+const { site, title = "", reviewNotice = "", bodyClass = "" } = Astro.props;
 const pageTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.descriptor}`;
 ---
 
@@ -13,8 +13,9 @@ const pageTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.d
     <title>{pageTitle}</title>
     {reviewNotice && <meta name="robots" content="noindex, nofollow" />}
   </head>
-  <body>
+  <body class={bodyClass || undefined}>
     <a class="skip-link" href="#main-content">Skip to content</a>
+    <slot name="header">
     <header class="site-header">
       <div class="shell site-header__row">
         <a class="site-name" href="/">
@@ -26,8 +27,11 @@ const pageTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.d
         </nav>
       </div>
     </header>
+    </slot>
     {reviewNotice && <aside class="review-notice"><div class="shell">{reviewNotice}</div></aside>}
     <main id="main-content"><slot /></main>
-    <footer class="site-footer"><div class="shell"><strong>{site.name}</strong><br />{site.serviceLine}</div></footer>
+    <slot name="footer">
+      <footer class="site-footer"><div class="shell"><strong>{site.name}</strong><br />{site.serviceLine}</div></footer>
+    </slot>
   </body>
 </html>
