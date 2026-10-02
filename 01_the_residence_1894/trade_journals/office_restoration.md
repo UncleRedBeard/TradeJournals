@@ -94,7 +94,7 @@ Use this section to map the Flickr album into evidence categories before writing
 ### Key Photo IDs
 
 - Overall before condition: [2021-10-05 17:19, photo 52704838449](https://www.flickr.com/photos/boocher/52704838449/in/set-72177720306207693/) - establishes the room before the studio conversion, with stored materials, existing windows, trim, lighting, and old floor boards visible.
-- Demolition and opening:
+- Demolition and opening: [2024-05-11 14:52, photo 53718846780](https://www.flickr.com/photos/boocher/53718846780/in/set-72177720316928566/) - a receptacle hangs outside a small wall opening near the baseboard in the dedicated Office; this documents localized electrical access, not room-scale demolition.
 - Wall, ceiling, floor, or trim condition: [2021-12-05 10:27, photo 52704838284](https://www.flickr.com/photos/boocher/52704838284/in/set-72177720306207693/) - documents taped windows, exposed wall surfaces, trim, and the floor before the final finish sequence.
 - Electrical, lighting, or systems integration:
 - Floor stripping, sanding, and refinishing: [2022-01-09 17:25, photo 52704582806](https://www.flickr.com/photos/boocher/52704582806/in/set-72177720306207693/) - shows the refinished floor as the room opens back up for use.
@@ -108,7 +108,17 @@ Use this section to map the Flickr album into evidence categories before writing
 
 ### Demolition And Opening
 
-- Pending photo review.
+The dedicated Office album shows localized electrical access during the May 2024
+work, but does not establish a broader demolition phase:
+
+- [2024-05-11 14:52, photo 53718846780](https://www.flickr.com/photos/boocher/53718846780/in/set-72177720316928566/) - a receptacle hangs outside a small wall opening above the baseboard; the floor is covered and taped nearby.
+- [2024-05-11 14:24, photo 53718847000](https://www.flickr.com/photos/boocher/53718847000/in/set-72177720316928566/) - a wall box is exposed with capped, labeled conductors, preserving a view of the electrical access point before the finish covers it.
+- [2024-05-24 16:28, photo 53753119273](https://www.flickr.com/photos/boocher/53753119273/in/set-72177720316928566/) - a wider view shows a small exposed wiring point in the magenta wall amid light-colored surface preparation, with the floor still protected.
+
+These images do not show when or why the openings were made, what material was
+removed, or any concealed framing or wall condition. No room-scale removal of
+walls, trim, or flooring is established by this review; those claims need
+separate evidence before they enter the Office restoration narrative.
 
 ### Surface And Trim Repair
 
