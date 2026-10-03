@@ -2,11 +2,26 @@
 
 ## The Challenge
 
-Document the office work as a preservation-minded room restoration inside the 1894 residence: what existing conditions were uncovered, what repairs or alterations were needed, and how a shared office/yoga studio space was updated into a dedicated office while keeping its old-house character legible.
+Document the dedicated Office work as a preservation-minded room restoration inside the 1894 residence: what existing conditions were uncovered, what repairs or alterations were needed, and how the work kept its old-house character legible.
 
 ## Historic And Building Context
 
-The office belongs in the residence archive as a working-room project where finish quality, comfort, wiring, lighting, and durable surfaces all matter. The room had already carried mixed use as an office and yoga studio, so the restoration record should explain how the space became a cleaner dedicated office without losing the lessons learned from the floor, trim, and finish work.
+The Office belongs in the residence archive as a working-room project where finish quality, comfort, wiring, lighting, and durable surfaces all matter. It is distinct from the original office/yoga room that became the current barre studio and current home of The Repair Shop.
+
+Room attribution follows Shawn's correction recorded in the
+[three-room source audit](../../website/docs/task-07-room-source-audit.md):
+
+- Flickr `72177720316928566` documents the dedicated Office.
+- Flickr `72177720306207693` documents the current barre studio, originally
+  Shawn's office/yoga room. Its floor and door records are retained below as
+  explicitly labeled current-studio material, not evidence of Office work.
+- Google Photos `af1qippool3ge7t` documents the former living room being
+  renovated as the future barre studio. It is a third room, documented in the
+  [Ballet Barre Studio journal](ballet_barre_studio_restoration.md).
+
+Current/future occupancy remains as Shawn confirmed it; these records do not
+establish that the studio has moved. The retained process notes are journal
+assertions, not a newly verified account of every material, date, or outcome.
 
 ## Craftsmanship Execution
 
@@ -29,11 +44,15 @@ Explain where preservation mattered most. Note what was repaired instead of repl
 
 ## Journal Entries
 
-### 2021-12-25 - Shared Office/Yoga Studio To Dedicated Office Floor Refinish
+### 2021-12-25 - Current Barre Studio Floor Refinish (Original Office/Yoga Room)
 
 Source: Flickr album [Home Reno - Studio | Office](https://www.flickr.com/photos/boocher/albums/72177720306207693/) and project notes.
 
-This room was a shared space used as both an office and yoga studio before being updated into a dedicated office. The project captured in this album tracks that transition and includes the first floors refinished in the house. The result came out especially well and established a successful floor-finishing process for later work.
+This is the original shared office/yoga room, now the current barre studio,
+not the dedicated Office. The retained project notes describe these as the
+first floors refinished in the house, record a particularly successful result,
+and identify the process as a model for later floor work. The entry date is
+retained from the journal; it does not establish when the room changed use.
 
 Floor refinishing process:
 
@@ -50,9 +69,14 @@ Floor refinishing process:
 11. Sand with 400 grit.
 12. Vacuum and steam clean the finished floor.
 
-### 2022 - Original Solid-Wood Door Reclamation And Charred Finish
+### 2022 (Date Unresolved) - Current Barre Studio Door Reclamation And Charred Finish
 
 Source: Flickr album [Home Reno - Studio | Office](https://www.flickr.com/photos/boocher/albums/72177720306207693/) and project notes.
+
+The retained project notes describe the following door work associated with
+the current-studio album, not the dedicated Office. The original `2022` entry
+heading conflicts with mostly February 2023 Flickr date labels below; the
+work's chronology remains unresolved.
 
 An original solid-wood door left with the house was visibly worn but remained
 structurally worth preserving. Shawn and Haley stripped it to bare wood rather
@@ -62,8 +86,9 @@ reclamation, not as traditional yakisugi or as a fire-resistance treatment.
 
 The finishing schedule used one coat of water-based polyurethane, allowed to
 dry, followed by their custom Dutch-oil mixture. The work retained original
-building fabric and transformed a neglected component into a functional visual
-anchor for the completed office. Exact wood species, product details, mixture
+building fabric and developed a new finish for a neglected component. The
+record does not establish a final installed charred door or a completed Office.
+Exact wood species, product details, mixture
 ratios, and drying or curing intervals remain to be added if those records are
 recovered.
 
@@ -85,13 +110,19 @@ Use this section to map the Flickr album into evidence categories before writing
 ### Flickr Albums
 
 - Album URL: [Home Reno - Office](https://www.flickr.com/photos/boocher/albums/72177720316928566/)
-- Album status: public API-visible album; latest importer scan confirms 276 photos.
+- Album status: saved importer inventory records 276 photos; not a new live count.
 - Album role: primary visual archive for the office restoration, including room layout, trim, finish work, and later office-use evidence.
 - Album URL: [Home Reno - Studio | Office](https://www.flickr.com/photos/boocher/albums/72177720306207693/)
-- Album status: public API-visible album; latest importer scan confirms 107 photos.
-- Album role: visual archive for the transition from shared office/yoga studio to dedicated office, including the first floor-refinishing work completed in the house and the process that became the model for later floor work.
+- Album status: saved importer inventory records 107 photos; not a new live count.
+- Album role: current barre-studio archive, originally the shared office/yoga room; retained here for provenance of the separately labeled floor and door records. It is not a dedicated Office source.
 
 ### Key Photo IDs
+
+Only the demolition/opening selection below belongs to the dedicated Office.
+All other populated selections in this list belong to the current barre-studio
+album. Existing image descriptions and date labels are retained, not newly
+visually reviewed; room-ready wording does not establish current occupancy,
+an installed barre, or a final installed charred door.
 
 - Overall before condition: [2021-10-05 17:19, photo 52704838449](https://www.flickr.com/photos/boocher/52704838449/in/set-72177720306207693/) - establishes the room before the studio conversion, with stored materials, existing windows, trim, lighting, and old floor boards visible.
 - Demolition and opening: [2024-05-11 14:52, photo 53718846780](https://www.flickr.com/photos/boocher/53718846780/in/set-72177720316928566/) - a receptacle hangs outside a small wall opening near the baseboard in the dedicated Office; this documents localized electrical access, not room-scale demolition.
@@ -102,7 +133,7 @@ Use this section to map the Flickr album into evidence categories before writing
 - Paint, finish, or final room assembly: [2022-01-16 16:06, photo 52705240355](https://www.flickr.com/photos/boocher/52705240355/in/set-72177720306207693/) - documents the stripped original door installed before its separate charred-finish sequence, along with surrounding trim and the working-room setup.
 - Best final room image: [2022-01-09 17:39, photo 52705071273](https://www.flickr.com/photos/boocher/52705071273/in/set-72177720306207693/) - wide room-ready view showing refinished floors, restored wall and trim surfaces, windows, and the room returning to usable form.
 
-### Before Condition
+### Current Barre Studio - Before Condition
 
 - [2021-10-05 17:19, photo 52704838449](https://www.flickr.com/photos/boocher/52704838449/in/set-72177720306207693/) - baseline room condition before the office-to-studio work, showing existing floor boards, windows, trim, lighting, and materials stored in the room.
 
@@ -120,22 +151,22 @@ removed, or any concealed framing or wall condition. No room-scale removal of
 walls, trim, or flooring is established by this review; those claims need
 separate evidence before they enter the Office restoration narrative.
 
-### Surface And Trim Repair
+### Current Barre Studio - Surface And Trim Repair
 
 - [2021-12-05 10:27, photo 52704838284](https://www.flickr.com/photos/boocher/52704838284/in/set-72177720306207693/) - documents taped windows, wall surfaces, trim, and floor condition during prep.
 - [2021-12-23 14:48, photo 52705072903](https://www.flickr.com/photos/boocher/52705072903/in/set-72177720306207693/) - shows active surface preparation with tools and work materials staged in the room.
 - [2021-12-24 15:45, photo 52705004670](https://www.flickr.com/photos/boocher/52705004670/in/set-72177720306207693/) - records continued wall and window prep, with taped glass, protected work areas, and finish materials visible.
 
-### Finish Work
+### Current Barre Studio - Finish Work
 
 - [2021-12-25 14:01, photo 52705072358](https://www.flickr.com/photos/boocher/52705072358/in/set-72177720306207693/) - shows the room after major wall/trim finish work, with floor boards still visible as the floor-refinishing sequence continues.
 - [2021-12-29 13:33, photo 52704583266](https://www.flickr.com/photos/boocher/52704583266/in/set-72177720306207693/) - documents the room during finish-stage cleanup and assembly, with tools still present and the floor returning to finished condition.
 
-### Original Door Reclamation And Finish
+### Current Barre Studio - Original Door Reclamation And Finish
 
 The 16-photo Flickr sequence below documents the door as a distinct
 preservation project. Most of the sequence lacks a reliable original capture
-date, so the links retain Flickr's current `date_taken` labels while the images
+date, so the links retain the recorded Flickr `date_taken` labels while the images
 are grouped by the work they show.
 
 Initial surface and charring:
@@ -166,7 +197,7 @@ Overall finished surface:
 
 - [2023-02-22 10:24, photo 52704057627](https://www.flickr.com/photos/boocher/52704057627/in/set-72177720306207693/) - overall view of the completed charred and finished door before installation.
 
-### Finished Or Room-Ready Evidence
+### Current Barre Studio - Finished Or Room-Ready Evidence
 
 - [2022-01-09 17:25, photo 52704582806](https://www.flickr.com/photos/boocher/52704582806/in/set-72177720306207693/) - wide view of the refinished floor and room beginning to return to use.
 - [2022-01-09 17:39, photo 52705071273](https://www.flickr.com/photos/boocher/52705071273/in/set-72177720306207693/) - room-ready view showing the floor finish, windows, restored surfaces, and working-room setup.

@@ -610,15 +610,49 @@ in the parent chat after push.
 All eleven original reviews are accepted COMPLETE. Task 11 Git closeout is
 authorized above; the follow-ups below are not automatically authorized.
 
+## Content Cleanup 1 - Task 01 Office Attribution
+
+- Child: `01a1031b-5d00-7a72-a07d-2d029620ef42`; same-directory shared checkout.
+- Verified title: Content Cleanup 1 - Task 01 Office Attribution - COMPLETE.
+- Brief: [Cleanup 01, revision 1](cleanup-01-office-attribution.md).
+- Scope: correct mixed Office/current barre-studio journal attribution, preserving
+  accepted Office evidence and unresolved dates; no website or inventory changes.
+- Baseline: `codex/concept-b-homepage`,
+  `81529127930ee826e46657db22c5e11d41e744f9`; clean before preparation.
+- Approval: October 3, 2026, hub turn `01a1031a-cb95-74b3-994f-a9903fcf75be`:
+  "cool..start a new content cleanup task 1" authorizes creation and execution.
+- Workflow status: COMPLETE (bounded deliverable accepted by hub).
+- Runtime: exact child verified idle before dispatch, then active/inProgress
+  on October 3, 2026, turn `01a1031c-acc3-7082-81de-b75375d48f55`.
+  After hub review, exact COMPLETE title and idle runtime verified the same day.
+- Dispatch: `TJ-CC-T01-D01`, sent once and execution observed.
+- Deliverable: corrected journal plus `TJ-CC-T01-R01` revision 1 at
+  `reports/cleanup-01-office-attribution.md`; lint, evidence and diff checks.
+- Report delivery: RECEIVED October 3, 2026, `TJ-CC-T01-DEL01`.
+- Report-send approval: exact child turn `01a1031f-4b85-7841-b7bd-65775316f6a1`,
+  Shawn's "yes" to sending the report; not content or Git approval.
+- Hub review: `TJ-CC-T01-H01`, accepted report `TJ-CC-T01-R01` revision 1.
+  Reviewed the actual journal diff and preservation evidence: room ownership is
+  explicit, craft details and accepted Office electrical-access prose retained,
+  dates unresolved, no new visual claims, website or inventory edits.
+- Fresh hub checks: Markdown 125 files/zero issues; site-evidence manifest
+  current; `git diff --check` passed. No fresh image audit was required or claimed.
+- Shawn's content acceptance and Git closeout approval: October 3, 2026,
+  "approved...git er done" in this hub. Closeout event `TJ-CC-T01-G01` covers
+  the journal, brief, report, and this register on the established origin branch.
+  Final commit identity and synchronization are verified in the hub closeout
+  response; this checkpoint does not authorize a successor or deployment.
+
 ## Separate Follow-Up Identified
 
 The Task 01 report and the existing
 [three-room source audit](../../website/docs/task-07-room-source-audit.md) identify
-older Office journal sections that still attribute the current barre studio's
-floor/door work to the dedicated Office. Correcting or reassigning those sections
-was outside Task 01. The issue is retained for Shawn's scope decision; no new
-task has been created or started. All eleven original editorial review markers
-are resolved within their accepted scopes; these follow-ups remain separate.
+older Office journal sections that attributed the current barre studio's
+floor/door work to the dedicated Office. This was outside Review 1 Task 01;
+Content Cleanup 1 Task 01 now corrects that attribution in place, with hub review
+complete and Shawn's acceptance/Git closeout approved. All eleven original
+editorial review markers are resolved within their accepted scopes; the
+remaining follow-ups below remain separate.
 
 Task 03 also flags the El Toro catalog's 35mm classification versus `(120)` film
 label. Resolving that source conflict is separate from the completed bounded
