@@ -5,5 +5,21 @@ import model from "@site-model";
 ---
 
 <SiteLayout site={model.site} home={model.home} title="TradeJournals" reviewNotice={model.reviewNotice}>
-  <section class="section"><div class="shell"><p class="eyebrow">TradeJournals</p><h1 class="section-heading">The record behind the work.</h1><p class="prose">Selected project records hold the visible evidence and the decisions that led to it.</p><ArchiveSearch projects={model.projects} /></div></section>
+  <section class="archive-page atelier-shell">
+    <div class="archive-page__intro">
+      <p class="archive-page__label">TradeJournals</p>
+      <h1>The record behind the work.</h1>
+      <p class="archive-page__summary">Selected project records hold the visible evidence and the decisions that led to it.</p>
+    </div>
+    <ArchiveSearch projects={model.projects} />
+  </section>
 </SiteLayout>
+
+<style>
+  .archive-page { padding-top: clamp(2.5rem, 5vw, 5rem); }
+  .archive-page__intro { margin-bottom: 3rem; max-width: 48rem; }
+  .archive-page__label { color: var(--atelier-accent); font: .6875rem/1.5 var(--atelier-mono); letter-spacing: .1em; margin: 0 0 1rem; text-transform: uppercase; }
+  h1 { font: 400 clamp(2.7rem, 5vw, 4.5rem)/1.05 var(--atelier-display); letter-spacing: -.025em; margin: 0; text-wrap: balance; }
+  .archive-page__summary { color: #4a4237; font-size: 1.0625rem; line-height: 1.75; margin: 1.5rem 0 0; max-width: 55ch; }
+  @media (max-width: 38rem) { .archive-page__intro { margin-bottom: 2rem; } .archive-page__summary { font-size: 1rem; } }
+</style>

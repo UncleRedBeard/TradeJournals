@@ -13,7 +13,8 @@ committed at `6a528e3`. Tasks 12 and 13 are accepted COMPLETE. Shawn then said
 `git er done`, authorizing their scoped commit and push to the established
 `origin/codex/concept-b-homepage` branch. This closeout includes the shared
 frame, project presentation, tests and website workflow records. Concurrent
-content-review work remains excluded. Task 14 is not started; merge, deployment
+content-review work remains excluded. Task 14 is now accepted COMPLETE;
+merge, deployment
 and archival remain separate. Earlier branch, uncommitted and authorization
 statements below describe their original checkpoints.
 
@@ -661,7 +662,7 @@ said `ok, let's get started in stages. you already know our workflow.` here.
 | --- | --- | --- |
 | 12 | Shared header/footer, navigation and styling foundation | COMPLETE |
 | 13 | Project pages and galleries | COMPLETE |
-| 14 | TradeJournal reading pages and archive/search presentation | Planned; not created or started |
+| 14 | TradeJournal reading pages and archive/search presentation | COMPLETE |
 | 15 | Integrated site verification and release review | Planned; not created or started |
 
 Each child returns for hub review and Shawn's acceptance before the next task
@@ -741,6 +742,55 @@ Git closeout, deployment and any changed-source review remain separate decisions
   Task 12/13 changes remain uncommitted; concurrent content-review work advanced
   HEAD to `0225667` and owns the later SXSW journal/brief/report/register changes.
 - Task 14/15, Git closeout, merge, deployment and archival remain outside scope.
+
+### Website 2 — Task 14 Journals And Archive
+
+- Child: `01a0ff4e-a59e-7b02-a44b-d36c0663db18`.
+- Brief: [Task 14, revision 1](task-14-journals-archive.md).
+- Approval: Shawn said `kick off task 14` in the hub October 2, 2026.
+- Dispatch: `WK-WEB-T14-D01` — SENT once; approved scope is journal reading pages
+  and archive/search presentation, with existing content and search preserved.
+- Runtime: active turn `01a0ff50-6839-7921-b6e9-6fff0dea4bd4` observed after
+  dispatch; exact child was idle before sending. No duplicate execution.
+- Environment: same-directory fork, `codex/concept-b-homepage` at `6042f00`.
+  Tasks 12/13 are committed and synchronized; their earlier uncommitted notes
+  are historical. Separate source-review changes remain owned by that workflow.
+- Exact title: Website 2 - Task 14 Journals - COMPLETE.
+- Workflow status: COMPLETE; hub technical review passed and Shawn's
+  visual acceptance received.
+- Report: `WK-WEB-T14-R01`, revision 1, at
+  [Task 14 report](reports/task-14-journals-archive.md); RECEIVED and reconciled
+  once as `WK-WEB-T14-H01` October 2; accepted as `WK-WEB-T14-H02` October 3.
+- Acceptance: Shawn said `looks good. approved` directly in the hub after the
+  review preview was restarted and its saved pages verified. No implementation
+  change accompanies acceptance; Task 15 and Git closeout remain separate.
+- Hub review: five-file implementation/test/doc delta and desktop/phone journal
+  and actual-search screenshots inspected; no blocking issues. Independent
+  121 Node/37 Python tests, 107-file Markdown lint and whitespace checks passed.
+  Both outputs validate against matching models (18 pages/52 files/318 references
+  each); review current, zero changed keys, snapshot unchanged. Content, search
+  scripts and accepted earlier-stage components remain unchanged. Live fallback
+  and interaction checks are child-reported.
+- Preview: `http://127.0.0.1:8139/tradejournals/` and the Entry journal route.
+  Task 14 changes are uncommitted; concurrent source-review work is preserved.
+- Task 15, Git closeout, merge, deployment, snapshot refresh and archive remain
+  outside this authorization. Hub owns brief/register; child owns implementation.
+
+### Task 14 Git Closeout And Completed-Chat Archival Authorization
+
+On October 3, 2026, Shawn said `git er done...then archive all completed tasks`
+after reviewing the exact list of 11 completed chats. This authorizes scoped
+Task 14 validation, commit and push to `origin/codex/concept-b-homepage`, followed
+by archival of those reviewed chats. Task 14 implementation, README, tests,
+brief/report and this hub register are included. Concurrent content-review work
+remains excluded. Earlier uncommitted/no-Git statements are historical.
+
+Archive scope: Concept B redesign parent and homepage child; Website 2 Tasks
+12, 13 and 14; Content Review Tasks 01 through 06. Preserve website updates,
+TradeJournals Content Review Parent, active La Ciotat Task 07, Ballet Studio
+Completion Evidence, office storage layout and Dashboard Launcher. Task 15,
+merge and deployment are not started by this closeout. Verify push and archival
+results in the hub after execution; this entry records authorization only.
 
 ## Remaining Decisions After The Pilot — Updated Direction
 

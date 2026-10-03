@@ -40,8 +40,12 @@ palette and font tokens live in `src/styles/tokens.css`. Inner-page navigation
 links back to the homepage sections. Project presentation lives in
 `src/pages/work/[id].astro` and `ProjectGallery.astro`: full-image matte frames,
 captions, a photo jump link and links to the journal. `EvidenceDetails.astro`
-uses its opt-in `projectPage` treatment there while retaining the existing
-journal presentation. TradeJournal and archive layouts await their later stage.
+uses its opt-in `projectPage` record panel on project and journal pages.
+Journal reading styles live with `src/pages/tradejournals/[id].astro`; their
+Markdown selectors are explicitly global beneath `.journal-story`.
+`ArchiveSearch.astro` owns search controls and both static and dynamic result
+presentation. Its entry selectors deliberately reach runtime-created children;
+the existing text-safe search script, ranking and fallback remain unchanged.
 
 ## Repository, Runtime, And Installation
 

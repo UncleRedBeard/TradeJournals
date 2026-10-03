@@ -15,5 +15,52 @@ const Story = rendered?.Content;
 ---
 
 <SiteLayout site={model.site} home={model.home} title={`${project.title} TradeJournal`} reviewNotice={model.reviewNotice}>
-  <article class="section"><div class="shell prose">{Story ? <Story /> : <><h1 class="section-heading">{project.title}</h1><p>{project.summary}</p></>}<EvidenceDetails project={project} /><p><a class="button-link" href={project.href}>Return to project</a></p></div></article>
+  <article class="journal-page atelier-shell">
+    <a class="journal-page__back" href="/tradejournals/"><span aria-hidden="true">← </span>TradeJournals</a>
+    <div class="journal-page__columns">
+      <div class="journal-page__reading">
+        <p class="journal-page__label">TradeJournal <span aria-hidden="true">/</span> {project.area}</p>
+        <div class="journal-story">
+          {Story ? <Story /> : <><h1>{project.title}</h1><p>{project.summary}</p></>}
+        </div>
+        <nav class="journal-page__links" aria-label="Continue exploring">
+          <a href={project.href}>View project and photographs <span aria-hidden="true">→</span></a>
+          <a href="/tradejournals/">Back to the journals</a>
+        </nav>
+      </div>
+      <EvidenceDetails project={project} projectPage />
+    </div>
+  </article>
 </SiteLayout>
+
+<style>
+  .journal-page { padding-top: 2rem; }
+  .journal-page__back { align-items: center; color: var(--atelier-accent); display: inline-flex; font: .75rem var(--atelier-mono); min-height: 44px; text-decoration: none; }
+  .journal-page__back:hover { text-decoration: underline; }
+  .journal-page__columns { align-items: start; display: grid; gap: clamp(2rem, 5vw, 5rem); grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr); margin-top: 2rem; }
+  .journal-page__reading { max-width: 44rem; min-width: 0; }
+  .journal-page__label { color: var(--atelier-accent); font: .6875rem/1.5 var(--atelier-mono); letter-spacing: .08em; margin: 0 0 1rem; text-transform: uppercase; }
+  .journal-page__label span { margin-inline: .5rem; }
+  .journal-story { color: #4a4237; font-size: 1.0625rem; line-height: 1.8; overflow-wrap: break-word; }
+  /* Rendered Markdown lives outside this component's Astro scope. */
+  .journal-story :global(h1) { color: var(--atelier-ink); font: 400 clamp(2.7rem, 4.6vw, 4.5rem)/1.05 var(--atelier-display); letter-spacing: -.025em; margin: 0 0 2rem; text-wrap: balance; }
+  .journal-story :global(h2) { border-top: 1px solid var(--line); color: var(--atelier-ink); font: 500 clamp(1.9rem, 2.7vw, 2.5rem)/1.15 var(--atelier-display); margin: 2.5rem 0 1rem; padding-top: 1.5rem; }
+  .journal-story :global(h3) { color: var(--atelier-ink); font: 500 1.7rem/1.2 var(--atelier-display); margin: 2rem 0 .75rem; }
+  .journal-story :global(p) { margin: 0 0 1.25rem; }
+  .journal-story :global(a) { color: var(--atelier-accent); text-decoration-thickness: 1px; }
+  .journal-story :global(strong) { color: var(--atelier-ink); }
+  .journal-story :global(ul), .journal-story :global(ol) { margin: 1.25rem 0; padding-left: 1.5rem; }
+  .journal-story :global(li + li) { margin-top: .5rem; }
+  .journal-story :global(blockquote) { border-left: 2px solid var(--atelier-brass); margin: 2rem 0; padding-left: 1.5rem; }
+  .journal-page__links { align-items: start; border-top: 2px solid var(--atelier-ink); display: flex; flex-direction: column; gap: .5rem; margin-top: 3rem; padding-top: 1rem; }
+  .journal-page__links a { align-items: center; color: var(--atelier-accent); display: inline-flex; gap: .75rem; min-height: 44px; }
+  .journal-page__links a:first-child { color: var(--atelier-ink); font: 500 1.75rem/1.2 var(--atelier-display); }
+  .journal-page__links a:last-child { font-size: .8125rem; }
+  @media (max-width: 56rem) { .journal-page__columns { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 38rem) {
+    .journal-page { padding-top: 1rem; }
+    .journal-page__columns { margin-top: 1.5rem; }
+    .journal-story { font-size: 1rem; line-height: 1.75; }
+    .journal-story :global(h1) { font-size: clamp(2.4rem, 10vw, 3.4rem); margin-bottom: 1.5rem; }
+  }
+</style>

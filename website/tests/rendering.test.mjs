@@ -91,6 +91,24 @@ test("candidate preview renders explicit occupancy", async t => {
   assert.equal([...page.matchAll(/Current barre studio/g)].length, 1);
   assert.match(page, /href="\/#documented-projects"/);
   assert.doesNotMatch(page, /href="\/#workshop-studies"/);
+
+  const journal = await readFile(path.join(fixtureWebsiteRoot, ".preview-dist/tradejournals/project-one/index.html"), "utf8");
+  assert.equal([...journal.matchAll(/<h1\b/g)].length, 1, "a journal without a story retains one page heading");
+  assert.ok(journal.includes(fixture.raw.projects[0].summary));
+  assert.match(journal, /href="\/work\/project-one\/"/);
+});
+
+test("each journal keeps one story heading and links to its project and archive", async () => {
+  const { model } = await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
+  for (const project of model.projects) {
+    const page = await readFile(path.join(websiteRoot, ".preview-dist", project.archiveHref.slice(1), "index.html"), "utf8");
+    const main = page.match(/<main\b[^>]*>.*?<\/main>/s)?.[0];
+    assert.ok(main, `${project.id} has journal content`);
+    assert.equal([...main.matchAll(/<h1\b/g)].length, 1, `${project.id} has one story title`);
+    assert.ok(main.includes('href="/tradejournals/"'), `${project.id} provides a return to the archive`);
+    assert.ok(main.includes(`href="${project.href}"`), `${project.id} links to its own project`);
+    assert.equal([...main.matchAll(/aria-label="Project record"/g)].length, 1);
+  }
 });
 
 test("project photographs remain in approved order with captions and source links behind a working gallery jump", async () => {
