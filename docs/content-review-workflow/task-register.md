@@ -843,6 +843,17 @@ authorized above; the follow-ups below are not automatically authorized.
   `origin/codex/concept-b-homepage` branch; final commit/sync evidence is reported
   in the hub reply. No archival, successor story or release promotion performed.
 
+### Office Release Approval And Closeout
+
+- Implementation commit: `9e2dd6d`, previously verified clean and synchronized.
+- Shawn then approved the Office preview with "approved...git er done" in this
+  hub on October 3, 2026, authorizing the exact local release snapshot and Git
+  closeout. No deployment, main merge or successor is authorized.
+- Refreshed only Office-related fingerprints: project, story, selected access
+  image record/bytes, and the previously accepted source-journal correction.
+- Release approval details are recorded in
+  [the editorial review](../../website/docs/pilot-editorial-review.md#october-3-office-access-detail-release-approval).
+
 ## Separate Follow-Up Identified
 
 The Task 01 report and the existing

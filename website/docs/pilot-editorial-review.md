@@ -192,3 +192,26 @@ The future studio, current studio and dedicated Office remain separate; the
 move remains unconfirmed. Inquiries remain disabled. Merging the branch,
 hosting/domain selection, upload/deployment and any public contact activation
 remain separate decisions.
+
+## October 3 Office Access-Detail Release Approval
+
+After reviewing the Office-only candidate at commit `9e2dd6d`, Shawn said
+"approved...git er done" in the Content Review Parent. This approves the exact
+Office update for the local release snapshot and Git closeout, not deployment.
+
+The snapshot changes are limited to the Office project and story, the new
+`flickr-53718846780` media record and image bytes, and the already accepted
+Office source-journal attribution correction. All five original Office images
+remain, followed by the localized-access detail. No homepage selection, other
+project, room occupancy, inquiry control or source journal is changed here.
+
+Verification passed: 84 repository Python tests, 121 website Node tests,
+37 website source/HTML tests, five Python and five JavaScript search tests,
+Markdown lint and current evidence-manifest checks. The guarded release build
+and independent output checker validate 18 pages and 53 files. The snapshot
+is current with zero changed keys, covering 51 public records and 48 sources.
+The exact `pilot.json` SHA-256 is
+`7dd9d7608c8f28b2846ab46451a9ccef40078ed32cfc6af8ee8e061d0940d27e`.
+
+Hosting, upload, deployment, merging to main and the remaining content-promotion
+proposals still require separate approval.

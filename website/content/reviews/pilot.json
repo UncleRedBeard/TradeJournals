@@ -40,6 +40,10 @@
       "sha256": "84f877b5230049c9a1dd9e570480599f587896e21a26c0d9fee5f0d20664f0bf"
     },
     {
+      "key": "media:flickr-53718846780",
+      "sha256": "c0adf402d5cec88baafd2cafbaf494796d4f52a553727c7933c68bc2152b38d3"
+    },
+    {
       "key": "media:flickr-53919981267",
       "sha256": "54454411779519102f2f4730812e3867e3f967d06aa6614ab19d7b1b9ff8ce3e"
     },
@@ -153,7 +157,7 @@
     },
     {
       "key": "project:office-restoration",
-      "sha256": "9c29dd5804cc45dc48f91b7380f4930b404a125ffda7fad95e41b010a0c52f22"
+      "sha256": "4330b0efb2aa9b8f2847434ce8fde67de724aee0374fc6c6ce7864c1ce5a63ce"
     },
     {
       "key": "project:returning-to-clay",
@@ -193,7 +197,7 @@
     },
     {
       "key": "story:office-restoration",
-      "sha256": "924f23f27017338e99f8988022f19cd1edd8527ffc54da9e45a7ed4285c6bf3b"
+      "sha256": "1c23a5afccd17bb0d60b2a1366b89b873ca6419159271effd52edc58564c4254"
     },
     {
       "key": "story:returning-to-clay",
@@ -259,7 +263,7 @@
     },
     {
       "key": "journal:01_the_residence_1894/trade_journals/office_restoration.md",
-      "sha256": "477ec92d6d8cd422c896b3ae638dc5f4622f3b44f55771fc55caefbc20aa5966"
+      "sha256": "809fd0e18fbaf734c07ea2fc83ef5a7bd01d4ab7566333c548c79383dd13583b"
     },
     {
       "key": "journal:04_materials_and_alchemy/trade_journals/returning_to_clay_lockerbie_model_k.md",
@@ -300,6 +304,10 @@
     {
       "key": "media:flickr-53680739580",
       "sha256": "6c0954b9921d26537448f500560857813ee93ffb5173f4a551265f90674dd6d0"
+    },
+    {
+      "key": "media:flickr-53718846780",
+      "sha256": "69dfff40d5e992667430fb5359c59981071e36acbc4b6391047ba20a070e0852"
     },
     {
       "key": "media:flickr-53919981267",
