@@ -854,6 +854,43 @@ authorized above; the follow-ups below are not automatically authorized.
 - Release approval details are recorded in
   [the editorial review](../../website/docs/pilot-editorial-review.md#october-3-office-access-detail-release-approval).
 
+## Content Promotion 1 - Task 02 Studio Retained Door
+
+- Child: `01a103d7-2126-7733-b898-99e97195de7b`, same-directory shared checkout.
+- Brief: [Promotion 02, revision 1](promotion-02-studio-retained-door.md).
+- Approval: Shawn's "yes" in hub turn
+  `01a103d6-c391-71f3-97ea-8e3b79ddafca`, October 3, 2026, to starting the
+  existing Current Barre Studio retained-door update.
+- Baseline: `e6f3571a878fe250e1cb1a6409860671b5490169`, clean before preparation.
+- Scope: existing studio project/story, at most two non-identifying detail
+  images, proportionate checks and report. Person-visible torch image excluded
+  pending public-use approval. Dates and final installation remain qualified.
+- Workflow: COMPLETE for the bounded candidate implementation; hub review
+  accepted the deliverable on October 3, 2026. Shawn subsequently accepted the
+  content and authorized Git closeout; release approval remains separate.
+- Title: Content Promotion 1 - Task 02 Studio Retained Door - COMPLETE.
+- Dispatch: `TJ-CP-T02-D01`, sent once; execution observed.
+- Report: `TJ-CP-T02-R01` revision 1 received once at
+  `reports/promotion-02-studio-retained-door.md`; delivery RECEIVED. Shawn's
+  delivery-only approval verified in child turn
+  `01a103e7-a6ed-7cb2-9d20-3ba037e1009a`.
+- Hub review: `TJ-CP-T02-H01`; inspected story against the source journal,
+  both new image files and media records, test changes and exact file scope.
+  Original five gallery entries, search selections and occupancy are preserved.
+- Fresh hub checks: 121 website Node and 37 source/HTML tests passed; 137
+  Markdown files linted without issues; preview validated 18 pages, 55 files
+  and 327 references; whitespace checks passed. Child separately documented
+  desktop/390-pixel browser verification and repository/search test results.
+- Hub review baseline was `e6f3571a878fe250e1cb1a6409860671b5490169`.
+  Homepage, journal and release fingerprints are unchanged.
+- Shawn's "reviewed...approved...git er done...next?" on October 3, 2026
+  accepts the candidate and authorizes scoped Git closeout to
+  `origin/codex/concept-b-homepage`. Final commit and synchronization evidence
+  are reported in the hub reply.
+- Release-snapshot promotion remains the next approval gate. La Ciotat is the
+  next proposed content task, not yet started. No deployment, journal changes,
+  archival or successor execution authorized.
+
 ## Separate Follow-Up Identified
 
 The Task 01 report and the existing

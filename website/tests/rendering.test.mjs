@@ -114,6 +114,7 @@ test("each journal keeps one story heading and links to its project and archive"
 test("project photographs remain in approved order with captions and source links behind a working gallery jump", async () => {
   const { model } = await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
   const escapeHtml = value => value.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+  const escapeHtmlText = value => escapeHtml(value).replaceAll("'", "&#39;");
   for (const project of model.projects) {
     const page = await readFile(path.join(websiteRoot, ".preview-dist", project.href.slice(1), "index.html"), "utf8");
     assert.ok(page.includes('href="#project-photographs"'), `${project.id} lets visitors jump to photographs`);
@@ -126,7 +127,7 @@ test("project photographs remain in approved order with captions and source link
       assert.ok(figure.includes(`src="${escapeHtml(image.src)}"`), `${project.id} preserves image order`);
       assert.ok(figure.includes(`alt="${escapeHtml(image.alt)}"`));
       assert.ok(figure.includes(`href="${escapeHtml(image.sourceUrl)}"`));
-      if (image.caption) assert.ok(figure.includes(escapeHtml(image.caption)), `${project.id} preserves the caption`);
+      if (image.caption) assert.ok(figure.includes(escapeHtmlText(image.caption)), `${project.id} preserves the caption`);
     }
     assert.ok(page.includes(`href="${project.archiveHref}"`), `${project.id} retains its journal link`);
   }

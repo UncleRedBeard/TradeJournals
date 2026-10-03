@@ -3,7 +3,7 @@
   "id": "studio-office-restoration",
   "title": "Barre Studio — Current Room",
   "area": "01 / The Residence",
-  "summary": "The current barre studio and Repair Shop home, documented through the Home Reno - Studio | Office album.",
+  "summary": "The current barre studio and Repair Shop home, including the decision to retain and refinish an original solid-wood door.",
   "searchSummary": "Current barre studio evidence from the Home Reno - Studio | Office Flickr album, kept separate from the future studio renovation.",
   "tags": [
     "barre studio",
@@ -54,13 +54,23 @@
       "mediaId": "flickr-52705240320",
       "caption": "A wider room view with exposed floorboards, a cabinet, and work equipment.",
       "role": "context"
+    },
+    {
+      "mediaId": "flickr-52704581571",
+      "caption": "Finish is brushed across the door's dark, textured wood. The detail shows hand application, not the earlier torch treatment.",
+      "role": "process"
+    },
+    {
+      "mediaId": "flickr-52704058327",
+      "caption": "A close view records the checked char texture and its contrast with a lighter wood edge.",
+      "role": "detail"
     }
   ],
   "searchMediaIds": [
     "flickr-52705240435",
     "flickr-52705240380"
   ],
-  "introduction": "This room is the current home of the barre studio and Repair Shop. It remains the current room until the move to the renovated former living room is complete.",
+  "introduction": "This room remains the current home of the barre studio and Repair Shop. Alongside the room views, selected details follow the choice to keep an original solid-wood door and work its charred surface by hand.",
   "storyId": "studio-office-restoration",
-  "evidenceBoundary": "Selected photographs document this room and its retained finishes. Conflicting Flickr dates and mixed Office journal claims are not used to establish chronology or final door installation."
+  "evidenceBoundary": "The installed stripped-door photo predates the separate charred-finish treatment. These details do not establish that the finished door was reinstalled. The journal's 2022 heading conflicts with mostly February 2023 Flickr date labels, so the work is not presented as a dated sequence. This is the current studio, not the dedicated Office or future studio."
 }

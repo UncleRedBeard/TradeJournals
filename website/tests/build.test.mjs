@@ -42,11 +42,13 @@ test("candidate preview stages selected assets and writes the public model", asy
   ]);
   assert.deepEqual(result.model.home.workshopProjectIds, ["returning-to-clay", "agfa-isolette"]);
   assert.equal(model.projects.find(project => project.id === "office-restoration").gallery.length, 6);
-  assert.equal(model.projects.find(project => project.id === "studio-office-restoration").gallery.length, 5);
+  assert.equal(model.projects.find(project => project.id === "studio-office-restoration").gallery.length, 7);
   assert.equal(model.projects.find(project => project.id === "living-room-studio-restoration").gallery.length, 3);
   assert.equal(model.projects.find(project => project.id === "agfa-isolette").gallery.length, 6);
   await access(path.join(websiteRoot, ".generated/public/media/flickr-53921322250.jpg"));
   await access(path.join(websiteRoot, ".generated/public/media/flickr-53718846780.jpg"));
+  await access(path.join(websiteRoot, ".generated/public/media/flickr-52704581571.jpg"));
+  await access(path.join(websiteRoot, ".generated/public/media/flickr-52704058327.jpg"));
   await access(path.join(websiteRoot, ".generated/public/media/flickr-55449110843.jpg"));
   await access(path.join(websiteRoot, ".preview-dist/index.html"));
   await access(path.join(websiteRoot, ".preview-dist/work/studio-office-restoration/index.html"));
