@@ -109,12 +109,14 @@ Use this section to map the Flickr albums into evidence categories before writin
 - Camera make/model: `Canon PowerShot SD780 IS` appears in Flickr EXIF for selected `la ciotat` digital images; selected `R1-` images are 35mm film and do not expose camera make/model.
 - Format note: within this `La Ciotat` album, Flickr titles matching `la ciotat` are likely digital images and may include useful EXIF location data. Flickr titles beginning with `R1-` are 35mm film scans.
 - Candidate image types:
-  - Establishing image for La Ciotat: [la ciotat, photo 5489412430](https://www.flickr.com/photos/boocher/5489412430/in/album-72157626174678654)
-  - Strongest coastal or harbor frame: [R1-08767-0000](https://www.flickr.com/photos/boocher/52834975513/in/album-72157626174678654)
-  - Strongest street or architectural detail frame: [la ciotat, photo 5488818887](https://www.flickr.com/photos/boocher/5488818887/in/album-72157626174678654)
-  - Strongest 35mm film scan: [R1-08767-0000](https://www.flickr.com/photos/boocher/52834975513/in/album-72157626174678654/)
+  - Establishing image for La Ciotat: [la ciotat, photo 5489412430](https://www.flickr.com/photos/boocher/5489412430/in/album-72157626174678654) - close boat bows lead across dark blue water to a continuous row of pale waterfront façades. Their reflections connect the working harbor to the town and give the broad view a clear, readable structure.
+  - Coastal or harbor candidate: [R1-08767-0000](https://www.flickr.com/photos/boocher/52834975513/in/album-72157626174678654) - overlapping boats and the receding quay carry the eye toward a church and its reflection. Bright façades against blue water hold the harbor scene together despite the broad dark band at the left edge.
+  - Street or architectural-detail candidate: [la ciotat, photo 5488818887](https://www.flickr.com/photos/boocher/5488818887/in/album-72157626174678654) - paving, closed shop shutters, projecting signs, and window shutters form a corridor around three receding pedestrians. The shaded street and bright opening above create depth; this is a street-context image rather than an isolated building-detail study.
+  - 35mm film-character candidate: [R1-08767-0000](https://www.flickr.com/photos/boocher/52834975513/in/album-72157626174678654/) - the same harbor frame serves this second role through its softened detail, pale highlights, dark left strip, and reddish lower-left edge. These are visible qualities, not a diagnosis of their camera, exposure, or processing causes.
 - Notes:
-  - Pending photo-level review.
+  - Reviewed October 3, 2026: all 118 album images surveyed, with 100 in the first-page thumbnail grid and 18 in the second page's larger album display; the three retained candidates were also inspected separately on their photo pages. This is a bounded selection review, not full-resolution inspection or a definitive ranking of every frame.
+  - The album moves among promenade crowds and café tables, rocky shoreline and built sea edges, harbor boats and cranes, and narrow streets. Repeated subjects connect everyday travel observations with attention to paving, walls, shutters, nets, and reflections; the three selections condense that range into harbor context, photographic character, and street texture.
+  - Both selected `la ciotat` photo pages display `Canon PowerShot SD780 IS`, a February 6, 2011 taken date, and a March 1, 2011 upload date. The `R1-08767-0000` page displays an April 21, 2023 upload date but no taking-camera label or exposure date. These page observations do not constitute a fresh EXIF audit or establish when the film was exposed.
 
 ### La Ciotat - Skate Park
 

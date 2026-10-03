@@ -339,12 +339,64 @@ acceptance checkpoints. This record accompanies the scoped closeout commit;
 final commit identity and remote synchronization are verified and reported
 in the parent chat after push.
 
+## Review 1 - Task 07 La Ciotat
+
+- Exact child ID: `01a10257-7ac0-7142-a036-34c382b59cfb`.
+- Verified title: Review 1 - Task 07 La Ciotat - COMPLETE.
+- Runtime: exact child read back as idle after acceptance October 3, 2026.
+- Brief: [Task 07, revision 1](task-07-la-ciotat.md).
+- Environment: shared `codex/concept-b-homepage` at
+  `731153d36ec3327834a3f1e1b27484d90b948020`; unrelated website work excluded.
+- Scope: La Ciotat subsection and local candidates only, not Skate Park;
+  preserve all other France content, global selections, and existing metadata.
+- Dependencies/acceptance: survey recorded 118-photo album; inspect three
+  distinct existing candidates and supporting selections at page-display size;
+  state actual coverage, qualify digital/film evidence, verify links, lint,
+  whitespace, and unchanged out-of-scope content.
+- Approval: RECEIVED October 3, 2026: Shawn's "yes" to the explicit offer to
+  kick off Task 07 in a child; preparation, fork, and execution authorized.
+- Workflow status: COMPLETE (scoped result approved by Shawn and accepted by hub).
+- Dispatch: `TJ-CR-T07-A01`, SENT once; exact child returned by send and
+  observed active in the subsequent runtime snapshot.
+- User acceptance and report-send approval: "looks good...approved", child turn
+  `01a10271-5d3b-7063-8e52-8d014a996c18`, October 3, 2026, responding to the
+  completed result and explicit request to send the report to this parent.
+- Latest report: `TJ-CR-T07-R01`, revision 1,
+  [Task 07 report](reports/task-07-la-ciotat.md).
+- Report delivery: RECEIVED October 3, 2026; reconciled once as
+  `TJ-CR-T07-H01`. The report's pending acceptance text is a delivery snapshot;
+  this register records current acceptance.
+- Hub review: ACCEPTED October 3, 2026. Verified approval, scoped journal diff,
+  report, and child's browser-inspection record: 100 grid images plus 18 larger
+  album-display images surveyed, with three candidates separately inspected on
+  their photo pages. This audits the child's inspection record, not a separate
+  parent visual review. The three candidates remain; source titles, camera and
+  date qualifiers, and the distinction between survey and close inspection are
+  preserved. No exhaustive ranking or processing diagnosis is claimed.
+- Checks: fresh `npm run lint:md` passed 110 files with zero errors;
+  `git diff --check` passed. Independent scope comparison confirmed all France
+  journal content outside La Ciotat byte-identical to the starting baseline.
+- Git state at acceptance: shared `codex/concept-b-homepage` at
+  `ef1d5e8303860d49b7ae6131b0596e2bce38660b`; Task 07 journal, brief, report,
+  and register remain uncommitted. Unrelated website/workflow changes are
+  present and excluded. No remote refresh, synchronization claim, commit, push,
+  publication, or next-task dispatch accompanies acceptance.
+- Title/register agreement: verified October 3, 2026; both COMPLETE.
+- Git closeout authorization: Shawn's subsequent "git er done", October 3,
+  2026, covers the Task 07 journal, brief, report, and parent register only.
+  Destination: established `git@github.com:UncleRedBeard/TradeJournals.git`,
+  tracked `codex/concept-b-homepage` branch. Unrelated website work is excluded.
+- Closeout preflight: fresh fetch confirmed `0 0` at
+  `ef1d5e8303860d49b7ae6131b0596e2bce38660b`. All 84 Python tests, Markdown
+  lint (111 files), manifest currency, five Python and five JavaScript site
+  checks, and whitespace checks passed. This entry accompanies the scoped
+  commit; final commit identity and synchronization are reported after push.
+
 ## Remaining Unprepared Backlog
 
 These items remain unstarted in this hub. No children are being prepared for
 them by the current request.
 
-- Task 07: France - La Ciotat.
 - Task 08: France - La Ciotat: Skate Park.
 - Task 09: France - Marseille.
 - Task 10: France - Cassis.
@@ -357,7 +409,7 @@ The Task 01 report and the existing
 older Office journal sections that still attribute the current barre studio's
 floor/door work to the dedicated Office. Correcting or reassigning those sections
 was outside Task 01. The issue is retained for Shawn's scope decision; no new
-task has been created or started. Five of the original eleven editorial review
+task has been created or started. Four of the original eleven editorial review
 markers remain.
 
 Task 03 also flags the El Toro catalog's 35mm classification versus `(120)` film
@@ -404,3 +456,8 @@ remain separate follow-ups, not reopened photo reviews.
 | 2026-10-02 | 06 | TJ-CR-T06-U01 | "reviewed and approved", child turn `01a0ff5c-9951-7ce1-b14c-9b6915f85cba` | Result and report delivery approved |
 | 2026-10-02 | 06 | TJ-CR-T06-H01 | Report `TJ-CR-T06-R01` received via `TJ-CR-T06-D01`; approval, scope, coverage, preservation, checks, and title verified | Accepted COMPLETE; no Git closeout or next task |
 | 2026-10-03 | 04-06 | TJ-CR-T04-T06-G01 | Shawn's "git er done"; reviewed nine scoped files, checks and remote preflight passed | Combined scoped closeout authorized; unrelated website work excluded |
+| 2026-10-03 | 07 | TJ-CR-T07-P01 | Shawn's "yes" to Task 07 child kickoff | Preparation, fork, and scoped execution approved |
+| 2026-10-03 | 07 | TJ-CR-T07-A01 | Exact fork/title verified; dispatch sent once; active child turn observed | IN PROGRESS; no Git closeout or successor authorized |
+| 2026-10-03 | 07 | TJ-CR-T07-U01 | "looks good...approved", child turn `01a10271-5d3b-7063-8e52-8d014a996c18` | Result and report delivery approved |
+| 2026-10-03 | 07 | TJ-CR-T07-H01 | Report `TJ-CR-T07-R01` received; approval, scoped diff, inspection record, checks, and title verified | Accepted COMPLETE; no Git closeout or next task |
+| 2026-10-03 | 07 | TJ-CR-T07-G01 | Shawn's "git er done"; scoped changes, required checks, and fresh remote state verified | Task 07 closeout authorized; unrelated website work excluded |
