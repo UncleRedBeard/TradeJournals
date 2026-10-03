@@ -190,14 +190,160 @@ Information boundary: TradeJournals craft and public evidence only.
   accompanies the scoped commit; final commit identity and synchronization are
   verified and reported in the parent chat after push.
 
+## Review 1 - Task 04 SXSW 2011 Part 1
+
+- Exact child ID: `01a0ff17-e0a5-7913-8288-3629793f8df4`.
+- Verified title: Review 1 - Task 04 SXSW Part 1 - COMPLETE.
+- Runtime: exact child read back as idle after acceptance on October 2, 2026.
+- Environment: same-directory shared `codex/concept-b-homepage` checkout at
+  `0225667b59339ea2a8bb82e00d59b3c98e886aca`; unrelated website work excluded.
+- Brief: [Task 04, revision 1](task-04-sxsw-part-1.md).
+- Scope: SXSW Part 1 review section and its representative field only;
+  preserve El Toro, Part 2, shared fields, catalog, and website work.
+- Dependencies/acceptance: inspect the 17 recorded Flickr photos where
+  accessible; state coverage, use stable source IDs and attributed metadata,
+  qualify camera/format uncertainty, and pass Markdown/link/whitespace checks.
+- Execution approval: RECEIVED directly in this hub, October 2, 2026:
+  "kickoff task task 4"; authorizes preparation, fork, and scoped start.
+- Workflow status: COMPLETE (scoped result approved by Shawn and accepted by hub).
+- Dispatch: `TJ-CR-T04-A01`, SENT once; exact child returned by send and
+  observed active in the subsequent runtime snapshot.
+- User acceptance and report-send approval: "reviewed and approved", child turn
+  `01a0ff25-9cf7-7f51-beeb-ade0c12c5dab`, October 2, 2026, responding to the
+  completed result and explicit request to send the report to this parent.
+- Latest report: `TJ-CR-T04-R01`, revision 1,
+  [Task 04 report](reports/task-04-sxsw-part-1.md).
+- Report delivery: RECEIVED via `TJ-CR-T04-D01`; reconciled once as
+  `TJ-CR-T04-H01`. The report retains its delivery snapshot; this register
+  records current acceptance.
+- Hub review: ACCEPTED October 2, 2026. Verified user approval, scoped diff,
+  report, and child's browser-inspection record for all 17 Flickr photographs
+  and the selected Lomography counterpart. This audits the child's inspection,
+  not an independent parent visual review. Only Part 1 and its representative
+  field changed in the journal; accepted El Toro, Part 2, and shared fields
+  remain unchanged. Selected Flickr `5556099221` is linked to Lomography
+  `12915139`; cross-platform coverage, camera/format uncertainty, dates, and
+  inspection limits are explicit.
+- Checks: fresh `npm run lint:md` passed 101 files, zero errors;
+  `git diff --check` passed. Child separately verified nine local links and
+  unchanged out-of-scope journal sections.
+- Git state at acceptance: shared `codex/concept-b-homepage` at
+  `0225667b59339ea2a8bb82e00d59b3c98e886aca`; Task 04 changes are uncommitted.
+  Unrelated website work remains excluded. No remote refresh, Git closeout,
+  publication, next task, or return message accompanies this acceptance.
+- Title/register agreement: exact COMPLETE title and idle runtime read back
+  October 2, 2026; register records the same accepted outcome.
+
+## Review 1 - Task 05 SXSW 2011 Part 2
+
+- Exact child ID: `01a0ff2a-6c8f-71c1-b0c4-c1335662fdfb`.
+- Verified title: Review 1 - Task 05 SXSW Part 2 - COMPLETE.
+- Runtime: exact child read back as idle after acceptance on October 2, 2026.
+- Brief: [Task 05, revision 1](task-05-sxsw-part-2.md).
+- Environment: shared `codex/concept-b-homepage` at
+  `0225667b59339ea2a8bb82e00d59b3c98e886aca`, plus accepted uncommitted Task 04
+  in the same journal; preserve those changes and unrelated website work.
+- Scope: Part 2 section and representative field only. Inspect seven recorded
+  Flickr photos where accessible; record coverage, qualify source metadata and
+  year/format conflicts, verify links, lint, whitespace, and unchanged neighbors.
+- Approval: RECEIVED directly in hub on October 2, 2026: "kick off task 5".
+  Authorizes preparation, fork, and scoped execution, not Git closeout.
+- Workflow status: COMPLETE (scoped result approved by Shawn and accepted by hub).
+- Dispatch: `TJ-CR-T05-A01`, SENT once; exact child returned by send and
+  observed active in the subsequent runtime snapshot.
+- User acceptance and report-send approval: "reviewed and approved", child turn
+  `01a0ff3e-897d-72a2-8df4-4ca878ed6864`, October 2, 2026, following the result
+  and explicit request to send the report to the parent.
+- Latest report: `TJ-CR-T05-R01`, revision 1,
+  [Task 05 report](reports/task-05-sxsw-part-2.md).
+- Report delivery: RECEIVED via `TJ-CR-T05-D01`; reconciled once as
+  `TJ-CR-T05-H01`. The report retains its delivery snapshot; current acceptance
+  is recorded here.
+- Hub review: ACCEPTED October 2, 2026. Verified user approval, journal diff,
+  report, and child browser-inspection record for all seven Flickr photographs
+  and selected Lomography counterpart. This audits the child's inspection,
+  not a separate parent visual review. Part 1 matches the previously accepted
+  result; the child also reports direct comparison to its starting working copy.
+  Only Part 2 and its representative field were added by Task 05. Selected
+  Flickr `5556961580` is linked to Lomography `12915508`; year, format, dates,
+  optical settings, and cross-platform coverage limits remain explicit.
+- Checks: fresh `npm run lint:md` passed 103 files, zero errors;
+  `git diff --check` passed. Child separately verified nine local links and
+  preservation of all out-of-scope journal content against its starting copy.
+- Git state at acceptance: shared `codex/concept-b-homepage` at
+  `6042f00416a2d04382dbc57f249bbd15c1d315b8`. This supersedes the preparation
+  baseline as a current observation only. Task 04 and Task 05 changes remain
+  uncommitted; no website changes appear in current status. No remote refresh,
+  Git closeout, publication, next task, or return message accompanies acceptance.
+- Title/register agreement: exact COMPLETE title and idle runtime read back
+  October 2, 2026; register records the same accepted outcome.
+
+## Review 1 - Task 06 Mini Diana France
+
+- Exact child ID: `01a0ff4f-e84f-7c03-adad-55210d848bbf`.
+- Verified title: Review 1 - Task 06 Mini Diana France - COMPLETE.
+- Runtime: exact child read back as idle after acceptance October 2, 2026.
+- Brief: [Task 06, revision 1](task-06-mini-diana-france.md).
+- Environment: shared `codex/concept-b-homepage` at
+  `6042f00416a2d04382dbc57f249bbd15c1d315b8`; preserve uncommitted Tasks 04-05.
+- Scope: Mini Diana subsection review and its three local candidate selections
+  only. Preserve global rankings, other France sections, sidecars, and metadata.
+- Dependencies/acceptance: survey the recorded 63-photo album, inspect selected
+  evidence at page-display size, state exact coverage and limits, and verify
+  source IDs, links, lint, whitespace, and unchanged out-of-scope content.
+- Approval: RECEIVED directly in hub October 2, 2026: "kickoff task 06";
+  authorizes preparation, fork, and scoped start, not Git closeout.
+- Workflow status: COMPLETE (scoped result approved by Shawn and accepted by hub).
+- Dispatch: `TJ-CR-T06-A01`, SENT once; exact child returned by send and
+  observed active in the subsequent runtime snapshot.
+- User acceptance and report-send approval: "reviewed and approved", child turn
+  `01a0ff5c-9951-7ce1-b14c-9b6915f85cba`, October 2, 2026, following the result
+  and explicit request to send the report to this parent.
+- Latest report: `TJ-CR-T06-R01`, revision 1,
+  [Task 06 report](reports/task-06-mini-diana-france.md).
+- Report delivery: RECEIVED via `TJ-CR-T06-D01`; reconciled once as
+  `TJ-CR-T06-H01`. The report may retain its delivery snapshot; current
+  acceptance is recorded here.
+- Hub review: ACCEPTED October 2, 2026. Verified approval, scoped diff, report,
+  and child's browser-inspection record: all 63 thumbnails surveyed, three
+  retained candidates inspected at page-display size. This audits the child's
+  inspection, not a separate parent visual review. No exhaustive larger-image
+  review or definitive ranking is claimed. Only the Mini Diana subsection
+  changed; global selections, other France sections, metadata, and sidecars
+  remain outside the diff. The overlap journal's SHA-256 matches the report's
+  execution-start hash, independently confirming Tasks 04-05 were preserved.
+- Checks: fresh `npm run lint:md` passed 107 files, zero errors;
+  `git diff --check` passed. Child separately verified eight local links and
+  unchanged France content outside the subsection.
+- Git state at acceptance: shared `codex/concept-b-homepage` at
+  `6042f00416a2d04382dbc57f249bbd15c1d315b8`; Tasks 04-06 remain uncommitted.
+  Concurrent website changes are present and excluded. No remote refresh,
+  Git closeout, publication, next task, or return message accompanies acceptance.
+- Title/register agreement: exact COMPLETE title and idle runtime read back
+  October 2, 2026; register records the same accepted outcome.
+
+## Tasks 04-06 Git Closeout
+
+Shawn authorized the accepted Tasks 04-06 closeout with "git er done" in this
+parent on October 3, 2026 (America/Chicago). Scope: the two reviewed lens journals,
+three briefs, three reports, and this parent register. Destination: established
+`git@github.com:UncleRedBeard/TradeJournals.git` remote, existing tracked branch
+`codex/concept-b-homepage`. Unrelated website/workflow changes are excluded;
+no merge, deployment, publication, or successor task is authorized.
+
+Fresh fetch confirmed `0 0` at `6042f00416a2d04382dbc57f249bbd15c1d315b8`.
+All 84 Python tests passed; Markdown lint passed 107 files; the site-evidence
+manifest was current; five Python and five JavaScript site checks passed;
+whitespace checks passed. The prior per-task Git states remain historical
+acceptance checkpoints. This record accompanies the scoped closeout commit;
+final commit identity and remote synchronization are verified and reported
+in the parent chat after push.
+
 ## Remaining Unprepared Backlog
 
 These items remain unstarted in this hub. No children are being prepared for
 them by the current request.
 
-- Task 04: Lomography - SXSW 2011: Part 1.
-- Task 05: Lomography - SXSW 2011: Part 2.
-- Task 06: France - Mini Diana Goes To France.
 - Task 07: France - La Ciotat.
 - Task 08: France - La Ciotat: Skate Park.
 - Task 09: France - Marseille.
@@ -211,12 +357,17 @@ The Task 01 report and the existing
 older Office journal sections that still attribute the current barre studio's
 floor/door work to the dedicated Office. Correcting or reassigning those sections
 was outside Task 01. The issue is retained for Shawn's scope decision; no new
-task has been created or started. Eight of the original eleven editorial review
+task has been created or started. Five of the original eleven editorial review
 markers remain.
 
 Task 03 also flags the El Toro catalog's 35mm classification versus `(120)` film
 label. Resolving that source conflict is separate from the completed bounded
 photo review; no catalog-wide correction has been authorized.
+Task 04 flags the same Diana F+ 35mm rule versus `(120)` metadata conflict in
+SXSW Part 1; it remains a separate catalog follow-up, not a reopened review.
+Task 05 records the Diana Mini 35mm classification versus `(120)` film label
+and 2010 metadata versus the 2011 album title. Those source conflicts likewise
+remain separate follow-ups, not reopened photo reviews.
 
 ## Event Log
 
@@ -240,3 +391,16 @@ photo review; no catalog-wide correction has been authorized.
 | 2026-10-02 | 03 | TJ-CR-T03-U01 | "reviewed and approved", turn `01a0ff0d-5d0f-7580-a37b-b10dac79f95d` | Result and report delivery approved |
 | 2026-10-02 | 03 | TJ-CR-T03-H01 | Report `TJ-CR-T03-R01` received via `TJ-CR-T03-D01`; approvals, scoped diff, inspection record, checks, and title verified | Accepted COMPLETE; no Git closeout or next task |
 | 2026-10-02 | 03 | TJ-CR-T03-G01 | Shawn's "git er done"; fresh checks and remote state verified | Scoped closeout authorized on tracked branch; unrelated work excluded |
+| 2026-10-02 | 04 | TJ-CR-T04-P01 | Shawn's "kickoff task task 4" in this hub | Preparation, fork, and scoped execution approved; dispatch pending |
+| 2026-10-02 | 04 | TJ-CR-T04-A01 | Exact fork/title verified; approved dispatch sent once; active child turn observed | IN PROGRESS; no Git closeout or successor authorized |
+| 2026-10-02 | 04 | TJ-CR-T04-U01 | "reviewed and approved", child turn `01a0ff25-9cf7-7f51-beeb-ade0c12c5dab` | Result and report delivery approved |
+| 2026-10-02 | 04 | TJ-CR-T04-H01 | Report `TJ-CR-T04-R01` received via `TJ-CR-T04-D01`; approval, scoped diff, inspection record, checks, and title verified | Accepted COMPLETE; no Git closeout or next task |
+| 2026-10-02 | 05 | TJ-CR-T05-P01 | Shawn's "kick off task 5" | Preparation, fork, and scoped execution approved; preserve uncommitted Task 04 |
+| 2026-10-02 | 05 | TJ-CR-T05-A01 | Exact fork/title verified; dispatch sent once; active child turn observed | IN PROGRESS; no Git closeout or successor authorized |
+| 2026-10-02 | 05 | TJ-CR-T05-U01 | "reviewed and approved", child turn `01a0ff3e-897d-72a2-8df4-4ca878ed6864` | Result and report delivery approved |
+| 2026-10-02 | 05 | TJ-CR-T05-H01 | Report `TJ-CR-T05-R01` received via `TJ-CR-T05-D01`; approval, scoped result, preservation, checks, and title verified | Accepted COMPLETE; no Git closeout or next task |
+| 2026-10-02 | 06 | TJ-CR-T06-P01 | Shawn's "kickoff task 06" | Preparation, fork, and scoped execution approved; no Git closeout |
+| 2026-10-02 | 06 | TJ-CR-T06-A01 | Exact fork/title verified; dispatch sent once; active child observed | IN PROGRESS; prior uncommitted tasks protected |
+| 2026-10-02 | 06 | TJ-CR-T06-U01 | "reviewed and approved", child turn `01a0ff5c-9951-7ce1-b14c-9b6915f85cba` | Result and report delivery approved |
+| 2026-10-02 | 06 | TJ-CR-T06-H01 | Report `TJ-CR-T06-R01` received via `TJ-CR-T06-D01`; approval, scope, coverage, preservation, checks, and title verified | Accepted COMPLETE; no Git closeout or next task |
+| 2026-10-03 | 04-06 | TJ-CR-T04-T06-G01 | Shawn's "git er done"; reviewed nine scoped files, checks and remote preflight passed | Combined scoped closeout authorized; unrelated website work excluded |

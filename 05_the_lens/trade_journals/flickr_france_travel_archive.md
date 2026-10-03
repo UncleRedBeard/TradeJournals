@@ -95,11 +95,13 @@ Use this section to map the Flickr albums into evidence categories before writin
 - Review focus: camera/format character, travel movement, and images that feel distinct from the location-specific albums.
 - Camera make/model: selected images do not expose camera make/model in Flickr EXIF; `R1-08778-0010` is a 35mm film image.
 - Candidate image types:
-  - Strongest example of Mini Diana visual character: [La Turbie](https://www.flickr.com/photos/boocher/5523277913/in/album-72157626126978837)
-  - Best standalone travel frame: [Roquebrune-Cap-Martin](https://www.flickr.com/photos/boocher/5521039852/in/album-72157626126978837)
-  - Best image that bridges this album with the broader France archive: [R1-08778-0010](https://www.flickr.com/photos/boocher/52843441870/in/album-72157626126978837)
+  - Photographic-character candidate: [La Turbie](https://www.flickr.com/photos/boocher/5523277913/in/album-72157626126978837) - the upward view turns stone columns into broad, luminous forms with softened, doubled contours beneath a dark curved cornice and blue sky.
+  - Standalone travel candidate: [Roquebrune-Cap-Martin](https://www.flickr.com/photos/boocher/5521039852/in/album-72157626126978837) - the diagonal tomb roof and repeated crosses carry the eye from close masonry through the hillside to the sea; the open sky gives the dense foreground room to breathe.
+  - Visual bridge to the wider France archive: [R1-08778-0010](https://www.flickr.com/photos/boocher/52843441870/in/album-72157626126978837) - a wall lantern, warm plaster, gray stone, and greenery frame a receding village lane. Its soft edges preserve the album's character while the architecture connects it to the place-focused records; this is a visual relationship, not a cross-album identity claim.
 - Notes:
-  - Pending photo-level review.
+  - Reviewed October 2, 2026: all 63 album images surveyed at thumbnail size; the three retained candidates inspected separately at page-display size. This is a bounded selection review, not full-resolution inspection or a definitive ranking of every frame.
+  - The sequence moves between cemetery and coastal outlooks, upward views of stone monuments, and enclosed lanes, doors, and passages. Repeated subjects with changing softness, pale highlights, and warm-to-cool color make the travel feel like a series of looking, turning, and passing through, rather than a comprehensive record of one location.
+  - Describe those effects as visible qualities, not proof of a particular camera, exposure technique, or processing method. Flickr supplies the place labels; the `R1-08778-0010` page displays an April 24, 2023 upload date, which does not establish when the photograph was exposed.
 
 ### La Ciotat
 
