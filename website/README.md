@@ -51,11 +51,13 @@ the existing text-safe search script, ranking and fallback remain unchanged.
 
 Clone the complete TradeJournals repository. The build reads selected journals,
 inventories, media, and scripts outside `website/`; copying that directory
-alone is insufficient. The approved website lives on the repository's default
-`main` branch:
+alone is insufficient. The accepted Concept B candidate is on
+`codex/concept-b-homepage`; `main` still contains the previous release.
+Task 15 verifies candidate baseline `ef1d5e8303860d49b7ae6131b0596e2bce38660b`.
+To obtain that candidate branch:
 
 ```sh
-git clone --branch main <repository-url> TradeJournals
+git clone --branch codex/concept-b-homepage <repository-url> TradeJournals
 cd TradeJournals
 ```
 
@@ -71,8 +73,10 @@ python3 --version
 npm --prefix website ci
 ```
 
-`node --version` must report `v24.21.0`. Task 08's clean-checkout proof used
+`node --version` must report `v24.21.0`. The clean-checkout verification uses
 Python 3.13.7; the source syntax requires Python 3.10 or newer.
+For repository-wide Markdown lint, also run `npm ci` at the repository root,
+then `npm run lint:md`. Website dependencies alone do not install that linter.
 
 ## Test And Build A Candidate
 
@@ -112,7 +116,7 @@ checker update. Styles are explicitly inlined in HTML, including as they grow.
 The checker accepts safe HTTPS story citations and verifies required evidence
 source-link identities without live Flickr requests;
 recorded album counts remain local evidence, not fresh platform counts.
-The homepage embeds its Cormorant Garamond fonts in the CSS and includes their
+Every page embeds its Cormorant Garamond fonts in the CSS and includes their
 license in an inert HTML template. Font files and the original license live in
 `src/styles/fonts/`; visitors make no external font requests.
 
@@ -147,6 +151,12 @@ node website/scripts/check-output.mjs dist
 The release command refuses candidate or stale content. A successful run writes
 the verified public package to `website/dist/`.
 
+The standalone checker reads the prepared model from the most recent build.
+Run it immediately after the matching build: `check:website` does this for the
+preview; the two commands above do it for the release. To inspect both retained
+outputs independently, prepare each mode's model and pass it to `checkOutput`,
+as recorded in the [Task 15 report](../docs/website-workflow/reports/task-15-integrated-release-review.md).
+
 ## Eventual Static Hosting
 
 Upload the **contents** of `website/dist/` to the hosting account's document
@@ -162,10 +172,11 @@ message, or edits journal records.
 
 ## Release Checklist
 
-These checked items record the earlier expanded release. The October 2 approval
-of the Concept B homepage and three changed review fingerprints is recorded in
-the [release review](docs/pilot-editorial-review.md). Use the current build and
-review report to determine readiness after further changes.
+The [release review](docs/pilot-editorial-review.md) records the content approval
+and accepted Concept B homepage, shared frame, project galleries, journals and
+archive. The [Task 15 report](../docs/website-workflow/reports/task-15-integrated-release-review.md)
+records integrated verification of the candidate branch. These are local
+readiness records; they do not mean the branch is merged or the site deployed.
 
 - [x] The first release uses a disabled `Email us — coming soon` placeholder.
 - [ ] Replace the placeholder with an approved `mailto:` action after a public

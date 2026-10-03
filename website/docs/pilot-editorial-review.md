@@ -1,6 +1,16 @@
 # Expanded Website Release Review
 
-Status: APPROVED — expanded reviewed snapshot recorded September 20, 2026.
+Current status: Concept B presentation and Task 15 integrated verification
+accepted by Shawn on October 3, 2026. The candidate remains on
+`codex/concept-b-homepage`; `main` contains the prior release. See the
+[Task 15 report](../../docs/website-workflow/reports/task-15-integrated-release-review.md)
+for current checks and working local review links.
+
+The sections below preserve the dated content approvals and earlier release
+results. Earlier design descriptions, project ordering and port 8138 links
+are historical; the October 3 section records the current presentation.
+
+## September 20 Approved Expanded Snapshot
 
 Earlier approvals remain in force for Toil & Timber Restoration, the restrained
 green-and-limestone presentation, the exact service line, the future-studio
@@ -160,5 +170,25 @@ zero changed keys. The exact `pilot.json` file has SHA-256
 The full website suite passed 118 Node and 37 Python tests. Candidate and
 guarded release builds each validated 18 pages, 52 files, and 236 references.
 The candidate retains a review notice and `noindex, nofollow`; the release
-output has neither. The inquiry control remains disabled. The rest of the
-site's Concept B visual update remains pending, as do hosting and deployment.
+output has neither. The inquiry control remains disabled. At that checkpoint,
+the rest of the site's Concept B visual update, hosting and deployment were
+still pending.
+
+## October 3 Integrated Concept B Review
+
+Tasks 12–14 are accepted COMPLETE: the shared header/footer and local fonts,
+project pages and full-image galleries, journal reading layout, and archive
+with static and dynamic search results now share the accepted Concept B
+presentation. The homepage leads with the future living-room studio, followed
+by Entry, Guest Bath and Master Bedroom; clay and film remain secondary.
+
+Task 15 verifies committed baseline
+`ef1d5e8303860d49b7ae6131b0596e2bce38660b` as one static release candidate,
+including an independent fresh checkout. Its report records the exact runtime,
+tests, package checks, browser sample and any remaining limitations. Task 15
+does not change the reviewed snapshot, public copy, images or source records.
+
+The future studio, current studio and dedicated Office remain separate; the
+move remains unconfirmed. Inquiries remain disabled. Merging the branch,
+hosting/domain selection, upload/deployment and any public contact activation
+remain separate decisions.

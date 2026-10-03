@@ -8,15 +8,16 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: October 2, 2026. The Concept B homepage is approved and
-committed at `6a528e3`. Tasks 12 and 13 are accepted COMPLETE. Shawn then said
-`git er done`, authorizing their scoped commit and push to the established
-`origin/codex/concept-b-homepage` branch. This closeout includes the shared
-frame, project presentation, tests and website workflow records. Concurrent
-content-review work remains excluded. Task 14 is now accepted COMPLETE;
-merge, deployment
-and archival remain separate. Earlier branch, uncommitted and authorization
-statements below describe their original checkpoints.
+Current checkpoint: October 3, 2026. Tasks 12-15 are accepted COMPLETE.
+Tasks 12-14 implementation is committed and pushed through `ef1d5e8` on
+`codex/concept-b-homepage`; the 11 previously approved completed chats were
+archived. Task 15 verified the integrated release and fresh-checkout reproduction;
+Shawn approved directly in its child and the hub reconciled that acceptance.
+Task 15 documentation and hub bookkeeping remain uncommitted. The independent
+La Ciotat closeout advanced HEAD to `082520c` without website changes. Three high
+build-dependency audit findings remain maintenance follow-up. Hosting/domain,
+Git integration, deployment and inquiry activation remain separate. Earlier
+branch, uncommitted and authorization statements below are historical.
 
 Integration checkpoint: September 20, 2026. Shawn approved the hub's recommended
 flow to update clone instructions, fast-forward the completed website work into
@@ -663,7 +664,7 @@ said `ok, let's get started in stages. you already know our workflow.` here.
 | 12 | Shared header/footer, navigation and styling foundation | COMPLETE |
 | 13 | Project pages and galleries | COMPLETE |
 | 14 | TradeJournal reading pages and archive/search presentation | COMPLETE |
-| 15 | Integrated site verification and release review | Planned; not created or started |
+| 15 | Integrated site verification and release review | COMPLETE |
 
 Each child returns for hub review and Shawn's acceptance before the next task
 starts. Prior full-site design approval is preserved; each start remains bounded.
@@ -792,6 +793,36 @@ Completion Evidence, office storage layout and Dashboard Launcher. Task 15,
 merge and deployment are not started by this closeout. Verify push and archival
 results in the hub after execution; this entry records authorization only.
 
+### Website 2 — Task 15 Integrated Release Review
+
+- Child: `01a10263-fe12-7673-bb16-067cb5e4f7ff`.
+- Brief: [Task 15, revision 1](task-15-integrated-release-review.md).
+- Approval: Shawn said `kick off task 15` in the hub October 3, 2026.
+- Dispatch: `WK-WEB-T15-D01` — SENT once; child active turn
+  `01a10265-f4d4-7e71-9475-8e4261b9216b` observed after dispatch.
+- Scope: integrated browser/build verification, fresh-checkout reproduction,
+  bounded fixes for observed failures, and current maintainer/release docs.
+- Environment: same-directory fork on `codex/concept-b-homepage` at `ef1d5e8`;
+  Tasks 12-14 accepted and pushed, latest sync verified `0 0`. Completed-chat
+  archival verified for all 11 approved IDs. Active La Ciotat work is preserved.
+- Report: `WK-WEB-T15-R01`, revision 1, RECEIVED once at
+  [integrated release review](reports/task-15-integrated-release-review.md).
+- Acceptance: Shawn directly said `looks good...approved` in the exact child,
+  turn `01a10277-dae3-71a3-bc1c-4da9945ad307`; hub verified the user message.
+  Acceptance `WK-WEB-T15-A01`; reconciliation `WK-WEB-T15-H01`.
+- Workflow status: COMPLETE. Exact child title:
+  Website 2 - Task 15 Release Review - COMPLETE.
+- Hub review: inspected docs, screenshots, fresh-checkout proof, audit assessment
+  and logs recording 121 Node / 37 Python tests in both checkouts. Independently
+  checked both retained outputs: 18 pages, 52 files, 318 references each; current
+  review and zero changed keys. Compared every output file with the fresh
+  checkout: both modes byte-identical. No website implementation changes.
+- Remaining follow-up: three high build-dependency package findings; dependencies
+  absent from the verified static package. Task 15 documents remain uncommitted.
+  Concurrent La Ciotat commit `082520c` changes no website files.
+- No deployment, Git closeout/merge, snapshot refresh, contact activation,
+  archival or next task is authorized by this start.
+
 ## Remaining Decisions After The Pilot — Updated Direction
 
 ### Completed Task Archival
@@ -875,3 +906,16 @@ projects, hosting/domain and deployment remain later decisions.
 | 2026-09-19 16:03 | 07 | WK-WEB-T07-H03 | R01 revision 2 reports explicit save/build/publish approval and published draft revision 2; hub verifies three-room canonical records and 8-page/24-file output | Local application reconciled; review state and journals/inventories unchanged; tracked removals unstaged; no hosted deployment or Git closeout |
 
 | 2026-09-19 16:13 | 07 | WK-WEB-T07-G01 | Child reports git er done and task-scoped deletion approval; implementation commits pushed; hub confirms both HEAD/tracking hashes and 0 0 | Implementation synchronized; report revision 3 and two hub files handed back for authorized bookkeeping closeout; hub edits stop |
+
+| 2026-10-03 15:54 | 15 | WK-WEB-T15-H01 | R01 revision 1 received; direct child approval A01 verified; documentation, screenshots, test logs, matching-model output checks and byte-identical fresh outputs reviewed | Accepted COMPLETE; dependency maintenance retained; no Git closeout, merge, deployment, archival or successor |
+
+## Task 15 Git Closeout Authorization
+
+After Task 15 acceptance and hub reconciliation on October 3, 2026, Shawn said
+`git er done` in website updates. This authorizes validation, commit and push of
+the Task 15 brief/report, hub register, website README and release-review document
+to the established `origin/codex/concept-b-homepage` branch. Earlier statements
+that these documents remain uncommitted or that Git closeout is unauthorized
+record the pre-closeout checkpoint. No merge, deployment, inquiry activation,
+archival or successor task is included. Final commit and synchronization evidence
+will be reported in the hub after the push.
