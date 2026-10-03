@@ -136,12 +136,14 @@ Use this section to map the Flickr albums into evidence categories before writin
 - Review focus: city movement, port or harbor structure, street details, and architectural rhythm.
 - Camera make/model: `Canon PowerShot SD780 IS`, from Flickr EXIF on selected images.
 - Candidate image types:
-  - Establishing image for Marseille: [marseille, photo 5484904917](https://www.flickr.com/photos/boocher/5484904917/in/album-72157626040593925)
-  - Strongest street or city frame: [marseille, photo 5485880248](https://www.flickr.com/photos/boocher/5485880248/in/album-72157626040593925)
-  - Strongest architecture or detail frame: [marseille, photo 5485688876](https://www.flickr.com/photos/boocher/5485688876/in/album-72157626040593925)
-  - Image with the clearest camera/film character: [marseille, photo 5485688876](https://www.flickr.com/photos/boocher/5485688876/in/album-72157626040593925)
+  - Place-establishing candidate: [marseille, photo 5484904917](https://www.flickr.com/photos/boocher/5484904917/in/album-72157626040593925) - red, gray, and pale fishing nets fill the foreground beneath boat hulls, masts, and waterfront façades. Their loose texture contrasts with the upright rigging, connecting the harbor's working materials to its wider setting rather than offering a distant skyline alone.
+  - Street/city candidate: [marseille, photo 5485880248](https://www.flickr.com/photos/boocher/5485880248/in/album-72157626040593925) - bright tram rails and a sunlit curb converge into the distance beside a broad paved sidewalk. Cobbles, rectangular slabs, bollards, and small dark figures give the nearly monochrome view rhythm and depth; the open foreground makes the city feel quieter than the album's crowded pedestrian frames.
+  - Architecture/street-context candidate: [marseille, photo 5485688876](https://www.flickr.com/photos/boocher/5485688876/in/album-72157626040593925) - repeated café tables and chairs lead from a shaded foreground toward a brighter open street. Balcony rails, windows, lamps, and projecting awning arms connect the two sides of the frame; the architecture is shown through its relationship to everyday seating and passage, not as an isolated façade study.
+  - Photographic-character candidate: [marseille, photo 5485688876](https://www.flickr.com/photos/boocher/5485688876/in/album-72157626040593925) - the same terrace view uses monochrome tones, overlapping chair silhouettes, and a shaded-to-bright transition to organize a dense scene. These are visible qualities, not evidence of film, a particular camera mode, or a processing method.
 - Notes:
-  - Pending photo-level review.
+  - Reviewed October 3, 2026: all 93 photographs surveyed in the album grid, with the three retained candidates separately inspected on their photo pages at page-display size. This is a bounded selection review, not individual full-resolution inspection or a definitive ranking of every frame.
+  - The displayed sequence moves from harbor boats, nets, and stone waterfront edges through squares, café seating, street musicians, monuments, and pedestrian scenes. Repeated tram lines, paving, façades, long shadows, tilted framing, and softened detail shift the emphasis between place records and impressions of moving through the city. That is an editorial reading of the displayed order, not proof of the photographer's route or exposure chronology.
+  - All three candidate pages display `Canon PowerShot SD780 IS`, a February 27, 2011 taken date, and a February 28, 2011 upload date. These page observations are not a fresh EXIF audit and do not establish settings for the wider album. The album supplies the Marseille label; no exact-site, subject-identity, film-stock, or processing claim is inferred.
 
 ### Cassis
 
