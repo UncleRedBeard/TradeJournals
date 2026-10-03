@@ -750,6 +750,45 @@ authorized above; the follow-ups below are not automatically authorized.
   Final commit and synchronization are verified in the hub closeout response.
   No successor or deployment authorized.
 
+## Content Cleanup 1 - Task 05 Cassis Paris Attribution
+
+- Child: `01a10398-207a-7121-8bee-fc4986363864`, same-directory shared checkout.
+- Title: Content Cleanup 1 - Task 05 Cassis Paris Attribution - COMPLETE.
+- Brief: [Cleanup 05, revision 1](cleanup-05-cassis-paris-attribution.md).
+- Scope: attribution of shared photos `5483335414` and `5483340298` only,
+  Cassis/Paris journal passages plus report; no external album edits.
+- Baseline: `a9fbf07a65e2540d73d346f25a138455db9fe8d2`, clean before preparation,
+  branch `codex/concept-b-homepage`.
+- Approval: Shawn's "start the next task" in this hub, October 3, 2026;
+  turn `01a10397-c21f-7e03-85a4-6ac57fe1cd02`; creation and execution authorized
+  for the remaining Cassis/Paris overlap.
+- Workflow: COMPLETE (deliverable accepted by hub). Child was active in
+  turn `01a10399-6313-7250-9b57-2a4e0ce18a44` on October 3, 2026.
+- Dispatch: `TJ-CC-T05-D01`, sent once; execution observed.
+- Report: `TJ-CC-T05-R01` revision 2 at
+  `reports/cleanup-05-cassis-paris-attribution.md`; delivery RECEIVED October 3,
+  2026, once as `TJ-CC-T05-DEL01`.
+- Acceptance: supported attribution or explicit uncertainty, preserved accepted
+  work, Markdown lint, evidence-manifest and whitespace checks.
+- Hub review: ACCEPTED as `TJ-CC-T05-H01`, October 3, 2026. Actual two-note
+  journal diff and report inspected; Shawn's Cassis confirmation verified in
+  child turn `01a103a0-1659-78e2-a63e-cd4ea075c78a`. Both images are attributed
+  to Cassis on his recollection. Why they appear in Paris remains unknown;
+  exact lane/quay and external album changes are not claimed.
+- Report-send approval: "yes" in child turn
+  `01a103a3-ccf4-7811-8c4b-c26a979c65d9`; not content/Git approval.
+- Fresh hub checks: Markdown 133 files/zero issues, evidence manifest current,
+  `git diff --check` passed. Accepted selections and other sections unchanged;
+  parent reviewed child inspection record, not a fresh independent image audit.
+- User content acceptance and Git closeout approved October 3, 2026:
+  "approved and git er done" in this hub. Closeout `TJ-CC-T05-G01` covers the
+  journal, brief, report and register on the established origin branch. Final
+  commit and synchronization are verified in the hub closeout response.
+- Later user context: Shawn recalled manually uploading the photos many years
+  ago and said he most likely made an album-placement mistake. This is a likely
+  explanation, not a verified reconstruction; Cassis attribution is confirmed.
+- No successor, external album edit, deployment or archival authorized.
+
 ## Separate Follow-Up Identified
 
 The Task 01 report and the existing
