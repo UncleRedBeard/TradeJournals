@@ -75,16 +75,23 @@ npm --prefix website ci
 
 `node --version` must report `v24.21.0`. The clean-checkout verification uses
 Python 3.13.7; the source syntax requires Python 3.10 or newer.
-The root Markdown-lint tool has no committed root lockfile, so root `npm ci`
-does not work. Run its declared tool version through npm's package cache from
-the repository root; this avoids creating untracked root dependencies:
+Install the repository Markdown tooling separately from the repository root,
+using the same scoped Node runtime:
 
 ```sh
-npm exec --yes --package=markdownlint-cli2@0.22.0 -- npm run lint:md
+npm ci
+npm run lint:md
 ```
 
-Website dependencies alone do not install that linter. Task 16's report records
-its separate tooling-audit findings as well as the website dependency result.
+The root manifest pins `markdownlint-cli2` 0.23.3, and the root lockfile fixes its
+transitive versions. It requires Node 22 or newer; the scoped Node 24.21.0 above
+satisfies that requirement. Root `node_modules/` is ignored by Git and lint.
+The existing Markdown rules and authored-file coverage are preserved.
+
+Website dependencies remain separately locked and installed with
+`npm --prefix website ci`. The [Task 17 report](../docs/website-workflow/reports/task-17-markdown-tooling.md)
+records the tooling update and remaining upstream finding; Task 16 records the
+separate website dependency findings.
 
 ## Test And Build A Candidate
 

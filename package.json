@@ -11,6 +11,6 @@
     "check:website": "npm --prefix website run build:preview && npm --prefix website run check:output"
   },
   "devDependencies": {
-    "markdownlint-cli2": "^0.22.0"
+    "markdownlint-cli2": "0.23.3"
   }
 }

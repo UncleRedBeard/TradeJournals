@@ -4,6 +4,9 @@
 .DS_Store
 __pycache__/
 
+# Local repository Markdown tooling
+/node_modules/
+
 # Local Astro website dependencies and generated files
 website/node_modules/
 website/.runtime/

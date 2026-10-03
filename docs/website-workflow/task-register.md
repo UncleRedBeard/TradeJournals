@@ -8,7 +8,7 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: October 3, 2026. Tasks 12-16 are accepted COMPLETE.
+Current checkpoint: October 3, 2026. Tasks 12-17 are accepted COMPLETE.
 Tasks 12-14 implementation is committed and pushed through `ef1d5e8` on
 `codex/concept-b-homepage`; the 11 previously approved completed chats were
 archived. Task 15 verified the integrated release and fresh-checkout reproduction;
@@ -19,7 +19,8 @@ checkout. Task 16 dependency maintenance is accepted COMPLETE after Shawn said
 `accepted` in this hub on October 3, 2026. The verified devalue patch leaves two
 high website package findings for one unresolved upstream cache issue, plus
 seven high and one moderate findings in separate Markdown tooling. These remain
-follow-up; acceptance is not a clean-audit claim. Task 16 changes are uncommitted.
+follow-up; acceptance is not a clean-audit claim. Task 16 changes were committed and pushed at `2d566f0`, with verified
+`0 0`. Task 17 Markdown tooling is accepted; scoped Git closeout is authorized.
 Independent content-review work advanced HEAD to `715b2a1` without website
 changes. Hosting/domain, Git integration, deployment and inquiry activation
 remain separate. Earlier checkpoints below are historical.
@@ -671,6 +672,7 @@ said `ok, let's get started in stages. you already know our workflow.` here.
 | 14 | TradeJournal reading pages and archive/search presentation | COMPLETE |
 | 15 | Integrated site verification and release review | COMPLETE |
 | 16 | Dependency maintenance | COMPLETE |
+| 17 | Markdown tooling cleanup | COMPLETE |
 
 Each child returns for hub review and Shawn's acceptance before the next task
 starts. Prior full-site design approval is preserved; each start remains bounded.
@@ -968,3 +970,43 @@ patch, README, Task 16 brief/report and hub register to the established
 statements describe the pre-closeout checkpoint. Residual findings stay open;
 merge, deployment, archival and successor work remain separate. Final commit
 and synchronization evidence will be reported in the hub after the push.
+
+## Website 2 — Task 17 Markdown Tooling
+
+- Child: `01a102e5-9ee6-7281-b41f-8993cc70e4c3`.
+- Brief: [Task 17, revision 1](task-17-markdown-tooling.md).
+- Approval: Shawn said `kick off task 17` in this hub on October 3, 2026.
+- Scope: evaluate and update root linter, add locked reproducible installation,
+  preserve lint coverage and verify documentation/website compatibility.
+- Environment: same-directory fork on `codex/concept-b-homepage` at `59d6e31`;
+  clean checkout at preparation. Task 16 accepted and pushed at `2d566f0`.
+- Dispatch: `WK-WEB-T17-D01` — SENT once; child idle verified beforehand.
+  Active execution turn `01a102e6-7709-7242-9181-39da57ce8234` observed.
+- Workflow: COMPLETE; Shawn approved in the hub October 3, 2026. Exact title:
+  Website 2 - Task 17 Markdown - COMPLETE.
+- Report: `WK-WEB-T17-R01`, revision 1, RECEIVED once; reconciled as
+  `WK-WEB-T17-H01`: [Markdown tooling](reports/task-17-markdown-tooling.md).
+- Hub verification: current lint 121 files/zero issues, whitespace, both output
+  gates (18 pages/52 files/318 references), current snapshot and byte-identical
+  outputs pass. Old/new saved coverage matches 117 authored baseline files.
+  Root lock hash and clean-install logs agree; no website dependency changes.
+- Result: pinned CLI2 0.23.3 with root lock and install documentation. Root audit
+  eight findings to five high package findings for one unpatched braces issue.
+  Website cache/Astro issue stays separate. Changes uncommitted; no clean-audit
+  claim. Acceptance recorded below.
+- No content promotion, website redesign, inquiry activation, Git closeout,
+  merge, deployment, archival or successor start. Preserve concurrent reviews.
+
+## Task 17 Acceptance And Git Closeout
+
+Shawn said `approved and git er done` in website updates on October 3, 2026.
+Acceptance `WK-WEB-T17-A01` covers report `WK-WEB-T17-R01`, revision 1;
+hub reconciliation `WK-WEB-T17-H02` marks Task 17 COMPLETE. Remaining upstream
+findings stay documented and unresolved. Earlier pending/uncommitted statements
+record prior checkpoints.
+
+The same instruction authorizes validation, commit and push of the Task 17
+manifest/lock, exclusions, installation documentation, brief/report and hub
+register to `origin/codex/concept-b-homepage`. Preserve all concurrent Cassis
+content-review work. No merge, deployment, archival or successor is included.
+Final commit and synchronization evidence will be reported in the hub.

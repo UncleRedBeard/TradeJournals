@@ -41,9 +41,12 @@ The writing should make the hidden work legible: the structural stabilization, m
 
 All `.md` files should follow Markdown best practices and pass Markdownlint before changes are committed.
 
-Run:
+Use Node 22 or newer; the [website setup](website/README.md#repository-runtime-and-installation)
+provides the project's scoped Node 24.21.0. From the repository root, install the
+locked tooling once, then run lint after edits:
 
 ```sh
+npm ci
 npm run lint:md
 ```
 
