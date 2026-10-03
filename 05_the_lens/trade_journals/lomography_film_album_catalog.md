@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Catalog Lomography albums that represent film photography evidence across the lens archive. This entry separates 35mm Lomography plastic-camera albums, 120 film Agfa Isolette albums, and other film formats as they surface.
+Catalog Lomography albums that represent film photography evidence across the lens archive. This entry separates 35mm Lomography plastic-camera albums, 120 film work including Agfa Isolette and El Toro albums, and other film formats as they surface.
 
 ## Best of Film Work
 
@@ -56,15 +56,30 @@ The redscale palette works hard here in a good way. It gives the frame a nocturn
 - `Kodak Six-Three Pocket Bellows (circa 1913)` represents Kodak 616 film work.
 - `Smithville, TX` is mixed format: black-and-white images are 120 film, and all other images are 35mm film.
 - `SXSW 2011 - Part 1` is mixed by camera metadata: Diana F+ frames are 35mm per catalog rule, and Agfa Isolette frames are 120 film.
-- Any Lomography album or photo with `Diana F+` camera metadata should be treated as 35mm film work.
-- `first shots`, albums beginning with `NOUNS:`, `Roquebrune-Cap-Martin`, `South 1st Performance Auto`, `SXSW 2011 - Part 2`, `Caveau de la Huchette`, `Street Style`, `El Toro - Pinhole with Lens`, `Night Shots`, `Queer Bomb Austin 2012`, `queer bomb pt 2`, `East Side Showroom`, `East Side Locos`, `Paris en Rouge`, and `my hood` represent 35mm film work.
+- The existing catalog rule treats `Diana F+` camera metadata as 35mm film work, except for El Toro, confirmed as 120 by Shawn below. Other albums' classifications have not been reassessed in this correction.
+- `first shots`, albums beginning with `NOUNS:`, `Roquebrune-Cap-Martin`, `South 1st Performance Auto`, `SXSW 2011 - Part 2`, `Caveau de la Huchette`, `Street Style`, `Night Shots`, `Queer Bomb Austin 2012`, `queer bomb pt 2`, `East Side Showroom`, `East Side Locos`, `Paris en Rouge`, and `my hood` represent 35mm film work.
 - `Travelers` represents mostly 35mm film shot with Lomo plastic cameras.
+
+El Toro is classified as 120 film following Shawn's October 3, 2026 correction:
+"El Toro is a 120 format camera." This supersedes its earlier 35mm placement
+under the Diana F+ catalog rule.
+The [representative Lomography page](https://www.lomography.com/homes/texasredd/albums/1838417-el-toro-pinhole-with-lens/15964487)
+still labels the film `Lomography B&W 100 (120)` (checked October 3, 2026).
+El Toro is a special edition of the Diana F+, not a separate camera family.
+Lomography's [edition history](https://www.lomography.com/magazine/331216-the-diana-f-over-the-years)
+identifies it as a red, Spain-themed edition honoring bulls and matadors.
+The manufacturer's [Diana F+ specifications](https://shop.lomography.com/world/diana-f-camera-flash)
+describe 120 film, 12 or 16 square frames per roll, a removable 75mm lens,
+pinhole capability, and normal/Bulb shutter modes. These are camera capabilities,
+not confirmed settings for the El Toro photographs. The platform's generic
+Diana F+ camera label is consistent with the edition identity.
 
 ## 120 Film Albums
 
 | Album | Photos | Created/Uploaded | Camera / Format Evidence | Site Metadata | Public URL |
 | --- | ---: | --- | --- | --- | --- |
 | `Dance` | 4 | 2017-03-17 | 1961 Agfa Isolette, 120 film, per project note | Lomography exposes tags and download dimensions, but no camera or film metadata on the sampled photo pages. Tags include `#ballet`, `#enpointe`, `#pointe`, and `#pointeshoes`. | [Album](https://www.lomography.com/homes/texasredd/albums/2137404-dance) |
+| `El Toro - Pinhole with Lens` | 10 | 2012-05-03 | 120 format, confirmed by Shawn on 2026-10-03 | Camera: Lomography Diana F+ Camera & Flash; film: Lomography B&W 100 (120); location: Austin, United States. | [Album](https://www.lomography.com/homes/texasredd/albums/1838417-el-toro-pinhole-with-lens) |
 | `Isolette - First Shots` | 5 | 2026-06-16 verification | First representation of pictures taken with the 1961 Agfa Isolette. | Cataloged from logged-in album editor; photo-level metadata still needs review. | [Album](https://www.lomography.com/homes/texasredd/albums/1686440-isolette-first-shots) |
 | `New Orleans Oct 2016` | 12 | 2017-03-17 | 120 film, per project note | Lomography exposes upload date and download dimensions, but no camera, film, location, or tag metadata on the sampled photo pages. | [Album](https://www.lomography.com/homes/texasredd/albums/2137397-new-orleans-oct-2016) |
 | `X-Mas 2016 Smithville -> Sacramento Road Trip` | 9 | 2017-03-17 | All images were taken with the 1961 Agfa Isolette on 120 film. | Photo-level metadata still needs review. | [Album](https://www.lomography.com/homes/texasredd/albums/2137402-x-mas-2016-smithville-sacramento-road-trip) |
@@ -80,7 +95,6 @@ The redscale palette works hard here in a good way. It gives the frame a nocturn
 | Album | Photos | Created/Uploaded | Camera Metadata | Film Metadata | Location Metadata | Public URL |
 | --- | ---: | --- | --- | --- | --- | --- |
 | `Caveau de la Huchette` | 7 | 2011-03-29 | Lomography Diana F+ Camera & Flash | Lomography Color Negative 35 mm ISO 100 | Paris, France | [Album](https://www.lomography.com/homes/texasredd/albums/1691678-caveau-de-la-huchette) |
-| `El Toro - Pinhole with Lens` | 10 | 2012-05-03 | Lomography Diana F+ Camera & Flash | Lomography B&W 100 (120) | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1838417-el-toro-pinhole-with-lens) |
 | `East Side Locos` | 11 | 2011-03-24 | Lomography Diana F+ Camera & Flash | Kodak TMax 400 BW (expired 1991) | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1689900-east-side-locos) |
 | `East Side Showroom` | 8 | 2012-06-05 | Lomography Diana F+ Camera & Flash | Ilford HP5 400 (120) | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1851993-east-side-showroom) |
 | `first shots` | 7 | 2010-10-08 | Lomography Diana Mini & Flash Half-frame & Square Camera | Fujicolor 200 | Austin | [Album](https://www.lomography.com/homes/texasredd/albums/1643104-first-shots) |
@@ -183,7 +197,12 @@ For `Street Style`, the shared metadata pattern is:
 
 For `El Toro - Pinhole with Lens`, the shared metadata pattern is:
 
-- Format classification: 35mm film, per Diana F+ catalog rule
+- Format classification: 120 film, per Shawn's October 3, 2026 correction that
+  El Toro is a 120 format camera; supersedes the earlier Diana F+ catalog rule
+- Camera identity: Lomography Diana F+ El Toro special edition, clarified by
+  Shawn and supported by Lomography's edition history above
+- Personal provenance: Shawn bought his El Toro in Paris during his trip there,
+  recalled on October 3, 2026; purchase date and store are not recorded
 - Camera metadata: Lomography Diana F+ Camera & Flash
 - Film metadata: Lomography B&W 100 (120)
 - Location: Austin, United States

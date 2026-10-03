@@ -643,6 +643,42 @@ authorized above; the follow-ups below are not automatically authorized.
   Final commit identity and synchronization are verified in the hub closeout
   response; this checkpoint does not authorize a successor or deployment.
 
+## Content Cleanup 1 - Task 02 El Toro Film Format
+
+- Child: `01a10326-eb2a-72c3-842d-4eaf224f98f2`, same-directory shared checkout.
+- Title: Content Cleanup 1 - Task 02 El Toro Film Format - COMPLETE.
+- Brief: [Cleanup 02, revision 1](cleanup-02-el-toro-film-format.md).
+- Scope: El Toro film-format conflict only; supported correction or explicit
+  uncertainty in the film catalog and overlap journal, plus completion report.
+- Baseline: `20201aa8bc1fa5b21b9141938b0b2619d7a2f558`, clean before preparation,
+  branch `codex/concept-b-homepage`.
+- Approval: "start task 2", October 3, 2026, hub turn
+  `01a10326-b1f3-77a2-8bdf-bee7aeaac81d`; creation and execution authorized.
+- Workflow: COMPLETE (bounded deliverable accepted by hub). Child was active in
+  turn `01a10328-3138-7202-9cff-909d8192534c` on October 3, 2026.
+- Dispatch: `TJ-CC-T02-D01`, sent once; execution observed.
+- Report: `TJ-CC-T02-R01` revision 4 at
+  `reports/cleanup-02-el-toro-film-format.md`; delivery RECEIVED October 3, 2026,
+  once as `TJ-CC-T02-DEL01`.
+- Acceptance: evidence-supported format decision or honest unresolved question;
+  scoped diff, Markdown lint, evidence-manifest and whitespace checks.
+- Hub review: ACCEPTED as `TJ-CC-T02-H01`, October 3, 2026. Inspected both
+  journal diffs and report; verified direct user format correction in child turn
+  `01a1033f-18a9-7071-993f-c214f96de280`, edition context in
+  `01a10342-7b65-7de2-a379-50e03b6a98b5`, and Paris purchase recollection in
+  `01a10344-4e12-7072-afe0-2b997add544a`. These support the scoped additions;
+  no purchase year/store or actual exposure settings were inferred.
+- Delivery approval: Shawn's "yes" in exact child turn
+  `01a10345-1986-74e0-8b4f-91d4c368c029`; report-send permission only.
+- Fresh hub checks: Markdown 127 files/zero issues; evidence manifest current;
+  `git diff --check` passed. Accepted visual critique and other album entries
+  preserved. Parent reviewed child source-verification record, not a new image audit.
+- Content acceptance and Git closeout approved by Shawn on October 3, 2026:
+  "approved....git er done...what's next?" Closeout `TJ-CC-T02-G01` covers the
+  two journals, brief, report, and register on the established origin branch.
+  Final commit and synchronization are verified in the hub closeout response.
+  No successor execution or deployment authorized.
+
 ## Separate Follow-Up Identified
 
 The Task 01 report and the existing
@@ -654,9 +690,10 @@ complete and Shawn's acceptance/Git closeout approved. All eleven original
 editorial review markers are resolved within their accepted scopes; the
 remaining follow-ups below remain separate.
 
-Task 03 also flags the El Toro catalog's 35mm classification versus `(120)` film
-label. Resolving that source conflict is separate from the completed bounded
-photo review; no catalog-wide correction has been authorized.
+Review 1 Task 03 flagged the El Toro 35mm versus `(120)` conflict. Content Cleanup
+Task 02 now resolves El Toro as 120 from Shawn's direct clarification; hub review
+is complete, content acceptance and Git closeout approved. No catalog-wide
+correction is authorized.
 Task 04 flags the same Diana F+ 35mm rule versus `(120)` metadata conflict in
 SXSW Part 1; it remains a separate catalog follow-up, not a reopened review.
 Task 05 records the Diana Mini 35mm classification versus `(120)` film label
