@@ -679,6 +679,43 @@ authorized above; the follow-ups below are not automatically authorized.
   Final commit and synchronization are verified in the hub closeout response.
   No successor execution or deployment authorized.
 
+## Content Cleanup 1 - Task 03 SXSW Part 1 Film Format
+
+- Child: `01a10354-9e64-7620-954d-0feabdda7a31`, same-directory shared checkout.
+- Title: Content Cleanup 1 - Task 03 SXSW Part 1 Film Format - COMPLETE.
+- Brief: [Cleanup 03, revision 1](cleanup-03-sxsw-part-1-film-format.md).
+- Scope: Part 1 film-format conflict plus Shawn's later explicit catalog-wide
+  Diana F+ to 120 clarification; two journals and completion report only.
+- Baseline: `aa9d4c8f8d0ec8d02cd2e4a48b627e6f6b4e76d5`, clean before preparation,
+  branch `codex/concept-b-homepage`.
+- Approval: Shawn's "kick off task 3" in this hub, October 3, 2026;
+  turn `01a10354-55ec-7c31-adb5-15882d7332a9`; creation and execution authorized.
+- Workflow: COMPLETE (deliverable accepted by hub). Child was active in
+  turn `01a10355-e1e7-7d90-95fb-68dc06515f34` on October 3, 2026.
+- Dispatch: `TJ-CC-T03-D01`, sent once; execution observed.
+- Report: `TJ-CC-T03-R01` revision 3 at
+  `reports/cleanup-03-sxsw-part-1-film-format.md`; delivery RECEIVED October 3,
+  2026, once as `TJ-CC-T03-DEL01`.
+- Acceptance: evidence-supported correction or honest unresolved question;
+  scope review, Markdown lint, evidence-manifest and whitespace checks.
+- Hub review: ACCEPTED as `TJ-CC-T03-H01`, October 3, 2026. Actual journal diffs
+  and report reviewed; direct child user instructions verified: "120 film" in
+  `01a1035a-a04e-7a11-9ffb-b2690ff5f849`, and anything labeled Diana F+ means
+  120 in `01a1035c-9d27-7f33-9eff-eb3ac6dc11b0`. The latter supersedes the
+  brief's album-only restriction for catalog classification, not other work.
+- Part 1 and nine additional Diana F+ albums reclassified; source labels and
+  accepted critique retained. Diana Mini/Part 2 unchanged. Conflicting 35mm
+  stock labels remain visibly qualified; no substitute stock invented.
+- Report-send approval verified: "you can now send the update to the hub", child
+  turn `01a10360-ae7c-7280-98d1-41c84bf310f4`; not content/Git approval.
+- Fresh hub checks: Markdown 129 files/zero issues, evidence manifest current,
+  `git diff --check` passed. No fresh image audit or camera recount claimed.
+- User content acceptance and Git closeout approved October 3, 2026:
+  "reviewed and accepted / approved...git er done" in this hub.
+  Closeout `TJ-CC-T03-G01` covers the two journals, brief, report and register
+  on the established origin branch; final commit and synchronization are
+  verified in the hub closeout response. No successor or deployment authorized.
+
 ## Separate Follow-Up Identified
 
 The Task 01 report and the existing
@@ -692,10 +729,10 @@ remaining follow-ups below remain separate.
 
 Review 1 Task 03 flagged the El Toro 35mm versus `(120)` conflict. Content Cleanup
 Task 02 now resolves El Toro as 120 from Shawn's direct clarification; hub review
-is complete, content acceptance and Git closeout approved. No catalog-wide
-correction is authorized.
-Task 04 flags the same Diana F+ 35mm rule versus `(120)` metadata conflict in
-SXSW Part 1; it remains a separate catalog follow-up, not a reopened review.
+is complete, content acceptance and Git closeout approved. Shawn subsequently
+authorized the Diana F+ catalog-wide classification correction in Cleanup 03.
+Review 1 Task 04's SXSW Part 1 conflict is now resolved by Cleanup 03, accepted
+by the hub with user content acceptance and Git closeout approved.
 Task 05 records the Diana Mini 35mm classification versus `(120)` film label
 and 2010 metadata versus the 2011 album title. Those source conflicts likewise
 remain separate follow-ups, not reopened photo reviews.

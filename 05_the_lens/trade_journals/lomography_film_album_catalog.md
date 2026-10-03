@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Catalog Lomography albums that represent film photography evidence across the lens archive. This entry separates 35mm Lomography plastic-camera albums, 120 film work including Agfa Isolette and El Toro albums, and other film formats as they surface.
+Catalog Lomography albums that represent film photography evidence across the lens archive. This entry separates 35mm Lomography plastic-camera albums, 120 film work including Agfa Isolette and Diana F+ albums, and other film formats as they surface.
 
 ## Best of Film Work
 
@@ -55,10 +55,16 @@ The redscale palette works hard here in a good way. It gives the frame a nocturn
 - `New Orleans Oct 2016` represents 120 film work.
 - `Kodak Six-Three Pocket Bellows (circa 1913)` represents Kodak 616 film work.
 - `Smithville, TX` is mixed format: black-and-white images are 120 film, and all other images are 35mm film.
-- `SXSW 2011 - Part 1` is mixed by camera metadata: Diana F+ frames are 35mm per catalog rule, and Agfa Isolette frames are 120 film.
-- The existing catalog rule treats `Diana F+` camera metadata as 35mm film work, except for El Toro, confirmed as 120 by Shawn below. Other albums' classifications have not been reassessed in this correction.
-- `first shots`, albums beginning with `NOUNS:`, `Roquebrune-Cap-Martin`, `South 1st Performance Auto`, `SXSW 2011 - Part 2`, `Caveau de la Huchette`, `Street Style`, `Night Shots`, `Queer Bomb Austin 2012`, `queer bomb pt 2`, `East Side Showroom`, `East Side Locos`, `Paris en Rouge`, and `my hood` represent 35mm film work.
+- `SXSW 2011 - Part 1` is 120 film work: Shawn confirmed "120 film" for its Diana photographs on October 3, 2026; the Agfa Isolette frames retain their existing 120 attribution. This replaces the earlier mixed-format placement; a mix of camera labels alone does not establish a mix of film formats.
+- Shawn clarified on October 3, 2026 that anything labeled `Diana F+`, specifically including the plus sign, means 120 film in this archive. This replaces the earlier Diana F+ to 35mm catalog rule across the catalog, not just for El Toro and SXSW Part 1. It does not apply to `Diana Mini`.
+- `first shots`, albums beginning with `NOUNS:`, `Roquebrune-Cap-Martin`, `SXSW 2011 - Part 2`, and `my hood` retain their 35mm classification.
 - `Travelers` represents mostly 35mm film shot with Lomo plastic cameras.
+
+Original platform film labels remain source metadata, not the governing format
+classification. In particular, `Caveau de la Huchette` and `Paris en Rouge`
+retain the recorded `Lomography Color Negative 35 mm ISO 100` label even though
+Shawn's Diana F+ rule places them under 120. Those labels were not rewritten or
+newly checked, and the correction does not identify a replacement film stock.
 
 El Toro is classified as 120 film following Shawn's October 3, 2026 correction:
 "El Toro is a 120 format camera." This supersedes its earlier 35mm placement
@@ -78,10 +84,20 @@ Diana F+ camera label is consistent with the edition identity.
 
 | Album | Photos | Created/Uploaded | Camera / Format Evidence | Site Metadata | Public URL |
 | --- | ---: | --- | --- | --- | --- |
+| `Caveau de la Huchette` | 7 | 2011-03-29 | Lomography Diana F+ Camera & Flash; 120 per Shawn's rule | Film: Lomography Color Negative 35 mm ISO 100 (conflicting source label); location: Paris, France. | [Album](https://www.lomography.com/homes/texasredd/albums/1691678-caveau-de-la-huchette) |
 | `Dance` | 4 | 2017-03-17 | 1961 Agfa Isolette, 120 film, per project note | Lomography exposes tags and download dimensions, but no camera or film metadata on the sampled photo pages. Tags include `#ballet`, `#enpointe`, `#pointe`, and `#pointeshoes`. | [Album](https://www.lomography.com/homes/texasredd/albums/2137404-dance) |
+| `East Side Locos` | 11 | 2011-03-24 | Lomography Diana F+ Camera & Flash; 120 per Shawn's rule | Film: Kodak TMax 400 BW (expired 1991); location: Austin, United States. | [Album](https://www.lomography.com/homes/texasredd/albums/1689900-east-side-locos) |
+| `East Side Showroom` | 8 | 2012-06-05 | Lomography Diana F+ Camera & Flash; 120 per Shawn's rule | Film: Ilford HP5 400 (120); location: Austin, United States. | [Album](https://www.lomography.com/homes/texasredd/albums/1851993-east-side-showroom) |
 | `El Toro - Pinhole with Lens` | 10 | 2012-05-03 | 120 format, confirmed by Shawn on 2026-10-03 | Camera: Lomography Diana F+ Camera & Flash; film: Lomography B&W 100 (120); location: Austin, United States. | [Album](https://www.lomography.com/homes/texasredd/albums/1838417-el-toro-pinhole-with-lens) |
 | `Isolette - First Shots` | 5 | 2026-06-16 verification | First representation of pictures taken with the 1961 Agfa Isolette. | Cataloged from logged-in album editor; photo-level metadata still needs review. | [Album](https://www.lomography.com/homes/texasredd/albums/1686440-isolette-first-shots) |
 | `New Orleans Oct 2016` | 12 | 2017-03-17 | 120 film, per project note | Lomography exposes upload date and download dimensions, but no camera, film, location, or tag metadata on the sampled photo pages. | [Album](https://www.lomography.com/homes/texasredd/albums/2137397-new-orleans-oct-2016) |
+| `Night Shots` | 11 | 2012-05-03 | Lomography Diana F+ Camera & Flash; 120 per Shawn's rule | Film: Kodak Portra 400 VC (120); location: Austin, United States. | [Album](https://www.lomography.com/homes/texasredd/albums/1838419-night-shots) |
+| `Paris en Rouge` | 6 | 2011-03-29 | Lomography Diana F+ Camera & Flash; 120 per Shawn's rule | Film: Lomography Color Negative 35 mm ISO 100 (conflicting source label); location: Paris, France. | [Album](https://www.lomography.com/homes/texasredd/albums/1691668-paris-en-rouge) |
+| `Queer Bomb Austin 2012` | 11 | 2012-06-05 | Lomography Diana F+ Camera & Flash; 120 per Shawn's rule | Film: Ilford HP5 400 (120); location: Austin, United States. | [Album](https://www.lomography.com/homes/texasredd/albums/1851779-queer-bomb-austin-2012) |
+| `queer bomb pt 2` | 3 | 2012-06-05 | Lomography Diana F+ Camera & Flash; 120 per Shawn's rule | Film: Ilford HP5 400 (120); location: Austin, United States. | [Album](https://www.lomography.com/homes/texasredd/albums/1852007-queer-bomb-pt-2) |
+| `South 1st Performance Auto` | 7 | 2012-06-07 | Lomography Diana F+ Camera & Flash; 120 per Shawn's rule | Film: Ilford HP5 Plus 400; location: Austin, United States. | [Album](https://www.lomography.com/homes/texasredd/albums/1852921-south-1st-performance-auto) |
+| `Street Style` | 10 | 2011-03-29 | Lomography Diana F+ Camera & Flash; 120 per Shawn's rule | Film: Lomography RedScale 50-200 XR; location: Paris, France. | [Album](https://www.lomography.com/homes/texasredd/albums/1691772-street-style) |
+| `SXSW 2011 - Part 1` | 17 | 2011-03-24 | 120 film: Diana photographs confirmed by Shawn on 2026-10-03; existing Agfa Isolette 120 attribution retained. Historical camera split: 9 Diana F+ frames and 8 Agfa Isolette frames, not recounted in this cleanup. | Film metadata is Kodak Ektachrome 64T (120); location is Austin, United States; time is night; tag is `#sxsw`. | [Album](https://www.lomography.com/homes/texasredd/albums/1689964-sxsw-2011-part-1) |
 | `X-Mas 2016 Smithville -> Sacramento Road Trip` | 9 | 2017-03-17 | All images were taken with the 1961 Agfa Isolette on 120 film. | Photo-level metadata still needs review. | [Album](https://www.lomography.com/homes/texasredd/albums/2137402-x-mas-2016-smithville-sacramento-road-trip) |
 
 ## 616 Film Albums
@@ -94,21 +110,12 @@ Diana F+ camera label is consistent with the edition identity.
 
 | Album | Photos | Created/Uploaded | Camera Metadata | Film Metadata | Location Metadata | Public URL |
 | --- | ---: | --- | --- | --- | --- | --- |
-| `Caveau de la Huchette` | 7 | 2011-03-29 | Lomography Diana F+ Camera & Flash | Lomography Color Negative 35 mm ISO 100 | Paris, France | [Album](https://www.lomography.com/homes/texasredd/albums/1691678-caveau-de-la-huchette) |
-| `East Side Locos` | 11 | 2011-03-24 | Lomography Diana F+ Camera & Flash | Kodak TMax 400 BW (expired 1991) | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1689900-east-side-locos) |
-| `East Side Showroom` | 8 | 2012-06-05 | Lomography Diana F+ Camera & Flash | Ilford HP5 400 (120) | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1851993-east-side-showroom) |
 | `first shots` | 7 | 2010-10-08 | Lomography Diana Mini & Flash Half-frame & Square Camera | Fujicolor 200 | Austin | [Album](https://www.lomography.com/homes/texasredd/albums/1643104-first-shots) |
 | `my hood` | 11 | 2011-03-13 | Lomography Diana Mini & Flash Half-frame & Square Camera | Kodak Gold 400 (35mm) | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1685385-my-hood) |
 | `NOUNS: people` | 5 | 2010-10-19 | Lomography Diana Mini & Flash Half-frame & Square Camera | Kodak BW400CN | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1645823-nouns-people) |
 | `NOUNS: places` | 4 | 2010-10-19 | Lomography Diana Mini & Flash Half-frame & Square Camera | Kodak BW400CN | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1645825-nouns-places) |
 | `NOUNS: things` | 9 | 2010-10-19 | Lomography Diana Mini & Flash Half-frame & Square Camera | Kodak BW400CN | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1645826-nouns-things) |
-| `Night Shots` | 11 | 2012-05-03 | Lomography Diana F+ Camera & Flash | Kodak Portra 400 VC (120) | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1838419-night-shots) |
-| `Paris en Rouge` | 6 | 2011-03-29 | Lomography Diana F+ Camera & Flash | Lomography Color Negative 35 mm ISO 100 | Paris, France | [Album](https://www.lomography.com/homes/texasredd/albums/1691668-paris-en-rouge) |
-| `Queer Bomb Austin 2012` | 11 | 2012-06-05 | Lomography Diana F+ Camera & Flash | Ilford HP5 400 (120) | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1851779-queer-bomb-austin-2012) |
-| `queer bomb pt 2` | 3 | 2012-06-05 | Lomography Diana F+ Camera & Flash | Ilford HP5 400 (120) | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1852007-queer-bomb-pt-2) |
 | `Roquebrune-Cap-Martin` | 13 | 2011-03-12 | Lomography Diana Mini & Flash Half-frame & Square Camera | Kodak Gold 400 (35mm) | Roquebrune-Cap-Martin, France | [Album](https://www.lomography.com/homes/texasredd/albums/1685129-roquebrune-cap-martin) |
-| `South 1st Performance Auto` | 7 | 2012-06-07 | Lomography Diana F+ Camera & Flash | Ilford HP5 Plus 400 | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1852921-south-1st-performance-auto) |
-| `Street Style` | 10 | 2011-03-29 | Lomography Diana F+ Camera & Flash | Lomography RedScale 50-200 XR | Paris, France | [Album](https://www.lomography.com/homes/texasredd/albums/1691772-street-style) |
 | `SXSW 2011 - Part 2` | 7 | 2011-03-24 | Lomography Diana Mini & Flash Half-frame & Square Camera | Kodak Ektachrome 64T (120) | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1689993-sxsw-2011-part-2) |
 | `Travelers` | 17 | 2017-03-17 | Mostly 35mm film shot with Lomo plastic cameras, per project note | Lomography photo pages did not expose camera or film metadata during review. | Not exposed | [Album](https://www.lomography.com/homes/texasredd/albums/2137399-travelers) |
 
@@ -117,7 +124,6 @@ Diana F+ camera label is consistent with the edition identity.
 | Album | Photos | Created/Uploaded | Format Evidence | Site Metadata | Public URL |
 | --- | ---: | --- | --- | --- | --- |
 | `Smithville, TX` | 15 | 2017-03-17 | Mixed 120 and 35mm, per project note. Black-and-white images are 120 film; all other images are 35mm film. | Lomography exposes tags and download dimensions, but no camera or film metadata on the sampled photo pages. Tags include `#gingerbeardhouse` and `#uncleredbeard`. | [Album](https://www.lomography.com/homes/texasredd/albums/2137403-smithville-tx) |
-| `SXSW 2011 - Part 1` | 17 | 2011-03-24 | Mixed by camera metadata: 9 Diana F+ frames and 8 Agfa Isolette frames. | Film metadata is Kodak Ektachrome 64T (120); location is Austin, United States; time is night; tag is `#sxsw`. | [Album](https://www.lomography.com/homes/texasredd/albums/1689964-sxsw-2011-part-1) |
 
 ## Metadata Notes
 
@@ -157,7 +163,7 @@ For `my hood`, the shared metadata pattern is:
 
 For `East Side Locos`, the shared metadata pattern is:
 
-- Format classification: 35mm film, per Diana F+ catalog rule
+- Format classification: 120 film, per Shawn's October 3, 2026 Diana F+ rule
 - Camera metadata: Lomography Diana F+ Camera & Flash
 - Film metadata: Kodak TMax 400 BW (expired 1991)
 - Location: Austin, United States
@@ -167,7 +173,7 @@ For `East Side Locos`, the shared metadata pattern is:
 
 For `Paris en Rouge`, the shared metadata pattern is:
 
-- Format classification: 35mm film, per Diana F+ catalog rule and film metadata
+- Format classification: 120 film, per Shawn's October 3, 2026 Diana F+ rule; the conflicting 35 mm film label below is preserved as source metadata
 - Camera metadata: Lomography Diana F+ Camera & Flash
 - Film metadata: Lomography Color Negative 35 mm ISO 100
 - Location: Paris, France
@@ -177,7 +183,7 @@ For `Paris en Rouge`, the shared metadata pattern is:
 
 For `Caveau de la Huchette`, the shared metadata pattern is:
 
-- Format classification: 35mm film, per Diana F+ catalog rule and film metadata
+- Format classification: 120 film, per Shawn's October 3, 2026 Diana F+ rule; the conflicting 35 mm film label below is preserved as source metadata
 - Camera metadata: Lomography Diana F+ Camera & Flash
 - Film metadata: Lomography Color Negative 35 mm ISO 100
 - Location: Paris, France
@@ -187,7 +193,7 @@ For `Caveau de la Huchette`, the shared metadata pattern is:
 
 For `Street Style`, the shared metadata pattern is:
 
-- Format classification: 35mm film, per Diana F+ catalog rule
+- Format classification: 120 film, per Shawn's October 3, 2026 Diana F+ rule
 - Camera metadata: Lomography Diana F+ Camera & Flash
 - Film metadata: Lomography RedScale 50-200 XR
 - Location: Paris, France
@@ -212,7 +218,7 @@ For `El Toro - Pinhole with Lens`, the shared metadata pattern is:
 
 For `Night Shots`, the shared metadata pattern is:
 
-- Format classification: 35mm film, per Diana F+ catalog rule
+- Format classification: 120 film, per Shawn's October 3, 2026 Diana F+ rule
 - Camera metadata: Lomography Diana F+ Camera & Flash
 - Film metadata: Kodak Portra 400 VC (120)
 - Location: Austin, United States
@@ -222,7 +228,7 @@ For `Night Shots`, the shared metadata pattern is:
 
 For `queer bomb pt 2`, the shared metadata pattern is:
 
-- Format classification: 35mm film, per Diana F+ catalog rule
+- Format classification: 120 film, per Shawn's October 3, 2026 Diana F+ rule
 - Camera metadata: Lomography Diana F+ Camera & Flash
 - Film metadata: Ilford HP5 400 (120)
 - Location: Austin, United States
@@ -232,7 +238,7 @@ For `queer bomb pt 2`, the shared metadata pattern is:
 
 For `Queer Bomb Austin 2012`, the shared metadata pattern is:
 
-- Format classification: 35mm film, per Diana F+ catalog rule
+- Format classification: 120 film, per Shawn's October 3, 2026 Diana F+ rule
 - Camera metadata: Lomography Diana F+ Camera & Flash
 - Film metadata: Ilford HP5 400 (120)
 - Location: Austin, United States
@@ -261,9 +267,10 @@ For `Smithville, TX`, the available metadata pattern is:
 
 For `SXSW 2011 - Part 1`, the available metadata pattern is:
 
-- Format classification: mixed format, based on Lomography camera metadata
-- Camera metadata split: 9 Lomography Diana F+ Camera & Flash frames; 8 Agfa Isolette frames
-- Format rule: Diana F+ frames are 35mm film; Agfa Isolette frames are 120 film
+- Format classification: 120 film; Shawn answered "120 film" for the Diana photographs on October 3, 2026, and the existing Agfa Isolette 120 attribution is retained
+- Historical camera metadata split: 9 Lomography Diana F+ Camera & Flash frames; 8 Agfa Isolette frames; not recounted in this cleanup
+- Format boundary: Shawn's album-specific clarification supersedes the earlier Diana F+ 35mm assignment and mixed-format placement. His subsequent catalog-wide Diana F+ rule is recorded in Format Notes above.
+- Source check: [representative photo 12915139](https://www.lomography.com/homes/texasredd/albums/1689964-sxsw-2011-part-1/12915139) displayed Diana F+ and Kodak Ektachrome 64T (120) on October 3, 2026; a metadata check, not independent confirmation of the physical film used
 - Film metadata: Kodak Ektachrome 64T (120)
 - Location: Austin, United States
 - Year/time metadata: 2011, night
@@ -298,7 +305,7 @@ For `New Orleans Oct 2016`, the available metadata pattern is:
 
 For `South 1st Performance Auto`, the shared metadata pattern is:
 
-- Format classification: 35mm film, per project note
+- Format classification: 120 film, per Shawn's October 3, 2026 Diana F+ rule, superseding the earlier 35mm project note
 - Camera metadata: Lomography Diana F+ Camera & Flash
 - Film metadata: Ilford HP5 Plus 400
 - Location: Austin, United States
@@ -307,7 +314,7 @@ For `South 1st Performance Auto`, the shared metadata pattern is:
 
 For `East Side Showroom`, the shared metadata pattern is:
 
-- Format classification: 35mm film, per Diana F+ catalog rule
+- Format classification: 120 film, per Shawn's October 3, 2026 Diana F+ rule
 - Camera metadata: Lomography Diana F+ Camera & Flash
 - Film metadata: Ilford HP5 400 (120)
 - Location: Austin, United States
