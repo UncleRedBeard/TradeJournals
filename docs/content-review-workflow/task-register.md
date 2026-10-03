@@ -498,12 +498,65 @@ in the parent chat after push.
   checks, and whitespace checks passed. This entry accompanies the scoped
   commit; final identity and remote synchronization are reported after push.
 
+## Review 1 - Task 10 Cassis
+
+- Exact child ID: `01a102e5-9017-7200-9052-92bdee7d6533`.
+- Verified title: Review 1 - Task 10 Cassis - COMPLETE.
+- Runtime: observed after acceptance in the parent chat; delivery and acceptance
+  remain separate from runtime state.
+- Brief: [Task 10, revision 1](task-10-cassis.md).
+- Environment: shared `codex/concept-b-homepage`, preparation HEAD
+  `59d6e31194e4c44a47ee3d36ba2f3ff0888d10ee`; clean at preparation.
+- Scope: Cassis subsection and three local candidates only; preserve all other
+  journal content, global rankings, metadata, and unrelated work.
+- Dependencies/acceptance: survey recorded 27-photo album and inspect accessible
+  images at page-display size; state exact coverage, qualify metadata, verify
+  links, lint, whitespace, and preservation outside Cassis.
+- Approval: RECEIVED October 3, 2026: Shawn's "yes" to the explicit Task 10
+  child kickoff offer; preparation, fork, and scoped execution authorized.
+- Workflow status: COMPLETE (accepted by hub after authorized review).
+- Dispatch: `TJ-CR-T10-A01`, SENT once; exact child returned and active turn observed.
+- Report-send approval: Shawn's "yes", child turn
+  `01a102f4-131c-7031-aa98-3de08430dbaa`, October 3, 2026, to the explicit
+  request to send the report for parent acceptance.
+- Latest report: `TJ-CR-T10-R01`, revision 1,
+  [Task 10 report](reports/task-10-cassis.md).
+- Report delivery: RECEIVED via `TJ-CR-T10-D01`; reconciled once as
+  `TJ-CR-T10-H01`. The report retains its delivery checkpoint; this register
+  records current hub acceptance.
+- Hub review: ACCEPTED October 3, 2026. Verified approval, scoped diff, report,
+  and child's browser-inspection record for all 27 photo-page views. This audits
+  the child's inspection record, not a separate parent visual review. Three
+  candidates are retained with clarified roles and explicit resolution,
+  metadata, chronology, and attribution limits.
+- Checks: fresh Markdown lint passed 121 files; whitespace passed. Independent
+  comparison confirmed all journal content outside Cassis unchanged from the
+  starting HEAD. The child separately verified candidate titles and local links.
+- Follow-up: noncandidate `5483335414` appears in both Cassis and Paris albums;
+  retain this for Paris review without inferring a location correction.
+- Git state at acceptance: `codex/concept-b-homepage` at
+  `656576f4c504a03d03bd2e507404b0e1284ebe9a`; Task 10 journal, brief, report,
+  and register remain uncommitted. No remote refresh, Git closeout, deployment,
+  publication, or successor dispatch accompanies acceptance.
+- Title/register agreement: verified October 3, 2026; both COMPLETE.
+
+- User acceptance: Shawn said "reviewed and accepted" in this parent on
+  October 3, 2026, confirming Task 10's accepted result.
+- Git closeout authorization: Shawn's subsequent "git er done", October 3,
+  2026, covers Task 10's journal, brief, report, and parent register only.
+  Destination: established `git@github.com:UncleRedBeard/TradeJournals.git`,
+  tracked `codex/concept-b-homepage`; no successor or deployment authorized.
+- Closeout preflight: fresh fetch confirmed `0 0` at
+  `656576f4c504a03d03bd2e507404b0e1284ebe9a`. All 84 Python tests, Markdown
+  lint (121 files), manifest currency, five Python and five JavaScript site
+  checks, and whitespace checks passed. This entry accompanies the scoped
+  commit; final identity and synchronization are reported after push.
+
 ## Remaining Unprepared Backlog
 
 These items remain unstarted in this hub. No children are being prepared for
 them by the current request.
 
-- Task 10: France - Cassis.
 - Task 11: France - Paris.
 
 ## Separate Follow-Up Identified
@@ -513,8 +566,8 @@ The Task 01 report and the existing
 older Office journal sections that still attribute the current barre studio's
 floor/door work to the dedicated Office. Correcting or reassigning those sections
 was outside Task 01. The issue is retained for Shawn's scope decision; no new
-task has been created or started. Two of the original eleven editorial review
-markers remain.
+task has been created or started. One of the original eleven editorial review
+markers remains: Paris.
 
 Task 03 also flags the El Toro catalog's 35mm classification versus `(120)` film
 label. Resolving that source conflict is separate from the completed bounded
@@ -575,3 +628,7 @@ remain separate follow-ups, not reopened photo reviews.
 | 2026-10-03 | 09 | TJ-CR-T09-U01 | "yes", child turn `01a102db-a8c2-7740-b9c3-1aef094a4422` | Report delivery for parent acceptance approved |
 | 2026-10-03 | 09 | TJ-CR-T09-H01 | Report `TJ-CR-T09-R01` received via `TJ-CR-T09-D01`; approval, scope, inspection record, checks, and title verified | Accepted COMPLETE; no Git closeout or successor |
 | 2026-10-03 | 09 | TJ-CR-T09-G01 | Shawn's "reviewed and approved", then "git er done"; scoped changes, checks, and fresh remote state verified | Task 09 accepted and Git closeout authorized; no successor |
+| 2026-10-03 | 10 | TJ-CR-T10-P01 | Shawn's "yes" to Task 10 child kickoff | Preparation, fork, and execution approved |
+| 2026-10-03 | 10 | TJ-CR-T10-A01 | Exact fork/title verified; dispatch sent once; active child observed | IN PROGRESS; no Git closeout or successor |
+| 2026-10-03 | 10 | TJ-CR-T10-H01 | Report `TJ-CR-T10-R01` received via `TJ-CR-T10-D01`; approval, scoped diff, inspection record, checks, and title verified | Accepted COMPLETE; no Git closeout or successor |
+| 2026-10-03 | 10 | TJ-CR-T10-G01 | Shawn's "reviewed and accepted", then "git er done"; scope, checks, and fresh remote state verified | Task 10 Git closeout authorized; no successor |

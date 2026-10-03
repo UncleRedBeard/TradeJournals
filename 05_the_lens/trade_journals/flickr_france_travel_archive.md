@@ -150,11 +150,16 @@ Use this section to map the Flickr albums into evidence categories before writin
 - Review focus: coastal landscape, town edges, water, rock, and atmosphere.
 - Camera make/model: `Canon PowerShot SD780 IS`, from Flickr EXIF on selected images.
 - Candidate image types:
-  - Establishing image for Cassis: [cassis, photo 5482620885](https://www.flickr.com/photos/boocher/5482620885/in/album-72157626153089302)
-  - Strongest coastal or landscape frame: [cassis, photo 5482779139](https://www.flickr.com/photos/boocher/5482779139/in/album-72157626153089302/)
-  - Best image balancing place and photographic character: [cassis, photo 5481166067](https://www.flickr.com/photos/boocher/5481166067/in/album-72157626153089302)
+  - Street-level establishing candidate: [cassis, photo 5482620885](https://www.flickr.com/photos/boocher/5482620885/in/album-72157626153089302)
+  - Coastal atmosphere candidate: [cassis, photo 5482779139](https://www.flickr.com/photos/boocher/5482779139/in/album-72157626153089302/)
+  - Place and photographic-character candidate: [cassis, photo 5481166067](https://www.flickr.com/photos/boocher/5481166067/in/album-72157626153089302)
 - Notes:
-  - Pending photo-level review.
+  - Reviewed all 27 accessible album photographs individually at photo-page display size, not full resolution. The three retained candidates separate everyday town life, coastal atmosphere, and the relationship between painted structures and rock; they are local editorial choices, not new France-wide rankings.
+  - `5482620885` introduces Cassis at street level through café tables, green chairs and awnings, pastel façades, shutters, and passing figures. The narrow stairway between buildings adds depth to the largely frontal arrangement. The busy foreground is part of its everyday character, but the frame does not establish the harbor or coastal geography.
+  - `5482779139` gives the coast its quietest emphasis in this selection: finely rippled water fills the foreground, a dark headland stretches toward a pale opening beneath layered cloud, and tree silhouettes anchor the right edge. The contrast between open water and the compressed land silhouette makes atmosphere more important than architectural or rock detail. The visible brightness does not establish a time of day or exposure technique.
+  - `5481166067` connects a low, graffiti-painted wall with the pale ridge behind it. Blue letterforms, light outlines, warm accents, and overlapping vegetation create a dense near surface against the broader bands of distant rock. It earns the photographic-character role through scale, color, and layered framing, without requiring a film or processing explanation.
+  - The displayed album sequence ranges from planted fields and stone structures through shore paths, graffiti details, town squares, lanes, café fronts, a harbor view, and broader water-and-headland scenes. Rough masonry, painted surfaces, vegetation, and muted water recur across those subjects. This is a reading of the displayed sequence, not a reconstructed walking route or capture chronology.
+  - All three candidate pages display the title `cassis`, `Canon PowerShot SD780 IS`, a February 26, 2011 taken date, and a February 27, 2011 upload date. These are page observations, not a fresh EXIF audit or an album-wide camera claim. The album supplies the Cassis label; exact sites, subject identities, and the original functions of the photographed structures are not inferred.
 
 ### Paris
 
