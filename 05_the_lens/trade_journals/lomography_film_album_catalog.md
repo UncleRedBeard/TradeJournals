@@ -57,7 +57,7 @@ The redscale palette works hard here in a good way. It gives the frame a nocturn
 - `Smithville, TX` is mixed format: black-and-white images are 120 film, and all other images are 35mm film.
 - `SXSW 2011 - Part 1` is 120 film work: Shawn confirmed "120 film" for its Diana photographs on October 3, 2026; the Agfa Isolette frames retain their existing 120 attribution. This replaces the earlier mixed-format placement; a mix of camera labels alone does not establish a mix of film formats.
 - Shawn clarified on October 3, 2026 that anything labeled `Diana F+`, specifically including the plus sign, means 120 film in this archive. This replaces the earlier Diana F+ to 35mm catalog rule across the catalog, not just for El Toro and SXSW Part 1. It does not apply to `Diana Mini`.
-- `first shots`, albums beginning with `NOUNS:`, `Roquebrune-Cap-Martin`, `SXSW 2011 - Part 2`, and `my hood` retain their 35mm classification.
+- Shawn clarified on October 3, 2026: "Diana Mini = always 35mm." This confirms the existing 35mm classification of `first shots`, albums beginning with `NOUNS:`, `Roquebrune-Cap-Martin`, `SXSW 2011 - Part 2`, and `my hood`; it is distinct from the Diana F+ rule above.
 - `Travelers` represents mostly 35mm film shot with Lomo plastic cameras.
 
 Original platform film labels remain source metadata, not the governing format
@@ -116,7 +116,7 @@ Diana F+ camera label is consistent with the edition identity.
 | `NOUNS: places` | 4 | 2010-10-19 | Lomography Diana Mini & Flash Half-frame & Square Camera | Kodak BW400CN | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1645825-nouns-places) |
 | `NOUNS: things` | 9 | 2010-10-19 | Lomography Diana Mini & Flash Half-frame & Square Camera | Kodak BW400CN | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1645826-nouns-things) |
 | `Roquebrune-Cap-Martin` | 13 | 2011-03-12 | Lomography Diana Mini & Flash Half-frame & Square Camera | Kodak Gold 400 (35mm) | Roquebrune-Cap-Martin, France | [Album](https://www.lomography.com/homes/texasredd/albums/1685129-roquebrune-cap-martin) |
-| `SXSW 2011 - Part 2` | 7 | 2011-03-24 | Lomography Diana Mini & Flash Half-frame & Square Camera | Kodak Ektachrome 64T (120) | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1689993-sxsw-2011-part-2) |
+| `SXSW 2011 - Part 2` | 7 | 2011-03-24 | Lomography Diana Mini & Flash Half-frame & Square Camera; 35mm confirmed by Shawn | Kodak Ektachrome 64T (120) (conflicting source label retained) | Austin, United States | [Album](https://www.lomography.com/homes/texasredd/albums/1689993-sxsw-2011-part-2) |
 | `Travelers` | 17 | 2017-03-17 | Mostly 35mm film shot with Lomo plastic cameras, per project note | Lomography photo pages did not expose camera or film metadata during review. | Not exposed | [Album](https://www.lomography.com/homes/texasredd/albums/2137399-travelers) |
 
 ## Mixed Format Albums
@@ -279,11 +279,13 @@ For `SXSW 2011 - Part 1`, the available metadata pattern is:
 
 For `SXSW 2011 - Part 2`, the shared metadata pattern is:
 
-- Format classification: 35mm film, based on Lomography Diana Mini camera metadata
+- Format classification: 35mm film, confirmed by Shawn on October 3, 2026; his clarification also establishes Diana Mini as always 35mm in this archive
 - Camera metadata: Lomography Diana Mini & Flash Half-frame & Square Camera
-- Film metadata: Kodak Ektachrome 64T (120)
+- Film metadata: Kodak Ektachrome 64T (120), preserved as a conflicting source label rather than the governing format; no replacement film stock inferred
 - Location: Austin, United States
-- Year/time metadata: 2010, night
+- Capture year: 2011, confirmed by Shawn on October 3, 2026; exact exposure dates remain unverified
+- Year/time metadata: 2010, night; the source year is retained for provenance but superseded by Shawn's 2011 clarification
+- Source check: [representative photo 12915508](https://www.lomography.com/homes/texasredd/albums/1689993-sxsw-2011-part-2/12915508) still displayed these camera, film, year, and upload fields on October 3, 2026; a one-page metadata check, not a new image review
 - Tags: `#sxsw`
 - Uploaded: 2011-03-24
 

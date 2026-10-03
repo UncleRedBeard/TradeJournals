@@ -716,6 +716,40 @@ authorized above; the follow-ups below are not automatically authorized.
   on the established origin branch; final commit and synchronization are
   verified in the hub closeout response. No successor or deployment authorized.
 
+## Content Cleanup 1 - Task 04 SXSW Part 2
+
+- Child: `01a1037b-4747-7e43-a553-d72b1f4a70f6`, same-directory shared checkout.
+- Title: Content Cleanup 1 - Task 04 SXSW Part 2 - COMPLETE.
+- Brief: [Cleanup 04, revision 1](cleanup-04-sxsw-part-2.md).
+- Scope: Part 2 film-format and year conflicts only, two journals plus report.
+- Baseline: `7f462a6626b1828698c15a181d2a824aeb988059`, clean before preparation,
+  branch `codex/concept-b-homepage`.
+- Approval: Shawn's "kick off task 4" in this hub, October 3, 2026;
+  turn `01a1037a-ffa1-74e2-a97a-848fbb831bcd`; creation and execution authorized.
+- Workflow: COMPLETE (deliverable accepted by hub). Child was active in
+  turn `01a1037c-96f7-7671-84ab-9f55c08258f2` on October 3, 2026.
+- Dispatch: `TJ-CC-T04-D01`, sent once; execution observed.
+- Report: `TJ-CC-T04-R01` revision 2 at
+  `reports/cleanup-04-sxsw-part-2.md`; delivery RECEIVED October 3, 2026,
+  once as `TJ-CC-T04-DEL01`.
+- Acceptance: supported correction or explicit unresolved questions, preserved
+  accepted work, Markdown lint, evidence-manifest and whitespace checks.
+- Hub review: ACCEPTED as `TJ-CC-T04-H01`, October 3, 2026. Reviewed both
+  journal diffs and report; verified Shawn's "1 - 35mm (FYI: Diana Mini = always
+  35mm) 2 - 2011" in child turn `01a10384-429c-7193-9f42-9c3ddbad46cc`.
+  Part 2 now records 35mm and capture year 2011; the explicit Mini rule remains
+  distinct from Diana F+. Conflicting source labels remain attributed; no exact
+  exposure date or replacement stock inferred. Accepted visual prose preserved.
+- Report-send approval: "yes" in child turn
+  `01a10388-f203-7621-86b3-c663b93cb0ba`; not content/Git approval.
+- Fresh hub checks: Markdown 131 files/zero issues, evidence manifest current,
+  `git diff --check` passed. No new image audit claimed.
+- User content acceptance and Git closeout approved October 3, 2026:
+  "approved...git er done..." in this hub. Closeout `TJ-CC-T04-G01` covers
+  the two journals, brief, report and register on the established origin branch.
+  Final commit and synchronization are verified in the hub closeout response.
+  No successor or deployment authorized.
+
 ## Separate Follow-Up Identified
 
 The Task 01 report and the existing
@@ -733,9 +767,10 @@ is complete, content acceptance and Git closeout approved. Shawn subsequently
 authorized the Diana F+ catalog-wide classification correction in Cleanup 03.
 Review 1 Task 04's SXSW Part 1 conflict is now resolved by Cleanup 03, accepted
 by the hub with user content acceptance and Git closeout approved.
-Task 05 records the Diana Mini 35mm classification versus `(120)` film label
-and 2010 metadata versus the 2011 album title. Those source conflicts likewise
-remain separate follow-ups, not reopened photo reviews.
+Review 1 Task 05's Diana Mini film-format and capture-year conflicts are resolved
+by Cleanup 04 from Shawn's direct 35mm/2011 confirmation. Hub review is complete;
+user content acceptance and Git closeout are approved. The original platform
+labels are preserved as conflicting source metadata, not reopened photo reviews.
 
 ## Event Log
 
