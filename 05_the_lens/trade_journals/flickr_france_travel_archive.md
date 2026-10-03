@@ -123,11 +123,13 @@ Use this section to map the Flickr albums into evidence categories before writin
 - Review focus: focused sub-sequence within La Ciotat, especially surfaces, movement, marks of use, and visual contrast with the broader travel set.
 - Camera make/model: `Canon PowerShot SD780 IS`, from Flickr EXIF on selected images.
 - Candidate image types:
-  - Best image that establishes the skate park as a place: [la ciotat - skate park, photo 5486197968](https://www.flickr.com/photos/boocher/5486197968/in/album-72157626167265156/)
-  - Strongest texture or detail frame: [la ciotat - skate park, photo 5485603231](https://www.flickr.com/photos/boocher/5485603231/in/album-72157626167265156/)
-  - Best sequence image if the album reads as movement or exploration: [la ciotat - skate park, photo 5486197350](https://www.flickr.com/photos/boocher/5486197350/in/album-72157626167265156)
+  - Place-establishing candidate: [la ciotat - skate park, photo 5486197968](https://www.flickr.com/photos/boocher/5486197968/in/album-72157626167265156/) - curved concrete transitions and a broad open riding surface show the park's shape, while layered graffiti, a small background figure, and the grassy tree-lined bank give scale and context. The sweep from the close left edge into the bowl makes this more spatially legible than the tighter wall studies.
+  - Surface/detail candidate: [la ciotat - skate park, photo 5485603231](https://www.flickr.com/photos/boocher/5485603231/in/album-72157626167265156/) - a pink-and-blue painted form fills the panel beneath a perforated metal barrier. Outlines, overlaid tags, and the rough lower edge turn the surface into a close study of color, accumulated marks, and contrasting textures; the image does not establish their age or causes.
+  - Sequence-link candidate: [la ciotat - skate park, photo 5486197350](https://www.flickr.com/photos/boocher/5486197350/in/album-72157626167265156) - the foreground railing divides cropped figures and skateboards above from a densely painted wall and gravel below. It connects the album's surface studies with people using the park, without establishing a particular maneuver or continuous action sequence.
 - Notes:
-  - Pending photo-level review.
+  - Reviewed October 3, 2026: Flickr displayed 15 photos, and all 15 were inspected individually on their photo pages at page-display size. The three existing selections are retained as complementary candidates, not a full-resolution technical ranking.
+  - The displayed sequence moves between painted retaining walls, a cartoon mural, an arched passage, railing-side views, and the open skate area. Repeated approaches to the passage create a sense of exploration; the bowl and skateboard views then connect those marked surfaces to use. Compared with the preceding La Ciotat harbor selections, this is a closer, more enclosed study of concrete, paint, metal, and movement through a place—not proof of the photographer's exact route or chronology.
+  - The three candidate pages display `Canon PowerShot SD780 IS`, a February 26, 2011 taken date, and a February 28, 2011 upload date. These are page observations, not a fresh EXIF audit. The album supplies the place label; no exact-site identification, subject identities, film attribution, or diagnosis of photographic effects is inferred.
 
 ### Marseille
 
