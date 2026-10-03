@@ -29,7 +29,8 @@ test("future Studio leads the homepage while remaining distinct from the current
   assert.equal(currentStudio.searchImages.length, 2);
   assert.deepEqual(currentStudio.albums.map(album => album.key), ["flickr:72177720306207693"]);
   assert.ok(currentStudio.gallery.every(photo => photo.id.startsWith("flickr-527")));
-  assert.equal(office.gallery.length, 5);
+  assert.equal(office.gallery.length, 6);
   assert.deepEqual(office.albums.map(album => album.key), ["flickr:72177720316928566"]);
-  assert.ok(office.gallery.every(photo => photo.id.startsWith("flickr-539")));
+  assert.ok(office.gallery.slice(0, 5).every(photo => photo.id.startsWith("flickr-539")));
+  assert.equal(office.gallery.at(-1).id, "flickr-53718846780");
 });

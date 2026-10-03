@@ -789,6 +789,60 @@ authorized above; the follow-ups below are not automatically authorized.
   explanation, not a verified reconstruction; Cassis attribution is confirmed.
 - No successor, external album edit, deployment or archival authorized.
 
+## Content Promotion 1 - Task 01 Website Selection
+
+- Child: `01a103ab-ced2-7af0-94b2-8da6ed60c7d9`, same-directory shared checkout.
+- Title: Content Promotion 1 - Task 01 Website Selection - COMPLETE.
+- Brief: [Promotion 01, revision 1](promotion-01-website-selection.md).
+- Scope: proposal only; compare corrected/reviewed journals with current website
+  and recommend a small ranked story/photo shortlist. No website/journal edits.
+- Baseline: `5041018a05bddefaa4c94450461706378f0aad09`, clean before preparation,
+  branch `codex/concept-b-homepage`.
+- Approval: Shawn's "yes" on October 3, 2026 to the explicit separate website
+  selection task offer, hub turn `01a103ab-897e-7a72-a7ef-dc9aad50ded3`;
+  creation and proposal execution authorized.
+- Workflow: COMPLETE for the proposal deliverable; hub review accepted the
+  bounded report on October 3, 2026. Shawn subsequently approved the Office-only
+  implementation and Git closeout below.
+- Dispatch: `TJ-CP-T01-D01`, sent once; execution observed.
+- Report: `TJ-CP-T01-R01` revision 1 received once at
+  `reports/promotion-01-website-selection.md`. Shawn approved report delivery
+  in child turn `01a103b6-c62f-7bd0-af2b-8db0d314a57a`.
+- Acceptance: bounded ranked recommendations, current-site overlap checked,
+  specific image/source references, evidence limits and decisions for Shawn;
+  Markdown lint, valid local references and whitespace checks.
+- Hub review: `TJ-CP-T01-H01`; proposal scope and current-site overlap verified;
+  Markdown lint passed on 135 files, local report links resolve, and
+  `git diff --check` passed. No website or journal changes.
+- Recommended order: existing Office access-evidence update, existing current
+  studio retained-door process update, then one new La Ciotat photographic story.
+- Smallest later implementation: Office only, one selected process image and
+  corrected evidence wording; homepage unchanged.
+- Shawn's subsequent "approved and git er done" authorized the recommended
+  Office-only implementation and scoped Git closeout on October 3, 2026.
+  Other proposed stories and publication remain separate gates.
+
+### Approved Office-Only Implementation
+
+- Implemented inline in the hub; no new child or dispatch created.
+- Added the recommended `53718846780` access detail as the sixth Office photo;
+  retained all five existing room/use images and original gallery order.
+- Updated Office project/story wording to reflect corrected room attribution
+  without inventing electrical scope, floor chronology or room-wide demolition.
+- Homepage records, other projects, source journals and reviewed release
+  fingerprints are unchanged. The changed site remains a preview candidate,
+  not a newly approved release or deployment.
+- Verification: 84 repository Python tests; 135 Markdown files with zero issues;
+  current site-evidence manifest; five Python and five JavaScript search tests;
+  121 website tests plus 37 source/HTML tests; preview output validated at
+  18 pages, 53 files and 321 references; whitespace checks passed.
+- Inspected the downloaded 1024-pixel photo and the rendered narrow-width
+  Office page; the sixth image and corrected text are present. Updated exact
+  gallery assertions while retaining current/future room ownership checks.
+- Git closeout authorized to the established
+  `origin/codex/concept-b-homepage` branch; final commit/sync evidence is reported
+  in the hub reply. No archival, successor story or release promotion performed.
+
 ## Separate Follow-Up Identified
 
 The Task 01 report and the existing

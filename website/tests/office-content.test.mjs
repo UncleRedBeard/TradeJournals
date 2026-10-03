@@ -10,14 +10,18 @@ const officePhotos = [
   ["office/02.jpg", "53921322245", "72177720316928566"],
   ["office/03.jpg", "53921322215", "72177720316928566"],
   ["office/04.jpg", "53921225999", "72177720316928566"],
-  ["office/05.jpg", "53919981267", "72177720316928566"]
+  ["office/05.jpg", "53919981267", "72177720316928566"],
+  ["office/06.jpg", "53718846780", "72177720316928566"]
 ];
 
 test("Office preserves the selected gallery, original Flickr URLs, and distinct search copy", async () => {
   const records = validateContent(await loadContent(contentRoot));
   const office = records.projects.find(project => project.id === "office-restoration");
   assert.ok(office);
-  assert.equal(office.gallery.length, 5);
+  assert.equal(office.gallery.length, 6);
+  assert.equal(office.gallery.at(-1).mediaId, "flickr-53718846780");
+  assert.match(office.gallery.at(-1).caption, /localized access, not room-wide demolition/u);
+  assert.match(office.evidenceBoundary, /current-studio floor and door work/u);
   assert.deepEqual(office.searchMediaIds, ["flickr-53921322250"]);
   assert.notEqual(office.summary, office.searchSummary);
   assert.match(office.introduction, /dedicated office/u);
@@ -49,5 +53,5 @@ test("approved site snapshot retains the disabled email placeholder", async () =
 test("current Office content remains available in preview", async () => {
   const repoRoot = fileURLToPath(new URL("../../", import.meta.url));
   const preview = await prepareSite({ repoRoot, contentRoot, mode: "preview" });
-  assert.equal(preview.model.projects.find(project => project.id === "office-restoration").gallery.length, 5);
+  assert.equal(preview.model.projects.find(project => project.id === "office-restoration").gallery.length, 6);
 });

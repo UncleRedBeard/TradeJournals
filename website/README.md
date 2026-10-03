@@ -6,7 +6,8 @@ Astro, Workbench, a database, or an application server.
 
 The current site keeps three rooms distinct:
 
-- Dedicated Office — current room, five selected photographs.
+- Dedicated Office — current room, six selected photographs in the candidate
+  (five room/use views and one localized-access detail).
 - Barre Studio — Current Room — current home of The Repair Shop, five selected
   photographs.
 - Living Room Restoration — Future Barre Studio — future home of The Repair

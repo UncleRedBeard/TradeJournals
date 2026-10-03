@@ -13,7 +13,7 @@
     "trim",
     "wood floors"
   ],
-  "stage": "Current dedicated office; selected visual evidence under review",
+  "stage": "Current dedicated office; room context and localized access detail",
   "recorded": "Selected Home Reno - Office photographs; dates and sequence remain under editorial review.",
   "sourceLabel": "Home Reno - Office Flickr album",
   "occupancy": {
@@ -59,12 +59,17 @@
       "mediaId": "flickr-53921322245",
       "caption": "The working desk and chair beside the plank floor.",
       "role": "context"
+    },
+    {
+      "mediaId": "flickr-53718846780",
+      "caption": "A receptacle outside a small wall opening above the baseboard, with nearby floor protection and tape. This documents localized access, not room-wide demolition.",
+      "role": "detail"
     }
   ],
   "searchMediaIds": [
     "flickr-53921322250"
   ],
-  "introduction": "This dedicated office is presented through selected photographs from the Home Reno - Office album. Public copy is limited to visible room condition, retained materials, and current use while mixed journal claims are reviewed.",
+  "introduction": "This dedicated office is presented through selected photographs from the Home Reno - Office album: retained room character, current use, and one close detail of localized access above the baseboard.",
   "storyId": "office-restoration",
-  "evidenceBoundary": "The mixed Office journal also describes another room. Floor chronology and the reclaimed or charred door narrative are withheld pending independent source review."
+  "evidenceBoundary": "The source journal now separates current-studio floor and door work from this dedicated Office. The access photograph does not establish hidden wiring decisions, the full electrical scope, floor chronology, or room-wide demolition."
 }
