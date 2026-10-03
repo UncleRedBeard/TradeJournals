@@ -48,7 +48,7 @@ Use this section to map the Flickr albums into evidence categories before writin
 
 ### Key Photo IDs
 
-- Best El Toro representative image:
+- Best El Toro representative image: [04940001](https://www.flickr.com/photos/boocher/7137622673/), Flickr photo `7137622673` — an owl figure above a weathered wooden rail; the converging grain gives the soft monochrome scene a clear focal point.
 - Best SXSW Part 1 representative image:
 - Best SXSW Part 2 representative image:
 - Best camera/film-character example:
@@ -56,7 +56,12 @@ Use this section to map the Flickr albums into evidence categories before writin
 
 ### El Toro - Pinhole With Lens
 
-- Pending photo review.
+All seven Flickr photographs were visually reviewed on October 2, 2026. The sequence moves through an owl figure and weathered rail, a low street-and-curb view, chairs, house exteriors, and foliage. Close foreground surfaces and receding lines give the images depth despite their soft detail, dark edges, and grainy appearance. The owl frame is the strongest representative: the rail's grain leads directly toward a recognizable subject. These are observations of the displayed images, not a diagnosis of exposure, processing, or scanning faults.
+
+The owl frame visually corresponds to [Lomography photo 15964487](https://www.lomography.com/homes/texasredd/albums/1838417-el-toro-pinhole-with-lens/15964487). That page attributes it to a Diana F+ and Lomography B&W 100 (120), with Austin, 2012/dusk, and a pinhole tag. Those labels do not independently establish the optical setup or exposure settings. The catalog's separate 35mm classification conflicts with its `(120)` film label and remains unresolved here; Flickr's NORITSU scanner metadata is not taking-camera evidence. The Flickr album displayed seven images and Lomography ten, so the albums are not treated as identical sets.
+
+- Source coverage: Flickr photos `7137622673` (`04940001`), `7137623231` (`04940004`), `7137623509` (`04940006`), `7137623667` (`04940007`), `6991542544` (`04940008`), `6991542746` (`04940009`), and `6991542888` (`04940010`), each inspected at page-display size.
+- Each Flickr page displayed taken date May 2, 2012, and upload date May 3, 2012. These are platform-recorded dates, not independently verified exposure dates. The prior API/EXIF scan was not rerun.
 
 ### SXSW 2011 - Part 1
 
