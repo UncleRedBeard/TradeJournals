@@ -75,8 +75,16 @@ npm --prefix website ci
 
 `node --version` must report `v24.21.0`. The clean-checkout verification uses
 Python 3.13.7; the source syntax requires Python 3.10 or newer.
-For repository-wide Markdown lint, also run `npm ci` at the repository root,
-then `npm run lint:md`. Website dependencies alone do not install that linter.
+The root Markdown-lint tool has no committed root lockfile, so root `npm ci`
+does not work. Run its declared tool version through npm's package cache from
+the repository root; this avoids creating untracked root dependencies:
+
+```sh
+npm exec --yes --package=markdownlint-cli2@0.22.0 -- npm run lint:md
+```
+
+Website dependencies alone do not install that linter. Task 16's report records
+its separate tooling-audit findings as well as the website dependency result.
 
 ## Test And Build A Candidate
 
@@ -175,7 +183,10 @@ message, or edits journal records.
 The [release review](docs/pilot-editorial-review.md) records the content approval
 and accepted Concept B homepage, shared frame, project galleries, journals and
 archive. The [Task 15 report](../docs/website-workflow/reports/task-15-integrated-release-review.md)
-records integrated verification of the candidate branch. These are local
+records integrated verification of the candidate branch. The
+[Task 16 report](../docs/website-workflow/reports/task-16-dependency-maintenance.md)
+records the subsequent dependency patch and remaining upstream findings.
+These are local
 readiness records; they do not mean the branch is merged or the site deployed.
 
 - [x] The first release uses a disabled `Email us — coming soon` placeholder.

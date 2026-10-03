@@ -8,16 +8,21 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: October 3, 2026. Tasks 12-15 are accepted COMPLETE.
+Current checkpoint: October 3, 2026. Tasks 12-16 are accepted COMPLETE.
 Tasks 12-14 implementation is committed and pushed through `ef1d5e8` on
 `codex/concept-b-homepage`; the 11 previously approved completed chats were
 archived. Task 15 verified the integrated release and fresh-checkout reproduction;
 Shawn approved directly in its child and the hub reconciled that acceptance.
-Task 15 documentation and hub bookkeeping remain uncommitted. The independent
-La Ciotat closeout advanced HEAD to `082520c` without website changes. Three high
-build-dependency audit findings remain maintenance follow-up. Hosting/domain,
-Git integration, deployment and inquiry activation remain separate. Earlier
-branch, uncommitted and authorization statements below are historical.
+Task 15 documentation and hub bookkeeping were committed and pushed at
+`f20572a`; post-push HEAD/tracking/FETCH_HEAD matched with `0 0` and a clean
+checkout. Task 16 dependency maintenance is accepted COMPLETE after Shawn said
+`accepted` in this hub on October 3, 2026. The verified devalue patch leaves two
+high website package findings for one unresolved upstream cache issue, plus
+seven high and one moderate findings in separate Markdown tooling. These remain
+follow-up; acceptance is not a clean-audit claim. Task 16 changes are uncommitted.
+Independent content-review work advanced HEAD to `715b2a1` without website
+changes. Hosting/domain, Git integration, deployment and inquiry activation
+remain separate. Earlier checkpoints below are historical.
 
 Integration checkpoint: September 20, 2026. Shawn approved the hub's recommended
 flow to update clone instructions, fast-forward the completed website work into
@@ -665,6 +670,7 @@ said `ok, let's get started in stages. you already know our workflow.` here.
 | 13 | Project pages and galleries | COMPLETE |
 | 14 | TradeJournal reading pages and archive/search presentation | COMPLETE |
 | 15 | Integrated site verification and release review | COMPLETE |
+| 16 | Dependency maintenance | COMPLETE |
 
 Each child returns for hub review and Shawn's acceptance before the next task
 starts. Prior full-site design approval is preserved; each start remains bounded.
@@ -919,3 +925,46 @@ that these documents remain uncommitted or that Git closeout is unauthorized
 record the pre-closeout checkpoint. No merge, deployment, inquiry activation,
 archival or successor task is included. Final commit and synchronization evidence
 will be reported in the hub after the push.
+
+## Website 2 — Task 16 Dependency Maintenance
+
+- Child: `01a10290-90df-7271-9f3f-ad82cc5a8739`.
+- Brief: [Task 16, revision 1](task-16-dependency-maintenance.md).
+- Approval: Shawn said `cool...sounds good...let's get back to it and start task 16`
+  in website updates on October 3, 2026.
+- Scope: recheck dependency advisories; apply minimal compatible fixes; verify
+  locked installation, tests and static output; document remaining findings.
+- Environment: same-directory fork on `codex/concept-b-homepage` at `f20572a`.
+  Task 15 accepted, committed and pushed. Content Review Task 08's register and
+  brief are independently owned and preserved.
+- Dispatch: `WK-WEB-T16-D01` — SENT once; idle child verified beforehand.
+  Wait observed active turn `01a10291-85e9-7311-bccd-1c1035c3a1d9` and start
+  acknowledgement.
+- Workflow: COMPLETE. Shawn said `accepted` in this hub on October 3, 2026.
+  Acceptance `WK-WEB-T16-A01`; final reconciliation `WK-WEB-T16-H02`.
+  Exact child title: Website 2 - Task 16 Dependencies - COMPLETE.
+- Report: `WK-WEB-T16-R01`, revision 1, RECEIVED once and reconciled as
+  `WK-WEB-T16-H01`: [dependency maintenance](reports/task-16-dependency-maintenance.md).
+- Hub checks: reviewed lockfile/README diff, audit evidence and upstream advisory;
+  independently reran 121 Node and 37 Python tests, both output checks
+  (18 pages / 52 files / 318 references each), and complete byte comparisons to
+  baseline and fresh patched output. All pass; review current, zero changed keys.
+- Result: devalue 5.9.2 to 5.9.4 only; six advisories removed. Website audit now
+  has two high package findings for the unresolved cache issue/inherited Astro
+  finding. Separate root-tooling audit has seven high and one moderate package
+  findings. Those need remediation/exposure assessment; no clean-audit claim.
+- Current HEAD `715b2a1` includes independent content-review work without website
+  changes. Task 16 files remain uncommitted.
+- Keep design/content unchanged and inquiries disabled. No Git closeout, merge,
+  deployment, archival or successor is authorized. Wait for the current journal
+  review batch to finish before selecting future website content additions.
+
+## Task 16 Git Closeout Authorization
+
+After acceptance, Shawn said `git er done` in website updates on October 3,
+2026. This authorizes validation, commit and push of the accepted website lock
+patch, README, Task 16 brief/report and hub register to the established
+`origin/codex/concept-b-homepage` branch. Earlier uncommitted/no-closeout
+statements describe the pre-closeout checkpoint. Residual findings stay open;
+merge, deployment, archival and successor work remain separate. Final commit
+and synchronization evidence will be reported in the hub after the push.
