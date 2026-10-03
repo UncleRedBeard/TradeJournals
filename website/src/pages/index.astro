@@ -3,7 +3,6 @@ import AtelierContact from "../components/AtelierContact.astro";
 import AtelierProjectCard from "../components/AtelierProjectCard.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
 import "../styles/atelier.css";
-import fontLicense from "../styles/fonts/OFL.txt?raw";
 import model from "@site-model";
 
 const featured = model.home.featuredProjectIds.map(id => model.projects.find(project => project.id === id));
@@ -11,24 +10,7 @@ const workshop = model.home.workshopProjectIds.map(id => model.projects.find(pro
 const { site, home } = model;
 ---
 
-<SiteLayout site={site} reviewNotice={model.reviewNotice} bodyClass="atelier-home">
-  <template id="font-license">{fontLicense}</template>
-  <header slot="header" class="atelier-header">
-    <div class="atelier-shell atelier-header__row">
-      <a class="atelier-brand" href="/">
-        <span class="atelier-brand__mark" aria-hidden="true">T·T</span>
-        <span><span class="atelier-brand__name">{site.name}</span><span class="atelier-brand__detail">Historic floors · Interior woodwork</span></span>
-      </a>
-      <nav class="atelier-nav" aria-label="Primary navigation">
-        <a href="#documented-projects">Selected work ({featured.length})</a>
-        <a href="#practice">Practice</a>
-        {workshop.length > 0 && <a href="#workshop-studies">Workshop</a>}
-        <a href="/tradejournals/">TradeJournals</a>
-      </nav>
-      <div class="atelier-header__contact"><AtelierContact contact={site.contact} /></div>
-    </div>
-  </header>
-
+<SiteLayout site={site} home={home} reviewNotice={model.reviewNotice} bodyClass="atelier-home">
   <section class="atelier-hero" aria-labelledby="home-heading">
     <div class="atelier-shell atelier-hero__grid">
       <div>
@@ -75,8 +57,4 @@ const { site, home } = model;
     )}
   </div>
 
-  <footer slot="footer" class="atelier-footer atelier-shell">
-    <div><strong>{site.name}</strong><p>{site.serviceLine}</p></div>
-    <AtelierContact contact={site.contact} />
-  </footer>
 </SiteLayout>

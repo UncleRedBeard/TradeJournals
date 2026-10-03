@@ -1,39 +1,5 @@
-@import "./fonts/cormorant.css";
-
-.atelier-home {
-  --atelier-dark: #1e1a16;
-  --atelier-paper: #f5efeb;
-  --atelier-card: #ece4dc;
-  --atelier-ink: #24201b;
-  --atelier-brass: #c88d4e;
-  --atelier-accent: #8e5431;
-  --atelier-display: "Cormorant Garamond", Georgia, serif;
-  --atelier-mono: "Courier New", monospace;
-  background: var(--atelier-paper);
-  color: var(--atelier-ink);
-  font-family: Arial, Helvetica, sans-serif;
-}
-.atelier-home ::selection { background: #c88d4e; color: #1e1a16; }
-.atelier-home :focus-visible { outline: 3px solid var(--atelier-accent); outline-offset: 4px; }
-.atelier-shell { width: min(calc(100% - 4rem), 80rem); margin-inline: auto; }
-.atelier-home .skip-link { z-index: 100; background: var(--atelier-paper); color: var(--atelier-ink); }
-.atelier-home .review-notice { background: #e6d8c5; border-color: #c9b394; color: #4a4237; font-size: .75rem; }
-.atelier-home .review-notice .shell { width: min(calc(100% - 4rem), 80rem); }
-.atelier-home [id] { scroll-margin-top: 8rem; }
 .atelier-eyebrow { color: var(--atelier-accent); font: .6875rem/1.5 var(--atelier-mono); letter-spacing: .1em; margin: 0 0 .35rem; text-transform: uppercase; }
-.atelier-header { background: var(--atelier-dark); border-bottom: 2px solid var(--atelier-brass); color: var(--atelier-paper); position: sticky; top: 0; z-index: 10; }
-.atelier-header__row { align-items: center; display: flex; gap: 1.5rem; justify-content: space-between; min-height: 5.5rem; padding-block: 1rem; }
-.atelier-brand { align-items: center; display: flex; flex-shrink: 0; gap: .8rem; text-decoration: none; }
-.atelier-brand__mark { align-items: center; border: 1px solid var(--atelier-brass); color: var(--atelier-brass); display: flex; font: 1.2rem var(--atelier-display); justify-content: center; height: 2.25rem; width: 2.25rem; }
-.atelier-brand__name { display: block; font: 500 1.5rem/1.1 var(--atelier-display); }
-.atelier-brand__detail { color: #b5aba0; display: block; font: .5625rem/1.5 var(--atelier-mono); letter-spacing: .08em; margin-top: .3rem; text-transform: uppercase; }
-.atelier-nav { align-items: center; display: flex; flex-wrap: wrap; gap: 0 1.5rem; }
-.atelier-nav a { align-items: center; color: #c9beb1; display: flex; font-size: .6875rem; letter-spacing: .075em; min-height: 44px; text-decoration: none; text-transform: uppercase; }
-.atelier-nav a:hover { color: var(--atelier-paper); text-decoration: underline; }
-.atelier-header :focus-visible, .atelier-hero :focus-visible, .atelier-workshop :focus-visible { outline-color: #dfb47b; }
-.atelier-contact { background: #2d2721; border: 1px solid #675848; color: #b5aba0; display: inline-block; font: .6875rem/1.5 var(--atelier-mono); padding: .65rem .85rem; text-align: center; text-decoration: none; white-space: nowrap; }
-.atelier-contact:disabled { cursor: not-allowed; }
-.atelier-contact[href]:hover { text-decoration: underline; }
+.atelier-hero :focus-visible, .atelier-workshop :focus-visible { outline-color: #dfb47b; }
 .atelier-hero { background: #241f1a; color: var(--atelier-paper); padding: 4rem 0 5rem; }
 .atelier-hero__grid { align-items: center; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 3rem; }
 .atelier-hero__label { background: #2f2821; border: 1px solid #4f4234; color: #dfb47b; display: table; font: .6875rem/1.5 var(--atelier-mono); letter-spacing: .08em; margin: 0 0 1.5rem; padding: .35rem .65rem; text-transform: uppercase; }
@@ -57,20 +23,10 @@
 .atelier-workshop h2 { font: 400 2.5rem/1.1 var(--atelier-display); margin: .3rem 0 .75rem; }
 .atelier-workshop__intro > p:last-child { color: #c9beb1; font-size: .875rem; margin: 0; }
 .atelier-workshop__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
-.atelier-footer { align-items: center; border-top: 1px solid #d5cbc0; display: flex; gap: 1.5rem; justify-content: space-between; margin-top: 5rem; padding: 2rem 0; }
-.atelier-footer strong { font: 500 1.4rem var(--atelier-display); }
-.atelier-footer p { color: #6e6458; font: .625rem/1.6 var(--atelier-mono); margin: .25rem 0 0; }
-.atelier-footer .atelier-contact { background: #e6ddd2; border-color: #b5a99a; color: #746453; }
-
 @media (max-width: 72rem) {
-  .atelier-header__row { flex-wrap: wrap; gap: .4rem 1.5rem; }
-  .atelier-nav { order: 3; width: 100%; }
   .atelier-hero__grid { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 2rem; }
 }
 @media (max-width: 56rem) {
-  .atelier-header { position: static; }
-  .atelier-home [id] { scroll-margin-top: 1rem; }
-  .atelier-header__contact { display: none; }
   .atelier-hero__grid { grid-template-columns: minmax(0, 1fr); }
   .atelier-hero h1 { max-width: 17ch; }
   .atelier-practice { max-width: 40rem; }
@@ -81,12 +37,6 @@
   .atelier-workshop__surface { padding: 2rem; }
 }
 @media (max-width: 38rem) {
-  .atelier-shell, .atelier-home .review-notice .shell { width: calc(100% - 2.5rem); }
-  .atelier-header__row { padding-block: .9rem .25rem; }
-  .atelier-brand__name { font-size: 1.35rem; }
-  .atelier-brand__detail { font-size: .5rem; }
-  .atelier-nav { justify-content: space-between; gap: .25rem .5rem; }
-  .atelier-nav a { font-size: .625rem; letter-spacing: .025em; }
   .atelier-hero { padding: 2.5rem 0; }
   .atelier-hero__grid { gap: 1.5rem; }
   .atelier-hero__label { font-size: .625rem; }
@@ -101,6 +51,4 @@
   .atelier-workshop__surface { padding: 1.25rem; }
   .atelier-workshop__grid { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .atelier-workshop h2 { font-size: 2rem; }
-  .atelier-footer { align-items: start; flex-direction: column; margin-top: 3rem; }
-  .atelier-footer .atelier-contact { width: 100%; }
 }

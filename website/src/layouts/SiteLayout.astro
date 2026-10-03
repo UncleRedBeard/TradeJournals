@@ -1,7 +1,11 @@
 ---
 import "../styles/base.css";
+import "../styles/atelier-frame.css";
+import AtelierHeader from "../components/AtelierHeader.astro";
+import AtelierFooter from "../components/AtelierFooter.astro";
+import fontLicense from "../styles/fonts/OFL.txt?raw";
 
-const { site, title = "", reviewNotice = "", bodyClass = "" } = Astro.props;
+const { site, home, title = "", reviewNotice = "", bodyClass = "" } = Astro.props;
 const pageTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.descriptor}`;
 ---
 
@@ -13,25 +17,16 @@ const pageTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.d
     <title>{pageTitle}</title>
     {reviewNotice && <meta name="robots" content="noindex, nofollow" />}
   </head>
-  <body class={bodyClass || undefined}>
+  <body class:list={["atelier-site", bodyClass]}>
+    <template id="font-license">{fontLicense}</template>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <slot name="header">
-    <header class="site-header">
-      <div class="shell site-header__row">
-        <a class="site-name" href="/">
-          {site.name}
-          <span class="site-descriptor">{site.descriptor}</span>
-        </a>
-        <nav class="site-nav" aria-label="Primary navigation">
-          {site.navigation.map(link => <a href={link.href}>{link.label}</a>)}
-        </nav>
-      </div>
-    </header>
+      <AtelierHeader site={site} home={home} isHome={Astro.url.pathname === "/"} />
     </slot>
     {reviewNotice && <aside class="review-notice"><div class="shell">{reviewNotice}</div></aside>}
-    <main id="main-content"><slot /></main>
+    <main id="main-content" tabindex="-1"><slot /></main>
     <slot name="footer">
-      <footer class="site-footer"><div class="shell"><strong>{site.name}</strong><br />{site.serviceLine}</div></footer>
+      <AtelierFooter site={site} />
     </slot>
   </body>
 </html>

@@ -3,17 +3,28 @@ const { images } = Astro.props;
 ---
 
 <div class="gallery">
-  {images.map((image, index) => <figure class:list={["gallery__item", { "gallery__item--wide": image.width > image.height }]}>
-    <a href={image.sourceUrl} aria-label={`View original source for ${image.alt}`}><img src={image.src} width={image.width} height={image.height} alt={image.alt} loading={index === 0 ? "eager" : "lazy"} style={image.focalPoint ? `object-position: ${image.focalPoint[0]}% ${image.focalPoint[1]}%` : undefined} /></a>
+  {images.map((image, index) => <figure class:list={["gallery__item", { "gallery__item--wide": image.width > image.height, "gallery__item--lead": index === 0 }]}>
+    <a class="gallery__image" href={image.sourceUrl} aria-label={`View original source for ${image.alt}`}><img src={image.src} width={image.width} height={image.height} alt={image.alt} loading={index === 0 ? "eager" : "lazy"} decoding="async" style={image.focalPoint ? `object-position: ${image.focalPoint[0]}% ${image.focalPoint[1]}%` : undefined} /></a>
     {image.caption && <figcaption>{image.caption} <a href={image.sourceUrl}>Original source</a></figcaption>}
   </figure>)}
 </div>
 
 <style>
-  .gallery { display: grid; gap: 1.25rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .gallery__item { margin: 0; }
+  .gallery { display: grid; align-items: start; gap: 3rem 2rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gallery__item { margin: 0; min-width: 0; }
+  .gallery__image { background: var(--atelier-card); border: 1px solid #b5a99a; display: block; padding: clamp(.75rem, 1.5vw, 1.5rem); }
+  .gallery__image:hover { border-color: var(--atelier-accent); }
   .gallery__item img { height: auto; max-height: 36rem; object-fit: contain; width: 100%; }
-  .gallery__item--wide { grid-column: span 2; }
-  figcaption { color: #526258; font-size: 0.85rem; margin-top: 0.45rem; }
-  @media (max-width: 38rem) { .gallery { grid-template-columns: 1fr; } .gallery__item--wide { grid-column: auto; } }
+  .gallery__item--wide, .gallery__item--lead { grid-column: span 2; }
+  .gallery__item--lead { align-items: end; display: grid; gap: 2rem; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); }
+  .gallery__item--lead img { max-height: 42rem; }
+  .gallery__item--lead:not(:has(figcaption)) { grid-template-columns: minmax(0, 1fr); }
+  figcaption { color: #4a4237; font-size: .875rem; line-height: 1.65; margin-top: .85rem; max-width: 65ch; }
+  figcaption a { color: var(--atelier-accent); display: table; font: .75rem/1.5 var(--atelier-mono); padding-block: .75rem; }
+  @media (max-width: 56rem) { .gallery__item--lead { display: block; } }
+  @media (max-width: 38rem) {
+    .gallery { gap: 2rem; grid-template-columns: minmax(0, 1fr); }
+    .gallery__item--wide, .gallery__item--lead { grid-column: auto; }
+    .gallery__item img { max-height: none; }
+  }
 </style>

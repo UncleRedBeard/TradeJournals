@@ -1,0 +1,10 @@
+---
+import AtelierContact from "./AtelierContact.astro";
+
+const { site } = Astro.props;
+---
+
+<footer class="atelier-footer atelier-shell">
+  <div><strong>{site.name}</strong><p>{site.serviceLine}</p></div>
+  <AtelierContact contact={site.contact} />
+</footer>

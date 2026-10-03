@@ -11,6 +11,57 @@ export function getStaticPaths() {
 const { project } = Astro.props;
 ---
 
-<SiteLayout site={model.site} title={project.title} reviewNotice={model.reviewNotice}>
-  <article class="section"><div class="shell"><p class="eyebrow">{project.area}</p><h1 class="section-heading">{project.title}</h1><p class="prose">{project.introduction || project.summary}</p><EvidenceDetails project={project} /><ProjectGallery images={project.gallery} /><p><a class="button-link" href={project.archiveHref}>Read the TradeJournal record</a></p></div></article>
+<SiteLayout site={model.site} home={model.home} title={project.title} reviewNotice={model.reviewNotice}>
+  <article class="project-page atelier-shell">
+    <a class="project-page__back" href="/#documented-projects"><span aria-hidden="true">← </span>Work &amp; Craft</a>
+    <div class="project-page__intro">
+      <div>
+        <p class="project-page__area">{project.area}</p>
+        <h1>{project.title}</h1>
+        <p class="project-page__summary">{project.introduction || project.summary}</p>
+        <nav class="project-page__links" aria-label="Explore this project">
+          <a href="#project-photographs">View photographs <span aria-hidden="true">↓</span></a>
+          <a href={project.archiveHref}>Read the TradeJournal record <span aria-hidden="true">→</span></a>
+        </nav>
+      </div>
+      <EvidenceDetails project={project} projectPage />
+    </div>
+    <section id="project-photographs" aria-labelledby="project-photographs-heading" tabindex="-1">
+      <h2 id="project-photographs-heading">Project photographs</h2>
+      <ProjectGallery images={project.gallery} />
+    </section>
+    <div class="project-page__journal">
+      <a href={project.archiveHref}>Read the TradeJournal record <span aria-hidden="true">→</span></a>
+      <a href="/#documented-projects">Back to Work &amp; Craft</a>
+    </div>
+  </article>
 </SiteLayout>
+
+<style>
+  .project-page { padding-top: 2rem; }
+  .project-page__back { align-items: center; color: var(--atelier-accent); display: inline-flex; gap: .5rem; font: .75rem var(--atelier-mono); min-height: 44px; text-decoration: none; }
+  .project-page__back:hover { text-decoration: underline; }
+  .project-page__intro { align-items: start; display: grid; gap: clamp(2rem, 5vw, 5rem); grid-template-columns: minmax(0, 5fr) minmax(0, 3fr); margin: 2rem 0 4rem; }
+  .project-page__area { color: var(--atelier-accent); font: .6875rem/1.5 var(--atelier-mono); letter-spacing: .1em; margin: 0 0 .85rem; text-transform: uppercase; }
+  h1 { font: 400 clamp(2.7rem, 4.6vw, 4.5rem)/1.05 var(--atelier-display); letter-spacing: -.025em; margin: 0; max-width: 20ch; text-wrap: balance; }
+  .project-page__summary { color: #4a4237; font-size: 1.0625rem; line-height: 1.75; margin: 1.5rem 0; max-width: 58ch; }
+  .project-page__links { display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; }
+  .project-page__links a { align-items: center; color: var(--atelier-accent); display: inline-flex; font-size: .875rem; gap: .75rem; min-height: 44px; }
+  h2 { border-bottom: 2px solid var(--atelier-ink); font: 500 clamp(2rem, 3vw, 2.6rem)/1.1 var(--atelier-display); margin: 0 0 2rem; padding-bottom: 1rem; }
+  .project-page__journal { align-items: center; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; }
+  .project-page__journal a { align-items: center; color: var(--atelier-accent); display: inline-flex; gap: 1rem; min-height: 44px; }
+  .project-page__journal a:first-child { color: var(--atelier-ink); font: 500 clamp(1.5rem, 2.3vw, 2rem)/1.25 var(--atelier-display); }
+  .project-page__journal a:last-child { font-size: .8125rem; }
+  @media (max-width: 56rem) {
+    .project-page__intro { grid-template-columns: minmax(0, 1fr); gap: 2rem; margin-bottom: 3rem; }
+    h1 { max-width: 22ch; }
+  }
+  @media (max-width: 38rem) {
+    .project-page { padding-top: 1rem; }
+    .project-page__intro { margin-top: 1.5rem; }
+    h1 { font-size: clamp(2.4rem, 10vw, 3.4rem); }
+    .project-page__summary { font-size: 1rem; }
+    .project-page__links { align-items: start; flex-direction: column; gap: .25rem; }
+    h2 { margin-bottom: 1.5rem; }
+  }
+</style>

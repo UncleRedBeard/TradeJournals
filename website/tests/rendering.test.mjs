@@ -47,6 +47,31 @@ test("homepage links every selected project in folio order and keeps inquiries d
   assert.doesNotMatch(page, /<form\b/);
 });
 
+test("shared frame reaches homepage sections from every inner route and retains font licensing and keyboard access", async () => {
+  const { model } = await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
+  const routes = ["/", "/tradejournals/", ...model.projects.flatMap(project => [project.href, project.archiveHref])];
+  for (const route of routes) {
+    const page = await readFile(path.join(websiteRoot, ".preview-dist", route.slice(1), "index.html"), "utf8");
+    const header = page.match(/<header\b[^>]*>.*?<\/header>/s)?.[0];
+    const footer = page.match(/<footer\b[^>]*>.*?<\/footer>/s)?.[0];
+    assert.ok(header && footer, `${route} has the shared landmarks`);
+    assert.equal([...page.matchAll(/<header\b/g)].length, 1);
+    assert.equal([...page.matchAll(/<footer\b/g)].length, 1);
+    const prefix = route === "/" ? "" : "/";
+    for (const fragment of ["documented-projects", "practice", "workshop-studies"]) {
+      assert.ok(header.includes(`href="${prefix}#${fragment}"`), `${route} links to the homepage ${fragment} section`);
+    }
+    assert.match(header, /href="\/tradejournals\/"/);
+    assert.match(header, /aria-label="Primary navigation"/);
+    assert.match(footer, /<button\b[^>]*\bdisabled\b[^>]*>Email us — coming soon<\/button>/);
+    assert.match(page, /href="#main-content"[^>]*>Skip to content/);
+    assert.match(page, /<main\b[^>]*id="main-content"[^>]*tabindex="-1"/);
+    assert.match(page, /@font-face[^}]*data:font\/woff2;base64,/);
+    assert.match(page, /<template id="font-license">.*SIL OPEN FONT LICENSE.*<\/template>/s);
+    assert.equal([...page.matchAll(/id="font-license"/g)].length, 1);
+  }
+});
+
 test("candidate preview renders explicit occupancy", async t => {
   const fixture = await writeFixture(t);
   const fixtureWebsiteRoot = path.join(fixture.repoRoot, "website");
@@ -64,4 +89,27 @@ test("candidate preview renders explicit occupancy", async t => {
   assert.match(page, /<strong[^>]*>Stage:<\/strong> Recorded work/);
   assert.match(page, /<strong[^>]*>Recorded:<\/strong> 2026/);
   assert.equal([...page.matchAll(/Current barre studio/g)].length, 1);
+  assert.match(page, /href="\/#documented-projects"/);
+  assert.doesNotMatch(page, /href="\/#workshop-studies"/);
+});
+
+test("project photographs remain in approved order with captions and source links behind a working gallery jump", async () => {
+  const { model } = await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
+  const escapeHtml = value => value.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+  for (const project of model.projects) {
+    const page = await readFile(path.join(websiteRoot, ".preview-dist", project.href.slice(1), "index.html"), "utf8");
+    assert.ok(page.includes('href="#project-photographs"'), `${project.id} lets visitors jump to photographs`);
+    assert.match(page, /<section\b[^>]*id="project-photographs"[^>]*aria-labelledby="project-photographs-heading"/);
+    assert.match(page, /<h2\b[^>]*id="project-photographs-heading"/);
+    const figures = [...page.matchAll(/<figure\b[^>]*>.*?<\/figure>/gs)].map(match => match[0]);
+    assert.equal(figures.length, project.gallery.length, `${project.id} keeps every selected image once`);
+    for (const [index, image] of project.gallery.entries()) {
+      const figure = figures[index];
+      assert.ok(figure.includes(`src="${escapeHtml(image.src)}"`), `${project.id} preserves image order`);
+      assert.ok(figure.includes(`alt="${escapeHtml(image.alt)}"`));
+      assert.ok(figure.includes(`href="${escapeHtml(image.sourceUrl)}"`));
+      if (image.caption) assert.ok(figure.includes(escapeHtml(image.caption)), `${project.id} preserves the caption`);
+    }
+    assert.ok(page.includes(`href="${project.archiveHref}"`), `${project.id} retains its journal link`);
+  }
 });

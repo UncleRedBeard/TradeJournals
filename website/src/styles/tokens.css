@@ -1,12 +1,20 @@
 :root {
-  --ink: #20352d;
-  --green: #294a3b;
-  --sage: #b8c8ae;
-  --limestone: #e7e1d2;
-  --paper: #f7f4ed;
-  --wood: #826445;
-  --line: #c8c0af;
-  --display: Georgia, "Times New Roman", serif;
-  --body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --atelier-dark: #1e1a16;
+  --atelier-paper: #f5efeb;
+  --atelier-card: #ece4dc;
+  --atelier-ink: #24201b;
+  --atelier-brass: #c88d4e;
+  --atelier-accent: #8e5431;
+  --atelier-display: "Cormorant Garamond", Georgia, serif;
+  --atelier-mono: "Courier New", monospace;
+  --ink: var(--atelier-ink);
+  --green: var(--atelier-dark);
+  --sage: #e6d8c5;
+  --limestone: var(--atelier-card);
+  --paper: var(--atelier-paper);
+  --wood: var(--atelier-accent);
+  --line: #d5cbc0;
+  --display: var(--atelier-display);
+  --body: Arial, Helvetica, sans-serif;
   --measure: 72rem;
 }

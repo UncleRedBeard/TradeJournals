@@ -3,10 +3,19 @@
 Hub title: website updates
 Hub thread ID: `01a0a263-8d09-7ff2-8144-a71eb6ec16f6`
 Workspace: `/Users/shkelley/Documents/PERSONAL/Shawn/Nerds/TradeJournals`
-Branch: `main` (approved website integration); `codex/website-updates` retained
+Branch: `codex/concept-b-homepage` (Concept B continuation); `main` retains the prior approved release
 Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
+
+Current checkpoint: October 2, 2026. The Concept B homepage is approved and
+committed at `6a528e3`. Tasks 12 and 13 are accepted COMPLETE. Shawn then said
+`git er done`, authorizing their scoped commit and push to the established
+`origin/codex/concept-b-homepage` branch. This closeout includes the shared
+frame, project presentation, tests and website workflow records. Concurrent
+content-review work remains excluded. Task 14 is not started; merge, deployment
+and archival remain separate. Earlier branch, uncommitted and authorization
+statements below describe their original checkpoints.
 
 Integration checkpoint: September 20, 2026. Shawn approved the hub's recommended
 flow to update clone instructions, fast-forward the completed website work into
@@ -640,6 +649,98 @@ their completion reports. Preserve other tasks' work and do not switch branches.
   Child owns the final brief/register commit and push; that bookkeeping outcome
   remains pending. Hub stops editing after handback. Hosting, deployment, merge,
   archival and successor remain outside scope.
+
+## Website 2 — Concept B Staged Continuation
+
+Approved visual direction: Craftsman's Atelier; homepage implementation accepted
+in `Toil & Timber — Concept B Website Redesign`, source task
+`01a0fce4-a907-7981-a469-b3b101199a36`. Receipt alone started no work. Shawn then
+said `ok, let's get started in stages. you already know our workflow.` here.
+
+| Task | Stage | Execution status |
+| --- | --- | --- |
+| 12 | Shared header/footer, navigation and styling foundation | COMPLETE |
+| 13 | Project pages and galleries | COMPLETE |
+| 14 | TradeJournal reading pages and archive/search presentation | Planned; not created or started |
+| 15 | Integrated site verification and release review | Planned; not created or started |
+
+Each child returns for hub review and Shawn's acceptance before the next task
+starts. Prior full-site design approval is preserved; each start remains bounded.
+Keep existing copy/media/search, room identities and disabled inquiry behavior.
+Git closeout, deployment and any changed-source review remain separate decisions.
+
+### Website 2 — Task 12 Shared Frame
+
+- Child: `01a0fed3-08c2-7042-a8ea-f1893d20c24a`.
+- Brief: [Task 12, revision 1](task-12-concept-b-shared-frame.md).
+- Approval: RECEIVED October 2; direct staged-start instruction above.
+- Scope: reuse accepted Concept B header/footer and typography/palette foundations
+  on all route types; preserve the homepage; verify inner-page navigation and
+  responsive/keyboard behavior. Page-specific body redesigns are deferred.
+- Environment: same directory; `codex/concept-b-homepage`; baseline `6a528e3`.
+  Other website tasks observed idle. Unrelated content-review work remains.
+- Exact title: Website 2 - Task 12 Shared Frame - COMPLETE.
+- Workflow status: COMPLETE — hub technical review passed; Shawn's
+  direct child approval verified. Initial execution turn was
+  `01a0fed5-562d-7193-a48a-ec6d5f50f69a`.
+- Dispatch: `WK-WEB-T12-D01`; SENT once October 2, 2026.
+- Report: `WK-WEB-T12-R01`, revision 3,
+  [Task 12 report](reports/task-12-concept-b-shared-frame.md); received once and
+  accepted as `WK-WEB-T12-H03` October 2; earlier receipts remain H01/H02.
+- Acceptance: Shawn said `i like that. approved` in child turn
+  `01a0fefe-5250-7aa2-ab93-6ee2f42b4f28` after delivery of the Work & Craft
+  amendment. User message verified directly; implementation unchanged since
+  revision 2. Accepted scope is complete; successor/Git approval is separate.
+- Narrow amendment: Shawn directly requested `change it to work & craft` in
+  child turn `01a0feef-79b9-7940-8066-cb7c40b10759`. Shared navigation now reads
+  **Work & Craft**, without the count. Hub verified the label and unchanged
+  destination across all 18 pages in each rebuilt output; child build/browser
+  checks passed. Subsequent user acceptance is recorded above.
+- Hub checks: full diff/new-component review, 119 Node and 37 Python tests,
+  Markdown lint (95 files, zero errors), whitespace checks and both independent
+  output checks passed (18 pages, 52 files, 270 references each). Review is
+  current with zero changed keys; saved snapshot unchanged. Live inner-page
+  shared frame inspected; child's desktop/mobile/keyboard/search evidence read.
+- Preview: `http://127.0.0.1:8139/`. Changes remain uncommitted. Separate Kodakk
+  journal/brief/report and content-review register work preserved. No successor
+  dispatched or Git closeout performed.
+- Boundaries: no public content/source/fingerprint change, journal/inventory
+  edits, contact activation, Git closeout, merge, hosting/deployment, archive or
+  next-stage execution. Hub owns brief/register; child owns implementation/report.
+
+### Website 2 — Task 13 Projects And Galleries
+
+- Child: `01a0ff09-49a5-7cb2-a999-d7dbd073ecba`.
+- Brief: [Task 13, revision 1](task-13-project-pages-galleries.md).
+- Preparation authorization: Shawn said `handoff task 13` on October 2, 2026.
+- Execution approval: RECEIVED directly in child October 2; `WK-WEB-T13-A01`.
+  Shawn said `get started...but update the title to reflect status as well` in
+  turn `01a0ff11-3c3e-7a13-844d-0ef34b67c21d`; user message verified directly.
+- Exact title: Website 2 - Task 13 Projects - COMPLETE.
+- Workflow status: COMPLETE; hub technical review passed and Shawn's
+  visual acceptance verified. No duplicate hub dispatch sent.
+- Scope: extend accepted Concept B styling to project pages/gallery presentation;
+  preserve approved content, shared frame, room identities and disabled inquiries.
+- Dependency: Task 12 accepted COMPLETE as `WK-WEB-T12-H03`; its uncommitted
+  implementation remains the starting point.
+- Environment: same-directory fork on `codex/concept-b-homepage`; observed HEAD
+  `6c48930489851925eb837a2a89f22bb7cec8ccb5`. Separate El Toro source-review work
+  is active; preserve its files and refresh status before execution.
+- Report: `WK-WEB-T13-R01`, revision 2, at
+  [Task 13 report](reports/task-13-project-pages-galleries.md); RECEIVED and
+  accepted as `WK-WEB-T13-H02` October 2; initial receipt remains H01.
+- Acceptance: verified Shawn's direct `approved` in child turn
+  `01a0ff24-8003-72c3-9b99-f87b22a20315` following delivery. No implementation
+  change accompanies approval; the accepted stage is complete.
+- Hub review: inspected template/components/test changes and desktop/phone
+  screenshots; no blocking issues. Independently passed 120 Node and 37 Python
+  tests and both matching-model output checks (18 pages, 52 files, 302 references
+  each). Review current with no changed keys; saved snapshot unchanged.
+  Child reports live viewport, image loading, keyboard and navigation checks.
+- Preview: `http://127.0.0.1:8139/work/living-room-studio-restoration/`.
+  Task 12/13 changes remain uncommitted; concurrent content-review work advanced
+  HEAD to `0225667` and owns the later SXSW journal/brief/report/register changes.
+- Task 14/15, Git closeout, merge, deployment and archival remain outside scope.
 
 ## Remaining Decisions After The Pilot — Updated Direction
 

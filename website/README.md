@@ -34,8 +34,14 @@ the Astro release package.
 The [approved Concept B homepage](docs/concept-b-homepage-review.md) adapts the
 reviewed Stitch direction into the existing Astro site. Its presentation lives
 in `src/styles/atelier.css` and `src/components/AtelierProjectCard.astro`.
-Project and TradeJournal pages retain their existing presentation while the
-approved site-wide update remains pending.
+`SiteLayout.astro` reuses `AtelierHeader.astro` and `AtelierFooter.astro` on every
+route. Shared frame styles and local fonts live in `src/styles/atelier-frame.css`;
+palette and font tokens live in `src/styles/tokens.css`. Inner-page navigation
+links back to the homepage sections. Project presentation lives in
+`src/pages/work/[id].astro` and `ProjectGallery.astro`: full-image matte frames,
+captions, a photo jump link and links to the journal. `EvidenceDetails.astro`
+uses its opt-in `projectPage` treatment there while retaining the existing
+journal presentation. TradeJournal and archive layouts await their later stage.
 
 ## Repository, Runtime, And Installation
 

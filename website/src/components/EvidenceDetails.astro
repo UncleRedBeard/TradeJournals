@@ -1,8 +1,9 @@
 ---
-const { project } = Astro.props;
+const { project, projectPage = false } = Astro.props;
 ---
 
-<aside class="evidence-details" aria-label="Project record">
+<aside class:list={["evidence-details", { "evidence-details--project": projectPage }]} aria-label="Project record">
+  {projectPage && <h2>Project record</h2>}
   <p><strong>Stage:</strong> {project.stage}</p>
   <p><strong>Recorded:</strong> {project.recorded}</p>
   {project.occupancy && <p>{project.occupancy.label}</p>}
@@ -16,4 +17,12 @@ const { project } = Astro.props;
   .evidence-details p { margin: 0.6rem 0; }
   .evidence-details ul { padding-left: 1.1rem; }
   .evidence-details span { color: #647168; }
+  .evidence-details--project { background: var(--atelier-card); border: 1px solid var(--line); border-top: 2px solid var(--atelier-brass); color: #4a4237; font-size: .875rem; margin: 0; max-width: none; padding: 1.5rem; }
+  .evidence-details--project h2 { color: var(--atelier-ink); font: 500 1.65rem/1.1 var(--atelier-display); margin: 0 0 1rem; }
+  .evidence-details--project strong { color: var(--atelier-ink); font-weight: 600; }
+  .evidence-details--project ul { border-top: 1px solid #d5cbc0; list-style: none; margin: 1rem 0 0; padding: .5rem 0 0; }
+  .evidence-details--project li + li { margin-top: .5rem; }
+  .evidence-details--project a { align-items: center; color: var(--atelier-accent); display: inline-flex; min-height: 44px; }
+  .evidence-details--project span { color: #6e6458; display: block; font-size: .75rem; }
+  @media (max-width: 38rem) { .evidence-details--project { padding: 1.25rem; } }
 </style>

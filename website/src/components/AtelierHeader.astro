@@ -1,0 +1,22 @@
+---
+import AtelierContact from "./AtelierContact.astro";
+
+const { site, home, isHome = false } = Astro.props;
+const sectionRoot = isHome ? "" : "/";
+---
+
+<header class="atelier-header">
+  <div class="atelier-shell atelier-header__row">
+    <a class="atelier-brand" href="/">
+      <span class="atelier-brand__mark" aria-hidden="true">T·T</span>
+      <span><span class="atelier-brand__name">{site.name}</span><span class="atelier-brand__detail">Historic floors · Interior woodwork</span></span>
+    </a>
+    <nav class="atelier-nav" aria-label="Primary navigation">
+      <a href={`${sectionRoot}#documented-projects`}>Work &amp; Craft</a>
+      <a href={`${sectionRoot}#practice`}>Practice</a>
+      {home.workshopProjectIds?.length > 0 && <a href={`${sectionRoot}#workshop-studies`}>Workshop</a>}
+      <a href="/tradejournals/">TradeJournals</a>
+    </nav>
+    <div class="atelier-header__contact"><AtelierContact contact={site.contact} /></div>
+  </div>
+</header>
