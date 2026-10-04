@@ -215,3 +215,21 @@ The exact `pilot.json` SHA-256 is
 
 Hosting, upload, deployment, merging to main and the remaining content-promotion
 proposals still require separate approval.
+
+## October 3 Studio Retained-Door Release Approval
+
+Shawn approved release-snapshot promotion with "yes" in the Content Review
+Parent after accepting and closing out candidate commit `849fbce`.
+Only the Current Barre Studio project/story and the selected media records and
+image bytes for `52704581571` and `52704058327` changed fingerprints.
+The person-visible torch frame remains excluded. Dates and final installation
+remain qualified, and the homepage and other projects are unchanged.
+
+This is approval of the local release snapshot, not deployment, a main merge,
+inquiry activation or starting the La Ciotat story.
+
+Fresh verification: 121 website Node and 37 source/HTML tests passed. The
+guarded release build and independent checker validate 18 pages and 55 files.
+The snapshot is current with zero changed keys, covering 53 records and 50
+sources. Exact `pilot.json` SHA-256:
+`337bb262659e1f82d8e1692472e83e5a8c96d8d27802e1363e503e2b7fe4be03`.

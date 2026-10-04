@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "flickr-5488818887",
+  "kind": "evidence",
+  "assetPath": "site_example/assets/flickr/la-ciotat/02.jpg",
+  "sourceUrl": "https://www.flickr.com/photos/boocher/5488818887/in/album-72157626174678654/",
+  "albumKey": "flickr:72157626174678654",
+  "alt": "Three people walking away along a narrow La Ciotat street lined with shutters, shopfronts, and signs",
+  "width": 1024,
+  "height": 768
+}

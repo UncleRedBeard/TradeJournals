@@ -33,7 +33,7 @@ test("candidate preview stages selected assets and writes the public model", asy
   assert.equal(result.outputRoot, path.join(websiteRoot, ".preview-dist"));
   assert.deepEqual(result.model.projects.map(project => project.id).sort(), [
     "agfa-isolette", "entry-restoration", "guest-bath-dresser-vanity",
-    "living-room-studio-restoration", "master-bedroom-restoration", "office-restoration",
+    "la-ciotat", "living-room-studio-restoration", "master-bedroom-restoration", "office-restoration",
     "returning-to-clay", "studio-office-restoration"
   ]);
   assert.deepEqual(result.model.home.featuredProjectIds, [
@@ -45,11 +45,18 @@ test("candidate preview stages selected assets and writes the public model", asy
   assert.equal(model.projects.find(project => project.id === "studio-office-restoration").gallery.length, 7);
   assert.equal(model.projects.find(project => project.id === "living-room-studio-restoration").gallery.length, 3);
   assert.equal(model.projects.find(project => project.id === "agfa-isolette").gallery.length, 6);
+  assert.deepEqual(model.projects.find(project => project.id === "la-ciotat").gallery.map(image => image.id), [
+    "flickr-5489412430", "flickr-5488818887", "flickr-52834975513"
+  ]);
+  assert.ok(model.searchEntries.some(entry => entry.url === "/work/la-ciotat/"));
   await access(path.join(websiteRoot, ".generated/public/media/flickr-53921322250.jpg"));
   await access(path.join(websiteRoot, ".generated/public/media/flickr-53718846780.jpg"));
   await access(path.join(websiteRoot, ".generated/public/media/flickr-52704581571.jpg"));
   await access(path.join(websiteRoot, ".generated/public/media/flickr-52704058327.jpg"));
   await access(path.join(websiteRoot, ".generated/public/media/flickr-55449110843.jpg"));
+  for (const id of ["5489412430", "5488818887", "52834975513"]) {
+    await access(path.join(websiteRoot, `.generated/public/media/flickr-${id}.jpg`));
+  }
   await access(path.join(websiteRoot, ".preview-dist/index.html"));
   await access(path.join(websiteRoot, ".preview-dist/work/studio-office-restoration/index.html"));
   await access(path.join(websiteRoot, ".preview-dist/work/living-room-studio-restoration/index.html"));
@@ -57,4 +64,6 @@ test("candidate preview stages selected assets and writes the public model", asy
   await access(path.join(websiteRoot, ".preview-dist/tradejournals/living-room-studio-restoration/index.html"));
   await access(path.join(websiteRoot, ".preview-dist/work/entry-restoration/index.html"));
   await access(path.join(websiteRoot, ".preview-dist/work/returning-to-clay/index.html"));
+  await access(path.join(websiteRoot, ".preview-dist/work/la-ciotat/index.html"));
+  await access(path.join(websiteRoot, ".preview-dist/tradejournals/la-ciotat/index.html"));
 });

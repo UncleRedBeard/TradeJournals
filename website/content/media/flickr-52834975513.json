@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "flickr-52834975513",
+  "kind": "evidence",
+  "assetPath": "site_example/assets/flickr/la-ciotat/03.jpg",
+  "sourceUrl": "https://www.flickr.com/photos/boocher/52834975513/in/album-72157626174678654/",
+  "albumKey": "flickr:72157626174678654",
+  "alt": "La Ciotat harbor with overlapping boats, pale buildings, reflections, and a broad dark band along the left edge of a film scan",
+  "width": 1024,
+  "height": 691
+}

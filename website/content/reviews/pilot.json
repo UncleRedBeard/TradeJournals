@@ -8,8 +8,16 @@
       "sha256": "d2f39b7eb4258f0dcc06311d7fc47131825e92230d074954cdb675c23d14a7d7"
     },
     {
+      "key": "media:flickr-52704058327",
+      "sha256": "46e8c124c95dd3897e91cb8b09bf7e7ff8e876d65276819c25b63c82b37eb424"
+    },
+    {
       "key": "media:flickr-52704298727",
       "sha256": "60e7d9c77ebd5bd90cd3de5112e5c937fd9b5de3474610b1428c8d529272b2a4"
+    },
+    {
+      "key": "media:flickr-52704581571",
+      "sha256": "87b1b7bd2f8ea8b2f24a5839d8e1b01d447d2fcb35e589f2e8bc01fc12067991"
     },
     {
       "key": "media:flickr-52705240320",
@@ -165,7 +173,7 @@
     },
     {
       "key": "project:studio-office-restoration",
-      "sha256": "bd49d539108a76cc5fb1a5f63ac31c9da39349e0b2080ef8b6c99d328bd200b0"
+      "sha256": "3a3db8ca74f9ec827e7faff2810b3b447431a0f4895191735915a96f075745f7"
     },
     {
       "key": "service:historic-floors",
@@ -205,7 +213,7 @@
     },
     {
       "key": "story:studio-office-restoration",
-      "sha256": "20defbc1eb9b7d7109e6c2d5d7f583bb39a1745148c760d4132cc5ce649b4ee1"
+      "sha256": "8f793b9f46828e3af251592ce962c27f9b488212c4e1b5824cd2832b71cd8496"
     }
   ],
   "sources": [
@@ -274,8 +282,16 @@
       "sha256": "b7da17363a62d3bf733071746a310795c94c152e46b978b5887c3761b9019181"
     },
     {
+      "key": "media:flickr-52704058327",
+      "sha256": "8c855f2ba260d63b090d6f492dfe7fda7e174d72255809da7f8c5d1625983538"
+    },
+    {
       "key": "media:flickr-52704298727",
       "sha256": "7d73bc068e5400bd477167ac350df3734bb7f84886980f04357ee3a0016bd399"
+    },
+    {
+      "key": "media:flickr-52704581571",
+      "sha256": "1ba03c2de8d7b2ef9d5ed57023085c372d37e6611a5ced3328f15ae7305497fc"
     },
     {
       "key": "media:flickr-52705240320",

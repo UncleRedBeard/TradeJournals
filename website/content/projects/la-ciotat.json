@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "la-ciotat",
+  "title": "La Ciotat: Harbor and Street",
+  "area": "05 / The Lens",
+  "summary": "Three photographs move between La Ciotat's working harbor and a narrow street, then return to the waterfront through a contrasting 35mm film scan.",
+  "searchSummary": "A three-photo La Ciotat study of boats, waterfront reflections, shuttered streets, and the differing appearance of a 35mm harbor scan.",
+  "tags": [
+    "La Ciotat",
+    "France",
+    "harbor",
+    "street photography",
+    "35mm film",
+    "photographic practice"
+  ],
+  "stage": "Three-photo selection from a 118-photo public album",
+  "recorded": "The two selected digital photo pages carry February 6, 2011 taken labels; the selected film scan has no established exposure date.",
+  "sourceLabel": "La Ciotat Flickr album and France Travel Archive journal",
+  "sourceRefs": [
+    {
+      "kind": "journal",
+      "path": "05_the_lens/trade_journals/flickr_france_travel_archive.md"
+    },
+    {
+      "kind": "inventory",
+      "path": "FLICKR_PUBLIC_ALBUMS.md",
+      "anchor": "album-72157626174678654"
+    }
+  ],
+  "albumKeys": [
+    "flickr:72157626174678654"
+  ],
+  "gallery": [
+    {
+      "mediaId": "flickr-5489412430",
+      "caption": "Boat bows lead across blue water and layered reflections to the waterfront buildings.",
+      "role": "context"
+    },
+    {
+      "mediaId": "flickr-5488818887",
+      "caption": "Shutters, shopfronts, signs, and paving frame three people walking down a narrow street.",
+      "role": "context"
+    },
+    {
+      "mediaId": "flickr-52834975513",
+      "caption": "An R1-08767-0000 film scan returns to the harbor, with overlapping boats, pale buildings, reflections, and a broad dark band at the left.",
+      "role": "detail"
+    }
+  ],
+  "searchMediaIds": [
+    "flickr-5489412430"
+  ],
+  "introduction": "La Ciotat is seen from the water's edge and from within a narrow street. Three selected photographs connect boats, buildings, and everyday passage, then revisit the harbor through a different photographic rendering.",
+  "storyId": "la-ciotat",
+  "evidenceBoundary": "This is a three-photo selection from the La Ciotat album, not a documented walking route or chronological sequence. The R1- titled image is identified as a 35mm film scan; its camera, film stock, exposure date, and the cause of its visible bands and softness are not established."
+}

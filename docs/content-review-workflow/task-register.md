@@ -887,9 +887,49 @@ authorized above; the follow-ups below are not automatically authorized.
   accepts the candidate and authorizes scoped Git closeout to
   `origin/codex/concept-b-homepage`. Final commit and synchronization evidence
   are reported in the hub reply.
-- Release-snapshot promotion remains the next approval gate. La Ciotat is the
-  next proposed content task, not yet started. No deployment, journal changes,
-  archival or successor execution authorized.
+- Candidate Git closeout: `849fbce`, verified clean and synchronized at `0 0`.
+- Shawn subsequently answered "yes" to studio release-snapshot promotion on
+  October 3, 2026. Only the studio project/story and two selected media records
+  and image-byte fingerprints were refreshed; details are in the website's
+  editorial review. Shawn's subsequent La Ciotat acceptance and "git er done"
+  includes these previously approved release records in the scoped closeout.
+- La Ciotat is the next proposed content task, not yet started. No deployment,
+  journal changes, archival or successor execution authorized.
+
+## Content Promotion 1 - Task 03 La Ciotat Story
+
+- Child: `01a10405-54e9-7452-95ac-e4df7f49da44`, same-directory shared checkout.
+- Brief: [Promotion 03, revision 1](promotion-03-la-ciotat-story.md).
+- Approval: Shawn's "start the next task" on October 3, 2026, hub turn
+  `01a10405-07b6-75d0-8ffb-0f6b33e42c4b`, for the three-photo La Ciotat story.
+- Baseline: `849fbce4f33ecd6c0ac6b2a284dd44ab89885e53`; uncommitted Studio
+  release snapshot/editorial review and parent register explicitly preserved.
+- Scope: new La Ciotat project/story and three accepted photos, archive/search
+  discovery, no homepage placement or unrelated changes.
+- Workflow: COMPLETE for the bounded candidate implementation; hub review
+  accepted the deliverable on October 3, 2026. Shawn subsequently accepted the
+  content with "reviewed...approved...git er done" and authorized Git closeout.
+- Title: Content Promotion 1 - Task 03 La Ciotat Story - COMPLETE.
+- Dispatch: `TJ-CP-T03-D01`, sent once; execution observed.
+- Report: `TJ-CP-T03-R01` revision 1 received once at
+  `reports/promotion-03-la-ciotat-story.md`; delivery RECEIVED. Report-send
+  approval verified in child turn `01a10457-91ff-7e33-9462-26654f2e6bbc`.
+- Hub review: `TJ-CP-T03-H01`; reviewed project/story, exact image selections,
+  source qualifications, test changes and file scope. Homepage unchanged;
+  Studio release snapshot retains its previously verified SHA-256.
+- Fresh hub checks: 121 website Node and 37 source/HTML tests, five Python and
+  five JavaScript search tests, 140 Markdown files without lint issues,
+  preview/output validation at 20 pages and 60 files, and whitespace checks.
+  Report correction: its "site search suite: 121" is a labeling error;
+  121 is the website Node count, not the search count.
+- Child documented desktop/mobile browser checks and 84 repository Python
+  tests. HEAD remains `849fbce4f33ecd6c0ac6b2a284dd44ab89885e53`; all candidate
+  and existing Studio release-record changes remain uncommitted.
+- Scoped Git closeout authorized to `origin/codex/concept-b-homepage`, including
+  the previously approved Studio release snapshot and approval records. Final
+  commit and synchronization evidence are reported in the hub reply.
+- La Ciotat release-snapshot promotion, deployment and successor execution
+  remain unauthorized. No successor started.
 
 ## Separate Follow-Up Identified
 

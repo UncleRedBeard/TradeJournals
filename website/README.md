@@ -16,6 +16,9 @@ The current site keeps three rooms distinct:
 Keep the current and future rooms distinct until Shawn explicitly confirms the
 move.
 
+The La Ciotat Lens story is a three-photo archive and search entry. It does
+not change the homepage's featured or workshop selections.
+
 ## What Lives Where
 
 - `content/` holds the editable public candidate records and selected stories.
