@@ -928,8 +928,14 @@ authorized above; the follow-ups below are not automatically authorized.
 - Scoped Git closeout authorized to `origin/codex/concept-b-homepage`, including
   the previously approved Studio release snapshot and approval records. Final
   commit and synchronization evidence are reported in the hub reply.
-- La Ciotat release-snapshot promotion, deployment and successor execution
-  remain unauthorized. No successor started.
+- Candidate closeout: `f45a020`, verified clean and synchronized at `0 0`.
+- Shawn subsequently approved La Ciotat release-snapshot promotion on
+  October 3, 2026. Only its new project/story, three selected media records and
+  image bytes, inventory section and source-journal fingerprints were added.
+  Shawn's subsequent "yup...git er done" authorizes closing out these three
+  release records on `origin/codex/concept-b-homepage`. Final commit and sync
+  evidence are reported in the hub reply. Deployment, archival and successor
+  execution remain unauthorized.
 
 ## Separate Follow-Up Identified
 

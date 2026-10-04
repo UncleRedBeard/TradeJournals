@@ -233,3 +233,22 @@ guarded release build and independent checker validate 18 pages and 55 files.
 The snapshot is current with zero changed keys, covering 53 records and 50
 sources. Exact `pilot.json` SHA-256:
 `337bb262659e1f82d8e1692472e83e5a8c96d8d27802e1363e503e2b7fe4be03`.
+
+## October 3 La Ciotat Release Approval
+
+Shawn explicitly approved La Ciotat release-snapshot promotion in the Content
+Review Parent after accepting candidate commit `f45a020`. New fingerprints
+cover only the La Ciotat project/story, its three selected media records and
+image bytes, the La Ciotat inventory section, and its France archive source
+journal. Existing record and source fingerprints are preserved.
+
+The three-photo story remains available through archive/search and off the
+homepage. Approval is for the local release snapshot, not deployment, a main
+merge or another content task. Shawn subsequently authorized Git closeout of
+this approval record and snapshot with "yup...git er done".
+
+Fresh verification: 121 website Node and 37 source/HTML tests passed. The
+guarded release build and independent checker validate 20 pages and 60 files.
+The snapshot is current with zero changed keys, covering 58 records and 55
+sources. Exact `pilot.json` SHA-256:
+`d69779edcd6ded04951bc729d89be0757aa91ebd8b035607ab94c99ad85b9f4f`.

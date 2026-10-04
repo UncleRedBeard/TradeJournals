@@ -36,6 +36,10 @@
       "sha256": "e516d565fa830b13f8252360be2aeb4d65f7cad47d9142a85a139ea3bb436bb0"
     },
     {
+      "key": "media:flickr-52834975513",
+      "sha256": "82ebb8b1573a037ecb792a9f0e4ba686f7b605ee312f2849c72e06f0e45ed876"
+    },
+    {
       "key": "media:flickr-53680503668",
       "sha256": "1305070bdb0eb8dc4de120c531a89b6a54b19f2c3728a40361053cbb3850c061"
     },
@@ -78,6 +82,14 @@
     {
       "key": "media:flickr-53921322250",
       "sha256": "1022ee01798c11e61f51d83bbf18279b7c768e2176585a98725550f2291f2ea2"
+    },
+    {
+      "key": "media:flickr-5488818887",
+      "sha256": "22d854ffc5ec64d544d0eb195c399f1b16ae83a6db64bcb99fad880001b03ca6"
+    },
+    {
+      "key": "media:flickr-5489412430",
+      "sha256": "0506ee5f8622dfb0f2932f8582d1d19be211ec8a3397ef7ca24d58b68542f243"
     },
     {
       "key": "media:flickr-55338112557",
@@ -156,6 +168,10 @@
       "sha256": "9be61870561bd668b031e5a355cd0e69b5b60ddb5b4bbc67ffd57c7e1fcecc7f"
     },
     {
+      "key": "project:la-ciotat",
+      "sha256": "3c897b7b01d86ced203a98eaeafeda13d197f2412ad3fad63c192490aaaa6512"
+    },
+    {
       "key": "project:living-room-studio-restoration",
       "sha256": "0baec555c26a2029611d484a5205138df058ee438a53e78f8085d8f7f422e9b1"
     },
@@ -196,6 +212,10 @@
       "sha256": "327d97a82b22554b29a47d7a1ed18655ffa87622a1b90b4c91435694e7076adc"
     },
     {
+      "key": "story:la-ciotat",
+      "sha256": "cb63d0e92b966b8f6803e209003c3aa301eb8054876a76c4e4cedc099f6794b7"
+    },
+    {
       "key": "story:living-room-studio-restoration",
       "sha256": "3a8690858d1426d93e127e999a24f2529e20ec02752d74f933306f7ae00eb1f3"
     },
@@ -217,6 +237,10 @@
     }
   ],
   "sources": [
+    {
+      "key": "inventory:FLICKR_PUBLIC_ALBUMS.md#album-72157626174678654",
+      "sha256": "80fe44f63b2535a2826ff75ee0b4f6865ddab3e5ff986a7b5ee76e83282769e1"
+    },
     {
       "key": "inventory:FLICKR_PUBLIC_ALBUMS.md#album-72177720306207693",
       "sha256": "e8b32c69a85657e2638733e8a94a8329f04f070480afd0d196d67fa63356786b"
@@ -282,6 +306,10 @@
       "sha256": "b7da17363a62d3bf733071746a310795c94c152e46b978b5887c3761b9019181"
     },
     {
+      "key": "journal:05_the_lens/trade_journals/flickr_france_travel_archive.md",
+      "sha256": "c1296dc44689ba601f9cef27bb787d9ebf4859e135092fcb63c1b6911c7e15ff"
+    },
+    {
       "key": "media:flickr-52704058327",
       "sha256": "8c855f2ba260d63b090d6f492dfe7fda7e174d72255809da7f8c5d1625983538"
     },
@@ -308,6 +336,10 @@
     {
       "key": "media:flickr-52705240435",
       "sha256": "a775869bdea590a9e5df13bb7b1a620f68345a12a7761abb0ccddb78f5ceaca0"
+    },
+    {
+      "key": "media:flickr-52834975513",
+      "sha256": "20a193d1ac14d8c2fabed9f24e332436dd8bb50f48f06685d6d4f5f7081bf839"
     },
     {
       "key": "media:flickr-53680503668",
@@ -352,6 +384,14 @@
     {
       "key": "media:flickr-53921322250",
       "sha256": "f56c3629454a14f052c39bd4b15396bf011a6b05f896facd9a54b556e538189b"
+    },
+    {
+      "key": "media:flickr-5488818887",
+      "sha256": "395b1ebd2ae0881e9f79dbdd27faa180ebad9c4fd100f6cc9ea14adf122de41a"
+    },
+    {
+      "key": "media:flickr-5489412430",
+      "sha256": "77da2f066c2b91a27c98c3f3975e4330658b887325618ebfe83252a58cc61b5b"
     },
     {
       "key": "media:flickr-55338112557",
