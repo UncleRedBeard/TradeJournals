@@ -55,15 +55,19 @@ the existing text-safe search script, ranking and fallback remain unchanged.
 
 Clone the complete TradeJournals repository. The build reads selected journals,
 inventories, media, and scripts outside `website/`; copying that directory
-alone is insufficient. The accepted Concept B candidate is on
-`codex/concept-b-homepage`; `main` still contains the previous release.
-Task 15 verifies candidate baseline `ef1d5e8303860d49b7ae6131b0596e2bce38660b`.
-To obtain that candidate branch:
+alone is insufficient. The accepted Concept B release is on the repository's
+`main` branch. To obtain the current release source:
 
 ```sh
-git clone --branch codex/concept-b-homepage <repository-url> TradeJournals
+git clone --branch main <repository-url> TradeJournals
 cd TradeJournals
 ```
+
+The retained `codex/concept-b-homepage` branch records its development history.
+Task 15 verified an earlier candidate baseline
+`ef1d5e8303860d49b7ae6131b0596e2bce38660b`; later accepted work includes
+the Office access detail, Current Barre Studio retained-door story, and La Ciotat
+photo essay.
 
 Prerequisites are npm and Python 3.10 or newer. Install Node 24.21.0 inside the
 project rather than changing the Mac's general Node installation. Run commands
@@ -197,8 +201,8 @@ archive. The [Task 15 report](../docs/website-workflow/reports/task-15-integrate
 records integrated verification of the candidate branch. The
 [Task 16 report](../docs/website-workflow/reports/task-16-dependency-maintenance.md)
 records the subsequent dependency patch and remaining upstream findings.
-These are local
-readiness records; they do not mean the branch is merged or the site deployed.
+These are local readiness records. The accepted release is integrated into
+`main`; hosting and deployment remain separate.
 
 - [x] The first release uses a disabled `Email us — coming soon` placeholder.
 - [ ] Replace the placeholder with an approved `mailto:` action after a public

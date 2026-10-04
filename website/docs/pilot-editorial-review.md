@@ -1,10 +1,12 @@
 # Expanded Website Release Review
 
-Current status: Concept B presentation and Task 15 integrated verification
-accepted by Shawn on October 3, 2026. The candidate remains on
-`codex/concept-b-homepage`; `main` contains the prior release. See the
+Current status: Concept B and the subsequent Office, current-studio and La
+Ciotat additions are the accepted local release integrated into `main` on
+October 4, 2026. Hosting and deployment remain separate. See the dated
 [Task 15 report](../../docs/website-workflow/reports/task-15-integrated-release-review.md)
-for current checks and working local review links.
+for the earlier integrated candidate and the
+[Task 18 report](../../docs/website-workflow/reports/task-18-main-integration.md)
+for current integration verification.
 
 The sections below preserve the dated content approvals and earlier release
 results. Earlier design descriptions, project ordering and port 8138 links

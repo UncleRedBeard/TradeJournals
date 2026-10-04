@@ -1010,3 +1010,21 @@ manifest/lock, exclusions, installation documentation, brief/report and hub
 register to `origin/codex/concept-b-homepage`. Preserve all concurrent Cassis
 content-review work. No merge, deployment, archival or successor is included.
 Final commit and synchronization evidence will be reported in the hub.
+
+## Website 2 — Task 18 Main Integration
+
+- Child: `01a1078d-069e-77d2-8db1-9d0cfb51fd16`.
+- Brief: [Task 18, revision 1](task-18-main-integration.md).
+- Approval: Shawn said `start task 18` October 4, 2026 after the explicit
+  main integration, documentation, validation and push proposal.
+- Scope: review the full accepted branch payload, safely integrate into main,
+  update release instructions, run checks and push/verify origin/main.
+- Baseline: clean `codex/concept-b-homepage` at `0fa6bc9` before preparation.
+  All three content promotions and release snapshots are approved and committed;
+  current preview/release check: 20 pages/60 files/363 references, zero changed keys.
+- Dispatch: `WK-WEB-T18-D01` — SENT once; child idle verified beforehand.
+  Active turn `01a1078e-4235-73a1-9e0d-2df2b9984cc1` observed.
+- Workflow: IN PROGRESS. Expected report `WK-WEB-T18-R01` at
+  `reports/task-18-main-integration.md`.
+- Child may include hub-prepared brief/register in the authorized Git closeout;
+  only hub edits those files. No deployment, archival or successor authorized.
