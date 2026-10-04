@@ -1,6 +1,6 @@
 # Website 2 - Task 18 Main Integration
 
-Workflow status: IN PROGRESS
+Workflow status: COMPLETE — integration independently verified by hub
 Brief revision: 1
 Approval: Shawn said `start task 18` in website updates on October 4, 2026,
 after the explicit integration/update instructions/validate/push proposal.
@@ -91,3 +91,19 @@ reconciliation. No successor starts automatically. Do not edit the hub register.
 Exact child was idle before the single approved dispatch. The child started
 execution turn `01a1078e-4235-73a1-9e0d-2df2b9984cc1`; the hub stops editing
 this brief and register now so the child can stage them safely.
+
+## Hub Reconciliation
+
+Report `WK-WEB-T18-R01`, revision 1, RECEIVED once October 4, 2026;
+reconciliation `WK-WEB-T18-H01`. Hub reviewed report and integration documentation
+changes, freshly fetched origin/main, and observed HEAD/main/origin/main/FETCH_HEAD
+all equal `c33ee493570c48465d964b842ae20675580b5f77`, ahead/behind `0 0`, with a
+clean checkout. Independently checked both retained outputs with matching models:
+20 pages, 60 files, 363 references each; current snapshot and zero changed keys.
+Child records full test/build evidence in its report. Approved integration scope
+is COMPLETE; no additional visual acceptance is needed for unchanged presentation.
+
+This final hub bookkeeping is included in the already-authorized main closeout.
+The development branch is retained locally at `cb6cd8b`; its remote remains at
+`0fa6bc9`. That documentation commit is included in main; only main synchronization
+is claimed. No deployment, archival or successor begins from reconciliation.

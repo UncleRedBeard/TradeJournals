@@ -3,27 +3,19 @@
 Hub title: website updates
 Hub thread ID: `01a0a263-8d09-7ff2-8144-a71eb6ec16f6`
 Workspace: `/Users/shkelley/Documents/PERSONAL/Shawn/Nerds/TradeJournals`
-Branch: `codex/concept-b-homepage` (Concept B continuation); `main` retains the prior approved release
+Branch: `main` — approved Concept B release and content promotions integrated
 Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: October 3, 2026. Tasks 12-17 are accepted COMPLETE.
-Tasks 12-14 implementation is committed and pushed through `ef1d5e8` on
-`codex/concept-b-homepage`; the 11 previously approved completed chats were
-archived. Task 15 verified the integrated release and fresh-checkout reproduction;
-Shawn approved directly in its child and the hub reconciled that acceptance.
-Task 15 documentation and hub bookkeeping were committed and pushed at
-`f20572a`; post-push HEAD/tracking/FETCH_HEAD matched with `0 0` and a clean
-checkout. Task 16 dependency maintenance is accepted COMPLETE after Shawn said
-`accepted` in this hub on October 3, 2026. The verified devalue patch leaves two
-high website package findings for one unresolved upstream cache issue, plus
-seven high and one moderate findings in separate Markdown tooling. These remain
-follow-up; acceptance is not a clean-audit claim. Task 16 changes were committed and pushed at `2d566f0`, with verified
-`0 0`. Task 17 Markdown tooling is accepted; scoped Git closeout is authorized.
-Independent content-review work advanced HEAD to `715b2a1` without website
-changes. Hosting/domain, Git integration, deployment and inquiry activation
-remain separate. Earlier checkpoints below are historical.
+Current checkpoint: October 4, 2026. Task 18 is COMPLETE. The accepted
+Concept B website, source cleanup, tooling and three content promotions are
+integrated into main. Hub fetched origin/main and verified `c33ee49` identity
+across HEAD/main/tracking/FETCH_HEAD, `0 0`, and a clean checkout before this
+final bookkeeping. Both output modes independently validate 20 pages, 60 files
+and 363 references, with current review and zero changed keys. Development
+branch retained. Remaining upstream findings, hosting/domain, deployment and
+inquiry activation remain separate. Earlier checkpoints below are historical.
 
 Integration checkpoint: September 20, 2026. Shawn approved the hub's recommended
 flow to update clone instructions, fast-forward the completed website work into
@@ -1024,7 +1016,16 @@ Final commit and synchronization evidence will be reported in the hub.
   current preview/release check: 20 pages/60 files/363 references, zero changed keys.
 - Dispatch: `WK-WEB-T18-D01` — SENT once; child idle verified beforehand.
   Active turn `01a1078e-4235-73a1-9e0d-2df2b9984cc1` observed.
-- Workflow: IN PROGRESS. Expected report `WK-WEB-T18-R01` at
-  `reports/task-18-main-integration.md`.
+- Workflow: COMPLETE; exact child title Website 2 - Task 18 Main Integration - COMPLETE.
+- Report: `WK-WEB-T18-R01`, revision 1, RECEIVED once and reconciled as
+  `WK-WEB-T18-H01`: [main integration](reports/task-18-main-integration.md).
+- Hub independently fetched main: HEAD/main/origin/main/FETCH_HEAD `c33ee49`,
+  `0 0`, clean checkout before final bookkeeping. Both output gates pass
+  20 pages/60 files/363 references, current review, zero changed keys.
+- Child reports 121 Node/37 Python website tests, 84 repository Python tests,
+  five Python/five JS site tests, lint, evidence and build checks passing.
+- Final hub bookkeeping is within the authorized main closeout. Development
+  branch local `cb6cd8b` is retained; its remote remains `0fa6bc9`. Only main
+  synchronization is claimed.
 - Child may include hub-prepared brief/register in the authorized Git closeout;
   only hub edits those files. No deployment, archival or successor authorized.
