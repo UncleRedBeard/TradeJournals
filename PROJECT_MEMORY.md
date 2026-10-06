@@ -23,6 +23,25 @@ in the separate private `restoration-business-operations` repository.
 Real credentials, private media, local databases, machine-specific paths, and
 other sensitive working data do not belong in this repository.
 
+## Deferred Website Direction — October 4, 2026
+
+Shawn is satisfied with the current approved website iteration. Retain the
+following direction for future planning; no implementation or new task is started.
+
+- Historic homes, floors and woodwork remain Toil & Timber's primary focus.
+- Clay and mechanical projects are equal, ongoing personal interests. Both
+  should have room to develop at Shawn's pace; neither takes priority over the
+  other or requires a commercial purpose or publishing schedule.
+- TradeJournals could become a curated gateway to these interests, with
+  side-by-side entry points, selected stories and eventually linked companion
+  sites. Preserve the main site's restoration focus and current approved design.
+- Curating public content should limit how much is published without letting
+  the broader interests disappear from future planning. Separate sites, names,
+  domains and hosting arrangements remain undecided.
+
+Revisit only when Shawn chooses to resume this direction. The present website
+remains unchanged.
+
 ## Portfolio Pillars And Current Maturity
 
 - `01_the_residence_1894`: seven journals covering historic-home restoration.
