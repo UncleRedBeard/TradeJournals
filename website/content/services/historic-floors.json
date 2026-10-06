@@ -2,11 +2,8 @@
   "schemaVersion": 1,
   "id": "historic-floors",
   "title": "Historic floors",
-  "description": "Floor refinishing grounded in the condition, character, and continued use of the original boards.",
+  "description": "Condition-led repair, preparation, and refinishing of historic wood floors. The aim is to retain original boards where practical and choose a finish suited to their character and continued use.",
   "projectIds": [
-    "entry-restoration",
-    "master-bedroom-restoration",
-    "living-room-studio-restoration",
-    "office-restoration"
+    "entry-restoration"
   ]
 }

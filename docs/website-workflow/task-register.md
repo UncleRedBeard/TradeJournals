@@ -8,7 +8,21 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: October 4, 2026. Task 18 is COMPLETE. The accepted
+Current checkpoint: October 6, 2026. Tasks 19 and 20 are COMPLETE. Shawn
+reviewed both tasks and approved their updates in this hub. Acceptances
+`WK-WEB-T19-A01` and `WK-WEB-T20-A01` cover each revision 1 report; hub
+reconciliations `WK-WEB-T19-H02` and `WK-WEB-T20-H02` record completion.
+The combined candidate passes the existing tests/output checks and
+desktop/mobile review. Shawn subsequently authorized snapshot refresh and Git
+closeout with “make it happen cap'n”. The approved snapshot is now current;
+fresh tests (121 Node / 37 Python), repository Markdown lint, preview and
+guarded release checks pass (20 pages / 60 files / 366 references).
+Git closeout targets established `origin/main` from base `41c4dbf`; commit and
+remote synchronization are verified in the hub response after the push.
+Deployment and inquiry activation remain separate. The unrelated
+`PROJECT_MEMORY.md` edit is excluded; the task request is included as provenance.
+
+Previous checkpoint: October 4, 2026. Task 18 is COMPLETE. The accepted
 Concept B website, source cleanup, tooling and three content promotions are
 integrated into main. Hub fetched origin/main and verified `c33ee49` identity
 across HEAD/main/tracking/FETCH_HEAD, `0 0`, and a clean checkout before this
@@ -1029,3 +1043,80 @@ Final commit and synchronization evidence will be reported in the hub.
   synchronization is claimed.
 - Child may include hub-prepared brief/register in the authorized Git closeout;
   only hub edits those files. No deployment, archival or successor authorized.
+
+## Website 3 — Task 19 Services and Assessment
+
+- Child: `01a111aa-6c51-7a50-a0dc-1d6be2c0e65d`.
+- Brief: [Task 19, revision 1](task-19-services-assessment.md).
+- Approval: RECEIVED October 6, 2026 in the requesting chat
+  `01a1118b-5382-7490-a139-217004cba7fc`; exact instruction and scope in
+  [request WK-WEB-SEO-20261006-01](seo-readiness-request-2026-10-06.md).
+  Shawn reaffirmed a lean approach directly in this hub.
+- Environment: same-directory fork of this hub; `main` at `41c4dbf`.
+- Scope: compact restoration-led services, paid assessment and written
+  deliverables, linked to approved own-home proof in the existing design.
+- Acceptance: source-backed copy, working evidence links, candidate output
+  checks and desktop/mobile review; no open intake or release promotion.
+- Exact title: Website 3 - Task 19 Services and Assessment - COMPLETE.
+- Runtime: IDLE verified by exact-ID read before dispatch; then ACTIVE execution
+  turn `01a111ad-1318-7452-81f2-e08dce05ded6` observed by `wait_threads`.
+  Dispatch `WK-WEB-T19-D01`: SENT once. Completed turn and IDLE observed.
+- Workflow: COMPLETE. Shawn said “both tasks have been reviewed and i approve
+  the updates” in this hub on October 6, 2026. Acceptance `WK-WEB-T19-A01`
+  covers report `WK-WEB-T19-R01`, revision 1; reconciliation `WK-WEB-T19-H02`
+  records acceptance separately from release preparation and Git closeout.
+- Report: `WK-WEB-T19-R01`, revision 1, RECEIVED once and reconciled as
+  `WK-WEB-T19-H01`: [services and assessment](reports/task-19-services-assessment.md).
+- Hub review: inspected actual diff, source ledger and desktop/mobile images;
+  independently reran the output checker (20 pages / 60 files) and whitespace
+  check. Reviewed evidence of 121 Node / 37 Python passes, final focused
+  empty-selection regression, candidate rebuild (366 references) and lint.
+  One anchor issue was found and fixed. No schema/model/routes/dependencies
+  added. The four changed record keys correctly make the review stale.
+- Task 20 may now use the local candidate and loopback preview on port 8143.
+  This dependency readiness does not approve exact copy or a release.
+
+## Website 3 — Task 20 Regional Service Context
+
+- Child: `01a111aa-b69c-7910-a163-8170fb3fe6a5`.
+- Brief: [Task 20, revision 1](task-20-regional-service-context.md).
+- Approval: RECEIVED under the same explicit two-task request above.
+- Environment: same-directory fork; use Task 19's completed local candidate.
+- Dependency: Task 19 must stop writing and supply a verified content path.
+  Exact final-copy acceptance is separate; no repeat start approval is required.
+- Scope: one concise regional paragraph with the five approved focus towns
+  and project-fit/travel/scheduling/cost/capacity qualification.
+- Acceptance: accurate generated and rendered copy, desktop/390-pixel review,
+  established checks, no private location details or coverage promise.
+- Exact title: Website 3 - Task 20 Regional Service Context - COMPLETE.
+- Workflow: COMPLETE. Shawn said “both tasks have been reviewed and i approve
+  the updates” in this hub on October 6, 2026. Acceptance `WK-WEB-T20-A01`
+  covers report `WK-WEB-T20-R01`, revision 1; reconciliation `WK-WEB-T20-H02`
+  records acceptance separately from release preparation and Git closeout.
+- Runtime: IDLE verified by exact-ID read before dispatch; ACTIVE execution
+  turn `01a111bd-692d-7f10-8222-d3eca7618f09` observed by `wait_threads`.
+  Dispatch `WK-WEB-T20-D01`: SENT once; then completed turn and IDLE observed.
+- Report: `WK-WEB-T20-R01`, revision 1, RECEIVED once and reconciled as
+  `WK-WEB-T20-H01`: [regional service context](reports/task-20-regional-service-context.md).
+- Hub review: inspected exact intro against refreshed approved territory
+  sources, actual diff, and desktop/390-pixel screenshots. Independently reran
+  output and whitespace checks. Reviewed the fresh post-change test log:
+  121 Node and 37 Python tests pass; preview validates 20 pages, 60 files and
+  366 references. Only two intro sentences and the child report were added
+  by Task 20. No new fields, rendering, styles or routes were needed.
+- Preview: `http://127.0.0.1:8143/`, with services at `/#practice`.
+  The optional persistent browser-tab action was rejected by automatic
+  approval review for lack of explicit authorization; it was omitted and
+  saved screenshots plus the loopback URL remain available.
+- Combined candidate is accepted by Shawn. Review fingerprints remain
+  unchanged and correctly stale; inquiries remain disabled. No commit/push,
+  deployment, private-repository change, photo update or further task started.
+
+## October 6 Tasks 19–20 Release and Git Closeout
+
+Shawn's “make it happen cap'n” authorizes the proposed release snapshot refresh,
+validation, commit and push of the accepted Tasks 19–20 updates to `origin/main`.
+The release record in [editorial review](../../website/docs/pilot-editorial-review.md)
+supersedes the historical pending-snapshot statements in the child reports.
+No source journals, images, hosting settings or inquiry controls are changed.
+The pre-existing `PROJECT_MEMORY.md` change remains outside this commit.

@@ -18,7 +18,7 @@ const { site, home } = model;
         <h1 id="home-heading">{home.headline}</h1>
         <p class="atelier-hero__service">{site.serviceLine}</p>
       </div>
-      <aside class="atelier-practice" id="practice" aria-labelledby="practice-heading">
+      <aside class="atelier-practice" id={model.services.length ? undefined : "practice"} aria-labelledby="practice-heading">
         <h2 class="atelier-eyebrow" id="practice-heading">A craftsman's practice</h2>
         <p>{home.intro}</p>
         <div class="atelier-practice__foot">
@@ -31,6 +31,31 @@ const { site, home } = model;
   </section>
 
   <div class="atelier-shell atelier-main">
+    {model.services.length > 0 && (
+      <section class="atelier-services" id="practice" aria-labelledby="services-heading">
+        <div class="atelier-section-heading">
+          <div><p class="atelier-eyebrow">Care for the original</p><h2 id="services-heading">Services and assessment</h2></div>
+          <p class="atelier-section-heading__note">Project examples are work in my own home</p>
+        </div>
+        <div class="atelier-services__grid">
+          {model.services.map(service => (
+            <div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              {service.projectIds.length > 0 && (
+                <ul>
+                  {service.projectIds.map(id => {
+                    const project = model.projects.find(project => project.id === id);
+                    return <li><a href={project.href}>{project.title}</a></li>;
+                  })}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
     <section id="documented-projects" aria-labelledby="projects-heading">
       <div class="atelier-section-heading">
         <div><p class="atelier-eyebrow">Restoration work</p><h2 id="projects-heading">Documented Projects</h2></div>

@@ -72,11 +72,17 @@ test("shared frame reaches homepage sections from every inner route and retains 
   }
 });
 
-test("candidate preview renders explicit occupancy", async t => {
+test("candidate preview renders explicit occupancy and selected services with their evidence links", async t => {
   const fixture = await writeFixture(t);
   const fixtureWebsiteRoot = path.join(fixture.repoRoot, "website");
   fixture.raw.projects[0].occupancy = { state: "current", label: "Current barre studio" };
   await fixture.saveRecord("projects/project-one.json", fixture.raw.projects[0]);
+  await fixture.saveRecord("services/historic-floors.json", {
+    ...fixture.raw.services[0], description: "Keep <original> boards & document choices."
+  });
+  await fixture.saveRecord("services/unselected-service.json", {
+    ...fixture.raw.services[0], id: "unselected-service", title: "Unselected service"
+  });
   await cp(path.join(websiteRoot, "astro.config.mjs"), path.join(fixtureWebsiteRoot, "astro.config.mjs"));
   await cp(path.join(websiteRoot, "lib"), path.join(fixtureWebsiteRoot, "lib"), { recursive: true });
   await cp(path.join(websiteRoot, "src"), path.join(fixtureWebsiteRoot, "src"), { recursive: true });
@@ -96,6 +102,20 @@ test("candidate preview renders explicit occupancy", async t => {
   assert.equal([...journal.matchAll(/<h1\b/g)].length, 1, "a journal without a story retains one page heading");
   assert.ok(journal.includes(fixture.raw.projects[0].summary));
   assert.match(journal, /href="\/work\/project-one\/"/);
+
+  const homepage = await readFile(path.join(fixtureWebsiteRoot, ".preview-dist/index.html"), "utf8");
+  const practice = homepage.match(/<section\b[^>]*id="practice"[^>]*>.*?<\/section>/s)?.[0];
+  assert.ok(practice, "selected services have a navigable practice section");
+  assert.match(practice, /Keep &lt;original&gt; boards &amp; document choices\./);
+  assert.match(practice, /href="\/work\/project-one\/"[^>]*>Recorded project-one<\/a>/);
+  assert.doesNotMatch(practice, /Unselected service|<original>/);
+
+  await fixture.saveRecord("home.json", { ...fixture.raw.home, serviceIds: [] });
+  await buildWebsite({ mode: "preview", repoRoot: fixture.repoRoot, websiteRoot: fixtureWebsiteRoot });
+  const withoutServices = await readFile(path.join(fixtureWebsiteRoot, ".preview-dist/index.html"), "utf8");
+  assert.match(withoutServices, /<aside\b[^>]*id="practice"/);
+  assert.equal([...withoutServices.matchAll(/id="practice"/g)].length, 1);
+  assert.doesNotMatch(withoutServices, /Services and assessment/);
 });
 
 test("each journal keeps one story heading and links to its project and archive", async () => {

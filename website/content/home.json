@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "home",
   "headline": "Keep what makes it home.",
-  "intro": "Historic homes and interior woodwork are the heart of the practice: careful repair, useful craft, and respect for the evidence already in the room.",
+  "intro": "Historic homes and interior woodwork are the heart of the practice: careful repair, useful craft, and respect for the evidence already in the room. The intended regional focus is Brenham, Somerville, Bastrop, Schulenburg, and La Grange. Acceptance will depend on project fit, travel, scheduling, cost, and capacity.",
   "featuredProjectIds": [
     "living-room-studio-restoration",
     "entry-restoration",
@@ -14,7 +14,9 @@
     "agfa-isolette"
   ],
   "serviceIds": [
-    "historic-floors"
+    "historic-floors",
+    "interior-woodwork",
+    "paid-assessment"
   ],
   "heroMediaId": "flickr-55338112557"
 }

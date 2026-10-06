@@ -254,3 +254,24 @@ guarded release build and independent checker validate 20 pages and 60 files.
 The snapshot is current with zero changed keys, covering 58 records and 55
 sources. Exact `pilot.json` SHA-256:
 `d69779edcd6ded04951bc729d89be0757aa91ebd8b035607ab94c99ad85b9f4f`.
+
+## October 6 Services and Regional Context Release Approval
+
+Shawn reviewed and approved Tasks 19 and 20 in website updates, then said
+“make it happen cap'n” to the proposed snapshot refresh and Git closeout.
+This approves the accepted services, paid-assessment and regional wording
+for the local release and push to the established `origin/main`.
+
+Only four record fingerprints changed: `home:home`, `service:historic-floors`,
+`service:interior-woodwork`, and `service:paid-assessment`. All source, image
+and project fingerprints are preserved. Inquiries remain disabled.
+
+Fresh verification: 121 website Node and 37 source/HTML tests pass; repository
+Markdown lint passes. Preview and guarded release builds independently validate
+20 pages, 60 files and 366 references. The snapshot is current with zero changed
+keys. Exact `pilot.json` SHA-256:
+`2efb1566680b93491b2f13b389d2ccb368be6e60392cef31bd3027095bdcd841`.
+
+This release is repository-ready; hosting, deployment and inquiry activation
+remain separate. The unrelated `PROJECT_MEMORY.md` edit is excluded from
+this Git closeout. Earlier task reports describe their submission checkpoints.

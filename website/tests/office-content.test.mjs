@@ -36,7 +36,7 @@ test("Office preserves the selected gallery, original Flickr URLs, and distinct 
   }
 });
 
-test("approved site snapshot retains the disabled email placeholder", async () => {
+test("site retains its restoration focus and disabled email placeholder", async () => {
   const records = validateContent(await loadContent(contentRoot));
   assert.equal(records.review.state, "reviewed");
   assert.equal(records.site.name, "Toil & Timber Restoration");
@@ -47,7 +47,7 @@ test("approved site snapshot retains the disabled email placeholder", async () =
     href: null
   });
   assert.ok(records.projects.some(project => project.id === "office-restoration"));
-  assert.deepEqual(records.home.serviceIds, ["historic-floors"]);
+  assert.equal(records.home.serviceIds[0], "historic-floors");
 });
 
 test("current Office content remains available in preview", async () => {

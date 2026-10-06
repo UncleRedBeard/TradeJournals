@@ -129,6 +129,7 @@ another task's server.
 | Site identity, navigation, or contact action | `content/site.json` | Preview the header, navigation, homepage, and final contact action |
 | Project summary or gallery selection | `content/projects/<id>.json`; selected media records | Preview the project, homepage card, and archive search |
 | Homepage project order | `content/home.json` → `featuredProjectIds` | First featured project receives the hero link; cards follow the saved order |
+| Services and paid assessment | `content/services/*.json`; `content/home.json` → `serviceIds` | Preview the Practice section, own-home evidence links, and closed inquiry wording |
 | Homepage card appearance | `src/components/AtelierProjectCard.astro` | Rebuild and inspect desktop and stacked mobile cards |
 | Other shared card appearance | `src/components/ProjectCard.astro` | Rebuild and inspect the affected cards; content stays separate |
 | Longer story | `content/stories/<id>.md` | Preview its TradeJournal route and review the source evidence |

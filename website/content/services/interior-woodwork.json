@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "interior-woodwork",
+  "title": "Woodwork and interior surfaces",
+  "description": "Repair and refinishing of doors, trim, paneling, and other architectural surfaces, retaining original material where practical. Supporting work includes interior painting and shelving restoration or fabrication from an existing or accepted design. Original design services are not offered.",
+  "projectIds": [
+    "studio-office-restoration",
+    "living-room-studio-restoration"
+  ]
+}

@@ -5,7 +5,7 @@
   "records": [
     {
       "key": "home:home",
-      "sha256": "d2f39b7eb4258f0dcc06311d7fc47131825e92230d074954cdb675c23d14a7d7"
+      "sha256": "36673aed8fb66c553319194e99d0bf2abdf0ecfc6b30712326e9380d6889667a"
     },
     {
       "key": "media:flickr-52704058327",
@@ -193,7 +193,15 @@
     },
     {
       "key": "service:historic-floors",
-      "sha256": "0801f7650ae4eb946d99447240d81844e7415f840309965611a26f8b38373817"
+      "sha256": "e459d5a09ad097f66b7e3ed6235e21d8ab474e49cdadb46f5982a6a9a4a0db26"
+    },
+    {
+      "key": "service:interior-woodwork",
+      "sha256": "e23d5b61f7e36481489355699b9d8a0caac26869c33f3dac9001e433706ff27e"
+    },
+    {
+      "key": "service:paid-assessment",
+      "sha256": "30455d2959747d2840ae52aeb64ae515cb117326bac8a2318d7ba02b28443687"
     },
     {
       "key": "site:site",
