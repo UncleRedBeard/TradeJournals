@@ -1,5 +1,6 @@
 ---
 import { getEntry, render } from "astro:content";
+import ResidenceAttribution from "../../components/ResidenceAttribution.astro";
 import EvidenceDetails from "../../components/EvidenceDetails.astro";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 import model from "@site-model";
@@ -20,6 +21,7 @@ const Story = rendered?.Content;
     <div class="journal-page__columns">
       <div class="journal-page__reading">
         <p class="journal-page__label">TradeJournal <span aria-hidden="true">/</span> {project.area}</p>
+        <ResidenceAttribution projectId={project.id} />
         <div class="journal-story">
           {Story ? <Story /> : <><h1>{project.title}</h1><p>{project.summary}</p></>}
         </div>

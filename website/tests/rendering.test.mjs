@@ -88,6 +88,18 @@ test("every route has one distinct description and preserves preview noindex", a
   }
 });
 
+test("direct residential project and journal pages identify own-home work only on verified projects", async () => {
+  const { model } = await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
+  const residential = new Set(["entry-restoration", "guest-bath-dresser-vanity", "living-room-studio-restoration", "master-bedroom-restoration", "office-restoration", "studio-office-restoration"]);
+  for (const project of model.projects) {
+    for (const route of [project.href, project.archiveHref]) {
+      const page = await readFile(path.join(websiteRoot, ".preview-dist", route.slice(1), "index.html"), "utf8");
+      const labels = [...page.matchAll(/Restoration work in my own home\./g)];
+      assert.equal(labels.length, residential.has(project.id) ? 1 : 0, route);
+    }
+  }
+});
+
 test("candidate preview renders explicit occupancy and selected services with their evidence links", async t => {
   const fixture = await writeFixture(t);
   const fixtureWebsiteRoot = path.join(fixture.repoRoot, "website");

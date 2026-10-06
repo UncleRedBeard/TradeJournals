@@ -1,0 +1,18 @@
+---
+const { projectId } = Astro.props;
+// Ownership is verified for these records, not inferred from a restoration category.
+const residentialProjects = new Set([
+  "entry-restoration",
+  "guest-bath-dresser-vanity",
+  "living-room-studio-restoration",
+  "master-bedroom-restoration",
+  "office-restoration",
+  "studio-office-restoration"
+]);
+---
+
+{residentialProjects.has(projectId) && <p class="residence-attribution">Restoration work in my own home.</p>}
+
+<style>
+  .residence-attribution { color: var(--atelier-accent); font: .8125rem/1.5 var(--atelier-mono); margin: 1rem 0; }
+</style>

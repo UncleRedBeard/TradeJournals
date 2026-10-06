@@ -291,3 +291,21 @@ The existing content snapshot is current with zero changed keys and remains
 byte-identical: template metadata does not change content fingerprints.
 No snapshot rewrite is needed. Publication and inquiry activation remain
 separate; the unrelated PROJECT_MEMORY.md edit is excluded from this closeout.
+
+## October 6 Personal Residence Attribution Release Approval
+
+Shawn accepted Task 22 in its child chat, then said “right on...make it happen
+cap'n” in website updates to authorize release validation and Git closeout.
+The approved line “Restoration work in my own home.” appears near introductions
+on the six verified residential project pages and their paired journals.
+It remains absent on pottery and photography project/journal pages.
+
+Fresh verification passes: 123 Node tests, 37 Python source/HTML tests, preview
+and guarded release builds (20 pages / 60 files / 366 references). Independent
+output checks confirm all 12 applicable and six excluded direct routes in both
+modes, distinct metadata descriptions, and the expected robots state.
+Desktop/mobile evidence and wording were reviewed and accepted before closeout.
+
+The content snapshot remains current, unchanged, with zero changed keys; this
+template-only addition requires no fingerprint refresh. Publication and inquiry
+activation remain separate. The unrelated PROJECT_MEMORY.md edit is excluded.

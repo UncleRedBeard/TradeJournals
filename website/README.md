@@ -148,6 +148,10 @@ license in an inert HTML template. Font files and the original license live in
 featured order, and shared styling, then produce an invented reviewed release.
 No real journal or review snapshot is changed by those scenarios.
 
+Residential project and journal introductions share `ResidenceAttribution.astro`.
+Its explicit project list contains only verified own-home work; review ownership
+before adding another project rather than inferring it from a category.
+
 ## Review And Release
 
 Page descriptions are supplied to `SiteLayout.astro` by the four page templates.

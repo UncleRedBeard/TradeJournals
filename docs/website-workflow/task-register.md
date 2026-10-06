@@ -8,15 +8,16 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: October 6, 2026. Tasks 19–20 are COMPLETE and closed out
-at `cedebf8` on `origin/main`. Task 21 Page Meta Descriptions is COMPLETE: Shawn
-said “reviewed and approved task 21” in this hub. Report `WK-WEB-T21-R01`,
-revision 1, is received and accepted as `WK-WEB-T21-A01`, reconciliation
-`WK-WEB-T21-H01`. The child is idle after a completed turn. Hub inspected the
-actual diff, test/build logs and descriptions across all 20 preview pages.
-Task 21 release validation and Git closeout are authorized by Shawn's follow-up
-“reviewed and approved”. Fresh validation passes; closeout targets origin/main.
-The unrelated PROJECT_MEMORY.md edit remains preserved.
+Current checkpoint: October 6, 2026. Tasks 19–21 are COMPLETE and closed out
+through `da081cd` on `origin/main`. Task 22 is COMPLETE: Shawn said “reviewed.
+approved” directly in its child chat. Report `WK-WEB-T22-R01`, revision 1,
+is received and accepted as `WK-WEB-T22-A01`; hub reconciliation
+`WK-WEB-T22-H01`. Hub inspected the diff, test/build logs and desktop/mobile
+screenshots and independently checked attribution on all 18 direct routes.
+Shawn authorized release validation and Git closeout with “right on...make it
+happen cap'n”. Closeout targets established origin/main; final synchronization
+evidence follows in the hub response.
+The unrelated PROJECT_MEMORY.md edit is preserved.
 
 Previous checkpoint: October 4, 2026. Task 18 is COMPLETE. The accepted
 Concept B website, source cleanup, tooling and three content promotions are
@@ -1155,3 +1156,47 @@ The content snapshot is current and unchanged. This supersedes earlier pending
 release/closeout statements. Commit/push targets established `origin/main`;
 final commit identity and synchronization are verified in the hub response.
 Preserve unrelated PROJECT_MEMORY.md. No deployment or inquiry activation.
+
+## Website 3 — Task 22 Personal Residence Attribution
+
+- Child: `01a1128e-058e-7763-a61b-c9283775222d`.
+- Brief: [revision 1](task-22-personal-residence-attribution.md).
+- Approval: Shawn explicitly requested this item and said “get started” in
+  requesting chat `01a1118b-5382-7490-a139-217004cba7fc`, turn
+  `01a1128c-3d9f-7612-9609-48c7e0921cc0`, October 6, 2026.
+  Direct user message verified; request `WK-WEB-SEO-ATTRIBUTION-20261006-01`.
+- Environment: same-directory fork; `main` at `da081cd`.
+- Workflow: COMPLETE. Direct child acceptance verified in completed turn
+  `01a112ee-38f8-7a31-8051-274709166406`: Shawn said “reviewed. approved”.
+  Acceptance `WK-WEB-T22-A01`; reconciliation `WK-WEB-T22-H01`. Child idle.
+  Original execution turn: `01a1128e-7ed3-70b1-b4f9-5e568358a7e5`.
+- Exact title: Website 3 - Task 22 Personal Residence Attribution - COMPLETE.
+- Dispatch: `WK-WEB-T22-D01` — SENT once; active execution verified.
+- Report: `WK-WEB-T22-R01`, revision 1, RECEIVED and accepted.
+  [Report and direct approval](reports/task-22-personal-residence-attribution.md).
+- Hub review: inspected actual implementation/test diff, passing 123 Node and
+  37 Python test logs, preview output (20 pages / 60 files / 366 references),
+  desktop project and mobile journal screenshots. Independently checked
+  attribution on all 12 residential routes and absence on six unrelated routes.
+  No content fingerprint change; release validation and Git closeout pending.
+- Scope: concise own-home attribution on six residential projects and their
+  journals; preserve unrelated pages, existing metadata and room distinctions.
+- Verify generated applicable/unrelated routes and representative desktop/mobile
+  direct landings, tests and preview/output checks. No snapshot refresh, release
+  promotion, Git closeout, deployment or inquiry activation.
+
+### Task 22 Release and Git Closeout
+
+Shawn said “right on...make it happen cap'n” after the hub proposed release
+validation and Git closeout. This authorizes the accepted Task 22 attribution
+and its workflow records for commit and push to established `origin/main`.
+Earlier pending-closeout statements describe the submission checkpoint.
+The unrelated PROJECT_MEMORY.md edit remains outside this closeout.
+No deployment, inquiry activation or successor task is authorized.
+
+Fresh closeout validation passes: 123 Node and 37 Python tests; preview and
+guarded release outputs each validate 20 pages / 60 files / 366 references.
+Independent output inspection confirms attribution on 12 residential routes
+and absence on six unrelated routes, metadata and expected robots state in
+both modes. Content review remains current with zero changed keys.
+See the [release approval](../../website/docs/pilot-editorial-review.md).
