@@ -10,7 +10,7 @@ const workshop = model.home.workshopProjectIds.map(id => model.projects.find(pro
 const { site, home } = model;
 ---
 
-<SiteLayout site={site} home={home} reviewNotice={model.reviewNotice} bodyClass="atelier-home">
+<SiteLayout description={`${site.serviceLine} Project records and workshop studies from a craftsman's practice.`} site={site} home={home} reviewNotice={model.reviewNotice} bodyClass="atelier-home">
   <section class="atelier-hero" aria-labelledby="home-heading">
     <div class="atelier-shell atelier-hero__grid">
       <div>

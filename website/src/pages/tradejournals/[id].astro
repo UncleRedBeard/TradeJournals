@@ -14,7 +14,7 @@ const rendered = story ? await render(story) : undefined;
 const Story = rendered?.Content;
 ---
 
-<SiteLayout site={model.site} home={model.home} title={`${project.title} TradeJournal`} reviewNotice={model.reviewNotice}>
+<SiteLayout description={`TradeJournal: ${project.summary}`} site={model.site} home={model.home} title={`${project.title} TradeJournal`} reviewNotice={model.reviewNotice}>
   <article class="journal-page atelier-shell">
     <a class="journal-page__back" href="/tradejournals/"><span aria-hidden="true">← </span>TradeJournals</a>
     <div class="journal-page__columns">

@@ -72,9 +72,26 @@ test("shared frame reaches homepage sections from every inner route and retains 
   }
 });
 
+test("every route has one distinct description and preserves preview noindex", async () => {
+  const { model } = await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
+  const routes = ["/", "/tradejournals/", ...model.projects.flatMap(project => [project.href, project.archiveHref])];
+  const descriptions = new Set();
+  for (const route of routes) {
+    const page = await readFile(path.join(websiteRoot, ".preview-dist", route.slice(1), "index.html"), "utf8");
+    const tags = [...page.matchAll(/<meta\b[^>]*name="description"[^>]*>/g)];
+    assert.equal(tags.length, 1, `${route} has exactly one description`);
+    const description = tags[0][0].match(/content="([^"]+)"/)?.[1];
+    assert.ok(description?.trim(), `${route} has useful text`);
+    assert.ok(!descriptions.has(description), `${route} has distinct text`);
+    descriptions.add(description);
+    assert.match(page, /<meta name="robots" content="noindex, nofollow"/);
+  }
+});
+
 test("candidate preview renders explicit occupancy and selected services with their evidence links", async t => {
   const fixture = await writeFixture(t);
   const fixtureWebsiteRoot = path.join(fixture.repoRoot, "website");
+  fixture.raw.projects[0].summary = 'A "record" of <original> boards & careful repair.';
   fixture.raw.projects[0].occupancy = { state: "current", label: "Current barre studio" };
   await fixture.saveRecord("projects/project-one.json", fixture.raw.projects[0]);
   await fixture.saveRecord("services/historic-floors.json", {
@@ -100,7 +117,7 @@ test("candidate preview renders explicit occupancy and selected services with th
 
   const journal = await readFile(path.join(fixtureWebsiteRoot, ".preview-dist/tradejournals/project-one/index.html"), "utf8");
   assert.equal([...journal.matchAll(/<h1\b/g)].length, 1, "a journal without a story retains one page heading");
-  assert.ok(journal.includes(fixture.raw.projects[0].summary));
+  assert.match(journal, /<meta name="description" content="TradeJournal: A &quot;record&quot; of <original> boards &amp; careful repair\."/);
   assert.match(journal, /href="\/work\/project-one\/"/);
 
   const homepage = await readFile(path.join(fixtureWebsiteRoot, ".preview-dist/index.html"), "utf8");

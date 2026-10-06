@@ -8,19 +8,15 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: October 6, 2026. Tasks 19 and 20 are COMPLETE. Shawn
-reviewed both tasks and approved their updates in this hub. Acceptances
-`WK-WEB-T19-A01` and `WK-WEB-T20-A01` cover each revision 1 report; hub
-reconciliations `WK-WEB-T19-H02` and `WK-WEB-T20-H02` record completion.
-The combined candidate passes the existing tests/output checks and
-desktop/mobile review. Shawn subsequently authorized snapshot refresh and Git
-closeout with “make it happen cap'n”. The approved snapshot is now current;
-fresh tests (121 Node / 37 Python), repository Markdown lint, preview and
-guarded release checks pass (20 pages / 60 files / 366 references).
-Git closeout targets established `origin/main` from base `41c4dbf`; commit and
-remote synchronization are verified in the hub response after the push.
-Deployment and inquiry activation remain separate. The unrelated
-`PROJECT_MEMORY.md` edit is excluded; the task request is included as provenance.
+Current checkpoint: October 6, 2026. Tasks 19–20 are COMPLETE and closed out
+at `cedebf8` on `origin/main`. Task 21 Page Meta Descriptions is COMPLETE: Shawn
+said “reviewed and approved task 21” in this hub. Report `WK-WEB-T21-R01`,
+revision 1, is received and accepted as `WK-WEB-T21-A01`, reconciliation
+`WK-WEB-T21-H01`. The child is idle after a completed turn. Hub inspected the
+actual diff, test/build logs and descriptions across all 20 preview pages.
+Task 21 release validation and Git closeout are authorized by Shawn's follow-up
+“reviewed and approved”. Fresh validation passes; closeout targets origin/main.
+The unrelated PROJECT_MEMORY.md edit remains preserved.
 
 Previous checkpoint: October 4, 2026. Task 18 is COMPLETE. The accepted
 Concept B website, source cleanup, tooling and three content promotions are
@@ -1120,3 +1116,42 @@ The release record in [editorial review](../../website/docs/pilot-editorial-revi
 supersedes the historical pending-snapshot statements in the child reports.
 No source journals, images, hosting settings or inquiry controls are changed.
 The pre-existing `PROJECT_MEMORY.md` change remains outside this commit.
+
+## Website 3 — Task 21 Page Meta Descriptions
+
+- Child: `01a11244-b428-73c2-a870-621a495540b8`.
+- Brief: [revision 1](task-21-page-meta-descriptions.md).
+- Approval: direct user instruction verified in requesting chat
+  `01a1118b-5382-7490-a139-217004cba7fc`, turn
+  `01a11241-ecc6-74e1-8f9e-0c7a5e6e050c`, October 6, 2026:
+  “kick off the medium priority task”. Scope is page-specific descriptions
+  under `WK-WEB-SEO-META-20261006-01`; no repeat approval needed.
+- Environment: same-directory fork, `main` at `cedebf8`. Preserve unrelated
+  PROJECT_MEMORY.md and requester-owned request.
+- Workflow: COMPLETE; Shawn reviewed and approved Task 21 in this hub.
+  Acceptance `WK-WEB-T21-A01`; reconciliation `WK-WEB-T21-H01`.
+  Child idle and completed execution verified. Idle identity was checked before
+  dispatch; active turn `01a11245-8afe-74c2-b2bd-b4ad93085148` observed afterward.
+- Exact title: Website 3 - Task 21 Page Meta Descriptions - COMPLETE.
+- Dispatch: `WK-WEB-T21-D01` — SENT once; execution observed.
+- Report: `WK-WEB-T21-R01`, revision 1, RECEIVED and accepted.
+  [Completion report](reports/task-21-page-meta-descriptions.md).
+- Hub verification: inspected production/test diff and passing logs (122 Node,
+  37 Python tests; preview 20 pages / 60 files / 366 references). Independently
+  parsed all 20 preview pages: one nonempty unique description each.
+  Content snapshot remains unchanged; metadata-only template changes do not
+  alter its fingerprints. Git closeout and release preparation remain pending.
+- Scope: one accurate description per route through existing layout/content;
+  distinguish journal and overview. Tests, preview and generated HTML checks.
+- No snapshot refresh, release promotion, Git closeout or deployment.
+
+### Task 21 Release and Git Closeout
+
+Shawn followed acceptance with “reviewed and approved” to the proposed release
+validation and Git closeout. Fresh tests pass (122 Node / 37 Python); preview
+and guarded release validate 20 pages / 60 files / 366 references. Independent
+HTML checks confirm all descriptions and expected preview/release robots state.
+The content snapshot is current and unchanged. This supersedes earlier pending
+release/closeout statements. Commit/push targets established `origin/main`;
+final commit identity and synchronization are verified in the hub response.
+Preserve unrelated PROJECT_MEMORY.md. No deployment or inquiry activation.

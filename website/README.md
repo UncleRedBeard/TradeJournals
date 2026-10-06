@@ -150,6 +150,12 @@ No real journal or review snapshot is changed by those scenarios.
 
 ## Review And Release
 
+Page descriptions are supplied to `SiteLayout.astro` by the four page templates.
+Project overviews and journals reuse each project's approved `summary`, with
+an overview/photographs or TradeJournal label to distinguish the destination.
+Home and archive descriptions summarize their existing visible content. Review
+metadata wording with page content; no separate SEO record is required.
+
 The candidate/release boundary is deliberate:
 
 - `website/.preview-dist/` is a local candidate with a review notice and

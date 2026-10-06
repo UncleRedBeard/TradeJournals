@@ -5,7 +5,7 @@ import AtelierHeader from "../components/AtelierHeader.astro";
 import AtelierFooter from "../components/AtelierFooter.astro";
 import fontLicense from "../styles/fonts/OFL.txt?raw";
 
-const { site, home, title = "", reviewNotice = "", bodyClass = "" } = Astro.props;
+const { site, home, title = "", description, reviewNotice = "", bodyClass = "" } = Astro.props;
 const pageTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.descriptor}`;
 ---
 
@@ -15,6 +15,7 @@ const pageTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.d
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
+    <meta name="description" content={description} />
     {reviewNotice && <meta name="robots" content="noindex, nofollow" />}
   </head>
   <body class:list={["atelier-site", bodyClass]}>
