@@ -1,5 +1,5 @@
 ---
-const { project, projectPage = false } = Astro.props;
+const { project, projectPage = false, showAlbumLinks = true } = Astro.props;
 ---
 
 <aside class:list={["evidence-details", { "evidence-details--project": projectPage }]} aria-label="Project record">
@@ -9,7 +9,7 @@ const { project, projectPage = false } = Astro.props;
   {project.occupancy && <p>{project.occupancy.label}</p>}
   <p><strong>Source:</strong> {project.sourceLabel}</p>
   {project.evidenceBoundary && <p>{project.evidenceBoundary}</p>}
-  <ul>{project.albums.map(album => <li><a href={album.sourceUrl}>View {album.label}</a> <span>({album.shown} selected from a recorded {album.count})</span></li>)}</ul>
+  {showAlbumLinks && <ul>{project.albums.map(album => <li><a href={album.sourceUrl}>View {album.label}</a> <span>({album.shown} selected from a recorded {album.count})</span></li>)}</ul>}
 </aside>
 
 <style>

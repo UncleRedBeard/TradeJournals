@@ -1,0 +1,68 @@
+---
+import ProjectGallery from "./ProjectGallery.astro";
+const { project } = Astro.props;
+// Labels follow the verified photo identities, not an assumed chronological order.
+const stages = {
+  "flickr-55338112557": "Result — floor renewal, 2025",
+  "flickr-55339048056": "Starting condition — first pass, 2024",
+  "flickr-55339463385": "Work in progress — first pass, 2024"
+};
+---
+
+<div data-entry-gallery>
+  <p class="entry-gallery__intro">These photographs document two separate restoration passes: door, stair and trim work in 2024–25, followed by floor renewal in late 2025. The renewed floor leads this selection; the earlier photographs show protection and finish work around the retained features.</p>
+  <ProjectGallery images={project.gallery} localViewing labels={project.gallery.map(image => stages[image.id])} />
+  <p class="entry-gallery__source">{project.albums.map(album => <a href={album.sourceUrl}>View the full source album <span aria-hidden="true">↗</span></a>)}</p>
+  <details class="entry-gallery__sources">
+    <summary>Photograph sources</summary>
+    <ul>{project.gallery.map(image => <li><a href={image.sourceUrl}>{stages[image.id] || image.alt}</a></li>)}</ul>
+  </details>
+  <dialog aria-label="Enlarged project photograph">
+    <button type="button" autofocus>Close photograph <span aria-hidden="true">×</span></button>
+    <figure>
+      <figcaption></figcaption>
+    </figure>
+  </dialog>
+</div>
+
+<script>
+  for (const gallery of document.querySelectorAll<HTMLElement>("[data-entry-gallery]")) {
+    const dialog = gallery.querySelector("dialog")!;
+    const enlarged = document.createElement("img");
+    dialog.querySelector("figure")!.prepend(enlarged);
+    const caption = dialog.querySelector("figcaption")!;
+    let opener: HTMLAnchorElement | undefined;
+    for (const link of gallery.querySelectorAll<HTMLAnchorElement>("[data-gallery-open]")) {
+      link.addEventListener("click", event => {
+        // Preserve normal modified-click behavior and a local-image fallback.
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || typeof dialog.showModal !== "function") return;
+        event.preventDefault();
+        const image = link.querySelector("img")!;
+        opener = link;
+        enlarged.src = link.href;
+        enlarged.alt = image.alt;
+        enlarged.width = image.width;
+        enlarged.height = image.height;
+        caption.textContent = link.dataset.caption ?? "";
+        dialog.showModal();
+      });
+    }
+    dialog.querySelector("button")!.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("close", () => opener?.focus({ preventScroll: true }));
+  }
+</script>
+
+<style>
+  .entry-gallery__intro { color: #4a4237; line-height: 1.7; max-width: 70ch; margin: -1rem 0 2rem; }
+  .entry-gallery__source { margin: 2rem 0 0; font-size: .8125rem; }
+  .entry-gallery__source a { display: inline-flex; align-items: center; min-height: 44px; gap: .5rem; color: var(--atelier-accent); }
+  .entry-gallery__sources { color: var(--atelier-accent); font-size: .8125rem; margin: .5rem 0 0; }
+  .entry-gallery__sources summary { cursor: pointer; padding: .75rem 0; }
+  .entry-gallery__sources a { display: inline-flex; align-items: center; min-height: 44px; }
+  dialog { background: var(--atelier-paper); color: var(--atelier-ink); border: 1px solid var(--atelier-brass); padding: 1rem; width: min(72rem, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); box-sizing: border-box; }
+  dialog::backdrop { background: rgb(20 17 14 / .85); }
+  dialog button { display: block; margin: 0 0 .75rem auto; min-height: 44px; padding: .5rem .75rem; color: var(--atelier-ink); background: var(--atelier-card); border: 1px solid var(--atelier-accent); cursor: pointer; font: inherit; }
+  dialog figure { margin: 0; }
+  dialog :global(img) { display: block; width: 100%; height: auto; max-height: 70dvh; object-fit: contain; }
+  dialog figcaption { margin: .75rem auto 0; max-width: 70ch; font-size: .875rem; line-height: 1.5; }
+</style>

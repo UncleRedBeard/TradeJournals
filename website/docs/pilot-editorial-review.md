@@ -309,3 +309,21 @@ Desktop/mobile evidence and wording were reviewed and accepted before closeout.
 The content snapshot remains current, unchanged, with zero changed keys; this
 template-only addition requires no fingerprint refresh. Publication and inquiry
 activation remain separate. The unrelated PROJECT_MEMORY.md edit is excluded.
+
+## October 19 Entry Gallery Trial Release Approval
+
+Shawn accepted Task 23 and then said “commit and git er done” in website
+updates. The accepted Entry-only presentation is approved for release validation
+and Git closeout to established `origin/main`. The existing three photographs
+remain in approved order, with truthful stage labels, local enlargement and
+secondary album/photo provenance. Other project galleries remain unchanged.
+
+Fresh validation passes: 124 Node and 37 Python source/HTML tests, preview
+and guarded release builds (20 pages / 60 files / 366 references). Independent
+HTML checks confirm the local viewer only on the Entry project route and the
+expected preview/release robots state across all 20 pages. Desktop/mobile and
+keyboard interaction evidence was reviewed before acceptance.
+
+Content fingerprints remain current with zero changed keys; no snapshot refresh
+was needed for this template-only change. This does not deploy the site or
+authorize rollout to other projects. Inquiries remain disabled.

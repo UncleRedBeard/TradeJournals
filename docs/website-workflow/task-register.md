@@ -8,16 +8,15 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: October 6, 2026. Tasks 19–21 are COMPLETE and closed out
-through `da081cd` on `origin/main`. Task 22 is COMPLETE: Shawn said “reviewed.
-approved” directly in its child chat. Report `WK-WEB-T22-R01`, revision 1,
-is received and accepted as `WK-WEB-T22-A01`; hub reconciliation
-`WK-WEB-T22-H01`. Hub inspected the diff, test/build logs and desktop/mobile
-screenshots and independently checked attribution on all 18 direct routes.
-Shawn authorized release validation and Git closeout with “right on...make it
-happen cap'n”. Closeout targets established origin/main; final synchronization
-evidence follows in the hub response.
-The unrelated PROJECT_MEMORY.md edit is preserved.
+Current checkpoint: October 19, 2026. Task 23 Entry Gallery Trial is COMPLETE.
+Shawn reviewed and approved the delivered trial, reaffirming approval directly
+in this hub. Report `WK-WEB-T23-R01`, revision 1, is RECEIVED; acceptance
+`WK-WEB-T23-A01` reconciled as `WK-WEB-T23-H01`. Child is idle after completion.
+Hub reviewed actual source/test changes, passing logs and mobile-dialog
+evidence. The trial remains Entry-only and local on main at `b65f0c1`.
+Shawn authorized release validation, commit and push with “commit and git er
+done”. Closeout targets established origin/main. Rollout to other projects and
+deployment remain separate.
 
 Previous checkpoint: October 4, 2026. Task 18 is COMPLETE. The accepted
 Concept B website, source cleanup, tooling and three content promotions are
@@ -1200,3 +1199,44 @@ Independent output inspection confirms attribution on 12 residential routes
 and absence on six unrelated routes, metadata and expected robots state in
 both modes. Content review remains current with zero changed keys.
 See the [release approval](../../website/docs/pilot-editorial-review.md).
+
+## Website 3 — Task 23 Entry Gallery Trial
+
+- Child: `01a1551b-1022-7c01-bf02-bf4f2a2c0f8f`.
+- Brief: [revision 1](task-23-entry-gallery-trial.md).
+- Approval: Shawn directly instructed this hub on October 19, 2026 to run the
+  proposed trial on Entry and Stair Restoration, keep it lean, and use
+  workflow-hub. This is execution approval; no repeat start question needed.
+- Environment: same-directory fork, `main` at `b65f0c1`, clean before hub prep.
+- Workflow: COMPLETE. Shawn reaffirmed “reviewed and approved” in this hub.
+  Acceptance `WK-WEB-T23-A01`; reconciliation `WK-WEB-T23-H01`.
+  Child idle after completion; original dispatch turn
+  `01a1551b-7c64-7722-b852-977e129a8687`.
+- Exact title: Website 3 - Task 23 Entry Gallery Trial - COMPLETE.
+- Dispatch: `WK-WEB-T23-D01` — SENT once; active execution verified.
+- Report: `WK-WEB-T23-R01`, revision 1, RECEIVED and accepted.
+  [Report](reports/task-23-entry-gallery-trial.md).
+- Hub review: actual source/test diff, 124 Node and 37 Python passing test
+  logs, preview output (20 pages / 60 files / 366 references), and mobile
+  dialog screenshot inspected. Child verified all three images, keyboard
+  activation, Escape/close/focus, desktop/mobile layout and non-trial behavior.
+  Content snapshot unchanged; template-only change remains a local candidate.
+- Scope: Entry project page only; existing selected images, useful sequence,
+  in-site enlargement and a secondary album link. Preserve other pages.
+- Reviewable local result with desktop/mobile and keyboard checks; no release
+  promotion, Git closeout, deployment or site-wide rollout.
+
+### Task 23 Release and Git Closeout
+
+After accepting the Entry-only trial, Shawn said “commit and git er done” in
+this hub on October 19, 2026. This authorizes validation, commit and push of
+Task 23 and its workflow/release records to established `origin/main`.
+Earlier pending-closeout statements describe historical checkpoints.
+The accepted behavior remains confined to Entry and Stair Restoration;
+no other-project rollout, public deployment or inquiry activation is included.
+
+Fresh closeout verification: 124 Node / 37 Python tests pass. Preview and guarded
+release validate 20 pages / 60 files / 366 references. Independent HTML review
+confirms Entry-only local viewing and correct robots state; content snapshot
+remains current and unchanged. Final commit identity and synchronization are
+verified in the hub response after push.

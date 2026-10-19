@@ -1,11 +1,11 @@
 ---
-const { images } = Astro.props;
+const { images, localViewing = false, labels = [] } = Astro.props;
 ---
 
 <div class="gallery">
   {images.map((image, index) => <figure class:list={["gallery__item", { "gallery__item--wide": image.width > image.height, "gallery__item--lead": index === 0 }]}>
-    <a class="gallery__image" href={image.sourceUrl} aria-label={`View original source for ${image.alt}`}><img src={image.src} width={image.width} height={image.height} alt={image.alt} loading={index === 0 ? "eager" : "lazy"} decoding="async" style={image.focalPoint ? `object-position: ${image.focalPoint[0]}% ${image.focalPoint[1]}%` : undefined} /></a>
-    {image.caption && <figcaption>{image.caption} <a href={image.sourceUrl}>Original source</a></figcaption>}
+    <a class="gallery__image" href={localViewing ? image.src : image.sourceUrl} data-gallery-open={localViewing || undefined} data-caption={localViewing ? image.caption : undefined} aria-haspopup={localViewing ? "dialog" : undefined} aria-label={`${localViewing ? "Enlarge photograph:" : "View original source for"} ${image.alt}`}><img src={image.src} width={image.width} height={image.height} alt={image.alt} loading={index === 0 ? "eager" : "lazy"} decoding="async" style={image.focalPoint ? `object-position: ${image.focalPoint[0]}% ${image.focalPoint[1]}%` : undefined} /></a>
+    {image.caption && <figcaption>{labels[index] && <strong class="gallery__stage">{labels[index]}</strong>}{image.caption} {localViewing ? <span class="gallery__hint">Select photograph to enlarge</span> : <a href={image.sourceUrl}>Original source</a>}</figcaption>}
   </figure>)}
 </div>
 
@@ -20,6 +20,8 @@ const { images } = Astro.props;
   .gallery__item--lead img { max-height: 42rem; }
   .gallery__item--lead:not(:has(figcaption)) { grid-template-columns: minmax(0, 1fr); }
   figcaption { color: #4a4237; font-size: .875rem; line-height: 1.65; margin-top: .85rem; max-width: 65ch; }
+  .gallery__stage { display: block; color: var(--atelier-ink); margin-bottom: .6rem; }
+  .gallery__hint { display: block; color: var(--atelier-accent); font-size: .75rem; margin-top: .75rem; }
   figcaption a { color: var(--atelier-accent); display: table; font: .75rem/1.5 var(--atelier-mono); padding-block: .75rem; }
   @media (max-width: 56rem) { .gallery__item--lead { display: block; } }
   @media (max-width: 38rem) {

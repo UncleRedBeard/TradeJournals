@@ -169,15 +169,43 @@ test("project photographs remain in approved order with captions and source link
     assert.ok(page.includes('href="#project-photographs"'), `${project.id} lets visitors jump to photographs`);
     assert.match(page, /<section\b[^>]*id="project-photographs"[^>]*aria-labelledby="project-photographs-heading"/);
     assert.match(page, /<h2\b[^>]*id="project-photographs-heading"/);
-    const figures = [...page.matchAll(/<figure\b[^>]*>.*?<\/figure>/gs)].map(match => match[0]);
+    const figures = [...page.matchAll(/<figure\b[^>]*class="gallery__item[^>]*>.*?<\/figure>/gs)].map(match => match[0]);
     assert.equal(figures.length, project.gallery.length, `${project.id} keeps every selected image once`);
     for (const [index, image] of project.gallery.entries()) {
       const figure = figures[index];
       assert.ok(figure.includes(`src="${escapeHtml(image.src)}"`), `${project.id} preserves image order`);
       assert.ok(figure.includes(`alt="${escapeHtml(image.alt)}"`));
-      assert.ok(figure.includes(`href="${escapeHtml(image.sourceUrl)}"`));
+      if (project.id === "entry-restoration") {
+        assert.ok(figure.includes(`href="${escapeHtml(image.src)}"`));
+        assert.ok(page.includes(`href="${escapeHtml(image.sourceUrl)}"`), "Entry retains secondary source provenance");
+      } else {
+        assert.ok(figure.includes(`href="${escapeHtml(image.sourceUrl)}"`));
+      }
       if (image.caption) assert.ok(figure.includes(escapeHtmlText(image.caption)), `${project.id} preserves the caption`);
     }
     assert.ok(page.includes(`href="${project.archiveHref}"`), `${project.id} retains its journal link`);
   }
+});
+
+
+test("Entry gallery trial keeps viewing local and leaves other projects and journals unchanged", async () => {
+  await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
+  const entry = await readFile(path.join(websiteRoot, ".preview-dist/work/entry-restoration/index.html"), "utf8");
+  assert.match(entry, /<dialog[^>]+aria-label="Enlarged project photograph"/);
+  assert.equal([...entry.matchAll(/<a\b[^>]*data-gallery-open/g)].length, 3);
+  assert.match(entry, /href="\/media\/flickr-55338112557.jpg"/);
+  assert.match(entry, /Result — floor renewal, 2025/);
+  assert.match(entry, /Starting condition — first pass, 2024/);
+  assert.match(entry, /Work in progress — first pass, 2024/);
+  assert.match(entry, /two separate restoration passes/);
+  assert.doesNotMatch(entry, />Original source<|View original source for/);
+  assert.equal([...entry.matchAll(/View the full source album/g)].length, 1);
+  assert.ok(entry.indexOf("View the full source album") > entry.indexOf("data-gallery-open"));
+  assert.match(entry, /href="\/tradejournals\/entry-restoration\/"/);
+  for (const route of ["work/office-restoration", "tradejournals/entry-restoration"]) {
+    const page = await readFile(path.join(websiteRoot, ".preview-dist", route, "index.html"), "utf8");
+    assert.doesNotMatch(page, /<a\b[^>]*data-gallery-open|<dialog/);
+  }
+  const office = await readFile(path.join(websiteRoot, ".preview-dist/work/office-restoration/index.html"), "utf8");
+  assert.match(office, /View original source for/);
 });
