@@ -152,11 +152,13 @@ Residential project and journal introductions share `ResidenceAttribution.astro`
 Its explicit project list contains only verified own-home work; review ownership
 before adding another project rather than inferring it from a category.
 
-The Entry project page currently trials `EntryGallery.astro`: the existing
-three photographs open in a native dialog, with a local-image link fallback.
-Its photo labels distinguish the two restoration passes. The source album and
-individual-photo provenance sit below the gallery. Other project pages retain
-their existing source-link behavior; the Entry journal is unchanged.
+Project galleries share `GalleryViewer.astro`: selected local photographs open
+in a native dialog, with local-image links as a fallback. Source album links
+and individual-photo provenance sit below each gallery. Multiple albums retain
+their recorded names. `EntryGallery.astro` adds only the accepted Entry stage
+labels and two-pass introduction; other projects retain their approved captions
+without inferred chronology. Journals and homepage/archive cards remain navigation
+to the project galleries.
 
 ## Review And Release
 

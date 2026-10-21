@@ -327,3 +327,21 @@ keyboard interaction evidence was reviewed before acceptance.
 Content fingerprints remain current with zero changed keys; no snapshot refresh
 was needed for this template-only change. This does not deploy the site or
 authorize rollout to other projects. Inquiries remain disabled.
+
+## October 21 Sitewide Gallery Release Approval
+
+Shawn accepted Task 24 on October 20 and said “cool...git er done” on October 21
+in website updates. This authorizes release validation and Git closeout of
+the shared gallery treatment across all nine project pages to `origin/main`.
+All 37 selected photograph placements retain their order, captions, alt text
+and source provenance. Entry retains its approved stage labels and context.
+
+Fresh checks pass: 125 Node and 37 Python tests, preview and guarded release
+builds (20 pages / 60 files / 366 references). Independent HTML inspection
+confirms nine viewers and 37 local links in both outputs, unchanged non-gallery
+routes and expected preview/release robots state. Browser interaction and
+desktop/mobile evidence were reviewed before acceptance.
+
+Content review remains current with zero changed keys; pilot.json is unchanged.
+No fingerprint refresh was required. Deployment and inquiry activation remain
+separate from this approved repository release.

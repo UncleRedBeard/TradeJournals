@@ -175,12 +175,8 @@ test("project photographs remain in approved order with captions and source link
       const figure = figures[index];
       assert.ok(figure.includes(`src="${escapeHtml(image.src)}"`), `${project.id} preserves image order`);
       assert.ok(figure.includes(`alt="${escapeHtml(image.alt)}"`));
-      if (project.id === "entry-restoration") {
-        assert.ok(figure.includes(`href="${escapeHtml(image.src)}"`));
-        assert.ok(page.includes(`href="${escapeHtml(image.sourceUrl)}"`), "Entry retains secondary source provenance");
-      } else {
-        assert.ok(figure.includes(`href="${escapeHtml(image.sourceUrl)}"`));
-      }
+      assert.ok(figure.includes(`href="${escapeHtml(image.src)}"`), `${project.id} opens a local photograph`);
+      assert.ok(page.includes(`href="${escapeHtml(image.sourceUrl)}"`), `${project.id} retains secondary source provenance`);
       if (image.caption) assert.ok(figure.includes(escapeHtmlText(image.caption)), `${project.id} preserves the caption`);
     }
     assert.ok(page.includes(`href="${project.archiveHref}"`), `${project.id} retains its journal link`);
@@ -188,7 +184,7 @@ test("project photographs remain in approved order with captions and source link
 });
 
 
-test("Entry gallery trial keeps viewing local and leaves other projects and journals unchanged", async () => {
+test("Entry gallery preserves its accepted stage labels and journal", async () => {
   await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
   const entry = await readFile(path.join(websiteRoot, ".preview-dist/work/entry-restoration/index.html"), "utf8");
   assert.match(entry, /<dialog[^>]+aria-label="Enlarged project photograph"/);
@@ -202,10 +198,32 @@ test("Entry gallery trial keeps viewing local and leaves other projects and jour
   assert.equal([...entry.matchAll(/View the full source album/g)].length, 1);
   assert.ok(entry.indexOf("View the full source album") > entry.indexOf("data-gallery-open"));
   assert.match(entry, /href="\/tradejournals\/entry-restoration\/"/);
-  for (const route of ["work/office-restoration", "tradejournals/entry-restoration"]) {
+  for (const route of ["tradejournals/entry-restoration"]) {
     const page = await readFile(path.join(websiteRoot, ".preview-dist", route, "index.html"), "utf8");
     assert.doesNotMatch(page, /<a\b[^>]*data-gallery-open|<dialog/);
   }
-  const office = await readFile(path.join(websiteRoot, ".preview-dist/work/office-restoration/index.html"), "utf8");
-  assert.match(office, /View original source for/);
+});
+
+
+test("all project galleries offer local viewing and secondary album provenance", async () => {
+  const { model } = await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
+  for (const project of model.projects) {
+    const page = await readFile(path.join(websiteRoot, ".preview-dist", project.href.slice(1), "index.html"), "utf8");
+    assert.equal([...page.matchAll(/<dialog\b/g)].length, 1, project.id);
+    assert.equal([...page.matchAll(/<a\b[^>]*data-gallery-open/g)].length, project.gallery.length, project.id);
+    const sources = page.match(/<details\b[^>]*>.*?<\/details>/s)?.[0];
+    assert.ok(sources?.includes("Photograph sources"), project.id);
+    for (const image of project.gallery) {
+      assert.ok(sources.includes(image.sourceUrl.replaceAll("&", "&amp;")), `${project.id} keeps each photo source`);
+    }
+    assert.equal([...page.matchAll(/View the full source album/g)].length, project.albums.length, project.id);
+    assert.ok(page.indexOf("View the full source album") > [...page.matchAll(/<a\b[^>]*data-gallery-open/g)].at(-1).index);
+    for (const album of project.albums) {
+      assert.ok(page.includes(album.sourceUrl.replaceAll("&", "&amp;")), `${project.id} keeps each album source`);
+    }
+    assert.doesNotMatch(page, />Original source<|View original source for/);
+    if (project.id !== "entry-restoration") assert.doesNotMatch(page, /Starting condition — first pass|two separate restoration passes/);
+    const journal = await readFile(path.join(websiteRoot, ".preview-dist", project.archiveHref.slice(1), "index.html"), "utf8");
+    assert.doesNotMatch(journal, /<dialog|data-gallery-open/);
+  }
 });

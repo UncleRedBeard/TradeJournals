@@ -8,15 +8,15 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: October 19, 2026. Task 23 Entry Gallery Trial is COMPLETE.
-Shawn reviewed and approved the delivered trial, reaffirming approval directly
-in this hub. Report `WK-WEB-T23-R01`, revision 1, is RECEIVED; acceptance
-`WK-WEB-T23-A01` reconciled as `WK-WEB-T23-H01`. Child is idle after completion.
-Hub reviewed actual source/test changes, passing logs and mobile-dialog
-evidence. The trial remains Entry-only and local on main at `b65f0c1`.
-Shawn authorized release validation, commit and push with “commit and git er
-done”. Closeout targets established origin/main. Rollout to other projects and
-deployment remain separate.
+Current checkpoint: October 20, 2026. Task 24 Sitewide Galleries is COMPLETE.
+Shawn directly reaffirmed review and approval in this hub. Report
+`WK-WEB-T24-R01`, revision 1, is RECEIVED; acceptance `WK-WEB-T24-A01`
+reconciled as `WK-WEB-T24-H01`. Child idle after completion. Hub inspected
+implementation/test changes, passing logs and representative screenshots, and
+independently checked all nine viewer routes and 37 local photograph links.
+Shawn authorized release validation and Git closeout on October 21 with
+“cool...git er done”. Closeout targets established origin/main from `4864feb`.
+Deployment remains separate; final synchronization follows in the hub response.
 
 Previous checkpoint: October 4, 2026. Task 18 is COMPLETE. The accepted
 Concept B website, source cleanup, tooling and three content promotions are
@@ -1240,3 +1240,52 @@ release validate 20 pages / 60 files / 366 references. Independent HTML review
 confirms Entry-only local viewing and correct robots state; content snapshot
 remains current and unchanged. Final commit identity and synchronization are
 verified in the hub response after push.
+
+## Website 3 — Task 24 Sitewide Galleries
+
+- Child: `01a15545-ba05-7420-953c-615c51a1a29b`.
+- Brief: [revision 1](task-24-sitewide-gallery.md).
+- Approval: Shawn directly instructed this hub on October 19, 2026 to expand
+  the approved gallery treatment site wide, keep it lean and use workflow-hub.
+  Explicit implementation approval; no repeat start question required.
+- Environment: same-directory fork, main at `4864feb`, clean before hub prep.
+- Workflow: COMPLETE. Shawn said “task 24 has been reviewed and i approve”
+  in this hub on October 20, 2026. Acceptance `WK-WEB-T24-A01`;
+  reconciliation `WK-WEB-T24-H01`. Child idle after completed work.
+  Original execution turn: `01a15546-28a2-7343-b0a1-468ad6b7d79e`.
+- Exact title: Website 3 - Task 24 Sitewide Galleries - COMPLETE.
+- Dispatch: `WK-WEB-T24-D01` — SENT once; active execution verified.
+- Report: `WK-WEB-T24-R01`, revision 1, RECEIVED and accepted.
+  [Report](reports/task-24-sitewide-gallery.md).
+- Hub review: actual source/test diff, passing logs (125 Node / 37 Python),
+  preview output (20 pages / 60 files / 366 references), representative clay
+  mobile and photography desktop screenshots. Independently verified nine
+  viewer routes and 37 local image links. Child verified keyboard, desktop/
+  mobile, multi-album provenance and preserved Entry behavior.
+  Content snapshot unchanged; release validation and Git closeout pending.
+- Scope: reuse accepted local viewing and secondary provenance across all nine
+  existing project galleries. Preserve selections/order, factual limits and
+  navigation; tailor any labels to the actual evidence and project type.
+- Verify generated routes plus desktop/mobile/keyboard behavior and established
+  checks. Deliver a local candidate; no release, Git closeout or deployment.
+
+Task 24 hub follow-up: the saved Agfa desktop screenshot had a blank image
+area. A fresh browser check opened that exact kickwheel photograph from its
+project gallery and visibly confirmed the image and caption render correctly
+in the dialog. No implementation change was needed; the saved screenshot alone
+was insufficient evidence of image loading.
+
+### Task 24 Release and Git Closeout — October 21, 2026
+
+Following acceptance, Shawn said “cool...git er done” in this hub. This
+authorizes validation, commit and push of the sitewide gallery treatment and
+its workflow/release records to established `origin/main`. Earlier pending
+statements record historical checkpoints. Public deployment, inquiry activation
+and successor work remain separate.
+
+Fresh closeout checks pass: 125 Node / 37 Python tests; preview and guarded
+release outputs each validate 20 pages / 60 files / 366 references. Independent
+HTML inspection confirms nine galleries and 37 local photo links in both modes
+with correct robots state and no viewer on non-gallery routes. Content snapshot
+remains current and unchanged. Final commit and synchronization are verified
+in the hub response after push.

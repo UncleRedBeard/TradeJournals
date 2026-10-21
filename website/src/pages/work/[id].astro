@@ -2,7 +2,7 @@
 import ResidenceAttribution from "../../components/ResidenceAttribution.astro";
 import EvidenceDetails from "../../components/EvidenceDetails.astro";
 import EntryGallery from "../../components/EntryGallery.astro";
-import ProjectGallery from "../../components/ProjectGallery.astro";
+import GalleryViewer from "../../components/GalleryViewer.astro";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 import model from "@site-model";
 
@@ -11,7 +11,7 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const entryTrial = project.id === "entry-restoration";
+const isEntry = project.id === "entry-restoration";
 ---
 
 <SiteLayout description={`Project overview and photographs: ${project.summary}`} site={model.site} home={model.home} title={project.title} reviewNotice={model.reviewNotice}>
@@ -28,11 +28,11 @@ const entryTrial = project.id === "entry-restoration";
           <a href={project.archiveHref}>Read the TradeJournal record <span aria-hidden="true">→</span></a>
         </nav>
       </div>
-      <EvidenceDetails project={project} projectPage showAlbumLinks={!entryTrial} />
+      <EvidenceDetails project={project} projectPage showAlbumLinks={false} />
     </div>
     <section id="project-photographs" aria-labelledby="project-photographs-heading" tabindex="-1">
       <h2 id="project-photographs-heading">Project photographs</h2>
-      {entryTrial ? <EntryGallery project={project} /> : <ProjectGallery images={project.gallery} />}
+      {isEntry ? <EntryGallery project={project} /> : <GalleryViewer project={project} />}
     </section>
     <div class="project-page__journal">
       <a href={project.archiveHref}>Read the TradeJournal record <span aria-hidden="true">→</span></a>
