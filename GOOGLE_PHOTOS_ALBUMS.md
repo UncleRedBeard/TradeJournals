@@ -13,14 +13,14 @@ come from one of these sources:
 ## Summary
 
 - Albums tracked: 2
-- Image-level representative picks completed: 0
-- Albums pending representative image review: 2
+- Albums with representative selection records: 1 (Studio; five local website images)
+- Albums without representative selection records: 1 (Pottery secondary mirror)
 
 ## Album List
 
 1. [Home Reno - Studio](https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9)
-   - Status: authenticated live review completed through 2026-08-30; durable
-     representative-image manifest pending
+   - Status: authenticated hub review on 2026-11-11; five-photo selection
+     recorded in Task 25; three November images imported locally in Task 26
    - Section: residence
    - Journal:
      `01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md`
@@ -40,17 +40,23 @@ come from one of these sources:
 - Canonical album URL: [Home Reno - Studio](https://photos.google.com/share/AF1QipPool3gE7T-_DVHyOZm3jEVm5TSnoL4P5kDdXAhzk-ja22Gbw3rsYOi8cn8EwffLA?key=S1hjd2FTdE9uTjMzX2NHNHpvYUZiQjA3YmpONTFR)
 - Platform: Google Photos
 - Visibility: shared album reviewed in an authenticated browser session
-- Photos: 296 at the latest live review on 2026-09-02
-- TradeJournals status: finish-completion and trim-out review recorded in the
-  dedicated residence journal; durable representative-image manifest pending
+- Photos: 341 (displayed as items) at the hub's live review on 2026-11-11.
+  The 2026-09-02 review recorded 296 photos; the net difference of 45 is not a
+  verified upload count.
+- TradeJournals status: Shawn confirmed restoration completion in August/September
+  and the November 7 grand reopening/student appreciation event. Later images
+  document decorating, studio setup and finished-room presentation.
+- Representative selection: [Task 25 five-photo record](docs/website-workflow/reports/task-25-studio-completion-selection.md#five-photo-selection);
+  three new photo IDs and two retained March records, now stored locally for
+  the five-image website gallery. See the [Task 26 import record](docs/website-workflow/reports/task-26-studio-website-refresh.md).
 - Section: residence
 - Existing journal: `01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md`
-- Album date span: 2026-03-16 to 2026-08-30, from embedded Google Photos album
-  metadata and authenticated live review
-- Next action: capture durable representative-image identifiers, then document
-  completed faceplates, the restored door installed and operating, closed-out
-  window work, the ballet barre and related hardware, and the final room-ready
-  studio.
+- Album date span: 2026-03-16 to 2026-11-11, from the album display and photo
+  dates observed in the hub's November 11 review; not freshly recounted here.
+- Website status: Tasks 25–26 reviewed and approved by Shawn on November 12;
+  five local gallery images and revised studio labels are ready for release.
+  Keep this room separate from the earlier Flickr Studio | Office room and
+  the dedicated Office; do not infer an exact move day or the earlier room's use.
 
 <a id="album-pottery-eoqyvku1"></a>
 

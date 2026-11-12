@@ -345,3 +345,33 @@ desktop/mobile evidence were reviewed before acceptance.
 Content review remains current with zero changed keys; pilot.json is unchanged.
 No fingerprint refresh was required. Deployment and inquiry activation remain
 separate from this approved repository release.
+
+## November 12 Studio Completion and Gallery Release Approval
+
+Shawn accepted Tasks 25 and 26 in their child chats, then reaffirmed “all tasks
+reviewed and approved....git er done” in website updates. This authorizes the
+corrected Studio history, selected local photographs and consistent current/
+earlier room labels for the release snapshot and Git closeout to `origin/main`.
+
+Restoration completion in August/September remains distinct from subsequent
+decoration and the November 7 reopening. The current Studio gallery contains
+five photographs: three newly imported finished-room/detail views and two
+retained condition/process views. The earlier Studio and dedicated Office stay
+separate, older assets remain available, and the shared gallery is unchanged.
+
+Fresh checks pass: 125 Node and 37 Python tests, repository Markdown lint and
+whitespace checks. Preview and guarded release independently validate 20 pages,
+62 files and 372 references. Inspection confirms nine galleries, 39 local photo
+links, consistent Studio labels and the expected robots state in both outputs.
+Desktop/mobile and gallery interaction evidence was reviewed before acceptance.
+The first full test run stalled on parser input; the unchanged suite passed on
+retry, with no checker or production-code change required.
+
+The refreshed snapshot is current with zero changed keys. Its changed
+fingerprints are confined to the two Studio project/story records, selected
+media, Studio source journal and Google album inventory section. Exact
+`pilot.json` SHA-256:
+`c832ff8621de47b754119c59958235c9f9986f43a0f5942256bb5ad548beab17`.
+
+This records the approved portable repository release. Public deployment and
+inquiry activation remain separate.

@@ -1,6 +1,6 @@
 # Project Memory: TradeJournals Portfolio Direction
 
-Last refreshed: 2026-09-03
+Last general refresh: 2026-09-03. Studio-only update: 2026-11-12.
 
 TradeJournals is a craftsman-first trade journal, evidence archive, and portfolio
 source. Its purpose is to make physical restoration skill, preservation judgment,
@@ -45,9 +45,12 @@ remains unchanged.
 ## Portfolio Pillars And Current Maturity
 
 - `01_the_residence_1894`: seven journals covering historic-home restoration.
-  This is the broadest portfolio area. The ballet studio is near completion, but
-  its durable representative-image identifiers and final room-ready evidence are
-  still pending.
+  This is the broadest portfolio area. Shawn confirmed the former living-room
+  restoration finished in August/September 2026, followed by studio preparation
+  and the November 7 grand reopening/student appreciation event. The November
+  photographs and five-photo selection are recorded in the dedicated journal
+  and Task 25 report; Task 26 applied the five-photo website update, reviewed
+  and approved by Shawn on November 12.
 - `02_the_forge_and_shop`: one journal documenting the working shop, material
   reuse, tool systems, utilities, and project staging. The evidence base is
   strong, but the narrative breadth remains comparatively narrow.
@@ -77,8 +80,9 @@ Keep Flickr, Google Photos, Lomography, and scanned source material distinct:
   are a repository checkpoint rather than proof of current external state.
 - Google Photos shared URLs preserve album provenance, but durable image-level
   evidence should come from a project manifest or local export. Two albums are
-  tracked, and neither yet has a complete durable representative-image set. The
-  studio is the priority; pottery uses Flickr as its primary public evidence.
+  tracked. The Studio now has a five-photo selection record with source IDs;
+  the three new November images were imported locally in Task 26. Pottery uses
+  Flickr as its primary public evidence.
 - Lomography records remain separate from related Flickr albums even when the
   photographs overlap.
 - Scanned sketchbooks and handwritten notes provide provenance and decision
@@ -170,8 +174,11 @@ where the record supports those stages.
 
 ## Near-Term Priorities
 
-1. Finish the ballet studio evidence set with durable image identifiers, final
-   trim-out details, and an explicit room-ready status.
+1. Maintain the approved Studio completion history and five-photo selection from
+   [Tasks 25–26](docs/website-workflow/task-register.md). Keep the restored
+   living room/new studio, earlier Studio | Office room and dedicated Office
+   separate. Do not infer the earlier studio's subsequent use or an exact move
+   date. Candidate review remains separate from release and Git closeout.
 2. Deepen the shed into focused craft stories around shop infrastructure,
    material reuse, and restoration workflow.
 3. Develop one secondary machine journal into a complete case study instead of

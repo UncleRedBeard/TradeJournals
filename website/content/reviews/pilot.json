@@ -144,6 +144,10 @@
       "sha256": "e4c70fba67144180725e53c6d4e7b5b59c23a3321c983a6162786991b14b2d0c"
     },
     {
+      "key": "media:studio-28cf5df28ed481448bac91bb685ac271d3f0b1f00897caeb9fbe7eb93a272843",
+      "sha256": "606ae4e44681ddd86c5d9eb001c4eaff1856854fcae688516a36a2ffaaae2d36"
+    },
+    {
       "key": "media:studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce",
       "sha256": "f4d37ed1856862321971340e0b718fdf43854d80b4a82ef027d9e55cb3cd58da"
     },
@@ -152,8 +156,12 @@
       "sha256": "637819ad3e1866e6f15d97f7b3659678f983eb8f523d9a1e819140a82ffb886d"
     },
     {
-      "key": "media:studio-c721a809f0e722d6d0178585601aa6ca564b6d7ef95094505284f7f5788c85f6",
-      "sha256": "fb34b11e2d64005f91616bff6b63fe26876871c71f8b73e5d2ff85e799e5b536"
+      "key": "media:studio-b40288d6786cc72cf6dfd3d68674d132e4f782d7957e8fd2f0a5b64087cfb929",
+      "sha256": "d58f01755261e87ba16bdb86e7020e15e636d41d9e24dfa2f986d8368c10aec3"
+    },
+    {
+      "key": "media:studio-e4b40175312eeb5a3760ad9100b81b85c8134c118cdd113c98f638b7ee786884",
+      "sha256": "39b5691ceac9064075e25ab52c57d3ee59b170bcd287a7269741fbe475f80a1e"
     },
     {
       "key": "project:agfa-isolette",
@@ -173,7 +181,7 @@
     },
     {
       "key": "project:living-room-studio-restoration",
-      "sha256": "0baec555c26a2029611d484a5205138df058ee438a53e78f8085d8f7f422e9b1"
+      "sha256": "cb89dae98c109f85acb503c2178b7ea4f18bb943e2dd58a79be057d70f1938ab"
     },
     {
       "key": "project:master-bedroom-restoration",
@@ -189,7 +197,7 @@
     },
     {
       "key": "project:studio-office-restoration",
-      "sha256": "3a3db8ca74f9ec827e7faff2810b3b447431a0f4895191735915a96f075745f7"
+      "sha256": "293739b3fe6881c605de7472ef085c3cd5475c51b1b0040c6348b161df9e0a08"
     },
     {
       "key": "service:historic-floors",
@@ -225,7 +233,7 @@
     },
     {
       "key": "story:living-room-studio-restoration",
-      "sha256": "3a8690858d1426d93e127e999a24f2529e20ec02752d74f933306f7ae00eb1f3"
+      "sha256": "857ec1f32768a6abe7799d2e5fdcdd4c91f1e137a9a77e53361f0f0f84e259ea"
     },
     {
       "key": "story:master-bedroom-restoration",
@@ -241,7 +249,7 @@
     },
     {
       "key": "story:studio-office-restoration",
-      "sha256": "8f793b9f46828e3af251592ce962c27f9b488212c4e1b5824cd2832b71cd8496"
+      "sha256": "39a0d245ec8facf902d869bc6425890b62b6b040bccb99d27420c1a43c053a6b"
     }
   ],
   "sources": [
@@ -283,11 +291,11 @@
     },
     {
       "key": "inventory:GOOGLE_PHOTOS_ALBUMS.md#album-af1qippool3ge7t",
-      "sha256": "dd69bb4c313c03a1b013d161d0133960e254c006ff1fafbeb9c730b2aa78a7b7"
+      "sha256": "1b61a31717ad78696d31173bfbead9b2426892ab15a2a268df8ea29163f2532d"
     },
     {
       "key": "journal:01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md",
-      "sha256": "e0962e26f27855ec0531402045647fee3cd3cc1aebb87840e6c8d18dc312480c"
+      "sha256": "3108e2ec37d09f1c1425f66bbd81f81aed0b3e7ad818042496aac3ab71d2b7a9"
     },
     {
       "key": "journal:01_the_residence_1894/trade_journals/entry_restoration.md",
@@ -454,6 +462,10 @@
       "sha256": "c22f21ee1fd94c9177d9e22992d6d3c1db320a757d590fb28e7d8e1ab0cf14ee"
     },
     {
+      "key": "media:studio-28cf5df28ed481448bac91bb685ac271d3f0b1f00897caeb9fbe7eb93a272843",
+      "sha256": "28cf5df28ed481448bac91bb685ac271d3f0b1f00897caeb9fbe7eb93a272843"
+    },
+    {
       "key": "media:studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce",
       "sha256": "705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce"
     },
@@ -462,8 +474,12 @@
       "sha256": "a400ee37342a3a2d58cf36631811b65f2d466e5f0608db2810bab20ef93e86b2"
     },
     {
-      "key": "media:studio-c721a809f0e722d6d0178585601aa6ca564b6d7ef95094505284f7f5788c85f6",
-      "sha256": "c721a809f0e722d6d0178585601aa6ca564b6d7ef95094505284f7f5788c85f6"
+      "key": "media:studio-b40288d6786cc72cf6dfd3d68674d132e4f782d7957e8fd2f0a5b64087cfb929",
+      "sha256": "b40288d6786cc72cf6dfd3d68674d132e4f782d7957e8fd2f0a5b64087cfb929"
+    },
+    {
+      "key": "media:studio-e4b40175312eeb5a3760ad9100b81b85c8134c118cdd113c98f638b7ee786884",
+      "sha256": "e4b40175312eeb5a3760ad9100b81b85c8134c118cdd113c98f638b7ee786884"
     }
   ]
 }

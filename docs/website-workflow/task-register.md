@@ -8,7 +8,18 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: October 20, 2026. Task 24 Sitewide Galleries is COMPLETE.
+Current checkpoint: November 12, 2026. Tasks 25 and 26 are COMPLETE and
+accepted by Shawn, reaffirmed in this hub with “all tasks reviewed and
+approved....git er done.” The source history, five-photo Studio gallery and
+current/earlier room labels are approved for release preparation and Git
+closeout to established `origin/main`. The earlier tool approval wait is
+resolved; the Task 26 child is idle and its COMPLETE title is verified.
+Approved snapshot is current; preview and portable release checks pass.
+Closeout validation is recorded below; final Git synchronization is verified
+in the hub response after push.
+Public deployment and inquiry activation remain separate.
+
+Previous checkpoint: October 20, 2026. Task 24 Sitewide Galleries is COMPLETE.
 Shawn directly reaffirmed review and approval in this hub. Report
 `WK-WEB-T24-R01`, revision 1, is RECEIVED; acceptance `WK-WEB-T24-A01`
 reconciled as `WK-WEB-T24-H01`. Child idle after completion. Hub inspected
@@ -1289,3 +1300,83 @@ HTML inspection confirms nine galleries and 37 local photo links in both modes
 with correct robots state and no viewer on non-gallery routes. Content snapshot
 remains current and unchanged. Final commit and synchronization are verified
 in the hub response after push.
+
+## Website 3 — Task 25 Studio Completion and Photo Selection
+
+- Brief: [revision 2](task-25-studio-completion-selection.md).
+- Child: `01a1d0a6-24b0-7800-ae26-6c97460dc18c`, same-directory fork of this hub.
+- Display title: Website 3 - Task 25 Studio Photos - COMPLETE.
+- Environment: shared checkout, `main` at `68469b7`; only the three hub planning
+  files changed at start. Preserve those files; only the hub edits them.
+- Dependencies: November 11 owner clarification and live album review.
+- Deliverable: corrected source history and five-image selection with source
+  identifiers, captions, alt text and consistent room labels.
+- Acceptance: late-summer restoration completion, later decorating/setup and
+  November 7 reopening remain distinct; three rooms and albums remain separate.
+- Workflow status: COMPLETE — hub-verified handoff.
+- Runtime: completed and idle; turn `01a1d0a7-446f-7202-a4bf-8ab97882f401`.
+- Approval: RECEIVED November 12 in this hub, turn
+  `01a1d0a5-9e99-7d02-980d-99f6ac3e2058`: Shawn said “alrighty, use
+  workflow-hub and start the remaining tasks.” This covers Tasks 25 and 26.
+- Dispatch: `WK-WEB-T25-D01` — SENT once; active execution verified.
+- Received report: `WK-WEB-T25-R01`, revision 1,
+  `reports/task-25-studio-completion-selection.md`.
+- Report delivery: RECEIVED. Review `WK-WEB-T25-H01`: source diff and five-photo
+  evidence inspected; scoped lint and whitespace checks independently passed.
+  Source/selection handoff accepted under the approved sequential task flow;
+  Shawn directly approved Task 25 on November 12 in child turn
+  `01a1d0af-c5c9-7bd2-afc4-c2fdbea5193d`, acceptance `WK-WEB-T25-A01`,
+  and reaffirmed both tasks with Git closeout in this hub.
+
+## Website 3 — Task 26 Studio Website Refresh
+
+- Brief: [revision 2](task-26-studio-website-refresh.md).
+- Child: `01a1d0aa-7b06-7d11-8e18-608ac75048c1`, same-directory fork.
+- Display title: Website 3 - Task 26 Studio Refresh - COMPLETE.
+  Exact title and idle state verified by hub after acceptance.
+- Environment: same shared checkout; one implementation writer at a time.
+- Dependency: SATISFIED; Task 25 verified as `WK-WEB-T25-H01`.
+- Deliverable: updated Studio gallery and consistent room descriptions, tested
+  local candidate and desktop/mobile screenshots for Shawn's review.
+- Acceptance: five selected Studio images, accurate completion/reopening dates,
+  retained source separation and routes, functioning local gallery and passing
+  required checks.
+- Workflow status: COMPLETE — accepted by Shawn.
+- Execution approval: RECEIVED under the same November 12 instruction and turn
+  as Task 25. No repeated start approval required.
+- Runtime: completed and idle; acceptance turn
+  `01a1d116-9819-7123-932b-5457deb8409a` verified. Earlier approval wait resolved.
+- Dispatch: `WK-WEB-T26-D01` — SENT once; active execution verified.
+- Received report: `WK-WEB-T26-R01`, revision 1,
+  `reports/task-26-studio-website-refresh.md`.
+- Report delivery: RECEIVED; hub reconciliation `WK-WEB-T26-H01`.
+  Direct acceptance `WK-WEB-T26-A01`: Shawn said “reviewed and approved”
+  in the child on November 12, then reaffirmed acceptance in this hub.
+  Hub reviewed actual files and desktop/mobile screenshots; independent
+  read-only content/media/test review found no actionable issues.
+- Release and Git closeout: authorized by “all tasks reviewed and approved....git
+  er done” in this hub. Public deployment remains separate.
+
+### Tasks 25 and 26 Release and Git Closeout — November 12, 2026
+
+Shawn accepted both tasks and authorized their scoped Git closeout to established
+`origin/main`. The source journal, inventory, project memory, five-photo Studio
+gallery, current/earlier room labels, tests and workflow records are included.
+The three new display JPEGs retain their exact Google photo IDs and provenance;
+older assets and the dedicated Office remain intact.
+
+Fresh checks pass: 125 Node and 37 Python tests; preview and guarded release
+each validate 20 pages / 62 files / 372 references. Independent inspection
+confirms nine galleries, 39 local photo links, five Studio photographs and the
+expected robots state on all 20 pages in each mode. Markdown lint and whitespace
+checks pass. Read-only independent review found no actionable issues.
+
+The first full test run stalled while the HTML parser waited for input; its
+output passed a separate check. That run was stopped, and the unchanged full
+suite passed on retry. No checker or production-code change was required.
+
+The approved snapshot was refreshed for the accepted Studio changes and is
+current with zero changed keys. See the exact snapshot hash and acceptance in
+the [release record](../../website/docs/pilot-editorial-review.md).
+Final commit identity and synchronization are verified in the hub response
+after push. Public deployment and inquiry activation remain separate.

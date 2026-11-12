@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
   "id": "studio-office-restoration",
-  "title": "Barre Studio — Current Room",
+  "title": "Earlier Barre Studio",
   "area": "01 / The Residence",
-  "summary": "The current barre studio and Repair Shop home, including the decision to retain and refinish an original solid-wood door.",
-  "searchSummary": "Current barre studio evidence from the Home Reno - Studio | Office Flickr album, kept separate from the future studio renovation.",
+  "summary": "The earlier home of the barre studio and Repair Shop, including the decision to retain and refinish an original solid-wood door.",
+  "searchSummary": "Earlier barre studio evidence from the Home Reno - Studio | Office Flickr album, kept separate from the restored living-room studio.",
   "tags": [
     "barre studio",
-    "current room",
+    "earlier room",
     "repair shop",
     "historic home",
     "restoration"
   ],
-  "stage": "Current barre studio; the move has not occurred",
+  "stage": "Earlier barre studio; subsequent room use unspecified",
   "recorded": "Selected Flickr evidence from album 72177720306207693; album dates remain unresolved.",
   "sourceLabel": "Home Reno - Studio | Office Flickr album",
   "occupancy": {
-    "state": "current",
-    "label": "Barre Studio — Current Room"
+    "state": "former",
+    "label": "Earlier Barre Studio"
   },
   "sourceRefs": [
     {
@@ -70,7 +70,7 @@
     "flickr-52705240435",
     "flickr-52705240380"
   ],
-  "introduction": "This room remains the current home of the barre studio and Repair Shop. Alongside the room views, selected details follow the choice to keep an original solid-wood door and work its charred surface by hand.",
+  "introduction": "This room previously housed the barre studio and Repair Shop. Alongside the room views, selected details follow the choice to keep an original solid-wood door and work its charred surface by hand.",
   "storyId": "studio-office-restoration",
-  "evidenceBoundary": "The installed stripped-door photo predates the separate charred-finish treatment. These details do not establish that the finished door was reinstalled. The journal's 2022 heading conflicts with mostly February 2023 Flickr date labels, so the work is not presented as a dated sequence. This is the current studio, not the dedicated Office or future studio."
+  "evidenceBoundary": "The installed stripped-door photo predates the separate charred-finish treatment. These details do not establish that the finished door was reinstalled. The journal's 2022 heading conflicts with mostly February 2023 Flickr date labels, so the work is not presented as a dated sequence. This earlier studio is separate from the dedicated Office and the restored living-room studio. Its subsequent use is not specified."
 }

@@ -8,13 +8,14 @@ The current site keeps three rooms distinct:
 
 - Dedicated Office — current room, six selected photographs in the candidate
   (five room/use views and one localized-access detail).
-- Barre Studio — Current Room — current home of The Repair Shop, seven selected
+- Earlier Barre Studio — former home of The Repair Shop, seven selected
   photographs in the candidate (five room/door views and two finish details).
-- Living Room Restoration — Future Barre Studio — future home of The Repair
-  Shop, three selected photographs.
+- Barre Studio — Restored Living Room — current studio, five selected
+  photographs spanning condition, floor preparation and finished-room details.
 
-Keep the current and future rooms distinct until Shawn explicitly confirms the
-move.
+Shawn confirmed August/September 2026 restoration completion and the November 7
+reopening. Keep these rooms distinct; the earlier studio’s subsequent use and
+an exact move day remain unspecified.
 
 The La Ciotat Lens story is a three-photo archive and search entry. It does
 not change the homepage's featured or workshop selections.

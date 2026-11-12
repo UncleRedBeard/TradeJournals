@@ -3,7 +3,7 @@
 ## The Challenge
 
 Document the living-room-to-ballet-barre-studio transformation as a room-scale
-restoration inside the 1894 residence: how a public living space is being
+restoration inside the 1894 residence: how a public living space was
 rebuilt into Haley's new ballet barre studio while preserving original room
 character, correcting systems, and making the room durable enough for movement
 practice.
@@ -12,7 +12,7 @@ practice.
 
 This studio is separate from the older office/yoga studio work. The `Home Reno -
 Studio` Google Photos album documents the renovation of what had been the living
-room into a dedicated ballet barre studio. Because the room is shifting from
+room into a dedicated ballet barre studio. Because the room shifted from
 living-room use into a working movement space, the archive should track both the
 finish decisions and the structural/systems details that make the room function:
 floors, ceiling planks, wall surfaces, exposed shiplap, wiring, fan support, and
@@ -240,6 +240,39 @@ is known to the owner and is not represented as code-compliant. In this journal,
 window closeout refers only to the completed surface, trim, and treatment work;
 it does not imply that the windows operate or satisfy current code requirements.
 
+### August–September 2026 - Restoration Completion
+
+Source: Shawn's November 11, 2026 clarification in the website updates hub.
+
+Shawn confirmed that the room restoration was finished in August/September
+2026. The earlier entries preserve what was visible and unresolved at each
+photographic checkpoint; they do not establish that restoration continued
+through November. No exact completion day has been recorded.
+
+### Following Completion To November 7, 2026 - Studio Preparation And Reopening
+
+Source: Shawn's November 11 clarification and the hub's November 11 visual
+review of the [Home Reno - Studio](https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9)
+album.
+
+After restoration, attention shifted to decorating, furnishing and preparing
+the new studio space. The grand reopening and student appreciation event was
+held on Saturday, November 7, 2026, as reported by Shawn. That is the reopening
+milestone, not the restoration completion date or a documented exact move day.
+
+The November 7 room photographs show the refinished floor, exposed shiplap,
+white plank ceiling, black door and furnishings together. The November 11
+views show the barre and mirrors, an open practice area, window treatments,
+wood shelving and pottery displays. These photographs document the room's
+setup and finished presentation; the event itself is established by Shawn's
+account, not inferred from photographs of the room.
+
+This is the restored former living room and new barre studio. The earlier
+studio documented by Flickr's `Home Reno - Studio | Office` and the dedicated
+Office remain separate rooms. The earlier studio's subsequent use is not
+established here. The previously recorded non-operable window condition is
+not changed by this completion update.
+
 ## Visual Evidence
 
 Use this section to map the Google Photos album into evidence categories before
@@ -252,10 +285,15 @@ selected.
 
 - Album URL: [Home Reno - Studio](https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9)
 - Canonical album URL: [Home Reno - Studio](https://photos.google.com/share/AF1QipPool3gE7T-_DVHyOZm3jEVm5TSnoL4P5kDdXAhzk-ja22Gbw3rsYOi8cn8EwffLA?key=S1hjd2FTdE9uTjMzX2NHNHpvYUZiQjA3YmpONTFR)
-- Album status: shared Google Photos album; live review confirms title
-  `Home Reno - Studio` and 296 photos.
-- Album date span: 2026-03-16 to 2026-08-30, from embedded Google Photos album
-  metadata and live album review.
+- Album status: shared Google Photos album; the hub's November 11, 2026 live
+  review showed `Home Reno - Studio` and 341 items. The September 2 checkpoint
+  recorded 296 photos; the net difference is not a count of that day's uploads.
+- Album date span: 2026-03-16 to 2026-11-11, from the November 11 album display
+  and photo dates. This is a dated review checkpoint, not a live count.
+- Representative selection: [Task 25 five-photo record](../../docs/website-workflow/reports/task-25-studio-completion-selection.md#five-photo-selection).
+  Three November source IDs supplement the two existing March selections;
+  [Task 26](../../docs/website-workflow/reports/task-26-studio-website-refresh.md)
+  imported the three images locally and updated the website, accepted November 12.
 - Album role: primary visual archive for the living-room-to-ballet-barre-studio
   transformation, covering reclaimed ceiling plank replacement, floor
   refinishing and protection, wall mudding and sanding, ceiling fan wiring,
@@ -263,9 +301,11 @@ selected.
 
 ### Key Photo IDs
 
-- Existing living room condition:
+- Existing living room condition: `AF1QipO5TK5FXRp97MN26dv5wFBXuLUtEJmB03luGYUW`,
+  March 16, 2026; already selected in the website source records.
 - Ceiling plank replacement:
-- Floor refinishing and protection:
+- Floor scraping: `AF1QipO5zjJV4Fdl_JosSyl-9VcRTD99Ailb1PqRU9qS`, March 16,
+  2026; already selected in the website source records.
 - Wall mudding and sanding:
 - Whole-room KILZ and Mineral Prime application:
 - Lime-painted crown molding, baseboards, and windows:
@@ -280,7 +320,7 @@ selected.
 - Exposed shiplap: 2026-08-19 sequence documents protection removed from the
   finished original shiplap feature wall.
 - Crown molding and coping:
-- Best current near-completion view: 2026-08-26 18:42:52 and 18:43:06 show the
+- Historical near-completion views: 2026-08-26 18:42:52 and 18:43:06 show the
   uncovered refinished floor, completed mineral surfaces, exposed shiplap, and
   operating ceiling fan; window masking and isolated open electrical positions
   prevent these from serving as final room-ready evidence.
@@ -306,7 +346,8 @@ selected.
 
 ### Existing Living Room Condition
 
-- Google Photos review pending.
+- The selected March 16 photograph shows the former living room with blue
+  walls, white trim and the worn brown floor; its source ID is recorded above.
 
 ### Ceiling Plank Replacement
 
@@ -315,7 +356,8 @@ selected.
 
 ### Floor Refinish And Protection
 
-- Google Photos review pending for hand scraping the existing floor sealant.
+- The selected March 16 close view records scrapers and lifted finish beside
+  the baseboard and floor register; its source ID is recorded above.
 - Google Photos review pending for 3x21 belt-sander passes through 40, 60, 80,
   and 100 grit.
 - Google Photos review pending for 5 inch orbital-sander prep, brushed
@@ -343,8 +385,8 @@ selected.
   during final localized touch-up work.
 - The 2026-08-18 six-photo sequence documents the first full Lime Wall Paint
   and Lime Slurry application on the drywall-covered walls using the vertical
-  slurry method. Localized ceiling and wall touch-ups remain before final
-  finish sign-off.
+  slurry method. At that checkpoint, localized ceiling and wall touch-ups
+  remained before final finish sign-off.
 - The 2026-08-19 to 2026-08-22 sequences document the mineral finish after
   drying and during localized touch-up. The walls, trim, crown molding, and
   painted plank ceiling read as one finish system while floor and window
@@ -358,8 +400,8 @@ selected.
 - The 2026-08-24 sequence documents the ceiling-fan bracket and wiring during
   assembly and the installed black ceiling fan operating with its integral
   light.
-- Future evidence is still needed for completed faceplates, closed device
-  positions, and final electrical sign-off.
+- Owner-reported room completion is now recorded above. The photographs do
+  not independently verify every device position or final electrical sign-off.
 
 ### Shiplap Exposure
 
@@ -381,18 +423,24 @@ selected.
 - The 2026-07-12, 2026-07-27, and 2026-08-01 images document the completed studio
   hallway after two coats of KILZ Mold & Mildew Primer, 220-grit sanding after
   each primer coat, and two coats of Behr Cottage White.
-- Future evidence is still needed for the completed room. Window operation is
-  not a completion criterion because the windows remain knowingly sealed shut
-  and non-operable; that retained condition is not represented as code-compliant.
+- Completed-room evidence is now provided by the November selections below.
+  Window operation is not a completion criterion because the windows remain
+  knowingly sealed shut and non-operable; that retained condition is not
+  represented as code-compliant.
 - The 2026-08-26 sequence documents the refinished floor uncovered, the
   shiplap revealed, the operating ceiling fan, and the restored black door
   present at the shiplap doorway.
-- The 2026-08-26 18:42:52 and 18:43:06 images are the strongest current
+- The 2026-08-26 18:42:52 and 18:43:06 images preserve historical
   near-completion views, but window masking and isolated open electrical
   positions remain visible.
 - The 2026-08-29 to 2026-08-30 photographs show continued window-detail work,
   worktables, drop cloths, and tools rather than final room release.
-- Future evidence is still needed for completed faceplates, the restored door
-  installed and operating, window finish and treatment work visually closed
-  out, the ballet barre and related hardware installed, and the final room-ready
-  ballet studio. Window operability is expressly outside this evidence target.
+- November 7, 14:01:55: `AF1QipO1Ghl2SKipi2Imv8VZMYzPQibKYK_SjnUkPQic`
+  shows the furnished room, floor, shiplap, ceiling and open black door.
+- November 11, 17:11:16: `AF1QipPliY6Fr2MFYqm7BUhRmy8_bkvtvqLvvXrayq-V`
+  shows the barre and mirrors within the restored room.
+- November 11, 17:11:46: `AF1QipN08eeS58l3oRT6HA7N114hYO-WA_HAZuWkH75M`
+  shows the shiplap doorway, adjacent window treatment and refinished floor.
+- These display times and observations come from the hub's November 11 review.
+  Full source links and proposed captions are in the five-photo record. Static
+  photographs do not independently prove door operation or electrical sign-off.

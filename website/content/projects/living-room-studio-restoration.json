@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "id": "living-room-studio-restoration",
-  "title": "Living Room Restoration — Future Barre Studio",
+  "title": "Barre Studio — Restored Living Room",
   "area": "01 / The Residence",
-  "summary": "Original floors, exposed shiplap, and a repaired plank ceiling in the former living room being prepared as the future barre studio.",
-  "searchSummary": "Former living-room restoration with original floors, exposed shiplap, reclaimed ceiling repairs, and an explicit future barre studio use.",
+  "summary": "Original floors, exposed shiplap and a repaired plank ceiling restored in the former living room, now home to the barre studio.",
+  "searchSummary": "Barre studio in the restored living room: original floors, exposed shiplap and reclaimed ceiling repairs, completed in August/September 2026 before the November reopening.",
   "tags": [
     "living room",
-    "future barre studio",
+    "barre studio",
     "floor",
     "shiplap",
     "reclaimed wood",
@@ -15,12 +15,12 @@
     "lime paint",
     "crown molding"
   ],
-  "stage": "Renovation documented; future barre studio move not confirmed",
-  "recorded": "March 16–August 30, 2026, in the source journal.",
+  "stage": "Restoration complete August/September 2026; reopened November 7",
+  "recorded": "March–November 2026; restoration completed in August/September, followed by decorating and studio preparation.",
   "sourceLabel": "Former living room restoration journal and Home Reno - Studio Google Photos album",
   "occupancy": {
-    "state": "future",
-    "label": "Living Room Restoration — Future Barre Studio"
+    "state": "current",
+    "label": "Barre Studio — Restored Living Room"
   },
   "sourceRefs": [
     {
@@ -38,10 +38,10 @@
   ],
   "gallery": [
     {
-      "mediaId": "studio-c721a809f0e722d6d0178585601aa6ca564b6d7ef95094505284f7f5788c85f6",
-      "caption": "The Studio nearing completion on August 26, 2026: exposed wood flooring, painted walls and ceiling, and the retained timber wall.",
+      "mediaId": "studio-e4b40175312eeb5a3760ad9100b81b85c8134c118cdd113c98f638b7ee786884",
+      "caption": "The restored room furnished for its new studio use, November 7, 2026.",
       "role": "result",
-      "alt": "A light wood floor extends beneath white walls and a white plank ceiling, with tall windows and a dark door in the timber wall."
+      "alt": "Refinished wood flooring leads toward an exposed shiplap wall, an open black door, mirrors and furnishings beneath a white plank ceiling."
     },
     {
       "mediaId": "studio-a400ee37342a3a2d58cf36631811b65f2d466e5f0608db2810bab20ef93e86b2",
@@ -54,14 +54,28 @@
       "caption": "Hand tools and lifted finish at the edge of the original floor, March 16, 2026.",
       "role": "process",
       "alt": "Scrapers and curled finish shavings lie on wood flooring beside a floor register and white baseboard."
+    },
+    {
+      "mediaId": "studio-28cf5df28ed481448bac91bb685ac271d3f0b1f00897caeb9fbe7eb93a272843",
+      "caption": "The barre and mirrors in the restored studio, November 11, 2026.",
+      "role": "detail",
+      "alt": "A wooden barre runs across a group of framed mirrors beside exposed shiplap, pottery shelves and the refinished wood floor."
+    },
+    {
+      "mediaId": "studio-b40288d6786cc72cf6dfd3d68674d132e4f782d7957e8fd2f0a5b64087cfb929",
+      "caption": "The retained shiplap, black door and refinished floor with the room decorated, November 11, 2026.",
+      "role": "detail",
+      "alt": "An open black door in the shiplap wall reveals the staircase beyond, beside a colorful window treatment and refinished wood flooring."
     }
   ],
   "searchMediaIds": [
-    "studio-c721a809f0e722d6d0178585601aa6ca564b6d7ef95094505284f7f5788c85f6",
+    "studio-e4b40175312eeb5a3760ad9100b81b85c8134c118cdd113c98f638b7ee786884",
     "studio-a400ee37342a3a2d58cf36631811b65f2d466e5f0608db2810bab20ef93e86b2",
-    "studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce"
+    "studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce",
+    "studio-28cf5df28ed481448bac91bb685ac271d3f0b1f00897caeb9fbe7eb93a272843",
+    "studio-b40288d6786cc72cf6dfd3d68674d132e4f782d7957e8fd2f0a5b64087cfb929"
   ],
-  "introduction": "The former living room in the 1894 residence is being restored as the future home of the barre studio and Repair Shop. The room is not yet the current studio.",
+  "introduction": "The former living room in Shawn and Haley’s 1894 residence is now home to the barre studio and Repair Shop. Restoring its original floors, exposed shiplap and plank ceiling came first; furnishing and decorating followed.",
   "storyId": "living-room-studio-restoration",
-  "evidenceBoundary": "The journal and three selected photographs document renovation through August 30, 2026. They do not establish that the studio move has occurred or that the room is currently occupied as a barre studio."
+  "evidenceBoundary": "Shawn confirms restoration completion in August/September 2026 and the November 7 grand reopening/student appreciation event. The selected photographs show condition, floor preparation and the furnished room; they do not establish an exact move day or event attendance."
 }
