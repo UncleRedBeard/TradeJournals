@@ -17,12 +17,12 @@ test("restored Studio leads the homepage while remaining distinct from the earli
   assert.equal(model.home.featuredProjectIds[0], "living-room-studio-restoration");
   assert.equal(model.site.navigation.find(item => item.label === "Work").href, "/work/entry-restoration/");
   assert.equal(model.home.hero.id, "flickr-55338112557");
-  assert.equal(restoredStudio.gallery.length, 5);
+  assert.equal(restoredStudio.gallery.length, 6);
   assert.ok(restoredStudio.gallery.every(photo => photo.id.startsWith("studio-")));
-  assert.equal(restoredStudio.searchImages.length, 5);
+  assert.equal(restoredStudio.searchImages.length, 6);
   assert.deepEqual(restoredStudio.albums.map(album => album.key), ["google_photos:af1qippool3ge7t"]);
   assert.equal(restoredStudio.albums[0].sourceUrl, "https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9");
-  assert.equal(restoredStudio.albums[0].shown, 5);
+  assert.equal(restoredStudio.albums[0].shown, 6);
   assert.match(restoredStudio.evidenceBoundary, /August\/September 2026/u);
   assert.match(restoredStudio.evidenceBoundary, /do not establish an exact move day/u);
   assert.equal(restoredStudio.occupancy.state, "current");

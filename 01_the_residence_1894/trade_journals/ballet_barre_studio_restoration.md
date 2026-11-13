@@ -294,6 +294,12 @@ selected.
   Three November source IDs supplement the two existing March selections;
   [Task 26](../../docs/website-workflow/reports/task-26-studio-website-refresh.md)
   imported the three images locally and updated the website, accepted November 12.
+  Later that day, Shawn approved the [bay-window addition](../../docs/website-workflow/reports/studio-bay-window-addition.md)
+  as the sixth candidate image. Photo `AF1QipNY_ZpdaZuScLisrXnoDxrSiB7iJ9tipBaWBTq-`,
+  displayed as November 9, 2026, 17:05:57, shows the three bay windows, white
+  trim, wood display shelves, plank ceiling and refinished floor in use.
+  This adds finished-room evidence without changing the completion timeline
+  or the recorded non-operable window condition.
 - Album role: primary visual archive for the living-room-to-ballet-barre-studio
   transformation, covering reclaimed ceiling plank replacement, floor
   refinishing and protection, wall mudding and sanding, ceiling fan wiring,

@@ -10,7 +10,7 @@ The current site keeps three rooms distinct:
   (five room/use views and one localized-access detail).
 - Earlier Barre Studio — former home of The Repair Shop, seven selected
   photographs in the candidate (five room/door views and two finish details).
-- Barre Studio — Restored Living Room — current studio, five selected
+- Barre Studio — Restored Living Room — current studio, six selected
   photographs spanning condition, floor preparation and finished-room details.
 
 Shawn confirmed August/September 2026 restoration completion and the November 7

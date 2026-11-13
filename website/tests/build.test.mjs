@@ -43,7 +43,7 @@ test("candidate preview stages selected assets and writes the public model", asy
   assert.deepEqual(result.model.home.workshopProjectIds, ["returning-to-clay", "agfa-isolette"]);
   assert.equal(model.projects.find(project => project.id === "office-restoration").gallery.length, 6);
   assert.equal(model.projects.find(project => project.id === "studio-office-restoration").gallery.length, 7);
-  assert.equal(model.projects.find(project => project.id === "living-room-studio-restoration").gallery.length, 5);
+  assert.equal(model.projects.find(project => project.id === "living-room-studio-restoration").gallery.length, 6);
   assert.equal(model.projects.find(project => project.id === "agfa-isolette").gallery.length, 6);
   assert.deepEqual(model.projects.find(project => project.id === "la-ciotat").gallery.map(image => image.id), [
     "flickr-5489412430", "flickr-5488818887", "flickr-52834975513"

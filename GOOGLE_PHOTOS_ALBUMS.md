@@ -13,14 +13,15 @@ come from one of these sources:
 ## Summary
 
 - Albums tracked: 2
-- Albums with representative selection records: 1 (Studio; five local website images)
+- Albums with representative selection records: 1 (Studio; six approved local website images)
 - Albums without representative selection records: 1 (Pottery secondary mirror)
 
 ## Album List
 
 1. [Home Reno - Studio](https://photos.app.goo.gl/Tj2NRPeVUooFLAzD9)
    - Status: authenticated hub review on 2026-11-11; five-photo selection
-     recorded in Task 25; three November images imported locally in Task 26
+     recorded in Task 25; Task 26 imported three November images, followed by
+     the approved bay-window addition on November 12
    - Section: residence
    - Journal:
      `01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md`
@@ -49,12 +50,17 @@ come from one of these sources:
 - Representative selection: [Task 25 five-photo record](docs/website-workflow/reports/task-25-studio-completion-selection.md#five-photo-selection);
   three new photo IDs and two retained March records, now stored locally for
   the five-image website gallery. See the [Task 26 import record](docs/website-workflow/reports/task-26-studio-website-refresh.md).
+  Shawn subsequently approved adding the November 9 bay-window photograph as
+  the sixth image; see the [follow-up record](docs/website-workflow/reports/studio-bay-window-addition.md).
 - Section: residence
 - Existing journal: `01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md`
-- Album date span: 2026-03-16 to 2026-11-11, from the album display and photo
-  dates observed in the hub's November 11 review; not freshly recounted here.
+- Album date span: 2026-03-16 to 2026-11-12, from the album display and photo
+  dates observed in the hub's November 12 review. Four latest additions were
+  reviewed; the complete album total was not recounted.
 - Website status: Tasks 25–26 reviewed and approved by Shawn on November 12;
-  five local gallery images and revised studio labels are ready for release.
+  the five-image release is committed as `97ba80c`. Shawn accepted the six-photo
+  gallery, with the barre-and-mirrors image leading, on November 13 and then
+  authorized release preparation and Git closeout. Public deployment is separate.
   Keep this room separate from the earlier Flickr Studio | Office room and
   the dedicated Office; do not infer an exact move day or the earlier room's use.
 

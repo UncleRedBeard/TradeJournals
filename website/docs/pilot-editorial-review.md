@@ -375,3 +375,31 @@ media, Studio source journal and Google album inventory section. Exact
 
 This records the approved portable repository release. Public deployment and
 inquiry activation remain separate.
+
+## November 13 Studio Bay-Window and Lead-Photo Release Approval
+
+Shawn accepted the six-photo Studio gallery and requested lead-photo swap with
+“awesome, that looks great. approved.”, then authorized the established release
+preparation and Git closeout with “git er done” in website updates. Acceptance
+`WK-WEB-STUDIO-BAY-20261113-A01` covers [follow-up report revision 2](../../docs/website-workflow/reports/studio-bay-window-addition.md).
+
+The November 11 barre-and-mirrors photograph leads the gallery and Studio
+homepage card; the former lead is fourth. The November 9 bay-window photograph
+is sixth. Existing captions, provenance, completion chronology, shared gallery
+behavior and room distinctions remain intact. The homepage Entry hero is
+unchanged.
+
+Fresh validation passes: 125 Node and 37 Python tests. Preview and guarded
+release independently validate 20 pages, 63 files and 375 references each.
+Both outputs contain nine galleries and 40 local photo links, with all six
+Studio photographs in the approved order, exact image bytes and the expected
+robots state. Desktop/mobile review was completed before acceptance.
+
+The reviewed snapshot is current with zero changed keys, covering 63 records
+and 58 sources. Changes are confined to the Studio project, new media record
+and bytes, Studio source journal and Google album inventory section. Exact
+`pilot.json` SHA-256:
+`5c782fc562c4bf5a3f5b421ce5709d7b126c8253cca611fe7021563f32bae13e`.
+
+This prepares the portable repository release for established `origin/main`.
+Public deployment and inquiry activation remain separate.

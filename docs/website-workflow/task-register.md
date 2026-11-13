@@ -8,7 +8,28 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: November 12, 2026. Tasks 25 and 26 are COMPLETE and
+Current checkpoint: November 13, 2026. The Studio bay-window follow-up is
+COMPLETE and accepted in this hub: “awesome, that looks great. approved.”
+Acceptance `WK-WEB-STUDIO-BAY-20261113-A01` covers report revision 2, including
+the six-photo gallery and requested lead swap. Shawn previously said
+“make it happen cap'n” to the reviewed
+one-photo recommendation: append the November 9 photograph as the sixth
+Studio gallery image and retain the current five. Shawn then requested that
+the November 11 barre-and-mirrors photograph become the lead by swapping
+positions one and four. See the
+[follow-up record](reports/studio-bay-window-addition.md).
+November 12 verification passed 125 Node / 37 Python tests and preview/output
+checks. Live desktop/mobile checks confirmed the requested lead swap; all six
+photographs and their metadata are retained.
+Shawn then authorized release preparation and Git closeout with “git er done”
+on November 13. Fresh checks pass: 125 Node / 37 Python tests; preview and
+guarded release each validate 20 pages, 63 files and 375 references. Both outputs
+retain the approved image order and exact image bytes. The refreshed snapshot
+is current with zero changed keys. Final commit identity and synchronization
+with established `origin/main` are verified in the hub response after push.
+Public deployment remains separate.
+
+Previous checkpoint: November 12, 2026. Tasks 25 and 26 are COMPLETE and
 accepted by Shawn, reaffirmed in this hub with “all tasks reviewed and
 approved....git er done.” The source history, five-photo Studio gallery and
 current/earlier room labels are approved for release preparation and Git

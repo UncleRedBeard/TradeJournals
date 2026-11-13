@@ -51,6 +51,9 @@ remains unchanged.
   photographs and five-photo selection are recorded in the dedicated journal
   and Task 25 report; Task 26 applied the five-photo website update, reviewed
   and approved by Shawn on November 12.
+  The bay-window addition brings the selection to six, with the barre-and-mirrors
+  photo leading. Shawn accepted this update and authorized release preparation
+  and Git closeout on November 13. Public deployment remains separate.
 - `02_the_forge_and_shop`: one journal documenting the working shop, material
   reuse, tool systems, utilities, and project staging. The evidence base is
   strong, but the narrative breadth remains comparatively narrow.
@@ -80,8 +83,8 @@ Keep Flickr, Google Photos, Lomography, and scanned source material distinct:
   are a repository checkpoint rather than proof of current external state.
 - Google Photos shared URLs preserve album provenance, but durable image-level
   evidence should come from a project manifest or local export. Two albums are
-  tracked. The Studio now has a five-photo selection record with source IDs;
-  the three new November images were imported locally in Task 26. Pottery uses
+  tracked. The Studio has six approved local website photographs with source
+  IDs: five from Tasks 25–26 and the later bay-window addition. Pottery uses
   Flickr as its primary public evidence.
 - Lomography records remain separate from related Flickr albums even when the
   photographs overlap.
@@ -174,8 +177,8 @@ where the record supports those stages.
 
 ## Near-Term Priorities
 
-1. Maintain the approved Studio completion history and five-photo selection from
-   [Tasks 25–26](docs/website-workflow/task-register.md). Keep the restored
+1. Maintain the approved Studio completion history and selected photographs from
+   [Tasks 25–26 and their follow-up](docs/website-workflow/task-register.md). Keep the restored
    living room/new studio, earlier Studio | Office room and dedicated Office
    separate. Do not infer the earlier studio's subsequent use or an exact move
    date. Candidate review remains separate from release and Git closeout.

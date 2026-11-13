@@ -38,10 +38,10 @@
   ],
   "gallery": [
     {
-      "mediaId": "studio-e4b40175312eeb5a3760ad9100b81b85c8134c118cdd113c98f638b7ee786884",
-      "caption": "The restored room furnished for its new studio use, November 7, 2026.",
-      "role": "result",
-      "alt": "Refinished wood flooring leads toward an exposed shiplap wall, an open black door, mirrors and furnishings beneath a white plank ceiling."
+      "mediaId": "studio-28cf5df28ed481448bac91bb685ac271d3f0b1f00897caeb9fbe7eb93a272843",
+      "caption": "The barre and mirrors in the restored studio, November 11, 2026.",
+      "role": "detail",
+      "alt": "A wooden barre runs across a group of framed mirrors beside exposed shiplap, pottery shelves and the refinished wood floor."
     },
     {
       "mediaId": "studio-a400ee37342a3a2d58cf36631811b65f2d466e5f0608db2810bab20ef93e86b2",
@@ -56,24 +56,31 @@
       "alt": "Scrapers and curled finish shavings lie on wood flooring beside a floor register and white baseboard."
     },
     {
-      "mediaId": "studio-28cf5df28ed481448bac91bb685ac271d3f0b1f00897caeb9fbe7eb93a272843",
-      "caption": "The barre and mirrors in the restored studio, November 11, 2026.",
-      "role": "detail",
-      "alt": "A wooden barre runs across a group of framed mirrors beside exposed shiplap, pottery shelves and the refinished wood floor."
+      "mediaId": "studio-e4b40175312eeb5a3760ad9100b81b85c8134c118cdd113c98f638b7ee786884",
+      "caption": "The restored room furnished for its new studio use, November 7, 2026.",
+      "role": "result",
+      "alt": "Refinished wood flooring leads toward an exposed shiplap wall, an open black door, mirrors and furnishings beneath a white plank ceiling."
     },
     {
       "mediaId": "studio-b40288d6786cc72cf6dfd3d68674d132e4f782d7957e8fd2f0a5b64087cfb929",
       "caption": "The retained shiplap, black door and refinished floor with the room decorated, November 11, 2026.",
       "role": "detail",
       "alt": "An open black door in the shiplap wall reveals the staircase beyond, beside a colorful window treatment and refinished wood flooring."
+    },
+    {
+      "mediaId": "studio-3e7c92d16a1d533bb115de45be3a6d30bd35e8c320cd43f157a28bd867cd6777",
+      "caption": "The bay windows, wood display shelves and refinished floor in the furnished studio, November 9, 2026.",
+      "role": "detail",
+      "alt": "Three bay windows with white trim and floral coverings sit beneath wood display shelves and a white plank ceiling, with the refinished floor and studio equipment below."
     }
   ],
   "searchMediaIds": [
-    "studio-e4b40175312eeb5a3760ad9100b81b85c8134c118cdd113c98f638b7ee786884",
+    "studio-28cf5df28ed481448bac91bb685ac271d3f0b1f00897caeb9fbe7eb93a272843",
     "studio-a400ee37342a3a2d58cf36631811b65f2d466e5f0608db2810bab20ef93e86b2",
     "studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce",
-    "studio-28cf5df28ed481448bac91bb685ac271d3f0b1f00897caeb9fbe7eb93a272843",
-    "studio-b40288d6786cc72cf6dfd3d68674d132e4f782d7957e8fd2f0a5b64087cfb929"
+    "studio-e4b40175312eeb5a3760ad9100b81b85c8134c118cdd113c98f638b7ee786884",
+    "studio-b40288d6786cc72cf6dfd3d68674d132e4f782d7957e8fd2f0a5b64087cfb929",
+    "studio-3e7c92d16a1d533bb115de45be3a6d30bd35e8c320cd43f157a28bd867cd6777"
   ],
   "introduction": "The former living room in Shawn and Haley’s 1894 residence is now home to the barre studio and Repair Shop. Restoring its original floors, exposed shiplap and plank ceiling came first; furnishing and decorating followed.",
   "storyId": "living-room-studio-restoration",

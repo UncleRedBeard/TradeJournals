@@ -148,6 +148,10 @@
       "sha256": "606ae4e44681ddd86c5d9eb001c4eaff1856854fcae688516a36a2ffaaae2d36"
     },
     {
+      "key": "media:studio-3e7c92d16a1d533bb115de45be3a6d30bd35e8c320cd43f157a28bd867cd6777",
+      "sha256": "450f32aa1eb202492b665f113e26c5e9c3c38337e6e46b81ee9a5b3b36ecee18"
+    },
+    {
       "key": "media:studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce",
       "sha256": "f4d37ed1856862321971340e0b718fdf43854d80b4a82ef027d9e55cb3cd58da"
     },
@@ -181,7 +185,7 @@
     },
     {
       "key": "project:living-room-studio-restoration",
-      "sha256": "cb89dae98c109f85acb503c2178b7ea4f18bb943e2dd58a79be057d70f1938ab"
+      "sha256": "1249e7b3169c0d9c5b8649356ef7a35e1457d4a281c12e6ec5a06555353de189"
     },
     {
       "key": "project:master-bedroom-restoration",
@@ -291,11 +295,11 @@
     },
     {
       "key": "inventory:GOOGLE_PHOTOS_ALBUMS.md#album-af1qippool3ge7t",
-      "sha256": "1b61a31717ad78696d31173bfbead9b2426892ab15a2a268df8ea29163f2532d"
+      "sha256": "e61c43033a442dd2d4374b788be4d71521f75f768396e06d32f678c4feb40639"
     },
     {
       "key": "journal:01_the_residence_1894/trade_journals/ballet_barre_studio_restoration.md",
-      "sha256": "3108e2ec37d09f1c1425f66bbd81f81aed0b3e7ad818042496aac3ab71d2b7a9"
+      "sha256": "3ae5b0a75b5dd2fb1876b6631aa2d93781e1091b00767eb130207e24370a2f16"
     },
     {
       "key": "journal:01_the_residence_1894/trade_journals/entry_restoration.md",
@@ -464,6 +468,10 @@
     {
       "key": "media:studio-28cf5df28ed481448bac91bb685ac271d3f0b1f00897caeb9fbe7eb93a272843",
       "sha256": "28cf5df28ed481448bac91bb685ac271d3f0b1f00897caeb9fbe7eb93a272843"
+    },
+    {
+      "key": "media:studio-3e7c92d16a1d533bb115de45be3a6d30bd35e8c320cd43f157a28bd867cd6777",
+      "sha256": "3e7c92d16a1d533bb115de45be3a6d30bd35e8c320cd43f157a28bd867cd6777"
     },
     {
       "key": "media:studio-705eb089635f352fc52889dfb21495f96c762ea01dfe83a6c5aca62c4a2bbfce",
