@@ -11,3 +11,4 @@ Use this folder for 1894 residence restoration journals. Organize entries by tra
 - [Master Bath Restoration](master_bath_restoration.md) - room-scale restoration journal for the master bath work and its Flickr evidence archive.
 - [Master Bedroom Restoration](master_bedroom_restoration.md) - room-scale restoration journal for the master bedroom work and its Flickr evidence archive.
 - [Office Restoration](office_restoration.md) - room-scale restoration journal for the shared office/yoga studio to dedicated-office work and its Flickr evidence archive.
+- [TV Room](tv_room_restoration.md) - room journal beginning with the planned kitchen upper-cabinet removal and selected open wood shelving partition.

@@ -1,6 +1,6 @@
 # Project Memory: TradeJournals Portfolio Direction
 
-Last general refresh: 2026-09-03. Studio-only update: 2026-11-12.
+Last general refresh: 2026-09-03. Studio and TV Room updates: 2026-11-13.
 
 TradeJournals is a craftsman-first trade journal, evidence archive, and portfolio
 source. Its purpose is to make physical restoration skill, preservation judgment,
@@ -44,7 +44,7 @@ remains unchanged.
 
 ## Portfolio Pillars And Current Maturity
 
-- `01_the_residence_1894`: seven journals covering historic-home restoration.
+- `01_the_residence_1894`: eight journals covering historic-home restoration.
   This is the broadest portfolio area. Shawn confirmed the former living-room
   restoration finished in August/September 2026, followed by studio preparation
   and the November 7 grand reopening/student appreciation event. The November
