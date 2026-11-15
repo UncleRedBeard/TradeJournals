@@ -403,3 +403,13 @@ and bytes, Studio source journal and Google album inventory section. Exact
 
 This prepares the portable repository release for established `origin/main`.
 Public deployment and inquiry activation remain separate.
+
+## November 15 Smithville Town Listing
+
+Shawn requested adding Smithville to the website town list on November 14
+and authorized release preparation and Git closeout with "git er done" on
+November 15 in R.B.O.P. — Workflow Hub. The homepage now lists Brenham,
+Somerville, Bastrop, Smithville, Schulenburg, and La Grange. The existing
+project-fit, travel, scheduling, cost, and capacity qualification remains.
+Only the `home:home` fingerprint changes in the reviewed release snapshot.
+Public deployment remains separate.
