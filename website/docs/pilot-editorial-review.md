@@ -413,3 +413,21 @@ Somerville, Bastrop, Smithville, Schulenburg, and La Grange. The existing
 project-fit, travel, scheduling, cost, and capacity qualification remains.
 Only the `home:home` fingerprint changes in the reviewed release snapshot.
 Public deployment remains separate.
+
+## November 22 Entry Photo Refresh Approval
+
+Shawn reviewed the four-photo Entry gallery and said “looks great...reviewed
+and approved. git er done”, accepting the preview and authorizing release
+preparation and Git closeout to established `origin/main`.
+
+The November 16 staircase photograph replaces the former lead; the floor view
+toward the studio follows it. The original condition and process photographs
+remain. Captions and stage labels distinguish the November 2026 finished-room
+views from the 2024–25 restoration work. The homepage card and legacy hero
+media selection follow the new lead. The current homepage has a text hero.
+
+The refreshed snapshot changes only the Entry project, home media selection,
+and selected image records/bytes. The old lead is no longer selected but its
+record and local asset remain available. See the
+[accepted refresh record](../../docs/website-workflow/reports/entry-photo-refresh-20261122.md).
+Public deployment and inquiry activation remain separate.

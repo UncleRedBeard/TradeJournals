@@ -33,8 +33,13 @@
   ],
   "gallery": [
     {
-      "mediaId": "flickr-55338112557",
-      "caption": "The renewed floor carries the entry from the front door to the retained stair and balustrade.",
+      "mediaId": "flickr-55667855085",
+      "caption": "The restored entry, front door and stair with rainbow light across the renewed floor, November 16, 2026.",
+      "role": "result"
+    },
+    {
+      "mediaId": "flickr-55667552918",
+      "caption": "The renewed entry floor beside the beadboard wall and doorway toward the studio, November 16, 2026.",
       "role": "result"
     },
     {
@@ -49,7 +54,8 @@
     }
   ],
   "searchMediaIds": [
-    "flickr-55338112557",
+    "flickr-55667855085",
+    "flickr-55667552918",
     "flickr-55339048056",
     "flickr-55339463385"
   ],

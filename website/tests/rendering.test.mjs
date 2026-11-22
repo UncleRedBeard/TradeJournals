@@ -188,9 +188,10 @@ test("Entry gallery preserves its accepted stage labels and journal", async () =
   await buildWebsite({ mode: "preview", repoRoot, websiteRoot });
   const entry = await readFile(path.join(websiteRoot, ".preview-dist/work/entry-restoration/index.html"), "utf8");
   assert.match(entry, /<dialog[^>]+aria-label="Enlarged project photograph"/);
-  assert.equal([...entry.matchAll(/<a\b[^>]*data-gallery-open/g)].length, 3);
-  assert.match(entry, /href="\/media\/flickr-55338112557.jpg"/);
-  assert.match(entry, /Result — floor renewal, 2025/);
+  assert.equal([...entry.matchAll(/<a\b[^>]*data-gallery-open/g)].length, 4);
+  assert.match(entry, /href="\/media\/flickr-55667855085.jpg"/);
+  assert.match(entry, /href="\/media\/flickr-55667552918.jpg"/);
+  assert.match(entry, /Finished room — November 2026/);
   assert.match(entry, /Starting condition — first pass, 2024/);
   assert.match(entry, /Work in progress — first pass, 2024/);
   assert.match(entry, /two separate restoration passes/);

@@ -3,13 +3,14 @@ import GalleryViewer from "./GalleryViewer.astro";
 const { project } = Astro.props;
 // Labels follow the verified photo identities, not an assumed chronological order.
 const stages = {
-  "flickr-55338112557": "Result — floor renewal, 2025",
+  "flickr-55667855085": "Finished room — November 2026",
+  "flickr-55667552918": "Finished room — November 2026",
   "flickr-55339048056": "Starting condition — first pass, 2024",
   "flickr-55339463385": "Work in progress — first pass, 2024"
 };
 ---
 
-<p class="entry-gallery__intro">These photographs document two separate restoration passes: door, stair and trim work in 2024–25, followed by floor renewal in late 2025. The renewed floor leads this selection; the earlier photographs show protection and finish work around the retained features.</p>
+<p class="entry-gallery__intro">These photographs document two separate restoration passes: door, stair and trim work in 2024–25, followed by floor renewal in late 2025. Two views from November 2026 show the finished room in use; the earlier photographs show protection and finish work around the retained features.</p>
 <GalleryViewer project={project} labels={project.gallery.map(image => stages[image.id])} />
 
 <style>

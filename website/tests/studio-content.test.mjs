@@ -16,7 +16,7 @@ test("restored Studio leads the homepage while remaining distinct from the earli
   assert.ok(office);
   assert.equal(model.home.featuredProjectIds[0], "living-room-studio-restoration");
   assert.equal(model.site.navigation.find(item => item.label === "Work").href, "/work/entry-restoration/");
-  assert.equal(model.home.hero.id, "flickr-55338112557");
+  assert.equal(model.home.hero.id, "flickr-55667855085");
   assert.equal(restoredStudio.gallery.length, 6);
   assert.ok(restoredStudio.gallery.every(photo => photo.id.startsWith("studio-")));
   assert.equal(restoredStudio.searchImages.length, 6);

@@ -8,7 +8,16 @@ Register owner: hub only
 Master plan: [Astro pilot implementation](../superpowers/plans/2026-09-15-worth-keeping-astro-pilot.md)
 Design: [Approved architecture](../superpowers/specs/2026-09-15-worth-keeping-website-design.md)
 
-Current checkpoint: November 13, 2026. The Studio bay-window follow-up is
+Current checkpoint: November 22, 2026. The Entry photo refresh is COMPLETE
+and accepted in this hub: “looks great...reviewed and approved. git er done”.
+The four-photo gallery leads with the November 16 staircase view, then the
+new floor/studio-doorway view, followed by the retained condition and process
+photographs. The homepage Entry card follows the lead. This is a direct
+follow-up, with no new child chat. Release preparation and scoped Git closeout
+to established `origin/main` are authorized; public deployment remains separate.
+See the [accepted refresh record](reports/entry-photo-refresh-20261122.md).
+
+Previous checkpoint: November 13, 2026. The Studio bay-window follow-up is
 COMPLETE and accepted in this hub: “awesome, that looks great. approved.”
 Acceptance `WK-WEB-STUDIO-BAY-20261113-A01` covers report revision 2, including
 the six-photo gallery and requested lead swap. Shawn previously said
