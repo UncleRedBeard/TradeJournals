@@ -84,7 +84,7 @@ function publicProject(project, mediaById, facts) {
     albums, gallery, searchImages: project.searchMediaIds.map(id => publicImage(mediaById.get(id)))
   };
   if (project.occupancy) result.occupancy = { ...project.occupancy };
-  for (const field of ["introduction", "storyId", "evidenceBoundary"]) {
+  for (const field of ["introduction", "storyId", "evidenceBoundary", "serviceLinkLabel"]) {
     if (project[field]) result[field] = project[field];
   }
   return result;

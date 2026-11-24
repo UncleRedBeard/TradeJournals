@@ -13,7 +13,7 @@ const sectionRoot = isHome ? "" : "/";
     </a>
     <nav class="atelier-nav" aria-label="Primary navigation">
       <a href={`${sectionRoot}#documented-projects`}>Work &amp; Craft</a>
-      <a href={`${sectionRoot}#practice`}>Practice</a>
+      <a href={`${sectionRoot}#practice`}>{home.serviceIds.length ? "Services & assessment" : "Practice"}</a>
       {home.workshopProjectIds?.length > 0 && <a href={`${sectionRoot}#workshop-studies`}>Workshop</a>}
       <a href="/tradejournals/">TradeJournals</a>
     </nav>

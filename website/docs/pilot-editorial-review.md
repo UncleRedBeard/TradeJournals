@@ -431,3 +431,13 @@ and selected image records/bytes. The old lead is no longer selected but its
 record and local asset remain available. See the
 [accepted refresh record](../../docs/website-workflow/reports/entry-photo-refresh-20261122.md).
 Public deployment and inquiry activation remain separate.
+
+## November 24 Services and Assessment Links
+
+Shawn accepted the local preview of the navigation and service links on
+November 24 and requested Git closeout. The Services & assessment navigation
+link opens the homepage service section. The service examples identify the
+renewed entry floor, retained solid-wood door, and repaired plank ceiling.
+The Entry and Earlier Barre Studio project pages link directly to the paid
+assessment description. The reviewed snapshot updates the three project
+records that supply the link labels.

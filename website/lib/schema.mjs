@@ -72,7 +72,7 @@ export const schemas = {
       focalPoint: z.tuple([z.number().min(0).max(100), z.number().min(0).max(100)]).optional(),
       alt: text.optional()
     })),
-    searchMediaIds: strings, introduction: text.optional(), storyId: StableId.optional(),
+    searchMediaIds: strings, serviceLinkLabel: text.optional(), introduction: text.optional(), storyId: StableId.optional(),
     evidenceBoundary: text.optional()
   }),
   media: z.strictObject({

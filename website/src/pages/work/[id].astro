@@ -12,6 +12,8 @@ export function getStaticPaths() {
 
 const { project } = Astro.props;
 const isEntry = project.id === "entry-restoration";
+const showAssessmentLink = (isEntry || project.id === "studio-office-restoration")
+  && model.home.serviceIds.includes("paid-assessment");
 ---
 
 <SiteLayout description={`Project overview and photographs: ${project.summary}`} site={model.site} home={model.home} title={project.title} reviewNotice={model.reviewNotice}>
@@ -36,6 +38,7 @@ const isEntry = project.id === "entry-restoration";
     </section>
     <div class="project-page__journal">
       <a href={project.archiveHref}>Read the TradeJournal record <span aria-hidden="true">→</span></a>
+      {showAssessmentLink && <a href="/#paid-assessment">What a paid assessment includes</a>}
       <a href="/#documented-projects">Back to Work &amp; Craft</a>
     </div>
   </article>

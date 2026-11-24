@@ -40,13 +40,13 @@ const { site, home } = model;
         <div class="atelier-services__grid">
           {model.services.map(service => (
             <div>
-              <h3>{service.title}</h3>
+              <h3 id={service.id === "paid-assessment" ? service.id : undefined}>{service.title}</h3>
               <p>{service.description}</p>
               {service.projectIds.length > 0 && (
                 <ul>
                   {service.projectIds.map(id => {
                     const project = model.projects.find(project => project.id === id);
-                    return <li><a href={project.href}>{project.title}</a></li>;
+                    return <li><a href={project.href}>{project.serviceLinkLabel ?? project.title}</a></li>;
                   })}
                 </ul>
               )}

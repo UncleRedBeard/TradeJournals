@@ -177,7 +177,7 @@
     },
     {
       "key": "project:entry-restoration",
-      "sha256": "6e9ce87a8472eabe2a5157304838b4870d45ad612df44df6adbaf9f885412cde"
+      "sha256": "a1bd46428ae5a72dec0e873c7b15f35231fc194917d75c740bc631881383d397"
     },
     {
       "key": "project:guest-bath-dresser-vanity",
@@ -189,7 +189,7 @@
     },
     {
       "key": "project:living-room-studio-restoration",
-      "sha256": "1249e7b3169c0d9c5b8649356ef7a35e1457d4a281c12e6ec5a06555353de189"
+      "sha256": "c8c845788f7cd8a443467680f94459c940b1c73c6cfe2858996f0483784aaadd"
     },
     {
       "key": "project:master-bedroom-restoration",
@@ -205,7 +205,7 @@
     },
     {
       "key": "project:studio-office-restoration",
-      "sha256": "293739b3fe6881c605de7472ef085c3cd5475c51b1b0040c6348b161df9e0a08"
+      "sha256": "a5ba917d6c8f9e2a7cd3f95cb89c0fed18c13374dde493a3fa48ff8dff18ffe0"
     },
     {
       "key": "service:historic-floors",
